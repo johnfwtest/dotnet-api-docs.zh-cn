@@ -1,11 +1,11 @@
 <Type Name="Math" FullName="System.Math">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e3ca93d348ea6b5994c4cad247a073d0648f0694" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="a65abb2d011ed017c4b44637bd58cd80c56744be" />
+    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52255375" />
+    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
+    <Meta Name="ms.locfileid" Value="52365252" />
   </Metadata>
   <TypeSignature Language="C#" Value="public static class Math" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Math extends System.Object" />
@@ -1078,8 +1078,16 @@
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向正无穷舍入。 换而言之，如果`a`是正数，是否存在任何小数部分导致`a`要舍入为下一步的最大整数。 如果`a`为负，则舍入运算会导致任何小数部分`a`被放弃。 此方法的操作不同于<xref:System.Math.Floor%28System.Double%29>方法支持向负无穷舍入。  
   
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Ceiling`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Ceiling`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例演示了这种优化的转换：
    
-  
+```vb
+Dim d1 As Double = 1043.75133
+Dim i1 As Integer = CInt(Math.Ceiling(d1))        ' Result: 1044
+
+Dim d2 As Double = 7968.4136
+Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7969
+```   
+
 ## Examples  
  下面的示例阐释<xref:System.Math.Ceiling%28System.Double%29?displayProperty=nameWithType>方法并将其与进行比较<xref:System.Math.Floor%28System.Double%29>方法。  
   
@@ -2013,9 +2021,17 @@
   
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向负无穷舍入。 换而言之，如果`d`为正，任何小数部分被截断。 如果`d`是负数，任何小数部分的存在会导致它被舍入到较小的整数。 此方法的操作不同于<xref:System.Math.Ceiling%2A>方法支持向正无穷舍入。  
-  
+
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Floor`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Floor`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例演示了这种优化的转换：
    
-  
+```vb
+Dim d1 As Double = 1043.75133
+Dim i1 As Integer = CInt(Math.Ceiling(d1))        ' Result: 1043
+
+Dim d2 As Double = 7968.4136
+Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
+```
+
 ## Examples  
  下面的示例阐释<xref:System.Math.Floor%28System.Double%29?displayProperty=nameWithType>方法并将其与进行比较<xref:System.Math.Ceiling%28System.Double%29>方法。  
   
@@ -4264,7 +4280,17 @@ Remainder = (Math.Abs(dividend) - (Math.Abs(divisor) *
   
 > [!NOTE]
 >  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
-  
+
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Round`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Round`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例演示了这种优化的转换：
+   
+```vb
+Dim d1 As Double = 1043.75133
+Dim i1 As Integer = CInt(Math.Ceiling(d1))        ' Result: 1044
+
+Dim d2 As Double = 7968.4136
+Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
+```
+
  ]]></format>
         </remarks>
         <block subset="none" type="usage">
@@ -5584,11 +5610,17 @@ Remainder = (Math.Abs(dividend) - (Math.Abs(divisor) *
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- <xref:System.Math.Truncate%2A> 将舍入`d`到推向零最接近的整数。  
+## Remarks
+
+<xref:System.Math.Truncate%2A> 将舍入`d`到推向零最接近的整数。  
   
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Truncate`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Truncate`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例说明了这种优化的转换：
    
-  
+```vb
+Dim d As Double = 164.7194
+Dim i As Integer = CInt(Math.Truncate(d))     ' Result: 164
+```
+
 ## Examples  
  下面的示例调用<xref:System.Math.Truncate%28System.Double%29>方法来截断正和负<xref:System.Double>值。  
   

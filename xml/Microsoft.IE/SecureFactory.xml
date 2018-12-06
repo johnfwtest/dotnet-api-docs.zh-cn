@@ -1,11 +1,11 @@
 <Type Name="SecureFactory" FullName="Microsoft.IE.SecureFactory">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3585bffe73a0e5f24fb6940e5f183cc9daf3c1da" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="6bb1712355fa5f2e193af23d718af98d9eeb88b5" />
+    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39859146" />
+    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
+    <Meta Name="ms.locfileid" Value="52362851" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class SecureFactory : Microsoft.IE.ISecureFactory2" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecureFactory extends System.Object implements class Microsoft.IE.ISecureFactory, class Microsoft.IE.ISecureFactory2" />
@@ -23,12 +23,16 @@
   </Base>
   <Interfaces>
     <Interface>
+      <InterfaceName>Microsoft.IE.ISecureFactory</InterfaceName>
+    </Interface>
+    <Interface>
       <InterfaceName>Microsoft.IE.ISecureFactory2</InterfaceName>
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>提供创建安全类工厂的方法。</summary>
     <remarks>To be added.</remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="CORIESECURITY_SITE">
@@ -47,8 +51,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>指定值 0x02。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CORIESECURITY_ZONE">
@@ -67,8 +72,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>指定值 0x01。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CreateInstanceWithSecurity">
@@ -99,15 +105,30 @@
         <Parameter Name="licenses" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dwFlag">To be added.</param>
-        <param name="dwZone">To be added.</param>
-        <param name="pURL">To be added.</param>
-        <param name="uniqueIdString">To be added.</param>
-        <param name="link">To be added.</param>
-        <param name="licenses">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dwFlag">下列 CORIESECURITY 值之一：
+
+- CORIESECURITY_ZONE: 0x01
+
+- CORIESECURITY_SITE: 0x02</param>
+        <param name="dwZone">下列 URLZONE 值之一：
+
+- URLZONE_LOCAL_MACHINE: 0x00
+
+- URLZONE_INTRANET: 0x01
+
+- URLZONE_TRUSTED: 0x02
+
+- URLZONE_INTERNET: 0x03
+
+- URLZONE_UNTRUSTED: 0x04</param>
+        <param name="pURL">站点的 URL，该站点包含将为其创建安全类工厂的应用程序。</param>
+        <param name="uniqueIdString">站点的唯一标识符。</param>
+        <param name="link">URL 的链接部分，可以是相对的。</param>
+        <param name="licenses">要与域关联的许可证文件的位置。</param>
+        <summary>创建一个表示安全类工厂的 COM 类型的新实例。</summary>
+        <returns>一个对象，该对象是新实例的包装器。 返回值需要打开包装才能访问真实对象。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CreateInstanceWithSecurity2">
@@ -138,16 +159,31 @@
         <Parameter Name="wszDeploymentManifest" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dwFlags">To be added.</param>
-        <param name="dwZone">To be added.</param>
-        <param name="wszSite">To be added.</param>
-        <param name="wszId">To be added.</param>
-        <param name="wszConfig">To be added.</param>
-        <param name="wszLicenses">To be added.</param>
-        <param name="wszDeploymentManifest">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="dwFlags">下列 CORIESECURITY 值之一：
+
+- CORIESECURITY_ZONE: 0x01
+
+- CORIESECURITY_SITE: 0x02</param>
+        <param name="dwZone">下列 URLZONE 值之一：
+
+- URLZONE_LOCAL_MACHINE: 0x00
+
+- URLZONE_INTRANET: 0x01
+
+- URLZONE_TRUSTED: 0x02
+
+- URLZONE_INTERNET: 0x03
+
+- URLZONE_UNTRUSTED: 0x04</param>
+        <param name="wszSite">站点的 URL，该站点包含将为其创建安全类工厂的应用程序。</param>
+        <param name="wszId">站点的唯一标识符。</param>
+        <param name="wszConfig">URL 的链接部分，可以是相对的。</param>
+        <param name="wszLicenses">要与域关联的许可证文件的位置。</param>
+        <param name="wszDeploymentManifest">部署清单的位置。</param>
+        <summary>使用部署清单中的信息，创建表示安全类工厂的 COM 类型的新实例。</summary>
+        <returns>一个对象，该对象是新实例的包装器。 返回值需要打开包装才能访问真实对象。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="RemoteCreateInstance">
@@ -171,10 +207,11 @@
         <Parameter Name="ppvObject" Type="System.Object" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="riid">To be added.</param>
-        <param name="ppvObject">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="riid">未使用。</param>
+        <param name="ppvObject">此方法返回时始终为 NULL（在 Visual Basic 中为 Nothing）。</param>
+        <summary>未实现。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="RemoteLockServer">
@@ -197,9 +234,10 @@
         <Parameter Name="fLock" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="fLock">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="fLock">未使用。</param>
+        <summary>未实现。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

@@ -1,11 +1,11 @@
 <Type Name="Manager" FullName="Microsoft.IE.Manager">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="feae9df12127b18f1c2385f34e7b0cce0219f801" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="a437134351485fe71bc2a00422ef80f100740fd1" />
+    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39831953" />
+    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
+    <Meta Name="ms.locfileid" Value="52361651" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class Manager : Microsoft.IE.IHostEx" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Manager extends System.Object implements class Microsoft.IE.IHostEx" />
@@ -32,8 +32,16 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>提供启用托管代码作为 ActiveX 控件执行操作的方法。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+管理器类初始化使托管的代码能够作为沙盒应用程序域中的 ActiveX 控件执行的属性。
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,8 +58,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>初始化 <see cref="T:Microsoft.IE.Manager" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="AreOnTheSameSite">
@@ -75,11 +84,12 @@
         <Parameter Name="pURL2" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL1">To be added.</param>
-        <param name="pURL2">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL1">要比较的第一个 URL。</param>
+        <param name="pURL2">要比较的第二个 URL。</param>
+        <summary>获取一个值，该值指示两个 URL 的站点部分是否有相同的规范化值。</summary>
+        <returns>如果两个 URL 位于同一站点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="AreTheSame">
@@ -103,11 +113,12 @@
         <Parameter Name="pURL2" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL1">To be added.</param>
-        <param name="pURL2">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL1">要比较的第一个 URL。</param>
+        <param name="pURL2">要比较的第二个 URL。</param>
+        <summary>获取一个值，该值指示两个 URL 的规范化形式是否相同。</summary>
+        <returns>如果两个 URL 相同，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="CanonizeURL">
@@ -131,11 +142,26 @@
         <Parameter Name="flags" Type="Microsoft.IE.Manager+URL_CANONFLAGS" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <param name="flags">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">长度最长 (<see cref="F:Microsoft.IE.Manager.INTERNET_MAX_URL_LENGTH" />) 的以 NULL 结尾且包含 URL 字符串的字符串。 如果字符串不引用文件，则它必须包含“http://”等有效的方案。</param>
+        <param name="flags">指定如何将 URL 转换为规范格式的标志。 可以组合下列标志：
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：将 URL 字符串中的“/./”和“/../”视为文本字符，而不是导航的简写。
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：将出现的所有“%”转换为其转义序列。
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：只用转义序列替换空格。 此标志优先于 <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />，但不适用于非跳转 URL。
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：用转义序列替换不安全字符。 不安全字符是在 Internet 传输过程中可能会更改的字符。 包括 &lt;、&gt;、"、#、{、}、|、\\、^、[、]和 ' 字符。 此标志适用于所有 URL，包括非跳转 URL。
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：定义为与 <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" /> 相同。
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：根据万维网联合会 (W3C) 规范，将 URL 与客户端定义的可插入协议结合起来。 此标志不适用于标准协议，如 FTP、HTTP 和 Gopher。 如果设置了此标志，就不必设置 <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />。
+
+- <see cref="T:Microsoft.IE.Manager.URL_CANONFLAGS" />：对 URL 包含的任何转义序列进行转回，但有两个转义序列例外。 未对“?”和“#”的转义序列进行转回操作。 如果还设置了 URL_ESCAPE 标志之一，那么对两个 URL 依次执行的操作是：转回、合并和转义。</param>
+        <summary>将 URL 字符串转换为规范格式。</summary>
+        <returns>规范化的 URL。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="DecodeDomainId">
@@ -158,10 +184,11 @@
         <Parameter Name="hexString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="hexString">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="hexString">表示域标识的十六进制字符串。</param>
+        <summary>获取一个字节数组，该数组包含指定的十六进制字符串的整数表示形式。</summary>
+        <returns>一个数组，它包含十六进制字符串的整数表示形式。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetClassFactory">
@@ -193,11 +220,14 @@
         <Parameter Name="className" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="assemblyName">To be added.</param>
-        <param name="className">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="assemblyName">程序集的名称。</param>
+        <param name="className">类的名称。</param>
+        <summary>未实现。 
+        
+此 API 不兼容 CLS。</summary>
+        <returns>始终为 NULL（在 Visual Basic 中为 Nothing）。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetCodeBase">
@@ -222,12 +252,13 @@
         <Parameter Name="application" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <param name="codeBase">To be added.</param>
-        <param name="application">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">代码基底的 URL。</param>
+        <param name="codeBase">此方法返回时，包含指向代码基底的路径。</param>
+        <param name="application">此方法返回时，包含应用程序名。</param>
+        <summary>从传入的 URL 字符串获取代码基底和应用程序名。</summary>
+        <returns>如果找到了代码基底，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetConfigurationFile">
@@ -252,12 +283,13 @@
         <Parameter Name="file" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <param name="path">To be added.</param>
-        <param name="file">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">配置文件的 URL。</param>
+        <param name="path">此方法返回时，包含指向配置文件的路径。</param>
+        <param name="file">此方法返回时，包含配置文件的名称。</param>
+        <summary>从传入的 URL 字符串获取配置文件的路径和文件名。</summary>
+        <returns>如果找到了配置文件，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetSecuredClassFactory">
@@ -294,16 +326,40 @@
         <Parameter Name="typeName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="flags">To be added.</param>
-        <param name="zone">To be added.</param>
-        <param name="site">To be added.</param>
-        <param name="uniqueIdString">To be added.</param>
-        <param name="fileHashString">To be added.</param>
-        <param name="assemblyName">To be added.</param>
-        <param name="typeName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="flags">下列 CORIESECURITY 值之一：
+
+- CORIESECURITY_ZONE: 0x01
+
+- CORIESECURITY_SITE: 0x02</param>
+        <param name="zone">下列 URLZONE 值之一：
+
+- URLZONE_LOCAL_MACHINE: 0x00
+
+- URLZONE_INTRANET: 0x01
+
+- URLZONE_TRUSTED: 0x02
+
+- URLZONE_INTERNET: 0x03
+
+- URLZONE_UNTRUSTED: 0x04</param>
+        <param name="site">站点地址。</param>
+        <param name="uniqueIdString">站点的唯一 ID。</param>
+        <param name="fileHashString">正在加载的程序集的十六进制编码哈希值。</param>
+        <param name="assemblyName">程序集的名称。</param>
+        <param name="typeName">类型的名称。</param>
+        <summary>创建一个提供有关程序集的安全信息的类工厂。
+
+此 API 不兼容 CLS。</summary>
+        <returns>表示安全类工厂的对象。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+通常情况下，可以从 Internet 安全管理器获取大多数参数值。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="GetSiteName">
@@ -326,10 +382,11 @@
         <Parameter Name="pURL" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">目标 URL。</param>
+        <summary>获取指定 URL 的站点名称。</summary>
+        <returns>指定 URL 的站点名称。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="INTERNET_MAX_PATH_LENGTH">
@@ -349,8 +406,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>获取表示 Internet 路径的字符串的最大长度。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="INTERNET_MAX_SCHEME_LENGTH">
@@ -370,8 +428,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>获取表示 Internet 方案的字符串的最大长度。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="INTERNET_MAX_URL_LENGTH">
@@ -391,8 +450,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>获取表示 URL 的字符串的最大长度。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="IsValidURL">
@@ -415,10 +475,11 @@
         <Parameter Name="pURL" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="pURL">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pURL">要检查的 URL。</param>
+        <summary>确定指定的 URL 是否有效。</summary>
+        <returns>如果 URL 有效，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="MakeFullLink">
@@ -443,12 +504,13 @@
         <Parameter Name="Application" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="link">To be added.</param>
-        <param name="CodeBase">To be added.</param>
-        <param name="Application">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="link">地址的链接部分，可以是相对的。</param>
+        <param name="CodeBase">地址的代码基底部分。</param>
+        <param name="Application">地址的应用程序部分。</param>
+        <summary>返回传入链接、代码基底和应用程序的完整 URL。</summary>
+        <returns>指向指定应用程序的完整链接。</returns>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>
