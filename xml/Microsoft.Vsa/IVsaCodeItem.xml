@@ -1,11 +1,11 @@
 <Type Name="IVsaCodeItem" FullName="Microsoft.Vsa.IVsaCodeItem">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3d52b4e13d62d9a7363590361d0bd20b652f28e6" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="02ffa3d80165d4caa3178d3b714320a67262d734" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39790996" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52610014" />
   </Metadata>
   <TypeSignature Language="C#" Value="public interface IVsaCodeItem : Microsoft.Vsa.IVsaItem" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaCodeItem implements class Microsoft.Vsa.IVsaItem" />
@@ -35,8 +35,24 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>
+      <span data-ttu-id="cdd6a-101">表示要通过脚本引擎编译的代码项。</span>
+      <span class="sxs-lookup">
+        <span data-stu-id="cdd6a-101">Represents a code item to be compiled by the script engine.</span>
+      </span>
+    </summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<span data-ttu-id="cdd6a-102">指定的代码项可以包含类、 模块或其他源文本。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-102">The specified code item can contain classes, modules, or other source text.</span></span>
+
+<span data-ttu-id="cdd6a-103">不不需要调用 IVsaCodeItem 接口的任何成员的任何权限。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-103">No permissions are required for calling any members of the IVsaCodeItem interface.</span></span>
+
+<span data-ttu-id="cdd6a-104">脚本引擎实现此接口，以便添加代码项。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-104">The script engine implements this interface in order to add code items.</span></span>
+
+]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="AddEventSource">
@@ -60,10 +76,46 @@
         <Parameter Name="eventSourceType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="eventSourceName">To be added.</param>
-        <param name="eventSourceType">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="eventSourceName">
+          <span data-ttu-id="cdd6a-105">事件源的编程名称。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-105">A programmatic name of the event source.</span>
+          </span>
+        </param>
+        <param name="eventSourceType">
+          <span data-ttu-id="cdd6a-106">事件源的类型名称。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-106">The type name of the event source.</span>
+          </span>
+        </param>
+        <summary>
+          <span data-ttu-id="cdd6a-107">将事件源添加到代码项中。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-107">Adds an event source to the code item.</span>
+          </span>
+          <span data-ttu-id="cdd6a-108">代码项通过调用 IVsaSite.GetEventSourceInstance 方法（由宿主实现），使用事件源将事件挂钩到命名事件源。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-108">The code item uses the event source to hook up an event to the named event source by calling the IVsaSite.GetEventSourceInstance method, which is implemented by the host.</span>
+          </span>
+        </summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<span data-ttu-id="cdd6a-109">脚本引擎使用 AddEventSource 方法提供的信息来挂接到命名的事件源的事件。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-109">The script engine uses information provided by the AddEventSource method to hook up events to the named event source.</span></span> <span data-ttu-id="cdd6a-110">它通过调用 IVsaSite.GetEventSourceInstance 方法，由宿主实现获取事件源。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-110">It obtains event sources by calling the IVsaSite.GetEventSourceInstance method, which is implemented by the host.</span></span> <span data-ttu-id="cdd6a-111">AddEventSource 方法创建处理由主机提供的对象引发的事件的类。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-111">The AddEventSource method creates a class that handles events raised by a host-provided object.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="cdd6a-112">JScript.NET 脚本引擎不支持此方法。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-112">The JScript .NET script engine does not support this method.</span></span> <span data-ttu-id="cdd6a-113">在 JScript.NET 引擎必须挂接事件的情况下，您必须执行使用对全局项。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-113">In cases where the JScript .NET engine must hook up an event, you must do so using a global item.</span></span> <span data-ttu-id="cdd6a-114">而不是事件源、 JScript.NET 引擎使用 AppGlobal 项类型。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-114">Rather than event sources, the JScript .NET engine uses AppGlobal item types.</span></span> <span data-ttu-id="cdd6a-115">有关详细信息，请参阅 VsaItemType。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-115">For more information, see VsaItemType.</span></span>
+
+
+<span data-ttu-id="cdd6a-116">在代码项中，可以按名称访问事件源对象和后访问，可以编写对对象的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-116">Within the code item, you can access the event source object by name, and, once accessed, you can write event handlers against the object.</span></span> <span data-ttu-id="cdd6a-117">事件源类型为一个字符串，而不是为了便于实现事件源的类型对象传递，由非托管主机。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-117">The event source type is passed as a string rather than as a Type object to facilitate implementing event sources by unmanaged hosts.</span></span>
+
+<span data-ttu-id="cdd6a-118">编译器使用 eventSourceType 参数要绑定到类型提供的方法。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-118">The compiler uses the eventSourceType parameter to bind to methods provided by the type.</span></span> <span data-ttu-id="cdd6a-119">它也更高版本时使用脚本引擎将调用 IVsaSite.GetEventSourceInstance 方法来请求类型对象的实例。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-119">It is also used later when the script engine calls the IVsaSite.GetEventSourceInstance method to request an instance of the Type object.</span></span>
+
+<span data-ttu-id="cdd6a-120">挂接事件的脚本引擎的机制的详细信息，请参阅 IVsaSite.GetEventSourceInstance 方法。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-120">For more information about the mechanisms for hooking up events for the script engine, see the IVsaSite.GetEventSourceInstance method.</span></span>
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="AppendSourceText">
@@ -86,9 +138,28 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="text">
+          <span data-ttu-id="cdd6a-121">要追加到代码项的文本。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-121">The text to be appended to the code item.</span>
+          </span>
+        </param>
+        <summary>
+          <span data-ttu-id="cdd6a-122">将指定的文本追加到代码项尾部。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-122">Appends specified text to the end of the code item.</span>
+          </span>
+        </summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<span data-ttu-id="cdd6a-123">追加的源不会对文本进行验证。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-123">Appended source text is not subjected to validation.</span></span> <span data-ttu-id="cdd6a-124">出于此原因，错误，如果有，将出现在下一步 IVsaEngine.Compile 方法调用。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-124">For this reason, errors, if any, will surface on the next call to the IVsaEngine.Compile method.</span></span>
+
+<span data-ttu-id="cdd6a-125">追加的源文本作为单个字符串提供。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-125">The appended source text is provided as a single string.</span></span> <span data-ttu-id="cdd6a-126">如果字符串需要任何格式设置，您必须自行提供。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-126">Should the string require any formatting, you must provide this yourself.</span></span>
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CodeDOM">
@@ -108,9 +179,26 @@
         <ReturnType>System.CodeDom.CodeObject</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+          <span data-ttu-id="cdd6a-127">获取在代码项中表示的代码文档对象模型 (CodeDOM)。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-127">Gets the code document object model (CodeDOM) represented in the code item.</span>
+          </span>
+        </summary>
+        <value>
+          <span data-ttu-id="cdd6a-128">返回代码项的 CodeDOM。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-128">Returns the CodeDOM for the code item.</span>
+          </span>
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<span data-ttu-id="cdd6a-129">CodeDOM 属性通常作为脚本引擎的编译步骤的一部分生成，因此它不是后才可对 IVsaEngine.Compile 方法的调用之后。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-129">The CodeDOM property is typically generated as part of the compilation step of the script engine, so it is not available until after a call to the IVsaEngine.Compile method.</span></span> <span data-ttu-id="cdd6a-130">某些 VSA 实现可能能够提供 CodeDOM 动态，而无需显式编译步骤中，但主机不能依赖于此行为。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-130">Some VSA implementations may be able to provide the CodeDOM dynamically, without the need for an explicit compilation step, but hosts cannot rely on this behavior.</span></span> <span data-ttu-id="cdd6a-131">某些脚本引擎，例如，JScript.NET 脚本引擎，不支持此行为。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-131">Some script engines, for example, the JScript .NET script engine, do not support this behavior.</span></span>
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="RemoveEventSource">
@@ -133,9 +221,26 @@
         <Parameter Name="eventSourceName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="eventSourceName">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="eventSourceName">
+          <span data-ttu-id="cdd6a-132">要移除的事件源的编程名称。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-132">The programmatic name of the event source to be removed.</span>
+          </span>
+        </param>
+        <summary>
+          <span data-ttu-id="cdd6a-133">从代码项中移除指定的事件源。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-133">Removes the specified event source from the code item.</span>
+          </span>
+        </summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<span data-ttu-id="cdd6a-134">删除事件源不会从源文本中删除基础事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-134">Removing an event source does not remove the underlying event handler from source text.</span></span> <span data-ttu-id="cdd6a-135">相反，事件不会再引发的事件处理程序的通知。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-135">Rather, events no longer raise notifications to the event handler.</span></span> <span data-ttu-id="cdd6a-136">因此，如果删除的事件源，而在源代码中保留基础函数将获取编译器错误。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-136">Therefore, you will get a compiler error if you delete an event source but leave the underlying function in the source code.</span></span>
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SourceText">
@@ -155,9 +260,30 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>
+          <span data-ttu-id="cdd6a-137">设置或获取指定的代码项的文本，包括自动生成的代码（如果有）。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-137">Sets or gets the text of a specified code item, including auto-generated code, if any.</span>
+          </span>
+        </summary>
+        <value>
+          <span data-ttu-id="cdd6a-138">返回代码项的源文本。</span>
+          <span class="sxs-lookup">
+            <span data-stu-id="cdd6a-138">Returns the source text of the code item.</span>
+          </span>
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<span data-ttu-id="cdd6a-139">当设置此属性时，不会对文本进行验证。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-139">When you set this property, the text is not subjected to validation.</span></span> <span data-ttu-id="cdd6a-140">出于此原因，错误，如果有，将出现在下一步 IVsaEngine.Compile 方法调用。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-140">For this reason, errors, if any, will surface on the next call to the IVsaEngine.Compile method.</span></span>
+
+<span data-ttu-id="cdd6a-141">SourceText 属性返回的源文本中包括回车符等格式设置字符的一个大的字符串返回。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-141">The SourceText property returns the source text in one large string, including formatting characters such as carriage returns.</span></span>
+
+<span data-ttu-id="cdd6a-142">若要获取此属性，引擎必须未关闭。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-142">To get this property the engine must not be closed.</span></span> <span data-ttu-id="cdd6a-143">若要设置此属性，引擎必须不会关闭，但未在运行的引擎。</span><span class="sxs-lookup"><span data-stu-id="cdd6a-143">To set this property the engine must not be closed, and the engine must not be running.</span></span>
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>
