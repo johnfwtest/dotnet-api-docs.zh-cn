@@ -1,11 +1,11 @@
 <Type Name="EntityConnection" FullName="System.Data.EntityClient.EntityConnection">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="638b9cd1faed84ee7c40fa486be5bd720de153e0" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
+    <Meta Name="ms.openlocfilehash" Value="9a33f2cd7ecb7a36b829c9430323ef109258faa0" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51883113" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52594061" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class EntityConnection : System.Data.Common.DbConnection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityConnection extends System.Data.Common.DbConnection" />
@@ -438,7 +438,7 @@ Provider Connection String= 'Data Source=localhost;
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">用户尝试在初始化 <see cref="P:System.Data.EntityClient.EntityConnection.ConnectionString" /> 的 <see cref="T:System.Data.EntityClient.EntityConnection" /> 后设置 <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> 属性。 在通过重载（此重载将 <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> 作为参数）构造 <see cref="T:System.Data.EntityClient.EntityConnection" /> 实例，或者打开 <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> 实例时，初始化 <see cref="T:System.Data.EntityClient.EntityConnection" />。</exception>
+        <exception cref="T:System.InvalidOperationException">尝试在初始化 <see cref="T:System.Data.EntityClient.EntityConnection" /> 的 <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> 后设置 <see cref="P:System.Data.EntityClient.EntityConnection.ConnectionString" /> 属性。 在通过重载（此重载将 <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> 作为参数）构造 <see cref="T:System.Data.EntityClient.EntityConnection" /> 实例，或者打开 <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> 实例时，初始化 <see cref="T:System.Data.EntityClient.EntityConnection" />。</exception>
         <exception cref="T:System.ArgumentException">提供的连接字符串关键字无效，或未提供所需的连接字符串关键字。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/745c5f95-2f02-4674-b378-6d51a7ec2490">连接字符串</related>
         <related type="Article" href="https://msdn.microsoft.com/library/78d516bc-c99f-4865-8ff1-d856bc1a01c0">连接字符串（实体框架）</related>
@@ -801,7 +801,8 @@ Provider Connection String= 'Data Source=localhost;
       </ReturnValue>
       <Docs>
         <summary>如果 <see cref="T:System.Data.ConnectionState" /> 打开，则获取基础提供程序的 <see cref="T:System.Data.EntityClient.EntityConnection" /> 属性。 否则返回 <see cref="F:System.Data.ConnectionState.Closed" />。</summary>
-        <value>当且仅当 <see cref="F:System.Data.ConnectionState.Open" /> 的内部状态和基础提供程序的 <see cref="T:System.Data.EntityClient.EntityConnection" /> 处于打开状态时，返回 <see cref="T:System.Data.ConnectionState" />。 如果 <see cref="T:System.Data.EntityClient.EntityConnection" /> 处于打开状态，但提供程序的 <see cref="T:System.Data.ConnectionState" /> 处于关闭状态，则该属性返回 <see cref="F:System.Data.ConnectionState.Broken" />。 否则，它将返回 <see cref="F:System.Data.ConnectionState.Closed" />。</value>
+        <value>
+          <see cref="F:System.Data.ConnectionState.Open" />当且仅当<see cref="T:System.Data.EntityClient.EntityConnection" />的内部状态和基础提供程序的<see cref="T:System.Data.ConnectionState" />处于打开状态。 如果<see cref="T:System.Data.EntityClient.EntityConnection" />的状态处于打开状态但提供程序的<see cref="T:System.Data.ConnectionState" />处于关闭状态，此属性返回<see cref="F:System.Data.ConnectionState.Broken" />。 否则，它将返回 <see cref="F:System.Data.ConnectionState.Closed" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

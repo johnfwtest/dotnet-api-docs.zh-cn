@@ -1,11 +1,11 @@
 <Type Name="NetworkStream" FullName="System.Net.Sockets.NetworkStream">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="fb7fd37bdc38c655879b64066b25f8107d50eada" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="f85beed96084c1658df3da322504516ec7ddd32f" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52207665" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52590876" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class NetworkStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NetworkStream extends System.IO.Stream" />
@@ -738,8 +738,39 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>关闭 <see cref="T:System.Net.Sockets.NetworkStream" />。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+`Close`方法释放与关联的非托管和托管资源<xref:System.Net.Sockets.NetworkStream>。 如果<xref:System.Net.Sockets.NetworkStream>拥有基础<xref:System.Net.Sockets.Socket>，也会关闭。
+
+如果<xref:System.Net.Sockets.NetworkStream>与关联<xref:System.Net.Sockets.TcpClient>，则`Close`方法将关闭 TCP 连接，但不是会释放关联的<xref:System.Net.Sockets.TcpClient>。
+
+## Examples  
+下面的代码示例关闭<xref:System.Net.Sockets.NetworkStream>。
+
+```vb
+' Example for closing the NetworkStream.
+' Close the NetworkStream
+myNetworkStream.Close()
+```
+
+```csharp
+// Example for closing the NetworkStream.
+
+// Close the NetworkStream
+myNetworkStream.Close();
+```
+
+```cpp
+// Example for closing the NetworkStream.
+// Close the NetworkStream
+myNetworkStream->Close();
+```
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Close">
@@ -1643,8 +1674,19 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放由 <see cref="T:System.Net.Sockets.NetworkStream" /> 使用的所有资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+在完成使用 `Dispose` 后，应调用 <xref:System.Net.Sockets.NetworkStream>。 `Dispose` 方法使 <xref:System.Net.Sockets.NetworkStream> 处于不可用状态。 在调用`Dispose`，必须释放对所有引用<xref:System.Net.Sockets.NetworkStream>这样垃圾回收器才能收回内存的<xref:System.Net.Sockets.NetworkStream>占用。 有关使用 Dispose 方法的详细信息，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。
+
+> [!NOTE]
+> 每次释放对 `Dispose` 的最后一个引用前，均应调用 <xref:System.Net.Sockets.NetworkStream>。 否则，它所使用的资源不释放垃圾回收器调用直到<xref:System.Net.Sockets.NetworkStream>对象的 Finalize 方法。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="Write">

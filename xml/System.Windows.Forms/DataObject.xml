@@ -1,11 +1,11 @@
 <Type Name="DataObject" FullName="System.Windows.Forms.DataObject">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="a7a5486164ebbb2c219a646801e79ea2ed95a6ab" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="89b7cb5e629bf1b51a2ded438436a96dd3d3a9f5" />
+    <Meta Name="ms.sourcegitcommit" Value="c902e847cd05ac37d93eca981b0fb009aae0a790" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52234543" />
+    <Meta Name="ms.lasthandoff" Value="11/28/2018" />
+    <Meta Name="ms.locfileid" Value="52454895" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class DataObject : System.Runtime.InteropServices.ComTypes.IDataObject, System.Windows.Forms.IDataObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataObject extends System.Object implements class System.Runtime.InteropServices.ComTypes.IDataObject, class System.Windows.Forms.IDataObject" />
@@ -59,7 +59,7 @@
  在中[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]，则<xref:System.Windows.Forms.DataObject>类提供了其他方法，使其更容易处理的数据通用格式。 若要添加到特定格式的数据<xref:System.Windows.Forms.DataObject>，使用适当`Set`*格式*方法，如<xref:System.Windows.Forms.DataObject.SetText%2A>。 若要检索从特定格式的数据<xref:System.Windows.Forms.DataObject>，首先调用相应`Contains`*格式*方法 (如<xref:System.Windows.Forms.DataObject.ContainsText%2A>) 来确定是否<xref:System.Windows.Forms.DataObject>包含数据采用此格式，然后调用适当`Get`*格式*方法 (如<xref:System.Windows.Forms.DataObject.GetText%2A>) 来检索数据，如果<xref:System.Windows.Forms.DataObject>包含它。  
   
 > [!NOTE]
->  使用剪贴板使用图元文件格式时，可能需要特别注意的事项。 由于中的当前实现的限制<xref:System.Windows.Forms.DataObject>使用较旧的图元文件格式的应用程序可能无法识别类，使用.NET Framework 的图元文件格式。 在这种情况下，您必须进行互操作与 Win32 剪贴板应用程序编程接口 (Api)。 有关详细信息，请参阅 323530，"图元文件上剪贴板是不可见对所有应用程序，"在 Microsoft 知识库文章在http://support.microsoft.com。  
+>  使用剪贴板使用图元文件格式时，可能需要特别注意的事项。 由于中的当前实现的限制<xref:System.Windows.Forms.DataObject>使用较旧的图元文件格式的应用程序可能无法识别类，使用.NET Framework 的图元文件格式。 在这种情况下，您必须进行互操作与 Win32 剪贴板应用程序编程接口 (Api)。
 >   
 >  对象必须可序列化，才能将其放到剪贴板上。 请参阅<xref:System.Runtime.Serialization>的序列化的详细信息。 如果目标应用程序需要非常特定的数据格式，标头添加到序列化过程中的数据可能会阻止应用程序识别你的数据。 若要保留您的数据格式，请添加你的数据作为<xref:System.Byte>到数组<xref:System.IO.MemoryStream>，并将传递<xref:System.IO.MemoryStream>到<xref:System.Windows.Forms.DataObject.SetData%2A>方法。  
   

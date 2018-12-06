@@ -1,11 +1,11 @@
 <Type Name="HttpResponse" FullName="System.Web.HttpResponse">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="35fbae2126834b4e6884bd27e3392db3e0a9884e" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="a17c7c8e915146f80783b48f66085b74aa697ffa" />
+    <Meta Name="ms.sourcegitcommit" Value="c902e847cd05ac37d93eca981b0fb009aae0a790" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52209251" />
+    <Meta Name="ms.lasthandoff" Value="11/28/2018" />
+    <Meta Name="ms.locfileid" Value="52454921" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class HttpResponse" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpResponse extends System.Object" />
@@ -1965,7 +1965,7 @@
  <xref:System.Web.HttpResponse.Redirect%2A> 调用<xref:System.Web.HttpResponse.End%2A>该类会引发<xref:System.Threading.ThreadAbortException>完成后的异常。 此异常有不利的影响对 Web 应用程序性能。 因此，我们建议，而不是此重载使用<xref:System.Web.HttpResponse.Redirect%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>重载，并传递`false`有关`endResponse`参数，然后再调用<xref:System.Web.HttpApplication.CompleteRequest%2A>方法。 有关更多信息，请参见 <xref:System.Web.HttpResponse.End%2A> 方法。  
   
 > [!NOTE]
->  对于移动的页面，如果你的应用程序依赖于无 cookie 会话，或者可能收到来自移动设备需要的无 cookie 会话请求在路径中使用波形符 （~） 可以导致创建新的会话和可能丢失会话数据。 使用路径移动控件上设置属性如"~ / 路径"，解析路径使用<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"~ / 路径"之前将其分配给该属性。  
+>  移动页仅，如果你的应用程序依赖无 cookie 会话，或从移动设备需要的无 cookie 会话可能会收到请求，使用波形符 (\~) 的路径中可能会导致创建新的会话，并有可能丢失会话数据。 如使用路径移动控件上设置属性"\~/path"，路径使用解析<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"\~/path"之前将其分配给该属性。  
   
  ASP.NET 执行通过返回 HTTP 状态代码为 302 重定向。 将控制转移到另一页的替代方法是<xref:System.Web.HttpServerUtility.Transfer%2A>方法。 <xref:System.Web.HttpServerUtility.Transfer%2A>方法是通常效率更高，因为它不会一次往返过程导致向客户端。 有关详细信息，请参阅[如何： 将用户重定向到另一页](https://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)。  
   
@@ -2021,7 +2021,7 @@
  当你使用此方法在页处理程序中一页，并开始新请求的另一页，设置的终止请求`endResponse`到`false`，然后调用<xref:System.Web.HttpApplication.CompleteRequest%2A>方法。 如果指定`true`有关`endResponse`参数，此方法调用<xref:System.Web.HttpResponse.End%2A>原始请求，将引发方法<xref:System.Threading.ThreadAbortException>操作完成时的异常。 此异常有不利的影响对 Web 应用程序性能，这就是原因传递`false`为`endResponse`建议参数。 有关更多信息，请参见 <xref:System.Web.HttpResponse.End%2A> 方法。  
   
 > [!NOTE]
->  对于移动页面，如果你的应用程序依赖于无 cookie 会话，或者可能收到来自移动设备需要的无 cookie 会话请求在路径中使用波形符 （~） 可以创建新的会话并有可能会丢失会话数据。 使用路径移动控件上设置属性如"~ / 路径"，解析路径使用<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"~ / 路径"之前将其分配给该属性。  
+>  移动页，如果你的应用程序依赖无 cookie 会话，或从移动设备需要的无 cookie 会话可能会收到请求，使用波形符 (\~) 路径可在创建新的会话和有可能会丢失会话数据。 如使用路径移动控件上设置属性"\~/path"，路径使用解析<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"\~/path"之前将其分配给该属性。  
   
  ASP.NET 执行通过返回 HTTP 状态代码为 302 重定向。 将控制转移到另一页的替代方法是<xref:System.Web.HttpServerUtility.Transfer%2A>方法。 <xref:System.Web.HttpServerUtility.Transfer%2A>方法是通常效率更高，因为它不会一次往返过程导致向客户端。 有关详细信息，请参阅[如何： 将用户重定向到另一页](https://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)。  
   
@@ -3274,7 +3274,7 @@ Response.RedirectToRoutePermanent("Product",
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>属性仅在你的应用程序托管在 IIS 7.0 中使用。 在 IIS 7.0 中的经典模式下运行时<xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>属性的默认值是`true`。 在集成模式下运行时<xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>属性的默认值是`false`。  
+ <xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>属性仅在你的应用程序托管在 IIS 7.0 及更高版本时使用。 当以经典模式运行时<xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>属性的默认值是`true`。 在集成模式下运行时<xref:System.Web.HttpResponse.TrySkipIisCustomErrors%2A>属性的默认值是`false`。  
   
  ]]></format>
         </remarks>

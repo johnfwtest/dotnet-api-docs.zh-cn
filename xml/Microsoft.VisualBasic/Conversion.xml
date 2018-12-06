@@ -1,11 +1,11 @@
 <Type Name="Conversion" FullName="Microsoft.VisualBasic.Conversion">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cc0120340cfb097270b9032d2692b053057366ea" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="65720e28354cf9fe68efb56839ebd7d07c6348ef" />
+    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52242778" />
+    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
+    <Meta Name="ms.locfileid" Value="52381411" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class Conversion" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Conversion extends System.Object" />
@@ -307,7 +307,7 @@ End Class
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回数字的整数部分。</summary>
+        <summary>返回一个数的整数部分。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Fix">
@@ -331,9 +331,9 @@ End Class
         <Parameter Name="Number" Type="System.Decimal" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Decimal" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -343,8 +343,6 @@ End Class
  之间的差异`Int`并`Fix`功能时，如果`Number`为负，`Int`返回小于或等于第一个负整数`Number`，而`Fix`返回第一个负整数大于或等于`Number`。 例如，`Int`转换为-9，-8.4 和`Fix`将-8.4 转换成-8。  
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
-  
-   
   
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
@@ -394,9 +392,9 @@ End Class
         <Parameter Name="Number" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -406,8 +404,13 @@ End Class
  之间的差异`Int`并`Fix`功能时，如果`Number`为负，`Int`返回小于或等于第一个负整数`Number`，而`Fix`返回第一个负整数大于或等于`Number`。 例如，`Int`转换为-9，-8.4 和`Fix`将-8.4 转换成-8。  
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
-  
-   
+
+开头的性能的 Visual Basic 15.8 `Double`-到-整数的转换进行了优化，如果返回的值传递`Fix`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者，如果`Double`返回的值`Fix`隐式转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为`Off`。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例说明了这种优化的转换：
+
+```vb
+Dim d As Double = 173.7619
+Dim i1 As Integer = CInt(Fix(d))           ' Result: 173
+```  
   
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
@@ -457,9 +460,9 @@ End Class
         <Parameter Name="Number" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Short" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -520,9 +523,9 @@ End Class
         <Parameter Name="Number" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Integer" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -583,9 +586,9 @@ End Class
         <Parameter Name="Number" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Long" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -646,9 +649,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Object" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -658,8 +661,15 @@ End Class
  之间的差异`Int`并`Fix`功能时，如果`Number`为负，`Int`返回小于或等于第一个负整数`Number`，而`Fix`返回第一个负整数大于或等于`Number`。 例如，`Int`转换为-9，-8.4 和`Fix`将-8.4 转换成-8。  
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
-  
-   
+
+如果从 Visual Basic 15.8`Number`自变量是一个对象，其运行时类型是`Double`或`Single`，如果返回的值传递到浮点 point 到整数的转换的性能优化`Fix`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果返回的值`Fix`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 例如:
+
+```vb
+Dim d As Object = 173.7619
+Dim i1 As Integer = CInt(Fix(d))           ' Result: 173
+Dim s As Object = 173.7619F
+Dim i2 As Integer = CInt(Fix(s))           ' Result: 173
+```     
   
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
@@ -709,9 +719,9 @@ End Class
         <Parameter Name="Number" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Single" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -722,8 +732,13 @@ End Class
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
   
+开头的性能的 Visual Basic 15.8 `Single`-到-整数的转换进行了优化，如果返回的值传递`Fix`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者，如果`Single`返回的值`Fix`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例说明了这种优化的转换：
    
-  
+```vb
+Dim s As Single = 173.7619
+Dim i2 As Integer = CInt(Fix(s))           ' Result: 173
+```
+
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
   
@@ -1281,7 +1296,7 @@ End Class
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回数字的整数部分。</summary>
+        <summary>返回一个数的整数部分。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Int">
@@ -1305,9 +1320,9 @@ End Class
         <Parameter Name="Number" Type="System.Decimal" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Decimal" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1317,8 +1332,6 @@ End Class
  之间的差异`Int`并`Fix`功能时，如果`Number`为负，`Int`返回小于或等于第一个负整数`Number`，而`Fix`返回第一个负整数大于或等于`Number`。 例如，`Int`转换为-9，-8.4 和`Fix`将-8.4 转换成-8。  
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
-  
-   
   
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
@@ -1368,9 +1381,9 @@ End Class
         <Parameter Name="Number" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1381,7 +1394,12 @@ End Class
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
   
-   
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Int`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Int`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例说明了这种优化的转换：
+
+```vb
+Dim dbl As Double = 175.7619
+Dim i3 As Integer = CInt(Int(dbl))         ' Result: 175
+```  
   
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
@@ -1431,9 +1449,9 @@ End Class
         <Parameter Name="Number" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Short" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1494,9 +1512,9 @@ End Class
         <Parameter Name="Number" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Integer" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1557,9 +1575,9 @@ End Class
         <Parameter Name="Number" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Long" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1620,9 +1638,9 @@ End Class
         <Parameter Name="Number" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Object" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1633,8 +1651,15 @@ End Class
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
   
-   
-  
+如果从 Visual Basic 15.8`Number`自变量是一个对象，其运行时类型是`Double`或`Single`，如果返回的值传递到浮点 point 到整数的转换的性能优化`Int`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果返回的值`Int`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 例如:
+
+```vb
+Dim d As Object = 173.7619
+Dim i1 As Integer = CInt(Int(d))           ' Result: 173
+Dim s As Object = 173.7619F
+Dim i2 As Integer = CInt(Int(s))           ' Result: 173
+```
+
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
   
@@ -1683,9 +1708,9 @@ End Class
         <Parameter Name="Number" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Double" /> 类型的数字或任何有效的数值表达式。 如果 <paramref name="Number" /> 包含 <see langword="Nothing" />，则返回 <see langword="Nothing" />。</param>
-        <summary>返回数字的整数部分。</summary>
-        <returns>返回数字的整数部分。</returns>
+        <param name="Number">必须的。 <see langword="Single" /> 类型的数字或任何有效的数值表达式。</param>
+        <summary>返回一个数的整数部分。</summary>
+        <returns>数字的整数部分。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1696,8 +1721,13 @@ End Class
   
  `Fix(number)` 等效于 `Sign(number) * Int(Abs(number)).`  
   
-   
-  
+开头的性能的 Visual Basic 15.8 `Single`-到-整数的转换进行了优化，如果返回的值传递`Int`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者，如果`Single`返回的值`Int`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例说明了这种优化的转换：
+
+```vb
+Dim sng As Single = 175.7619
+Dim i3 As Integer = CInt(Fix(sng))         ' Result: 175
+```
+
 ## Examples  
  此示例演示了如何`Int`和`Fix`函数返回数字的整数部分。 如果参数为负号，`Int`函数返回第一个负整数小于或等于编号;`Fix`函数返回第一个负整数大于或等于数。 下面的示例要求您指定`Option Strict Off`因为类型隐式转换从`Double`键入`Integer`不允许基于`Option Strict On`:  
   
@@ -2336,7 +2366,7 @@ End Class
       <Docs>
         <param name="Expression">必须的。 任何有效的 <see langword="String" /> 表达式、<see langword="Object" /> 变量或 <see langword="Char" /> 值。 如果 <paramref name="Expression" /> 属于类型 <see langword="Object" />，其值必须可转换为 <see langword="String" />，否则将发生 <see cref="T:System.ArgumentException" /> 错误。</param>
         <summary>将字符串中包含的数字作为适当类型的数值返回。</summary>
-        <returns>将字符串中包含的数字作为适当类型的数值返回。</returns>
+        <returns>字符串中包含的作为适当类型数值的数字。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2345,37 +2375,34 @@ End Class
   
  以下调用返回值 1615198。  
   
-```  
-  
+```vb  
 Val(" 1615 198th Street N.E.")   
 ```  
   
- 以下调用返回的十进制值为-1。  
+以下调用返回的十进制值为-1。  
   
-```  
-  
+```vb  
 Val("&HFFFF")   
 ```  
   
 > [!NOTE]
 >  `Val`函数可以识别只将句点 (`.`) 作为有效的小数分隔符。 当使用不同的小数点分隔符时，国际应用程序，如使用`CDbl`或`CInt`改为将字符串转换为数字。 若要将特定区域性的数字的字符串表示形式转换为数字值，请使用数值类型的`Parse(String, IFormatProvider)`方法。 例如，使用<xref:System.Double.Parse%2A?displayProperty=nameWithType>转换为字符串时`Double`。  
   
-> [!NOTE]
->  <xref:System.InvalidCastException>可能在某些不常见的数字格式的响应中引发异常。 例如，下面的代码引发此异常。  
->   
->  `' These examples cause run-time errors.`  
->   
->  `'Console.WriteLine(Val("1.34%"))`  
->   
->  `'Console.WriteLine(Val("1.34&"))`  
->   
->  格式为数之间的冲突`Double`和`Integer`和`Long`编译器会发现类型字符，如果它未包含在一个字符串。  
->   
->  `' These examples cause compiler errors.`  
->   
->  `'Dim m = 1.34%`  
->   
->  `'Dim n = 1.34&`  
+<xref:System.InvalidCastException>以响应某些不常见的数字格式可能会引发异常。 例如，下面的代码引发此异常。  
+
+```vb
+' These examples cause run-time errors.  
+Console.WriteLine(Val("1.34%"))  
+Console.WriteLine(Val("1.34&"))  
+```
+
+格式为数之间的冲突`Double`和`Integer`和`Long`编译器会发现类型字符，如果它未包含在一个字符串。  
+
+```vb
+' These examples cause compiler errors.  
+Dim m = 1.34%  
+Dim n = 1.34&
+```  
   
    
   
@@ -2420,7 +2447,7 @@ Val("&HFFFF") 
       <Docs>
         <param name="Expression">必须的。 任何有效的 <see langword="String" /> 表达式、<see langword="Object" /> 变量或 <see langword="Char" /> 值。 如果 <paramref name="Expression" /> 属于类型 <see langword="Object" />，其值必须可转换为 <see langword="String" />，否则将发生 <see cref="T:System.ArgumentException" /> 错误。</param>
         <summary>将字符串中包含的数字作为适当类型的数值返回。</summary>
-        <returns>将字符串中包含的数字作为适当类型的数值返回。</returns>
+        <returns>字符串中包含的作为适当类型数值的数字。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2429,15 +2456,13 @@ Val("&HFFFF") 
   
  以下调用返回值 1234123。  
   
-```  
-  
+```vb  
 Val(" 1234 123th Street N.E.")   
 ```  
   
- 以下调用返回的十进制值为-1。  
+以下调用返回的十进制值为-1。  
   
-```  
-  
+```vb  
 Val("&HFFFF")   
 ```  
   
@@ -2445,7 +2470,7 @@ Val("&HFFFF") 
 >  `Val`函数可以识别只将句点 (`.`) 作为有效的小数分隔符。 当使用其他十进制分隔符时，国际应用程序，如使用`CDbl`或`CInt`改为将字符串转换为数字。 若要将特定区域性的数字的字符串表示形式转换为数字值，请使用数值类型的`Parse(String, IFormatProvider)`方法。 例如，使用<xref:System.Double.Parse%2A?displayProperty=nameWithType>转换为字符串时`Double`。  
   
 > [!NOTE]
->  <xref:System.InvalidCastException>可能在某些不常见的数字格式的响应中引发异常。 例如，下面的代码引发此异常。  
+>  <xref:System.InvalidCastException>以响应某些不常见的数字格式可能会引发异常。 例如，下面的代码引发此异常。  
 >   
 >  `' These examples cause run-time errors.`  
 >   
@@ -2504,7 +2529,7 @@ Val("&HFFFF") 
       <Docs>
         <param name="InputStr">必须的。 任何有效的 <see langword="String" /> 表达式、<see langword="Object" /> 变量或 <see langword="Char" /> 值。 如果 <paramref name="Expression" /> 属于类型 <see langword="Object" />，其值必须可转换为 <see langword="String" />，否则将发生 <see cref="T:System.ArgumentException" /> 错误。</param>
         <summary>将字符串中包含的数字作为适当类型的数值返回。</summary>
-        <returns>将字符串中包含的数字作为适当类型的数值返回。</returns>
+        <returns>字符串中包含的作为适当类型数值的数字。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2513,15 +2538,13 @@ Val("&HFFFF") 
   
  以下调用返回值 1234123。  
   
-```  
-  
+```vb  
 Val(" 1234 123th Street N.E.")   
 ```  
   
- 以下调用返回的十进制值为-1。  
+以下调用返回的十进制值为-1。  
   
-```  
-  
+```vb  
 Val("&HFFFF")   
 ```  
   

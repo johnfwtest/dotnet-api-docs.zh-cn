@@ -1,11 +1,11 @@
 <Type Name="XmlSchemaDatatype" FullName="System.Xml.Schema.XmlSchemaDatatype">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="74bc8e0e2454425283232d342b277674583e9a17" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
+    <Meta Name="ms.openlocfilehash" Value="fd74f89cbe9b2982b49752ff9b6b16016e220713" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46595369" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52589576" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class XmlSchemaDatatype" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlSchemaDatatype extends System.Object" />
@@ -341,12 +341,32 @@
         <Parameter Name="nsmgr" Type="System.Xml.XmlNamespaceManager" />
       </Parameters>
       <Docs>
-        <param name="s">To be added.</param>
-        <param name="nameTable">To be added.</param>
-        <param name="nsmgr">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="s">要根据简单类型验证的字符串。</param>
+        <param name="nameTable">分析字符串时用于原子化的 <see cref="T:System.Xml.XmlNameTable" />（如果 <see cref="T:System.Xml.Schema.XmlSchemaDatatype" /> 对象表示 xs:NCName 类型）。</param>
+        <param name="nsmgr">如果 <see cref="T:System.Xml.Schema.XmlSchemaDatatype" /> 对象表示 xs:QName 类型，在分析字符串时使用 <see cref="T:System.Xml.XmlNamespaceManager" /> 对象。</param>
+        <summary>在派生类中重写时，根据内置或用户定义的简单类型验证指定的字符串。</summary>
+        <returns>
+          <see cref="T:System.Object" />，它可以安全地强制转换为由 <see cref="P:System.Xml.Schema.XmlSchemaDatatype.ValueType" /> 属性返回的类型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A>方法验证根据内置或用户定义的简单类型指定的字符串。 例如，如果此<xref:System.Xml.Schema.XmlSchemaDatatype>表示类型 xs: date，则实例<xref:System.DateTime>返回。
+
+以下是期间所执行的步骤<xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A>方法的验证过程。
+
+1. 将指定的字符串转换为其相应的公共语言运行时 (CLR) 类型。
+
+2. 验证值不违反任何简单类型定义的方面。
+
+然后返回的已转换的值为<xref:System.Object>可以安全地强制转换为返回的类型和<xref:System.Xml.Schema.XmlSchemaDatatype.ValueType>属性。
+
+当<xref:System.Xml.Schema.XmlSchemaDatatype>对象表示列表类型，输入的字符串值转换为一个或多个对象的列表。 当<xref:System.Xml.Schema.XmlSchemaDatatype>对象表示列表类型，尝试解析输入的值作为联合的成员类型。 如果尝试分析失败，然后尝试并集的下一个成员进行转换，直到分析成功或有其他要分析的成员类型。 如果分析失败，将引发异常。
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaValidationException">输入值不是该 W3C XML 架构类型的有效实例。</exception>
+        <exception cref="T:System.ArgumentNullException">要分析的值不能为 NULL（在 Visual Basic 中为 Nothing）。</exception>
       </Docs>
     </Member>
     <Member MemberName="TokenizedType">

@@ -1,11 +1,11 @@
 <Type Name="VirtualPathUtility" FullName="System.Web.VirtualPathUtility">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cf230d391fafc847646a924df443bc65fd1570c8" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="e458b033648dd257a9cd90aa518fef7f1ceff568" />
+    <Meta Name="ms.sourcegitcommit" Value="c902e847cd05ac37d93eca981b0fb009aae0a790" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52240725" />
+    <Meta Name="ms.lasthandoff" Value="11/28/2018" />
+    <Meta Name="ms.locfileid" Value="52454219" />
   </Metadata>
   <TypeSignature Language="C#" Value="public static class VirtualPathUtility" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VirtualPathUtility extends System.Object" />
@@ -32,7 +32,7 @@
   
  使用<xref:System.Web.VirtualPathUtility>类时需要将应用程序相对路径转换为绝对虚拟路径，如可能是这种情况在开发自定义 Web 服务处理程序。  
   
- 绝对虚拟路径以斜杠 （/） 开头。 相对虚拟路径是相对于应用程序根目录中，如果它有只是波形符 （~） 或开始使用波形符和双反斜杠符号 (~\\\\) 或波形符和斜线 (~ /)。 使虚拟路径相对使独立的应用程序的路径。  
+ 绝对虚拟路径以斜杠 （/） 开头。 相对虚拟路径是相对于应用程序根目录中，如果只是波形符 (\~) 或开始使用波形符和双反斜杠 (\~\\\\) 或波形符和斜线 (\~/)。 使虚拟路径相对使独立的应用程序的路径。  
   
  可以从应用程序的虚拟目录<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>和<xref:System.Web.HttpRequest.ApplicationPath%2A>属性。  
   
@@ -163,7 +163,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果`virtualPath`未取得 root 权限; 也就是说，它不等于根操作符 （波形符 [~]），不以波形符 （~），如波形符和斜线 (~ /) 或波形符和双反斜杠符号 (~ / /)，或不以斜杠标记 （/） 开头<xref:System.ArgumentException>异常 将引发。  
+ 如果`virtualPath`未取得 root 权限; 即，不等于根目录运算符 (波形符 [\~])，不会启动使用波形符 (\~)，如波形符和斜线 (\~/) 或波形符和双反斜杠 (\~/ /)，或不能以斜杠标记 （/） 开头<xref:System.ArgumentException>引发异常。  
   
  如果传递到的虚拟路径<xref:System.Web.VirtualPathUtility.GetDirectory%2A>方法是`"/images/image1.gif"`，则返回的目录是`"/images"`。  
   
@@ -400,7 +400,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果`fromPath`和`toPath`参数未取得 root 权限; 也就是说，它们不相等根操作符 （波形符 [~]），不启动带颚化符 （~），如波形符和斜线 (~ /) 或波形符和双反斜杠符号 (~ / /)，或使用的斜杠标记 （不启动/）、<xref:System.ArgumentException>引发异常。  
+ 如果`fromPath`和`toPath`参数未取得 root 权限; 也就是说，它们不相等根操作符 (波形符 [\~])，不是以波形符开头 (\~)，如波形符和斜线 (\~/) 或波形符和一个双精度值反斜杠 (\~/ /)，或不以斜杠标记 （/） 开头<xref:System.ArgumentException>引发异常。  
   
  在确定的相对路径不使用查询字符串参数和 URI 中使用的 HTML 定位点。  
   
