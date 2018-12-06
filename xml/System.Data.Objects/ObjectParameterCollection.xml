@@ -1,11 +1,11 @@
 <Type Name="ObjectParameterCollection" FullName="System.Data.Objects.ObjectParameterCollection">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="78e20dec0862b6bfdc41fd74e571653d21a0de1d" />
-    <Meta Name="ms.sourcegitcommit" Value="81e3b98e6e33e101af4c17f69cbce407e28d5bc2" />
+    <Meta Name="ms.openlocfilehash" Value="00f0b6365bb0246d880a744f02843764781db673" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
-    <Meta Name="ms.locfileid" Value="52586033" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52910343" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class ObjectParameterCollection : System.Collections.Generic.ICollection&lt;System.Data.Objects.ObjectParameter&gt;, System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectParameter&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectParameterCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;class System.Data.Objects.ObjectParameter&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Objects.ObjectParameter&gt;, class System.Collections.IEnumerable" />
@@ -110,12 +110,11 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="parameter" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="parameter" /> 实参已存在于集合中。 此行为与允许重复项的大多数集合的行为不同。  
+          <paramref name="parameter" />参数集合中已存在。 此行为与允许重复项的大多数集合的行为不同。  
   
 或 
-与 <paramref name="parameter" /> 实参具有相同名称的另一个形参已存在于集合中。 注意，查找是区分大小写的。 此行为与大多数集合的行为不同，更类似于 <see cref="T:System.Collections.Generic.Dictionary`2" /> 的行为。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="parameter" /> 的类型无效。</exception>
+与同名的另一个参数<paramref name="parameter" />参数集合中已存在。 注意，查找是区分大小写的。 此行为与大多数集合的行为不同，更类似于 <see cref="T:System.Collections.Generic.Dictionary`2" /> 的行为。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">类型<paramref name="parameter" />无效。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/ef/querying-a-conceptual-model.md">查询数据作为对象和形成结果 （实体框架）</related>
       </Docs>
     </Member>
@@ -178,7 +177,7 @@
       <Docs>
         <param name="parameter">要在集合中查找的 <see cref="T:System.Data.Objects.ObjectParameter" />。</param>
         <summary>按引用检查集合中是否存在指定的 <see cref="T:System.Data.Objects.ObjectParameter" />。</summary>
-        <returns>如果在集合中找到参数对象，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
+        <returns>返回<see langword="true" />如果参数对象已在集合中找到; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -213,7 +212,7 @@
       <Docs>
         <param name="name">要在集合中查找的参数的名称。 此名称不应包含“@”参数标记（它用在实体 SQL 语句中），只能为实际名称。</param>
         <summary>确定集合中是否存在具有指定名称的 <see cref="T:System.Data.Objects.ObjectParameter" />。</summary>
-        <returns>如果在集合中找到具有指定名称的参数，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
+        <returns>返回<see langword="true" />具有指定名称的参数是否在集合中找到; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -355,7 +354,7 @@
       <Docs>
         <param name="parameter">要从集合中移除的对象。</param>
         <summary>按引用从集合中移除 <see cref="T:System.Data.Objects.ObjectParameter" /> 的实例（如果集合中存在该实例）。</summary>
-        <returns>如果在集合中找到并移除了参数对象，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
+        <returns>返回<see langword="true" />如果参数对象已找到并从集合中移除; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -397,7 +396,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示集合是只读的还是可修改的。</summary>
-        <value>一个布尔值，如果集合是只读的，则为 <see langword="true" />；如果集合是可修改的，则为 <see langword="false" />。</value>
+        <value>一个布尔值，是<see langword="true" />如果集合是只读的和<see langword="false" />可修改的集合。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

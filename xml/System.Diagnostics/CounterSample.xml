@@ -1,11 +1,11 @@
 <Type Name="CounterSample" FullName="System.Diagnostics.CounterSample">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="50558dd287b40ff6299b446f01f85d45b19b9f24" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="0102a8b8c17d5e7a57dd58d1dff72f589f38324e" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52222485" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52914348" />
   </Metadata>
   <TypeSignature Language="C#" Value="public struct CounterSample" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit CounterSample extends System.ValueType" />
@@ -28,7 +28,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>定义存放性能计数器的原始数据的结构。</summary>
+    <summary>定义一个包含性能计数器的原始数据结构。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -81,14 +81,13 @@
       </Parameters>
       <Docs>
         <param name="rawValue">与性能计数器样本关联的数值。</param>
-        <param name="baseValue">可选的计数器基原始值，仅当该样本基于多个计数器时才使用。</param>
-        <param name="counterFrequency">读取计数器的频率。</param>
-        <param name="systemFrequency">系统读取计数器的频率。</param>
+        <param name="baseValue">可选的基原始值的计数器，该示例基于多个计数器时才使用。</param>
+        <param name="counterFrequency">与读取计数器的频率。</param>
+        <param name="systemFrequency">系统从计数器读取频率。</param>
         <param name="timeStamp">原始时间戳。</param>
         <param name="timeStamp100nSec">原始的高保真时间戳。</param>
-        <param name="counterType">
-          <see cref="T:System.Diagnostics.PerformanceCounterType" /> 对象，它指示计数器的类型，此样本是该计数器的快照。</param>
-        <summary>初始化 <see cref="T:System.Diagnostics.CounterSample" /> 结构的新实例，然后将 <see cref="P:System.Diagnostics.CounterSample.CounterTimeStamp" /> 属性设置为 0（零）。</summary>
+        <param name="counterType">一个<see cref="T:System.Diagnostics.PerformanceCounterType" />对象，指示用于此示例是快照的计数器类型。</param>
+        <summary>初始化的新实例<see cref="T:System.Diagnostics.CounterSample" />结构和集<see cref="P:System.Diagnostics.CounterSample.CounterTimeStamp" />属性设为 0 （零）。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -134,15 +133,14 @@
       </Parameters>
       <Docs>
         <param name="rawValue">与性能计数器样本关联的数值。</param>
-        <param name="baseValue">可选的计数器基原始值，仅当该样本基于多个计数器时才使用。</param>
-        <param name="counterFrequency">读取计数器的频率。</param>
-        <param name="systemFrequency">系统读取计数器的频率。</param>
+        <param name="baseValue">可选的基原始值的计数器，该示例基于多个计数器时才使用。</param>
+        <param name="counterFrequency">与读取计数器的频率。</param>
+        <param name="systemFrequency">系统从计数器读取频率。</param>
         <param name="timeStamp">原始时间戳。</param>
         <param name="timeStamp100nSec">原始的高保真时间戳。</param>
-        <param name="counterType">
-          <see cref="T:System.Diagnostics.PerformanceCounterType" /> 对象，它指示计数器的类型，此样本是该计数器的快照。</param>
+        <param name="counterType">一个<see cref="T:System.Diagnostics.PerformanceCounterType" />对象，指示用于此示例是快照的计数器类型。</param>
         <param name="counterTimeStamp">样本采集时间。</param>
-        <summary>初始化 <see cref="T:System.Diagnostics.CounterSample" /> 结构的新实例，然后将 <see cref="P:System.Diagnostics.CounterSample.CounterTimeStamp" /> 属性设置为传入的值。</summary>
+        <summary>初始化的新实例<see cref="T:System.Diagnostics.CounterSample" />结构和集<see cref="P:System.Diagnostics.CounterSample.CounterTimeStamp" />属性中传递的值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -192,8 +190,8 @@
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取可选的计数器基原始值。</summary>
-        <value>基原始值，仅在样本是基于多个计数器时才使用该值。</value>
+        <summary>获取计数器的一个可选的基原始值。</summary>
+        <value>基原始值，该示例基于多个计数器时，才使用。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -214,7 +212,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>使用指定的计数器样本数据计算性能数据。</summary>
+        <summary>通过使用指定的计数器示例数据计算的性能数据。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Calculate">
@@ -242,9 +240,9 @@
       </Parameters>
       <Docs>
         <param name="counterSample">
-          <see cref="T:System.Diagnostics.CounterSample" /> 结构，用作性能数据计算的基点。</param>
-        <summary>使用单个采样点计算计数器的性能数据。 此方法通常用于非计算所得的性能计数器类型。</summary>
-        <returns>计算的性能值。</returns>
+          <see cref="T:System.Diagnostics.CounterSample" />结构要作为基的点，用于计算的性能数据。</param>
+        <summary>计算使用单个采样点的计数器的性能数据。 此方法通常用于非计算所得的性能计数器类型。</summary>
+        <returns>计算所得的性能值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -274,11 +272,11 @@
       </Parameters>
       <Docs>
         <param name="counterSample">
-          <see cref="T:System.Diagnostics.CounterSample" /> 结构，用作性能数据计算的基点。</param>
+          <see cref="T:System.Diagnostics.CounterSample" />结构要作为基的点，用于计算的性能数据。</param>
         <param name="nextCounterSample">
-          <see cref="T:System.Diagnostics.CounterSample" /> 结构，用作性能数据计算的结束点。</param>
-        <summary>使用两个采样点计算计数器的性能数据。 此方法通常用于计算所得的性能计数器类型，如平均值。</summary>
-        <returns>计算的性能值。</returns>
+          <see cref="T:System.Diagnostics.CounterSample" />结构用作性能数据计算的结束点。</param>
+        <summary>计算使用两个示例点的计数器的性能数据。 此方法通常用于计算所得的性能计数器类型，如平均值。</summary>
+        <returns>计算所得的性能值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,7 +308,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取原始计数器频率。</summary>
-        <value>读取计数器的频率。</value>
+        <value>与读取计数器的频率。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -396,8 +394,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取性能计数器类型。</summary>
-        <value>
-          <see cref="T:System.Diagnostics.PerformanceCounterType" /> 对象，它指示计数器的类型，此样本是该计数器的快照。</value>
+        <value>一个<see cref="T:System.Diagnostics.PerformanceCounterType" />对象，指示用于此示例是快照的计数器类型。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -423,7 +420,7 @@
         <ReturnType>System.Diagnostics.CounterSample</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>定义 <see langword="NumberOfItems32" /> 类型的、未初始化并且为空的性能计数器样本。</summary>
+        <summary>定义类型的空的未初始化性能计数器样本<see langword="NumberOfItems32" />。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -437,13 +434,13 @@
       </Docs>
     </MemberGroup>
     <Member MemberName="Equals">
-      <MemberSignature Language="C#" Value="public bool Equals (System.Diagnostics.CounterSample sample);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Diagnostics.CounterSample sample) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="VB.NET" Value="Public Function Equals (sample As CounterSample) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Equals(System::Diagnostics::CounterSample sample);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+      <MemberSignature Language="C#" Value="public bool Equals (System.Diagnostics.CounterSample sample);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Diagnostics.CounterSample sample) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="VB.NET" Value="Public Function Equals (sample As CounterSample) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Equals(System::Diagnostics::CounterSample sample);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="C#" Value="public bool Equals (System.Diagnostics.CounterSample other);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Diagnostics.CounterSample other) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Equals(System.Diagnostics.CounterSample)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Equals(System.Diagnostics.CounterSample)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="VB.NET" Value="Public Function Equals (other As CounterSample) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Equals(System::Diagnostics::CounterSample other);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="F#" Value="override this.Equals : System.Diagnostics.CounterSample -&gt; bool" Usage="counterSample.Equals other" />
@@ -461,13 +458,15 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sample" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+        <Parameter Name="sample" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
         <Parameter Name="other" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="sample">要与此实例进行比较的 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <param name="other">要与此实例进行比较的 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <summary>指示指定的 <see cref="T:System.Diagnostics.CounterSample" /> 结构是否等于当前的 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</summary>
+        <param name="sample">
+          <see cref="T:System.Diagnostics.CounterSample" />结构与此实例进行比较。</param>
+        <param name="other">
+          <see cref="T:System.Diagnostics.CounterSample" />结构与此实例进行比较。</param>
+        <summary>指示是否指定<see cref="T:System.Diagnostics.CounterSample" />结构是否等于当前<see cref="T:System.Diagnostics.CounterSample" />结构。</summary>
         <returns>如果 <paramref name="sample" /> 等于当前实例，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -480,13 +479,13 @@
       </Docs>
     </Member>
     <Member MemberName="Equals">
-      <MemberSignature Language="C#" Value="public override bool Equals (object o);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (o As Object) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ o);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (o As Object) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ o);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="C#" Value="public override bool Equals (object obj);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Equals(System.Object)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Equals(System.Object)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="F#" Value="override this.Equals : obj -&gt; bool" Usage="counterSample.Equals obj" />
@@ -504,14 +503,17 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="o" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+        <Parameter Name="o" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
         <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="o">要与当前结构进行比较的 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <param name="obj">要与当前结构进行比较的 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <summary>指示指定的结构是否为 <see cref="T:System.Diagnostics.CounterSample" /> 结构且与当前的 <see cref="T:System.Diagnostics.CounterSample" /> 结构相同。</summary>
-        <returns>如果 <paramref name="o" /> 是 <see cref="T:System.Diagnostics.CounterSample" /> 结构且与当前实例相同，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="o">
+          <see cref="T:System.Diagnostics.CounterSample" />结构要与当前结构进行比较。</param>
+        <param name="obj">
+          <see cref="T:System.Diagnostics.CounterSample" />结构要与当前结构进行比较。</param>
+        <summary>指示指定的结构是否<see cref="T:System.Diagnostics.CounterSample" />结构并且等于当前<see cref="T:System.Diagnostics.CounterSample" />结构。</summary>
+        <returns>
+          <see langword="true" /> 如果<paramref name="o" />是<see cref="T:System.Diagnostics.CounterSample" />结构并且等于当前实例; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -545,18 +547,18 @@
       <Parameters />
       <Docs>
         <summary>获取当前计数器示例的哈希代码。</summary>
-        <returns>当前计数器示例的哈希代码。</returns>
+        <returns>当前计数器示例哈希代码。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool operator == (System.Diagnostics.CounterSample a, System.Diagnostics.CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Diagnostics.CounterSample a, valuetype System.Diagnostics.CounterSample b) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (a As CounterSample, b As CounterSample) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(System::Diagnostics::CounterSample a, System::Diagnostics::CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Diagnostics.CounterSample a, System.Diagnostics.CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Diagnostics.CounterSample a, valuetype System.Diagnostics.CounterSample b) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (a As CounterSample, b As CounterSample) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(System::Diagnostics::CounterSample a, System::Diagnostics::CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="C#" Value="public static bool operator == (System.Diagnostics.CounterSample obj1, System.Diagnostics.CounterSample obj2);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Diagnostics.CounterSample obj1, valuetype System.Diagnostics.CounterSample obj2) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.op_Equality(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.op_Equality(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="VB.NET" Value="Public Shared Operator == (obj1 As CounterSample, obj2 As CounterSample) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(System::Diagnostics::CounterSample obj1, System::Diagnostics::CounterSample obj2);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="F#" Value="static member ( = ) : System.Diagnostics.CounterSample * System.Diagnostics.CounterSample -&gt; bool" Usage="obj1 = obj2" />
@@ -574,9 +576,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="a" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+        <Parameter Name="a" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
         <Parameter Name="obj1" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="xamarinmac-3.0" />
-        <Parameter Name="b" Type="System.Diagnostics.CounterSample" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+        <Parameter Name="b" Type="System.Diagnostics.CounterSample" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
         <Parameter Name="obj2" Type="System.Diagnostics.CounterSample" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
@@ -584,9 +586,9 @@
           <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
         <param name="obj1">
           <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <param name="b">要与 <paramref name="a" /> 参数指定的结构进行比较的另一个 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <param name="obj2">要与 <paramref name="obj1" /> 参数指定的结构进行比较的另一个 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <summary>返回一个值，该值指示两个 <see cref="T:System.Diagnostics.CounterSample" /> 结构是否相等。</summary>
+        <param name="b">另一个<see cref="T:System.Diagnostics.CounterSample" />与指定的结构进行比较的结构<paramref name="a" />参数。</param>
+        <param name="obj2">另一个<see cref="T:System.Diagnostics.CounterSample" />与指定的结构进行比较的结构<paramref name="obj1" />参数。</param>
+        <summary>返回一个值，指示两个<see cref="T:System.Diagnostics.CounterSample" />结构是否相等。</summary>
         <returns>如果 <paramref name="a" /> 和 <paramref name="b" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -599,13 +601,13 @@
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool operator != (System.Diagnostics.CounterSample a, System.Diagnostics.CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Diagnostics.CounterSample a, valuetype System.Diagnostics.CounterSample b) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (a As CounterSample, b As CounterSample) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(System::Diagnostics::CounterSample a, System::Diagnostics::CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Diagnostics.CounterSample a, System.Diagnostics.CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Diagnostics.CounterSample a, valuetype System.Diagnostics.CounterSample b) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (a As CounterSample, b As CounterSample) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(System::Diagnostics::CounterSample a, System::Diagnostics::CounterSample b);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="C#" Value="public static bool operator != (System.Diagnostics.CounterSample obj1, System.Diagnostics.CounterSample obj2);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Diagnostics.CounterSample obj1, valuetype System.Diagnostics.CounterSample obj2) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.op_Inequality(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.op_Inequality(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" FrameworkAlternate="xamarinmac-3.0;netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;netcore-2.2;dotnet-plat-ext-2.2" />
       <MemberSignature Language="VB.NET" Value="Public Shared Operator != (obj1 As CounterSample, obj2 As CounterSample) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(System::Diagnostics::CounterSample obj1, System::Diagnostics::CounterSample obj2);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="F#" Value="static member op_Inequality : System.Diagnostics.CounterSample * System.Diagnostics.CounterSample -&gt; bool" Usage="System.Diagnostics.CounterSample.op_Inequality (obj1, obj2)" />
@@ -623,9 +625,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="a" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+        <Parameter Name="a" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
         <Parameter Name="obj1" Type="System.Diagnostics.CounterSample" Index="0" FrameworkAlternate="xamarinmac-3.0" />
-        <Parameter Name="b" Type="System.Diagnostics.CounterSample" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2" />
+        <Parameter Name="b" Type="System.Diagnostics.CounterSample" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2" />
         <Parameter Name="obj2" Type="System.Diagnostics.CounterSample" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
@@ -633,10 +635,11 @@
           <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
         <param name="obj1">
           <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <param name="b">要与 <paramref name="a" /> 参数指定的结构进行比较的另一个 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <param name="obj2">要与 <paramref name="obj1" /> 参数指定的结构进行比较的另一个 <see cref="T:System.Diagnostics.CounterSample" /> 结构。</param>
-        <summary>返回一个值，该值指示两个 <see cref="T:System.Diagnostics.CounterSample" /> 结构是否不等。</summary>
-        <returns>如果 <paramref name="a" /> 和 <paramref name="b" /> 不相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="b">另一个<see cref="T:System.Diagnostics.CounterSample" />与指定的结构进行比较的结构<paramref name="a" />参数。</param>
+        <param name="obj2">另一个<see cref="T:System.Diagnostics.CounterSample" />与指定的结构进行比较的结构<paramref name="obj1" />参数。</param>
+        <summary>返回一个值，指示两个<see cref="T:System.Diagnostics.CounterSample" />结构是否不相等。</summary>
+        <returns>
+          <see langword="true" /> 如果<paramref name="a" />和<paramref name="b" />是否不相等; 否则为 <see langword="false" /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -675,7 +678,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取计数器的原始值。</summary>
-        <value>与性能计数器样本关联的数值。</value>
+        <value>与性能计数器样本关联的数字值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -718,7 +721,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取原始系统频率。</summary>
-        <value>系统读取计数器的频率。</value>
+        <value>系统从计数器读取频率。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -804,7 +807,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取原始的高保真时间戳。</summary>
-        <value>系统时间戳，精度在 0.1 毫秒内。</value>
+        <value>系统时间戳，表示在 0.1 毫秒内。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

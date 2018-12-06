@@ -1,11 +1,11 @@
 <Type Name="OdbcConnection" FullName="System.Data.Odbc.OdbcConnection">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="daac8bfee3732eb0221ecdc67b102f3b3fbb5dc1" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="6dabe673641bf8119aa7414fe3625564936c88ba" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52213126" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52914114" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class OdbcConnection : System.Data.Common.DbConnection, ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcConnection extends System.Data.Common.DbConnection implements class System.ICloneable" />
@@ -38,7 +38,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>表示到数据源的连接是打开的。</summary>
+    <summary>表示与数据源的开放连接。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -105,7 +105,7 @@
 ## Remarks  
  新实例时<xref:System.Data.Odbc.OdbcConnection>创建后，只写和只读属性设置为以下初始值，除非专门设置使用在其关联的关键字<xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>属性。  
   
-|属性|初始值|  
+|Properties|初始值|  
 |----------------|-------------------|  
 |<xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>|空字符串 ("")|  
 |<xref:System.Data.Odbc.OdbcConnection.ConnectionTimeout%2A>|15|  
@@ -149,14 +149,14 @@
       </Parameters>
       <Docs>
         <param name="connectionString">用于打开数据源的连接。</param>
-        <summary>使用指定的连接字符串初始化 <see cref="T:System.Data.Odbc.OdbcConnection" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.Data.Odbc.OdbcConnection" />类与指定的连接字符串。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  新实例时<xref:System.Data.Odbc.OdbcConnection>创建后，只写和只读属性设置为以下初始值，除非专门设置使用在其关联的关键字<xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>属性。  
   
-|属性|初始值|  
+|Properties|初始值|  
 |----------------|-------------------|  
 |<xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>|`connectionString`|  
 |<xref:System.Data.Odbc.OdbcConnection.ConnectionTimeout%2A>|15|  
@@ -212,7 +212,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在数据源中开始事务。</summary>
+        <summary>启动一个事务对数据源。</summary>
         <related type="Article" href="https://msdn.microsoft.com/library/9abc3f92-1be3-4e1a-b360-762dc689650e">连接到数据源</related>
       </Docs>
     </MemberGroup>
@@ -239,7 +239,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在数据源中开始事务。</summary>
+        <summary>启动一个事务对数据源。</summary>
         <returns>表示新事务的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -262,7 +262,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">事务当前是活动的。 不支持并行事务。</exception>
+        <exception cref="T:System.InvalidOperationException">事务是当前处于活动状态。 不支持并行事务。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/9abc3f92-1be3-4e1a-b360-762dc689650e">连接到数据源</related>
       </Docs>
     </Member>
@@ -291,8 +291,8 @@
         <Parameter Name="isolevel" Type="System.Data.IsolationLevel" />
       </Parameters>
       <Docs>
-        <param name="isolevel">该连接的事务隔离级别。 若未指定隔离级别，将使用驱动程序的默认隔离级别。</param>
-        <summary>在数据源中用指定的 <see cref="T:System.Data.IsolationLevel" /> 值开始事务。</summary>
+        <param name="isolevel">此连接的事务隔离级别。 如果不指定隔离级别，使用该驱动程序的默认隔离级别。</param>
+        <summary>启动具有指定的事务在数据源<see cref="T:System.Data.IsolationLevel" />值。</summary>
         <returns>表示新事务的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -312,7 +312,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">事务当前是活动的。 不支持并行事务。</exception>
+        <exception cref="T:System.InvalidOperationException">事务是当前处于活动状态。 不支持并行事务。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/9abc3f92-1be3-4e1a-b360-762dc689650e">连接到数据源</related>
       </Docs>
     </Member>
@@ -342,7 +342,7 @@
       </Parameters>
       <Docs>
         <param name="value">数据库名称。</param>
-        <summary>更改与打开的 <see cref="T:System.Data.Odbc.OdbcConnection" /> 关联的当前数据库。</summary>
+        <summary>更改与打开关联的当前数据库<see cref="T:System.Data.Odbc.OdbcConnection" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -468,7 +468,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置用于打开数据源的字符串。</summary>
-        <value>包括一些需要建立初始连接的设置（例如，数据源名称）的 ODBC 驱动程序连接字符串。 默认值为空字符串 ("")。 最大长度是 1024 个字符。</value>
+        <value>包含设置，例如建立初始连接所需的数据源名称的 ODBC 驱动程序连接字符串。 默认值为空字符串 ("")。 最大长度为 1024年个字符。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -551,10 +551,10 @@ driver-defined-attribute-keyword ::= identifier
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DefaultValue(15)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5">
@@ -565,8 +565,8 @@ driver-defined-attribute-keyword ::= identifier
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置在尝试建立连接时终止尝试并生成错误之前所等待的时间。</summary>
-        <value>等待连接打开的时间（以秒为单位）。 默认值为 15 秒。</value>
+        <summary>获取或设置尝试建立在终止尝试并生成错误之前的连接时等待的时间。</summary>
+        <value>以秒为单位来等待连接打开时间。 默认值为 15 秒。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -602,7 +602,7 @@ driver-defined-attribute-keyword ::= identifier
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建并返回一个与该 <see cref="T:System.Data.Odbc.OdbcCommand" /> 关联的 <see cref="T:System.Data.Odbc.OdbcConnection" /> 对象。</summary>
+        <summary>创建并返回<see cref="T:System.Data.Odbc.OdbcCommand" />对象与关联<see cref="T:System.Data.Odbc.OdbcConnection" />。</summary>
         <returns>一个 <see cref="T:System.Data.Odbc.OdbcCommand" /> 对象。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/9abc3f92-1be3-4e1a-b360-762dc689650e">连接到数据源</related>
@@ -654,7 +654,7 @@ driver-defined-attribute-keyword ::= identifier
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
@@ -666,7 +666,7 @@ driver-defined-attribute-keyword ::= identifier
       </ReturnValue>
       <Docs>
         <summary>获取当前数据库的名称或打开连接后要使用的数据库的名称。</summary>
-        <value>当前数据库的名称。 在打开连接前，默认值一直为空字符串 ("")。</value>
+        <value>当前数据库的名称。 默认值为空字符串 ("") 之前打开连接。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -707,10 +707,10 @@ driver-defined-attribute-keyword ::= identifier
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
@@ -721,8 +721,8 @@ driver-defined-attribute-keyword ::= identifier
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取数据源的服务器名或文件名。</summary>
-        <value>数据源的服务器名或文件名。 在打开连接前，默认值一直为空字符串 ("")。</value>
+        <summary>获取服务器名称或数据源的文件名。</summary>
+        <value>服务器名称或数据源的文件名。 默认值为空字符串 ("") 之前打开连接。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -791,10 +791,10 @@ driver-defined-attribute-keyword ::= identifier
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
@@ -805,8 +805,8 @@ driver-defined-attribute-keyword ::= identifier
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取为当前连接指定的 ODBC 驱动程序名称。</summary>
-        <value>ODBC 驱动程序的名称。 它通常是 DLL 名称（例如 Sqlsrv32.dll）。 在打开连接前，默认值一直为空字符串 ("")。</value>
+        <summary>获取指定当前连接的 ODBC 驱动程序的名称。</summary>
+        <value>ODBC 驱动程序的名称。 这通常是 DLL 名称 (例如 Sqlsrv32.dll)。 默认值为空字符串 ("") 之前打开连接。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -953,7 +953,7 @@ driver-defined-attribute-keyword ::= identifier
       </Parameters>
       <Docs>
         <param name="collectionName">指定要返回的架构的名称。</param>
-        <summary>使用架构名称的指定名称，返回此 <see cref="T:System.Data.Odbc.OdbcConnection" /> 的数据源的架构信息。</summary>
+        <summary>返回此数据源的架构信息<see cref="T:System.Data.Odbc.OdbcConnection" />使用架构名称指定的名称。</summary>
         <returns>一个包含架构信息的 <see cref="T:System.Data.DataTable" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -994,7 +994,7 @@ driver-defined-attribute-keyword ::= identifier
       </Parameters>
       <Docs>
         <param name="collectionName">指定要返回的架构的名称。</param>
-        <param name="restrictionValues">为请求的架构指定一组限制值。</param>
+        <param name="restrictionValues">指定一组请求的架构的限制值。</param>
         <summary>通过使用指定字符串作为架构名称，指定字符串数组作为限制值，返回此 <see cref="T:System.Data.Odbc.OdbcConnection" /> 的数据源的架构信息。</summary>
         <returns>一个包含架构信息的 <see cref="T:System.Data.DataTable" />。</returns>
         <remarks>
@@ -1037,7 +1037,7 @@ driver-defined-attribute-keyword ::= identifier
         <ReturnType>System.Data.Odbc.OdbcInfoMessageEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在 ODBC 驱动程序发送警告或信息性消息时发生。</summary>
+        <summary>ODBC 驱动程序发送警告或信息性消息时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1072,7 +1072,7 @@ driver-defined-attribute-keyword ::= identifier
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>使用 <see cref="P:System.Data.Odbc.OdbcConnection.ConnectionString" /> 指定的属性设置打开到数据源的连接。</summary>
+        <summary>指定的属性设置打开与数据源的连接<see cref="P:System.Data.Odbc.OdbcConnection.ConnectionString" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1111,7 +1111,7 @@ driver-defined-attribute-keyword ::= identifier
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>指示当释放最后的基础连接时可以释放 ODBC 驱动程序管理器环境句柄。</summary>
+        <summary>指示当释放最后一个基础连接时可以释放 ODBC 驱动程序管理器环境句柄。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1156,10 +1156,10 @@ driver-defined-attribute-keyword ::= identifier
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
@@ -1170,7 +1170,7 @@ driver-defined-attribute-keyword ::= identifier
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个包含客户端所连接到的服务器的版本的字符串。</summary>
+        <summary>获取一个字符串，包含客户端连接到服务器的版本。</summary>
         <value>连接的服务器的版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1205,10 +1205,10 @@ driver-defined-attribute-keyword ::= identifier
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5">
@@ -1378,7 +1378,7 @@ driver-defined-attribute-keyword ::= identifier
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.Odbc.OdbcConnection> 实例强制转换为 <xref:System.ICloneable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.Odbc.OdbcConnection> 实例被强制转换为 <xref:System.ICloneable> 接口时使用。  
   
  ]]></format>
         </remarks>
