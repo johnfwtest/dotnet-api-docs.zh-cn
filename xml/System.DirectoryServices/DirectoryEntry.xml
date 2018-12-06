@@ -1,11 +1,11 @@
 <Type Name="DirectoryEntry" FullName="System.DirectoryServices.DirectoryEntry">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f2cd8e6b825aadb6d7b4b52a744d2c33b6c9a983" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
+    <Meta Name="ms.openlocfilehash" Value="9a68f4abb2570031f5de7159bce430e67a635764" />
+    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51924817" />
+    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
+    <Meta Name="ms.locfileid" Value="52740878" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class DirectoryEntry : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectoryEntry extends System.ComponentModel.Component" />
@@ -632,7 +632,8 @@ int main()
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
+        <param name="disposing">
+          <see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
         <summary>释放 <see cref="T:System.DirectoryServices.DirectoryEntry" /> 使用的资源（内存除外）。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -843,7 +844,7 @@ Console::WriteLine("The Native GUID of the ADS object: {0}",
       <Docs>
         <param name="methodName">要调用的方法的名称。</param>
         <param name="args">
-          <see cref="T:System.Object" /> 对象类型的数组，它包含要调用的方法的自变量。</param>
+          <see cref="T:System.Object" /> 对象类型的数组，它包含要调用的方法的参数。</param>
         <summary>对本机 Active Directory 域服务对象调用方法。</summary>
         <returns>被调用的方法的返回值。</returns>
         <remarks>
@@ -1563,7 +1564,7 @@ while (myEnum->MoveNext())
       </ReturnValue>
       <Docs>
         <summary>获取或设置此 <see cref="T:System.DirectoryServices.DirectoryEntry" /> 的路径。</summary>
-        <value>此 <see cref="T:System.DirectoryServices.DirectoryEntry" /> 对象的路径。 默认值为空字符串("")。</value>
+        <value>此 <see cref="T:System.DirectoryServices.DirectoryEntry" /> 对象的路径。 默认值为空字符串 ("")。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1581,7 +1582,7 @@ while (myEnum->MoveNext())
   
  WinNT  
   
--   连接到计算机上的组。 例如，"WinNT **://\<域名 > /\<计算机名称 > /\<组名称 >**"。 如果要连接到本地计算机，"WinNT: / /**\<计算机名称 > /\<组名称 >**"。  
+-   连接到计算机上的组。 例如，"WinNT: / /**\<域名 > /\<计算机名称 > /\<组名称 >**"。 如果要连接到本地计算机，"WinNT: / /**\<计算机名称 > /\<组名称 >**"。  
   
 -   连接到计算机上的用户。 例如，"WinNT: / /**\<域名 > /\<计算机名称 > /\<用户名 >**"。 如果要连接到本地计算机，"WinNT: / /**\<计算机名称 > /\<用户名 >**"。  
   
@@ -1601,7 +1602,7 @@ while (myEnum->MoveNext())
   
 -   连接到 Web 目录。 例如，"IIS://LocalHost/W3SVC/1/ROOT/\<Web 目录名称 >"。  
   
- 若要绑定到使用 LDAP 在当前域，请使用路径"LDAP://RootDSE"，然后获取默认命名上下文并重新绑定该条目。 例如:  
+ 若要绑定到使用 LDAP 在当前域，请使用路径"LDAP://RootDSE"，然后获取默认命名上下文并重新绑定该条目。 例如：  
   
 ```csharp  
 String str = ent.Properties["defaultNamingContext"][0];  

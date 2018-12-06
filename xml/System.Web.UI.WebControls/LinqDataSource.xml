@@ -1,11 +1,11 @@
 <Type Name="LinqDataSource" FullName="System.Web.UI.WebControls.LinqDataSource">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="278222ff91ff6618f382f5af112c4df9a4e17a30" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
+    <Meta Name="ms.openlocfilehash" Value="da29d94f9b61fc4489e520754f8dd3dcb5a0909a" />
+    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51934294" />
+    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
+    <Meta Name="ms.locfileid" Value="52741086" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class LinqDataSource : System.Web.UI.WebControls.ContextDataSource, System.Web.DynamicData.IDynamicDataSource" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinqDataSource extends System.Web.UI.WebControls.ContextDataSource implements class System.Web.DynamicData.IDynamicDataSource, class System.Web.UI.IDataSource" />
@@ -60,7 +60,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>允许通过标记文本在 ASP.NET 网页中使用语言集成查询 (LINQ) 来检索和修改数据对象中的数据。</summary>
+    <summary>支持通过标记文本在 ASP.NET 网页中使用语言集成查询 (LINQ)，以从数据对象中检索和修改数据。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -388,7 +388,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件是否支持在运行时在数据的各部分之间导航。</summary>
+        <summary>获取或设置一个值，该值指示 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件是否支持在运行时对数据的各部分进行导航。</summary>
         <value>如果用户可以对数据进行分页，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1058,10 +1058,22 @@
         <Parameter Name="viewName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="viewName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="viewName">要检索的视图名称，必须是“DefaultView”。</param>
+        <summary>返回与 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 对象关联的数据源视图。</summary>
+        <returns>与 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 对象关联的数据源视图。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<xref:System.Web.UI.WebControls.LinqDataSource>控件支持只有一个数据源视图。 <xref:System.Web.UI.WebControls.LinqDataSourceView>对象具有"DefaultView"的默认名称。 <xref:System.Web.UI.WebControls.LinqDataSourceView>对象定义数据源控件的功能，从基础数据库中检索数据并执行操作，如排序、 insert、 delete 和 update。
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <p>viewName 为 null（Visual Basic 中为 Nothing）或除“DefaultView”以外的名称。</p>
+        </exception>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)">LinqDataSource Web 服务器控件概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/ms178359(v=vs.110)">ASP.NET 数据访问概述</related>
       </Docs>
     </Member>
     <Member MemberName="GetViewNames">
@@ -1084,9 +1096,18 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>返回名称的集合，这些名称表示与 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件关联的视图对象的列表。</summary>
+        <returns>具有一个包含名称“DefaultView”的元素的集合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<xref:System.Web.UI.WebControls.LinqDataSource>控件只支持一个视图名为其基础数据`DefaultView`。 `GetViewNames`方法因此返回仅包含一个元素，其中包含此视图名称的集合。
+
+]]></format>
+        </remarks>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)">LinqDataSource Web 服务器控件概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/ms178359(v=vs.110)">ASP.NET 数据访问概述</related>
       </Docs>
     </Member>
     <Member MemberName="GroupBy">
@@ -1488,9 +1509,18 @@ End Sub
         <Parameter Name="savedState" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="savedState">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="savedState">一个对象，它表示 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件的状态。</param>
+        <summary>加载必须保持的 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件中的值的状态。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+`LoadViewState`方法用于加载以前保存的视图状态的<xref:System.Web.UI.WebControls.LinqDataSource>控件。
+
+]]></format>
+        </remarks>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)">LinqDataSource Web 服务器控件概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/ms178359(v=vs.110)">ASP.NET 数据访问概述</related>
       </Docs>
     </Member>
     <Member MemberName="OnInit">
@@ -1783,9 +1813,11 @@ End Sub
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>保存 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件的当前视图状态。</summary>
+        <returns>一个包含 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件的已保存状态的对象。</returns>
         <remarks>To be added.</remarks>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)">LinqDataSource Web 服务器控件概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/ms178359(v=vs.110)">ASP.NET 数据访问概述</related>
       </Docs>
     </Member>
     <Member MemberName="Select">
@@ -2114,7 +2146,7 @@ protected void LinqDataSource_Selecting(object sender,
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="T:System.Web.DynamicData.IDynamicDataSource" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="T:System.Web.DynamicData.IDynamicDataSource" />。</summary>
         <value>与类关联的类型。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2154,7 +2186,7 @@ protected void LinqDataSource_Selecting(object sender,
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="T:System.Web.DynamicData.IDynamicDataSource" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="T:System.Web.DynamicData.IDynamicDataSource" />。</summary>
         <value>实体的名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2184,7 +2216,7 @@ protected void LinqDataSource_Selecting(object sender,
         <ReturnType>System.EventHandler&lt;System.Web.DynamicData.DynamicValidatorEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="T:System.Web.DynamicData.IDynamicDataSource" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="T:System.Web.DynamicData.IDynamicDataSource" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2270,8 +2302,10 @@ protected void LinqDataSource_Selecting(object sender,
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>跟踪对 <see cref="T:System.Web.UI.WebControls.LinqDataSource" /> 控件的视图状态的更改，以便可将这些更改存储在该控件的 <see cref="T:System.Web.UI.StateBag" /> 对象中。</summary>
         <remarks>To be added.</remarks>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)">LinqDataSource Web 服务器控件概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/ms178359(v=vs.110)">ASP.NET 数据访问概述</related>
       </Docs>
     </Member>
     <Member MemberName="Update">
