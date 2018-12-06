@@ -1,11 +1,11 @@
 <Type Name="FrameworkPropertyMetadata" FullName="System.Windows.FrameworkPropertyMetadata">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="50e37bc8286c8ba1961d7a1c298161a3c9e3100c" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="346b263b0e22fb800ba4b1fdb296032637c17b7c" />
+    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/24/2018" />
-    <Meta Name="ms.locfileid" Value="37492926" />
+    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
+    <Meta Name="ms.locfileid" Value="52737233" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class FrameworkPropertyMetadata : System.Windows.UIPropertyMetadata" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameworkPropertyMetadata extends System.Windows.UIPropertyMetadata" />
@@ -549,7 +549,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值表示依赖属性是否会影响布局引擎操作期间的排列过程。</summary>
-        <value>如果此元数据所在的依赖项对象可能会影响排列处理过程，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果此元数据所在的依赖属性可能会影响排列过程，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -576,7 +576,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -625,7 +625,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
         <altmember cref="M:System.Windows.FrameworkElement.MeasureOverride(System.Windows.Size)" />
       </Docs>
@@ -648,7 +648,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值表示依赖属性是否会影响布局引擎操作期间父元素布局的排列处理过程。</summary>
-        <value>如果此元数据所在的依赖项对象可能会影响特定于其父元素的排列处理过程，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果此元数据所在的依赖属性可能会特别影响其父元素上的排列处理过程，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -669,7 +669,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -691,7 +691,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值表示依赖属性是否会影响布局引擎操作期间其父元素布局的测量过程。</summary>
-        <value>如果此元数据所在的依赖属性可能会影响其父元素上的测量过程，则为 <see langword="true" />；否则为 <see langword="false" />。默认值为 <see langword="false" />。</value>
+        <value>如果该元数据所在的依赖项对象可能会影响特定于其父元素的测量处理过程，则为 <see langword="true" />；否则为 <see langword="false" />。默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -712,7 +712,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -734,7 +734,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示依赖属性是否会以某种方式（这种方式不会具体影响排列或测量，但将请求重绘）对常规布局造成潜在影响。</summary>
-        <value>如果该元数据所在的依赖项对象会影响呈现，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果该元数据所在的依赖属性会影响呈现，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -761,7 +761,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -812,7 +812,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -848,7 +848,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">该属性设置为 <see cref="F:System.Windows.Data.UpdateSourceTrigger.Default" />；您设置的值应成为绑定请求时的默认值。</exception>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
       </Docs>
     </Member>
     <Member MemberName="Inherits">
@@ -869,7 +869,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示依赖属性的值是否可继承。</summary>
-        <value>如果属性值是可继承的，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果属性值可继承，则为 <see langword="true" />否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -897,7 +897,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -919,7 +919,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示依赖属性是否支持数据绑定。</summary>
-        <value>如果要应用该元数据的依赖项对象支持数据绑定，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <value>如果要应用该元数据的依赖属性支持数据绑定，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -982,7 +982,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="P:System.Windows.FrameworkPropertyMetadata.IsDataBindingAllowed" />
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
@@ -1004,9 +1004,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值表示该属性是否包含应用程序可以或应该作为日记功能实现的一部分而存储的日记信息。</summary>
-        <value>
-          <see langword="true" /> 如果应在此元数据应用于; 依赖属性上执行日记功能否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示该属性是否包含应用程序可以或应该存储为日记实现一部分的日记信息。</summary>
+        <value>如果应对应用此元数据的依赖属性执行日记记录，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1019,7 +1018,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
         <altmember cref="T:System.Windows.Navigation.JournalEntry" />
       </Docs>
@@ -1045,9 +1044,9 @@
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="baseMetadata">要合并的基本元数据。</param>
-        <param name="dp">此元数据被应用到的依赖属性。</param>
-        <summary>允许合并源元数据和基本元数据。</summary>
+        <param name="baseMetadata">要合并的基元数据。</param>
+        <param name="dp">要应用此元数据的依赖项属性。</param>
+        <summary>启用源元数据与基元数据的合并。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1057,7 +1056,13 @@
  ]]></format>
         </remarks>
         <block subset="none" type="overrides">
-          <para>派生的类<see cref="T:System.Windows.PropertyMetadata" />（或特别是此类） 应重写此方法要考虑的他们已在其实现中添加了任何元数据属性。例如，您的实现可能会添加一个新的按标志枚举值，和<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />实现应能够正确组合这些标志。始终调用您自己的实现之前, 的基实现，因为基实现负责合并已在以前在层次结构中的类型上定义的所有属性。添加的行为<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />中的实现<see cref="T:System.Windows.FrameworkPropertyMetadata" />在于特定 WPF 框架级别属性如元数据中<see cref="P:System.Windows.FrameworkPropertyMetadata.AffectsRender" />组合中的按位或操作。<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />行为还实现行为时通过调用替代现有依赖属性上的属性元数据<see cref="M:System.Windows.DependencyProperty.OverrideMetadata(System.Type,System.Windows.PropertyMetadata)" />。，使用重写元数据的<see cref="T:System.Windows.FrameworkPropertyMetadata" />。</para>
+          <para>派生的类<see cref="T:System.Windows.PropertyMetadata" />（或特别是此类） 应重写此方法要考虑的他们已在其实现中添加了任何元数据属性。 例如，您的实现可能会添加一个新的按标志枚举值，和<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />实现应能够正确组合这些标志。  
+  
+始终调用您自己的实现之前, 的基实现，因为基实现负责合并已在以前在层次结构中的类型上定义的所有属性。  
+  
+添加的行为<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />中的实现<see cref="T:System.Windows.FrameworkPropertyMetadata" />在于特定 WPF 框架级别属性如元数据中<see cref="P:System.Windows.FrameworkPropertyMetadata.AffectsRender" />组合中的按位或操作。  
+  
+<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />行为还实现行为时通过调用替代现有依赖属性上的属性元数据<see cref="M:System.Windows.DependencyProperty.OverrideMetadata(System.Type,System.Windows.PropertyMetadata)" />，使用重写元数据的<see cref="T:System.Windows.FrameworkPropertyMetadata" />。</para>
         </block>
         <altmember cref="M:System.Windows.PropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />
         <altmember cref="P:System.Windows.PropertyMetadata.IsSealed" />
@@ -1138,7 +1143,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.FrameworkPropertyMetadataOptions" />
       </Docs>
     </Member>
@@ -1175,7 +1180,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">已对依赖属性操作应用了元数据，因此元数据已密封，且无法设置其属性。</exception>
+        <exception cref="T:System.InvalidOperationException">元数据已经应用到依赖项对象操作，因此，元数据已密封，无法设置元数据的属性。</exception>
         <altmember cref="T:System.Windows.Freezable" />
       </Docs>
     </Member>

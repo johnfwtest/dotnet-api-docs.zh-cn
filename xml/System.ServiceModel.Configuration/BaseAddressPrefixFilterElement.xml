@@ -1,11 +1,11 @@
 <Type Name="BaseAddressPrefixFilterElement" FullName="System.ServiceModel.Configuration.BaseAddressPrefixFilterElement">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1406e5bae3fbdfeb20612b71097a1b0ae0c7417f" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
+    <Meta Name="ms.openlocfilehash" Value="19b90c9baf17424ddf060b87e84655c8ed857b7e" />
+    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48594725" />
+    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
+    <Meta Name="ms.locfileid" Value="52735418" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class BaseAddressPrefixFilterElement : System.Configuration.ConfigurationElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BaseAddressPrefixFilterElement extends System.Configuration.ConfigurationElement" />
@@ -30,7 +30,7 @@
 ## Remarks  
  前缀筛选器为服务提供了一种绑定到特定 URI 的机制。它让您可以为同一站点上的同一方案承载具有不同基址的多个应用程序。  
   
- IIS 网站是包含虚拟目录的虚拟应用程序的容器。 可通过一个或多个 IIS 绑定访问站点上的应用程序。 IIS 绑定提供两条信息：绑定协议和绑定信息。 绑定协议（例如 HTTP）定义了通信发生的方案，而绑定信息（例如 IP 地址、端口、主机头）包含访问站点使用的数据。  
+ IIS 网站是包含虚拟目录的虚拟应用程序的容器。 可通过一个或多个 IIS 绑定访问站点上的应用程序。 IIS 绑定提供两条信息：绑定协议和绑定信息。 绑定协议 (例如，HTTP) 定义的方案，对其进行通信，而绑定信息 （例如，ip 地址、 端口、 主机标头） 包含用于访问站点的数据。  
   
  IIS 支持一个站点指定多个 IIS 绑定，这会导致一个方案有多个基址。 因为一个站点下承载的 WCF 服务允许到每个方案只能有一个基址的绑定，可以使用前缀筛选器功能选取所需的托管服务的基址。  根据可选前缀列表筛选器筛选 IIS 提供的传入基址。  
   
@@ -47,9 +47,9 @@ http://test2.fabrikam.com/Service.svc
 <system.serviceModel>  
   <serviceHostingEnvironment>  
      <baseAddressPrefixFilters>  
-        <add prefix="net.tcp://test1.fabrikam.com:8000"/>  
-        <add prefix="http://test2.fabrikam.com:9000"/>  
-    </baseAddressPrefixFilters>  
+        <add prefix="net.tcp://test1.fabrikam.com:8000"/>  
+        <add prefix="http://test2.fabrikam.com:9000"/>  
+    </baseAddressPrefixFilters>  
   </serviceHostingEnvironment>  
 </system.serviceModel>  
 ```  
