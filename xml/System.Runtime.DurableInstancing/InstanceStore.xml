@@ -1,11 +1,11 @@
 <Type Name="InstanceStore" FullName="System.Runtime.DurableInstancing.InstanceStore">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8972e8c961043629bb8c0c72a45e02d752733a77" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="4a6be1c11096e116388eb56b729ee0512c463bc5" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39993458" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52607152" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class InstanceStore" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InstanceStore extends System.Object" />
@@ -220,7 +220,7 @@
       </Parameters>
       <Docs>
         <param name="instanceId">一个实例标识符。 不得是 Guid.Empty。</param>
-        <summary>创建实例句柄。  如果设置了 DefaultInstanceOwner，此值将作为新句柄的实例所有者自动被绑定。  已作为一个参数传递的实例标识符会作为新句柄的实例自动被绑定。</summary>
+        <summary>创建实例句柄。  如果设置了 DefaultInstanceOwner，此值将作为新句柄的实例所有者自动被绑定。  作为参数传递的实例标识符会作为新句柄的实例自动进行绑定。</summary>
         <returns>实例句柄。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -245,7 +245,7 @@
       </Parameters>
       <Docs>
         <param name="owner">一个实例的所有者。</param>
-        <summary>创建实例句柄。 如果作为参数传递的实例所有者不为 null，则此值会作为新的句柄实例所有者自动被绑定。  （否则，即使设置了 DefaultInstanceOwner，也不会绑定任何实例所有者。）</summary>
+        <summary>创建实例句柄。 如果作为参数传递的实例所有者不为 null，则此值会作为新的句柄实例所有者自动进行绑定。  （否则，即使设置了 DefaultInstanceOwner，也不会绑定任何实例所有者。）</summary>
         <returns>实例句柄。 null 值指示新的句柄不应该自动绑定到实例所有者。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -272,7 +272,7 @@
       <Docs>
         <param name="owner">一个 InstanceOwner 对象，表示一个实例的所有者。 将 null 值作为此参数的值传递，指示新的句柄不应该自动绑定到实例所有者。</param>
         <param name="instanceId">一个实例标识符。 不得是 Guid.Empty。</param>
-        <summary>创建实例句柄。 如果作为参数传递的实例所有者不为 null，则此值会作为新的句柄实例所有者自动被绑定。  （否则，即使设置了 DefaultInstanceOwner，也不会绑定任何实例所有者。）已作为一个参数传递的实例标识符会作为新句柄的实例自动被绑定。</summary>
+        <summary>创建实例句柄。 如果作为参数传递的实例所有者不为 null，则此值会作为新的句柄实例所有者自动进行绑定。  （否则，即使设置了 DefaultInstanceOwner，也不会绑定任何实例所有者。）作为参数传递的实例标识符会作为新句柄的实例自动进行绑定。</summary>
         <returns>实例句柄。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -371,7 +371,7 @@
       <Docs>
         <param name="result">操作的结果。</param>
         <summary>结束异步操作。</summary>
-        <returns>如果永久性提供程序实现不支持传递到 BeginTryCommand 方法的命令，则它应该返回 false。 否则，它应该返回 true 或引发一个异常。</returns>
+        <returns>如果永久性提供程序实现不支持传递到 BeginTryCommand 方法的命令，则它应返回 false。 否则，它应该返回 true 或引发一个异常。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -524,7 +524,7 @@
       </Parameters>
       <Docs>
         <param name="instanceHandle">已释放的实例句柄。</param>
-        <param name="userContext">从 OnNewInstanceHandle 返回的永久性提供程序的用户上下文信息，或者，如果未重写 OnNewInstanceHandle，则为 null。</param>
+        <param name="userContext">从 OnNewInstanceHandle 返回的永久性提供程序的用户上下文信息，或者，如果未替代 OnNewInstanceHandle，则为 null。</param>
         <summary>在释放实例句柄时调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -630,7 +630,7 @@
         <param name="command">要执行的命令。</param>
         <param name="timeout">此操作的超时值。</param>
         <summary>永久性提供程序可实现此方法，这可确定是否可执行特定的永久性命令和是否可异步执行此命令。</summary>
-        <returns>如果永久性提供程序实现不支持作为参数传递的命令，则它应该返回 <see langword="false" />；否则，它应该返回 <see langword="true" /> 或引发一个异常。</returns>
+        <returns>如果永久性提供程序实现不支持作为参数传递的命令，则它应返回 <see langword="false" />；否则，它应返回 <see langword="true" /> 或引发一个异常。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

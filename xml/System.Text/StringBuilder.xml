@@ -1,11 +1,11 @@
 <Type Name="StringBuilder" FullName="System.Text.StringBuilder">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8329e2db3ee82e0cdf4f3d48d2130cafc22833e8" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="d75769fba72ba4165ce31fa609759964ea3d8189" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52228130" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52607106" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class StringBuilder : System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit StringBuilder extends System.Object implements class System.Runtime.Serialization.ISerializable" />
@@ -45,8 +45,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -209,8 +209,7 @@
   
 <a name="Deleting"></a>   
 ### <a name="deleting-text-from-a-stringbuilder-object"></a>从 StringBuilder 对象中删除文本  
- <xref:System.Text.StringBuilder>类包括可以减少的当前大小的方法<xref:System.Text.StringBuilder>实例。 <xref:System.Text.StringBuilder.
-%2A>方法中删除所有字符，并设置<xref:System.Text.StringBuilder.Length%2A>属性设置为零。 <xref:System.Text.StringBuilder.Remove%2A>方法中删除指定的数量的特定索引位置开始的字符。 此外，从末尾删除字符<xref:System.Text.StringBuilder>对象通过设置其<xref:System.Text.StringBuilder.Length%2A>属性的值小于当前实例的长度。  
+ <xref:System.Text.StringBuilder>类包括可以减少的当前大小的方法<xref:System.Text.StringBuilder>实例。 <xref:System.Text.StringBuilder.Clear%2A>方法中删除所有字符，并设置<xref:System.Text.StringBuilder.Length%2A>属性设置为零。 <xref:System.Text.StringBuilder.Remove%2A>方法中删除指定的数量的特定索引位置开始的字符。 此外，从末尾删除字符<xref:System.Text.StringBuilder>对象通过设置其<xref:System.Text.StringBuilder.Length%2A>属性的值小于当前实例的长度。  
   
  以下示例将删除的某些从文本<xref:System.Text.StringBuilder>对象，显示其生成的容量、 最大容量和长度属性值，然后调用<xref:System.Text.StringBuilder.Clear%2A>方法来删除中的所有字符<xref:System.Text.StringBuilder>对象。  
   
@@ -3518,13 +3517,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Text.StringBuilder.Clear%2A> 是一种便捷方法，相当于将当前实例的<xref:System.Text.StringBuilder.Length%2A>属性设置为0（零）。
+ <xref:System.Text.StringBuilder.Clear%2A> 是一种便捷方法，相当于将当前实例的<xref:System.Text.StringBuilder.Length%2A>属性设置为0（零）。  
+  
  调用<xref:System.Text.StringBuilder.Clear%2A>方法不会修改当前实例的<xref:System.Text.StringBuilder.Capacity%2A>或<xref:System.Text.StringBuilder.MaxCapacity%2A>属性。  
   
    
   
 ## Examples  
- 以下示例使用字符串实例化<xref:System.Text.StringBuilder>对象，调用<xref:System.Text.StringBuilder.Clear%2A>方法，然后将追加一个新的字符串。
+ 以下示例使用字符串实例化<xref:System.Text.StringBuilder>对象，调用<xref:System.Text.StringBuilder.Clear%2A>方法，然后将追加一个新的字符串。  
+  
  [!code-csharp[System.Text.StringBuilder.Clear#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.stringbuilder.clear/cs/clear1.cs#1)]
  [!code-vb[System.Text.StringBuilder.Clear#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.stringbuilder.clear/vb/clear1.vb#1)]  
   
@@ -5241,7 +5242,7 @@
         <Parameter Name="length" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="startIndex">To be added.</param>
+        <param name="startIndex">此实例中开始移除操作的从零开始的位置。</param>
         <param name="length">要删除的字符数。</param>
         <summary>将指定范围的字符从此实例中移除。</summary>
         <returns>切除操作完成后对此实例的引用。</returns>
