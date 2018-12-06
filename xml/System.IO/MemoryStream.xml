@@ -1,11 +1,11 @@
 <Type Name="MemoryStream" FullName="System.IO.MemoryStream">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cb1e1cd837f868086e7bccb45addada5d4caecc0" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="8d9947ae94be62e7254a094d4b51a66bea5f63a6" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52194464" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52612703" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class MemoryStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MemoryStream extends System.IO.Stream" />
@@ -43,8 +43,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -846,8 +846,33 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>关闭读写流。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+此方法重写 <xref:System.IO.Stream.Close?displayProperty=nameWithType>。
+
+缓冲区是仍然提供对<xref:System.IO.MemoryStream>后关闭流。
+
+除非显式调用，刷新该流不会刷新其基础编码器<xref:System.IO.MemoryStream.Flush>或`Close`。 设置<xref:System.IO.StreamWriter.AutoFlush>为真，则数据从缓冲区刷新到流中，但编码器状态不会进行刷新。 这将允许编码器，以便它可以正确编码的字符的下一步块保持其状态 （部分字符）。 这种情况下会影响 UTF8，UTF7 其中某些字符仅后才能进行编码的编码器收到的相邻字符。
+
+尝试操作流已关闭后可能会引发<xref:System.ObjectDisposedException>。
+
+## Examples  
+此代码示例是为提供一个更大示例的一部分<xref:System.IO.MemoryStream>类。
+
+```vb
+Finally
+    memStream.Close()
+End Try
+```
+
+]]></format>
+        </remarks>
+        <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
       </Docs>
     </Member>
     <Member MemberName="CopyTo">

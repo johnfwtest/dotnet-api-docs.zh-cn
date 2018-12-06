@@ -1,11 +1,11 @@
 <Type Name="XmlSchemaValidator" FullName="System.Xml.Schema.XmlSchemaValidator">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="dfd5b1e880b5497520109f2817246a6601619512" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
+    <Meta Name="ms.openlocfilehash" Value="f90f4c6eacc5df4cfaee94363abf2a3ea95c7dd1" />
+    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51936088" />
+    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
+    <Meta Name="ms.locfileid" Value="52734386" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class XmlSchemaValidator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaValidator extends System.Object" />
@@ -40,7 +40,7 @@
 ## Remarks  
   
 > [!IMPORTANT]
->  -   不要使用来自未知或不受信任的源或位置的架构。 执行此操作将影响你的代码的安全性。  
+> -   不要使用来自未知或不受信任的源或位置的架构。 执行此操作将影响你的代码的安全性。  
 > -   XML 架构 （包括内联架构） 是本质上是容易受到拒绝服务攻击;不接受不受信任的方案中。  
 > -   架构验证错误消息和异常可能会公开的内容模型的架构文件的 URI 路径的敏感信息。 请注意不公开此信息向不受信任调用方。  
   
@@ -264,7 +264,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回当前元素上下文的期望属性。</summary>
+        <summary>返回当前元素上下文的期望特性。</summary>
         <returns>如果没有期望特性，则为一个 <see cref="T:System.Xml.Schema.XmlSchemaAttribute" /> 对象数组或一个空数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -309,7 +309,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回当前元素上下文中的期望微粒。</summary>
+        <summary>返回当前元素上下文中的期望粒子。</summary>
         <returns>如果没有期望粒子，则为一个 <see cref="T:System.Xml.Schema.XmlSchemaParticle" /> 对象数组或一个空数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -703,7 +703,8 @@ validator.ValidateEndElement(null);
       </ReturnValue>
       <Docs>
         <summary>获取或设置所验证的 XML 节点的行号信息。</summary>
-        <value>一个 <see cref="T:System.Xml.IXmlLineInfo" /> 对象。</value>
+        <value>
+          <see cref="T:System.Xml.IXmlLineInfo" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -750,7 +751,7 @@ validator.ValidateEndElement(null);
       </Parameters>
       <Docs>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性在成功跳过当前元素内容时设置。 此参数可以为 <see langword="null" />。</param>
-        <summary>跳过当前元素内容的验证并准备 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象以验证父元素的上下文中的内容。</summary>
+        <summary>跳过当前元素内容的验证，准备 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象以验证父元素上下文中的内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -825,7 +826,7 @@ validator.ValidateEndElement(null);
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>验证当前元素上下文中的属性。</summary>
+        <summary>验证当前元素上下文中的特性。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ValidateAttribute">
@@ -861,12 +862,12 @@ validator.ValidateEndElement(null);
         <Parameter Name="schemaInfo" Type="System.Xml.Schema.XmlSchemaInfo" />
       </Parameters>
       <Docs>
-        <param name="localName">要验证的属性的本地名称。</param>
-        <param name="namespaceUri">要验证的属性的命名空间 URI。</param>
-        <param name="attributeValue">要验证的属性的值。</param>
+        <param name="localName">要验证的特性的本地名称。</param>
+        <param name="namespaceUri">要验证的特性的命名空间 URI。</param>
+        <param name="attributeValue">要验证的特性的值。</param>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性是在成功验证特性之后设置的。 此参数可以为 <see langword="null" />。</param>
-        <summary>验证当前元素上下文中的属性名称、命名空间 URI 和值。</summary>
-        <returns>验证的属性的值。</returns>
+        <summary>在当前元素上下文中验证特性名称、命名空间 URI 和值。</summary>
+        <returns>验证的特性的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -936,12 +937,12 @@ validator.ValidateEndElement(null);
         <Parameter Name="schemaInfo" Type="System.Xml.Schema.XmlSchemaInfo" />
       </Parameters>
       <Docs>
-        <param name="localName">要验证的属性的本地名称。</param>
-        <param name="namespaceUri">要验证的属性的命名空间 URI。</param>
+        <param name="localName">要验证的特性的本地名称。</param>
+        <param name="namespaceUri">要验证的特性的命名空间 URI。</param>
         <param name="attributeValue">一个 <see cref="T:System.Xml.Schema.XmlValueGetter" /><see langword="delegate" />，用于将属性的值作为与该属性的 XML 架构定义语言 (XSD) 类型兼容的公共语言运行时 (CLR) 类型进行传递。</param>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性是在成功验证特性之后设置的。 此参数可以为 <see langword="null" />。</param>
-        <summary>验证当前元素上下文中的属性名称、命名空间 URI 和值。</summary>
-        <returns>验证的属性的值。</returns>
+        <summary>在当前元素上下文中验证特性名称、命名空间 URI 和值。</summary>
+        <returns>验证的特性的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1138,7 +1139,7 @@ validator.ValidateEndElement(null);
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>对于具有简单内容的元素，根据其数据类型验证元素的文本内容是否有效；对于具有复杂内容的元素，验证当前元素的内容是否完整。</summary>
+        <summary>对于具有简单内容的元素，根据元素的数据类型验证元素的文本内容是否有效；对于具有复杂内容的元素，验证当前元素的内容是否完整。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ValidateEndElement">
@@ -1177,7 +1178,7 @@ validator.ValidateEndElement(null);
       </Parameters>
       <Docs>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性是在成功验证元素之后设置的。 此参数可以为 <see langword="null" />。</param>
-        <summary>对于具有简单内容的元素，根据其数据类型验证元素的文本内容是否有效；对于具有复杂内容的元素，验证当前元素的内容是否完整。</summary>
+        <summary>对于具有简单内容的元素，根据元素的数据类型验证元素的文本内容是否有效；对于具有复杂内容的元素，验证当前元素的内容是否完整。</summary>
         <returns>如果元素具有简单内容，则为该元素已分析的类型化文本值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1236,7 +1237,7 @@ validator.ValidateEndElement(null);
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性是在成功验证元素的文本内容之后设置的。 此参数可以为 <see langword="null" />。</param>
         <param name="typedValue">元素中的类型化文本内容。</param>
         <summary>根据指定元素的数据类型验证该元素的文本内容是否有效。</summary>
-        <returns>元素的已分析的类型化简单内容。</returns>
+        <returns>元素中已分析的类型化简单内容。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1312,7 +1313,7 @@ validator.ValidateEndElement(null);
       </Parameters>
       <Docs>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性是在成功验证元素上下文中存在所有必需特性之后设置的。 此参数可以为 <see langword="null" />。</param>
-        <summary>验证元素上下文中所有必需的属性是否已存在，并且 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象是否已准备好验证元素的子内容。</summary>
+        <summary>验证元素上下文中是否存在所有必需的特性，准备 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象以验证元素的子内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1356,7 +1357,7 @@ validator.ValidateEndElement(null);
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>验证当前元素上下文中是否允许包含文本，并累积文本，以验证当前元素是否包含简单内容。</summary>
+        <summary>验证当前元素上下文中是否允许文本，如果当前元素具有简单内容，则累积文本以进行验证。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ValidateText">

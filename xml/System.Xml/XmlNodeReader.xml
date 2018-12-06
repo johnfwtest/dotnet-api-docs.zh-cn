@@ -1,11 +1,11 @@
 <Type Name="XmlNodeReader" FullName="System.Xml.XmlNodeReader">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d4c1798c265677dd4fdc6e5c8f499fd8c7b5ac27" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
+    <Meta Name="ms.openlocfilehash" Value="ab2104775ed2c8b474493654fb02bbd656d9dbf2" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46619242" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52612716" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class XmlNodeReader : System.Xml.XmlReader, System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNodeReader extends System.Xml.XmlReader implements class System.Xml.IXmlNamespaceResolver" />
@@ -839,7 +839,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <Docs>
         <summary>获取一个值，该值指示当前节点是否为空元素（例如 <c>&lt;MyElement/&gt;</c>）。</summary>
         <value>
-          <see langword="true" /> 如果当前节点是一个元素 (<see cref="P:System.Xml.XmlNodeReader.NodeType" />等于<see langword="XmlNodeType.Element" />)，以及结尾<c> / &gt; </c>; 否则为<see langword="false" />。</value>
+          <see langword="true" /> 如果当前节点是一个元素 (<see cref="P:System.Xml.XmlNodeReader.NodeType" />等于<see langword="XmlNodeType.Element" />)，以及结尾<c>/ &gt;</c>; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -894,10 +894,24 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <Parameter Name="i" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="i">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <param name="i">属性的索引。</param>
+        <summary>获取具有指定索引的属性的值。</summary>
+        <value>指定的属性的值。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+> 在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。
+
+此属性不会移动读取器。
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="i" /> 参数小于 0 或大于等于 <see cref="P:System.Xml.XmlNodeReader.AttributeCount" />。</exception>
+        <altmember cref="Overload:System.Xml.XmlNodeReader.GetAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -925,10 +939,129 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <param name="name">属性的限定名称。</param>
+        <summary>获取具有指定名称的属性的值。</summary>
+        <value>指定的属性的值。 如果未找到该属性，则返回 <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+> 在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。
+
+此属性不会移动读取器。
+
+如果读取器位于 DocumentType 节点上，可以使用此方法以获取 PUBLIC 和 SYSTEM 文本，例如，读取器\["公共"\]。
+
+## Examples  
+下面的示例获取的 ISBN 属性的值。
+
+```vb
+Imports System
+Imports System.IO
+Imports System.Xml
+
+Public Class Sample
+
+    Public Shared Sub Main()
+        Dim reader As XmlNodeReader = Nothing
+        Try
+            'Create and load the XML document.
+            Dim doc As New XmlDocument()
+            doc.LoadXml("<book genre='novel' ISBN='1-861003-78' publicationdate='1987'>" & _
+                        "</book>")
+
+            ' Load the XmlNodeReader 
+            reader = New XmlNodeReader(doc)
+
+            'Read the ISBN attribute.
+            reader.MoveToContent()
+            Dim isbn As String = reader("ISBN")
+            Console.WriteLine("The ISBN value: " & isbn)
+        Finally
+            If Not (reader Is Nothing) Then
+                reader.Close()
+            End If
+        End Try
+    End Sub 'Main 
+End Class 'Sample
+```
+
+```csharp
+using System;
+using System.IO;
+using System.Xml;
+
+public class Sample 
+{
+  public static void Main()
+  {
+    XmlNodeReader reader = null;
+
+    try
+    {
+       //Create and load the XML document.
+       XmlDocument doc = new XmlDocument();
+       doc.LoadXml("<book genre='novel' ISBN='1-861003-78' publicationdate='1987'> " +
+                   "</book>"); 
+
+       // Load the XmlNodeReader 
+       reader = new XmlNodeReader(doc);
+
+       //Read the ISBN attribute.
+       reader.MoveToContent();
+       string isbn =reader["ISBN"];
+       Console.WriteLine("The ISBN value: " + isbn);
+
+     } 
+
+     finally 
+     {
+        if (reader != null)
+          reader.Close();
+      }
+  }
+
+} // End class
+```
+
+```cpp
+#using <System.Xml.dll>
+
+using namespace System;
+using namespace System::IO;
+using namespace System::Xml;
+
+int main()
+{
+   XmlNodeReader^ reader = nullptr;
+   try
+   {
+
+      //Create and load the XML document.
+      XmlDocument^ doc = gcnew XmlDocument;
+      doc->LoadXml( "<book genre='novel' ISBN='1-861003-78' publicationdate='1987'></book>" );
+
+      // Load the XmlNodeReader 
+      reader = gcnew XmlNodeReader( doc );
+
+      //Read the ISBN attribute.
+      reader->MoveToContent();
+      String^ isbn = reader[ "ISBN" ];
+      Console::WriteLine( "The ISBN value: {0}", isbn );
+   }
+   finally
+   {
+      if ( reader != nullptr )
+            reader->Close();
+   }
+}
+```
+
+]]></format>
+        </remarks>
+        <altmember cref="Overload:System.Xml.XmlNodeReader.GetAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -957,11 +1090,23 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <Parameter Name="namespaceURI" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="namespaceURI">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <param name="name">属性的本地名称。</param>
+        <param name="namespaceURI">属性的命名空间 URI。</param>
+        <summary>获取具有指定本地名称和命名空间 URI 的属性的值。</summary>
+        <value>指定的属性的值。 如果未找到该属性，则返回 <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+> 在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。
+
+此属性不会移动读取器。
+
+]]></format>
+        </remarks>
+        <altmember cref="Overload:System.Xml.XmlNodeReader.GetAttribute" />
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -993,7 +1138,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       </ReturnValue>
       <Docs>
         <summary>获取当前节点的本地名称。</summary>
-        <value>移除了前缀的当前节点的名称。 例如，<see langword="LocalName" />是<see langword="book" />元素<c> &lt;bk:book&gt;</c>。  
+        <value>移除了前缀的当前节点的名称。 例如，<see langword="LocalName" />是<see langword="book" />元素<c>&lt;bk:book&gt;</c>。  
   
 对于没有名称的节点类型（如 <see langword="Text" />、<see langword="Comment" /> 等），该属性返回 String.Empty。</value>
         <remarks>
@@ -1429,7 +1574,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       </ReturnValue>
       <Docs>
         <summary>获取当前节点的限定名称。</summary>
-        <value>当前节点的限定名称。 例如，<see langword="Name" />是<see langword="bk:book" />元素<c> &lt;bk:book&gt;</c>。  
+        <value>当前节点的限定名称。 例如，<see langword="Name" />是<see langword="bk:book" />元素<c>&lt;bk:book&gt;</c>。  
   
 返回的名称取决于节点的 <see cref="P:System.Xml.XmlNodeReader.NodeType" />。 下列节点类型返回所列的值。 所有其他节点类型返回空字符串。  
   
@@ -1701,9 +1846,18 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <ReturnType>System.Char</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取用于括起属性节点的值的引号字符。</summary>
+        <value>XmlNodeReader 始终使用双引号 （"）。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+>  在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Read">

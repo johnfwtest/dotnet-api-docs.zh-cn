@@ -1,11 +1,11 @@
 <Type Name="String" FullName="System.String">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="044cd3ac9d4e4074756923f284acebf10b70fd09" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="4d25436086f9e3033aa184eea75f303fbc6d4a03" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52246704" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52608894" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class String : ICloneable, IComparable, IComparable&lt;string&gt;, IConvertible, IEquatable&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;char&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit string extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;char&gt;, class System.Collections.IEnumerable, class System.ICloneable, class System.IComparable, class System.IComparable`1&lt;string&gt;, class System.IConvertible, class System.IEquatable`1&lt;string&gt;" />
@@ -63,8 +63,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -7479,21 +7479,21 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
   
  可以使用<xref:System.String.IsNullOrWhiteSpace%2A>方法来测试字符串是否为`null`，其值是<xref:System.String.Empty?displayProperty=nameWithType>，或它仅包含空白字符。  
   
-## <a name="what-is-a-null-string"></a>什么是一个 null 字符串？  
- 字符串是`null`如果它尚未分配的值 （c + + 和 Visual Basic） 或显式已分配的值为`null`。 尽管[复合格式设置](~/docs/standard/base-types/composite-formatting.md)功能可以正常处理 null 的字符串，如以下示例所示，如果其成员引发尝试调用一个<xref:System.NullReferenceException>。  
+## <a name="what-is-a-null-string"></a>什么是一个 null 字符串？
+
+字符串是`null`如果它尚未分配的值 （c + + 和 Visual Basic） 或如果它显式分配的值为`null`。 尽管[复合格式设置](~/docs/standard/base-types/composite-formatting.md)功能可以正常处理 null 的字符串，如以下示例所示，如果其成员引发尝试调用一个<xref:System.NullReferenceException>。  
   
- [!code-cpp[System.String.IsNullOrEmpty#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.isnullorempty/cpp/NullString1.cpp#2)]
- [!code-csharp[System.String.IsNullOrEmpty#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.isnullorempty/cs/NullString1.cs#2)]
- [!code-vb[System.String.IsNullOrEmpty#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.isnullorempty/vb/NullString1.vb#2)]  
+[!code-cpp[System.String.IsNullOrEmpty#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.isnullorempty/cpp/NullString1.cpp#2)]
+[!code-csharp[System.String.IsNullOrEmpty#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.isnullorempty/cs/NullString1.cs#2)]
+[!code-vb[System.String.IsNullOrEmpty#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.isnullorempty/vb/NullString1.vb#2)]  
   
 ## <a name="what-is-an-empty-string"></a>什么是空字符串？  
- 一个字符串为空，如果它显式分配空字符串 ("") 或<xref:System.String.Empty?displayProperty=nameWithType>。 空字符串具有<xref:System.String.Length%2A>为 0。  下面的示例创建一个空字符串，并显示其值，其长度。  
+
+一个字符串为空，如果它显式分配空字符串 ("") 或<xref:System.String.Empty?displayProperty=nameWithType>。 空字符串具有<xref:System.String.Length%2A>为 0。  下面的示例创建一个空字符串，并显示其值，其长度。  
   
- [!code-cpp[System.String.IsNullOrEmpty#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.isnullorempty/cpp/NullString1.cpp#3)]
- [!code-csharp[System.String.IsNullOrEmpty#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.isnullorempty/cs/NullString1.cs#3)]
- [!code-vb[System.String.IsNullOrEmpty#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.isnullorempty/vb/NullString1.vb#3)]  
-  
-   
+[!code-cpp[System.String.IsNullOrEmpty#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.isnullorempty/cpp/NullString1.cpp#3)]
+[!code-csharp[System.String.IsNullOrEmpty#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.isnullorempty/cs/NullString1.cs#3)]
+[!code-vb[System.String.IsNullOrEmpty#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.isnullorempty/vb/NullString1.vb#3)]  
   
 ## Examples  
  以下示例检查三个字符串并确定每个字符串具有一个值、 为空字符串，或未`null`。  
@@ -13730,15 +13730,20 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
    
   
 ## Examples  
- 下面的示例使用<xref:System.String.TrimStart%2A>方法，以修整空格和行的源代码中注释字符。 `StripComments`方法包装对的调用<xref:System.String.TrimStart%2A>并将其传递 Visual Basic 和 C# 中的以斜杠 （/） 中包含一个空格和撇号 （'） 的注释字符的字符数组。 <xref:System.String.TrimStart%2A>方法也称为计算字符串是否为注释时删除前导空格。  
-  
+ 下面的示例演示基本功能的<xref:System.String.TrimStart%2A>方法：
+
  [!code-csharp[System.String.TrimStart#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.TrimStart/cs/sample.cs#1)]
- [!code-vb[System.String.TrimStart#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.TrimStart/vb/sample.vb#1)]  
-  
- 下面的示例因而演示 `StripComments` 方法的调用。  
+ [!code-vb[System.String.TrimStart#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.TrimStart/vb/sample.vb#1)]
+
+ 下面的示例使用<xref:System.String.TrimStart%2A>方法，以修整空格和行的源代码中注释字符。 `StripComments`方法包装对的调用<xref:System.String.TrimStart%2A>并将其传递 Visual Basic 和 C# 中的以斜杠 （/） 中包含一个空格和撇号 （'） 的注释字符的字符数组。 <xref:System.String.TrimStart%2A>方法也称为计算字符串是否为注释时删除前导空格。  
   
  [!code-csharp[System.String.TrimStart#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.TrimStart/cs/sample.cs#2)]
  [!code-vb[System.String.TrimStart#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.TrimStart/vb/sample.vb#2)]  
+  
+ 下面的示例因而演示 `StripComments` 方法的调用。  
+  
+ [!code-csharp[System.String.TrimStart#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.TrimStart/cs/sample.cs#3)]
+ [!code-vb[System.String.TrimStart#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.TrimStart/vb/sample.vb#3)]  
   
  ]]></format>
         </remarks>

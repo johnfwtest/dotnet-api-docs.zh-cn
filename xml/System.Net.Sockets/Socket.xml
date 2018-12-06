@@ -1,11 +1,11 @@
 <Type Name="Socket" FullName="System.Net.Sockets.Socket">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3d793dbfba1e015e8ad221802f824241e34411f4" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="b15ea766eeb666bfea112acef693b7fc485e194c" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52240776" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52615095" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class Socket : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Socket extends System.Object implements class System.IDisposable" />
@@ -5377,9 +5377,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>返回 <see cref="T:System.Net.Sockets.Socket" /> 实例的哈希值。</summary>
+        <returns>整数哈希值。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表中的键。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <MemberGroup MemberName="GetSocketOption">
@@ -10888,8 +10895,19 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放由 <see cref="T:System.Net.Sockets.Socket" /> 使用的所有资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+在完成时调用 IDisposable.Dispose 使用<xref:System.Net.Sockets.Socket>。 IDisposable.Dispose 方法会使<xref:System.Net.Sockets.Socket>中不可用状态。 在调用 IDisposable.Dispose 后，必须释放对所有引用<xref:System.Net.Sockets.Socket>这样垃圾回收器才能收回内存的<xref:System.Net.Sockets.Socket>占用。 有关详细信息，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。
+
+> [!NOTE] 
+> 在发布到最后一个引用前，始终调用 IDisposable.Dispose <xref:System.Net.Sockets.Socket>。 否则，在垃圾回收器调用 <xref:System.Net.Sockets.Socket> 对象的 `Finalize` 方法之前，该对象正在使用的资源不会被释放。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="Ttl">

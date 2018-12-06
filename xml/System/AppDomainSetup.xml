@@ -1,11 +1,11 @@
 <Type Name="AppDomainSetup" FullName="System.AppDomainSetup">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="43ee7b91ad1baa33a6bc9f02f584883c8e8687a9" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="8c404b68e0b334c6cfb991a00e0ce944782e2a15" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52198188" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52610779" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class AppDomainSetup : IAppDomainSetup" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit AppDomainSetup extends System.Object implements class System.IAppDomainSetup" />
@@ -35,8 +35,8 @@
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -751,6 +751,7 @@
         <summary>获取或设置动态生成的文件所在的目录的基目录。</summary>
         <value>
           <see cref="P:System.AppDomain.DynamicDirectory" /> 所在的目录。  
+
  <block subset="none" type="note"><para>  
  该属性的返回值不同于分配的值。
 </para></block></value>
@@ -1231,7 +1232,7 @@
 ## Remarks  
  启用卷影复制后，默认值是通过探测; 找到的所有程序集的卷影复制也就是说，目录中指定<xref:System.AppDomainSetup.PrivateBinPath%2A>和<xref:System.AppDomainSetup.ApplicationBase%2A>属性。 <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>属性中指定的目录的程序集限制在卷影副本<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>。  
   
- 如果未将字符串分配至 <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> 属性或者将此属性设置为 `null`，则 <xref:System.AppDomainSetup.ApplicationBase%2A> 和 <xref:System.AppDomainSetup.PrivateBinPath%2A> 属性指定的目录中的所有程序集均进行卷影复制。  
+ 如果没有分配到的字符串<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>属性，或如果此属性设置为`null`，通过指定的目录中的所有程序集<xref:System.AppDomainSetup.ApplicationBase%2A>和<xref:System.AppDomainSetup.PrivateBinPath%2A>属性进行卷影复制。  
   
 > [!IMPORTANT]
 >  目录路径不能包含分号，因为分号是分隔符。 分号没有转义符。  

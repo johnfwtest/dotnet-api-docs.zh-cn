@@ -1,11 +1,11 @@
 <Type Name="ModelItem" FullName="System.Activities.Presentation.Model.ModelItem">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="70cd1a24df73463957c0842cb43d764d8550ce5c" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="165a2b2debf8ee3a9e69321d2fa87aa43b75335f" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39835193" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52611429" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class ModelItem : System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ModelItem extends System.Object implements class System.ComponentModel.INotifyPropertyChanged" />
@@ -31,7 +31,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 您可以通过项的 <xref:System.Activities.Presentation.Model.ModelItem.Properties%2A> 集合来访问其属性，并更改这些属性的值。  
+ 您可以访问项的属性通过其<xref:System.Activities.Presentation.Model.ModelItem.Properties%2A>集合并更改属性的值。  
   
  <xref:System.Activities.Presentation.Model.ModelItem> 是设计器的基础数据模型周围的包装。 可以通过 <xref:System.Activities.Presentation.Model.ModelItem.GetCurrentValue%2A> 方法访问该基础模型。  
   
@@ -88,7 +88,7 @@ var animal = new Animal
       },  
       CloseRelatives = new List<Animal> { companion1, companion2 }   
    };  
-ModelTreeManager mtm = new ModelTreeManager(ec);  mtm.Load(animal);  
+ModelTreeManager mtm = new ModelTreeManager(ec);  mtm.Load(animal);  
 ModelItem mi = mtm.Root;  
   
 //Testing other properties of the class  
@@ -185,7 +185,7 @@ Assert.AreEqual(root.Properties["Residence"], location.Source, "sources point to
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>打开设计器的编辑范围。 打开编辑范围后，所有对象之间的所有更改将保存到该范围中，直至事务完成或还原为止。 编辑范围可以嵌套，但是必须按顺序提交。</summary>
+        <summary>打开设计器的编辑范围。 打开编辑范围后，所有对象之间的所有更改将保存到该范围中，直至事务完成或还原为止。 编辑范围可以嵌套，但必须按顺序提交。</summary>
         <returns>必须完成或还原的 <see cref="T:System.Activities.Presentation.Model.ModelEditingScope" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -244,7 +244,7 @@ Assert.AreEqual(root.Properties["Residence"], location.Source, "sources point to
       </Parameters>
       <Docs>
         <param name="description">更改的可选说明。 这将设置到编辑范围的 <see cref="P:System.Activities.Presentation.Model.ModelEditingScope.Description" /> 属性中。</param>
-        <summary>打开设计器的编辑范围。 打开编辑范围后，所有对象之间的所有更改将保存到该范围中，直至事务完成或还原为止。 编辑范围可以嵌套，但是必须按顺序提交。</summary>
+        <summary>打开设计器的编辑范围。 打开编辑范围后，所有对象之间的所有更改将保存到该范围中，直至事务完成或还原为止。 编辑范围可以嵌套，但必须按顺序提交。</summary>
         <returns>必须完成或还原的 <see cref="T:System.Activities.Presentation.Model.ModelEditingScope" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

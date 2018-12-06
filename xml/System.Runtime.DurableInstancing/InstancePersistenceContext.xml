@@ -1,11 +1,11 @@
 <Type Name="InstancePersistenceContext" FullName="System.Runtime.DurableInstancing.InstancePersistenceContext">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="774f08f307628a25a88866a93592fcaade22fb04" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="ad341bed6953172fb3eba70952b4f8f56f0e65d7" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39959561" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52611598" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class InstancePersistenceContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InstancePersistenceContext extends System.Object" />
@@ -96,7 +96,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 尝试获取锁时，永久性提供程序可确定当前实例已在当前存储中锁定。 如果锁定标记与当前句柄的锁定标记匹配，则永久性提供程序可尝试通过检查其版本并将它传递到 BeginBindReclaimedLock 来回收锁。 在锁得以成功回收之前，永久性提供程序不得更改实例。 如果没有其他句柄绑定到锁，则 BeginBindReclaimedLock 操作将成功执行并且当前句柄将绑定到锁。 否则，BeginBindReclaimedLock 或 BeginBindReclaimedLock 将引发 InstanceHandleConflictException。 如果正在对其他句柄执行命令，则该操作要等待那些命令的结果以确定是否可回收锁，因而无法完成。  
+ 尝试获取锁时，永久性提供程序可确定当前实例已在当前存储中锁定。 如果锁定标记与当前句柄的锁定标记匹配，则永久性提供程序可以尝试通过检查其版本并将其传递到 BeginBindReclaimedLock 来回收锁。 在锁得以成功回收之前，永久性提供程序不得更改实例。 如果没有其他句柄绑定到锁，则 BeginBindReclaimedLock 操作将成功执行并且当前句柄将绑定到锁。 否则，BeginBindReclaimedLock 或 BeginBindReclaimedLock 将引发 InstanceHandleConflictException。 如果正在对其他句柄执行命令，则该操作要等待那些命令的结果以确定是否可回收锁，因而无法完成。  
   
  当前实例句柄必须绑定到一个实例和一个锁所有者。 该实例不得已完成。 与锁的所有者关联的锁定标记用于标识锁的所有者。  
   
@@ -292,7 +292,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 尝试获取锁时，永久性提供程序可确定当前实例已在当前存储中锁定。 如果锁定标记与当前句柄的锁定标记匹配，则永久性提供程序可尝试通过检查其版本并将它传递到 BindReclaimedLock 来回收锁。 在锁得以成功回收之前，永久性提供程序不得更改实例。 如果没有其他句柄绑定到锁，则 BindReclaimedLock 将成功执行并且当前句柄将绑定到锁。 否则，BindReclaimedLock 将引发 InstanceHandleConflictException。 如果正在对其他句柄执行命令，则 BindReclaimedLock 可能因为要等待那些命令的结果以确定是否可回收锁而发生阻塞。  
+ 尝试获取锁时，永久性提供程序可确定当前实例已在当前存储中锁定。 如果锁定标记与当前句柄的锁定标记匹配，则永久性提供程序可以尝试通过检查其版本并将其传递到 BindReclaimedLock 来回收锁。 在锁得以成功回收之前，永久性提供程序不得更改实例。 如果没有其他句柄绑定到锁，则 BindReclaimedLock 将成功执行并且当前句柄将绑定到锁。 否则，BindReclaimedLock 将引发 InstanceHandleConflictException。 如果正在对其他句柄执行命令，则 BindReclaimedLock 可能因为要等待那些命令的结果以确定是否可回收锁而发生阻塞。  
   
  当前实例句柄必须绑定到一个实例和一个锁所有者。 该实例不得已完成。 与锁的所有者关联的锁定标记用于标识锁的所有者。  
   
@@ -532,12 +532,12 @@ protected override bool TryCommand(InstancePersistenceContext context, InstanceP
       </ReturnValue>
       <Docs>
         <summary>获取与当前实例句柄对于当前实例所持有的锁的版本。</summary>
-        <value>绑定到当前实例句柄的实例锁的版本，或 -1（如果句柄没有绑定到锁）。</value>
+        <value>如果句柄没有绑定到某个锁，实例锁的版本将绑定到当前实例句柄，则为-1。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 使用绑定到锁的句柄来执行需要锁的操作（如保存实例数据）时，永久性提供程序应将此值与对实例存储中实例所持有的锁的锁版本进行对照检查。 如果锁版本不匹配，则命令将失败，并引发 InstanceLockLostException。  
+ 使用绑定到锁的句柄来执行需要锁的操作（如保存实例数据）时，永久性提供程序应将此值与对实例存储中实例所持有的锁的锁版本进行对照检查。 如果锁版本不匹配，则命令将 instancelocklostexception 失败。  
   
  ]]></format>
         </remarks>
@@ -625,12 +625,12 @@ protected override bool TryCommand(InstancePersistenceContext context, InstanceP
       </ReturnValue>
       <Docs>
         <summary>获取绑定到当前实例句柄的实例所有者的锁定标记。</summary>
-        <value>绑定到当前实例句柄的锁定标记，或 Guid.Empty（如果句柄没有绑定到实例所有者）。</value>
+        <value>如果句柄没有绑定到实例所有者，锁定标记绑定到当前实例句柄或 Guid.Empty。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 使用绑定到锁的句柄来执行需要锁的操作（如保存实例数据）时，永久性提供程序应将此值与对实例存储中实例所持有的锁的锁定标记进行对照检查。 如果锁定标记不匹配，则命令将失败，并引发 InstanceLockLostException。  
+ 使用绑定到锁的句柄来执行需要锁的操作（如保存实例数据）时，永久性提供程序应将此值与对实例存储中实例所持有的锁的锁定标记进行对照检查。 如果锁定标记不匹配，则命令将 instancelocklostexception 失败。  
   
  获取实例上的新锁（如使用尚未绑定到锁的句柄来保存实例数据）时，永久性提供程序应将此值用作锁定标记。 如果实例已在实例存储中锁定，且锁定标记与此锁定标记匹配，则永久性提供程序可尝试使用 BindReclaimedLock 回收实例。  
   

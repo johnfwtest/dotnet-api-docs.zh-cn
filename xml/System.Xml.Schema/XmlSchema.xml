@@ -1,11 +1,11 @@
 <Type Name="XmlSchema" FullName="System.Xml.Schema.XmlSchema">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="345489b003d5b868f613296fed2dd0c1371520c3" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="21c8cde51469147d84be42607c95ddf872051457" />
+    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52232898" />
+    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
+    <Meta Name="ms.locfileid" Value="52732753" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class XmlSchema : System.Xml.Schema.XmlSchemaObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSchema extends System.Xml.Schema.XmlSchemaObject" />
@@ -53,7 +53,7 @@
 ## Remarks  
   
 > [!IMPORTANT]
->  -   不要使用来自未知或不受信任的源或位置的架构。 执行此操作将影响你的代码的安全性。  
+> -   不要使用来自未知或不受信任的源或位置的架构。 执行此操作将影响你的代码的安全性。  
 > -   XML 架构 （包括内联架构） 是本质上是容易受到拒绝服务攻击;不接受不受信任的方案中。  
 > -   由于使用而引发的异常<xref:System.Xml.Schema.XmlSchema>类，如<xref:System.Xml.Schema.XmlSchemaException>类中，可能包含不应在不受信任的方案中公开的敏感信息。 例如，<xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>属性的<xref:System.Xml.Schema.XmlSchemaException>返回导致异常的架构文件的 URI 路径。 <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>不应在不受信任的情况下公开属性。 应正确处理异常，因此在不受信任的情况下不公开此敏感信息。  
   
@@ -148,7 +148,7 @@
         <ReturnType>System.Xml.Schema.XmlSchemaForm</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置在架构的目标命名空间中声明的属性的窗体。</summary>
+        <summary>获取或设置在架构的目标命名空间中声明的特性的窗体。</summary>
         <value>
           <see cref="T:System.Xml.Schema.XmlSchemaForm" /> 值，它表明来自目标命名空间的特性是否需要用命名空间前缀限定。 默认值为 <see cref="F:System.Xml.Schema.XmlSchemaForm.None" />。</value>
         <remarks>
@@ -202,7 +202,7 @@
         <ReturnType>System.Xml.Schema.XmlSchemaObjectTable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取架构中所有全局属性组的架构编译后值。</summary>
+        <summary>获取架构中所有全局特性组的架构编译后值。</summary>
         <value>架构中所有全局特性组的 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" /> 集合。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -240,7 +240,7 @@
         <ReturnType>System.Xml.Schema.XmlSchemaObjectTable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取架构中所有属性的架构编译后值。</summary>
+        <summary>获取架构中所有特性的架构编译后值。</summary>
         <value>架构中所有特性的 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" /> 集合。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -298,7 +298,7 @@
   
  下表列出了可能的值的<xref:System.Xml.Schema.XmlSchemaDerivationMethod>。  
   
-|“值”|描述|  
+|值|描述|  
 |-----------|-----------------|  
 |`None`|默认情况下，没有在架构中的类型派生的任何限制。|  
 |`Empty`|重写默认派生方法，并允许在架构中的任何类型的派生。|  
@@ -367,7 +367,7 @@
         <Parameter Name="validationEventHandler" Type="System.Xml.Schema.ValidationEventHandler" />
       </Parameters>
       <Docs>
-        <param name="validationEventHandler">验证事件处理程序，它接收 XML 架构验证错误的相关信息。</param>
+        <param name="validationEventHandler">验证事件处理程序，它接收有关 XML 架构验证错误的信息。</param>
         <summary>将 XML 架构对象模型 (SOM) 编译为架构信息供验证使用。 用于检查以编程方式生成的 SOM 的语法和语义结构。 语义验证检查在编译期间执行。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -590,7 +590,7 @@
   
  下表列出了可能的值的<xref:System.Xml.Schema.XmlSchemaDerivationMethod>。  
   
-|“值”|描述|  
+|值|描述|  
 |-----------|-----------------|  
 |`None`|默认情况下，没有在架构中的类型派生的任何限制。|  
 |`Empty`|重写默认派生方法，并允许在架构中的任何类型的派生。|  
@@ -972,7 +972,7 @@ schema.Includes.Add(include);
         <ReturnType>System.Xml.Schema.XmlSchemaObjectTable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取架构中所有注释的架构编译后值。</summary>
+        <summary>获取架构中所有表示法的架构编译后值。</summary>
         <value>架构中所有表示法的 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" /> 集合。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1019,7 +1019,7 @@ schema.Includes.Add(include);
       </Parameters>
       <Docs>
         <param name="stream">提供的数据流。</param>
-        <param name="validationEventHandler">验证事件处理程序，它接收 XML 架构语法错误的相关信息。</param>
+        <param name="validationEventHandler">验证事件处理程序，它接收有关“XML 架构”语法错误的信息。</param>
         <summary>从提供的流中读取 XML 架构。</summary>
         <returns>表示 XML 架构的 <see cref="T:System.Xml.Schema.XmlSchema" /> 对象。</returns>
         <remarks>To be added.</remarks>
@@ -1058,7 +1058,7 @@ schema.Includes.Add(include);
       </Parameters>
       <Docs>
         <param name="reader">包含要读取的 XML 架构的 <see langword="TextReader" />。</param>
-        <param name="validationEventHandler">验证事件处理程序，它接收 XML 架构语法错误的相关信息。</param>
+        <param name="validationEventHandler">验证事件处理程序，它接收有关 XML 架构语法错误的信息。</param>
         <summary>从提供的 <see cref="T:System.IO.TextReader" /> 读取 XML 架构。</summary>
         <returns>表示 XML 架构的 <see cref="T:System.Xml.Schema.XmlSchema" /> 对象。</returns>
         <remarks>To be added.</remarks>
@@ -1097,7 +1097,7 @@ schema.Includes.Add(include);
       </Parameters>
       <Docs>
         <param name="reader">包含要读取的 XML 架构的 <see langword="XmlReader" />。</param>
-        <param name="validationEventHandler">验证事件处理程序，它接收 XML 架构语法错误的相关信息。</param>
+        <param name="validationEventHandler">验证事件处理程序，它接收有关 XML 架构语法错误的信息。</param>
         <summary>从提供的 <see cref="T:System.Xml.XmlReader" /> 读取 XML 架构。</summary>
         <returns>表示 XML 架构的 <see cref="T:System.Xml.Schema.XmlSchema" /> 对象。</returns>
         <remarks>To be added.</remarks>
@@ -1232,7 +1232,7 @@ schema.Includes.Add(include);
         <ReturnType>System.Xml.XmlAttribute[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取和设置不属于架构目标命名空间的限定属性。</summary>
+        <summary>获取和设置不属于架构目标命名空间的限定特性。</summary>
         <value>不属于架构目标命名空间的限定 <see cref="T:System.Xml.XmlAttribute" /> 对象的数组。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1327,7 +1327,7 @@ schema.Includes.Add(include);
       </Parameters>
       <Docs>
         <param name="stream">提供的数据流。</param>
-        <summary>将　XML 架构写入提供的数据流中。</summary>
+        <summary>将“XML 架构”写入提供的数据流中。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1367,7 +1367,7 @@ schema.Includes.Add(include);
         <Parameter Name="writer" Type="System.IO.TextWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">要向其中进行写入的 <see cref="T:System.IO.TextWriter" />。</param>
+        <param name="writer">要写入的 <see cref="T:System.IO.TextWriter" />。</param>
         <summary>将“XML 架构”写入提供的 <see cref="T:System.IO.TextWriter" />。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1408,7 +1408,7 @@ schema.Includes.Add(include);
         <Parameter Name="writer" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">要向其中进行写入的 <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="writer">要写入的 <see cref="T:System.Xml.XmlWriter" />。</param>
         <summary>将“XML 架构”写入提供的 <see cref="T:System.Xml.XmlWriter" />。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
@@ -1494,7 +1494,7 @@ schema.Includes.Add(include);
         <Parameter Name="namespaceManager" Type="System.Xml.XmlNamespaceManager" />
       </Parameters>
       <Docs>
-        <param name="writer">要向其中进行写入的 <see cref="T:System.IO.TextWriter" />。</param>
+        <param name="writer">要写入的 <see cref="T:System.IO.TextWriter" />。</param>
         <param name="namespaceManager">
           <see cref="T:System.Xml.XmlNamespaceManager" />。</param>
         <summary>将“XML 架构”写入提供的 <see cref="T:System.IO.TextWriter" />。</summary>
@@ -1542,7 +1542,7 @@ schema.Includes.Add(include);
         <Parameter Name="namespaceManager" Type="System.Xml.XmlNamespaceManager" />
       </Parameters>
       <Docs>
-        <param name="writer">要向其中进行写入的 <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="writer">要写入的 <see cref="T:System.Xml.XmlWriter" />。</param>
         <param name="namespaceManager">
           <see cref="T:System.Xml.XmlNamespaceManager" />。</param>
         <summary>将“XML 架构”写入提供的 <see cref="T:System.Xml.XmlWriter" />。</summary>

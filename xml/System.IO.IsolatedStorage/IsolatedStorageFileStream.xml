@@ -1,11 +1,11 @@
 <Type Name="IsolatedStorageFileStream" FullName="System.IO.IsolatedStorage.IsolatedStorageFileStream">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8aae778493bf66e76fe8b19633344f8127b1e61c" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="8b5c74ce52efd9404fe42f44754ae999bbefd8fe" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52252147" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52615472" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class IsolatedStorageFileStream : System.IO.FileStream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IsolatedStorageFileStream extends System.IO.FileStream" />
@@ -883,8 +883,64 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放与 <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> 对象关联的资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+任何数据之前写入缓冲区复制到文件之前文件流已关闭，因此不需要调用<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Flush%2A>然后再关闭调用。
+
+在给 Close 调用，文件流上的执行任何操作都可能引发异常。 之后`Close`已调用一次，它不执行任何操作如果再次调用。 <xref:System.Object.Finalize>方法调用关闭，因此文件流已关闭之前垃圾收集器终结对象。
+
+<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> 对象需要<xref:System.IO.IsolatedStorage.IsolatedStorageFile>确定访问的文件的存储上下文对象。 打开未传入的流<xref:System.IO.IsolatedStorage.IsolatedStorageFile>对象，默认值<xref:System.IO.IsolatedStorage.IsolatedStorageFile>对象是为执行的程序集创建并给 Close 调用期间关闭。
+
+> [!NOTE]
+> `Close`方法调用<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Dispose%2A>disposing 设置为 true，则释放其资源，然后调用<xref:System.GC.SuppressFinalize%2A>取消终止操作的垃圾回收器对该对象。
+
+## Examples
+
+下面的代码示例演示了 Close 方法。
+
+```csharp
+IsolatedStorageFileStream source =
+     new IsolatedStorageFileStream(this.userName,FileMode.Open,isoFile);
+ // This stream is the one that data will be read from
+ Console.WriteLine("Source can be read?" + (source.CanRead?"true":"false"));
+ IsolatedStorageFileStream target =
+     new IsolatedStorageFileStream("Archive\\ " + this.userName,FileMode.OpenOrCreate,isoFile);
+ // This stream is the one that data will be written to
+ Console.WriteLine("Target is writable?" + (target.CanWrite?"true":"false"));
+ // Do work...
+ // After you have read and written to the streams, close them
+ source.Close();
+ target.Close();
+```
+
+```vb
+Dim source As New IsolatedStorageFileStream(UserName,FileMode.Open,isoFile)
+ ' This stream is the one that data will be read from
+ If source.CanRead Then
+     Console.WriteLine("Source can read ? true")
+ Else
+     Console.WriteLine("Source can read ? false")
+ End If
+ Dim target As New IsolatedStorageFileStream("Archive\\ " & UserName, _
+                                             FileMode.OpenOrCreate, _
+                                             isoFile)
+ ' This stream is the one that data will be written to
+ If target.CanWrite Then
+     Console.WriteLine("Target is writable? true")
+ Else
+     Console.WriteLine("Target is writable? false")
+ End If
+ ' After you have read and written to the streams, close them
+ source.Close()
+ target.Close()
+```
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Dispose">

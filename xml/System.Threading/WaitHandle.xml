@@ -1,11 +1,11 @@
 <Type Name="WaitHandle" FullName="System.Threading.WaitHandle">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="75c4a0a4333076d7df503fda5103c80d8eeb868d" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="b0743bee28025334f71604c9b2d0c45160aa6bc8" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52207535" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52608543" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class WaitHandle : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract beforefieldinit WaitHandle extends System.MarshalByRefObject implements class System.IDisposable" />
@@ -328,8 +328,20 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放由当前实例所持有的资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+> 此成员已从.NET Framework 2.0 版和后续版本。 本主题仅适用于本主题后面的"版本信息"中列出的版本。
+
+
+应用程序代码不调用此方法。调用此操作会自动在垃圾回收期间除非终止由垃圾回收器已被禁用。 有关详细信息，请参阅 <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> 和 <xref:System.Object.Finalize>。 此方法重写 <xref:System.Object.Finalize>。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Handle">
@@ -743,8 +755,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放由 <see cref="T:System.Threading.WaitHandle" /> 使用的所有资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+调用`Dispose`允许使用的资源<xref:System.Threading.WaitHandle>重新分配用于其他目的。 有关详细信息`Dispose`，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <MemberGroup MemberName="WaitAll">
