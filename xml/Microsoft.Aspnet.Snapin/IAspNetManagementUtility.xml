@@ -1,11 +1,11 @@
 <Type Name="IAspNetManagementUtility" FullName="Microsoft.Aspnet.Snapin.IAspNetManagementUtility">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="168edcf09753477a21a89d1c2ce05f26ff233f19" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="234d159efc48f8a8c0545898ed115a909d95bfba" />
+    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39965642" />
+    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
+    <Meta Name="ms.locfileid" Value="52356568" />
   </Metadata>
   <TypeSignature Language="C#" Value="public interface IAspNetManagementUtility" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAspNetManagementUtility" />
@@ -27,8 +27,16 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>提供 Microsoft 管理控制台 (MMC) 的 ASP.NET 管理单元使用的帮助器方法。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关使用 IAspNetManagementUtility 接口和 Microsoft 管理控制台 (MMC) 的编程的详细信息，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="AcquireVersionList">
@@ -51,10 +59,18 @@
         <Parameter Name="versionFirst" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="versionList">To be added.</param>
-        <param name="versionFirst">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="versionList">一个逗号分隔的列表，该列表包含安装的每个 ASP.NET 版本的 Aspnet_isapi.dll 的版本和路径。</param>
+        <param name="versionFirst">如果为 0，则在每个项的路径之前显示 ASP.NET 版本；否则，在每个项的 ASP.NET 版本之前显示路径。</param>
+        <summary>返回一个逗号分隔的列表，该列表包含安装的每个 ASP.NET 版本的 Aspnet_isapi.dll 的版本和路径。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="ChangeScriptMap">
@@ -78,11 +94,19 @@
         <Parameter Name="flags" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="keyPath">To be added.</param>
-        <param name="dllInstall">To be added.</param>
-        <param name="flags">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="keyPath">Aspnet_isapi.dll（由 dllInstall 传递的路径指定）将注册到的虚拟路径。</param>
+        <param name="dllInstall">将注册到 keyPath 的 Aspnet_isapi.dll 的路径。</param>
+        <param name="flags">注册 Aspnet_isapi.dll 时使用的行为。</param>
+        <summary>将指定的 Aspnet_isapi.dll 映射到指定的 Internet 信息服务 (IIS) 虚拟路径。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="DisplayAspNetConfigSettings">
@@ -110,15 +134,23 @@
         <Parameter Name="exception" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="machineName">To be added.</param>
-        <param name="site">To be added.</param>
-        <param name="virtualDirectory">To be added.</param>
-        <param name="siteName">To be added.</param>
-        <param name="location">To be added.</param>
-        <param name="processID">To be added.</param>
-        <param name="exception">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="machineName">要从中检索配置设置的计算机。</param>
+        <param name="site">要从中检索配置设置的 IIS 站点。</param>
+        <param name="virtualDirectory">要从中检索配置设置的 IIS 虚拟目录。</param>
+        <param name="siteName">要从中检索配置设置的 IIS 站点的名称。</param>
+        <param name="location">配置应用的特定资源。</param>
+        <param name="processID">显示配置设置对话框的进程的系统进程 ID。</param>
+        <param name="exception">发生的异常。</param>
+        <summary>检索指定的 ASP.NET Web 应用程序的 ASP.NET 配置设置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="IsRemoteConfigured">
@@ -140,9 +172,17 @@
         <Parameter Name="isRemoteConfigured" Type="System.Int32" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="isRemoteConfigured">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="isRemoteConfigured">如果启用对 ASP.NET 配置容器的远程访问，则为 1；否则为 0。</param>
+        <summary>返回一个值，该值指示是否启用对 ASP.NET 配置容器的远程访问。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="PathIsDirectory">
@@ -165,10 +205,18 @@
         <Parameter Name="result" Type="System.Int32" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="filename">To be added.</param>
-        <param name="result">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="filename">要检查的目录的路径。</param>
+        <param name="result">如果 <paramref name="filename" /> 是目录，则为 1；否则为 0。</param>
+        <summary>返回一个值，该值指示指定的 <paramref name="filename" /> 是否为目录。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="ReadFileDates">
@@ -193,12 +241,20 @@
         <Parameter Name="lastAccessDate" Type="System.String" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="filename">To be added.</param>
-        <param name="creationDate">To be added.</param>
-        <param name="modifiedDate">To be added.</param>
-        <param name="lastAccessDate">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="filename">要从中读取日期的文件的名称。</param>
+        <param name="creationDate">文件的创建日期和时间。</param>
+        <param name="modifiedDate">文件的修改日期和时间。</param>
+        <param name="lastAccessDate">上次访问文件的日期和时间。</param>
+        <summary>返回指定文件名的创建、修改和上次访问的日期和时间。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="RegisterAsnetMmcAssembly">
@@ -223,12 +279,20 @@
         <Parameter Name="exception" Type="System.IntPtr" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="doReg">To be added.</param>
-        <param name="assemblyName">To be added.</param>
-        <param name="binaryDirectory">To be added.</param>
-        <param name="exception">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="doReg">值为 1 表示注册程序集，值为 0 表示注销程序集。</param>
+        <param name="assemblyName">要注册的程序集的名称。</param>
+        <param name="binaryDirectory">包含程序集的目录。</param>
+        <param name="exception">指向注册期间引发的任何异常的指针。</param>
+        <summary>向 Microsoft 管理控制台 (MMC) 注册 ASP.NET 管理单元。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IAspNetManagementUtility>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>

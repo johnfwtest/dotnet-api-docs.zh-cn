@@ -1,11 +1,11 @@
 <Type Name="IExtendContextMenu" FullName="Microsoft.Aspnet.Snapin.IExtendContextMenu">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4fa93541d9d9236d2215896a862ecfef8eae066a" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="5bd58fe9f88042825e691e8a826e726080773506" />
+    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39965655" />
+    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
+    <Meta Name="ms.locfileid" Value="52356048" />
   </Metadata>
   <TypeSignature Language="C#" Value="public interface IExtendContextMenu" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtendContextMenu" />
@@ -27,8 +27,16 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
-    <remarks>To be added.</remarks>
+    <summary>使管理单元可以向现有快捷菜单添加项。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关使用 IExtendContextMenu 接口和 Microsoft 管理控制台 (MMC) 的编程的详细信息，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+    </remarks>
+    <forInternalUseOnly />
   </Docs>
   <Members>
     <Member MemberName="AddMenuItems">
@@ -52,11 +60,19 @@
         <Parameter Name="pInsertionAllowed" Type="System.Int32" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="piDataObject">To be added.</param>
-        <param name="piCallback">To be added.</param>
-        <param name="pInsertionAllowed">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="piDataObject">指向菜单数据对象上的 <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" /> 的指针，AddMenuItems 向该菜单的快捷菜单添加项。</param>
+        <param name="piCallback">一个指针，指向可以向快捷菜单添加项的 <see cref="T:Microsoft.Aspnet.Snapin.IContextMenuCallback" />。</param>
+        <param name="pInsertionAllowed">可以使用的菜单项插入点，该插入点由 MMC 定义。</param>
+        <summary>使管理单元可以向现有快捷菜单添加项。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IExtendContextMenu>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="Command">
@@ -79,10 +95,18 @@
         <Parameter Name="piDataObject" Type="Microsoft.Aspnet.Snapin.IDataObject" />
       </Parameters>
       <Docs>
-        <param name="lCommandID">To be added.</param>
-        <param name="piDataObject">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="lCommandID">菜单项的命令标识符。</param>
+        <param name="piDataObject">一个指针，指向显示快捷菜单的对象上的 <see cref="T:Microsoft.Aspnet.Snapin.IDataObject" />。</param>
+        <summary>如果添加的一个快捷菜单项被选定，Microsoft 管理控制台 (MMC) 将调用 Command 方法。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+有关编程的详细信息<xref:Microsoft.Aspnet.Snapin.IExtendContextMenu>接口和 Microsoft 管理控制台 (MMC)，请参阅[MMC 程序员指南](https://docs.microsoft.com/previous-versions/windows/desktop/mmc/mmc-programmer-s-guide-overview)。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
   </Members>
