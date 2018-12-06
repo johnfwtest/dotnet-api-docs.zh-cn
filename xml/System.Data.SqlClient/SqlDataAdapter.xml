@@ -1,11 +1,11 @@
 <Type Name="SqlDataAdapter" FullName="System.Data.SqlClient.SqlDataAdapter">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2b0337a31ab52223b6ed63fe0b92b512c0f3a4e9" />
-    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
+    <Meta Name="ms.openlocfilehash" Value="72b9c35f659d0a6e924e1c992cc5c49065787aa7" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
-    <Meta Name="ms.locfileid" Value="52735353" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52918183" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class SqlDataAdapter : System.Data.Common.DbDataAdapter, ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlDataAdapter extends System.Data.Common.DbDataAdapter implements class System.Data.IDataAdapter, class System.Data.IDbDataAdapter, class System.ICloneable" />
@@ -24,6 +24,7 @@
     <AssemblyName>System.Data.SqlClient</AssemblyName>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
     <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Data.Common.DbDataAdapter</BaseTypeName>
@@ -142,6 +143,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -152,7 +154,7 @@
 ## Remarks  
  实例时<xref:System.Data.SqlClient.SqlDataAdapter>创建以下读/写属性设置为以下的初始值。  
   
-|属性|初始值|  
+|Properties|初始值|  
 |----------------|-------------------|  
 |<xref:System.Data.Common.DataAdapter.MissingMappingAction%2A>|`MissingMappingAction.Passthrough`|  
 |<xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A>|`MissingSchemaAction.Add`|  
@@ -193,13 +195,14 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="selectCommand" Type="System.Data.SqlClient.SqlCommand" />
       </Parameters>
       <Docs>
-        <param name="selectCommand">一个 <see cref="T:System.Data.SqlClient.SqlCommand" />（可以是 Transact-SQL SELECT 语句或存储过程），已设置为 <see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" /> 的 <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> 属性。</param>
-        <summary>初始化 <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> 类的新实例，用指定的 <see cref="T:System.Data.SqlClient.SqlCommand" /> 作为 <see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" /> 的属性。</summary>
+        <param name="selectCommand">一个<see cref="T:System.Data.SqlClient.SqlCommand" />TRANSACT-SQL SELECT 语句或存储的过程且设置为<see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" />属性的<see cref="T:System.Data.SqlClient.SqlDataAdapter" />。</param>
+        <summary>初始化的新实例<see cref="T:System.Data.SqlClient.SqlDataAdapter" />具有指定的类<see cref="T:System.Data.SqlClient.SqlCommand" />作为<see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" />属性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -208,7 +211,7 @@
   
  实例时<xref:System.Data.SqlClient.SqlDataAdapter>创建以下读/写属性设置为以下的初始值。  
   
-|属性|初始值|  
+|Properties|初始值|  
 |----------------|-------------------|  
 |<xref:System.Data.Common.DataAdapter.MissingMappingAction%2A>|`MissingMappingAction.Passthrough`|  
 |<xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A>|`MissingSchemaAction.Add`|  
@@ -251,15 +254,16 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="selectCommandText" Type="System.String" />
         <Parameter Name="selectConnection" Type="System.Data.SqlClient.SqlConnection" />
       </Parameters>
       <Docs>
-        <param name="selectCommandText">一个 <see cref="T:System.String" />，它是将要由 <see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" /> 的 <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> 属性使用的 Transact-SQL SELECT 语句或存储过程。</param>
-        <param name="selectConnection">表示该连接的 <see cref="T:System.Data.SqlClient.SqlConnection" />。 如果连接字符串不使用 <see langword="Integrated Security = true" />，可以使用 <see cref="T:System.Data.SqlClient.SqlCredential" /> 来通过用户 ID 和密码比在连接字符串的文本中指定用户 ID 和密码更安全。</param>
-        <summary>使用 <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> 和 <see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" /> 对象初始化 <see cref="T:System.Data.SqlClient.SqlConnection" /> 类的一个新实例。</summary>
+        <param name="selectCommandText">一个<see cref="T:System.String" />，它是 TRANSACT-SQL SELECT 语句或存储的过程，以供<see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" />属性的<see cref="T:System.Data.SqlClient.SqlDataAdapter" />。</param>
+        <param name="selectConnection">一个<see cref="T:System.Data.SqlClient.SqlConnection" />表示的连接。 如果连接字符串不使用 <see langword="Integrated Security = true" />，则可以使用 <see cref="T:System.Data.SqlClient.SqlCredential" /> 来传递用户 ID 和密码，这比将用户 ID 和密码指定为连接字符串中的文本更安全。</param>
+        <summary>初始化的新实例<see cref="T:System.Data.SqlClient.SqlDataAdapter" />类的<see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" />和一个<see cref="T:System.Data.SqlClient.SqlConnection" />对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -268,7 +272,7 @@
   
  实例时<xref:System.Data.SqlClient.SqlDataAdapter>创建以下读/写属性设置为以下的初始值。  
   
-|属性|初始值|  
+|Properties|初始值|  
 |----------------|-------------------|  
 |<xref:System.Data.Common.DataAdapter.MissingMappingAction%2A>|`MissingMappingAction.Passthrough`|  
 |<xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A>|`MissingSchemaAction.Add`|  
@@ -309,15 +313,16 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="selectCommandText" Type="System.String" />
         <Parameter Name="selectConnectionString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="selectCommandText">一个 <see cref="T:System.String" />，它是将要由 <see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" /> 的 <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> 属性使用的 Transact-SQL SELECT 语句或存储过程。</param>
-        <param name="selectConnectionString">连接字符串。 如果连接字符串不使用 <see langword="Integrated Security = true" />，可以使用 <see cref="M:System.Data.SqlClient.SqlDataAdapter.#ctor(System.String,System.Data.SqlClient.SqlConnection)" /> 和 <see cref="T:System.Data.SqlClient.SqlCredential" /> 来通过用户 ID 和密码比在连接字符串的文本中指定用户 ID 和密码更安全。</param>
-        <summary>用 <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> 和一个连接字符串初始化 <see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" /> 类的一个新实例。</summary>
+        <param name="selectCommandText">一个<see cref="T:System.String" />，它是 TRANSACT-SQL SELECT 语句或存储的过程，以供<see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" />属性的<see cref="T:System.Data.SqlClient.SqlDataAdapter" />。</param>
+        <param name="selectConnectionString">连接字符串。 如果你的连接字符串不使用<see langword="Integrated Security = true" />，可以使用<see cref="M:System.Data.SqlClient.SqlDataAdapter.#ctor(System.String,System.Data.SqlClient.SqlConnection)" />和<see cref="T:System.Data.SqlClient.SqlCredential" />要比通过更安全地传递用户 ID 和密码的用户 ID 和密码指定为连接字符串中的文本。</param>
+        <summary>初始化的新实例<see cref="T:System.Data.SqlClient.SqlDataAdapter" />类的<see cref="P:System.Data.SqlClient.SqlDataAdapter.SelectCommand" />和连接字符串。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -326,7 +331,7 @@
   
  实例时<xref:System.Data.SqlClient.SqlDataAdapter>创建以下读/写属性设置为以下的初始值。  
   
-|属性|初始值|  
+|Properties|初始值|  
 |----------------|-------------------|  
 |<xref:System.Data.Common.DataAdapter.MissingMappingAction%2A>|`MissingMappingAction.Passthrough`|  
 |<xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A>|`MissingSchemaAction.Add`|  
@@ -495,6 +500,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -523,8 +529,8 @@
         <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个 Transact-SQL 语句或存储过程，以从数据集删除记录。</summary>
-        <value>在 <see cref="T:System.Data.SqlClient.SqlCommand" /> 过程中使用 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />，以在数据库中删除对应于 <see cref="T:System.Data.DataSet" /> 中已删除行的记录。</value>
+        <summary>获取或设置一个 TRANSACT-SQL 语句或存储的过程来从数据集中删除记录。</summary>
+        <value>一个<see cref="T:System.Data.SqlClient.SqlCommand" />过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />若要删除对应于数据库中的记录已删除的行中的<see cref="T:System.Data.DataSet" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -714,6 +720,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -742,8 +749,8 @@
         <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个 Transact-SQL 语句或存储过程，以在数据源中插入新记录。</summary>
-        <value>在 <see cref="T:System.Data.SqlClient.SqlCommand" /> 过程中使用 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />，以在数据库中插入对应于 <see cref="T:System.Data.DataSet" /> 中的新行的记录。</value>
+        <summary>获取或设置一个 TRANSACT-SQL 语句或存储的过程以将新记录插入到数据源。</summary>
+        <value>一个<see cref="T:System.Data.SqlClient.SqlCommand" />过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />将记录插入数据库中的新行相对应的<see cref="T:System.Data.DataSet" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -790,6 +797,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -822,6 +830,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -854,6 +863,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1">
@@ -864,7 +874,7 @@
         <ReturnType>System.Data.SqlClient.SqlRowUpdatedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在对数据源执行命令后的 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" /> 过程中发生。 尝试进行更新，因此激发了该事件。</summary>
+        <summary>过程中发生<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />对数据源执行命令后。 尝试更新进行，因此，事件将激发。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -927,6 +937,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1">
@@ -937,7 +948,7 @@
         <ReturnType>System.Data.SqlClient.SqlRowUpdatingEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在对数据源执行命令前的 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" /> 过程中发生。 尝试进行更新，因此激发了该事件。</summary>
+        <summary>过程中发生<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />之前对数据源执行命令。 尝试更新进行，因此，事件将激发。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1000,6 +1011,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -1028,8 +1040,8 @@
         <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个 Transact-SQL 语句或存储过程，用于在数据源中选择记录。</summary>
-        <value>在 <see cref="T:System.Data.SqlClient.SqlCommand" /> 过程中使用的 <see cref="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataSet)" />，用来从数据库中为 <see cref="T:System.Data.DataSet" /> 中的位置选择记录。</value>
+        <summary>获取或设置一个 TRANSACT-SQL 语句或存储的过程用于在数据源中选择记录。</summary>
+        <value>一个<see cref="T:System.Data.SqlClient.SqlCommand" />过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataSet)" />来选择记录以便放入数据库中<see cref="T:System.Data.DataSet" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1074,19 +1086,20 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参见 <see cref="P:System.Data.IDbDataAdapter.DeleteCommand" />。</summary>
+        <summary>有关此成员的说明，请参阅 <see cref="P:System.Data.IDbDataAdapter.DeleteCommand" />。</summary>
         <value>
           <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" /> 期间使用的 <see cref="T:System.Data.IDbCommand" />，用于为数据集中已删除行删除数据源中的记录。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例被强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1114,18 +1127,20 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参见 <see cref="P:System.Data.IDbDataAdapter.InsertCommand" />。</summary>
-        <value>在 <see cref="T:System.Data.IDbCommand" /> 过程中使用的 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />，它针对数据集中的新行将记录插入到数据源。</value>
+        <summary>有关此成员的说明，请参阅 <see cref="P:System.Data.IDbDataAdapter.InsertCommand" />。</summary>
+        <value>
+          <see cref="T:System.Data.IDbCommand" />的过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />中数据集的新行的数据源中插入记录。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例被强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1153,18 +1168,20 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参见 <see cref="P:System.Data.IDbDataAdapter.SelectCommand" />。</summary>
-        <value>在 <see cref="T:System.Data.IDbCommand" /> 过程中使用的 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />，它从数据源中选择记录以便放入数据集中。</value>
+        <summary>有关此成员的说明，请参阅 <see cref="P:System.Data.IDbDataAdapter.SelectCommand" />。</summary>
+        <value>
+          <see cref="T:System.Data.IDbCommand" />的过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />从放入数据集中的数据源选择记录。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例被强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1192,18 +1209,20 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参见 <see cref="P:System.Data.IDbDataAdapter.UpdateCommand" />。</summary>
-        <value>在 <see cref="T:System.Data.IDbCommand" /> 过程中使用的 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />，它针对数据集中已修改的行更新数据源中的记录。</value>
+        <summary>有关此成员的说明，请参阅 <see cref="P:System.Data.IDbDataAdapter.UpdateCommand" />。</summary>
+        <value>
+          <see cref="T:System.Data.IDbCommand" />的过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />数据集中已修改的行的数据源中更新记录。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例被强制转换为 <xref:System.Data.IDbDataAdapter> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1231,19 +1250,20 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>有关此成员的说明，请参见 <see cref="M:System.ICloneable.Clone" />。</summary>
-        <returns>作为当前实例的副本的新对象。</returns>
+        <summary>有关此成员的说明，请参阅 <see cref="M:System.ICloneable.Clone" />。</summary>
+        <returns>作为当前实例副本的新对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例强制转换为 <xref:System.ICloneable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.SqlClient.SqlDataAdapter> 实例被强制转换为 <xref:System.ICloneable> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1294,33 +1314,34 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置每次到服务器的往返过程中处理的行数。</summary>
-        <value>每一批处理的行数。  
+        <summary>获取或设置在每个往返到服务器的处理的行数。</summary>
+        <value>要处理每个批的行数。  
   
- <list type="table"><listheader><term> 值为 
+ <list type="table"><listheader><term> 值是 
  </term><description> 效果 
  </description></listheader><item><term> 0 
- </term><description> 批大小没有限制。  
+ </term><description> 批大小没有任何限制...  
   
  </description></item><item><term> 1 
  </term><description> 禁用批量更新。  
   
  </description></item><item><term> &gt;1 
- </term><description> 更改是使用 <see cref="P:System.Data.SqlClient.SqlDataAdapter.UpdateBatchSize" /> 操作的批处理一次性发送的。  
+ </term><description> 使用批处理的发送更改<see cref="P:System.Data.SqlClient.SqlDataAdapter.UpdateBatchSize" />操作一次。  
   
  </description></item></list>  
 
- 当设置为 1 以外的值，与相关联的所有命令<see cref="T:System.Data.SqlClient.SqlDataAdapter" />必须具有其**UpdatedRowSource**属性设置为<see langword="None" />或<see langword="OutputParameters" />。 否则将引发异常。</value>
+ 当设置为 1 以外的值，与相关联的所有命令<see cref="T:System.Data.SqlClient.SqlDataAdapter" />必须具有其**UpdatedRowSource**属性设置为<see langword="None" />或<see langword="OutputParameters" />。 否则引发异常。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 获取或设置一个值，该值启用或禁用批处理支持，并且指定可在一次批处理中执行的命令的数量。  
+ 获取或设置一个值，启用或禁用批处理支持，并指定可以在批处理中执行的命令数。  
   
  使用<xref:System.Data.SqlClient.SqlDataAdapter.UpdateBatchSize%2A>属性来更新数据源中的更改与<xref:System.Data.DataSet>。 这可以通过减少到服务器的往返次数来提高应用程序性能。  
   
@@ -1354,6 +1375,7 @@
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -1382,8 +1404,8 @@
         <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个 Transact-SQL 语句或存储过程，用于更新数据源中的记录。</summary>
-        <value>在 <see cref="T:System.Data.SqlClient.SqlCommand" /> 过程中使用的 <see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />，用于在数据库中更新对应于 <see cref="T:System.Data.DataSet" /> 中已修改行的记录。</value>
+        <summary>获取或设置一个 TRANSACT-SQL 语句或存储的过程用于更新数据源中的记录。</summary>
+        <value>一个<see cref="T:System.Data.SqlClient.SqlCommand" />过程中使用<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />更新对应于数据库中的记录已修改的行中的<see cref="T:System.Data.DataSet" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

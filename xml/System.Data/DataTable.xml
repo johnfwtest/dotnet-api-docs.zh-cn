@@ -1,11 +1,11 @@
 <Type Name="DataTable" FullName="System.Data.DataTable">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f7cb1d43d32f6af06ab0d2638e93f052ae52d976" />
-    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
+    <Meta Name="ms.openlocfilehash" Value="300369f702f863e5f202e1c54c0a83eb9edf7782" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
-    <Meta Name="ms.locfileid" Value="52741385" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52918430" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class DataTable : System.ComponentModel.MarshalByValueComponent, System.ComponentModel.IListSource, System.ComponentModel.ISupportInitialize, System.ComponentModel.ISupportInitializeNotification, System.Runtime.Serialization.ISerializable, System.Xml.Serialization.IXmlSerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit DataTable extends System.ComponentModel.MarshalByValueComponent implements class System.ComponentModel.IListSource, class System.ComponentModel.ISupportInitialize, class System.ComponentModel.ISupportInitializeNotification, class System.Runtime.Serialization.ISerializable, class System.Xml.Serialization.IXmlSerializable" />
@@ -181,7 +181,7 @@
 ## Remarks  
  构造函数设置的所有属性的初始值<xref:System.Data.DataTable>对象。 下表显示的属性和它们的默认值。 实例时<xref:System.Data.DataTable>创建以下读/写属性设置为初始值。  
   
-|Property|默认值|  
+|属性|默认值|  
 |--------------|-------------------|  
 |**CaseSensitive**|与父项相同<xref:System.Data.DataSet>，如果它属于一个。 否则为 `false`。|  
 |**DisplayExpression**|空字符串 ("")|  
@@ -231,7 +231,7 @@
         <Parameter Name="tableName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="tableName">要向表提供的名称。 如果 <paramref name="tableName" /> 为 <see langword="null" /> 或是空字符串，则在添加到 <see cref="T:System.Data.DataTableCollection" /> 中时指定默认名称。</param>
+        <param name="tableName">要向表提供的名称。 如果<paramref name="tableName" />是<see langword="null" />或空字符串，默认名称时指定添加到<see cref="T:System.Data.DataTableCollection" />。</param>
         <summary>使用指定的表名初始化 <see cref="T:System.Data.DataTable" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -318,7 +318,7 @@
         <Parameter Name="tableNamespace" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="tableName">要向表提供的名称。 如果 <paramref name="tableName" /> 为 <see langword="null" /> 或是空字符串，则在添加到 <see cref="T:System.Data.DataTableCollection" /> 中时指定默认名称。</param>
+        <param name="tableName">要向表提供的名称。 如果<paramref name="tableName" />是<see langword="null" />或空字符串，默认名称时指定添加到<see cref="T:System.Data.DataTableCollection" />。</param>
         <param name="tableNamespace">
           <see langword="DataTable" /> 中所存储数据的 XML 表示形式的命名空间。</param>
         <summary>使用指定的表名和命名空间初始化 <see cref="T:System.Data.DataTable" /> 类的新实例。</summary>
@@ -493,7 +493,8 @@
       </ReturnValue>
       <Docs>
         <summary>指示表中的字符串比较是否区分大小写。</summary>
-        <value>如果比较区分大小写，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值被设置为父级 <see cref="T:System.Data.DataSet" /> 对象的 <see cref="P:System.Data.DataSet.CaseSensitive" /> 属性；当 <see cref="T:System.Data.DataTable" /> 的创建独立于 <see cref="T:System.Data.DataSet" /> 时设置为 <see langword="false" />。</value>
+        <value>
+          <see langword="true" /> 如果比较不区分大小写。否则为<see langword="false" />。 默认值设置为 parent<see cref="T:System.Data.DataSet" />对象的<see cref="P:System.Data.DataSet.CaseSensitive" />属性，或<see langword="false" />如果<see cref="T:System.Data.DataTable" />创建独立于<see cref="T:System.Data.DataSet" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -557,7 +558,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此 <see cref="T:System.Data.DataTable" /> 的子关系的集合。</summary>
-        <value>一个 <see cref="T:System.Data.DataRelationCollection" />，包含该表的子关系。 如果 <see cref="T:System.Data.DataRelation" /> 对象不存在，将返回空集合。</value>
+        <value>一个<see cref="T:System.Data.DataRelationCollection" />，包含该表的子关系。 如果没有，则返回空集合<see cref="T:System.Data.DataRelation" />存在的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1335,7 +1336,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取属于该表的列的集合。</summary>
-        <value>一个 <see cref="T:System.Data.DataColumnCollection" />，包含该表的 <see cref="T:System.Data.DataColumn" /> 对象的集合。 如果 <see cref="T:System.Data.DataColumn" /> 对象不存在，将返回空集合。</value>
+        <value>一个<see cref="T:System.Data.DataColumnCollection" />，其中包含的集合<see cref="T:System.Data.DataColumn" />表对象。 如果没有，则返回空集合<see cref="T:System.Data.DataColumn" />存在的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1470,7 +1471,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取由该表维护的约束的集合。</summary>
-        <value>一个 <see cref="T:System.Data.ConstraintCollection" />，包含该表的 <see cref="T:System.Data.Constraint" /> 对象的集合。 如果 <see cref="T:System.Data.Constraint" /> 对象不存在，将返回空集合。</value>
+        <value>一个<see cref="T:System.Data.ConstraintCollection" />，其中包含的集合<see cref="T:System.Data.Constraint" />表对象。 如果没有，则返回空集合<see cref="T:System.Data.Constraint" />存在的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1684,7 +1685,8 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取此表所属的 <see cref="T:System.Data.DataSet" />。</summary>
-        <value>此表所属的 <see cref="T:System.Data.DataSet" />。</value>
+        <value>
+          <see cref="T:System.Data.DataSet" />此表所属。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1923,7 +1925,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取自定义用户信息的集合。</summary>
-        <value>包含自定义用户信息的 <see cref="T:System.Data.PropertyCollection" />。</value>
+        <value>一个<see cref="T:System.Data.PropertyCollection" />，其中包含自定义用户信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2335,7 +2337,8 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示该表所属的 <see cref="T:System.Data.DataSet" /> 的任何表的任何行中是否有错误。</summary>
-        <value>如果有错误，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value>
+          <see langword="true" /> 如果存在错误;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2443,7 +2446,7 @@ class Program {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 有关详情，请参阅<xref:System.Data.DataTable.IsInitialized%2A>。  
+ 有关详细信息，请参阅 <xref:System.Data.DataTable.IsInitialized%2A> 。  
   
  ]]></format>
         </remarks>
@@ -2485,7 +2488,7 @@ class Program {
       <Docs>
         <summary>获取一个值，该值指示是否已初始化 <see cref="T:System.Data.DataTable" />。</summary>
         <value>
-          <see langword="true" /> 表明组件已完成初始化；否则为 <see langword="false" />。</value>
+          <see langword="true" /> 若要指示该组件已完成初始化;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2980,7 +2983,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取或设置用于比较表中字符串的区域设置信息。</summary>
-        <value>一个 <see cref="T:System.Globalization.CultureInfo" />，它包含有关用户计算机区域设置的数据。 默认为 <see cref="T:System.Data.DataSet" /> 所属的 <see cref="T:System.Globalization.CultureInfo" /> 对象的 <see cref="P:System.Data.DataSet.Locale" />（由 <see cref="T:System.Data.DataTable" /> 属性返回）；如果该表不属于 <see cref="T:System.Data.DataSet" />，则默认为当前系统的 <see cref="T:System.Globalization.CultureInfo" />。</value>
+        <value>一个<see cref="T:System.Globalization.CultureInfo" />，其中包含有关用户的计算机区域设置的数据。 默认值是<see cref="T:System.Data.DataSet" />对象的<see cref="T:System.Globalization.CultureInfo" />(返回由<see cref="P:System.Data.DataSet.Locale" />属性) 向其<see cref="T:System.Data.DataTable" />所属; 如果表不属于<see cref="T:System.Data.DataSet" />，默认值是当前系统<see cref="T:System.Globalization.CultureInfo" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3271,7 +3274,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取或设置该表最初的起始大小。</summary>
-        <value>该表中行的最初起始大小。 默认值为 50。</value>
+        <value>在此表的行中最初起始大小。 默认值为 50。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3450,8 +3453,7 @@ class Program {
         <Parameter Name="builder" Type="System.Data.DataRowBuilder" />
       </Parameters>
       <Docs>
-        <param name="builder">
-          <see cref="T:System.Data.DataRowBuilder" /> 对象。</param>
+        <param name="builder">一个 <see cref="T:System.Data.DataRowBuilder" /> 对象。</param>
         <summary>从现有行创建新行。</summary>
         <returns>
           <see cref="T:System.Data.DataRow" /> 派生类。</returns>
@@ -4024,7 +4026,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取该 <see cref="T:System.Data.DataTable" /> 的父关系的集合。</summary>
-        <value>一个 <see cref="T:System.Data.DataRelationCollection" />，包含该表的父关系。 如果 <see cref="T:System.Data.DataRelation" /> 对象不存在，将返回空集合。</value>
+        <value>一个<see cref="T:System.Data.DataRelationCollection" />，包含该表的父关系。 如果没有，则返回空集合<see cref="T:System.Data.DataRelation" />存在的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4080,8 +4082,7 @@ class Program {
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <see cref="T:System.Data.DataTable" /> 中所存储数据的 XML 表示形式的命名空间。</summary>
-        <value>
-          <see cref="T:System.Data.DataTable" /> 的前缀。</value>
+        <value>前缀<see cref="T:System.Data.DataTable" />。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/52ff0e32-3e5a-41de-9a3b-7b04ea52b83e">创建和使用 DataTables</related>
       </Docs>
@@ -4772,8 +4773,7 @@ public class A {
         <Parameter Name="reader" Type="System.Xml.XmlReader" />
       </Parameters>
       <Docs>
-        <param name="reader">
-          <see cref="T:System.Xml.XmlReader" /> 对象。</param>
+        <param name="reader">一个 <see cref="T:System.Xml.XmlReader" /> 对象。</param>
         <summary>从 XML 流中读取。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -4861,7 +4861,7 @@ public class A {
       </ReturnValue>
       <Docs>
         <summary>获取或设置序列化格式。</summary>
-        <value>指定 <see langword="Binary" /> 或 <see langword="Xml" /> 序列化的 <see cref="T:System.Data.SerializationFormat" /> 枚举。</value>
+        <value>一个<see cref="T:System.Data.SerializationFormat" />枚举指定<see langword="Binary" />或<see langword="Xml" />序列化。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/52ff0e32-3e5a-41de-9a3b-7b04ea52b83e">创建和使用 DataTables</related>
       </Docs>
@@ -5142,7 +5142,7 @@ public class A {
       </ReturnValue>
       <Docs>
         <summary>获取属于该表的行的集合。</summary>
-        <value>包含 <see cref="T:System.Data.DataRowCollection" /> 对象的 <see cref="T:System.Data.DataRow" />；否则为 null 值（如果不存在任何 <see cref="T:System.Data.DataRow" /> 对象）。</value>
+        <value>一个<see cref="T:System.Data.DataRowCollection" />，其中包含<see cref="T:System.Data.DataRow" />对象; 否则为空值如果没有<see cref="T:System.Data.DataRow" />存在的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5214,7 +5214,7 @@ public class A {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 若要确保正确的顺序排列，请指定与排序条件<xref:System.Data.DataTable.Select%2A>或<xref:System.Data.DataTable.Select%2A>。  
+ 若要确保正确的顺序排列，请指定与排序条件<xref:System.Data.DataTable.Select(System.String,System.String)>或<xref:System.Data.DataTable.Select(System.String,System.String,System.Data.DataViewRowState)>。  
   
    
   
@@ -5271,7 +5271,7 @@ public class A {
 ## Remarks  
  若要创建`filterExpression`参数，使用相同的规则应用于<xref:System.Data.DataColumn>类的<xref:System.Data.DataColumn.Expression%2A>创建筛选器的属性值。  
   
- 若要确保正确的顺序排列，请指定与排序条件<xref:System.Data.DataTable.Select%2A>或<xref:System.Data.DataTable.Select%2A>。  
+若要确保正确的顺序排列，请指定与排序条件<xref:System.Data.DataTable.Select(System.String,System.String)>或<xref:System.Data.DataTable.Select(System.String,System.String,System.Data.DataViewRowState)>。
   
  如果在筛选器列包含 null 值，它将不是结果的一部分。  
   
@@ -5491,12 +5491,13 @@ public class A {
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参阅 <see cref="P:System.ComponentModel.IListSource.ContainsListCollection" />。</summary>
-        <value>如果集合是 <see cref="T:System.Collections.IList" /> 对象集合，则为 <see langword="true" />；否则，为 <see langword="false" />。</value>
+        <value>
+          <see langword="true" /> 如果集合是一系列<see cref="T:System.Collections.IList" />对象; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.DataTable> 实例强制转换为 <xref:System.ComponentModel.IListSource> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.DataTable> 实例被强制转换为 <xref:System.ComponentModel.IListSource> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -5536,7 +5537,7 @@ public class A {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.DataTable> 实例强制转换为 <xref:System.ComponentModel.IListSource> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.DataTable> 实例被强制转换为 <xref:System.ComponentModel.IListSource> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -5570,10 +5571,8 @@ public class A {
         <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
       </Parameters>
       <Docs>
-        <param name="info">
-          <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 对象。</param>
-        <param name="context">
-          <see cref="T:System.Runtime.Serialization.StreamingContext" /> 对象。</param>
+        <param name="info">一个 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 对象。</param>
+        <param name="context">一个 <see cref="T:System.Runtime.Serialization.StreamingContext" /> 对象。</param>
         <summary>使用序列化 <see cref="T:System.Data.DataTable" /> 时所需的数据填充序列化信息对象。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -5614,7 +5613,7 @@ public class A {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.DataSet> 实例强制转换为 <xref:System.Xml.Serialization.IXmlSerializable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.DataSet> 实例被强制转换为 <xref:System.Xml.Serialization.IXmlSerializable> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -5658,7 +5657,7 @@ public class A {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.DataSet> 实例强制转换为 <xref:System.Xml.Serialization.IXmlSerializable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.DataSet> 实例被强制转换为 <xref:System.Xml.Serialization.IXmlSerializable> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -5702,7 +5701,7 @@ public class A {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.DataSet> 实例强制转换为 <xref:System.Xml.Serialization.IXmlSerializable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.DataSet> 实例被强制转换为 <xref:System.Xml.Serialization.IXmlSerializable> 接口时使用。  
   
  ]]></format>
         </remarks>
