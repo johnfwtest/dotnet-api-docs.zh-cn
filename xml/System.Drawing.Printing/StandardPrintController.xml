@@ -1,11 +1,11 @@
 <Type Name="StandardPrintController" FullName="System.Drawing.Printing.StandardPrintController">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d22889549ac059a35ec75e93788ffed526159bd1" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
+    <Meta Name="ms.openlocfilehash" Value="66c5da4812dbb4abb35d467cc402c5b3f2e41173" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46624171" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52909603" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class StandardPrintController : System.Drawing.Printing.PrintController" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StandardPrintController extends System.Drawing.Printing.PrintController" />
@@ -22,13 +22,14 @@
   <AssemblyInfo>
     <AssemblyName>System.Drawing.Common</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.1</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Drawing.Printing.PrintController</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>指定一个打印控制器，它向打印机发送信息。</summary>
+    <summary>指定将信息发送到打印机的打印控制器。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -58,6 +59,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Drawing.Common</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.1</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -87,6 +89,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Drawing.Common</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -96,11 +99,9 @@
         <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
       </Parameters>
       <Docs>
-        <param name="document">
-          <see cref="T:System.Drawing.Printing.PrintDocument" />，它表示所打印的文档。</param>
-        <param name="e">
-          <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />，它包含有关如何打印文档中某页的数据。</param>
-        <summary>完成确定何时以及如何打印文档页的控制序列。</summary>
+        <param name="document">一个<see cref="T:System.Drawing.Printing.PrintDocument" />，表示正在打印的文档。</param>
+        <param name="e">一个<see cref="T:System.Drawing.Printing.PrintPageEventArgs" />，其中包含有关如何打印文档中的页的数据。</param>
+        <summary>完成确定何时以及如何打印文档的页的控制序列。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -113,7 +114,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ComponentModel.Win32Exception">本地 Win32 应用程序编程接口 (API) 未能完成对页的写操作。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">本机的 Win32 应用程序编程接口 (API) 未能完成对页的写。</exception>
         <permission cref="T:System.Drawing.Printing.PrintingPermission">用于控制对打印机的访问。 相关的枚举： <see cref="T:System.Drawing.Printing.PrintingPermissionLevel" />。</permission>
         <altmember cref="M:System.Drawing.Printing.StandardPrintController.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
         <altmember cref="M:System.Drawing.Printing.StandardPrintController.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
@@ -140,6 +141,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Drawing.Common</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -149,10 +151,8 @@
         <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
       </Parameters>
       <Docs>
-        <param name="document">
-          <see cref="T:System.Drawing.Printing.PrintDocument" />，它表示所打印的文档。</param>
-        <param name="e">
-          <see cref="T:System.Drawing.Printing.PrintEventArgs" />，它包含有关如何打印文档的数据。</param>
+        <param name="document">一个<see cref="T:System.Drawing.Printing.PrintDocument" />，表示正在打印的文档。</param>
+        <param name="e">一个<see cref="T:System.Drawing.Printing.PrintEventArgs" />，其中包含有关如何打印文档的数据。</param>
         <summary>完成确定何时以及如何对文档进行打印的控制序列。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -164,7 +164,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ComponentModel.Win32Exception">本地的 Win32 应用程序编程接口 (API) 未能完成打印作业。  
+        <exception cref="T:System.ComponentModel.Win32Exception">本机的 Win32 应用程序编程接口 (API) 未能完成打印作业。  
   
 或 
 本地的 Win32 API 未能删除指定的设备上下文 (DC)。</exception>
@@ -193,6 +193,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Drawing.Common</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Graphics</ReturnType>
@@ -202,13 +203,10 @@
         <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
       </Parameters>
       <Docs>
-        <param name="document">
-          <see cref="T:System.Drawing.Printing.PrintDocument" />，它表示所打印的文档。</param>
-        <param name="e">
-          <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />，它包含有关如何打印文档中某页的数据。 最初，该参数的 <see cref="P:System.Drawing.Printing.PrintPageEventArgs.Graphics" /> 属性将为 <see langword="null" />。 由 <see cref="M:System.Drawing.Printing.StandardPrintController.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" /> 方法所返回的值将用于设置该属性。</param>
-        <summary>开始控制序列，确定何时以及如何打印文档页。</summary>
-        <returns>
-          <see cref="T:System.Drawing.Graphics" /> 对象，它表示 <see cref="T:System.Drawing.Printing.PrintDocument" /> 中的一页。</returns>
+        <param name="document">一个<see cref="T:System.Drawing.Printing.PrintDocument" />，表示正在打印的文档。</param>
+        <param name="e">一个<see cref="T:System.Drawing.Printing.PrintPageEventArgs" />，其中包含有关如何打印文档中的页的数据。 最初，<see cref="P:System.Drawing.Printing.PrintPageEventArgs.Graphics" />此参数的属性将为<see langword="null" />。 从返回的值<see cref="M:System.Drawing.Printing.StandardPrintController.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />方法将用于设置此属性。</param>
+        <summary>开始控制序列确定何时以及如何打印文档中的页。</summary>
+        <returns>一个<see cref="T:System.Drawing.Graphics" />对象，表示从页面<see cref="T:System.Drawing.Printing.PrintDocument" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -219,10 +217,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ComponentModel.Win32Exception">本地的 Win32 应用程序编程接口 (API) 未能使打印驱动程序就绪以接受数据。  
+        <exception cref="T:System.ComponentModel.Win32Exception">本机的 Win32 应用程序编程接口 (API) 未能准备要接受的数据的打印机驱动程序。  
   
 或 
-本地的 Win32 API 未能使用指定信息更新指定的打印机或绘图仪的设备上下文 (DC)。</exception>
+本地的 Win32 API 无法更新指定的打印机或绘图仪设备上下文 (DC) 使用指定的信息。</exception>
         <permission cref="T:System.Drawing.Printing.PrintingPermission">用于控制对打印机的访问。 相关的枚举： <see cref="T:System.Drawing.Printing.PrintingPermissionLevel" />。</permission>
         <altmember cref="M:System.Drawing.Printing.StandardPrintController.OnEndPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
         <altmember cref="M:System.Drawing.Printing.StandardPrintController.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
@@ -247,6 +245,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Drawing.Common</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.1</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -256,11 +255,9 @@
         <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
       </Parameters>
       <Docs>
-        <param name="document">
-          <see cref="T:System.Drawing.Printing.PrintDocument" />，它表示所打印的文档。</param>
-        <param name="e">
-          <see cref="T:System.Drawing.Printing.PrintEventArgs" />，它包含有关如何打印文档的数据。</param>
-        <summary>开始控制序列，确定何时以及如何对文档进行打印。</summary>
+        <param name="document">一个<see cref="T:System.Drawing.Printing.PrintDocument" />，表示正在打印的文档。</param>
+        <param name="e">一个<see cref="T:System.Drawing.Printing.PrintEventArgs" />，其中包含有关如何打印文档的数据。</param>
+        <summary>开始控制序列确定何时以及如何打印文档。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -273,8 +270,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">打印机设置无效。</exception>
-        <exception cref="T:System.ComponentModel.Win32Exception">本地的 Win32 应用程序编程接口 (API) 未能启动打印作业。</exception>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">打印机设置不是有效的。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">本机的 Win32 应用程序编程接口 (API) 无法启动打印作业。</exception>
         <permission cref="T:System.Drawing.Printing.PrintingPermission">用于控制对打印机的访问。 相关的枚举： <see cref="T:System.Drawing.Printing.PrintingPermissionLevel" /></permission>
         <altmember cref="M:System.Drawing.Printing.StandardPrintController.OnEndPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
         <altmember cref="M:System.Drawing.Printing.StandardPrintController.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />

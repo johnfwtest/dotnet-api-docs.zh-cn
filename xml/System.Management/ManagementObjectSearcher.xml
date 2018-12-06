@@ -1,11 +1,11 @@
 <Type Name="ManagementObjectSearcher" FullName="System.Management.ManagementObjectSearcher">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="763d3e4170e1d55abcb7835104a3277ed7f3e606" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
+    <Meta Name="ms.openlocfilehash" Value="e20eac7612dbdb7515ab353a8796b67ed2f4474c" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49129816" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52905703" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class ManagementObjectSearcher : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManagementObjectSearcher extends System.ComponentModel.Component" />
@@ -24,12 +24,12 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;dotnet-plat-ext-2.1">
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;dotnet-plat-ext-2.1;dotnet-plat-ext-2.2">
       <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>基于指定的查询检索管理对象的集合。 此类是用于检索管理信息的较为常用的入口点之一。 例如，它可以用于枚举系统中的所有磁盘驱动器、网络适配器、进程及更多管理对象，或者用于查询所有处于活动状态的网络连接以及暂停的服务等。  在实例化之后，此类的实例可以接受在 <see cref="T:System.Management.ObjectQuery" /> 或其派生类中表示的 WMI 查询作为输入，并且还可以选择接受一个 <see cref="T:System.Management.ManagementScope" />（表示执行查询时所在的 WMI 命名空间）。 它还可以接受 <see cref="T:System.Management.EnumerationOptions" /> 中的其他高级选项。 当调用此对象的 <see cref="M:System.Management.ManagementObjectSearcher.Get" /> 方法时，<see cref="T:System.Management.ManagementObjectSearcher" /> 在指定的范围内执行给定的查询，并返回与 <see cref="T:System.Management.ManagementObjectCollection" /> 中的查询匹配的管理对象的集合。</summary>
+    <summary>检索指定的查询所基于的管理对象的集合。 此类是一个检索管理信息的使用频率较高的入口点。 例如，可用来枚举所有磁盘驱动器、 网络适配器、 进程和其他更多的管理对象在系统上，或若要查询的所有网络连接都已启动，服务会暂停，等等。  实例化时，此类的实例将作为表示 WMI 查询的输入<see cref="T:System.Management.ObjectQuery" />或其派生，并选择性地<see cref="T:System.Management.ManagementScope" />表示要执行中的查询的 WMI 命名空间。 它也可以采用其他高级的选项<see cref="T:System.Management.EnumerationOptions" />。 当调用此对象的 <see cref="M:System.Management.ManagementObjectSearcher.Get" /> 方法时，<see cref="T:System.Management.ManagementObjectSearcher" /> 在指定的范围内执行给定的查询，并返回与 <see cref="T:System.Management.ManagementObjectCollection" /> 中的查询匹配的管理对象的集合。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -57,7 +57,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的新实例。 设置此对象的部分属性后，可以使用此对象调用对管理信息的查询。 这是默认构造函数。</summary>
+        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的新实例。 此对象上的某些属性设置后，该对象可用于调用有关管理信息的查询。 这是默认构造函数。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -88,8 +88,9 @@
         <Parameter Name="query" Type="System.Management.ObjectQuery" />
       </Parameters>
       <Docs>
-        <param name="query">表示搜索器将调用的查询的 <see cref="T:System.Management.ObjectQuery" />。</param>
-        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的一个新实例，它用于调用有关管理信息的指定查询。</summary>
+        <param name="query">
+          <see cref="T:System.Management.ObjectQuery" />表示搜索器调用的查询。</param>
+        <summary>初始化的新实例<see cref="T:System.Management.ManagementObjectSearcher" />类用于调用指定的查询管理信息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -128,8 +129,8 @@
         <Parameter Name="queryString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="queryString">对象将调用的 WMI 查询。</param>
-        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的一个新实例，它用于调用有关管理信息的指定查询。</summary>
+        <param name="queryString">要调用的对象的 WMI 查询。</param>
+        <summary>初始化的新实例<see cref="T:System.Management.ManagementObjectSearcher" />类用于调用指定的查询管理信息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -169,9 +170,10 @@
         <Parameter Name="query" Type="System.Management.ObjectQuery" />
       </Parameters>
       <Docs>
-        <param name="scope">一个 <see cref="T:System.Management.ManagementScope" />，表示要在其中调用查询的范围。</param>
-        <param name="query">表示要调用的查询的 <see cref="T:System.Management.ObjectQuery" />。</param>
-        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的一个新实例，它用于在指定范围内调用指定查询。</summary>
+        <param name="scope">一个<see cref="T:System.Management.ManagementScope" />表示要在其中调用查询的范围。</param>
+        <param name="query">
+          <see cref="T:System.Management.ObjectQuery" />表示要调用的查询。</param>
+        <summary>初始化的新实例<see cref="T:System.Management.ManagementObjectSearcher" />类用于调用在指定范围内指定的查询。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -212,9 +214,9 @@
         <Parameter Name="queryString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="scope">要在其中进行查询的范围。</param>
+        <param name="scope">在其中查询的范围。</param>
         <param name="queryString">要调用的查询。</param>
-        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的一个新实例，它用于在指定范围内调用指定查询。</summary>
+        <summary>初始化的新实例<see cref="T:System.Management.ManagementObjectSearcher" />类用于调用在指定范围内指定的查询。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -256,12 +258,12 @@
         <Parameter Name="options" Type="System.Management.EnumerationOptions" />
       </Parameters>
       <Docs>
-        <param name="scope">
-          <see cref="T:System.Management.ManagementScope" />，指定查询的范围。</param>
+        <param name="scope">一个<see cref="T:System.Management.ManagementScope" />指定查询的范围。</param>
         <param name="query">
-          <see cref="T:System.Management.ObjectQuery" />，指定将调用的查询。</param>
-        <param name="options">一个 <see cref="T:System.Management.EnumerationOptions" />，它指定查询将使用的附加选项。</param>
-        <summary>使用指定的选项初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的一个新实例，它将用于在指定范围内调用指定的查询。</summary>
+          <see cref="T:System.Management.ObjectQuery" />指定要调用的查询。</param>
+        <param name="options">
+          <see cref="T:System.Management.EnumerationOptions" />指定要用于查询的附加选项。</param>
+        <summary>初始化的新实例<see cref="T:System.Management.ManagementObjectSearcher" />类要用来调用指定的查询在指定的范围内，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -302,10 +304,11 @@
         <Parameter Name="options" Type="System.Management.EnumerationOptions" />
       </Parameters>
       <Docs>
-        <param name="scope">将在其中调用查询的范围。</param>
+        <param name="scope">应在其中调用查询作用域。</param>
         <param name="queryString">要调用的查询。</param>
-        <param name="options">一个 <see cref="T:System.Management.EnumerationOptions" />，它指定有关查询的附加选项。</param>
-        <summary>初始化 <see cref="T:System.Management.ManagementObjectSearcher" /> 类的一个新实例，它将用于在指定范围内使用指定选项调用指定的查询。</summary>
+        <param name="options">
+          <see cref="T:System.Management.EnumerationOptions" />指定查询的其他选项。</param>
+        <summary>初始化的新实例<see cref="T:System.Management.ManagementObjectSearcher" />类用于调用指定的查询，在指定作用域，并使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -354,8 +357,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>调用指定的 WMI 查询并返回结果集合。</summary>
-        <returns>一个 <see cref="T:System.Management.ManagementObjectCollection" />，它包含匹配指定查询的对象。</returns>
+        <summary>调用指定的 WMI 查询并返回生成的集合。</summary>
+        <returns>一个<see cref="T:System.Management.ManagementObjectCollection" />包含与指定的查询匹配的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -398,7 +401,7 @@
       </Parameters>
       <Docs>
         <param name="watcher">引发由操作触发的事件的观察程序。</param>
-        <summary>异步调用 WMI 查询，并绑定到一个观察程序以传递结果。</summary>
+        <summary>以异步方式调用 WMI 查询并绑定到一个观察程序，以将结果提供。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -429,8 +432,8 @@
         <ReturnType>System.Management.EnumerationOptions</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置有关如何搜索对象的选项。</summary>
-        <value>返回一个 <see cref="T:System.Management.EnumerationOptions" />，它包含用于搜索 WMI 对象的选项。</value>
+        <summary>获取或设置要搜索的对象的选项。</summary>
+        <value>返回<see cref="T:System.Management.EnumerationOptions" />，其中包含用于搜索 WMI 对象的选项。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -464,8 +467,8 @@
         <ReturnType>System.Management.ObjectQuery</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要在搜索器中调用的查询（即搜索管理对象时要应用的条件）。</summary>
-        <value>返回一个 <see cref="T:System.Management.ObjectQuery" />，它包含要在观察程序中调用的查询。</value>
+        <summary>获取或设置调用观察程序 （即，条件将应用于搜索管理对象） 中的查询。</summary>
+        <value>返回<see cref="T:System.Management.ObjectQuery" />，其中包含调用观察程序中的查询。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -500,8 +503,8 @@
         <ReturnType>System.Management.ManagementScope</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要在其中查找对象的范围（该范围表示一个 WMI 命名空间）。</summary>
-        <value>返回一个 <see cref="T:System.Management.ManagementScope" />，它包含要在其中查找 WMI 对象的范围（命名空间）。</value>
+        <summary>获取或设置要在其中查找的对象 （该范围表示 WMI 命名空间） 的作用域。</summary>
+        <value>返回<see cref="T:System.Management.ManagementScope" />范围 （命名空间） 包含要在其中查找 WMI 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

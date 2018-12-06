@@ -1,11 +1,11 @@
 <Type Name="SqlNotificationRequest" FullName="System.Data.Sql.SqlNotificationRequest">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="28c4689ab5853c1d7872ec9d14adbd0af441f313" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="8aaa5642d0b41523efd51fce985597691bbc3a8b" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52209914" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52906803" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class SqlNotificationRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlNotificationRequest extends System.Object" />
@@ -22,13 +22,14 @@
   <AssemblyInfo>
     <AssemblyName>System.Data.SqlClient</AssemblyName>
     <AssemblyVersion>4.4.0.0</AssemblyVersion>
+    <AssemblyVersion>4.5.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>表示对给定命令的通知的请求。</summary>
+    <summary>表示有关给定命令的通知的请求。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -66,6 +67,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -98,6 +100,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="userData" Type="System.String" />
@@ -105,12 +108,12 @@
         <Parameter Name="timeout" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="userData">一个字符串，它包含此通知的应用程序特定的标识符。 通知基础结构并不使用它，但是可以使用它将通知与应用程序状态相关联。 此参数中指示的值包含在 Service Broker 队列消息中。</param>
-        <param name="options">一个字符串，它包含发送通知消息的 Service Broker 服务名，并且必须包括一个数据库名称或 Service Broker 实例 GUID（用来将服务名查找的范围限制为一个特定的数据库）。  
+        <param name="userData">包含此通知的应用程序特定的标识符的字符串。 它不由通知基础结构，但它允许你将通知与应用程序状态相关联。 Service Broker 队列消息中包含此参数中指示的值。</param>
+        <param name="options">一个字符串，包含发送通知消息的 Service Broker 服务名，它必须包含数据库名称或 Service Broker 实例限制到特定数据库的服务名查找范围的 GUID。  
   
-有关 <paramref name="options" /> 参数的格式的更多信息，请参阅 <see cref="P:System.Data.Sql.SqlNotificationRequest.Options" />。</param>
-        <param name="timeout">等待通知消息的时间（以秒为单位）。</param>
-        <summary>使用用户定义的字符串创建 <see cref="T:System.Data.Sql.SqlNotificationRequest" /> 类的新实例，该字符串标识特定的通知请求、预定义的 SQL Server 2005 Service Broker 服务名以及（以秒来计算）超时时间。</summary>
+有关格式的详细信息<paramref name="options" />参数，请参阅<see cref="P:System.Data.Sql.SqlNotificationRequest.Options" />。</param>
+        <param name="timeout">以秒为单位，等待通知消息的时间。</param>
+        <summary>创建的新实例<see cref="T:System.Data.Sql.SqlNotificationRequest" />类和用户定义字符串，用于标识特定的通知请求，名称的预定义的 SQL Server 2005 Service Broker 服务名称和超时期限，以秒为单位。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -119,10 +122,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="options" /> 参数的值为 NULL。</exception>
+        <exception cref="T:System.ArgumentNullException">值<paramref name="options" />参数为 NULL。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="options" /> 或 <paramref name="userData" /> 参数大于 <see langword="uint16.MaxValue" />，或者 <paramref name="timeout" /> 参数中的值小于零。</exception>
+          <paramref name="options" />或<paramref name="userData" />参数的长度超过<see langword="uint16.MaxValue" />中的值或<paramref name="timeout" />参数小于零。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/sql/query-notifications-in-sql-server.md">使用查询通知</related>
       </Docs>
     </Member>
@@ -143,14 +145,15 @@
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置发送通知消息的 SQL Server Service Broker 服务名。</summary>
+        <summary>获取或设置 SQL Server Service Broker 服务名其中发送通知消息。</summary>
         <value>
-          <see langword="string" />，包含发送通知消息的 SQL Server 2005 Service Broker 服务名，以及用于限制服务器名查找范围的数据库或服务中间装置实例 GUID。</value>
+          <see langword="string" /> 包含发送通知消息是 SQL Server 2005 Service Broker 服务名和数据库或 service broker 实例 GUID 范围限定服务器名称查找。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -167,8 +170,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">该值为 NULL。</exception>
-        <exception cref="T:System.ArgumentException">该值比 <see langword="uint16.MaxValue" /> 长。</exception>
+        <exception cref="T:System.ArgumentNullException">值为 NULL。</exception>
+        <exception cref="T:System.ArgumentException">值的长度超过<see langword="uint16.MaxValue" />。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/sql/query-notifications-in-sql-server.md">使用查询通知</related>
       </Docs>
     </Member>
@@ -189,13 +192,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指定在操作超时之前，SQL Server 等待发生更改的时间。</summary>
-        <value>带符号的整数值，指定在操作超时之前，SQL Server 等待发生更改的时间（以秒为单位）。</value>
+        <summary>获取或设置一个值，指定 SQL Server 等待操作超时之前发生更改的时间长度。</summary>
+        <value>一个有符号的整数值，该值指定以秒为单位，SQL Server 等待操作超时之前发生更改的时间长度。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -225,13 +229,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>获取或设置此通知的应用程序特定的标识符。</summary>
-        <value>此通知的应用程序特定的标识符的 <see langword="string" /> 值。</value>
+        <value>一个<see langword="string" />此通知的特定于应用程序的标识符的值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -240,7 +245,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">该值比 <see langword="uint16.MaxValue" /> 长。</exception>
+        <exception cref="T:System.ArgumentException">值的长度超过<see langword="uint16.MaxValue" />。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/sql/query-notifications-in-sql-server.md">使用查询通知</related>
       </Docs>
     </Member>

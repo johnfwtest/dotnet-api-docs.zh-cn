@@ -1,11 +1,11 @@
 <Type Name="HostProtectionResource" FullName="System.Security.Permissions.HostProtectionResource">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b20bacfcc25968264b1f0b6a8a54964328c92569" />
-    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
+    <Meta Name="ms.openlocfilehash" Value="08569bf27aaf41698aed44a0c21e0c9c716fd0d5" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
-    <Meta Name="ms.locfileid" Value="52349132" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52910162" />
   </Metadata>
   <TypeSignature Language="C#" Value="public enum HostProtectionResource" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed HostProtectionResource extends System.Enum" />
@@ -28,7 +28,7 @@
     <BaseTypeName>System.Enum</BaseTypeName>
   </Base>
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-2.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2">
+    <Attribute FrameworkAlternate="netcore-2.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.1;netframework-4.8;dotnet-plat-ext-2.1;netcore-2.2;dotnet-plat-ext-2.2">
       <AttributeName>System.Flags</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
@@ -39,7 +39,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>指定若由方法或类调用，可能对宿主有害的功能的类别。</summary>
+    <summary>指定到主机，如果由方法或类调用可能有害的功能的类别。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -137,7 +137,7 @@
       </ReturnValue>
       <MemberValue>16</MemberValue>
       <Docs>
-        <summary>创建或操作除本身以外的其他线程可能对宿主有害。</summary>
+        <summary>创建或操作不是自己，它可能对宿主有害的线程。</summary>
       </Docs>
     </Member>
     <Member MemberName="MayLeakOnAbort">
@@ -164,7 +164,7 @@
       </ReturnValue>
       <MemberValue>256</MemberValue>
       <Docs>
-        <summary>如果没有安全句柄的保护，或者没有其他方法来确保资源的释放，也许将在终止时导致资源泄漏。</summary>
+        <summary>可能会终止，导致资源泄漏，如果不受安全句柄或一些其他方法来确保资源的释放。</summary>
       </Docs>
     </Member>
     <Member MemberName="None">
@@ -218,7 +218,7 @@
       </ReturnValue>
       <MemberValue>64</MemberValue>
       <Docs>
-        <summary>公开安全性基础结构。</summary>
+        <summary>公开安全基础结构。</summary>
       </Docs>
     </Member>
     <Member MemberName="SelfAffectingProcessMgmt">
@@ -245,7 +245,7 @@
       </ReturnValue>
       <MemberValue>8</MemberValue>
       <Docs>
-        <summary>可以退出当前进程，终止服务器。</summary>
+        <summary>可能会退出当前进程，终止服务器。</summary>
       </Docs>
     </Member>
     <Member MemberName="SelfAffectingThreading">
@@ -272,7 +272,7 @@
       </ReturnValue>
       <MemberValue>32</MemberValue>
       <Docs>
-        <summary>以只影响用户代码的方式操作线程。</summary>
+        <summary>操作只影响用户代码的方式的线程。</summary>
       </Docs>
     </Member>
     <Member MemberName="SharedState">
@@ -299,7 +299,7 @@
       </ReturnValue>
       <MemberValue>2</MemberValue>
       <Docs>
-        <summary>公开可能在线程间共享的状态。</summary>
+        <summary>公开可能在线程之间共享的状态。</summary>
       </Docs>
     </Member>
     <Member MemberName="Synchronization">

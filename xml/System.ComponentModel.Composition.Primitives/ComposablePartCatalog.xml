@@ -1,11 +1,11 @@
 <Type Name="ComposablePartCatalog" FullName="System.ComponentModel.Composition.Primitives.ComposablePartCatalog">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d62fc3daf1abda92b18a4eff6a9eecd9566689f2" />
-    <Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" />
+    <Meta Name="ms.openlocfilehash" Value="c25238ae7ea0254cd27cdca0d6446703d152425e" />
+    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/09/2018" />
-    <Meta Name="ms.locfileid" Value="51302769" />
+    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
+    <Meta Name="ms.locfileid" Value="52910032" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class ComposablePartCatalog : IDisposable, System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ComposablePartCatalog extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt;, class System.Collections.IEnumerable, class System.IDisposable" />
@@ -38,7 +38,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>表示收集并返回 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" /> 对象的可组合部件目录的抽象基类。</summary>
+    <summary>表示收集并返回可组合部件目录的抽象基类<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />对象。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -169,8 +169,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个循环访问类别的枚举器。</summary>
-        <returns>一个可用于循环访问目录的枚举数。</returns>
+        <summary>返回循环访问目录的枚举器。</summary>
+        <returns>一个枚举数可用于循环访问目录。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,10 +194,9 @@
         <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
       </Parameters>
       <Docs>
-        <param name="definition">要返回的 <see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" /> 对象的条件。</param>
-        <summary>获取与指定的 <see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" /> 对象所定义的约束相匹配的导出定义的列表。</summary>
-        <returns>
-          <see cref="T:System.Tuple`2" /> 的集合，其中包含与 <paramref name="definition" /> 指定的约束相匹配的对象的 <see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" /> 对象及其关联的 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" /> 对象。</returns>
+        <param name="definition">应满足的条件<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />要返回的对象。</param>
+        <summary>获取由指定定义的约束相匹配的导出定义列表<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />对象。</summary>
+        <returns>一系列<see cref="T:System.Tuple`2" />包含<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />及其关联<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />的对象与指定的约束匹配的对象<paramref name="definition" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -207,7 +206,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> 对象已被释放。</exception>
+          <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" />已释放的对象。</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="definition" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -229,7 +228,7 @@
         <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinmac-3.0;netframework-4.8">
           <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;dotnet-plat-ext-2.1">
+        <Attribute FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;dotnet-plat-ext-2.1;dotnet-plat-ext-2.2">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -239,7 +238,7 @@
       <Docs>
         <summary>获取目录中包含的部件定义。</summary>
         <value>
-          <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" /> 中包含的 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" />。</value>
+          <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />中包含<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -249,7 +248,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" /> 对象已被释放。</exception>
+          <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartCatalog" />已释放的对象。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
@@ -272,13 +271,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个循环访问类别的枚举器。</summary>
-        <returns>一个可用于循环访问目录的枚举数。</returns>
+        <summary>返回循环访问目录的枚举器。</summary>
+        <returns>一个枚举数可用于循环访问目录。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.ComponentModel.Composition.Primitives.ComposablePartCatalog> 实例强制转换为 <xref:System.Collections.IEnumerable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.ComponentModel.Composition.Primitives.ComposablePartCatalog> 实例被强制转换为 <xref:System.Collections.IEnumerable> 接口时使用。  
   
  ]]></format>
         </remarks>
