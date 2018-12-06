@@ -1,11 +1,11 @@
 <Type Name="BufferedStream" FullName="System.IO.BufferedStream">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="844e045e034922791bd6f5c66770ed7166f90a00" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="9cf5c6dc99590b2f24b7725c166fa854be4af0d8" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52255076" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52598910" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class BufferedStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BufferedStream extends System.IO.Stream" />
@@ -568,8 +568,52 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>关闭流并释放与当前缓冲流关联的所有资源（尤其是系统资源，如套接字和文件句柄）。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+前缓冲的流已关闭之前写入缓冲区的任何数据复制到基础数据源或存储库。 因此，不需要调用<xref:System.IO.BufferedStream.Flush>然后再关闭调用。 在给 Close 调用，缓冲流上的执行任何操作都可能引发异常。
+
+除非显式调用，刷新该流不会刷新其基础编码器<xref:System.IO.BufferedStream.Flush>或关闭。 设置<xref:System.IO.StreamWriter.AutoFlush>为真，则数据从缓冲区刷新到流中，但编码器状态不会进行刷新。 这将允许编码器，以便它可以正确编码的字符的下一步块保持其状态 （部分字符）。 这种情况下会影响 UTF8，UTF7 其中某些字符仅后才能进行编码的编码器收到的相邻字符。
+
+尝试操作流已关闭后可能会引发<xref:System.ObjectDisposedException>。
+
+## Examples  
+此代码示例是为提供一个更大示例的一部分<xref:System.IO.BufferedStream>类。
+
+```vb
+' When bufStream is closed, netStream is in turn 
+' closed, which in turn shuts down the connection 
+' and closes clientSocket.
+Console.WriteLine(vbCrLf & "Shutting down the connection.")
+bufStream.Close()
+```
+
+```csharp
+// When bufStream is closed, netStream is in turn
+// closed, which in turn shuts down the connection
+// and closes clientSocket.
+Console.WriteLine("\nShutting down the connection.");
+bufStream.Close();
+```
+
+```cpp
+// When bufStream is closed, netStream is in turn closed,
+// which in turn shuts down the connection and closes
+// clientSocket.
+Console::WriteLine( "\nShutting down connection." );
+bufStream->Close();
+
+```
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">尝试关闭流时出错。</exception>
+        <altmember cref="M:System.IO.BufferedStream.Flush" />
+        <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
       </Docs>
     </Member>
     <Member MemberName="Dispose">

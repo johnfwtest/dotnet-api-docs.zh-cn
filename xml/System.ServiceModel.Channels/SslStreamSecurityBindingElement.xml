@@ -1,11 +1,11 @@
 <Type Name="SslStreamSecurityBindingElement" FullName="System.ServiceModel.Channels.SslStreamSecurityBindingElement">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4aae1a28640eee404d274214c32f477e4e725924" />
-    <Meta Name="ms.sourcegitcommit" Value="0d6aa6694f157a08fe52cd25b4d9d3dcf913e812" />
+    <Meta Name="ms.openlocfilehash" Value="e27d2bd58f1c28939ee11e2ec81e826e779c1b1d" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/12/2018" />
-    <Meta Name="ms.locfileid" Value="49148640" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52603915" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class SslStreamSecurityBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.ITransportTokenAssertionProvider, System.ServiceModel.Description.IPolicyExportExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SslStreamSecurityBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Channels.ITransportTokenAssertionProvider, class System.ServiceModel.Description.IPolicyExportExtension" />
@@ -59,7 +59,7 @@
   
 5.  将任何其他自定义绑定元素添加到集合，比如 <xref:System.ServiceModel.Channels.TcpTransportBindingElement>。  
   
- 有三种方案需要您在导入 WSDL 后在客户端终结点上手动指定正确的 UPN/SPN，或者在客户端的 <xref:System.ServiceModel.Security.IdentityVerifier> 上指定自定义的 <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>。  
+ 有三种方案在其中你必须手动导入 WSDL 后在客户端终结点上指定正确的 UPN/SPN 或指定自定义<xref:System.ServiceModel.Security.IdentityVerifier>在客户端上<xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>。  
   
 1.  在 WSDL 中没有发布任何服务标识。 将使用 <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> 和 HTTPS（例如，其 SecurityMode 为 <xref:System.ServiceModel.WSHttpBinding> 的 <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>）。 如果该服务不是使用计算机标识运行的，则在导入 WSDL 后，必须在客户端终结点上手动指定正确的 UPN/SPN。  
   
@@ -762,10 +762,10 @@ sslStream.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12;
 EndpointAddress a = new EndpointAddress("net.tcp://contoso.com/TcpAddress");  
 ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(b, a);  
 cf.Credentials.ClientCertificate.SetCertificate(  
-    StoreLocation.LocalMachine,  
-    StoreName.My,  
-    X509FindType.FindByThumbprint,  
-    "0000000000000000000000000000000000000000");  
+    StoreLocation.LocalMachine,  
+    StoreName.My,  
+    X509FindType.FindByThumbprint,  
+    "0000000000000000000000000000000000000000");  
 ```  
   
  ]]></format>

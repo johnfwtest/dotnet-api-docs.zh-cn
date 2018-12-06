@@ -1,11 +1,11 @@
 <Type Name="CurrentValueRecord" FullName="System.Data.Objects.CurrentValueRecord">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="e948127ca7fdc9646ddf790e968427f67512a71e" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
+    <Meta Name="ms.openlocfilehash" Value="a27ea76233a295b142b97adc1ba88ae44ae68cf1" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46639543" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52604812" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class CurrentValueRecord : System.Data.Objects.DbUpdatableDataRecord" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CurrentValueRecord extends System.Data.Objects.DbUpdatableDataRecord" />
@@ -58,8 +58,9 @@
         <ReturnType>System.Data.Common.DataRecordInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>返回数据记录信息。</summary>
+        <value>
+          <see cref="T:System.Data.Common.DataRecordInfo" /> 对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,8 +83,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>返回记录中的字段数。</summary>
+        <value>整数值字段数。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,9 +110,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索布尔值形式的字段值。</summary>
+        <returns>布尔值形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +138,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字节形式的字段值。</summary>
+        <returns>字节形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -169,13 +170,13 @@
         <Parameter Name="length" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="dataIndex">To be added.</param>
-        <param name="buffer">To be added.</param>
-        <param name="bufferIndex">To be added.</param>
-        <param name="length">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <param name="dataIndex">开始复制数据的位置的索引。</param>
+        <param name="buffer">将数据复制到其中的目标缓冲区。</param>
+        <param name="bufferIndex">目标缓冲区中开始复制的位置的索引。</param>
+        <param name="length">要复制的字节数。</param>
+        <summary>检索字节数组形式的字段值。</summary>
+        <returns>已复制的字节数。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,9 +202,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字符形式的字段值。</summary>
+        <returns>字符形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,13 +234,13 @@
         <Parameter Name="length" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="dataIndex">To be added.</param>
-        <param name="buffer">To be added.</param>
-        <param name="bufferIndex">To be added.</param>
-        <param name="length">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <param name="dataIndex">开始复制数据的位置的索引。</param>
+        <param name="buffer">将数据复制到其中的目标缓冲区。</param>
+        <param name="bufferIndex">目标缓冲区中开始复制的位置的索引。</param>
+        <param name="length">要复制的字符数。</param>
+        <summary>检索字符数组形式的字段值。</summary>
+        <returns>已复制的字符数。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -265,10 +266,12 @@
         <Parameter Name="i" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="i">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="i">字段的序号。</param>
+        <summary>在所有情况下都会引发 <see cref="T:System.NotSupportedException" /> 异常。</summary>
+        <returns>
+          <see cref="T:System.Data.Common.DbDataReader" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">在所有情况下。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetDataRecord">
@@ -293,9 +296,10 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索 <see cref="T:System.Data.Common.DbDataRecord" /> 形式的字段值。</summary>
+        <returns>
+          <see cref="T:System.Data.Common.DbDataRecord" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -321,9 +325,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字段数据类型的名称。</summary>
+        <returns>字段数据类型的名称。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -349,9 +353,10 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索 <see cref="T:System.DateTime" /> 形式的字段值。</summary>
+        <returns>
+          <see cref="T:System.DateTime" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -374,10 +379,12 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>在所有情况下都会引发 <see cref="T:System.NotSupportedException" /> 异常。</summary>
+        <returns>
+          <see cref="T:System.Data.Common.DbDataReader" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">在所有情况下。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetDecimal">
@@ -403,8 +410,8 @@
       </Parameters>
       <Docs>
         <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>检索十进制形式的字段值。</summary>
+        <returns>十进制形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -430,9 +437,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索双精度值形式的字段值。</summary>
+        <returns>双精度值形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -458,9 +465,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字段的类型。</summary>
+        <returns>字段类型。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -486,9 +493,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索浮点形式的字段值。</summary>
+        <returns>浮点形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -514,9 +521,10 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索 <see cref="T:System.Guid" /> 形式的字段值。</summary>
+        <returns>
+          <see cref="T:System.Guid" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -542,9 +550,10 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索 <see cref="T:System.Int16" /> 形式的字段值。</summary>
+        <returns>
+          <see cref="T:System.Int16" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -570,9 +579,10 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索 <see cref="T:System.Int32" /> 形式的字段值。</summary>
+        <returns>
+          <see cref="T:System.Int32" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -598,9 +608,10 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索 <see cref="T:System.Int64" /> 形式的字段值。</summary>
+        <returns>
+          <see cref="T:System.Int64" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -626,9 +637,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字段的名称。</summary>
+        <returns>字段的名称。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -654,9 +665,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">字段的名称。</param>
+        <summary>按名称检索字段的序号。</summary>
+        <returns>字段的序号。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -679,9 +690,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字段的值。</summary>
+        <returns>字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -707,9 +718,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字符串形式的字段值。</summary>
+        <returns>字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -735,9 +746,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>检索字段的值。</summary>
+        <returns>字段值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -763,9 +774,9 @@
         <Parameter Name="values" Type="System.Object[]" />
       </Parameters>
       <Docs>
-        <param name="values">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="values">用于存储字段值的对象数组。</param>
+        <summary>将记录中的所有字段值检索到一个对象数组中。</summary>
+        <returns>返回的字段值的数目。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -791,9 +802,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>返回指定字段是否设置为 null（在 Visual Basic 中为 Nothing）。</summary>
+        <returns>如果字段设置为 null（在 Visual Basic 中为 Nothing）则为 true；否则为 false。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -819,9 +830,9 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="ordinal">字段的序号。</param>
+        <summary>返回具有给定字段序号的值。</summary>
+        <value>字段值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -847,9 +858,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="name">字段的名称。</param>
+        <summary>获取具有给定字段名称的值。</summary>
+        <value>字段值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -873,9 +884,9 @@
         <Parameter Name="value" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -899,9 +910,9 @@
         <Parameter Name="value" Type="System.Byte" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -925,9 +936,9 @@
         <Parameter Name="value" Type="System.Char" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -951,9 +962,9 @@
         <Parameter Name="value" Type="System.Data.IDataRecord" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -977,9 +988,9 @@
         <Parameter Name="value" Type="System.DateTime" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1002,8 +1013,8 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <summary>将一个字段设置为 <see cref="T:System.DBNull" /> 值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1027,9 +1038,9 @@
         <Parameter Name="value" Type="System.Decimal" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1053,9 +1064,9 @@
         <Parameter Name="value" Type="System.Double" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1079,9 +1090,9 @@
         <Parameter Name="value" Type="System.Single" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1105,9 +1116,9 @@
         <Parameter Name="value" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1131,9 +1142,9 @@
         <Parameter Name="value" Type="System.Int16" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1157,9 +1168,9 @@
         <Parameter Name="value" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1183,9 +1194,9 @@
         <Parameter Name="value" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1209,9 +1220,9 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1235,9 +1246,9 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1261,9 +1272,9 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="ordinal">字段的序号。</param>
+        <param name="value">字段的值。</param>
+        <summary>设置记录中一个字段的值。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1292,9 +1303,9 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="values">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="values">字段的值。</param>
+        <summary>设置记录中的字段值。</summary>
+        <returns>设置的字段的数目。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1319,10 +1330,12 @@
         <Parameter Name="ordinal" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ordinal">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="ordinal">字段的序号。</param>
+        <summary>在所有情况下都会引发 <see cref="T:System.NotSupportedException" /> 异常。</summary>
+        <returns>
+          <see cref="T:System.Data.IDataReader" /> 形式的字段值。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">在所有情况下。</exception>
       </Docs>
     </Member>
   </Members>

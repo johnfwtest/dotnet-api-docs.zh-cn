@@ -1,11 +1,11 @@
 <Type Name="IVsaSite" FullName="Microsoft.Vsa.IVsaSite">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="19adea0b9d436428fcf3978d7a116bf0ab38c7f2" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="f2d2226944fc280f8a6d54da40d1fd9042f0c12c" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39956535" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52604942" />
   </Metadata>
   <TypeSignature Language="C#" Value="public interface IVsaSite" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaSite" />
@@ -31,7 +31,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>启用主机与脚本引擎之间的通信。 该接口由主机实现。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -56,9 +56,9 @@
         <Parameter Name="debugInfo" Type="System.Byte[]" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pe">To be added.</param>
-        <param name="debugInfo">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="pe">引擎的已编译状态；字节格式的程序集。</param>
+        <param name="debugInfo">程序集的调试信息；如果此类信息不存在或不可用，则为空引用。</param>
+        <summary>获取脚本引擎的已编译状态和关联的调试信息（可选）。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,10 +83,10 @@
         <Parameter Name="eventSourceName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="itemName">To be added.</param>
-        <param name="eventSourceName">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="itemName">指定的项名称。</param>
+        <param name="eventSourceName">指定的事件源名称。</param>
+        <summary>获取对先前使用 AddEventSource 方法添加到脚本引擎中的事件源的引用。</summary>
+        <returns>将事件源返回到引擎。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -110,9 +110,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">获取对全局项的引用，例如主机提供的应用程序对象。</param>
+        <summary>获取对全局项的引用，例如主机提供的应用程序对象。</summary>
+        <returns>返回对全局对象的引用。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +137,9 @@
         <Parameter Name="info" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="notify">To be added.</param>
-        <param name="info">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="notify">通知主机有关由 .NET 脚本引擎生成的事件。</param>
+        <param name="info">通知主机有关由 .NET 脚本引擎生成的事件。</param>
+        <summary>通知主机有关由 .NET 脚本引擎生成的事件。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,9 +163,9 @@
         <Parameter Name="error" Type="Microsoft.Vsa.IVsaError" />
       </Parameters>
       <Docs>
-        <param name="error">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="error">表示有害错误的 <see cref="T:Microsoft.Vsa.IVsaError" /> 对象。</param>
+        <summary>通知主机如何对脚本引擎遇到的编译器错误作出响应。</summary>
+        <returns>如果指示编译器继续向 <see cref="T:Microsoft.Vsa.IVsaSite" /> 对象报告进一步的错误，则返回 TRUE。 如果指示编译器停止向 IVsaSite 对象报告进一步的错误，则返回 FALSE。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

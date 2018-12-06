@@ -1,11 +1,11 @@
 <Type Name="TemplatedControlDesigner" FullName="System.Web.UI.Design.TemplatedControlDesigner">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8ef96bc133caaa6390bce44673dfe909095b20f0" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
+    <Meta Name="ms.openlocfilehash" Value="8231efb334277fb0931f55fd50013ed8d27a12d7" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51938845" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52604994" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class TemplatedControlDesigner : System.Web.UI.Design.ControlDesigner" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TemplatedControlDesigner extends System.Web.UI.Design.ControlDesigner" />
@@ -341,8 +341,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>获取要持久用于关联服务器控件运行时中的内容的标记。</summary>
+        <returns>可持久的内部 HTML。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -609,9 +609,17 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取一个值，该值指示当控件被置于模板编辑模式时是否将隐藏控件的属性。</summary>
+        <value>如果该控件将隐藏在模板编辑模式，则为 true否则为 false。 此基实现始终返回 true。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+<xref:System.Web.UI.Design.ControlDesigner.ID>永远不会隐藏属性。
+
+]]></format>
+        </remarks>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
       </Docs>
     </Member>
     <Member MemberName="Initialize">
@@ -841,9 +849,17 @@
         <Parameter Name="properties" Type="System.Collections.IDictionary" />
       </Parameters>
       <Docs>
-        <param name="properties">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="properties">组件的成员特性。</param>
+        <summary>使设计器可以筛选它正在设计的组件将通过 <see cref="T:System.ComponentModel.TypeDescriptor" /> 对象公开的成员特性集。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+立即在其相应的 Post 方法之前调用此方法。 如果要重写此方法，应调用基实现，在执行您自己的筛选之前。
+
+]]></format>
+        </remarks>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
       </Docs>
     </Member>
     <Member MemberName="SaveActiveTemplateEditingFrame">

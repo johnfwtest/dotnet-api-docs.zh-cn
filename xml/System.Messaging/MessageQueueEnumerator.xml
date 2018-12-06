@@ -1,11 +1,11 @@
 <Type Name="MessageQueueEnumerator" FullName="System.Messaging.MessageQueueEnumerator">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="9c3bec0e140d81f185edcbf2e904464bffc40cab" />
-    <Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" />
+    <Meta Name="ms.openlocfilehash" Value="2b7a2308828eebb55255004efdc87a3f4fddda86" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="09/22/2018" />
-    <Meta Name="ms.locfileid" Value="46645878" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52600626" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class MessageQueueEnumerator : MarshalByRefObject, IDisposable, System.Collections.IEnumerator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageQueueEnumerator extends System.MarshalByRefObject implements class System.Collections.IEnumerator, class System.IDisposable" />
@@ -31,7 +31,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>提供一个只进游标，以枚举通过消息队列中的消息。</summary>
+    <summary>提供一个只进游标，用于枚举消息队列中的消息。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -120,7 +120,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">您在第一次调用 <see cref="P:System.Messaging.MessageQueueEnumerator.Current" /> 之前调用了 <see cref="M:System.Messaging.MessageQueueEnumerator.MoveNext" />。 游标位于枚举中的第一个队列之前。  
   
-- 或 - 
+或 
 您在对 <see cref="P:System.Messaging.MessageQueueEnumerator.Current" /> 的调用返回假（指示游标位于枚举中的最后一个队列之后）后调用了 <see cref="M:System.Messaging.MessageQueueEnumerator.MoveNext" />。</exception>
         <altmember cref="M:System.Messaging.MessageQueueEnumerator.MoveNext" />
         <altmember cref="M:System.Messaging.MessageQueueEnumerator.Reset" />
@@ -190,8 +190,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">
-          <see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.Messaging.MessageQueueEnumerator" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -231,8 +230,17 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放队列控制的资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+此方法重写 <xref:System.Object.Finalize>。 应用程序代码不应调用此方法。对象的 Finalize 方法期间将自动调用垃圾回收，除非已禁用通过调用由垃圾回收器终止<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>方法。
+
+有关详细信息，请参阅[Finalize 方法和析构函数](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0s71x931(v=vs.100))，[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)，并[重写 Finalize 方法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100))。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocatorHandle">

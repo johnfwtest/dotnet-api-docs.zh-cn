@@ -1,11 +1,11 @@
 <Type Name="IVsaItems" FullName="Microsoft.Vsa.IVsaItems">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4c7fbd4870a2674767c500ef4e2cc6d392a3925b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="e2241cab1c4d3cfb7b4088c5dbe37ab1ffaf3169" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39971128" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52601601" />
   </Metadata>
   <TypeSignature Language="C#" Value="public interface IVsaItems : System.Collections.IEnumerable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaItems implements class System.Collections.IEnumerable" />
@@ -35,7 +35,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>定义 <see cref="T:Microsoft.Vsa.IVsaItem" /> 对象集合的接口，可通过名称或索引对其进行定位。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -56,8 +56,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取指定集合的项数。</summary>
+        <value>返回表示集合中的项数的整数值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +83,11 @@
         <Parameter Name="itemFlag" Type="Microsoft.Vsa.VsaItemFlag" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="itemType">To be added.</param>
-        <param name="itemFlag">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">要与新项关联的名称。 项是引用项类型时，名称参数必须与被引用程序集的名称（使用 <see cref="P:Microsoft.Vsa.IVsaReferenceItem.AssemblyName" /> 属性设置）完全相同。 但是，在 JScript 中，如果不指定 AssemblyName，则 JScript 会将 ItemName 用作程序集的名称。</param>
+        <param name="itemType">在 <see cref="T:Microsoft.Vsa.VsaItemType" /> 枚举中定义的所创建的项类型。</param>
+        <param name="itemFlag">用于指定代码项初始内容的可选标志。</param>
+        <summary>按照 <see cref="T:Microsoft.Vsa.VsaItemType" /> 枚举中的定义，创建其中一个<see cref="T:Microsoft.Vsa.IVsaItem" />  类型的新实例。</summary>
+        <returns>返回对创建的 <see cref="T:Microsoft.Vsa.IVsaItem" /> 对象的引用。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +111,9 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="index">可检索项的索引（从 0 开始）。</param>
+        <summary>通过项的索引值从集合中获取项。</summary>
+        <value>返回位于指定索引处的项。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +137,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <param name="name">要从集合中检索的项的名称。</param>
+        <summary>通过项的名称从集合中获取项。</summary>
+        <value>返回通过名称指定的项。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,8 +163,8 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="index">要移除的项的索引值。</param>
+        <summary>从集合中移除按照项的索引值指定的项。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -188,8 +188,8 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">要从集合中移除的项的名称。</param>
+        <summary>从集合中移除按照项的名称指定的项。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

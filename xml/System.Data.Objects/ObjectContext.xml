@@ -1,11 +1,11 @@
 <Type Name="ObjectContext" FullName="System.Data.Objects.ObjectContext">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d5eee7364a96a96017d60804720c945103c389df" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="0997f3d7974ba6b3999801d158dad1b588eba4c5" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52233548" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52598572" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class ObjectContext : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectContext extends System.Object implements class System.IDisposable" />
@@ -360,7 +360,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="entitySetName" /> 或 <paramref name="current" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 的 <see cref="T:System.Data.EntityKey" /> 不匹配时。  
+        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.EntityKey" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 不匹配。  
   
 或 
 该对象未处于 <see cref="T:System.Data.Objects.ObjectStateManager" /> 状态或处于 <see cref="F:System.Data.EntityState.Detached" /> 状态。  
@@ -419,7 +419,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="entitySetName" /> 或 <paramref name="original" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 的 <see cref="T:System.Data.EntityKey" /> 不匹配时。  
+        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.EntityKey" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 不匹配。  
   
 或 
 对象的 <see cref="T:System.Data.Objects.ObjectStateEntry" /> 无法在 <see cref="T:System.Data.Objects.ObjectStateManager" /> 中找到。 或 
@@ -490,7 +490,7 @@
   
 或 
 当 <paramref name="changed" /> 为 <see langword="null" /> 时。</exception>
-        <exception cref="T:System.InvalidOperationException">当 <paramref name="entitySetName" /> 中的 <see cref="T:System.Data.Metadata.Edm.EntitySet" />与对象的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 的 <see cref="T:System.Data.EntityKey" /> 不匹配时。  
+        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.EntityKey" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 不匹配时。  
   
 或 
 当实体处于 <see cref="F:System.Data.EntityState.Modified" /> 或 <see cref="F:System.Data.EntityState.Unchanged" /> 之外的状态时。  
@@ -700,7 +700,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此属性返回传递给构造函数或在构造过程中创建的连接对象。 连接的所有权由所用的构造函数确定。  
+ 此属性返回传递给构造函数或在构造过程中创建的连接对象。 构造函数用于确定连接的所有权。  
   
    
   
@@ -969,7 +969,7 @@
         <summary>创建新的 <see cref="T:System.Data.Objects.ObjectSet`1" /> 实例，该实例用于查询、添加、修改和删除具有指定类型和指定实体集名称的对象。</summary>
         <returns>新的 <see cref="T:System.Data.Objects.ObjectSet`1" /> 实例。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 的 <see cref="T:System.Data.EntityKey" /> 不匹配时。  
+        <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.EntityKey" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 不匹配。  
   
 或 
 在 <see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" /> 上没有设置 <see cref="T:System.Data.Objects.ObjectContext" /> 属性，且名称未限定为 <paramref name="entitySetName" /> 参数。  
@@ -2214,7 +2214,7 @@
   
  刷新对象的顺序具有不确定性。  
   
- 在调用 <xref:System.Data.Objects.ObjectContext.Refresh%2A> 后，会始终使用数据源值更新对象的原始值，但是可能会也可能不会使用数据源值更新当前值。 这取决于 <xref:System.Data.Objects.RefreshMode> 值。 <xref:System.Data.Objects.RefreshMode.StoreWins>模式意味着应将集合中的对象更新为与数据源值匹配。 <xref:System.Data.Objects.RefreshMode.ClientWins> 意味着，将保持仅在对象上下文中的更改，即使数据源中进行了其他更改。  
+ 之后<xref:System.Data.Objects.ObjectContext.Refresh%2A>调用时，该对象的原始值将始终更新使用数据源值，但可能会也可能不使用的数据源值更新当前的值。 这取决于 <xref:System.Data.Objects.RefreshMode> 值。 <xref:System.Data.Objects.RefreshMode.StoreWins>模式意味着应将集合中的对象更新为与数据源值匹配。 <xref:System.Data.Objects.RefreshMode.ClientWins> 意味着，将保持仅在对象上下文中的更改，即使数据源中进行了其他更改。  
   
  若要确保已由数据源端逻辑更新了对象，可以在调用 <xref:System.Data.Objects.ObjectContext.Refresh%2A> 方法后，使用 <xref:System.Data.Objects.RefreshMode.StoreWins> 调用 <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>。  
   
@@ -2264,7 +2264,7 @@
   
  刷新对象的顺序具有不确定性。  
   
- 在调用 <xref:System.Data.Objects.ObjectContext.Refresh%2A> 方法后，会始终使用数据源值更新对象的原始值，但是可能会也可能不会使用数据源值更新当前值。 这取决于 <xref:System.Data.Objects.RefreshMode>。 <xref:System.Data.Objects.RefreshMode.StoreWins> 模式意味着应将对象更新为与数据源值匹配。 <xref:System.Data.Objects.RefreshMode.ClientWins> 值意味着仅保持对象上下文中的更改，即使数据源中发生了其他更改也是如此。  
+ 之后<xref:System.Data.Objects.ObjectContext.Refresh%2A>调用方法，该对象的原始值将始终更新使用数据源值，但可能会也可能不使用的数据源值更新当前的值。 这取决于 <xref:System.Data.Objects.RefreshMode>。 <xref:System.Data.Objects.RefreshMode.StoreWins> 模式意味着应将对象更新为与数据源值匹配。 <xref:System.Data.Objects.RefreshMode.ClientWins> 值意味着仅保持对象上下文中的更改，即使数据源中发生了其他更改也是如此。  
   
  若要确保已由数据源端逻辑更新了对象，可以在调用 <xref:System.Data.Objects.ObjectContext.Refresh%2A> 方法后，使用 <xref:System.Data.Objects.RefreshMode.StoreWins> 值调用 <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> 方法。  
   

@@ -1,11 +1,11 @@
 <Type Name="SymDocument" FullName="System.Diagnostics.SymbolStore.SymDocument">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="9e6a29ac9417c791a4cbaf29c1095091b692a9aa" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
+    <Meta Name="ms.openlocfilehash" Value="6b3f95fa399328d7348843fd503f6cdf6e687635" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48749646" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52606114" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class SymDocument : System.Diagnostics.SymbolStore.SymDocumentBase, IDisposable, System.Diagnostics.SymbolStore.ISymbolDocument" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SymDocument extends System.Diagnostics.SymbolStore.SymDocumentBase implements class System.Diagnostics.SymbolStore.ISymbolDocument, class System.IDisposable" />
@@ -65,9 +65,16 @@
         <Parameter Name="pDocument" Type="ISymUnmanagedDocument*" />
       </Parameters>
       <Docs>
-        <param name="pDocument">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="pDocument">指向 <see href="~/docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md">ISymUnmanagedDocument</see> 对象的指针。</param>
+        <summary>使用指向非托管 <see href="~/docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md">ISymUnmanagedDocument</see> 对象的指定指针初始化 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 类的新实例。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+通常情况下，此类型的实例获取通过调用<xref:System.Diagnostics.SymbolStore.SymReader.GetDocument%2A>方法，而不是要创建直接从使用此构造函数的非托管接口。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -108,8 +115,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>释放由当前实例所持有的资源。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+使用<xref:System.Diagnostics.SymbolStore.SymDocument.Finalize>方法来释放资源。
+
+]]></format>
+        </remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="{dtor}">
@@ -130,7 +145,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>释放由当前实例控制的资源。</summary>
+        <summary>释放由当前实例所持有的资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -173,7 +188,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>释放由 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 类的当前实例占用的资源。</summary>
+        <summary>释放 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 类的当前实例使用的资源。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Dispose">
@@ -196,7 +211,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>释放由 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 类的当前实例占用的资源。</summary>
+        <summary>释放 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 类的当前实例使用的资源。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,7 +239,7 @@
         <Parameter Name="A_0" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="A_0">若要释放托管资源和非托管资源，则为 <see langword="true" />；若要仅释放非托管资源，则为 <see langword="false" />。</param>
+        <param name="A_0">若要释放托管资源和非托管的资源，则为 <see langword="true" />；若要仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>由 <see cref="M:System.Diagnostics.SymbolStore.SymDocument.Dispose" /> 和 <see cref="M:System.Diagnostics.SymbolStore.SymDocument.Finalize" /> 方法调用，以释放 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 类的当前实例所占用的托管资源和非托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -391,9 +406,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>获取指向此 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 实例的非托管 <see href="~/docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md">ISymUnmanagedDocument</see> 接口的指针。</summary>
+        <returns>指向此 <see cref="T:System.Diagnostics.SymbolStore.SymDocument" /> 的非托管 <see href="~/docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md">ISymUnmanagedDocument</see> 接口的指针。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+非托管[ISymUnmanagedDocument](~/docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)接口是在 CorSym.idl 中定义，包括使用 Windows 软件开发工具包 (SDK)。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="HasEmbeddedSource">

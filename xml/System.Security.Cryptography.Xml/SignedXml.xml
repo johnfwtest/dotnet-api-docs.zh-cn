@@ -1,11 +1,11 @@
 <Type Name="SignedXml" FullName="System.Security.Cryptography.Xml.SignedXml">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="58145a2a501e87701a9bcd638e0d3e74bb5ffda1" />
-    <Meta Name="ms.sourcegitcommit" Value="6ee2e6b2c5d7c5bd66feeb362d29e65fdf858836" />
+    <Meta Name="ms.openlocfilehash" Value="b0c6e1447ac775de6357751fd6832525c45e9d96" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/15/2018" />
-    <Meta Name="ms.locfileid" Value="51691451" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52597363" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class SignedXml" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SignedXml extends System.Object" />
@@ -155,7 +155,7 @@
 ## <a name="choosing-the-transform-algorithm"></a>选择转换算法  
  如果进行互操作使用的具有指定特定值 （如 XrML) 规范，然后您需要遵循规范。  如果必须被包封的签名 (例如，当对整个文档的签名)，则需要使用http://www.w3.org/2000/09/xmldsig#enveloped-signature(由<xref:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform>类)。 您可以指定隐式的 XML C14N 转换，但不需要。  对于在封装或已分离签名，没有转换是必需的。 隐式的 XML C14N 转换负责的所有内容。  
   
- 与安全更新引起[Microsoft 安全公告 MS16-035](https://technet.microsoft.com/en-us/library/security/ms16-035.aspx)，.NET Framework 具有受限制的转换可以是在文档验证中使用默认情况下，使用不受信任的转换导致<xref:System.Security.Cryptography.Xml.SignedXml.CheckSignature%2A>始终返回`false`。 具体而言，这需要额外的输入 （指定为 XML 中的子元素） 的转换，不再允许使用由于其滥用的可能性被恶意用户。 W3C 建议避免 XPath 和 XSLT 转换，都受到这些限制的两个主要转换。  
+ 与安全更新引起[Microsoft 安全公告 MS16-035](https://docs.microsoft.com/security-updates/securitybulletins/2016/ms16-035)，.NET Framework 具有受限制的转换可以是在文档验证中使用默认情况下，使用不受信任的转换导致<xref:System.Security.Cryptography.Xml.SignedXml.CheckSignature%2A>始终返回`false`。 具体而言，这需要额外的输入 （指定为 XML 中的子元素） 的转换，不再允许使用由于其滥用的可能性被恶意用户。 W3C 建议避免 XPath 和 XSLT 转换，都受到这些限制的两个主要转换。  
   
 ## <a name="the-problem-with-external-references"></a>使用外部引用问题  
  如果应用程序不会验证外部引用都不适合于当前上下文，它们可能会被滥用中提供的很多安全漏洞 （包括拒绝的服务，反射的分布式拒绝服务，信息的方式泄露、 签名跳过和远程执行代码）。 即使应用程序来验证外部引用 URI，仍两次加载资源的问题： 一旦您的应用程序时读取它，并后时<xref:System.Security.Cryptography.Xml.SignedXml>读取它。 由于没有应用程序读取和文档验证步骤具有相同的内容不能保证，签名不提供可信赖性。  

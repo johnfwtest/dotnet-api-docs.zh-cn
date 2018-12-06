@@ -1,11 +1,11 @@
 <Type Name="DateTime" FullName="System.DateTime">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="8c6c57b84569ce9f45f9082e6fd3bad5630bdf46" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="fa3f7d4eee2778992089a62f7eef6c3dd4191614" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52202803" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52599833" />
   </Metadata>
   <TypeSignature Language="C#" Value="public struct DateTime : IComparable, IComparable&lt;DateTime&gt;, IConvertible, IEquatable&lt;DateTime&gt;, IFormattable, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DateTime extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;valuetype System.DateTime&gt;, class System.IConvertible, class System.IEquatable`1&lt;valuetype System.DateTime&gt;, class System.IFormattable, class System.Runtime.Serialization.ISerializable" />
@@ -60,8 +60,8 @@
     <Attribute FrameworkAlternate="netcore-2.1;netcore-2.2">
       <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8">
-      <AttributeName>Serializable</AttributeName>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
+      <AttributeName>System.Serializable</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -366,7 +366,7 @@
   
 -   做出有关特定于区域性的格式设置还原为当你保存的位置的字符串时相同的假设。 若要确保在当前区域性为不同于系统保存的区域性的系统时，可以还原字符串，调用<xref:System.DateTime.ToString%2A>重载使用固定区域性的约定保存字符串。 调用<xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29>或<xref:System.DateTime.TryParse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29>重载来还原该字符串使用固定区域性的约定。 永远不会使用<xref:System.DateTime.ToString>， <xref:System.DateTime.Parse%28System.String%29>，或<xref:System.DateTime.TryParse%28System.String%2CSystem.DateTime%40%29>重载，它使用当前线程区域性的约定。  
   
--   如果该日期表示为单个时刻，请确保它表示同一时间点还原时，即使在不同的时区。 将转换<xref:System.DateTime>前将其保存的值为协调世界时 (UTC)。 此外可以序列化的值以及时区信息。 有关此方法的详细信息，请参阅[序列化日期时间和时区数据](#TimeZone)。  
+-   如果该日期表示为单个时刻，请确保它表示同一时间点还原时，即使在不同的时区。 将转换<xref:System.DateTime>前将其保存的值为协调世界时 (UTC)。 此外可以序列化的值以及时区信息。 有关此方法的详细信息，请参阅[序列化日期时间和时区数据](#serializing-datetime-and-time-zone-data)。  
   
  最常见的错误时保存所做<xref:System.DateTime>以字符串形式的值是依靠默认值或当前区域性的格式设置约定。 如果当前区域性不同保存和还原字符串时，会出现问题。 下面的示例说明了这些问题。 它将保存使用这种情况下为英语 （美国） 的当前区域性的格式设置约定的五个日期。 它会还原使用不同的区域性，在这种情况下为英语 （英国） 的格式设置约定的日期。 由于两个区域性的格式设置约定各不相同，因此无法还原两个日期，和剩余的三个日期被错误地解释。 此外，如果原始的日期和时间值表示单个时刻，还原时间不正确，因为丢失时区信息。  
   

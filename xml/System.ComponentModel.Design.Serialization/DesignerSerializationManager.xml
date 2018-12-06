@@ -1,11 +1,11 @@
 <Type Name="DesignerSerializationManager" FullName="System.ComponentModel.Design.Serialization.DesignerSerializationManager">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d25755190c3410b70176ce9e68fb7096b9117195" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="1bb57a890dbc17d8e6f4866c1db1b268d5c65498" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39773808" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52599105" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class DesignerSerializationManager : IServiceProvider, System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerSerializationManager extends System.Object implements class System.ComponentModel.Design.Serialization.IDesignerSerializationManager, class System.IServiceProvider" />
@@ -90,8 +90,8 @@
   
 |对象|用法|  
 |------------|-----------|  
-|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName>事件|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName>事件附加的序列化程序提供额外的名称解析。 所有处理程序均与此事件会话终止时分离。|  
-|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete>事件|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete>释放会话前，将引发事件。 然后，所有处理程序与此事件。|  
+|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName> 事件|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName>事件附加的序列化程序提供额外的名称解析。 所有处理程序均与此事件会话终止时分离。|  
+|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete> 事件|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete>释放会话前，将引发事件。 然后，所有处理程序与此事件。|  
 |名称表|序列化管理器维护对象和其名称之间映射的表。 序列化程序可以提供以便于识别的对象名称。 会话终止后，会清除此名称表。|  
 |序列化程序缓存|序列化管理器维护已要求提供序列化程序的缓存。 当会话终止时清除此缓存。 公共<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer%2A>方法安全地调用在任何时候，但仅当会话中，从调用缓存其值。|  
 |上下文堆栈|序列化管理器维护一个名为上下文堆栈，你可以使用访问对象<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A>属性。 序列化程序可以使用此堆栈存储可供其他序列化程序的其他信息。 例如，序列化属性值的序列化程序可以推送的属性名称序列化堆栈上之前询问要序列化的值。 终止该会话后，会清除此堆栈。|  
@@ -1050,8 +1050,20 @@
         <ReturnType>System.ComponentModel.Design.Serialization.ResolveNameEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>当 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#GetName(System.Object)" /> 无法在序列化管理器的名称表中找到指定名称时发生。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+`ResolveName`引发事件时<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetName%2A>调用方法，但它无法序列化管理器的名称表中找到指定的名称。
+
+此事件提供序列化程序按需创建一个对象，以便序列化程序不会由依赖项对象的创建顺序的方法。 此委托在序列化之后立即清除或反序列化完成。
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">序列化管理器没有活动的序列化会话。</exception>
+        <altmember cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnResolveName(System.ComponentModel.Design.Serialization.ResolveNameEventArgs)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#GetName(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete">
@@ -1071,8 +1083,21 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>在序列化完成时发生。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+通常，序列化过程是单线程和应当是无状态。 无法为 true，这些特征时<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete>事件可用于帮助您组织过程。 序列化程序可以跟踪此事件，以便序列化过程已完成。
+
+例如，有时会序列化程序需要写入另一个文件，如资源文件。 在这种情况下，这会降低效率来设计完成后的对象图序列化通常需要多个序列化程序; 因为关闭此文件的序列化程序因此，资源文件将打开和关闭多次。 相反，可以通过跟踪的对象访问的资源文件<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete>事件，并将该对象无法关闭资源文件末尾的序列化。
+
+在相关的使用，此事件可以用于删除临时 service 安装在序列化管理器中。
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">序列化管理器没有活动的序列化会话。</exception>
+        <altmember cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer(System.Type,System.Type)" />
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SetName">
@@ -1144,7 +1169,7 @@
           <paramref name="serviceType" /> 类型的服务对象。  
   
 或 
- 如果没有 <paramref name="serviceType" /> 类型的服务对象，则为 <see langword="null" />。</returns>
+ 如果没有类型为 <paramref name="serviceType" /> 的服务对象，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

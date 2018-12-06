@@ -1,11 +1,11 @@
 <Type Name="Timeline" FullName="System.Windows.Media.Animation.Timeline">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2a740ad01aadf04200e78796caeba9dc35785b1f" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="67a7272e99030ce409172f0881621ae6876c9555" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52236824" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52600210" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class Timeline : System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Timeline extends System.Windows.Media.Animation.Animatable" />
@@ -877,8 +877,27 @@
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置此时间线及其子时间线所需的帧速率。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+此属性用于定义动画应在其中运行的特定帧速率。  这是仅，一个指导原则，不是有保证的值。 此属性具有两个主要用途：
+
+- 限制缓慢移动，背景类型的动画不需要高度的保真度的处理资源的量。 这可以通过在时间线上设置小帧速率值来实现。
+
+- 减少上快速移动的水平动画撕裂现象的视觉效果。 这可以通过在时间线上设置高的帧速率值来实现。
+
+仅为根时间线上设置此属性。
+
+## Examples  
+以下示例使用 DesiredFrameRate 属性来限制为每秒 10 帧的多个动画。
+
+[!code-xaml[timingbehaviors_snip#GraphicsMMDesiredFrameRateExample](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/DesiredFrameRateExample.xaml#GraphicsMMDesiredFrameRateExample)]
+
+]]></format>
+        </remarks>
+        <related type="Article" href="~/docs/framework/wpf/graphics-multimedia/animation-overview.md">动画概述</related>
       </Docs>
     </Member>
     <Member MemberName="DesiredFrameRateProperty">

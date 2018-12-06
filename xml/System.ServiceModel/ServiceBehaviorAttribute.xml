@@ -1,11 +1,11 @@
 <Type Name="ServiceBehaviorAttribute" FullName="System.ServiceModel.ServiceBehaviorAttribute">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="18c66ebf70c8abc50d4be021f440077ccbaafba3" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
+    <Meta Name="ms.openlocfilehash" Value="de8572022a6f2a38b2286deef5d0e825201cfcb5" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48775764" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52598936" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class ServiceBehaviorAttribute : Attribute, System.ServiceModel.Description.IServiceBehavior" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceBehaviorAttribute extends System.Attribute implements class System.ServiceModel.Description.IServiceBehavior" />
@@ -443,7 +443,7 @@ public void MyMethod()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果某个类型实现 <xref:System.Runtime.Serialization.IExtensibleDataObject> 接口，则该接口就会存储在反序列化到该类型时通过网络传入的所有未知额外数据。 例如，如果 `Person` 类型具有 `FirstName` 和 `LastName` 成员，且有一个名为 `PhoneNumber` 的元素进入，则系统会存储该元素。 在以后序列化该类型时，会重新发出 `PhoneNumber`。 问题在于的架构`Person`导出的服务仅有`FirstName`和`LastName`，因此，Windows Communication Foundation (WCF) 生成一个架构无效的实例 ！ 如果一定要严格遵从架构，则可以将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> 设置为 `true`，以关闭此重新发出行为。  
+ 如果某个类型实现<xref:System.Runtime.Serialization.IExtensibleDataObject>接口，则该存储的任何额外数据就会通过网络传入反序列化时为该类型。 例如，如果 `Person` 类型具有 `FirstName` 和 `LastName` 成员，且有一个名为 `PhoneNumber` 的元素进入，则系统会存储该元素。 在以后序列化该类型时，会重新发出 `PhoneNumber`。 问题在于的架构`Person`导出的服务仅有`FirstName`和`LastName`，因此，Windows Communication Foundation (WCF) 生成一个架构无效的实例 ！ 如果一定要严格遵从架构，则可以将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> 设置为 `true`，以关闭此重新发出行为。  
   
  无论<xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A>设置，WCF 总是会处理已知的数据传入和传出） 并且在有额外数据进入时不会引发异常。 您还可以设置此属性使用[ &lt;dataContractSerializer&gt; ](~/docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)应用程序配置文件中的元素。  
   

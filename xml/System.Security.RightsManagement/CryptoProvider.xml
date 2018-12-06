@@ -1,11 +1,11 @@
 <Type Name="CryptoProvider" FullName="System.Security.RightsManagement.CryptoProvider">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="d46973523c4701c924f82f1abd91e0e44ed7c130" />
-    <Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" />
+    <Meta Name="ms.openlocfilehash" Value="8ee9699e9342f13fd7f5713fb501be64e14117dd" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/04/2018" />
-    <Meta Name="ms.locfileid" Value="48764661" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52601631" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class CryptoProvider : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CryptoProvider extends System.Object implements class System.IDisposable" />
@@ -148,12 +148,13 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个指示用户是否有解密权限的值。</summary>
-        <value>**true**如果<see cref="T:System.Security.RightsManagement.UseLicense" />授予用户权限进行解密; 否则为**false**。</value>
+        <value>
+          <see langword="true" /> 如果<see cref="T:System.Security.RightsManagement.UseLicense" />授予用户权限进行解密; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Security.RightsManagement.CryptoProvider.CanDecrypt%2A> 返回 **，则返回 true**如果<xref:System.Security.RightsManagement.UseLicense>绑定到此<xref:System.Security.RightsManagement.CryptoProvider>授予读取访问权限，如视图、 编辑、 打印或所有者的用户。  
+ <xref:System.Security.RightsManagement.CryptoProvider.CanDecrypt%2A> 返回`true`如果<xref:System.Security.RightsManagement.UseLicense>绑定到此<xref:System.Security.RightsManagement.CryptoProvider>授予读取访问权限，如视图、 编辑、 打印或所有者的用户。  
   
    
   
@@ -187,12 +188,13 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个指示用户是否有加密权限的值。</summary>
-        <value>**true**如果<see cref="T:System.Security.RightsManagement.UseLicense" />授予用户权限进行加密; 否则为**false**。</value>
+        <value>
+          <see langword="true" /> 如果<see cref="T:System.Security.RightsManagement.UseLicense" />授予用户权限进行加密; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Security.RightsManagement.CryptoProvider.CanDecrypt%2A> 返回 **，则返回 true**如果<xref:System.Security.RightsManagement.UseLicense>绑定到此<xref:System.Security.RightsManagement.CryptoProvider>授予写入访问权限，如编辑或所有者的用户。  
+ <xref:System.Security.RightsManagement.CryptoProvider.CanDecrypt%2A> 返回`true`如果<xref:System.Security.RightsManagement.UseLicense>绑定到此<xref:System.Security.RightsManagement.CryptoProvider>授予写入访问权限，如编辑或所有者的用户。  
   
  ]]></format>
         </remarks>
@@ -218,16 +220,17 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="M:System.Security.RightsManagement.CryptoProvider.Encrypt(System.Byte[])" /> 和 <see cref="M:System.Security.RightsManagement.CryptoProvider.Decrypt(System.Byte[])" /> 是否可以接受块长度不同的缓冲区。</summary>
-        <value>**true**如果缓冲区传递给<see cref="M:System.Security.RightsManagement.CryptoProvider.Encrypt(System.Byte[])" />可以是传递给的缓冲区的长度不同<see cref="M:System.Security.RightsManagement.CryptoProvider.Decrypt(System.Byte[])" />; 否则为**false**如果缓冲区传递给<see cref="M:System.Security.RightsManagement.CryptoProvider.Encrypt(System.Byte[])" />和<see cref="M:System.Security.RightsManagement.CryptoProvider.Decrypt(System.Byte[])" />必须是完全相同相同的长度。  默认值是为 AES **，则返回 true**。</value>
+        <value>
+          <see langword="true" /> 如果缓冲区传递给<see cref="M:System.Security.RightsManagement.CryptoProvider.Encrypt(System.Byte[])" />可以是传递给的缓冲区的长度不同<see cref="M:System.Security.RightsManagement.CryptoProvider.Decrypt(System.Byte[])" />; 否则为<see langword="false" />如果缓冲区传递给<see cref="M:System.Security.RightsManagement.CryptoProvider.Encrypt(System.Byte[])" />和<see cref="M:System.Security.RightsManagement.CryptoProvider.Decrypt(System.Byte[])" />必须是完全相同的长度。  默认值是为 AES <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  `clearText`和`cipherText`缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Encrypt%2A>并<xref:System.Security.RightsManagement.CryptoProvider.Decrypt%2A>必须为 n *<xref:System.Security.RightsManagement.CryptoProvider.BlockSize%2A>字节的长度，其中 n 是一个整数，大于或等于 1。  
   
- 如果<xref:System.Security.RightsManagement.CryptoProvider.CanMergeBlocks%2A>是**false**，缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Encrypt%2A>相同的长度必须为缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Decrypt%2A>。  
+ 如果<xref:System.Security.RightsManagement.CryptoProvider.CanMergeBlocks%2A>是`false`，缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Encrypt%2A>必须是长度相同，因为缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Decrypt%2A>。  
   
- 如果<xref:System.Security.RightsManagement.CryptoProvider.CanMergeBlocks%2A>是**true**，缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Encrypt%2A>可以是传递到的缓冲区的长度不同<xref:System.Security.RightsManagement.CryptoProvider.Decrypt%2A>(所有缓冲区大小仍然必须始终都为倍数<xref:System.Security.RightsManagement.CryptoProvider.BlockSize%2A>长度字节)。  
+ 如果<xref:System.Security.RightsManagement.CryptoProvider.CanMergeBlocks%2A>是`true`，缓冲区传递给<xref:System.Security.RightsManagement.CryptoProvider.Encrypt%2A>可以是传递到的缓冲区的长度不同<xref:System.Security.RightsManagement.CryptoProvider.Decrypt%2A>(所有缓冲区大小仍然必须始终都为倍数<xref:System.Security.RightsManagement.CryptoProvider.BlockSize%2A>长度字节)。  
   
  ]]></format>
         </remarks>
@@ -310,7 +313,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A> 执行<xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A>(**true**)。  
+ <xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A> 执行<xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A>(`true`)。  
   
  在完成使用 <xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A> 后，应调用 <xref:System.Security.RightsManagement.CryptoProvider>。 <xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A> 方法使 <xref:System.Security.RightsManagement.CryptoProvider> 处于不可用状态。 在调用<xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A>，必须释放对所有引用<xref:System.Security.RightsManagement.CryptoProvider>这样垃圾回收器才能收回内存的<xref:System.Security.RightsManagement.CryptoProvider>占用。 有关详细信息，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
@@ -432,7 +435,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Security.RightsManagement.CryptoProvider.Finalize%2A> 执行<xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A>(**false**)。  
+ <xref:System.Security.RightsManagement.CryptoProvider.Finalize%2A> 执行<xref:System.Security.RightsManagement.CryptoProvider.Dispose%2A>(`false`)。  
   
  此方法重写<xref:System.Object.Finalize%2A>。 应用程序代码不应调用此方法。对象的`Finalize`方法将自动调用垃圾回收期间除非终止由垃圾回收器已禁用通过调用<xref:System.GC.SuppressFinalize%2A>方法。  
   

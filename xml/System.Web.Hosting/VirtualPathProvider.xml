@@ -1,11 +1,11 @@
 <Type Name="VirtualPathProvider" FullName="System.Web.Hosting.VirtualPathProvider">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="27e266af779c9e51c80127f68edf282203c88fdc" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="c57adaa95785d5051feec122ba24069f54345239" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39787724" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52595023" />
   </Metadata>
   <TypeSignature Language="C#" Value="public abstract class VirtualPathProvider : MarshalByRefObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit VirtualPathProvider extends System.MarshalByRefObject" />
@@ -156,11 +156,21 @@
  ]]></format>
     </remarks>
     <block subset="none" type="overrides">
-      <para>继承自<see cref="T:System.Web.Hosting.VirtualPathProvider" />，必须重写以下成员:- <see cref="M:System.Web.Hosting.VirtualPathProvider.FileExists(System.String)" />   
+      <para>继承自<see cref="T:System.Web.Hosting.VirtualPathProvider" />，必须重写以下成员： 
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.FileExists(System.String)" />  
   
--    <see cref="M:System.Web.Hosting.VirtualPathProvider.GetFile(System.String)" />如果您的自定义<see cref="T:System.Web.Hosting.VirtualPathProvider" />类支持在虚拟文件系统中的目录，必须重写以下成员。 - <see cref="M:System.Web.Hosting.VirtualPathProvider.DirectoryExists(System.String)" />   
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.GetFile(System.String)" />  
   
--    <see cref="M:System.Web.Hosting.VirtualPathProvider.GetDirectory(System.String)" /><block subset="none" type="note"><para>虚拟文件系统将包含 Web 站点的主题 (通过创建一个虚拟<c>App_Themes</c>目录)，您的自定义<see cref="T:System.Web.Hosting.VirtualPathProvider" />类必须支持的目录。</para></block>  自定义<see cref="T:System.Web.Hosting.VirtualPathProvider" />类适用于类派生自<see cref="T:System.Web.Hosting.VirtualFile" />和<see cref="T:System.Web.Hosting.VirtualDirectory" />类。应实现这些类型以提供从虚拟文件系统的文件和目录信息从派生的类。有关自定义的示例<see cref="T:System.Web.Hosting.VirtualFile" />实现中，请参阅示例部分<see cref="T:System.Web.Hosting.VirtualFile" />类概述主题。有关自定义的示例<see cref="T:System.Web.Hosting.VirtualDirectory" />实现中，请参阅示例部分<see cref="T:System.Web.Hosting.VirtualDirectory" />类概述主题。</para>
+如果您的自定义<see cref="T:System.Web.Hosting.VirtualPathProvider" />类支持在虚拟文件系统中的目录，必须重写以下成员。  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.DirectoryExists(System.String)" />  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.GetDirectory(System.String)" /><block subset="none" type="note"><para>  
+ 如果您的虚拟文件系统将包含 Web 站点的主题 (通过创建一个虚拟<c>App_Themes</c>目录)，您的自定义<see cref="T:System.Web.Hosting.VirtualPathProvider" />类必须支持的目录。  
+  
+</para></block>  
+  
+ 自定义<see cref="T:System.Web.Hosting.VirtualPathProvider" />类适用于类派生自<see cref="T:System.Web.Hosting.VirtualFile" />和<see cref="T:System.Web.Hosting.VirtualDirectory" />类。 应实现这些类型以提供从虚拟文件系统的文件和目录信息从派生的类。 有关自定义的示例<see cref="T:System.Web.Hosting.VirtualFile" />实现中，请参阅示例部分<see cref="T:System.Web.Hosting.VirtualFile" />类概述主题。 有关自定义的示例<see cref="T:System.Web.Hosting.VirtualDirectory" />实现中，请参阅示例部分<see cref="T:System.Web.Hosting.VirtualDirectory" />类概述主题。</para>
     </block>
   </Docs>
   <Members>
@@ -238,7 +248,9 @@
  ]]></format>
         </remarks>
         <block subset="none" type="overrides">
-          <para>如果重写的默认实现<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />方法中，将要求你将使用任何特殊语法<paramref name="relativePath" />到有效的虚拟路径的参数。你负责语法检查路径验证和处理不正确的输入，以及为格式正确的输入的边缘情况。在大多数情况下将不需要重写默认<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />方法。但是，如果您确实需要修改的路径，我们建议您限制你<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />修改令牌特定于你的虚拟路径提供程序中实现<paramref name="relativeUrl" />参数，，然后调用基实现，以执行正常路径处理和 ASP.NET</para>
+          <para>如果重写的默认实现<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />方法中，将要求你将使用任何特殊语法<paramref name="relativePath" />到有效的虚拟路径的参数。 你负责语法检查路径验证和处理不正确的输入，以及为格式正确的输入的边缘情况。  
+  
+在大多数情况下将不需要重写默认<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />方法。 但是，如果您确实需要修改的路径，我们建议您限制你<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />修改令牌特定于你的虚拟路径提供程序中实现<paramref name="relativeUrl" />参数，，然后调用基实现，以执行正常路径处理和 ASP.NET</para>
         </block>
       </Docs>
     </Member>

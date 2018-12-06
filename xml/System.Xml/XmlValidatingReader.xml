@@ -1,11 +1,11 @@
 <Type Name="XmlValidatingReader" FullName="System.Xml.XmlValidatingReader">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="088fad552fc08286648291b2704d03b305f067ee" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="d907a72f6f319a0dd7ee0a4b9966ac0eb174f4ed" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52220041" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52601393" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class XmlValidatingReader : System.Xml.XmlReader, System.Xml.IXmlLineInfo, System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlValidatingReader extends System.Xml.XmlReader implements class System.Xml.IXmlLineInfo, class System.Xml.IXmlNamespaceResolver" />
@@ -692,7 +692,38 @@
  为了说明该实体之间的区别处理模式，请考虑以下 XML:  
   
 ```xml  
-<!DOCTYPE doc [<!ENTITY num "123"]]></format>
+<!DOCTYPE doc [<!ENTITY num "123">]>  
+ <doc> &#65; &num; </doc>  
+```  
+  
+ 当`EntityHandling`设置为`ExpandEntities`"doc"元素节点包含一个文本节点具有展开的实体文本：  
+  
+|深度|NodeType|name|“值”|  
+|-----------|--------------|----------|-----------|  
+|1|Text||A 123|  
+  
+ 当`EntityHandling`设置为`ExpandCharEntites`，和<xref:System.Xml.XmlTextReader.WhitespaceHandling%2A>设置为有效或全部，"doc"元素扩展字符实体，并返回作为节点的常规实体：  
+  
+|深度|NodeType|name|“值”|  
+|-----------|--------------|----------|-----------|  
+|1|Text||包含当前请求的 URL 的|  
+|1|EntityReference|num||  
+|1|SignificantWhitespace|||  
+  
+   
+  
+## Examples  
+ 下面的示例使用`ResolveEntity`方法以展开常规实体。  
+  
+ [!code-cpp[Classic WebData XmlValidatingReader.ResolveEntity Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlValidatingReader.ResolveEntity Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlValidatingReader.ResolveEntity Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlValidatingReader.ResolveEntity Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlValidatingReader.ResolveEntity Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlValidatingReader.ResolveEntity Example/VB/source.vb#1)]  
+  
+ 该示例使用该文件，`book1.xml`作为输入。  
+  
+ [!code-xml[Classic WebData XmlValidatingReader.ResolveEntity Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlValidatingReader.ResolveEntity Example/XML/source.xml#2)]  
+  
+ ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">指定了无效值。</exception>
         <altmember cref="T:System.Xml.XmlReader" />
@@ -3123,9 +3154,18 @@ object obj = vreader.SchemaType;
         <ReturnType>System.Xml.XmlReaderSettings</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取用于创建此 <see cref="T:System.Xml.XmlValidatingReader" /> 实例的 <see cref="T:System.Xml.XmlReaderSettings" /> 对象。</summary>
+        <value>由于没有使用 <see cref="T:System.Xml.XmlReaderSettings" /> 类和 <see cref="Overload:System.Xml.XmlReader.Create" /> 方法对 <see cref="T:System.Xml.XmlValidatingReader" /> 对象进行实例化，因此为 <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> [!NOTE]
+> <xref:System.Xml.XmlValidatingReader> 类在 .NET Framework 2.0 版中已过时。 您可以创建验证<xref:System.Xml.XmlReader>使用的实例<xref:System.Xml.XmlReaderSettings>类和<xref:System.Xml.XmlReader.Create%2A>方法。 有关详细信息，请参阅[使用 XmlReader 验证 XML 数据](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hdf992b8(v=vs.100))。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Xml.IXmlLineInfo.HasLineInfo">
@@ -3153,8 +3193,8 @@ object obj = vreader.SchemaType;
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>获取一个值，该值指示该类是否可返回行信息。</summary>
+        <returns>如果可以提供 <see cref="P:System.Xml.IXmlLineInfo.LineNumber" /> 和 <see cref="P:System.Xml.IXmlLineInfo.LinePosition" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,11 +1,11 @@
 <Type Name="XmlTextReader" FullName="System.Xml.XmlTextReader">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="90c77f83b2fbfa6e63a1bd5b61d10dfe1d19eaf4" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="5cb88eb979766bf7bddf81d0b3c1e58bf53f76d8" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52244273" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52602329" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class XmlTextReader : System.Xml.XmlReader, System.Xml.IXmlLineInfo, System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTextReader extends System.Xml.XmlReader implements class System.Xml.IXmlLineInfo, class System.Xml.IXmlNamespaceResolver" />
@@ -111,7 +111,7 @@
     <block subset="none" type="overrides">
       <para>此类具有继承要求。 需要完全信任继承<see langword="XmlTextReader" />。</para>
     </block>
-    <related type="Article" href="https://msdn.microsoft.com/library/e695047f-3c0f-4045-8708-5baea91cc380">XML 文档和数据</related>
+    <related type="Article" href="~/docs/standard/data/xml/index.md">XML 文档和数据</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -1357,7 +1357,25 @@ XmlTextReader reader = new XmlTextReader(s);
  为了说明该实体之间的区别处理模式，请考虑以下 XML:  
   
 ```  
-<!DOCTYPE doc [<!ENTITY num "123"]]></format>
+<!DOCTYPE doc [<!ENTITY num "123">]>  
+    <doc> &#65; &num; </doc>  
+```  
+  
+ 当`EntityHandling`设置为`ExpandEntities`"doc"元素节点包含一个文本节点具有展开的实体文本：  
+  
+|深度|节点类型|name|“值”|  
+|-----------|---------------|----------|-----------|  
+|1|`Text`||A 123|  
+  
+ 当`EntityHandling`设置为`ExpandCharEntites`，并<xref:System.Xml.XmlTextReader.WhitespaceHandling%2A>设置为`Significant`或`All`，"doc"元素扩展字符实体，并返回作为节点的常规实体：  
+  
+|深度|节点类型|name|“值”|  
+|-----------|---------------|----------|-----------|  
+|1|`Text`||包含当前请求的 URL 的|  
+|1|`EntityReference`|num||  
+|1|`SignificantWhitespace`|||  
+  
+ ]]></format>
         </remarks>
         <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
@@ -4080,9 +4098,17 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <ReturnType>System.Xml.XmlReaderSettings</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取用于创建此 <see cref="T:System.Xml.XmlTextReader" /> 实例的 <see cref="T:System.Xml.XmlReaderSettings" /> 对象。</summary>
+        <value>用于创建此 <see cref="T:System.Xml.XmlTextReader" /> 实例的 <see cref="T:System.Xml.XmlReaderSettings" /> 对象；如果读取器不是使用 <see cref="Overload:System.Xml.XmlReader.Create" /> 方法创建的，则为 <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+
+> 在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Skip">
@@ -4167,9 +4193,16 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>有关此成员的说明，请参阅 <see cref="M:System.Xml.IXmlLineInfo.HasLineInfo" />。</summary>
+        <returns>如果可以提供 <see cref="P:System.Xml.IXmlLineInfo.LineNumber" /> 和 <see cref="P:System.Xml.IXmlLineInfo.LinePosition" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+此成员是显式的接口成员实现。 它只能在 <xref:System.Xml.XmlTextReader> 实例强制转换为 <xref:System.Xml.IXmlLineInfo> 接口时使用。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Xml.IXmlNamespaceResolver.GetNamespacesInScope">

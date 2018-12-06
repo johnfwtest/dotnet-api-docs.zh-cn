@@ -1,11 +1,11 @@
 <Type Name="XmlTextWriter" FullName="System.Xml.XmlTextWriter">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b2a6e3c27189c7e6f266906c672a76ef2547a2f6" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
+    <Meta Name="ms.openlocfilehash" Value="1c303be50fe6df69393cd96a32d54050b5c8b99e" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52213489" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52596349" />
   </Metadata>
   <TypeSignature Language="C#" Value="public class XmlTextWriter : System.Xml.XmlWriter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTextWriter extends System.Xml.XmlWriter" />
@@ -537,9 +537,7 @@ XmlTextWriter w = new XmlTextWriter(Console.Out);
  这在 HTML 中查看时不出现空白粗体和斜体元素之间。 事实上，在此示例中，如果这些元素之间添加缩进"大象"一词可能会错误地遭到破坏。  
   
 > [!NOTE]
->  编写内容，不包括任何文本`String.Empty`将该元素放入混合内容模式。 子元素不会继承此"混合"模式状态。 "混合"元素的子元素进行缩进，除非它是也包含"混合"的内容。 元素内容 (http://www.w3.org/TR/1998/REC-xml-19980210#sec-element-content)和混合内容 (http://www.w3.org/TR/1998/REC-xml-19980210#sec-mixed-content)根据 XML 1.0 定义这些术语的定义。  
-  
-   
+> 编写内容，不包括任何文本`String.Empty`将该元素放入混合内容模式。 子元素不会继承此"混合"模式状态。 "混合"元素的子元素进行缩进，除非它是也包含"混合"的内容。 [元素内容](https://www.w3.org/TR/1998/REC-xml-19980210#sec-element-content)并[混合内容](https://www.w3.org/TR/1998/REC-xml-19980210#sec-mixed-content)根据 XML 1.0 定义这些术语的定义。  
   
 ## Examples  
  下面的示例写出 XML 片段。  
@@ -607,7 +605,22 @@ String subset =
     <!ELEMENT Employees (Employee)+>  
     <!ELEMENT Employee EMPTY>  
     <!ATTLIST Employee firstname CDATA #REQUIRED>  
-    <!ENTITY Company 'Microsoft']]></format>
+    <!ENTITY Company 'Microsoft'>]>  
+";  
+XmlTextWriter tw = new XmlTextWriter(Console.Out);  
+tw.WriteDocType(name, pubid, sysid, subset);  
+```  
+  
+   
+  
+## Examples  
+ 下面的示例写出 XML 片段。  
+  
+ [!code-cpp[Classic WebData XmlTextWriter.Formatting Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextWriter.Formatting Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextWriter.Formatting Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextWriter.Formatting Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextWriter.Formatting Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextWriter.Formatting Example/VB/source.vb#1)]  
+  
+ ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">将该属性设置为负值。</exception>
         <altmember cref="P:System.Xml.XmlTextWriter.IndentChar" />
@@ -1564,7 +1577,7 @@ String subset =
       </Parameters>
       <Docs>
         <param name="name">要写出的名称。</param>
-        <summary>写出指定的名称，确保它是符合 W3C XML 1.0 建议 (http://www.w3.org/TR/1998/REC-xml-19980210#NT-Name)) 的有效名称。</summary>
+        <summary>写出指定的名称，确保它是符合 W3C XML 1.0 建议 (https://www.w3.org/TR/1998/REC-xml-19980210#NT-Name)) 的有效名称。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1613,7 +1626,7 @@ String subset =
       </Parameters>
       <Docs>
         <param name="name">要写出的名称。</param>
-        <summary>写出指定的名称，确保它是符合 W3C XML 1.0 建议 (http://www.w3.org/TR/1998/REC-xml-19980210#NT-Name)) 的有效 <see langword="NmToken" />。</summary>
+        <summary>写出指定的名称，确保它是符合 W3C XML 1.0 建议 (https://www.w3.org/TR/1998/REC-xml-19980210#NT-Name)) 的有效 <see langword="NmToken" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1762,7 +1775,7 @@ writer.WriteStartElement("root");
   
  如果在编写属性值时，此方法将生成一个前缀`ns`找不到。 在编写元素内容时，会引发异常，如果`ns`找不到。  
   
- 如果此编写器支持的命名空间 (<xref:System.Xml.XmlTextWriter.Namespaces%2A>设置为`true`)，此方法还会检查该名称是否有效根据 XML 建议中的 W3C 命名空间 (http://www.w3.org/TR/REC-xml-names)。  
+ 如果此编写器支持的命名空间 (<xref:System.Xml.XmlTextWriter.Namespaces%2A>设置为`true`)，此方法还会检查该名称是否有效根据[XML 建议中的 W3C 命名空间](https://www.w3.org/TR/REC-xml-names)。  
   
    
   
@@ -2343,7 +2356,7 @@ test&lt;item&gt;test
   
  对于 HTML 和 XML，文档字符集 （和数字字符引用表示法） 基于 UCS [ISO 10646]。 源文档中的单个数字字符引用可能会因此在某些情况下对应于字符串 （一个高代理项和低代理项） 中的两个 16 位单位。 这些 16 位单元称为代理项对。  
   
- 有关代理项或多个字符的详细信息，请参阅的部分 3.7 的 Unicode 标准 3.0/Unicode 2.0 位于http://www.unicode.org，或在位于 W3C XML 1.0 建议的第 2.2 节http://www.w3.org/TR/REC-xml#charsets。  
+ 有关代理项或多个字符的详细信息，请参阅的部分 3.7 的 Unicode 标准 3.0/Unicode 2.0 位于<https://www.unicode.org>，或[部分的 W3C XML 1.0 建议的 2.2](https://www.w3.org/TR/REC-xml#charsets)。
   
  ]]></format>
         </remarks>

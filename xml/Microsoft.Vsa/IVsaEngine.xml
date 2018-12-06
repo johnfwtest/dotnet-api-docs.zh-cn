@@ -1,11 +1,11 @@
 <Type Name="IVsaEngine" FullName="Microsoft.Vsa.IVsaEngine">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="f528f47bf49afdb953ee12f7c191dc54343a2d7b" />
-    <Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" />
+    <Meta Name="ms.openlocfilehash" Value="07598bf05426757534e63b2554727c09bc2ce805" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="08/25/2018" />
-    <Meta Name="ms.locfileid" Value="39971651" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52601562" />
   </Metadata>
   <TypeSignature Language="C#" Value="public interface IVsaEngine" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVsaEngine" />
@@ -31,7 +31,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>To be added.</summary>
+    <summary>定义脚本引擎必须支持的方法和属性，并提供对脚本引擎的编程访问。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -52,8 +52,8 @@
         <ReturnType>System.Reflection.Assembly</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取由 <see cref="M:Microsoft.Vsa.IVsaEngine.Run" /> 方法生成的运行程序集的引用。</summary>
+        <value>对当前正在运行的程序集的引用。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -75,7 +75,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>关闭脚本引擎并释放所有资源。 如果脚本引擎当前正在运行，则首先调用 <see cref="M:Microsoft.Vsa.IVsaEngine.Reset" /> 方法。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,8 +97,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>使脚本引擎编译现有的源状态。</summary>
+        <returns>成功编译时返回 TRUE，这指示可以对新编译的程序集调用 <see cref="M:Microsoft.Vsa.IVsaEngine.Run" /> 方法。 如果编译失败，则返回 FALSE。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,8 +119,8 @@
         <ReturnType>System.Security.Policy.Evidence</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>提供用于验证当前对象的标识的证据。</summary>
+        <value>返回对 Evidence 对象的引用。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,7 +141,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>设置或获取指示脚本引擎会不会在调用 <see cref="M:Microsoft.Vsa.IVsaEngine.Compile" /> 方法时产生调试信息的布尔值。</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -166,9 +166,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="name">要获取的选项的名称。</param>
+        <summary>获取脚本引擎实现特定的选项。</summary>
+        <returns>返回选项的值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -190,7 +190,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>提供有关初始化阶段已完成并且已准备好脚本引擎来添加 <see cref="T:Microsoft.Vsa.IVsaItem" /> 对象的通知。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -212,7 +212,7 @@
       </ReturnValue>
       <Docs>
         <summary>To be added.</summary>
-        <value>To be added.</value>
+        <value>如果脚本引擎设置为在调用 <see cref="M:Microsoft.Vsa.IVsaEngine.Compile" /> 方法时生成调试信息，则返回 TRUE。 如果脚本引擎不返回任何调试信息，则返回 FALSE。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,8 +233,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取一个布尔值，该值报告脚本引擎的源状态是否自上次保存操作或是自最初加载脚本引擎以来已更改。</summary>
+        <value>如果脚本引擎标记为已修改 （即，"更新"），则返回 true。 如果脚本引擎未更新，则返回 false。 此属性的默认值为 false。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -255,8 +255,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取一个布尔值，该值报告脚本引擎当前是否处于运行模式。</summary>
+        <value>如果脚本引擎正在运行，则返回 true。 如果脚本引擎未运行，则返回 false。 此属性的默认值为 false</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -280,9 +280,9 @@
         <Parameter Name="identifier" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="identifier">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="identifier">作为标识符提供的字符串值。</param>
+        <summary>检查提供的标识符是否对脚本引擎有效。</summary>
+        <returns>如果标识符有效，返回 true；否则返回 false。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -303,8 +303,8 @@
         <ReturnType>Microsoft.Vsa.IVsaItems</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取 <see cref="T:Microsoft.Vsa.IVsaItems" /> 对象的 <see cref="T:Microsoft.Vsa.IVsaItem" /> 集合，这些对象表示使用 CreateItem 方法添加到脚本引擎的所有项，包括代码项、引用项和全局项。</summary>
+        <value>返回 <see cref="T:Microsoft.Vsa.IVsaItems" /> 集合。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -325,8 +325,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取脚本引擎支持的编程语言的非本地化名称。</summary>
+        <value>返回脚本引擎支持的编程语言的英语名称。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -347,8 +347,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取或设置在报告异常消息时所使用的地理区域设置和语言。</summary>
+        <value>返回表示要用于报告异常消息的区域设置的整数值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -372,8 +372,8 @@
         <Parameter Name="site" Type="Microsoft.Vsa.IVsaPersistSite" />
       </Parameters>
       <Docs>
-        <param name="site">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="site">从中加载指定源项的站点。</param>
+        <summary>指示脚本引擎按照实现 <see cref="T:Microsoft.Vsa.IVsaPersistSite" /> 接口的宿主提供对象的指定，从持久性点加载源项。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -394,8 +394,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>设置或获取脚本引擎的显示名称，该名称主要用于在托管环境中向用户标识各个脚本引擎。</summary>
+        <value>返回脚本引擎的 Name 属性值，这可以是空字符串。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -417,7 +417,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>从运行状态中移除脚本引擎，并自动断开与绑定事件处理程序的连接。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -439,7 +439,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>为脚本引擎将缓存程序集无效化，由其根名字对象指定。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -460,8 +460,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>设置或获取脚本引擎的根名字对象。</summary>
+        <value>返回 RootMoniker 属性的当前值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -482,8 +482,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>设置或获取脚本引擎使用的根命名空间。</summary>
+        <value>返回根命名空间的字符串值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -505,7 +505,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>启动脚本引擎中已编译代码的执行，并绑定所有事件处理程序。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -530,9 +530,9 @@
         <Parameter Name="pdb" Type="System.Byte[]" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="pe">To be added.</param>
-        <param name="pdb">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="pe">脚本引擎的编译状态。</param>
+        <param name="pdb">指定与 PE（可移植可执行文件）对应的 .PDB 文件中包含的调试信息。</param>
+        <summary>保存脚本引擎的编译状态；它还可选择保存调试信息。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -556,8 +556,9 @@
         <Parameter Name="site" Type="Microsoft.Vsa.IVsaPersistSite" />
       </Parameters>
       <Docs>
-        <param name="site">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="site">
+          <see cref="T:Microsoft.Vsa.IVsaPersistSite" /> 接口建立的用于保存源状态的站点。</param>
+        <summary>指示脚本引擎将其源状态保存到指定 <see cref="T:Microsoft.Vsa.IVsaPersistSite" /> 对象。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -582,9 +583,9 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="name">To be added.</param>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="name">要设置的选项的名称。</param>
+        <param name="value">所设置的选项的值。</param>
+        <summary>设置脚本引擎特定于实现的选项。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -605,8 +606,8 @@
         <ReturnType>Microsoft.Vsa.IVsaSite</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>设置或获取由宿主实现的 <see cref="T:Microsoft.Vsa.IVsaSite" /> 对象，脚本引擎使用此对象与宿主通信。</summary>
+        <value>返回对当前 <see cref="T:Microsoft.Vsa.IVsaSite" /> 对象的引用。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -627,8 +628,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取由该脚本引擎支持的当前版本的语言编译器，格式为 Major.Minor.Revision.Build。</summary>
+        <value>最新版本，Major.Minor.Revision.Build 格式的字符串值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

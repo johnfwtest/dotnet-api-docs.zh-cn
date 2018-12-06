@@ -1,11 +1,11 @@
 <Type Name="OracleConnection" FullName="System.Data.OracleClient.OracleConnection">
   <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="af49e19f87413de87af58ca759e53c9375e13c7f" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
+    <Meta Name="ms.openlocfilehash" Value="fa1a9866a23f6fcdf2b9c06a76cf3108b5a6ad3c" />
+    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
     <Meta Name="ms.translationtype" Value="HT" />
     <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51895762" />
+    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
+    <Meta Name="ms.locfileid" Value="52596615" />
   </Metadata>
   <TypeSignature Language="C#" Value="public sealed class OracleConnection : System.Data.Common.DbConnection, ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleConnection extends System.Data.Common.DbConnection implements class System.ICloneable" />
@@ -1138,9 +1138,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>开始一项数据库事务。</summary>
+        <returns>表示新事务的对象。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+完成事务后，必须显式提交或回滚该事务通过<xref:System.Data.IDbTransaction.Commit>或<xref:System.Data.IDbTransaction.Rollback>方法。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Data.IDbConnection.BeginTransaction">
@@ -1164,10 +1171,18 @@
         <Parameter Name="il" Type="System.Data.IsolationLevel" />
       </Parameters>
       <Docs>
-        <param name="il">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="il">
+          <see cref="T:System.Data.IsolationLevel" /> 值之一。</param>
+        <summary>以指定的 <see cref="T:System.Data.IsolationLevel" /> 值开始数据库事务。</summary>
+        <returns>一个表示新事务的对象。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+完成事务后，必须显式提交或回滚该事务通过<xref:System.Data.IDbTransaction.Commit>或<xref:System.Data.IDbTransaction.Rollback>方法。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Data.IDbConnection.ChangeDatabase">
@@ -1191,8 +1206,8 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">要代替当前数据库使用的数据库名称。</param>
+        <summary>为打开的连接对象更改当前数据库。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1215,8 +1230,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>创建并返回一个与连接关联的命令对象。</summary>
+        <returns>与连接关联的命令对象。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
