@@ -1,13 +1,5 @@
 <Type Name="MessageHeaderAttribute" FullName="System.ServiceModel.MessageHeaderAttribute">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="567226834573a6b5af62a937a0a5db1641089dba" />
-    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
-    <Meta Name="ms.locfileid" Value="52910682" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class MessageHeaderAttribute : System.ServiceModel.MessageContractMemberAttribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c3fd1942844c0e423b24ad6c68474fb1133dc8ed" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53221870" /></Metadata><TypeSignature Language="C#" Value="public class MessageHeaderAttribute : System.ServiceModel.MessageContractMemberAttribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageHeaderAttribute extends System.ServiceModel.MessageContractMemberAttribute" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageHeaderAttribute" />
   <TypeSignature Language="VB.NET" Value="Public Class MessageHeaderAttribute&#xA;Inherits MessageContractMemberAttribute" />
@@ -65,23 +57,23 @@
   
  `Actor` 或 `Role` 属性指定需要给定标头的节点 URI。 `MustUnderstand` 属性指定标头是否理解节点的处理。 `Relay` 特性指定标头是否要中继到下游节点。 Windows Communication Foundation (WCF) 不会执行对传入的消息，这些属性的任何处理除`MustUnderstand`属性。  
   
- 但是，即使默认情况下不发送这些属性，您也可以对它们进行读写。 可以通过以下两种方式设置特性值。 首先，可以在 <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> 中更改 <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A>、<xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A> 和 <xref:System.ServiceModel.MessageHeaderAttribute> 属性。 （没有 `Role` 属性 － 如果使用的是 SOAP 1.2，则设置 <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> 属性并传递 `Role`。） 例如：  
+ 但是，即使默认情况下不发送这些属性，您也可以对它们进行读写。 可以通过以下两种方式设置特性值。 首先，可以在 <xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> 中更改 <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A>、<xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A> 和 <xref:System.ServiceModel.MessageHeaderAttribute> 属性。 (没有任何`Role`属性的设置<xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A>属性和`Role`如果使用 SOAP 1.2 传递)。 例如:  
   
   
   
- 控制这些属性的第二种方式是将所需标头类型设为 <xref:System.ServiceModel.MessageHeader%601> 类的类型参数，然后将生成的类型与 <xref:System.ServiceModel.MessageHeaderAttribute> 一起使用。 然后，再以编程方式使用 <xref:System.ServiceModel.MessageHeader%601> 属性设置这些 SOAP 特性。 例如：  
-  
-  
-  
-  
-  
- 如果同时使用了动态和静态控制机制，则静态设置为默认值，但可以使用动态机制重写。 例如：  
+ 控制这些属性的第二种方式是将所需标头类型设为 <xref:System.ServiceModel.MessageHeader%601> 类的类型参数，然后将生成的类型与 <xref:System.ServiceModel.MessageHeaderAttribute> 一起使用。 然后，再以编程方式使用 <xref:System.ServiceModel.MessageHeader%601> 属性设置这些 SOAP 特性。 例如:  
   
   
   
   
   
- 允许使用动态属性控件创建重复的标头。 例如：  
+ 如果同时使用了动态和静态控制机制，则静态设置为默认值，但可以使用动态机制重写。 例如:  
+  
+  
+  
+  
+  
+ 允许使用动态属性控件创建重复的标头。 例如:  
   
 ```  
 [MessageHeaderArray] public MessageHeader<Person> documentApprovers[];  
@@ -204,7 +196,7 @@
       </ReturnValue>
       <Docs>
         <summary>指定在 <see cref="P:System.ServiceModel.MessageHeaderAttribute.Actor" /> 角色中起作用的节点是否必须理解此标头。 这将映射到 <see langword="mustUnderstand" /> SOAP 标头属性。</summary>
-        <value>如果在 <see langword="true" /> 角色中起作用的节点必须理解此标头，则为 <see cref="P:System.ServiceModel.MessageHeaderAttribute.Actor" />；否则为 <see langword="false" />。</value>
+        <value>如果在 <see cref="P:System.ServiceModel.MessageHeaderAttribute.Actor" /> 角色中起作用的节点必须理解此标头，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

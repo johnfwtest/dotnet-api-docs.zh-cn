@@ -1,13 +1,5 @@
 <Type Name="XmlReader" FullName="System.Xml.XmlReader">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="75d8ae3257767846c186b7078d18ff9d9dfc4d01" />
-    <Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="12/01/2018" />
-    <Meta Name="ms.locfileid" Value="52736927" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e3d6e8c09f67f39f8167c55b3e732a5a93bcc2db" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53233635" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlReader extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlReader" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XmlReader&#xA;Implements IDisposable" />
@@ -96,7 +88,7 @@
   
 <a name="xmlreader_validate"></a>   
 ## <a name="validating-xml-data"></a>验证 XML 数据  
- 若要定义的 XML 文档及其元素关系、 数据类型和内容约束的结构，请使用文档类型定义 (DTD) 或 XML 架构定义语言 (XSD) 架构。 如果满足定义的所有语法要求，则格式正确 XML 文档被视为[W3C XML 1.0 建议](https://www.w3.org/TR/2006/REC-xml-20060816/)。 如果它的格式正确并且符合其 DTD 或架构定义的约束，它被视为有效。 (请参阅[W3C XML 架构第 1 部分： 结构](https://www.w3.org/TR/xmlschema-1/)并[W3C XML 架构第 2 部分： 数据类型](https://www.w3.org/TR/xmlschema-2/)建议。)因此，虽然所有有效的 XML 文档都是格式正确的，但并不是所有格式正确的 XML 文档都是有效的。  
+ 若要定义的 XML 文档及其元素关系、 数据类型和内容约束的结构，请使用文档类型定义 (DTD) 或 XML 架构定义语言 (XSD) 架构。 如果满足定义的所有语法要求，则格式正确 XML 文档被视为[W3C XML 1.0 建议](https://www.w3.org/TR/2006/REC-xml-20060816/)。 如果它的格式正确并且符合其 DTD 或架构定义的约束，它被视为有效。 (请参阅[W3C XML 架构第 1 部分：结构](https://www.w3.org/TR/xmlschema-1/)和[W3C XML 架构第 2 部分：数据类型](https://www.w3.org/TR/xmlschema-2/)建议。)因此，虽然所有有效的 XML 文档都是格式正确的，但并不是所有格式正确的 XML 文档都是有效的。  
   
  您可以验证数据针对 DTD，内联 XSD 架构或 XSD 架构存储在<xref:System.Xml.Schema.XmlSchemaSet>对象 （缓存）; 上介绍了这些方案<xref:System.Xml.XmlReader.Create%2A>参考页。 <xref:System.Xml.XmlReader> 不支持 XML 数据缩减 (XDR) 架构验证。  
   
@@ -129,7 +121,7 @@
   
 |使用此<xref:System.Xml.XmlReaderSettings>属性|到|默认|  
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-------------|  
-|<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 属性|启用或禁用以下检查：<br /><br /> 的由定义字符是合法的 XML 字符的范围内[2.2 字符](https://www.w3.org/TR/2006/REC-xml-20060816/#charsets)W3C XML 1.0 建议的部分。<br />的由定义所有 XML 名称都是否有效， [2.3 常用语法构造](https://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name)W3C XML 1.0 建议的部分。<br /><br /> 当此属性设置为`true`（默认值），<xref:System.Xml.XmlException>引发异常，如果 XML 文件中包含非法字符或无效的 XML 名称 （例如，元素名称以数字开头）。|启用了字符和名称检查。<br /><br /> 将 <xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 设置为 `false` 会禁用对字符实体引用的字符检查。 如果读取器正在处理文本数据，始终检查 XML 名称是否有效，而不考虑此设置。 **注意：** XML 1.0 建议要求文档级别的一致性，如果存在 DTD。 因此，如果读取器配置为支持<xref:System.Xml.ConformanceLevel.Fragment?displayProperty=nameWithType>，但是 XML 数据包含文档类型定义 (DTD)<xref:System.Xml.XmlException>引发。|  
+|<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 属性|启用或禁用以下检查：<br /><br /> 的由定义字符是合法的 XML 字符的范围内[2.2 字符](https://www.w3.org/TR/2006/REC-xml-20060816/#charsets)W3C XML 1.0 建议的部分。<br />的由定义所有 XML 名称都是否有效， [2.3 常用语法构造](https://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name)W3C XML 1.0 建议的部分。<br /><br /> 当此属性设置为`true`（默认值），<xref:System.Xml.XmlException>引发异常，如果 XML 文件中包含非法字符或无效的 XML 名称 （例如，元素名称以数字开头）。|启用了字符和名称检查。<br /><br /> 将 <xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 设置为 `false` 会禁用对字符实体引用的字符检查。 如果读取器正在处理文本数据，始终检查 XML 名称是否有效，而不考虑此设置。 **注意：** 如果存在 DTD，XML 1.0 建议要求文档级别的一致性。 因此，如果读取器配置为支持<xref:System.Xml.ConformanceLevel.Fragment?displayProperty=nameWithType>，但是 XML 数据包含文档类型定义 (DTD)<xref:System.Xml.XmlException>引发。|  
 |<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A> 属性|选择强制实施的一致性的级别：<br /><br /> -   <xref:System.Xml.ConformanceLevel.Document>. 符合的规则[格式正确的 XML 1.0 文档](https://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed)。<br />-   <xref:System.Xml.ConformanceLevel.Fragment>. 符合格式正确的文档片段，可以随着变化所消耗的规则[外部已分析的实体](https://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities)。<br />-   <xref:System.Xml.ConformanceLevel.Auto>. 符合由读取器决定的级别。<br /><br /> 如果数据不符合规则，<xref:System.Xml.XmlException>引发异常。|<xref:System.Xml.ConformanceLevel.Document>|  
   
 <a name="xmlreader_nodes"></a>   
@@ -234,7 +226,7 @@
   
 -   **ReadContentAs**方法读取读取器当前位置处的文本内容和 XML 数据不具有任何架构或数据类型信息与之关联，如果将文本内容转换为请求的返回类型。 文本、空白、有效空白和 CDATA 节串联在一起。 跳过注释和处理指令，而实体引用自动解决。  
   
- <xref:System.Xml.XmlReader>类使用定义的规则[W3C XML 架构第 2 部分： 数据类型](https://www.w3.org/TR/xmlschema-2/)建议。  
+ <xref:System.Xml.XmlReader>类使用的规则由[W3C XML 架构第 2 部分：数据类型](https://www.w3.org/TR/xmlschema-2/)建议。  
   
 |使用此<xref:System.Xml.XmlReader>方法|返回此 CLR 类型|  
 |--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|  
@@ -365,7 +357,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
     </remarks>
-    <related type="Article" href="https://msdn.microsoft.com/library/e695047f-3c0f-4045-8708-5baea91cc380">XML 文档和数据</related>
+    <related type="Article" href="~/docs/standard/data/xml/index.md">XML 文档和数据</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -849,10 +841,8 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.Security.SecurityException">
-          <see cref="T:System.Xml.XmlReader" /> 没有足够的权限访问 XML 数据的位置。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.Security.SecurityException"><see cref="T:System.Xml.XmlReader" /> 没有足够的权限访问 XML 数据的位置。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -916,8 +906,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -986,13 +975,10 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="inputUri" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.Security.SecurityException">
-          <see cref="T:System.Xml.XmlReader" /> 没有足够的权限访问 XML 数据的位置。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.Security.SecurityException"><see cref="T:System.Xml.XmlReader" /> 没有足够的权限访问 XML 数据的位置。</exception>
         <exception cref="T:System.IO.FileNotFoundException">由 URI 标识的文件不存在。</exception>
-        <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">
+        <exception cref="T:System.UriFormatException"><block subset="none" type="note">
             <para>  
  在<see href="https://go.microsoft.com/fwlink/?LinkID=247912">适用于 Windows 应用商店应用的 .NET</see> 或<see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">可移植类库</see>中，改为捕获基类异常 <see cref="T:System.FormatException" />。  
   
@@ -1066,8 +1052,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -1124,7 +1109,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  或  
+>  - 或 -  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1132,8 +1117,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -1205,11 +1189,9 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="inputUri" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.IO.FileNotFoundException">找不到 URI 指定的文件。</exception>
-        <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">
+        <exception cref="T:System.UriFormatException"><block subset="none" type="note">
             <para>  
  在<see href="https://go.microsoft.com/fwlink/?LinkID=247912">适用于 Windows 应用商店应用的 .NET</see> 或<see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">可移植类库</see>中，改为捕获基类异常 <see cref="T:System.FormatException" />。  
   
@@ -1277,7 +1259,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  或  
+>  - 或 -  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1293,8 +1275,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="reader" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">如果 <see cref="T:System.Xml.XmlReaderSettings" /> 对象指定的一致性级别与基础读取器一致性级别不一致。  
   
 或 
@@ -1358,7 +1339,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  或  
+>  - 或 -  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1366,8 +1347,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -1430,7 +1410,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  或  
+>  - 或 -  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1438,8 +1418,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -1497,7 +1476,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  或  
+>  - 或 -  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1505,8 +1484,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -1567,7 +1545,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  或  
+>  - 或 -  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1583,10 +1561,8 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="input" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException">
-          <see cref="P:System.Xml.XmlReaderSettings.NameTable" /> 和 <see cref="P:System.Xml.XmlParserContext.NameTable" /> 属性都包含值。 （只能设置并使用这些 <see langword="NameTable" /> 属性之中的一个）。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Xml.XmlReaderSettings.NameTable" /> 和 <see cref="P:System.Xml.XmlParserContext.NameTable" /> 属性都包含值。 （只能设置并使用这些 <see langword="NameTable" /> 属性之中的一个）。</exception>
       </Docs>
     </Member>
     <Member MemberName="Create">
@@ -1646,12 +1622,9 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <see langword="inputUri" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.Security.SecurityException">
-          <see cref="T:System.Xml.XmlReader" /> 没有足够的权限访问 XML 数据的位置。</exception>
-        <exception cref="T:System.ArgumentException">
-          <see cref="P:System.Xml.XmlReaderSettings.NameTable" /> 和 <see cref="P:System.Xml.XmlParserContext.NameTable" /> 属性都包含值。 （只能设置并使用这些 <see langword="NameTable" /> 属性之中的一个）。</exception>
+        <exception cref="T:System.ArgumentNullException"><see langword="inputUri" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.Security.SecurityException"><see cref="T:System.Xml.XmlReader" /> 没有足够的权限访问 XML 数据的位置。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Xml.XmlReaderSettings.NameTable" /> 和 <see cref="P:System.Xml.XmlParserContext.NameTable" /> 属性都包含值。 （只能设置并使用这些 <see langword="NameTable" /> 属性之中的一个）。</exception>
         <exception cref="T:System.IO.FileNotFoundException">找不到 URI 指定的文件。</exception>
         <exception cref="T:System.UriFormatException">URI 格式不正确。</exception>
       </Docs>
@@ -1888,8 +1861,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="i" /> 超出范围。 它必须是非负数且小于特性集合的大小。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" /> 超出范围。 它必须是非负数且小于特性集合的大小。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -1948,8 +1920,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -2020,8 +1991,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="name" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -2155,7 +2125,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
  下表列出具有要返回的值的节点类型。  
   
-|节点类型|“值”|  
+|节点类型|值|  
 |---------------|-----------|  
 |`Attribute`|属性的值。|  
 |`CDATA`|CDATA 节的内容。|  
@@ -2309,8 +2279,7 @@ public class Sample
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取一个值，该值指示当前节点是否为空元素（例如 <c>&lt;MyElement/&gt;</c>）。</summary>
-        <value>
-          <see langword="true" /> 如果当前节点是一个元素 (<see cref="P:System.Xml.XmlReader.NodeType" />等于<see langword="XmlNodeType.Element" />)，结尾<c>/ &gt;</c>; 否则为<see langword="false" />。</value>
+        <value><see langword="true" /> 如果当前节点是一个元素 (<see cref="P:System.Xml.XmlReader.NodeType" />等于<see langword="XmlNodeType.Element" />)，结尾<c>/ &gt;</c>; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2387,8 +2356,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="str" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="str" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsNameToken">
@@ -2436,8 +2404,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="str" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="str" /> 值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="IsStartElement">
@@ -3537,8 +3504,7 @@ public class Sample
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取与该实现关联的 <see cref="T:System.Xml.XmlNameTable" />。</summary>
-        <value>
-          <see langword="XmlNameTable" />，它使你能够获取该节点内字符串的原子化版本。</value>
+        <value><see langword="XmlNameTable" />，它使你能够获取该节点内字符串的原子化版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3932,7 +3898,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  此方法的异步版本，请参阅<xref:System.Xml.XmlReader.ReadContentAsAsync%2A>。  
   
@@ -3952,8 +3918,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.FormatException">内容格式不是目标类型的正确格式。</exception>
         <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="returnType" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="returnType" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.OverflowException">读取 <see langword="Decimal.MaxValue" />。</exception>
       </Docs>
@@ -4056,7 +4021,7 @@ public class Sample
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法的内容流式处理、 解码`Base64`内容，并返回已解码的二进制字节 (例如，内联`Base64`编码的 GIF 图像) 到缓冲区。 可以连续调用此方法，以读取大的嵌入文本流。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个： 用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://go.microsoft.com/fwlink/?LinkId=37119)。  
+ 此方法的内容流式处理、 解码`Base64`内容，并返回已解码的二进制字节 (例如，内联`Base64`编码的 GIF 图像) 到缓冲区。 可以连续调用此方法，以读取大的嵌入文本流。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个：用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://go.microsoft.com/fwlink/?LinkId=37119)。  
   
 > [!NOTE]
 >  不应访问的任何读取器属性调用之间<xref:System.Xml.XmlReader.ReadContentAsBase64%2A>方法，直到该方法返回值`0`。  
@@ -4073,12 +4038,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
@@ -4195,12 +4158,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
@@ -4295,7 +4256,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:boolean`，则读取器返回取消装箱<xref:System.Boolean>对象。 如果内容未类型化`xsd:boolean`，读取器将尝试将其转换为<xref:System.Boolean>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:boolean`，则读取器返回取消装箱<xref:System.Boolean>对象。 如果内容未类型化`xsd:boolean`，读取器将尝试将其转换为<xref:System.Boolean>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  下表描述了此方法将每个节点类型的处理。  
   
@@ -4307,7 +4268,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
    
   
@@ -4364,7 +4325,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:dateTime`，则读取器返回取消装箱<xref:System.DateTime>对象。 如果内容未类型化`xsd:dateTime`，读取器将尝试将其转换为<xref:System.DateTime>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:dateTime`，则读取器返回取消装箱<xref:System.DateTime>对象。 如果内容未类型化`xsd:dateTime`，读取器将尝试将其转换为<xref:System.DateTime>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
 > [!NOTE]
 >  如果内容类型化为 <xref:System.DateTime.Year%2A?displayProperty=nameWithType>，则不能使用 `xsd:gMonthDay` 值。 <xref:System.Xml.XmlReader> 始终设置<xref:System.DateTime.Year%2A?displayProperty=nameWithType>这种情况下值为 1904年。  
@@ -4379,7 +4340,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
@@ -4463,7 +4424,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:decimal`，则读取器返回取消装箱<xref:System.Decimal>对象。 如果内容未类型化`xsd:decimal`，读取器将尝试将其转换为<xref:System.Decimal>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:decimal`，则读取器返回取消装箱<xref:System.Decimal>对象。 如果内容未类型化`xsd:decimal`，读取器将尝试将其转换为<xref:System.Decimal>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  下表描述了此方法将每个节点类型的处理。  
   
@@ -4475,7 +4436,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
@@ -4523,7 +4484,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:double`，读取器返回一个双精度浮点数。 如果内容未类型化`xsd:double`，读取器将尝试将其转换为根据定义的规则的双精度浮点数[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:double`，读取器返回一个双精度浮点数。 如果内容未类型化`xsd:double`，读取器将尝试将其转换为双精度浮点数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  下表描述了此方法将每个节点类型的处理。  
   
@@ -4535,7 +4496,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
@@ -4583,7 +4544,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:float`，读取器返回取消装箱单精度浮点数字。 如果内容未类型化`xsd:float`，读取器将尝试将其转换为单精度浮点数根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:float`，读取器返回取消装箱单精度浮点数字。 如果内容未类型化`xsd:float`，读取器将尝试将其转换为单精度浮点数根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  下表描述了此方法将每个节点类型的处理。  
   
@@ -4595,7 +4556,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
@@ -4643,7 +4604,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:integer`，读取器返回未装箱的 32 位有符号的整数。 如果内容未类型化`xsd:integer`，读取器将尝试将其转换为 32 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:integer`，读取器返回未装箱的 32 位有符号的整数。 如果内容未类型化`xsd:integer`，读取器将尝试将其转换为 32 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  下表描述了此方法将每个节点类型的处理。  
   
@@ -4655,7 +4616,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
@@ -4703,7 +4664,7 @@ public class Sample
 ## Remarks  
  此方法将文本、 空白、 有效空白和 CDATA 部分中，连接，将跳过任何注释或处理指令。 实体引用来自动解决。  
   
- 如果将内容类型`xsd:long`，读取器返回未装箱的 64 位有符号的整数。 如果内容未类型化`xsd:long`，读取器将尝试将其转换为 64 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:long`，读取器返回未装箱的 64 位有符号的整数。 如果内容未类型化`xsd:long`，读取器将尝试将其转换为 64 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  下表描述了此方法将每个节点类型。  
   
@@ -4780,7 +4741,7 @@ public class Sample
 |`EndElement`|如果读取器为架构验证读取器的元素的值 (<xref:System.Xml.XmlReaderSettings.ValidationType%2A>设置为<xref:System.Xml.ValidationType.Schema>); 否则为空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  此方法的异步版本，请参阅<xref:System.Xml.XmlReader.ReadContentAsObjectAsync%2A>。  
   
@@ -4891,7 +4852,7 @@ public class Sample
 |`EndElement`|空字符串。|读取器仍保留在当前位置。|  
 |`Element`<br /><br /> `XmlDeclaration`<br /><br /> `None`<br /><br /> `Document`<br /><br /> `DocumentType`<br /><br /> `Notation`<br /><br /> `Entity`<br /><br /> `DocumentFragment`|引发 <xref:System.InvalidOperationException>。|未定义，尽管通常读取器将保留在当前位置。|  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  此方法的异步版本，请参阅<xref:System.Xml.XmlReader.ReadContentAsStringAsync%2A>。  
   
@@ -5005,7 +4966,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  此方法的异步版本，请参阅<xref:System.Xml.XmlReader.ReadElementContentAsAsync%2A>。  
   
@@ -5026,7 +4987,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换成请求的类型。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.OverflowException">读取 <see langword="Decimal.MaxValue" />。</exception>
@@ -5082,14 +5043,14 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换成请求的类型。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -5194,7 +5155,7 @@ public class Sample
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法读取元素内容中，将使用其解码`Base64`编码，并返回已解码的二进制字节 (例如，内联`Base64`-编码的 GIF 图像) 到缓冲区。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个： 用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://go.microsoft.com/fwlink/?LinkId=37119)。  
+ 此方法读取元素内容中，将使用其解码`Base64`编码，并返回已解码的二进制字节 (例如，内联`Base64`-编码的 GIF 图像) 到缓冲区。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个：用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://go.microsoft.com/fwlink/?LinkId=37119)。  
   
  <xref:System.Xml.XmlReader.ReadElementContentAsBase64%2A> 可仅读取简单内容的元素。 元素可以包含文本、 空白、 有效空白、 CDATA 节、 注释和处理指令。 它还可以包含实体引用，会自动扩展。 元素不能具有子元素。  
   
@@ -5216,12 +5177,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
         <exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
@@ -5344,12 +5303,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
         <exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
@@ -5458,7 +5415,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果元素内容的类型`xsd:boolean`，则读取器返回取消装箱<xref:System.Boolean>对象。 如果内容未类型化`xsd:boolean`，读取器将尝试将其转换为<xref:System.Boolean>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果元素内容的类型`xsd:boolean`，则读取器返回取消装箱<xref:System.Boolean>对象。 如果内容未类型化`xsd:boolean`，读取器将尝试将其转换为<xref:System.Boolean>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5467,7 +5424,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 <see cref="T:System.Boolean" /> 对象。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
       </Docs>
@@ -5516,7 +5473,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:boolean`，则读取器返回取消装箱<xref:System.Boolean>对象。 如果内容未类型化`xsd:boolean`，读取器将尝试将其转换为<xref:System.Boolean>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:boolean`，则读取器返回取消装箱<xref:System.Boolean>对象。 如果内容未类型化`xsd:boolean`，读取器将尝试将其转换为<xref:System.Boolean>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5578,7 +5535,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:dateTime`，则读取器返回取消装箱<xref:System.DateTime>对象。 如果内容未类型化`xsd:dateTime`，读取器将尝试将其转换为<xref:System.DateTime>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:dateTime`，则读取器返回取消装箱<xref:System.DateTime>对象。 如果内容未类型化`xsd:dateTime`，读取器将尝试将其转换为<xref:System.DateTime>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
 > [!NOTE]
 >  如果内容类型化为 <xref:System.DateTime.Year%2A?displayProperty=nameWithType>，则不能使用 `xsd:gMonthDay` 值。 <xref:System.Xml.XmlReader> 始终设置<xref:System.DateTime.Year%2A?displayProperty=nameWithType>这种情况下值为 1904年。  
@@ -5602,7 +5559,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 <see cref="T:System.DateTime" /> 对象。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
       </Docs>
@@ -5648,7 +5605,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:dateTime`，则读取器返回取消装箱<xref:System.DateTime>对象。 如果内容未类型化`xsd:dateTime`，读取器将尝试将其转换为<xref:System.DateTime>根据定义的规则对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:dateTime`，则读取器返回取消装箱<xref:System.DateTime>对象。 如果内容未类型化`xsd:dateTime`，读取器将尝试将其转换为<xref:System.DateTime>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
 > [!NOTE]
 >  如果内容类型化为 <xref:System.DateTime.Year%2A?displayProperty=nameWithType>，则不能使用 `xsd:gMonthDay` 值。 <xref:System.Xml.XmlReader> 始终设置<xref:System.DateTime.Year%2A?displayProperty=nameWithType>这种情况下值为 1904年。  
@@ -5660,7 +5617,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换成请求的类型。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -5718,7 +5675,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 读取器将尝试将元素内容转换<xref:System.Decimal>根据定义的规则的对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 读取器将尝试将元素内容转换<xref:System.Decimal>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5727,7 +5684,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 <see cref="T:System.Decimal" />。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
       </Docs>
@@ -5776,7 +5733,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 读取器将尝试将元素内容转换<xref:System.Decimal>根据定义的规则的对象[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 读取器将尝试将元素内容转换<xref:System.Decimal>根据定义的规则对象[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5785,7 +5742,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 <see cref="T:System.Decimal" />。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -5843,7 +5800,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:double`，读取器返回一个双精度浮点数。 如果内容未类型化`xsd:double`，读取器将尝试将其转换为根据定义的规则的双精度浮点数[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:double`，读取器返回一个双精度浮点数。 如果内容未类型化`xsd:double`，读取器将尝试将其转换为双精度浮点数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5864,7 +5821,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为双精度浮点数。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
       </Docs>
@@ -5913,7 +5870,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:double`，读取器返回一个双精度浮点数。 如果内容未类型化`xsd:double`，读取器将尝试将其转换为根据定义的规则的双精度浮点数[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:double`，读取器返回一个双精度浮点数。 如果内容未类型化`xsd:double`，读取器将尝试将其转换为双精度浮点数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5922,7 +5879,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换成请求的类型。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -5980,7 +5937,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 读取器将尝试将元素内容转换为单精度浮点数根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 读取器将尝试将元素内容转换为单精度浮点数根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -5989,7 +5946,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 元素内容不能转换为单精度浮点数。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
       </Docs>
@@ -6038,7 +5995,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 读取器将尝试将元素内容转换为单精度浮点数根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 读取器将尝试将元素内容转换为单精度浮点数根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -6105,7 +6062,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:integer`，读取器返回未装箱的 32 位有符号的整数。 如果内容未类型化`xsd:integer`，读取器将尝试将其转换为 32 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:integer`，读取器返回未装箱的 32 位有符号的整数。 如果内容未类型化`xsd:integer`，读取器将尝试将其转换为 32 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -6163,7 +6120,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:integer`，读取器返回未装箱的 32 位有符号的整数。 如果内容未类型化`xsd:integer`，读取器将尝试将其转换为 32 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:integer`，读取器返回未装箱的 32 位有符号的整数。 如果内容未类型化`xsd:integer`，读取器将尝试将其转换为 32 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -6172,7 +6129,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 32 位有符号整数。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -6230,7 +6187,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:long`，读取器返回未装箱的 64 位有符号的整数。 如果内容未类型化`xsd:long`，读取器将尝试将其转换为 64 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:long`，读取器返回未装箱的 64 位有符号的整数。 如果内容未类型化`xsd:long`，读取器将尝试将其转换为 64 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -6300,7 +6257,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 如果将内容类型`xsd:long`，读取器返回未装箱的 64 位有符号的整数。 如果内容未类型化`xsd:long`，读取器将尝试将其转换为 64 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 如果将内容类型`xsd:long`，读取器返回未装箱的 64 位有符号的整数。 如果内容未类型化`xsd:long`，读取器将尝试将其转换为 64 位有符号整数，根据定义的规则[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  有关详细信息，请参阅 <xref:System.Xml.XmlReader> 引用页的“备注”部分。  
   
@@ -6367,7 +6324,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  此方法的异步版本，请参阅<xref:System.Xml.XmlReader.ReadElementContentAsObjectAsync%2A>。  
   
@@ -6443,14 +6400,14 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换成请求的类型。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -6557,7 +6514,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
  此方法的异步版本，请参阅<xref:System.Xml.XmlReader.ReadElementContentAsStringAsync%2A>。  
   
@@ -6627,7 +6584,7 @@ public class Sample
 ## Remarks  
  此方法读取开始标记，该元素的内容，并移过去的结束元素标记读取器。 扩展实体并将忽略处理指令和注释。 元素只能包含简单内容。 也就是说，它不能有子元素。  
   
- 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分： 数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
+ 有关详细信息，请参阅备注部分<xref:System.Xml.XmlReader>参考页和[W3C XML 架构第 2 部分：数据类型](https://go.microsoft.com/fwlink/?LinkId=4871)建议。  
   
    
   
@@ -6646,7 +6603,7 @@ public class Sample
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 <see cref="T:System.String" /> 对象。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -7305,7 +7262,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。  
   
-或 
+- 或 - 
 元素的 <see cref="P:System.Xml.XmlReader.Name" /> 不匹配给定的 <paramref name="name" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadEndElement" />
@@ -8002,11 +7959,9 @@ reader.ReadToFollowing("item", "urn:1");
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">XML 数据不是格式良好的。</exception>
       </Docs>
     </Member>
@@ -8367,7 +8322,7 @@ reader.ReadToFollowing("item", "urn:1");
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IDisposable.Dispose" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IDisposable.Dispose" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8416,7 +8371,7 @@ reader.ReadToFollowing("item", "urn:1");
         <value>返回的值取决于节点的 <see cref="P:System.Xml.XmlReader.NodeType" />。 下表列出具有要返回的值的节点类型。 所有其他节点类型返回 <see langword="String.Empty" />。  
   
  <list type="table"><listheader><term> 节点类型 
- </term><description> “值” 
+ </term><description> 值 
  </description></listheader><item><term><see langword="Attribute" /></term><description> 属性的值。  
   
  </description></item><item><term><see langword="CDATA" /></term><description> CDATA 节的内容。  
@@ -8504,9 +8459,7 @@ reader.ReadToFollowing("item", "urn:1");
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <block subset="none" type="overrides">
-          <para>实施者必须提供<see langword="ValueType" />对于每个节点，即使它只是<see langword="System.String" />类型。</para>
-        </block>
+        <block subset="none" type="overrides"><para>实施者必须提供<see langword="ValueType" />对于每个节点，即使它只是<see langword="System.String" />类型。</para></block>
       </Docs>
     </Member>
     <Member MemberName="XmlLang">
@@ -8604,8 +8557,7 @@ reader.ReadToFollowing("item", "urn:1");
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取当前的 <see langword="xml:space" /> 范围。</summary>
-        <value>
-          <see cref="T:System.Xml.XmlSpace" /> 值之一。 如果不存在任何 <see langword="xml:space" /> 范围，则该属性默认值为 <see langword="XmlSpace.None" />。</value>
+        <value><see cref="T:System.Xml.XmlSpace" /> 值之一。 如果不存在任何 <see langword="xml:space" /> 范围，则该属性默认值为 <see langword="XmlSpace.None" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

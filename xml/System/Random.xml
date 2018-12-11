@@ -1,13 +1,5 @@
 <Type Name="Random" FullName="System.Random">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cbb8ff602a8e78c0f686218857a876c8e8fdd1ad" />
-    <Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/27/2018" />
-    <Meta Name="ms.locfileid" Value="52357504" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class Random" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="447dee75b747e7a9f668a091a7e5101818494ba4" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53222611" /></Metadata><TypeSignature Language="C#" Value="public class Random" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Random extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Random" />
   <TypeSignature Language="VB.NET" Value="Public Class Random" />
@@ -50,7 +42,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 伪随机数字从一组有限的数字选择以相同的概率。 所选的数字不是完全随机的因为使用数学算法来选择它们，但它们是足够随机实用的角度而言。 当前实现<xref:System.Random>类基于 Donald E.Knuth 删减随机数生成器算法的修改版本。 有关详细信息，请参阅 D.e。 Knuth。 *计算机编程，卷 2 艺术： Seminumerical 算法*。 Addison-wesley，Reading，MA，第三个版本，1997年。  
+ 伪随机数字从一组有限的数字选择以相同的概率。 所选的数字不是完全随机的因为使用数学算法来选择它们，但它们是足够随机实用的角度而言。 当前实现<xref:System.Random>类基于 Donald E.Knuth 删减随机数生成器算法的修改版本。 有关详细信息，请参阅 D.e。 Knuth。 *计算机编程，卷 2 的技术：Seminumerical 算法*。 Addison-wesley，Reading，MA，第三个版本，1997年。  
   
  若要生成安全加密的随机数字，例如适用于创建随机密码，使用<xref:System.Security.Cryptography.RNGCryptoServiceProvider>类或派生一个类从<xref:System.Security.Cryptography.RandomNumberGenerator?displayProperty=nameWithType>。  
   
@@ -144,7 +136,7 @@
      [!code-csharp[System.Random#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Random/cs/nextbytes1.cs#5)]
      [!code-vb[System.Random#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Random/vb/nextbytes1.vb#5)]  
   
--   一个整数。 可以选择是否想从 0 到最大值的整数 (<xref:System.Int32.MaxValue?displayProperty=nameWithType> – 1) 通过调用<xref:System.Random.Next>方法中，介于 0 和通过调用特定的值之间的整数<xref:System.Random.Next%28System.Int32%29>方法或通过调用值的范围内的整数<xref:System.Random.Next%28System.Int32%2CSystem.Int32%29>方法。 在参数化的重载，指定的最大值是独占;也就是说，生成的实际最大数目是其中一个小于指定值。  
+-   一个整数。 可以选择是否想从 0 到最大值的整数 (<xref:System.Int32.MaxValue?displayProperty=nameWithType> -1) 通过调用<xref:System.Random.Next>方法中，介于 0 和通过调用特定的值之间的整数<xref:System.Random.Next%28System.Int32%29>方法或通过调用值的范围内的整数<xref:System.Random.Next%28System.Int32%2CSystem.Int32%29>方法。 在参数化的重载，指定的最大值是独占;也就是说，生成的实际最大数目是其中一个小于指定值。  
   
      下面的示例调用<xref:System.Random.Next%28System.Int32%2CSystem.Int32%29>方法，以便生成 10 个随机数字介于-10 到 10 之间。 请注意该方法的第二个参数指定的方法返回的随机值的范围不含上限。 换而言之，该方法可返回一个的最大整数小于此值。  
   
@@ -230,7 +222,7 @@
  若要生成两个任意值之间的随机浮点数，喜欢<xref:System.Random.Next%28System.Int32%2CSystem.Int32%29>方法执行范围内的整数，请使用以下公式：  
   
 ```csharp  
-Random.NextDouble() * (maxValue – minValue) + minValue  
+Random.NextDouble() * (maxValue - minValue) + minValue  
 ```  
   
  下面的示例生成 1 亿个随机数字，范围为从 10.0 为 11.0，并显示其分发。  
@@ -322,14 +314,10 @@ Random.NextDouble() * (maxValue – minValue) + minValue
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>在.NET Framework 1.0 和 1.1 中，类的最小实现派生自<see cref="T:System.Random" />所需重写<see cref="M:System.Random.Sample" />方法以定义使用新的或已修改的算法来生成随机数字。 在派生的类无法然后依赖于基类实现<see cref="M:System.Random.Next" />， <see cref="M:System.Random.Next(System.Int32)" />， <see cref="M:System.Random.Next(System.Int32,System.Int32)" />， <see cref="M:System.Random.NextBytes(System.Byte[])" />，并<see cref="M:System.Random.NextDouble" />方法来调用的派生的类实现<see cref="M:System.Random.Sample" />方法。  
+    <block subset="none" type="overrides"><para>在.NET Framework 1.0 和 1.1 中，类的最小实现派生自<see cref="T:System.Random" />所需重写<see cref="M:System.Random.Sample" />方法以定义使用新的或已修改的算法来生成随机数字。 在派生的类无法然后依赖于基类实现<see cref="M:System.Random.Next" />， <see cref="M:System.Random.Next(System.Int32)" />， <see cref="M:System.Random.Next(System.Int32,System.Int32)" />， <see cref="M:System.Random.NextBytes(System.Byte[])" />，并<see cref="M:System.Random.NextDouble" />方法来调用的派生的类实现<see cref="M:System.Random.Sample" />方法。  
   
-在.NET Framework 2.0 及更高版本的行为<see cref="M:System.Random.Next" />， <see cref="M:System.Random.Next(System.Int32,System.Int32)" />，并<see cref="M:System.Random.NextBytes(System.Byte[])" />方法已更改，以便这些方法不一定是调用的派生的类实现<see cref="M:System.Random.Sample" />方法。 因此，类派生自<see cref="T:System.Random" />，面向.NET Framework 2.0 和更高版本还应该重写这三种方法。</para>
-    </block>
-    <block subset="none" type="usage">
-      <para>中的随机数生成器的实现<see cref="T:System.Random" />类不能保证跨主版本的.NET Framework 将保持不变。 因此，不应认为同一个种子将导致不同版本的.NET Framework 中的同一个伪随机序列。</para>
-    </block>
+在.NET Framework 2.0 及更高版本的行为<see cref="M:System.Random.Next" />， <see cref="M:System.Random.Next(System.Int32,System.Int32)" />，并<see cref="M:System.Random.NextBytes(System.Byte[])" />方法已更改，以便这些方法不一定是调用的派生的类实现<see cref="M:System.Random.Sample" />方法。 因此，类派生自<see cref="T:System.Random" />，面向.NET Framework 2.0 和更高版本还应该重写这三种方法。</para></block>
+    <block subset="none" type="usage"><para>中的随机数生成器的实现<see cref="T:System.Random" />类不能保证跨主版本的.NET Framework 将保持不变。 因此，不应认为同一个种子将导致不同版本的.NET Framework 中的同一个伪随机序列。</para></block>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -528,9 +516,7 @@ Random.NextDouble() * (maxValue – minValue) + minValue
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法实现<see cref="M:System.Random.Next" />方法。 相反，由基返回均匀分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用<see cref="M:System.Random.Sample" />派生类中的方法，您还必须重写<see cref="M:System.Random.Next" />方法。</para>
-        </block>
+        <block subset="none" type="overrides"><para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法实现<see cref="M:System.Random.Next" />方法。 相反，由基返回均匀分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用<see cref="M:System.Random.Sample" />派生类中的方法，您还必须重写<see cref="M:System.Random.Next" />方法。</para></block>
         <altmember cref="T:System.Int32" />
       </Docs>
     </Member>
@@ -575,7 +561,7 @@ Random.NextDouble() * (maxValue – minValue) + minValue
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Random.Next%28System.Int32%29>重载方法返回随机整数的范围从 0 到`maxValue`– 1。 但是，如果`maxValue`为 0，则此方法返回 0。  
+ <xref:System.Random.Next%28System.Int32%29>重载方法返回随机整数的范围从 0 到`maxValue`-1。 但是，如果`maxValue`为 0，则此方法返回 0。  
   
    
   
@@ -594,8 +580,7 @@ Random.NextDouble() * (maxValue – minValue) + minValue
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="maxValue" /> 小于 0。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maxValue" /> 小于 0。</exception>
         <altmember cref="T:System.Int32" />
       </Docs>
     </Member>
@@ -642,7 +627,7 @@ Random.NextDouble() * (maxValue – minValue) + minValue
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Random.Next%28System.Int32%2CSystem.Int32%29>重载方法返回随机整数的重量`minValue`到`maxValue`– 1。 但是，如果`maxValue`等于`minValue`，该方法将返回`minValue`。  
+ <xref:System.Random.Next%28System.Int32%2CSystem.Int32%29>重载方法返回随机整数的重量`minValue`到`maxValue`-1。 但是，如果`maxValue`等于`minValue`，该方法将返回`minValue`。  
   
  与其他重载不同<xref:System.Random.Next%2A>方法，它返回仅非负值，此方法可返回一个负随机整数。  
   
@@ -663,11 +648,8 @@ Random.NextDouble() * (maxValue – minValue) + minValue
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="minValue" /> 大于 <paramref name="maxValue" />。</exception>
-        <block subset="none" type="overrides">
-          <para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法实现<see cref="M:System.Random.Next(System.Int32,System.Int32)" />方法重载如果之间的差异<paramref name="minValue" />并<paramref name="maxValue" />参数大于<see cref="F:System.Int32.MaxValue" />。 相反，由基返回均匀分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用<see cref="M:System.Random.Sample" />派生类中的方法，您还必须重写<see cref="M:System.Random.Next(System.Int32,System.Int32)" />方法重载。</para>
-        </block>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="minValue" /> 大于 <paramref name="maxValue" />。</exception>
+        <block subset="none" type="overrides"><para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法实现<see cref="M:System.Random.Next(System.Int32,System.Int32)" />方法重载如果之间的差异<paramref name="minValue" />并<paramref name="maxValue" />参数大于<see cref="F:System.Int32.MaxValue" />。 相反，由基返回均匀分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用<see cref="M:System.Random.Sample" />派生类中的方法，您还必须重写<see cref="M:System.Random.Next(System.Int32,System.Int32)" />方法重载。</para></block>
         <altmember cref="T:System.Int32" />
       </Docs>
     </Member>
@@ -726,11 +708,8 @@ Random.NextDouble() * (maxValue – minValue) + minValue
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="buffer" /> 为 <see langword="null" />。</exception>
-        <block subset="none" type="overrides">
-          <para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法实现<see cref="M:System.Random.NextBytes(System.Byte[])" />方法。 相反，由基返回均匀分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用<see cref="M:System.Random.Sample" />派生类中的方法，您还必须重写<see cref="M:System.Random.NextBytes(System.Byte[])" />方法。</para>
-        </block>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <block subset="none" type="overrides"><para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法实现<see cref="M:System.Random.NextBytes(System.Byte[])" />方法。 相反，由基返回均匀分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用<see cref="M:System.Random.Sample" />派生类中的方法，您还必须重写<see cref="M:System.Random.NextBytes(System.Byte[])" />方法。</para></block>
         <altmember cref="T:System.Byte" />
       </Docs>
     </Member>
@@ -890,16 +869,14 @@ Random.NextDouble() * (maxValue – minValue) + minValue
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法以下方法的实现： 
+        <block subset="none" type="overrides"><para>从.NET Framework 2.0 版中，如果派生的类从<see cref="T:System.Random" />并重写<see cref="M:System.Random.Sample" />方法中，由派生的类实现的提供的分布<see cref="M:System.Random.Sample" />对基类的调用中未使用方法以下方法的实现： 
 -   <see cref="M:System.Random.NextBytes(System.Byte[])" /> 方法。  
   
 -   <see cref="M:System.Random.Next" /> 方法。  
   
 -<see cref="M:System.Random.Next(System.Int32,System.Int32)" />方法中，如果 (<paramref name="maxValue" /> - <paramref name="minValue" />) 大于<see cref="F:System.Int32.MaxValue" />。  
   
-相反，由基提供的统一分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用的实现<see cref="M:System.Random.Sample" />方法在派生类中，您还必须重写这些三个成员的行为。 说明如示例所示。</para>
-        </block>
+相反，由基提供的统一分布<see cref="T:System.Random" />使用类。 此行为可提高整体性能的<see cref="T:System.Random" />类。 若要修改此行为，以调用的实现<see cref="M:System.Random.Sample" />方法在派生类中，您还必须重写这些三个成员的行为。 说明如示例所示。</para></block>
         <altmember cref="M:System.Random.NextDouble" />
       </Docs>
     </Member>

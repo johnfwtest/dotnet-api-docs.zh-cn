@@ -1,13 +1,5 @@
 <Type Name="ContentElement" FullName="System.Windows.ContentElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="445e044563ea9e923837b664c352ec5ccd265337" />
-    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
-    <Meta Name="ms.locfileid" Value="52608933" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ContentElement : System.Windows.DependencyObject, System.Windows.IInputElement, System.Windows.Media.Animation.IAnimatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5176db5a1e6745598358011cc653972d4f5db1de" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53233323" /></Metadata><TypeSignature Language="C#" Value="public class ContentElement : System.Windows.DependencyObject, System.Windows.IInputElement, System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ContentElement extends System.Windows.DependencyObject implements class System.Windows.IInputElement, class System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.ContentElement" />
   <TypeSignature Language="VB.NET" Value="Public Class ContentElement&#xA;Inherits DependencyObject&#xA;Implements IAnimatable, IInputElement" />
@@ -37,9 +29,9 @@
 ## Remarks  
  <xref:System.Windows.ContentElement> 定义以下内容的共同特征：  
   
--   输入： 所有<xref:System.Windows.ContentElement>派生的类提供了从键盘、 鼠标、 拖放操作、 触笔控件和加速器的基本输入捕获的支持。  
+-   输入：所有<xref:System.Windows.ContentElement>派生的类提供了从键盘、 鼠标、 拖放操作、 触笔控件和加速器的基本输入捕获的支持。  
   
--   专注： 所有<xref:System.Windows.ContentElement>派生的类都能够获得焦点。 (但是的默认可获得焦点状态<xref:System.Windows.ContentElement>基类是`false`。 有关详细信息，如何使<xref:System.Windows.ContentElement>可获得焦点，请参阅<xref:System.Windows.ContentElement.Focusable%2A>。)此外，此类包含[!INCLUDE[TLA#tla_api#plural](~/includes/tlasharptla-apisharpplural-md.md)]，您可将用于在相关的元素中遍历焦点。  
+-   聚焦：所有<xref:System.Windows.ContentElement>派生的类都能够获得焦点。 (但是的默认可获得焦点状态<xref:System.Windows.ContentElement>基类是`false`。 有关详细信息，如何使<xref:System.Windows.ContentElement>可获得焦点，请参阅<xref:System.Windows.ContentElement.Focusable%2A>。)此外，此类包含[!INCLUDE[TLA#tla_api#plural](~/includes/tlasharptla-apisharpplural-md.md)]，您可将用于在相关的元素中遍历焦点。  
   
 -   事件：<xref:System.Windows.ContentElement>包括事件的输入和焦点相关的; 它还包括在状态中的更改的事件。 在许多情况下，<xref:System.Windows.ContentElement>事件也是路由的事件。 在某些情况下，路由的事件具有隧道和浮升路由策略，为不同的相同状态或条件的响应中的事件引发。 此外，<xref:System.Windows.ContentElement>定义[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]可引发路由事件，可以添加或删除事件处理程序。  
   
@@ -49,10 +41,7 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>
-        <see cref="T:System.Windows.ContentElement" />类尚未定义流样式显示的完整内容元素的所有方面。 <see cref="T:System.Windows.FrameworkContentElement" /> 是一个直接派生的类<see cref="T:System.Windows.ContentElement" />。 <see cref="T:System.Windows.FrameworkContentElement" /> 包含一组更完整的其他成员以支持呈现<see cref="T:System.Windows.FrameworkContentElement" />内容主机和使用 WPF 框架级别的布局系统中。</para>
-    </block>
+    <block subset="none" type="overrides"><para><see cref="T:System.Windows.ContentElement" />类尚未定义流样式显示的完整内容元素的所有方面。 <see cref="T:System.Windows.FrameworkContentElement" /> 是一个直接派生的类<see cref="T:System.Windows.ContentElement" />。 <see cref="T:System.Windows.FrameworkContentElement" /> 包含一组更完整的其他成员以支持呈现<see cref="T:System.Windows.FrameworkContentElement" />内容主机和使用 WPF 框架级别的布局系统中。</para></block>
     <altmember cref="T:System.Windows.UIElement" />
     <altmember cref="T:System.Windows.FrameworkContentElement" />
   </Docs>
@@ -677,7 +666,7 @@
   
  如果调用<xref:System.Windows.ContentElement.CaptureMouse%2A>将返回`true`，然后<xref:System.Windows.ContentElement.IsMouseCaptured%2A>也是`true`。  
   
- 如果调用<xref:System.Windows.ContentElement.CaptureMouse%2A>返回`true`，然后<xref:System.Windows.ContentElement.GotMouseCapture>并<xref:System.Windows.ContentElement.IsMouseCapturedChanged>引发事件，与<xref:System.Windows.RoutedEventArgs.Source%2A?displayProperty=nameWithType>在事件数据报告为元素其中<xref:System.Windows.ContentElement.CaptureMouse%2A>调用方法。 如果强制捕获，您可能会妨碍现有捕获 — 尤其是在使用与拖放鼠标捕获。  
+ 如果调用<xref:System.Windows.ContentElement.CaptureMouse%2A>返回`true`，然后<xref:System.Windows.ContentElement.GotMouseCapture>并<xref:System.Windows.ContentElement.IsMouseCapturedChanged>引发事件，与<xref:System.Windows.RoutedEventArgs.Source%2A?displayProperty=nameWithType>在事件数据报告为元素其中<xref:System.Windows.ContentElement.CaptureMouse%2A>调用方法。 如果强制捕获，您可能会妨碍现有捕获-尤其是在使用与拖放鼠标捕获。  
   
  若要清除的所有元素的鼠标捕获，请调用<xref:System.Windows.Input.Mouse.Capture%2A?displayProperty=nameWithType>与`element`参数作为提供`null`。  
   
@@ -768,8 +757,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="touchDevice" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="touchDevice" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.Windows.Input.TouchDevice.Capture(System.Windows.IInputElement)" />
       </Docs>
     </Member>
@@ -1224,11 +1212,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>从类派生时<see cref="T:System.Windows.ContentElement" />，请考虑是希望您获得焦点，因为默认情况下它将不能获得焦点的元素。 如果您希望您可获得焦点的元素，重写此属性在派生的类静态构造函数中的元数据，如下所示： 
+        <block subset="none" type="overrides"><para>从类派生时<see cref="T:System.Windows.ContentElement" />，请考虑是希望您获得焦点，因为默认情况下它将不能获得焦点的元素。 如果您希望您可获得焦点的元素，重写此属性在派生的类静态构造函数中的元数据，如下所示： 
 [！ 代码 csharp[CorePseudocode #UIElementShortOverride](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/corepseudocode.cs#uielementshortoverride)] [！ 代码 vb[CorePseudocode #UIElementShortOverride](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CorePseudocode/visualbasic/corepseudocode.vb#uielementshortoverride)] 
-其中<paramref name="myElement" />是会重写元数据值的类型的类名称。</para>
-        </block>
+其中<paramref name="myElement" />是会重写元数据值的类型的类名称。</para></block>
         <altmember cref="M:System.Windows.FrameworkElement.MoveFocus(System.Windows.Input.TraversalRequest)" />
         <altmember cref="E:System.Windows.UIElement.GotKeyboardFocus" />
         <altmember cref="E:System.Windows.UIElement.LostKeyboardFocus" />
@@ -1976,9 +1962,7 @@
         <summary>获取一个值，该值成为派生类中 <see cref="P:System.Windows.ContentElement.IsEnabled" /> 的返回值。</summary>
         <value>如果启用此元素，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>此属性的默认实现缓存的值，也会计算是否启用此元素的父元素。 (如果未启用父，子元素不能有效地启用中实际[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]。)如果您选择重写此实现，请确保调用基实现，以保留此行为。</para>
-        </block>
+        <block subset="none" type="overrides"><para>此属性的默认实现缓存的值，也会计算是否启用此元素的父元素。 (如果未启用父，子元素不能有效地启用中实际[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]。)如果您选择重写此实现，请确保调用基实现，以保留此行为。</para></block>
       </Docs>
     </Member>
     <Member MemberName="IsEnabledProperty">
@@ -2512,7 +2496,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 与不同<xref:System.Windows.ContentElement.IsMouseOver%2A>，此属性才是`true`如果鼠标指针悬停于文本元素，它是否与命中测试一样。 而如果鼠标指针位于子元素上，特别是对所包含的元素的更深层的模板和组合的情况下，元素，此属性将为`false`。 除非你知道如何控件的组合 （例如，使用此属性在自定义控件模板中定义的控件），此属性可能返回意外的结果。 对于大多数情况下不创作控件的情况，请使用<xref:System.Windows.ContentElement.IsMouseOver%2A>相反。  
+ 与不同<xref:System.Windows.ContentElement.IsMouseOver%2A>，此属性才是`true`与命中测试如果将鼠标指针位于 literal 元素-。 而如果鼠标指针位于子元素上，特别是对所包含的元素的更深层的模板和组合的情况下，元素，此属性将为`false`。 除非你知道如何控件的组合 （例如，使用此属性在自定义控件模板中定义的控件），此属性可能返回意外的结果。 对于大多数情况下不创作控件的情况，请使用<xref:System.Windows.ContentElement.IsMouseOver%2A>相反。  
   
  如果此元素捕获鼠标，并且此属性是`true`在捕获时，此属性将继续返回`true`直到失去鼠标捕获，并且指针不是其边界上。  
   
@@ -4365,11 +4349,9 @@
         <summary>为 [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] 基础结构返回特定于类的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 实现。</summary>
         <returns>特定于类型的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 实现。</returns>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>此方法的实现通常是调用特定构造函数<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />实现中，并将其返回作为返回值。  
+        <block subset="none" type="overrides"><para>此方法的实现通常是调用特定构造函数<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />实现中，并将其返回作为返回值。  
   
-所有<see cref="T:System.Windows.ContentElement" />派生的类应实现此方法以提供其各自的特定<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />实现到[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]基础结构。 有关实现此模式的详细信息，请参阅<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />。</para>
-        </block>
+所有<see cref="T:System.Windows.ContentElement" />派生的类应实现此方法以提供其各自的特定<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />实现到[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]基础结构。 有关实现此模式的详细信息，请参阅<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />。</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnDragEnter">
@@ -4594,9 +4576,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>除非你有有意或不寻常的需求不引发焦点事件，请确保您的实现将调用基实现。 否则为<see cref="E:System.Windows.ContentElement.GotFocus" />通常将焦点设置到此元素的典型用户操作中不引发事件。 如果不想您可获得焦点的元素，您可以通过将阻止元素<see cref="P:System.Windows.ContentElement.Focusable" />到<see langword="false" />。 请注意，默认情况下<see cref="P:System.Windows.ContentElement.Focusable" />不是可获得焦点，因此设置<see cref="P:System.Windows.ContentElement.Focusable" />有意不可能有必要。</para>
-        </block>
+        <block subset="none" type="overrides"><para>除非你有有意或不寻常的需求不引发焦点事件，请确保您的实现将调用基实现。 否则为<see cref="E:System.Windows.ContentElement.GotFocus" />通常将焦点设置到此元素的典型用户操作中不引发事件。 如果不想您可获得焦点的元素，您可以通过将阻止元素<see cref="P:System.Windows.ContentElement.Focusable" />到<see langword="false" />。 请注意，默认情况下<see cref="P:System.Windows.ContentElement.Focusable" />不是可获得焦点，因此设置<see cref="P:System.Windows.ContentElement.Focusable" />有意不可能有必要。</para></block>
         <altmember cref="P:System.Windows.ContentElement.Focusable" />
         <altmember cref="E:System.Windows.ContentElement.GotFocus" />
       </Docs>
@@ -4868,11 +4848,9 @@
         <param name="e">包含事件数据的 <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />。</param>
         <summary>当针对此元素引发未处理的 <see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" /> 事件时调用。 实现此方法可为此事件添加类处理。</summary>
         <remarks>To be added.</remarks>
-        <block subset="none" type="overrides">
-          <para>此虚方法引发时的值<see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" />依赖项属性更改其值。 虚拟方法首先引发，并可以处理在必要时的事件数据。 然后<see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" />与该相同的事件数据实例引发事件。 请注意，事件不是路由的事件。因此，您不能将其标记为已处理的类处理程序中。  
+        <block subset="none" type="overrides"><para>此虚方法引发时的值<see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" />依赖项属性更改其值。 虚拟方法首先引发，并可以处理在必要时的事件数据。 然后<see cref="E:System.Windows.ContentElement.IsMouseCaptureWithinChanged" />与该相同的事件数据实例引发事件。 请注意，事件不是路由的事件。因此，您不能将其标记为已处理的类处理程序中。  
   
-此方法具有默认实现。 因为中间类继承中的可能会实现此方法，我们建议在实现中调用基实现。 您可以调用基之前或之后应用特殊处理，具体取决于您的要求。</para>
-        </block>
+此方法具有默认实现。 因为中间类继承中的可能会实现此方法，我们建议在实现中调用基实现。 您可以调用基之前或之后应用特殊处理，具体取决于您的要求。</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnIsMouseDirectlyOverChanged">
@@ -5126,9 +5104,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>除非你有有意或不寻常的需求不引发焦点事件，请确保您的实现将调用基实现。 否则为<see cref="E:System.Windows.ContentElement.LostFocus" />通常将焦点设置到此元素的典型用户操作中不引发事件。 如果不想您可获得焦点的元素，您可以通过将阻止元素<see cref="P:System.Windows.ContentElement.Focusable" />到<see langword="false" />。</para>
-        </block>
+        <block subset="none" type="overrides"><para>除非你有有意或不寻常的需求不引发焦点事件，请确保您的实现将调用基实现。 否则为<see cref="E:System.Windows.ContentElement.LostFocus" />通常将焦点设置到此元素的典型用户操作中不引发事件。 如果不想您可获得焦点的元素，您可以通过将阻止元素<see cref="P:System.Windows.ContentElement.Focusable" />到<see langword="false" />。</para></block>
       </Docs>
     </Member>
     <Member MemberName="OnLostKeyboardFocus">
@@ -9551,7 +9527,7 @@
 ## Remarks  
  <xref:System.Windows.ContentElement.PreviewTextInput>事件允许组件或应用程序以与设备无关的方式侦听文本输入。 键盘是主要的方式<xref:System.Windows.ContentElement.PreviewTextInput>; 但语音、 手写和其他输入的设备也可以生成<xref:System.Windows.ContentElement.PreviewTextInput>。  
   
- 由于键组合 — 默认键盘或输入的法编辑器-多个关键事件可能会引发一个文本输入的事件。  
+ 由于键组合的默认键盘或输入的法编辑器的多个关键事件可能会引发一个文本输入的事件。  
   
  此事件创建一个别名<xref:System.Windows.Input.TextCompositionManager.PreviewTextInput?displayProperty=nameWithType>附加事件对于此类，以便<xref:System.Windows.ContentElement.PreviewTextInput>属于类的成员列出时<xref:System.Windows.ContentElement>作为基元素继承。 事件处理程序附加到<xref:System.Windows.ContentElement.PreviewTextInput>事件附加到基础<xref:System.Windows.Input.TextCompositionManager.PreviewTextInput?displayProperty=nameWithType>附加事件，并接收相同的事件数据实例。  
   
@@ -10096,8 +10072,7 @@
         <summary>尝试从此元素释放指定触摸设备。</summary>
         <returns>如果释放了触摸设备，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="touchDevice" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="touchDevice" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveHandler">
@@ -11106,7 +11081,7 @@
   
  <xref:System.Windows.ContentElement.TextInput>事件允许组件或应用程序以与设备无关的方式侦听文本输入。 键盘是主要的方式<xref:System.Windows.ContentElement.TextInput>，但语音、 手写和其他输入的设备也可以引发<xref:System.Windows.ContentElement.TextInput>。  
   
- 由于键组合 — 默认键盘或输入的法编辑器-多个关键事件可能会引发一个文本输入的事件。  
+ 由于键组合的默认键盘或输入的法编辑器的多个关键事件可能会引发只是一个文本输入的事件。  
   
  此事件创建一个别名<xref:System.Windows.Input.TextCompositionManager.TextInput?displayProperty=nameWithType>附加事件对于此类，以便<xref:System.Windows.ContentElement.TextInput>属于类的成员列出时<xref:System.Windows.ContentElement>作为基元素继承。 事件处理程序附加到<xref:System.Windows.ContentElement.TextInput>事件附加到基础<xref:System.Windows.Input.TextCompositionManager.TextInput?displayProperty=nameWithType>附加事件，并接收相同的事件数据实例。  
   

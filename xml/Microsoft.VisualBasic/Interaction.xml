@@ -1,13 +1,5 @@
 <Type Name="Interaction" FullName="Microsoft.VisualBasic.Interaction">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="4467d84a9abfe773af33c9860ec1652119acca20" />
-    <Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="12/05/2018" />
-    <Meta Name="ms.locfileid" Value="52917741" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class Interaction" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="677a8d412fa8c63ad69ddaa93898ada5243ccd57" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53232686" /></Metadata><TypeSignature Language="C#" Value="public sealed class Interaction" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Interaction extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Interaction" />
   <TypeSignature Language="VB.NET" Value="Public Module Interaction" />
@@ -29,8 +21,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <see langword="Interaction" />模块包含用于与对象、 应用程序和系统进行交互的过程。</summary>
+    <summary><see langword="Interaction" /> 模块包含用于与对象、应用程序和系统交互的过程。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -63,7 +54,7 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>激活已在运行的应用程序。</summary>
+        <summary>激活已经正在运行的应用程序。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AppActivate">
@@ -92,9 +83,8 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
         <Parameter Name="ProcessId" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ProcessId">
-          <see langword="Integer" /> 指定分配给此进程的 Win32 进程 ID 号。 可以使用返回的 ID <see cref="M:Microsoft.VisualBasic.Interaction.Shell(System.String,Microsoft.VisualBasic.AppWinStyle,System.Boolean,System.Int32)" />，则它不为零。</param>
-        <summary>激活已在运行的应用程序。</summary>
+        <param name="ProcessId"><see langword="Integer" />，指定分配给该进程的 Win32 进程 ID 号。 可以使用 <see cref="M:Microsoft.VisualBasic.Interaction.Shell(System.String,Microsoft.VisualBasic.AppWinStyle,System.Boolean,System.Int32)" /> 返回的 ID，前提是该 ID 不为零。</param>
+        <summary>激活已经正在运行的应用程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -152,9 +142,8 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
         <Parameter Name="Title" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="Title">
-          <see langword="String" /> 表达式，用于指定要激活的应用程序的标题栏中。 可以使用它启动时分配给应用程序的标题。</param>
-        <summary>激活已在运行的应用程序。</summary>
+        <param name="Title"><see langword="String" /> 表达式，用于指定要激活的应用程序的标题栏中的标题。 可以使用启动应用程序后分配给该应用程序的标题。</param>
+        <summary>激活已经正在运行的应用程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -218,7 +207,7 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
  俯仰和提示音的持续时间取决于硬件和系统软件，因此有所不同的计算机。  
   
 > [!NOTE]
->  `Beep`函数需要`UIPermission`在<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>级别，可能会影响在部分信任情况下执行。 有关详细信息，请参阅 <xref:System.Security.Permissions.UIPermission> 。  
+>  `Beep`函数需要`UIPermission`在<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>级别，可能会影响在部分信任情况下执行。 有关详情，请参阅<xref:System.Security.Permissions.UIPermission>。  
   
    
   
@@ -263,12 +252,12 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="ObjectRef">必须的。 <see langword="Object" />。 指向公开属性或方法的对象的指针。</param>
-        <param name="ProcName">必须的。 <see langword="String" />。 包含属性或对象上的方法的名称的字符串表达式。</param>
-        <param name="UseCallType">必须的。 类型的枚举成员<see cref="T:Microsoft.VisualBasic.CallType" />表示被调用过程的类型。 值<see langword="CallType" />可以是<see langword="Method" />， <see langword="Get" />，或<see langword="Set" />。</param>
-        <param name="Args">可选。 <see langword="ParamArray" />。 包含要传递到的属性或方法被调用的参数的参数数组。</param>
-        <summary>在对象上执行的方法或设置或返回一个对象的属性。</summary>
-        <returns>在对象上执行的方法或设置或返回一个对象的属性。</returns>
+        <param name="ObjectRef">必需。 <see langword="Object" />。 一个指向公开属性或方法的对象的指针。</param>
+        <param name="ProcName">必需。 <see langword="String" />。 一个字符串表达式，包含对象的属性或方法的名称。</param>
+        <param name="UseCallType">必需。 类型 <see cref="T:Microsoft.VisualBasic.CallType" /> 的一个枚举成员，它表示正在被调用的过程的类型。 <see langword="CallType" /> 的值可以是 <see langword="Method" />、<see langword="Get" /> 或 <see langword="Set" />。</param>
+        <param name="Args">可选。 <see langword="ParamArray" />。 一个形参数组，包含要传递给正在调用的属性或方法的实参。</param>
+        <summary>执行对象的方法，或者设置或返回对象的属性。</summary>
+        <returns>执行对象的方法，或者设置或返回对象的属性。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -290,7 +279,7 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">无效<paramref name="UseCallType" />值; 必须是<see langword="Method" />， <see langword="Get" />，或<see langword="Set" />。</exception>
+        <exception cref="T:System.ArgumentException">无效 <paramref name="UseCallType" /> 值；必须为 <see langword="Method" />、<see langword="Get" /> 或 <see langword="Set" />。</exception>
         <altmember cref="T:Microsoft.VisualBasic.CallType" />
         <altmember cref="T:System.ArgumentException" />
         <related type="Article" href="~/docs/visual-basic/programming-guide/language-features/procedures/parameter-arrays.md">参数数组</related>
@@ -325,10 +314,10 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="Index">必须的。 <see langword="Double" />。 产生的值介于 1 和的元素数之间的数值表达式传入<paramref name="Choice" />参数。</param>
-        <param name="Choice">必须的。 <see langword="Object" /> 参数数组。 你可以提供单个变量或表达式的计算结果为<see langword="Object" />数据类型的一系列<see langword="Object" />逗号分隔，或指向的一维数组的变量或表达式分隔<see langword="Object" />元素。</param>
-        <summary>选择并返回一个值从参数列表。</summary>
-        <returns>选择并返回一个值从参数列表。</returns>
+        <param name="Index">必需。 <see langword="Double" />。 数值表达式，它得出的值在 1 和 <paramref name="Choice" /> 参数中传递的元素数量之间。</param>
+        <param name="Choice">必需。 <see langword="Object" /> 参数数组。 可以为以逗号分隔的 <see langword="Object" /> 变量或表达式列表或一维 <see langword="Object" /> 元素数组提供计算为 <see langword="Object" /> 数据类型的单个变量或表达式。</param>
+        <summary>从参数列表中选择和返回一个值。</summary>
+        <returns>从参数列表中选择和返回一个值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -380,10 +369,10 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回使用 Visual Basic 开发命令行用于启动 Visual Basic 或可执行程序的参数部分。 <see langword="My" /> 功能可以提供比 <see langword="Command" /> 函数更高的效率和更好的性能。 有关详细信息，请参阅 <see cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" /> 。</summary>
-        <returns>返回使用 Visual Basic 开发命令行用于启动 Visual Basic 或可执行程序的参数部分。  
+        <summary>返回命令行的参数部分，该命令行用于启动 Visual Basic 或启动使用 Visual Basic 开发的可执行程序。 <see langword="My" /> 功能可以提供比 <see langword="Command" /> 函数更高的效率和更好的性能。 有关详情，请参阅<see cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />。</summary>
+        <returns>返回命令行的参数部分，该命令行用于启动 Visual Basic 或启动使用 Visual Basic 开发的可执行程序。  
   
-<see langword="My" /> 功能可以提供比 <see langword="Command" /> 函数更高的效率和更好的性能。 有关详细信息，请参阅 <see cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" /> 。</returns>
+<see langword="My" /> 功能可以提供比 <see langword="Command" /> 函数更高的效率和更好的性能。 有关详情，请参阅<see cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -434,10 +423,10 @@ procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)
         <Parameter Name="ServerName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="ProgId">必须的。 <see langword="String" />。 若要创建对象的程序 ID。</param>
-        <param name="ServerName">可选。 <see langword="String" />。 网络服务器将在其中创建该对象的名称。 如果<paramref name="ServerName" />为空字符串 ("")，则使用本地计算机。</param>
-        <summary>创建并返回对 COM 对象的引用。 <see langword="CreateObject" /> 不能用于在 Visual Basic 中创建类的实例，除非这些类显式公开为 COM 组件。</summary>
-        <returns>创建并返回对 COM 对象的引用。 <see langword="CreateObject" /> 不能用于在 Visual Basic 中创建类的实例，除非这些类显式公开为 COM 组件。</returns>
+        <param name="ProgId">必需。 <see langword="String" />。 要创建的对象的程序 ID。</param>
+        <param name="ServerName">可选。 <see langword="String" />。 要在其上创建对象的网络服务器的名称。 如果 <paramref name="ServerName" /> 是空字符串 ("")，则使用本地计算机。</param>
+        <summary>创建并返回对 COM 对象的引用。 不能在 Visual Basic 中使用 <see langword="CreateObject" /> 创建这些类的实例，除非将类显式公开为 COM 组件。</summary>
+        <returns>创建并返回对 COM 对象的引用。 不能在 Visual Basic 中使用 <see langword="CreateObject" /> 创建这些类的实例，除非将类显式公开为 COM 组件。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -453,10 +442,10 @@ End Sub
   
  用于存储返回的对象的对象变量的类型可能会影响应用程序的性能。 声明对象变量与`As Object`子句创建的变量可以包含对任何类型的对象的引用。 但是，对通过该变量的对象的访问是*后期绑定*，绑定，即发生在程序运行。 有很多原因应避免后期绑定，包括应用程序性能下降。  
   
- 你可以创建生成早期绑定对象变量，即，绑定时将编译该程序。 为此，请添加对该对象的类型库的引用**COM**选项卡**添加引用**上的对话框**项目**菜单。 然后，声明您的对象的特定类型的对象变量。 在大多数情况下，它是使用更加高效`Dim`语句和主互操作程序集，以创建对象，它是使用比`CreateObject`函数。  
+ 可以创建对象变量，即导致早期绑定的绑定时将编译该程序。 为此，请添加对该对象的类型库的引用**COM**选项卡**添加引用**上的对话框**项目**菜单。 然后，声明您的对象的特定类型的对象变量。 在大多数情况下，它是使用更加高效`Dim`语句和主互操作程序集，以创建对象，它是使用比`CreateObject`函数。  
   
 ## <a name="interacting-with-unmanaged-code"></a>与非托管代码进行交互  
- 另一个问题是 COM 对象使用非托管的代码，代码而无需公共语言运行时的优势。 没有了一定程度的复杂性涉及混合与非托管代码的托管的代码的 Visual Basic 从 com。 当添加对 COM 对象的引用时，Visual Basic 中搜索的主互操作程序集 (PIA) 的库;如果找到，则它使用它。 如果找不到 PIA，然后创建包含本地互操作性类为每个类的 COM 库中的互操作性程序集。 有关详细信息，请参阅[.NET Framework 应用程序中的 COM 互操作性](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)。  
+ 另一个问题是 COM 对象使用非托管的代码的代码而无需公共语言运行时的优势。 没有了一定程度的复杂性涉及混合与非托管代码的托管的代码的 Visual Basic 从 com。 当添加对 COM 对象的引用时，Visual Basic 中搜索的主互操作程序集 (PIA) 的库;如果找到，则它使用它。 如果找不到 PIA，然后创建包含本地互操作性类为每个类的 COM 库中的互操作性程序集。 有关详细信息，请参阅[.NET Framework 应用程序中的 COM 互操作性](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)。  
   
  通常应使用强绑定的对象和尽可能的主互操作程序集。 使用下面的示例`CreateObject`函数中演示的 Microsoft Office 对象仅目的。 但是，这些对象是易于使用且更可靠，与相应的主互操作程序集一起使用时。  
   
@@ -497,8 +486,8 @@ End Sub
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Exception">服务器不可用</exception>
-        <exception cref="T:System.IO.FileNotFoundException">不存在指定类型的对象</exception>
+        <exception cref="T:System.Exception">服务器不可用。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">不存在指定类型的对象。</exception>
         <altmember cref="M:Microsoft.VisualBasic.Interaction.GetObject(System.String,System.String)" />
         <altmember cref="T:System.Exception" />
         <altmember cref="T:System.IO.FileNotFoundException" />
@@ -533,10 +522,10 @@ End Sub
         <Parameter Name="Key" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="AppName">必须的。 <see langword="String" /> 表达式，包含的项目的节或键的设置适用的应用程序的名称。</param>
-        <param name="Section">必须的。 <see langword="String" /> 表达式，包含要从中删除的项设置的节的名称。 如果只有<paramref name="AppName" />和<paramref name="Section" />提供以及所有相关的项设置删除指定的节。</param>
+        <param name="AppName">必需。 <see langword="String" /> 表达式，包含应用节或项设置的应用程序或项目的名称。</param>
+        <param name="Section">必需。 <see langword="String" /> 表达式，包含要从中删除项设置的节的名称。 如果仅提供了 <paramref name="AppName" /> 和 <paramref name="Section" />，则将删除指定的节以及所有相关的项设置。</param>
         <param name="Key">可选。 <see langword="String" /> 表达式，包含要删除的项设置的名称。</param>
-        <summary>从 Windows 注册表中的应用程序的项将删除节或键设置。 与 <see langword="DeleteSetting" /> 函数相比，<see langword="My" /> 功能在注册表操作方面可为你提供更高的效率和更好的性能。 有关更多信息，请参见<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />。</summary>
+        <summary>从 Windows 注册表中某个应用程序的项中删除一个节或一个项设置。 与 <see langword="DeleteSetting" /> 函数相比，<see langword="My" /> 功能在注册表操作方面可为你提供更高的效率和更好的性能。 有关更多信息，请参见<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -598,14 +587,14 @@ End Sub
         <Parameter Name="Expression" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Expression">必须的。 此表达式用于计算包含环境变量或对应于环境字符串表中的环境字符串的数字顺序的整数值的名称的字符串。</param>
+        <param name="Expression">必需。 此表达式用于计算包含环境变量名称的字符串，或对应于环境字符串表中环境字符串的数字顺序的整数。</param>
         <summary>返回与操作系统环境变量关联的字符串。</summary>
         <returns>返回与操作系统环境变量关联的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果`Expression`包含一个字符串，<xref:Microsoft.VisualBasic.Interaction.Environ%2A>函数将返回分配给指定的环境字符串的文本-即，后面等号 （=） 为该环境变量的环境字符串表中的文本。 如果在字符串`Expression`无法找到在环境字符串表中，一个零长度字符串 ("") 返回。  
+ 如果`Expression`包含一个字符串，<xref:Microsoft.VisualBasic.Interaction.Environ%2A>函数在该环境变量的环境字符串表中返回分配给指定的环境字符串-即，后面等号 （=） 的文本的文本。 如果在字符串`Expression`无法找到在环境字符串表中，一个零长度字符串 ("") 返回。  
   
  如果`Expression`包含一个整数，占用的环境字符串表中的数字位置返回的字符串。 在这种情况下，<xref:Microsoft.VisualBasic.Interaction.Environ%2A>返回所有文本，包括环境变量的名称。 如果在指定位置中没有任何环境字符串<xref:Microsoft.VisualBasic.Interaction.Environ%2A>返回长度为零的字符串。  
   
@@ -621,8 +610,7 @@ End Sub
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Expression" /> 找不到。</exception>
+        <exception cref="T:System.ArgumentException">缺少 <paramref name="Expression" />。</exception>
         <altmember cref="T:System.ArgumentException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/runtime-library-members.md">Visual Basic 运行时库成员</related>
       </Docs>
@@ -648,14 +636,14 @@ End Sub
         <Parameter Name="Expression" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="Expression">必须的。 此表达式用于计算包含环境变量或对应于环境字符串表中的环境字符串的数字顺序的整数值的名称的字符串。</param>
+        <param name="Expression">必需。 此表达式用于计算包含环境变量名称的字符串，或对应于环境字符串表中环境字符串的数字顺序的整数。</param>
         <summary>返回与操作系统环境变量关联的字符串。</summary>
         <returns>返回与操作系统环境变量关联的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果`Expression`包含一个字符串，<xref:Microsoft.VisualBasic.Interaction.Environ%2A>函数将返回分配给指定的环境字符串的文本-即，后面等号 （=） 为该环境变量的环境字符串表中的文本。 如果在字符串`Expression`无法找到在环境字符串表中，一个零长度字符串 ("") 返回。  
+ 如果`Expression`包含一个字符串，<xref:Microsoft.VisualBasic.Interaction.Environ%2A>函数在该环境变量的环境字符串表中返回分配给指定的环境字符串-即，后面等号 （=） 的文本的文本。 如果在字符串`Expression`无法找到在环境字符串表中，一个零长度字符串 ("") 返回。  
   
  如果`Expression`包含一个整数，占用的环境字符串表中的数字位置返回的字符串。 在这种情况下，<xref:Microsoft.VisualBasic.Interaction.Environ%2A>返回所有文本，包括环境变量的名称。 如果在指定位置中没有任何环境字符串<xref:Microsoft.VisualBasic.Interaction.Environ%2A>返回长度为零的字符串。  
   
@@ -671,8 +659,7 @@ End Sub
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Expression" /> 找不到。</exception>
+        <exception cref="T:System.ArgumentException">缺少 <paramref name="Expression" />。</exception>
         <altmember cref="T:System.ArgumentException" />
         <related type="Article" href="~/docs/visual-basic/language-reference/runtime-library-members.md">Visual Basic 运行时库成员</related>
       </Docs>
@@ -699,12 +686,12 @@ End Sub
         <Parameter Name="Section" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="AppName">必须的。 <see langword="String" /> 表达式，包含请求其关键设置的项目的应用程序的名称。</param>
-        <param name="Section">必须的。 <see langword="String" /> 表达式，包含请求其关键设置的节的名称。 <see langword="GetAllSettings" /> 返回一个对象，包含二维字符串数组。 这些字符串包含指定的节，以及其对应的值的所有项设置。</param>
-        <summary>返回项设置及其各自的值的列表 (与最初创建<see langword="SaveSetting" />) 从 Windows 注册表中的应用程序的项。 使用<see langword="My" />在比注册表操作方面可为您提供更高的工作效率和性能<see langword="GetAllSettings" />。 有关详细信息，请参阅 <see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" /> 。</summary>
-        <returns>返回项设置及其各自的值的列表 (与最初创建<see langword="SaveSetting" />) 从 Windows 注册表中的应用程序的项。  
+        <param name="AppName">必需。 <see langword="String" /> 表达式，包含请求其项设置的应用程序或项目的名称。</param>
+        <param name="Section">必需。 一个 <see langword="String" /> 表达式，其中包含请求其关键设置的节的名称。 <see langword="GetAllSettings" /> 返回一个包含二维字符串数组的对象。 这些字符串包含指定节中的所有项设置及其相应的值。</param>
+        <summary>从 Windows 注册表中某个应用程序的项返回项设置及其各自的值（最初通过 <see langword="SaveSetting" /> 创建）的列表。 与 <see langword="My" /> 相比，<see langword="GetAllSettings" /> 功能在注册表操作方面可为您提供更高的效率和更好的性能。 有关详情，请参阅<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />。</summary>
+        <returns>从 Windows 注册表中某个应用程序的项返回项设置及其各自的值（最初通过 <see langword="SaveSetting" /> 创建）的列表。  
   
-使用<see langword="My" />在比注册表操作方面可为您提供更高的工作效率和性能<see langword="GetAllSettings" />。 有关详细信息，请参阅 <see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" /> 。</returns>
+与 <see langword="My" /> 相比，<see langword="GetAllSettings" /> 功能在注册表操作方面可为您提供更高的效率和更好的性能。 有关详情，请参阅<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -758,19 +745,19 @@ End Sub
         <Parameter Name="Class" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="PathName">可选。 <see langword="String" />。 完整路径和包含要检索的对象的文件的名称。 如果<paramref name="PathName" />省略，则<paramref name="Class" />是必需的。</param>
-        <param name="Class">如果使用<paramref name="PathName" />未提供。 <see langword="String" />。 表示该对象的类的字符串。 <paramref name="Class" />参数具有以下语法和部分： 
+        <param name="PathName">可选。 <see langword="String" />。 包含要检索的对象的文件的完整路径和名称。 如果省略了 <paramref name="PathName" />，则 <paramref name="Class" /> 为必选。</param>
+        <param name="Class">如果未提供 <paramref name="PathName" />，则为必选。 <see langword="String" />。 表示对象的类的字符串。 <paramref name="Class" /> 参数具有以下语法和部分： 
  <c>appname</c><c>.</c><c>objecttype</c>  
   
-[1 | 1]参数 
-[1 | 2]。说明 
+[1|1] 参数 
+[1|2]“描述” 
 [2|1] <c>appname</c>  
   
-[2 | 2]必填。 <see langword="String" />。 提供对象的应用程序的名称。  
+[2|2]“所需的”。 <see langword="String" />。 提供对象的应用程序的名称。  
   
 [3|1] <c>objecttype</c>  
   
-[3 | 2]必填。 <see langword="String" />。 若要创建的类型或对象的类。</param>
+[3|2]“所需的”。 <see langword="String" />。 要创建的对象的类型或类。</param>
         <summary>返回对 COM 组件提供的对象的引用。</summary>
         <returns>返回对 COM 组件提供的对象的引用。</returns>
         <remarks>
@@ -845,8 +832,8 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Exception">不存在的对象的指定的类类型。</exception>
-        <exception cref="T:System.IO.FileNotFoundException">用指定的路径和文件名没有对象存在。</exception>
+        <exception cref="T:System.Exception">不存在指定类类型的对象。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">不存在具有指定路径和文件名的对象。</exception>
         <altmember cref="M:Microsoft.VisualBasic.Interaction.CreateObject(System.String,System.String)" />
         <altmember cref="T:System.Exception" />
         <altmember cref="T:System.IO.FileNotFoundException" />
@@ -877,14 +864,14 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="Default" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="AppName">必须的。 <see langword="String" /> 表达式，包含请求其项设置的项目的应用程序的名称。</param>
-        <param name="Section">必须的。 <see langword="String" /> 表达式，包含在其中找到的项设置的节的名称。</param>
-        <param name="Key">必须的。 <see langword="String" /> 表达式，包含要返回的项设置的名称。</param>
-        <param name="Default">可选。 包含要返回如果未设置任何值的值表达式<paramref name="Key" />设置。 如果省略，<paramref name="Default" />被假定为一个零长度字符串 ("")。</param>
-        <summary>从 Windows 注册表中的应用程序的项返回项设置值。 <see langword="My" />在比注册表操作方面可为您提供更高的工作效率和性能<see langword="GetAllSettings" />。 有关详细信息，请参阅 <see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" /> 。</summary>
-        <returns>从 Windows 注册表中的应用程序的项返回项设置值。  
+        <param name="AppName">必需。 <see langword="String" /> 表达式，包含请求其项设置的应用程序或项目的名称。</param>
+        <param name="Section">必需。 <see langword="String" /> 表达式，包含在其中找到项设置的节的名称。</param>
+        <param name="Key">必需。 <see langword="String" /> 表达式，包含要返回的项设置的名称。</param>
+        <param name="Default">可选。 包含要返回的值的表达式（如果没有在 <paramref name="Key" /> 设置中设置值）。 如果省略，则假定 <paramref name="Default" /> 为零长度字符串 ("")。</param>
+        <summary>从 Windows 注册表中应用程序的项返回项设置值。 与 <see langword="My" /> 相比，<see langword="GetAllSettings" /> 功能在注册表操作方面可为您提供更高的效率和更好的性能。 有关详情，请参阅<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />。</summary>
+        <returns>从 Windows 注册表中应用程序的项返回项设置值。  
   
-<see langword="My" />在比注册表操作方面可为您提供更高的工作效率和性能<see langword="GetAllSettings" />。</returns>
+与 <see langword="My" /> 相比，<see langword="GetAllSettings" /> 功能在注册表操作方面可为您提供更高的效率和更好的性能。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -906,7 +893,7 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">一个或多个自变量不是<see langword="String" />表达式或用户未登录。</exception>
+        <exception cref="T:System.ArgumentException">一个或多个参数不是 <see langword="String" /> 表达式，或用户没有登录。</exception>
         <altmember cref="M:Microsoft.VisualBasic.Interaction.DeleteSetting(System.String,System.String,System.String)" />
         <altmember cref="M:Microsoft.VisualBasic.Interaction.GetAllSettings(System.String,System.String)" />
         <altmember cref="M:Microsoft.VisualBasic.Interaction.SaveSetting(System.String,System.String,System.String,System.String)" />
@@ -938,11 +925,11 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="FalsePart" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Expression">必须的。 <see langword="Boolean" />。 您想要评估的表达式。</param>
-        <param name="TruePart">必须的。 <see langword="Object" />。 如果<paramref name="Expression" />计算结果为<see langword="True" />。</param>
-        <param name="FalsePart">必须的。 <see langword="Object" />。 如果<paramref name="Expression" />计算结果为<see langword="False" />。</param>
-        <summary>返回两个对象之一，具体取决于表达式的计算。</summary>
-        <returns>返回两个对象之一，具体取决于表达式的计算。</returns>
+        <param name="Expression">必需。 <see langword="Boolean" />。 要计算的表达式。</param>
+        <param name="TruePart">必需。 <see langword="Object" />。 当 <paramref name="Expression" /> 计算结果为 <see langword="True" /> 时返回。</param>
+        <param name="FalsePart">必需。 <see langword="Object" />。 当 <paramref name="Expression" /> 计算结果为 <see langword="False" /> 时返回。</param>
+        <summary>根据表达式的计算，返回两个对象中的一个。</summary>
+        <returns>根据表达式的计算，返回两个对象中的一个。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -992,13 +979,13 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="YPos" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="Prompt">所需<see langword="String" />表达式显示为对话框中的消息。 最大长度<paramref name="Prompt" />大约为 1024年个字符，具体取决于所用字符的宽度。 如果 <paramref name="Prompt" /> 包含多行，可以使用回车符 (<see langword="Chr(" />13<see langword=")" />) 或换行符 (<see langword="Chr(" />10<see langword=")" />)，或组合使用回车符/换行符 (<see langword="Chr(" />13<see langword=")" /> &amp; <see langword="Chr(" />10<see langword=")" />) 来分隔每行。</param>
-        <param name="Title">可选。 <see langword="String" /> 在对话框的标题栏中显示的表达式。 如果省略<paramref name="Title" />，放在标题栏中的应用程序名称。</param>
-        <param name="DefaultResponse">可选。 <see langword="String" /> 显示在文本框中为默认响应如果提供任何其他输入的表达式。 如果省略<paramref name="DefaultResponse" />，显示的文本框为空。</param>
-        <param name="XPos">可选。 指定以缇为单位，在屏幕左边缘与对话框左边缘的距离的数值表达式。 如果省略<paramref name="XPos" />，对话框的水平居中。</param>
-        <param name="YPos">可选。 指定以缇为单位，从屏幕顶部的对话框的上边缘的距离的数值表达式。 如果省略<paramref name="YPos" />，对话框定位垂直大约三分之一的屏幕向下的方式。</param>
-        <summary>在对话框中显示一个提示，等待用户输入文本，或单击一个按钮，然后返回包含文本框的内容的字符串。</summary>
-        <returns>在对话框中显示一个提示，等待用户输入文本，或单击一个按钮，然后返回包含文本框的内容的字符串。</returns>
+        <param name="Prompt">必选的 <see langword="String" /> 表达式，作为消息显示在对话框中。 <paramref name="Prompt" /> 的最大长度大约为 1024 个字符，具体取决于所用字符的宽度。 如果 <paramref name="Prompt" /> 包含多行，可以使用回车符 (<see langword="Chr(" />13<see langword=")" />) 或换行符 (<see langword="Chr(" />10<see langword=")" />)，或组合使用回车符/换行符 (<see langword="Chr(" />13<see langword=")" /> &amp; <see langword="Chr(" />10<see langword=")" />) 来分隔每行。</param>
+        <param name="Title">可选。 显示在对话框标题栏中的 <see langword="String" /> 表达式。 如果省略 <paramref name="Title" />，则标题栏中显示应用程序名称。</param>
+        <param name="DefaultResponse">可选。 <see langword="String" /> 表达式。如果未提供其他输入，则作为默认响应显示在文本框中。 如果省略 <paramref name="DefaultResponse" />，则显示的文本框为空。</param>
+        <param name="XPos">可选。 数值表达式，指定屏幕左边缘与对话框左边缘之间的距离（以缇为单位）。 如果省略 <paramref name="XPos" />，则对话框水平居中。</param>
+        <param name="YPos">可选。 数值表达式，指定屏幕顶部与对话框上边缘之间的距离（以缇为单位）。 如果省略 <paramref name="YPos" />，则对话框垂直定位在屏幕向下大约三分之一处。</param>
+        <summary>在对话框中显示提示，等待用户输入文本或单击按钮，然后返回包含文本框内容的字符串。</summary>
+        <returns>在对话框中显示提示，等待用户输入文本或单击按钮，然后返回包含文本框内容的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1046,16 +1033,15 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="Title" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="Prompt">必须的。 <see langword="String" /> 显示为对话框中的消息的表达式。 最大长度<paramref name="Prompt" />大约为 1024年个字符，具体取决于所用字符的宽度。 如果 <paramref name="Prompt" /> 包含多行，可以使用回车符 (<see langword="Chr(" />13<see langword=")" />) 或换行符 (<see langword="Chr(" />10<see langword=")" />)，或组合使用回车符/换行符 (<see langword="Chr(" />13<see langword=")" /> &amp; <see langword="Chr(" />10<see langword=")" />) 来分隔每行。</param>
-        <param name="Buttons">可选。 是指定的数量和类型的按钮以显示要使用，默认按钮的标识以及消息框的样式等的图标样式的值之和的数值表达式。 如果省略<paramref name="Buttons" />，默认值为零。</param>
-        <param name="Title">可选。 <see langword="String" /> 在对话框的标题栏中显示的表达式。 如果省略<paramref name="Title" />，放在标题栏中的应用程序名称。</param>
-        <summary>在对话框中显示一条消息，等待用户单击按钮，然后返回一个整数，指示用户单击了哪个按钮。</summary>
-        <returns>
-          <list type="table">
+        <param name="Prompt">必需。 作为消息显示在对话框中的 <see langword="String" /> 表达式。 <paramref name="Prompt" /> 的最大长度大约为 1024 个字符，具体取决于所用字符的宽度。 如果 <paramref name="Prompt" /> 包含多行，可以使用回车符 (<see langword="Chr(" />13<see langword=")" />) 或换行符 (<see langword="Chr(" />10<see langword=")" />)，或组合使用回车符/换行符 (<see langword="Chr(" />13<see langword=")" /> &amp; <see langword="Chr(" />10<see langword=")" />) 来分隔每行。</param>
+        <param name="Buttons">可选。 数值表达式，它是值的总和，指定显示的按钮数目及按钮类型，使用的图标样式，默认按钮的标识以及消息框的样式等。 如果省略 <paramref name="Buttons" />，则默认值为 0。</param>
+        <param name="Title">可选。 显示在对话框标题栏中的 <see langword="String" /> 表达式。 如果省略 <paramref name="Title" />，则标题栏中显示应用程序名称。</param>
+        <summary>在对话框中显示消息，等待用户单击按钮，然后返回一个整数，该整数指示用户单击的按钮。</summary>
+        <returns><list type="table">
             <item>
               <term> 返回的常量 
  </term>
-              <description> “值” 
+              <description> 值 
  </description>
             </item>
             <item>
@@ -1107,8 +1093,7 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
               <description> 7 
  </description>
             </item>
-          </list>
-        </returns>
+          </list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1120,13 +1105,13 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
  如果对话框包含**帮助**按钮，为对话框提供上下文相关帮助。 但是，在关闭其他任一按钮前，不会返回任何值。 在 Windows 窗体应用程序中，选择**帮助**按钮执行<xref:System.Windows.Forms.Control.HelpRequested>窗体的事件。  
   
 > [!NOTE]
->  `MsgBox`函数需要`UIPermission`在<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>级别，可能会影响在部分信任情况下执行。 有关详细信息，请参阅 <xref:System.Security.Permissions.UIPermission> 。  
+>  `MsgBox`函数需要`UIPermission`在<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>级别，可能会影响在部分信任情况下执行。 有关详情，请参阅<xref:System.Security.Permissions.UIPermission>。  
   
  `MsgBoxStyle`下表列出了枚举值。  
   
-|成员|“值”|描述|  
+|成员|值|描述|  
 |-|-|-|  
-|成员|“值”|描述|  
+|成员|值|描述|  
 |`OKOnly`|0|仅显示确定按钮。|  
 |`OKCancel`|1|显示确定和取消按钮。|  
 |`AbortRetryIgnore`|2|显示中止、 重试，和忽略按钮。|  
@@ -1146,21 +1131,20 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
 |`MsgBoxRight`|524288|文本是右对齐。|  
 |`MsgBoxRtlReading`|1048576|指定文本应显示为右到左读取希伯来语和阿拉伯语系统上。|  
   
- 第一组值 (0 – 5) 描述的数量和类型显示在对话框中的按钮。 第二个组 （16、 32、 48、 64） 描述图标样式。 第三个组 （0、 256、 512） 确定哪个按钮是默认值。 第四个组 （0，4096） 确定的消息框中，模式和第五个组指定消息框窗口是前台窗口，以及对齐和中文本的方向。 当添加数字以创建为一个最终值`Buttons`参数，使用每个组中只有一个数字。  
+ 第一组值 (0-5) 描述的数量和类型显示在对话框中的按钮。 第二个组 （16、 32、 48、 64） 描述图标样式。 第三个组 （0、 256、 512） 确定哪个按钮是默认值。 第四个组 （0，4096） 确定的消息框中，模式和第五个组指定消息框窗口是前台窗口，以及对齐和中文本的方向。 当添加数字以创建为一个最终值`Buttons`参数，使用每个组中只有一个数字。  
   
    
   
 ## Examples  
- 此示例使用`MsgBox`函数具有是和无按钮的对话框中显示的严重错误消息。 否按钮指定为默认响应。 这是通过组合`MsgBox`到一个数值表达式的常量值。 在这种情况下，加上 4 (是/否按钮组合) 和 16 (**关键消息**窗口) 和 256 （作为默认按钮的第二个按钮） 得到的 276 总计。 返回的值`MsgBox`函数取决于用户选择的按钮: 是返回的值为 6;没有返回一个值为 7。  
+ 此示例使用`MsgBox`函数具有是和无按钮的对话框中显示的严重错误消息。 否按钮指定为默认响应。 这是通过组合`MsgBox`到一个数值表达式的常量值。 在这种情况下，加上 4 (是/否按钮组合) 和 16 (**关键消息**窗口) 和 256 （作为默认按钮的第二个按钮） 得到的 276 总计。 返回的值`MsgBox`函数取决于用户选择的按钮：是返回的值为 6;没有返回一个值为 7。  
   
  [!code-vb[VbVbalrCatRef#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#20)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Prompt" /> 不是<see langword="String" />表达式，或<paramref name="Title" />无效。</exception>
-        <exception cref="T:System.InvalidOperationException">进程不在用户交互模式中运行。</exception>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">一个或多个参数不是成员的<see langword="MsgBoxResult" />或<see langword="MsgBoxStyle" />枚举。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Prompt" /> 不是一个 <see langword="String" /> 表达式，或者 <paramref name="Title" /> 无效。</exception>
+        <exception cref="T:System.InvalidOperationException">进程不是以 User Interactive 模式运行。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">一个或多个参数，而不是 <see langword="MsgBoxResult" /> 或 <see langword="MsgBoxStyle" /> 枚举的成员。</exception>
         <altmember cref="M:Microsoft.VisualBasic.Interaction.InputBox(System.String,System.String,System.String,System.Int32,System.Int32)" />
         <altmember cref="M:System.Windows.Forms.MessageBox.Show(System.String)" />
       </Docs>
@@ -1189,12 +1173,12 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="Interval" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="Number">必须的。 <see langword="Long" />。 你想要查找某个计算出的范围内的整数。</param>
-        <param name="Start">必须的。 <see langword="Long" />。 一个整数，指示计算出的范围集开始部分。 <paramref name="Start" /> 不能小于 0。</param>
-        <param name="Stop">必须的。 <see langword="Long" />。 一个整数，指示计算出的范围集的末尾。 <paramref name="Stop" /> 不能小于或等于<paramref name="Start" />。</param>
-        <param name="Interval">必须的。 <see langword="Long" />。 一个整数，指示每个范围的大小计算之间<paramref name="Start" />和<paramref name="Stop" />。 <paramref name="Interval" /> 不能小于 1。</param>
-        <summary>返回一个字符串，表示包含一个数字的计算的范围。</summary>
-        <returns>返回一个字符串，表示包含一个数字的计算的范围。</returns>
+        <param name="Number">必需。 <see langword="Long" />。 要在一个计算范围中找到的整数。</param>
+        <param name="Start">必需。 <see langword="Long" />。 一个整数，指示计算出的范围集的开始值。 <paramref name="Start" /> 不能小于 0。</param>
+        <param name="Stop">必需。 <see langword="Long" />。 一个整数，指示计算出的范围集的结束值。 <paramref name="Stop" /> 不能小于或等于 <paramref name="Start" />。</param>
+        <param name="Interval">必需。 <see langword="Long" />。 一个整数，指示在 <paramref name="Start" /> 和 <paramref name="Stop" /> 之间计算的每个范围大小。 <paramref name="Interval" /> 不能小于 1。</param>
+        <summary>返回一个字符串，该字符串表示包含某个数字的计算范围。</summary>
+        <returns>返回一个字符串，该字符串表示包含某个数字的计算范围。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1207,13 +1191,13 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
   
 |`Start`|`Stop`|`Interval`|第一个范围之前|第一个范围|最后一个范围|最后一个范围之后|  
 |-|-|-|-|-|-|-|  
-|0|99|5|"   : -1"|"0: 4"|"95: 99"|"100:"|  
-|20|199|10|": 19 英寸|"20: 29"|"190:199"|"200:"|  
-|100|1010|20|": 99"|"100: 119"|"1000:1010"|"1011年:"|  
+|0|99|5|"   : -1"|"0:4"|"95:99"|"100:"|  
+|20|199|10|"   :19 英寸|"20:29"|"190:199"|"200:"|  
+|100|1010|20|"    :99"|"100:119"|"1000:1010"|"1011年:"|  
   
  在上表中，第三行显示结果时`Start`并`Stop`定义一组不能通过平均划分的数字`Interval`。 最后一个范围结束于`Stop`，使其仅有 11 个字符，即使`Interval`为 20。  
   
- 如果`Interval`为 1，范围是"`Number`:`Number`"，则无论什么`Start`和`Stop`参数。 例如，如果`Number`是 267，`Stop`为 1000，并`Interval`为 1，`Partition`返回"267: 267"。  
+ 如果`Interval`为 1，范围是"`Number`:`Number`"，则无论什么`Start`和`Stop`参数。 例如，如果`Number`是 267，`Stop`为 1000，并`Interval`为 1，`Partition`返回"267:267"。  
   
  `Partition` 构建数据库查询时，可以很有用。 可以创建显示订单数，例如用发票值从 1 到 1000，各种值范围内发生 1001年到 2000年等等的 SELECT 查询。  
   
@@ -1226,8 +1210,7 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Start" /> &lt; 0、<paramref name="Stop" /> &lt;= <paramref name="Start" /> 或 <paramref name="Interval" /> &lt; 1。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Start" /> &lt; 0、<paramref name="Stop" /> &lt;= <paramref name="Start" /> 或 <paramref name="Interval" /> &lt; 1。</exception>
       </Docs>
     </Member>
     <Member MemberName="SaveSetting">
@@ -1254,11 +1237,11 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="Setting" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="AppName">必须的。 <see langword="String" /> 表达式，包含该设置将应用的项目的应用程序的名称。</param>
-        <param name="Section">必须的。 <see langword="String" /> 表达式，包含在其中保存的项设置的节的名称。</param>
-        <param name="Key">必须的。 <see langword="String" /> 表达式，包含保存的项设置的名称。</param>
-        <param name="Setting">必须的。 包含向其值的表达式<paramref name="Key" />正在设置。</param>
-        <summary>保存或 Windows 注册表中创建的应用程序项。 <see langword="My" />在比注册表操作方面可为您提供更高的工作效率和性能<see langword="SaveSetting" />。 有关详细信息，请参阅 <see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" /> 。</summary>
+        <param name="AppName">必需。 <see langword="String" /> 表达式，包含应用该设置的应用程序或项目的名称。</param>
+        <param name="Section">必需。 <see langword="String" /> 表达式，包含在其中保存项设置的节的名称。</param>
+        <param name="Key">必需。 <see langword="String" /> 表达式，包含将保存的项设置的名称。</param>
+        <param name="Setting">必需。 包含值的表达式，<paramref name="Key" /> 将被设置为该值。</param>
+        <summary>在 Windows 注册表中保存或创建应用程序项。 与 <see langword="My" /> 相比，<see langword="SaveSetting" /> 功能在注册表操作方面可为您提供更高的效率和更好的性能。 有关详情，请参阅<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1282,7 +1265,7 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">无法创建注册表项，或用户未登录。</exception>
+        <exception cref="T:System.ArgumentException">未能创建注册表项，或用户没有登录。</exception>
         <altmember cref="M:Microsoft.VisualBasic.Interaction.DeleteSetting(System.String,System.String,System.String)" />
         <altmember cref="M:Microsoft.VisualBasic.Interaction.GetAllSettings(System.String,System.String)" />
         <altmember cref="M:Microsoft.VisualBasic.Interaction.GetSetting(System.String,System.String,System.String,System.String)" />
@@ -1323,15 +1306,15 @@ drawObj.SaveAs("C:\Drawings\sample.drw")
         <Parameter Name="Timeout" Type="System.Int32" Index="3" />
       </Parameters>
       <Docs>
-        <param name="PathName">必须的。 <see langword="String" />。 若要执行，以及任何所需的参数和命令行开关的程序的名称。 <paramref name="PathName" /> 此外可以包含驱动器和目录路径或文件夹。  
+        <param name="PathName">必需。 <see langword="String" />。 要执行的程序的名称，以及所有必需的参数和命令行开关。 <paramref name="PathName" /> 也可以包含驱动器和目录路径或文件夹。  
   
-如果向程序不知道该路径，则可以使用<see cref="Overload:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles" />以找到它。 例如，你可以调用 <c>My.Computer.FileSystem.GetFiles("C:\", True, "testFile.txt")</c>，这将返回驱动器 C:\\ 上任意位置每个名为 <c>testFile.txt</c> 的文件的完整路径。</param>
+如果不知道程序的路径，则可以使用 <see cref="Overload:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles" /> 进行定位。 例如，你可以调用 <c>My.Computer.FileSystem.GetFiles("C:\", True, "testFile.txt")</c>，这将返回驱动器 C:\\ 上任意位置每个名为 <c>testFile.txt</c> 的文件的完整路径。</param>
         <param name="Pathname">To be added.</param>
-        <param name="Style">可选。 <see langword="AppWinStyle" />。 从选择的值<see cref="T:Microsoft.VisualBasic.AppWinStyle" />指定在其中运行该程序的窗口的样式。 如果<paramref name="Style" />省略，则<see langword="Shell" />使用<see langword="AppWinStyle.MinimizedFocus" />，最小化且带焦点启动该程序。</param>
-        <param name="Wait">可选。 <see langword="Boolean" />。 一个值，该值指示是否<see langword="Shell" />函数应等待完成程序。 如果<paramref name="Wait" />省略，则<see langword="Shell" />使用<see langword="False" />。</param>
-        <param name="Timeout">可选。 <see langword="Integer" />。 如果完成等待的毫秒数<paramref name="Wait" />是<see langword="True" />。 如果<paramref name="Timeout" />省略，则<see langword="Shell" />使用-1，表示没有超时设置和<see langword="Shell" />不返回直到程序完成。 因此，如果省略<paramref name="Timeout" />或将其设置为-1，则可能的<see langword="Shell" />可能永远不会将控制返回到你的程序。</param>
-        <summary>运行可执行程序，并返回一个整数，如果它仍在运行包含该程序的进程 ID。</summary>
-        <returns>运行可执行程序，并返回一个整数，如果它仍在运行包含该程序的进程 ID。</returns>
+        <param name="Style">可选。 <see langword="AppWinStyle" />。 从 <see cref="T:Microsoft.VisualBasic.AppWinStyle" /> 中选择的一个值，该值指定将要在其中运行程序的窗口的样式。 如果省略 <paramref name="Style" />，<see langword="Shell" /> 将使用 <see langword="AppWinStyle.MinimizedFocus" /> 以最小化方式启动该程序并获得焦点。</param>
+        <param name="Wait">可选。 <see langword="Boolean" />。 一个指示 <see langword="Shell" /> 函数是否应等待程序完成的值。 如果省略 <paramref name="Wait" />，则 <see langword="Shell" /> 将使用 <see langword="False" />。</param>
+        <param name="Timeout">可选。 <see langword="Integer" />。 如果 <paramref name="Wait" /> 为 <see langword="True" />，则为等待完成的毫秒数。 如果省略 <paramref name="Timeout" />，则 <see langword="Shell" /> 使用 -1，表示没有超时设置并且 <see langword="Shell" /> 到程序结束时才返回。 因此，如果省略 <paramref name="Timeout" /> 或将其设置为 -1，则 <see langword="Shell" /> 可能永远不会将控制返回给您的程序。</param>
+        <summary>运行一个可执行程序，并且如果该程序仍在运行则返回一个包含该程序的进程 ID 的整数。</summary>
+        <returns>运行一个可执行程序，并且如果该程序仍在运行则返回一个包含该程序的进程 ID 的整数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1393,12 +1376,9 @@ ID = Shell("""C:\Program Files\display.exe"" -a -q", , True, 100000)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="Style" /> 不在范围 0 到 9，非独占。</exception>
-        <exception cref="T:System.IO.FileNotFoundException">
-          <see langword="Shell" /> 找不到<paramref name="PathName" />文件。</exception>
-        <exception cref="T:System.NullReferenceException">
-          <paramref name="PathName" /> 为 <see langword="Nothing" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Style" /> 不在 0 到 9（包含 0 和 9）范围内。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="Shell" /> 找不到 <paramref name="PathName" /> 文件。</exception>
+        <exception cref="T:System.NullReferenceException"><paramref name="PathName" /> 为 <see langword="Nothing" />。</exception>
         <altmember cref="T:Microsoft.VisualBasic.AppWinStyle" />
         <altmember cref="T:System.ArgumentException" />
         <altmember cref="T:System.IO.FileNotFoundException" />
@@ -1434,9 +1414,9 @@ ID = Shell("""C:\Program Files\display.exe"" -a -q", , True, 100000)
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="VarExpr">必须的。 <see langword="Object" /> 参数数组。 必须具有偶数数目的元素。 您可以提供一系列<see langword="Object" />变量或表达式以逗号或一个一维数组的<see langword="Object" />元素。</param>
-        <summary>计算表达式并返回一系列<see langword="Object" />相对应的列表中的第一个表达式的值<see langword="True" />。</summary>
-        <returns>计算表达式并返回一系列<see langword="Object" />相对应的列表中的第一个表达式的值<see langword="True" />。</returns>
+        <param name="VarExpr">必需。 <see langword="Object" /> 参数数组。 必须具有偶数个元素。 可以提供以逗号分隔的 <see langword="Object" /> 变量或表达式的列表，或一维 <see langword="Object" /> 元素数组。</param>
+        <summary>计算表达式列表，并返回与列表中第一个为 <see langword="Object" /> 的表达式对应的 <see langword="True" /> 值。</summary>
+        <returns>计算表达式列表，并返回与列表中第一个为 <see langword="Object" /> 的表达式对应的 <see langword="True" /> 值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

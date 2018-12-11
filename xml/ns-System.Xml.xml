@@ -1,15 +1,6 @@
 <Namespace Name="System.Xml">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="5c4fd9b36a99676d4d624d94c26c034d99294275" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51864913" />
-  </Metadata>
-  <Docs>
-    <summary>
-      <see cref="N:System.Xml" /> 命名空间为处理 XML 提供基于标准的支持。</summary>
+  <Metadata><Meta Name="ms.openlocfilehash" Value="be8c1cc1f4e4adca284d060272a91de64feb8fad" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53225744" /></Metadata><Docs>
+    <summary><see cref="N:System.Xml" /> 命名空间为处理 XML 提供基于标准的支持。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -49,7 +40,7 @@
   
 -   未设置<xref:System.Xml.XmlReaderSettings.Async%2A?displayProperty=nameWithType>或<xref:System.Xml.XmlWriterSettings.Async%2A?displayProperty=nameWithType>标记，用于`true`如果不想要使用异步方法。  
   
--   如果你忘记了指定`await`关键字调用异步方法时，结果是不确定： 你可能会收到预期的结果或异常。  
+-   如果你忘记了指定`await`关键字调用异步方法时，结果是不确定：您可能会收到预期的结果或异常。  
   
 -   当<xref:System.Xml.XmlReader>对象读取大型文本节点，它可能会缓存仅部分文本值并返回文本节点，因此检索<xref:System.Xml.XmlReader.Value%2A?displayProperty=nameWithType>属性可能会阻止通过 I/O 操作。 使用<xref:System.Xml.XmlReader.GetValueAsync%2A?displayProperty=nameWithType>方法以获取文本值在异步模式下，或者使用<xref:System.Xml.XmlReader.ReadValueChunkAsync%2A?displayProperty=nameWithType>在区块中块的方法来读取大型文本。  
   
@@ -61,7 +52,7 @@
   
  **在元素声明中的一致性：**  
   
- 在某些情况下，当使用替换组时，<xref:System.Xml>实现不满足"架构组件约束:: 元素声明一致，"中所述[模型组架构组件约束](https://go.microsoft.com/fwlink/?LinkId=137029) W3C 规范的部分。  
+ 在某些情况下，当使用替换组时，<xref:System.Xml>实现不符合"Schema Component Constraint:元素声明一致，"中所述[模型组架构组件约束](https://go.microsoft.com/fwlink/?LinkId=137029)W3C 规范的部分。  
   
  例如，以下架构包含具有相同名称的元素，但使用相同的内容模型，并替换组中的不同类型。 这应该会导致错误，但是 <xref:System.Xml> 能够正确编译和验证该架构，而不会出错。  
   
@@ -93,7 +84,7 @@
   
  **唯一粒子归属：**  
   
- 在以下情况下<xref:System.Xml>实现不满足"架构组件约束:: 唯一粒子归属，"中所述[模型组架构组件约束](https://go.microsoft.com/fwlink/?LinkId=137029)部分W3C 规范中。  
+ 在以下情况下<xref:System.Xml>实现不符合"Schema Component Constraint:唯一粒子归属，"中所述[模型组架构组件约束](https://go.microsoft.com/fwlink/?LinkId=137029)W3C 规范的部分。  
   
 -   组中的某个元素引用另一个元素。  
   
@@ -124,7 +115,7 @@
 </xs:schema>  
 ```  
   
- 如果你尝试验证根据上述架构下面的 XML，验证将失败并显示以下消息:"元素 'e3' 具有无效的子元素 'e2'。"和一个<xref:System.Xml.Schema.XmlSchemaValidationException>将引发异常。  
+ 如果你尝试验证根据上述架构的以下 XML，验证将失败并显示以下消息："元素 'e3' 具有无效的子元素 'e2'。"和一个<xref:System.Xml.Schema.XmlSchemaValidationException>将引发异常。  
   
 ```xml  
 <e3>  
@@ -168,7 +159,7 @@
 </xs:schema>  
 ```  
   
- 如果你尝试验证根据上述架构下面的 XML，验证将失败并出现以下异常:"未处理的异常： System.Xml.Schema.XmlSchemaValidationException: 'e2' el 元素无效-'abc' 值无效根据其数据类型http://www.w3.org/2001/XMLSchema:int'-'abc' 字符串不是有效的 Int32 值。"
+ 如果你尝试验证根据上述架构的以下 XML，验证将失败并出现以下异常："未经处理的异常：System.Xml.Schema.XmlSchemaValidationException:"E2' el 元素无效-根据其数据类型值 'abc' 无效http://www.w3.org/2001/XMLSchema:int'-'abc' 字符串不是有效的 Int32 值。"
   
 ```xml  
 <e3><e2>abc</e2></e3>  
@@ -252,6 +243,6 @@
     <altmember cref="N:System.Xml.Xsl" />
     <altmember cref="N:System.Xml.Schema" />
     <altmember cref="N:System.Xml.Linq" />
-    <related type="Article" href="https://msdn.microsoft.com/library/e695047f-3c0f-4045-8708-5baea91cc380">XML 文档和数据</related>
+    <related type="Article" href="~/docs/standard/data/xml/index.md">XML 文档和数据</related>
   </Docs>
 </Namespace>

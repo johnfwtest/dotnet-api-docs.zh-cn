@@ -1,13 +1,5 @@
 <Type Name="WaitHandle" FullName="System.Threading.WaitHandle">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b0743bee28025334f71604c9b2d0c45160aa6bc8" />
-    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
-    <Meta Name="ms.locfileid" Value="52608543" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class WaitHandle : MarshalByRefObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="06234dda8c2720fb32dc463109f1e24a669c3fb6" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53232727" /></Metadata><TypeSignature Language="C#" Value="public abstract class WaitHandle : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract beforefieldinit WaitHandle extends System.MarshalByRefObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.WaitHandle" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WaitHandle&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable" />
@@ -48,7 +40,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>封装等待对共享资源的独占访问的操作系统特定的对象。</summary>
+    <summary>封装等待对共享资源进行独占访问的操作系统特定的对象。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -179,9 +171,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>应重写<see langword="Dispose(Boolean)" />方法来释放资源分配中派生的类。</para>
-        </block>
+        <block subset="none" type="overrides"><para>应重写<see langword="Dispose(Boolean)" />方法来释放资源分配中派生的类。</para></block>
         <related type="Article" href="~/docs/standard/garbage-collection/implementing-dispose.md">实现 Dispose 方法</related>
       </Docs>
     </Member>
@@ -297,11 +287,9 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>应重写<see cref="M:System.Threading.WaitHandle.Dispose(System.Boolean)" />方法来释放资源分配中派生的类。  
+        <block subset="none" type="overrides"><para>应重写<see cref="M:System.Threading.WaitHandle.Dispose(System.Boolean)" />方法来释放资源分配中派生的类。  
   
-<see cref="M:System.Threading.WaitHandle.Close" />或<see cref="M:System.Threading.WaitHandle.Dispose" />方法可以由其他对象调用多次。 重写此方法时, 请小心不要引用已释放到的早期调用中的对象<see langword="Dispose" />或<see langword="Close" />。</para>
-        </block>
+<see cref="M:System.Threading.WaitHandle.Close" />或<see cref="M:System.Threading.WaitHandle.Dispose" />方法可以由其他对象调用多次。 重写此方法时, 请小心不要引用已释放到的早期调用中的对象<see langword="Dispose" />或<see langword="Close" />。</para></block>
         <related type="Article" href="~/docs/standard/garbage-collection/implementing-dispose.md">实现 Dispose 方法</related>
       </Docs>
     </Member>
@@ -384,8 +372,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置本机操作系统句柄。</summary>
-        <value>
-          <see langword="IntPtr" />，它表示本机操作系统句柄。 默认为 <see cref="F:System.Threading.WaitHandle.InvalidHandle" /> 字段的值。</value>
+        <value><see langword="IntPtr" />，它表示本机操作系统句柄。 默认为 <see cref="F:System.Threading.WaitHandle.InvalidHandle" /> 字段的值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -441,9 +428,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>可以使用此值以确定是否<see cref="P:System.Threading.WaitHandle.Handle" />属性包含有效的本机操作系统句柄。</para>
-        </block>
+        <block subset="none" type="overrides"><para>可以使用此值以确定是否<see cref="P:System.Threading.WaitHandle.Handle" />属性包含有效的本机操作系统句柄。</para></block>
       </Docs>
     </Member>
     <Member MemberName="SafeWaitHandle">
@@ -488,8 +473,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置本机操作系统句柄。</summary>
-        <value>
-          <see cref="T:Microsoft.Win32.SafeHandles.SafeWaitHandle" />，它表示本机操作系统句柄。</value>
+        <value><see cref="T:Microsoft.Win32.SafeHandles.SafeWaitHandle" />，它表示本机操作系统句柄。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -568,15 +552,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="toSignal" /> 为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="toSignal" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="toWaitOn" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException">在一个具有 <see cref="T:System.STAThreadAttribute" /> 的线程上调用了该方法。</exception>
         <exception cref="T:System.PlatformNotSupportedException">Windows 98 或 Windows Millennium Edition 不支持此方法。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="toSignal" /> 是信号量，已达到最大计数。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="toSignal" /> 是信号量，已达到最大计数。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
       </Docs>
     </Member>
@@ -641,16 +623,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="toSignal" /> 为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="toSignal" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="toWaitOn" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException">对具有 <see cref="T:System.STAThreadAttribute" /> 的线程调用了此方法。</exception>
         <exception cref="T:System.PlatformNotSupportedException">Windows 98 或 Windows Millennium Edition 不支持此方法。</exception>
         <exception cref="T:System.InvalidOperationException">无法终止 <see cref="T:System.Threading.WaitHandle" />，因为它将超过其最大计数。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
       </Docs>
     </Member>
@@ -712,19 +692,16 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="toSignal" /> 为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="toSignal" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="toWaitOn" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException">在一个具有 <see cref="T:System.STAThreadAttribute" /> 的线程上调用了该方法。</exception>
         <exception cref="T:System.PlatformNotSupportedException">Windows 98 或 Windows Millennium Edition 不支持此方法。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="toSignal" /> 是信号量，已达到最大计数。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 计算为 -1 以外的负毫秒数。  
+        <exception cref="T:System.InvalidOperationException"><paramref name="toSignal" /> 是信号量，已达到最大计数。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 计算为 -1 以外的负毫秒数。  
   
-或 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
       </Docs>
@@ -847,30 +824,26 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。 或 
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。 - 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="waitHandles" /> 为不具有元素的数组且 .NET Framework 版本为 2.0 或更高版本。</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <block subset="none" type="note">
+        <exception cref="T:System.DuplicateWaitObjectException"><block subset="none" type="note">
             <para>  
  在<see href="https://go.microsoft.com/fwlink/?LinkID=247912">适用于 Windows 应用商店应用的 .NET</see> 或<see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">可移植类库</see>中，改为捕获基类异常 <see cref="T:System.ArgumentException" />。  
   
 </para>
-          </block>
-          <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
+          </block>  
+  
+ <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
   
 或 
 <see cref="T:System.STAThreadAttribute" /> 属性应用于当前线程的线程过程且 <paramref name="waitHandles" /> 包含多个元素。</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> 数组不含任何元素，并且 .NET Framework 版本为 1.0 或 1.1。</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> 数组不含任何元素，并且 .NET Framework 版本为 1.0 或 1.1。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待终止，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAll">
@@ -932,32 +905,28 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。  
   
 或 
  <paramref name="waitHandles" /> 是一个不含任何元素的数组。</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <block subset="none" type="note">
+        <exception cref="T:System.DuplicateWaitObjectException"><block subset="none" type="note">
             <para>  
  在<see href="https://go.microsoft.com/fwlink/?LinkID=247912">适用于 Windows 应用商店应用的 .NET</see> 或<see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">可移植类库</see>中，改为捕获基类异常 <see cref="T:System.ArgumentException" />。  
   
 </para>
-          </block>
-          <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
+          </block>  
+  
+ <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
   
 或 
 <see cref="T:System.STAThreadAttribute" /> 属性应用于当前线程的线程过程且 <paramref name="waitHandles" /> 包含多个元素。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAll">
@@ -1021,34 +990,30 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="waitHandles" /> 是一个不含任何元素的数组。</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <block subset="none" type="note">
+        <exception cref="T:System.DuplicateWaitObjectException"><block subset="none" type="note">
             <para>  
  在<see href="https://go.microsoft.com/fwlink/?LinkID=247912">适用于 Windows 应用商店应用的 .NET</see> 或<see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">可移植类库</see>中，改为捕获基类异常 <see cref="T:System.ArgumentException" />。  
   
 </para>
-          </block>
-          <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
+          </block>  
   
-或 
+ <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
+  
+- 或 - 
 <see cref="T:System.STAThreadAttribute" /> 属性应用于当前线程的线程过程且 <paramref name="waitHandles" /> 包含多个元素。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
-或 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待终止，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAll">
@@ -1125,28 +1090,22 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="waitHandles" /> 为不具有元素的数组且 .NET Framework 版本为 2.0 或更高版本。</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
+        <exception cref="T:System.DuplicateWaitObjectException"><paramref name="waitHandles" /> 数组包含重复的元素。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
   
-或 
+- 或 - 
 <see cref="T:System.STAThreadAttribute" /> 属性应用于当前线程的线程过程且 <paramref name="waitHandles" /> 包含多个元素。</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> 数组不含任何元素，并且 .NET Framework 版本为 1.0 或 1.1。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> 数组不含任何元素，并且 .NET Framework 版本为 1.0 或 1.1。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAll">
@@ -1220,30 +1179,24 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
 或 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="waitHandles" /> 为不具有元素的数组且 .NET Framework 版本为 2.0 或更高版本。</exception>
-        <exception cref="T:System.DuplicateWaitObjectException">
-          <paramref name="waitHandles" /> 数组包含重复的元素。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
+        <exception cref="T:System.DuplicateWaitObjectException"><paramref name="waitHandles" /> 数组包含重复的元素。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。  
   
-或 
+- 或 - 
 <see cref="T:System.STAThreadAttribute" /> 属性应用于当前线程的线程过程且 <paramref name="waitHandles" /> 包含多个元素。</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> 数组不含任何元素，并且 .NET Framework 版本为 1.0 或 1.1。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> 数组不含任何元素，并且 .NET Framework 版本为 1.0 或 1.1。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
 或 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待终止，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="WaitAny">
@@ -1328,20 +1281,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 1.0 或 1.1。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 1.0 或 1.1。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 2.0 或更高。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 2.0 或更高。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAny">
@@ -1402,20 +1350,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
 或 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> 是一个不含任何元素的数组。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> 是一个不含任何元素的数组。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAny">
@@ -1478,22 +1421,17 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
-或 
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> 是一个不含任何元素的数组。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> 是一个不含任何元素的数组。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAny">
@@ -1575,22 +1513,16 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 1.0 或 1.1。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 1.0 或 1.1。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 2.0 或更高。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 2.0 或更高。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <Member MemberName="WaitAny">
@@ -1671,24 +1603,18 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="waitHandles" /> 参数为 <see langword="null" />。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="waitHandles" /> 参数为 <see langword="null" />。  
   
 或 
 <paramref name="waitHandles" /> 数组中一个或多个对象为 <see langword="null" />。</exception>
-        <exception cref="T:System.NotSupportedException">
-          <paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 1.0 或 1.1。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
-或 
+        <exception cref="T:System.NotSupportedException"><paramref name="waitHandles" /> 中的对象数大于系统允许的数量。</exception>
+        <exception cref="T:System.ApplicationException"><paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 1.0 或 1.1。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 2.0 或更高。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="waitHandles" /> 是不含元素的数组，并且 .NET Framework 的版本为 2.0 或更高。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="waitHandles" /> 数组包含其他应用程序域中 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="WaitOne">
@@ -1828,8 +1754,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">已释放当前实例。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
         <exception cref="T:System.InvalidOperationException">当前实例是另一个应用程序域中的 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
@@ -1888,9 +1813,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">已释放当前实例。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
-或 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
         <exception cref="T:System.InvalidOperationException">当前实例是另一个应用程序域中的 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
@@ -1963,8 +1887,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">已释放当前实例。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>
         <exception cref="T:System.InvalidOperationException">当前实例是另一个应用程序域中的 <see cref="T:System.Threading.WaitHandle" /> 的透明代理。</exception>
       </Docs>
@@ -2038,8 +1961,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">已释放当前实例。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
 或 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">等待结束，因为线程在未释放互斥的情况下退出。 在 Windows 98 或 Windows Millennium Edition 上不会引发此异常。</exception>

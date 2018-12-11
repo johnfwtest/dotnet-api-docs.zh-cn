@@ -1,13 +1,5 @@
 <Type Name="SqlPersonalizationProvider" FullName="System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="1ca415cbec750b820d5a51ea8df88e52fdc01be8" />
-    <Meta Name="ms.sourcegitcommit" Value="c902e847cd05ac37d93eca981b0fb009aae0a790" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/28/2018" />
-    <Meta Name="ms.locfileid" Value="52454804" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class SqlPersonalizationProvider : System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2c841e64fb454c6a2af6f300b5ca4559a694184c" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53229423" /></Metadata><TypeSignature Language="C#" Value="public class SqlPersonalizationProvider : System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlPersonalizationProvider extends System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider" />
   <TypeSignature Language="VB.NET" Value="Public Class SqlPersonalizationProvider&#xA;Inherits PersonalizationProvider" />
@@ -32,9 +24,9 @@
   
  SQL Server 中使用 Web 部件个性化设置的数据设计依赖于两个常见 SQL 数据库表存在和其支持存储过程，对于大多数基于 SQL 的功能实现共享。 这些表和视图安装和卸载使用以下脚本：  
   
--   installpagepersonalization.sql – 安装个性化设置表、 视图和存储的相关的过程。  
+-   installpagepersonalization.sql-安装个性化设置表、 视图和存储的相关的过程。  
   
--   uninstallpagepersonalization.sql – 卸载个性化设置表、 视图和存储的相关的过程。  
+-   uninstallpagepersonalization.sql-卸载个性化设置表、 视图和存储的相关的过程。  
   
  务必要注意，如果 Web 应用程序不会运行在默认信任级别，个性化设置将失败<xref:System.Web.AspNetHostingPermissionLevel.Medium>或更高版本 (可以在 Web.config 文件中使用设置自定义信任级别`<trust level="" />`元素)。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>并<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>这两个类检查的信任等级<xref:System.Web.AspNetHostingPermissionLevel.Low>初始化时。 如果将应用程序运行在信任级别的配置<xref:System.Web.AspNetHostingPermissionLevel.Low>，并使用默认<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>提供程序来管理你的应用程序的个性化设置数据将应用程序尝试访问个性化设置数据的第一个时间失败，因为 ASP.NET 辅助进程中运行<xref:System.Web.AspNetHostingPermissionLevel.Low>信任不具有的各个类中调用所必需的权限<xref:System.Data.SqlClient>命名空间。  
   
@@ -43,7 +35,7 @@
     <altmember cref="T:System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
     <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">ASP.NET Web 部件页</related>
     <related type="Article" href="https://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320">Web 部件个性化设置概述</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/a88d2bd5-4932-4ec1-b176-7d7da45f85d9">演练： 实现使用用户控件的 Web 部件个性化设置</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/a88d2bd5-4932-4ec1-b176-7d7da45f85d9">演练：使用用户控件的实现的 Web 部件个性化设置</related>
     <related type="Article" href="https://msdn.microsoft.com/library/7885563f-7bbe-45a0-b5e2-c6bf1bc2deaa">Web 部件个性化设置</related>
   </Docs>
   <Members>
@@ -136,15 +128,13 @@
         <Parameter Name="totalRecords" Type="System.Int32" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="scope">
-          <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 用于指示要查询的个性化信息。 此值不能为 <see langword="null" />。</param>
+        <param name="scope"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 用于指示要查询的个性化信息。 此值不能为 <see langword="null" />。</param>
         <param name="query">包含查询的 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />。 此值可为 <see langword="null" />。</param>
         <param name="pageIndex">查询的起始位置。</param>
         <param name="pageSize">要返回的记录数。</param>
         <param name="totalRecords">可用记录的总数。</param>
         <summary>根据指定范围和参数返回一个包含零个或零个以上 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" /> 派生对象的集合。</summary>
-        <returns>
-          <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />，包含零个或零个以上 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" /> 派生对象。</returns>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />，包含零个或零个以上 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" /> 派生对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -179,8 +169,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="pageIndex" /> 小于零。  
+        <exception cref="T:System.ArgumentException"><paramref name="pageIndex" /> 小于零。  
   
 \- 或 - 
  <paramref name="pageSize" /> 小于或等于零。  
@@ -223,8 +212,7 @@
         <Parameter Name="query" Type="System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />
       </Parameters>
       <Docs>
-        <param name="scope">
-          <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 用于指示要查询的个性化信息。 此值不能为 <see langword="null" />。</param>
+        <param name="scope"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 用于指示要查询的个性化信息。 此值不能为 <see langword="null" />。</param>
         <param name="query">包含查询的 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />。 此值可为 <see langword="null" />。</param>
         <summary>返回针对指定 <paramref name="scope" /> 参数的基础数据存储区的行数。</summary>
         <returns>针对指定 <paramref name="scope" /> 参数的基础数据存储区的行数。</returns>
@@ -258,8 +246,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> 为非 <see langword="null" />，并且修整后为空字符串 ("")。  
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> 为非 <see langword="null" />，并且修整后为空字符串 ("")。  
   
 \- 或 - 
 当值为非 <see langword="null" /> 时，<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" /> 的长度大于 256 个字符。  
@@ -317,8 +304,7 @@
   
 \- 或 - 
 承载应用程序的应用程序域运行在低于 <see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" /> 的信任级别上。</exception>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="configSettings" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="configSettings" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="LoadPersonalizationBlobs">
@@ -345,10 +331,8 @@
       </Parameters>
       <Docs>
         <param name="webPartManager">管理个性化设置数据的 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />。</param>
-        <param name="path">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围中要用作检索关键字的个性化设置信息的路径。</param>
-        <param name="userName">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中要用作检索关键字的个性化设置信息的用户名。</param>
+        <param name="path"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围中要用作检索关键字的个性化设置信息的路径。</param>
+        <param name="userName"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中要用作检索关键字的个性化设置信息的用户名。</param>
         <param name="sharedDataBlob">为 <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围返回的数据。</param>
         <param name="userDataBlob">为 <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围返回的数据。</param>
         <summary>根据指定参数从基础数据存储区加载个性化设置数据。</summary>
@@ -390,10 +374,8 @@
       </Parameters>
       <Docs>
         <param name="webPartManager">管理个性化设置数据的 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />。</param>
-        <param name="path">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围中要用作检索关键字的个性化设置信息的路径。</param>
-        <param name="userName">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中要用作检索关键字的个性化设置信息的用户名。</param>
+        <param name="path"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围中要用作检索关键字的个性化设置信息的路径。</param>
+        <param name="userName"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中要用作检索关键字的个性化设置信息的用户名。</param>
         <summary>从基础数据存储区中删除个性化设置数据。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -429,12 +411,9 @@
         <Parameter Name="usernames" Type="System.String[]" />
       </Parameters>
       <Docs>
-        <param name="scope">
-          <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 用于指示要查询的个性化信息。 此值不能为 <see langword="null" />。</param>
-        <param name="paths">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围中待删除的个性化设置信息的路径。</param>
-        <param name="usernames">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中待删除的个性化设置信息的用户名。</param>
+        <param name="scope"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 用于指示要查询的个性化信息。 此值不能为 <see langword="null" />。</param>
+        <param name="paths"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围中待删除的个性化设置信息的路径。</param>
+        <param name="usernames"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中待删除的个性化设置信息的用户名。</param>
         <summary>根据指定参数从基础数据存储区中删除个性化设置状态信息。</summary>
         <returns>删除的行数。</returns>
         <remarks>
@@ -473,8 +452,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="paths" /> 或 <paramref name="usernames" /> 参数为空数组。  
+        <exception cref="T:System.ArgumentException"><paramref name="paths" /> 或 <paramref name="usernames" /> 参数为空数组。  
   
 \- 或 - 
 包含在各自数组中的 <paramref name="paths" /> 和 <paramref name="usernames" /> 参数不满足有效性规则。</exception>
@@ -528,8 +506,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="path" /> 是一个空字符串。  
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> 是一个空字符串。  
   
 \- 或 - 
 该路径的长度大于 256 个字符。</exception>
@@ -559,8 +536,7 @@
       <Docs>
         <param name="webPartManager">管理个性化设置数据的 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />。</param>
         <param name="path">指示要保存的个性化设置信息的 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />。 此值不能为 <see langword="null" />。</param>
-        <param name="userName">
-          <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中要用作关键字的个性化设置信息的用户名。</param>
+        <param name="userName"><see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 范围中要用作关键字的个性化设置信息的用户名。</param>
         <param name="dataBlob">要保存的数据的字节数组。</param>
         <summary>将原始个性化设置数据保存到基础 Microsoft SQL Server 数据库中。</summary>
         <remarks>

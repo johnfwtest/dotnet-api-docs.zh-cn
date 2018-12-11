@@ -1,13 +1,5 @@
 <Type Name="StaticSiteMapProvider" FullName="System.Web.StaticSiteMapProvider">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="cc80a2722fd95994f13108dfe184849128de1b03" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52210343" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class StaticSiteMapProvider : System.Web.SiteMapProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f1abbaaf7209b538d32488a7a70e1b59220235fb" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53229436" /></Metadata><TypeSignature Language="C#" Value="public abstract class StaticSiteMapProvider : System.Web.SiteMapProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StaticSiteMapProvider extends System.Web.SiteMapProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.StaticSiteMapProvider" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class StaticSiteMapProvider&#xA;Inherits SiteMapProvider" />
@@ -93,9 +85,7 @@ NODEID URL            NAME       PARENTNODEID
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides">
-      <para>继承自<see cref="T:System.Web.StaticSiteMapProvider" />类，必须重写以下成员： <see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />。</para>
-    </block>
+    <block subset="none" type="overrides"><para>继承自<see cref="T:System.Web.StaticSiteMapProvider" />类，必须重写以下成员： <see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />。</para></block>
     <altmember cref="T:System.Web.SiteMapProvider" />
     <altmember cref="T:System.Web.XmlSiteMapProvider" />
     <altmember cref="T:System.Web.SiteMapNode" />
@@ -157,8 +147,7 @@ NODEID URL            NAME       PARENTNODEID
       </Parameters>
       <Docs>
         <param name="node">要添加到站点地图提供程序的 <see cref="T:System.Web.SiteMapNode" />。</param>
-        <param name="parentNode">
-          <see cref="T:System.Web.SiteMapNode" />，将在它的下面添加 <paramref name="node" />。</param>
+        <param name="parentNode"><see cref="T:System.Web.SiteMapNode" />，将在它的下面添加 <paramref name="node" />。</param>
         <summary>向站点地图提供程序维护的集合添加一个 <see cref="T:System.Web.SiteMapNode" />，并建立 <see cref="T:System.Web.SiteMapNode" /> 对象之间的父/子关系。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -172,13 +161,9 @@ NODEID URL            NAME       PARENTNODEID
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="node" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">
-          <see cref="P:System.Web.SiteMapNode.Url" /> 或 <see cref="P:System.Web.SiteMapNode.Key" /> 已经注册到 <see cref="T:System.Web.StaticSiteMapProvider" />。 站点地图节点必须由具有唯一 URL 或键的页构成。</exception>
-        <block subset="none" type="overrides">
-          <para>重写时<see cref="M:System.Web.StaticSiteMapProvider.AddNode(System.Web.SiteMapNode,System.Web.SiteMapNode)" />方法中，确保<see cref="P:System.Web.SiteMapNode.Key" />属性设置为唯一值时添加站点映射节点使用<see cref="Overload:System.Web.StaticSiteMapProvider.AddNode" />方法。</para>
-        </block>
+        <exception cref="T:System.ArgumentNullException"><paramref name="node" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.SiteMapNode.Url" /> 或 <see cref="P:System.Web.SiteMapNode.Key" /> 已经注册到 <see cref="T:System.Web.StaticSiteMapProvider" />。 站点地图节点必须由具有唯一 URL 或键的页构成。</exception>
+        <block subset="none" type="overrides"><para>重写时<see cref="M:System.Web.StaticSiteMapProvider.AddNode(System.Web.SiteMapNode,System.Web.SiteMapNode)" />方法中，确保<see cref="P:System.Web.SiteMapNode.Key" />属性设置为唯一值时添加站点映射节点使用<see cref="Overload:System.Web.StaticSiteMapProvider.AddNode" />方法。</para></block>
         <altmember cref="M:System.Web.StaticSiteMapProvider.RemoveNode(System.Web.SiteMapNode)" />
       </Docs>
     </Member>
@@ -221,11 +206,9 @@ NODEID URL            NAME       PARENTNODEID
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>重写时<see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />方法在派生类中，请确保规范化的 Url<see cref="T:System.Web.SiteMapNode" />对象添加到你的站点地图提供程序，以便<see cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNode(System.String)" />方法可以检索站点地图节点，而不管是否站点地图的 URL节点被提供作为应用程序相对路径或绝对虚拟路径。 使用的站点映射提供程序实施者<see cref="Overload:System.Web.StaticSiteMapProvider.AddNode" />方法应存储在存储之前规范化的任何 Url<see cref="T:System.Web.SiteMapNode" />代表站点地图提供程序的内部哈希表中的对象。  
+        <block subset="none" type="overrides"><para>重写时<see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />方法在派生类中，请确保规范化的 Url<see cref="T:System.Web.SiteMapNode" />对象添加到你的站点地图提供程序，以便<see cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNode(System.String)" />方法可以检索站点地图节点，而不管是否站点地图的 URL节点被提供作为应用程序相对路径或绝对虚拟路径。 使用的站点映射提供程序实施者<see cref="Overload:System.Web.StaticSiteMapProvider.AddNode" />方法应存储在存储之前规范化的任何 Url<see cref="T:System.Web.SiteMapNode" />代表站点地图提供程序的内部哈希表中的对象。  
   
-安全修整行为已被纳入<see cref="T:System.Web.SiteMapProvider" />和<see cref="T:System.Web.StaticSiteMapProvider" />类实现。 但是，对于派生类中对函数的安全修整，必须设置<see cref="P:System.Web.SiteMapNode.Roles" />属性的任何<see cref="T:System.Web.SiteMapNode" />重写时，生成站点地图提供程序时创建的对象<see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />方法。</para>
-        </block>
+安全修整行为已被纳入<see cref="T:System.Web.SiteMapProvider" />和<see cref="T:System.Web.StaticSiteMapProvider" />类实现。 但是，对于派生类中对函数的安全修整，必须设置<see cref="P:System.Web.SiteMapNode.Roles" />属性的任何<see cref="T:System.Web.SiteMapNode" />重写时，生成站点地图提供程序时创建的对象<see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />方法。</para></block>
         <altmember cref="P:System.Web.SiteMapProvider.RootNode" />
         <altmember cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
         <altmember cref="M:System.Web.StaticSiteMapProvider.Clear" />
@@ -256,7 +239,7 @@ NODEID URL            NAME       PARENTNODEID
 ## Remarks  
  类派生自<xref:System.Web.StaticSiteMapProvider>类可以重写<xref:System.Web.StaticSiteMapProvider.Clear%2A>方法来执行其他清理操作，具体取决于何种状态的派生的类维护。  
   
- <xref:System.Web.StaticSiteMapProvider.Clear%2A>方法不重置状态初始化期间<xref:System.Configuration.Provider.ProviderBase.Initialize%2A>方法，它将重置期间初始化的唯一状态<xref:System.Web.StaticSiteMapProvider.BuildSiteMap%2A>方法。  
+ <xref:System.Web.StaticSiteMapProvider.Clear%2A>方法不重置状态初始化期间<xref:System.Configuration.Provider.ProviderBase.Initialize%2A>方法-它将重置期间初始化的唯一状态<xref:System.Web.StaticSiteMapProvider.BuildSiteMap%2A>方法。  
   
    
   
@@ -308,13 +291,10 @@ NODEID URL            NAME       PARENTNODEID
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="rawURL" /> 为 <see langword="null" />。</exception>
-        <block subset="none" type="overrides">
-          <para>重写时<see cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNode(System.String)" />方法在派生类中，请确保规范化的 Url<see cref="T:System.Web.SiteMapNode" />对象添加到你的站点地图提供程序，以便<see cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNode(System.String)" />方法可以检索站点地图节点，而不管是否站点地图的 URL节点被提供为绝对虚拟路径或应用程序相对路径。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="rawURL" /> 为 <see langword="null" />。</exception>
+        <block subset="none" type="overrides"><para>重写时<see cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNode(System.String)" />方法在派生类中，请确保规范化的 Url<see cref="T:System.Web.SiteMapNode" />对象添加到你的站点地图提供程序，以便<see cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNode(System.String)" />方法可以检索站点地图节点，而不管是否站点地图的 URL节点被提供为绝对虚拟路径或应用程序相对路径。  
   
-安全修整行为已被纳入<see cref="T:System.Web.SiteMapProvider" />和<see cref="T:System.Web.StaticSiteMapProvider" />类实现。 但是，对于派生类中对函数的安全修整，必须设置<see cref="P:System.Web.SiteMapNode.Roles" />属性的任何<see cref="T:System.Web.SiteMapNode" />重写时，生成站点地图提供程序时创建的对象<see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />方法。</para>
-        </block>
+安全修整行为已被纳入<see cref="T:System.Web.SiteMapProvider" />和<see cref="T:System.Web.StaticSiteMapProvider" />类实现。 但是，对于派生类中对函数的安全修整，必须设置<see cref="P:System.Web.SiteMapNode.Roles" />属性的任何<see cref="T:System.Web.SiteMapNode" />重写时，生成站点地图提供程序时创建的对象<see cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />方法。</para></block>
         <altmember cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />
         <altmember cref="M:System.Web.StaticSiteMapProvider.FindSiteMapNodeFromKey(System.String)" />
       </Docs>
@@ -392,8 +372,7 @@ NODEID URL            NAME       PARENTNODEID
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="node" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="node" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.Web.SiteMapProvider.IsAccessibleToUser(System.Web.HttpContext,System.Web.SiteMapNode)" />
       </Docs>
     </Member>
@@ -432,8 +411,7 @@ NODEID URL            NAME       PARENTNODEID
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="node" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="node" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.Web.SiteMapProvider.IsAccessibleToUser(System.Web.HttpContext,System.Web.SiteMapNode)" />
       </Docs>
     </Member>
@@ -460,8 +438,7 @@ NODEID URL            NAME       PARENTNODEID
         <param name="node">要从站点地图节点集合中移除的站点地图节点。</param>
         <summary>从站点地图提供程序跟踪的所有站点地图节点集合中移除指定的 <see cref="T:System.Web.SiteMapNode" /> 对象。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="node" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="node" /> 为 <see langword="null" />。</exception>
         <altmember cref="Overload:System.Web.StaticSiteMapProvider.AddNode" />
       </Docs>
     </Member>

@@ -1,13 +1,5 @@
 <Type Name="ContextBindingElement" FullName="System.ServiceModel.Channels.ContextBindingElement">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="404c1cf4496644ae490335a5501509c07be2b848" />
-    <Meta Name="ms.sourcegitcommit" Value="6f3d3181d9ca22a1ab46a7f61f3ee152f2b844ea" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="10/27/2018" />
-    <Meta Name="ms.locfileid" Value="50178531" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class ContextBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.IContextBindingElement, System.ServiceModel.Description.IPolicyExportExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ebfadf8f307213a1e6ce41029e84ab0e40a8dba2" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53224067" /></Metadata><TypeSignature Language="C#" Value="public class ContextBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.IContextBindingElement, System.ServiceModel.Description.IPolicyExportExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContextBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Channels.IContextBindingElement, class System.ServiceModel.Description.IPolicyExportExtension" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ContextBindingElement" />
   <TypeSignature Language="VB.NET" Value="Public Class ContextBindingElement&#xA;Inherits BindingElement&#xA;Implements IContextBindingElement, IPolicyExportExtension" />
@@ -43,12 +35,12 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.ServiceModel.Channels.ContextBindingElement> 允许用户向服务的绑定中添加元素以管理其上下文交换协议。 <xref:System.ServiceModel.Channels.ContextBindingElement> 通常堆叠在可靠性、安全性和传输绑定元素上。 <xref:System.ServiceModel.Channels.ContextBindingElement> 不需要任何配置选项并且可以为 <xref:System.ServiceModel.Channels.IRequestChannel>、<xref:System.ServiceModel.Channels.IRequestSessionChannel> 和 <xref:System.ServiceModel.Channels.IDuplexSessionChannel> 创建通道工厂。 它还可以为 <xref:System.ServiceModel.Channels.IReplyChannel>、<xref:System.ServiceModel.Channels.IReplySessionChannel> 和 <xref:System.ServiceModel.Channels.IDuplexSessionChannel> 创建通道侦听器。 上下文通道不更改通道接口，基础通道堆栈必须支持请求的通道形状和会话功能。  
+ <xref:System.ServiceModel.Channels.ContextBindingElement> 允许用户向服务的绑定中添加元素以管理其上下文交换协议。 <xref:System.ServiceModel.Channels.ContextBindingElement> 通常堆叠在可靠性、安全性和传输绑定元素上。 <xref:System.ServiceModel.Channels.ContextBindingElement> 不需要任何配置选项并且可以为 <xref:System.ServiceModel.Channels.IRequestChannel>、<xref:System.ServiceModel.Channels.IRequestSessionChannel> 和 <xref:System.ServiceModel.Channels.IDuplexSessionChannel> 创建通道工厂。 它还可以为 <xref:System.ServiceModel.Channels.IReplyChannel>、<xref:System.ServiceModel.Channels.IReplySessionChannel> 和 <xref:System.ServiceModel.Channels.IDuplexSessionChannel> 创建通道侦听器。 上下文通道不会更改通道接口-基础通道堆栈必须支持请求的通道形状和会话功能。  
   
  使用通道侦听器和工厂可以构造用于处理传入和传出消息的通道堆栈部分。  
   
 > [!NOTE]
->  如果创建基于会话的绑定<xref:System.ServiceModel.Channels.ContextBindingElement>和指定的协定一起使用<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A>  =  <xref:System.ServiceModel.SessionMode.NotAllowed>、<xref:System.InvalidOperationException>具有以下文本创建通道时引发:"通道上下文管理无法启用或禁用后打开通道。" 必须将 <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> 设置为 <xref:System.ServiceModel.SessionMode.Allowed> 或 <xref:System.ServiceModel.SessionMode.Required>，或不使用基于会话的通道。  
+>  如果创建基于会话的绑定<xref:System.ServiceModel.Channels.ContextBindingElement>和指定的协定一起使用<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A>  =  <xref:System.ServiceModel.SessionMode.NotAllowed>、<xref:System.InvalidOperationException>具有以下文本创建通道时引发："通道上下文管理无法启用或禁用后打开通道。" 必须将 <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> 设置为 <xref:System.ServiceModel.SessionMode.Allowed> 或 <xref:System.ServiceModel.SessionMode.Required>，或不使用基于会话的通道。  
   
  在创建自定义绑定时，建议你在添加任何可靠性和安全性绑定元素（如果有）之前，将 <xref:System.ServiceModel.Channels.ContextBindingElement> 添加到自定义绑定的 <xref:System.ServiceModel.Channels.BindingElementCollection>。 否则，服务可能会引发 <xref:System.ServiceModel.ProtocolException> 并显示以下消息：  
   
@@ -134,8 +126,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="protectionLevel" /> 无效。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="protectionLevel" /> 无效。</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -167,8 +158,7 @@
         <param name="contextExchangeMechanism">指定用于交换绑定元素上下文的机制的 <see cref="T:System.ServiceModel.Channels.ContextExchangeMechanism" />。</param>
         <summary>使用指定的保护级别和交换机制初始化 <see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="protectionLevel" /> 或 <paramref name="contextExchangeMechanism" /> 无效。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="protectionLevel" /> 或 <paramref name="contextExchangeMechanism" /> 无效。</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -263,8 +253,7 @@
         <summary>在客户端上生成通道工厂堆栈，该通道工厂堆栈可为指定上下文创建指定类型的通道。</summary>
         <returns>指定上下文的 <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> 类型的 <paramref name="TChannel" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="context" /> 设置为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> 设置为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
@@ -303,8 +292,7 @@
         <summary>在客户端生成通道侦听器堆栈，该通道侦听器堆栈接受针对指定上下文的具有指定类型的通道。</summary>
         <returns>指定上下文的 <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 类型的 <paramref name="TChannel" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="context" /> 设置为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> 设置为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
@@ -548,8 +536,7 @@
         <param name="context">一个 <see cref="T:System.ServiceModel.Description.WsdlContractConversionContext" /> 对象，该对象提供从导出的 WSDL 元素到协定说明的映射。</param>
         <summary>将自定义策略断言写入到绑定元素的上下文中。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="context" /> 为 <see langword="null" /> 或绑定中的策略断言为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> 为 <see langword="null" /> 或绑定中的策略断言为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetProperty&lt;T&gt;">
@@ -587,8 +574,7 @@
         <summary>从通道堆栈的适当层返回具有指定上下文的类型化对象。</summary>
         <returns>所请求的类型化对象 <paramref name="T" />（如果存在）。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="context" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="ProtectionLevel">

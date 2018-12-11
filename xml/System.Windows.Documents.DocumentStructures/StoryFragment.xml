@@ -1,13 +1,5 @@
 <Type Name="StoryFragment" FullName="System.Windows.Documents.DocumentStructures.StoryFragment">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="27ef05042a61b72cebba755906ab6d4f36092cbf" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51865069" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class StoryFragment : System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;, System.Windows.Markup.IAddChild" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9d2789ee4889d16f6a73855cc55a8bdef544fb08" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53228916" /></Metadata><TypeSignature Language="C#" Value="public class StoryFragment : System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;, System.Windows.Markup.IAddChild" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StoryFragment extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Documents.DocumentStructures.BlockElement&gt;, class System.Collections.IEnumerable, class System.Windows.Markup.IAddChild" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Documents.DocumentStructures.StoryFragment" />
   <TypeSignature Language="VB.NET" Value="Public Class StoryFragment&#xA;Implements IAddChild, IEnumerable(Of BlockElement)" />
@@ -43,13 +35,13 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在 XPS 文章[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]文档是大致类似于报纸或杂志中的文章。 它是一段文本和图形的内容，通常在上一个主题，在单个[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]文档。 通常情况下，该视图所跨越多个页，但也可以是短于边栏页面 — 带边框的文章-杂志中。 一篇文章也可以继续在第 4 页首页新闻故事等不连续。 因此，给定的页面可以具有多个情景和多个情景的部分。 页眉或页脚也是文章的一种特殊，它们完全包含在单个页面上。  
+ 在 XPS 文章[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]文档是大致类似于报纸或杂志中的文章。 它是一段文本和图形的内容，通常在上一个主题，在单个[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]文档。 通常情况下，该视图所跨越多个页，但可能会少于所示侧栏的装箱情景的杂志中的页面。 一篇文章也可以继续在第 4 页首页新闻故事等不连续。 因此，给定的页面可以具有多个情景和多个情景的部分。 页眉或页脚也是文章的一种特殊，它们完全包含在单个页面上。  
   
  一个<xref:System.Windows.Documents.DocumentStructures.StoryFragment>表示所有或一篇文章的一部分。 它不能跨多个页上，但可以占用整个页面，或与其他片段中共享一个页面。 如果在多个页上有一个故事，它在每个页上的每个部分是一个单独的段落。 尽管情景可以具有不连续的片段，但没有片段本身可以是不连续。  
   
  仅<xref:System.Windows.Documents.DocumentStructures.StoryFragments>元素可以是父级的<xref:System.Windows.Documents.DocumentStructures.StoryFragment>。  位置<xref:System.Windows.Documents.DocumentStructures.StoryBreak>中的元素<xref:System.Windows.Documents.DocumentStructures.StoryFragment>指示文章包含多个片段中，如果其他片段前加上或位于当前段落之后。  
   
- 时<xref:System.Windows.Documents.DocumentStructures.StoryFragment>中间某些结构元素的结束; say `<TableRowGroupStructure>`，然后[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]生成文档的应用程序必须插入元素的相应的结束标记 (在这种情况下`</TableRowGroupStructure>`) 之前`</StoryFragment>`标记，即使尽管结构正在继续执行在更高版本的片段。 (这是为了确保中的元素树<xref:System.Windows.Documents.DocumentStructures.StoryFragment>是有效的 XML。)继续该情景的片段必须以中断结构的开始标记开头。 中断结构的整个树必须处理相同的方式 （有一个例外，如下所述）： 必须为每个不匹配的开始标记的中断点上方添加结束标记。  
+ 时<xref:System.Windows.Documents.DocumentStructures.StoryFragment>中间某些结构元素的结束; say `<TableRowGroupStructure>`，然后[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]生成文档的应用程序必须插入元素的相应的结束标记 (在这种情况下`</TableRowGroupStructure>`) 之前`</StoryFragment>`标记，即使尽管结构正在继续执行在更高版本的片段。 (这是为了确保中的元素树<xref:System.Windows.Documents.DocumentStructures.StoryFragment>是有效的 XML。)继续该情景的片段必须以中断结构的开始标记开头。 中断结构的整个树必须处理相同的方式 （有一个例外，如下所述）：必须为每个不匹配的开始标记的中断点上方添加结束标记。  
   
  异常时的情景中断后立即出现适用`</TableCellStructure>`标记，然后生成应用程序必须插入空表单元格结构 (`<TableCellStructure></TableCellStructure>`) 将继续故事的碎片中的相应点处。 这是必需的因此，需要合并对给定情景的所有片段的消费应用程序可以使用简单的算法来执行此操作。  
   
@@ -157,7 +149,7 @@
   
  在上面的示例中，如果有尚未的空单元格添加生成的应用程序，然后合并的片段将生成的表，其中第一行必须首先包含而不是原始"SomeContent"和"MoreContent"引用的只有一个单元格每个包含的单个引用包含两个单元格的行  
   
- 当合并整篇文章时，应重复同一文章的一部分的每个后续片段的算法。 属于一篇文章的片段索引中`<Story>`元素。 请参阅部分 9.1.15[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]可以获取在规范[XPS： 规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx)。 将具有对给定情景的最后一个片段<xref:System.Windows.Documents.DocumentStructures.StoryBreak>元素作为其最后一个子级。  
+ 当合并整篇文章时，应重复同一文章的一部分的每个后续片段的算法。 属于一篇文章的片段索引中`<Story>`元素。 请参阅部分 9.1.15[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]规范可以获取在[XPS:规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx)。 将具有对给定情景的最后一个片段<xref:System.Windows.Documents.DocumentStructures.StoryBreak>元素作为其最后一个子级。  
   
    
   
@@ -246,7 +238,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 有关详细信息`FragmentName`的属性`</StoryFragment>`的一部分[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]文档，请参阅的第 9 章[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]规范可以获取在[XPS： 规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx).  
+ 有关详细信息`FragmentName`的属性`</StoryFragment>`的一部分[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]文档，请参阅的第 9 章[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]规范可以获取在[XPS:规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx)。  
   
  ]]></format>
         </remarks>
@@ -287,7 +279,7 @@
 ## Remarks  
  可能的值包括"页眉、"页脚"和"内容。  
   
- 有关详细信息`FragmentType`的属性`</StoryFragment>`的一部分[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]文档，请参阅的第 9 章[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]规范可以获取在[XPS： 规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx).  
+ 有关详细信息`FragmentType`的属性`</StoryFragment>`的一部分[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]文档，请参阅的第 9 章[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]规范可以获取在[XPS:规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx)。  
   
    
   
@@ -332,7 +324,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对给定情景的所有片段必须都具有相同的值为此属性。 它必须匹配`StoryName`属性的`<Story>`元素。 请参阅部分 9.1.15[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]可以获取在规范[XPS： 规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx)。  
+ 对给定情景的所有片段必须都具有相同的值为此属性。 它必须匹配`StoryName`属性的`<Story>`元素。 请参阅部分 9.1.15[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]规范可以获取在[XPS:规范和许可证下载](https://www.microsoft.com/whdc/xps/downloads.mspx)。  
   
  如果此属性可以为未指定<xref:System.Windows.Documents.DocumentStructures.StoryFragment.FragmentType%2A>是页眉或页脚。  
   
@@ -432,8 +424,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="value" /> 不是可作为此类的子级的类型之一。 请参阅“备注”。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> 不是可作为此类的子级的类型之一。 请参阅“备注”。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Windows.Markup.IAddChild.AddText">

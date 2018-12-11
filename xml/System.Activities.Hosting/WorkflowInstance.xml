@@ -1,13 +1,5 @@
 <Type Name="WorkflowInstance" FullName="System.Activities.Hosting.WorkflowInstance">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="967cd35d8c2d0a362f62a0e182135885121d88ae" />
-    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
-    <Meta Name="ms.locfileid" Value="52602472" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class WorkflowInstance" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5da74134d1504a1f1f2b0e2b06202905984fcf07" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53227915" /></Metadata><TypeSignature Language="C#" Value="public abstract class WorkflowInstance" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract WorkflowInstance extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.WorkflowInstance" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WorkflowInstance" />
@@ -22,8 +14,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-      <see cref="T:System.Activities.Hosting.WorkflowInstance" /> 是一种基于实例的轻量运行时，用于执行工作流程序。 可以构造它来创建新工作流实例，或依据现有实例状态来创建它。 <see cref="T:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl" />公开的 API 是最小运行时控件集，可依据这些控件来实现更高级别的操作。 此 API 集表示运行时的整个范围的功能。 <see cref="T:System.Activities.Hosting.WorkflowInstance" /> 是一个抽象类，依赖于主机对其抽象方法的实现，以便提供同步、保留、跟踪和扩展等主机功能。</summary>
+    <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> 是一种基于实例的轻量运行时，用于执行工作流程序。 可以构造它来创建新工作流实例，或依据现有实例状态来创建它。 <see cref="T:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl" />公开的 API 是最小运行时控件集，可依据这些控件来实现更高级别的操作。 此 API 集表示运行时的整个范围的功能。 <see cref="T:System.Activities.Hosting.WorkflowInstance" /> 是一个抽象类，依赖于主机对其抽象方法的实现，以便提供同步、保留、跟踪和扩展等主机功能。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -42,9 +33,9 @@
   
  当<xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.RequestPause%2A> 处于“正在运行状态”时，只能调用 <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl> 属性返回的 <xref:System.Activities.Hosting.WorkflowInstance.Controller%2A> 实例的 <xref:System.Activities.Hosting.WorkflowInstance> 方法。 调用所有其他方法都会引发 <xref:System.InvalidOperationException>。如果存在有关 <xref:System.Activities.Hosting.WorkflowInstance> 如何从一种状态转换为另一种状态的规则，则可按以下方式定义“正在运行”和“已暂停”的公共概念：  
   
--   正在运行 – 介于调用 <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A> 和下一个 WorkflowInstance.OnNotify* 之间的状态。  
+-   正在运行的调用之间的状态<xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>和下一个 workflowinstance.onnotify *。  
   
--   已暂停 – 介于最后一个 WorkflowInstance.OnNotify* 和下一个 <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A> 调用之间的状态。  
+-   暂停的最后一个 workflowinstance.onnotify * 和下一步调用之间状态<xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>。  
   
  ]]></format>
     </remarks>
@@ -170,8 +161,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <see cref="T:System.Activities.Hosting.WorkflowInstance" /> 的定义标识。</summary>
-        <value>
-          <see cref="T:System.Activities.Hosting.WorkflowInstance" /> 的定义标识。</value>
+        <value><see cref="T:System.Activities.Hosting.WorkflowInstance" /> 的定义标识。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -775,8 +765,7 @@
       <Docs>
         <param name="exception">未经处理的异常。</param>
         <param name="source">引发异常的活动。</param>
-        <param name="sourceInstanceId">
-          <see cref="T:System.Activities.ActivityInstance" /> 的唯一标识符，表示引发异常的活动。</param>
+        <param name="sourceInstanceId"><see cref="T:System.Activities.ActivityInstance" /> 的唯一标识符，表示引发异常的活动。</param>
         <summary>由工作流运行时调用，用于通知宿主工作流实例中发生了未经处理的异常。</summary>
         <remarks>To be added.</remarks>
       </Docs>

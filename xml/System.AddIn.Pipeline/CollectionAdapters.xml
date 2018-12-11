@@ -1,13 +1,5 @@
 <Type Name="CollectionAdapters" FullName="System.AddIn.Pipeline.CollectionAdapters">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="34de4fd4b3dc174a4fb57efb7ce25cd03607c8b1" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51923062" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public static class CollectionAdapters" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="88a2d8db969ee1718deb4b565c2032a127e6e553" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53225549" /></Metadata><TypeSignature Language="C#" Value="public static class CollectionAdapters" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CollectionAdapters extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.AddIn.Pipeline.CollectionAdapters" />
   <TypeSignature Language="VB.NET" Value="Public Class CollectionAdapters" />
@@ -60,7 +52,7 @@
         <Parameter Name="collection" Type="System.AddIn.Contract.IListContract&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="T">列表中所含对象的类型。 <c>T</c>必须可序列化。</typeparam>
+        <typeparam name="T">列表中所含对象的类型。 <paramref name="T" /> 必须可序列化。</typeparam>
         <param name="collection">管线另一端中的集合。</param>
         <summary>将指定的 <see cref="T:System.AddIn.Contract.IListContract`1" /> 集合转换为 <see cref="T:System.Collections.Generic.IList`1" /> 集合。</summary>
         <returns>已转换的集合。</returns>
@@ -75,7 +67,7 @@
    
   
 ## Examples  
- 下面的示例所述实现主机端适配器管道段[演练： 将集合传递之间主机和外接程序](https://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)。此示例改编自定义`ProcessBooks`方法通过采用<xref:System.AddIn.Contract.IListContract%601>集合传递从外接程序并将其转换为<xref:System.Collections.Generic.IList%601>集合，然后可以使用主机应用程序。  
+ 下面的示例所述实现主机端适配器管道段[演练：主机和外接程序之间传递集合](https://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)。此示例改编自定义`ProcessBooks`方法通过采用<xref:System.AddIn.Contract.IListContract%601>集合传递从外接程序并将其转换为<xref:System.Collections.Generic.IList%601>集合，然后可以使用主机应用程序。  
   
  [!code-csharp[AddInCollectionPipelineAddInSideAdapter#3](~/samples/snippets/csharp/VS_Snippets_CLR/AddInCollectionPipelineAddInSideAdapter/cs/LibraryManagerViewToContractAddInAdapter.cs#3)]
  [!code-vb[AddInCollectionPipelineAddInSideAdapter#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInCollectionPipelineAddInSideAdapter/vb/LibraryManagerViewToContractAddInAdapter.vb#3)]  
@@ -110,7 +102,7 @@
         <Parameter Name="viewContractAdapter" Type="System.Converter&lt;TView,TContract&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TContract">定义用于传递类型的对象的协定的类型<c>TView</c>跨隔离边界。</typeparam>
+        <typeparam name="TContract">定义用于跨隔离边界传递 <paramref name="TView" /> 类型对象的协定的类型。</typeparam>
         <typeparam name="TView">定义列表中各个对象的视图的类型。</typeparam>
         <param name="collection">传递到管线另一端的集合。</param>
         <param name="contractViewAdapter">一个将数据从协定中定义的类型改编为视图中的预期类型的转换器。</param>
@@ -150,7 +142,7 @@
         <Parameter Name="collection" Type="System.Collections.Generic.IList&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="T">列表中所含对象的类型。 <c>T</c>必须可序列化。</typeparam>
+        <typeparam name="T">列表中所含对象的类型。 <paramref name="T" /> 必须可序列化。</typeparam>
         <param name="collection">要转换的集合。</param>
         <summary>将指定的 <see cref="T:System.Collections.Generic.IList`1" /> 集合转换为 <see cref="T:System.AddIn.Contract.IListContract`1" /> 集合。</summary>
         <returns>已转换的集合。</returns>
@@ -201,7 +193,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TView">定义列表中各个对象的视图的类型。</typeparam>
-        <typeparam name="TContract">定义用于传递类型的对象的协定的类型<c>TView</c>跨隔离边界。</typeparam>
+        <typeparam name="TContract">定义用于跨隔离边界传递 <paramref name="TView" /> 类型对象的协定的类型。</typeparam>
         <param name="collection">要转换的集合。</param>
         <param name="viewContractAdapter">一个将数据从视图中定义的类型改编为协定预期的类型的转换器。</param>
         <param name="contractViewAdapter">一个将数据从协定中定义的类型改编为视图中的预期类型的转换器。</param>

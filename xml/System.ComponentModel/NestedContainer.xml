@@ -1,13 +1,5 @@
 <Type Name="NestedContainer" FullName="System.ComponentModel.NestedContainer">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="7d0cc943bb3de5a6ff8e34ccdbd110d4f0798231" />
-    <Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/29/2018" />
-    <Meta Name="ms.locfileid" Value="52597103" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public class NestedContainer : System.ComponentModel.Container, IDisposable, System.ComponentModel.INestedContainer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="46ae68c7474ee27942a592552a60babe8292d753" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53231490" /></Metadata><TypeSignature Language="C#" Value="public class NestedContainer : System.ComponentModel.Container, IDisposable, System.ComponentModel.INestedContainer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NestedContainer extends System.ComponentModel.Container implements class System.ComponentModel.IContainer, class System.ComponentModel.INestedContainer, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.NestedContainer" />
   <TypeSignature Language="VB.NET" Value="Public Class NestedContainer&#xA;Inherits Container&#xA;Implements IDisposable, INestedContainer" />
@@ -58,7 +50,7 @@
   
 -   所属组件将被释放，容器也已被释放。  
   
- 此外，设计器将以不同方式处理嵌套的容器。 设计器宿主才容器感兴趣 — 与主机相关联。 因此，组件添加和删除事件不会引发一个组件添加到或从嵌套容器中移除时。 但是，因为服务流动到嵌套的容器时，嵌套的容器中的一个组件发生更改时引发组件更改事件。  
+ 此外，设计器将以不同方式处理嵌套的容器。 设计器宿主才容器-与主机相关联的一个感兴趣。 因此，组件添加和删除事件不会引发一个组件添加到或从嵌套容器中移除时。 但是，因为服务流动到嵌套的容器时，嵌套的容器中的一个组件发生更改时引发组件更改事件。  
   
  这一差别在事件跟踪还会影响撤消功能，与序列化密切相关。 标准的撤消引擎使用<xref:System.ComponentModel.Design.IReferenceService>来跟踪对组件所做的更改。 如果撤消引擎无法识别组件通过引用服务的名称，该引擎将忽略该组件的任何更改。 仅当它们公开为其所有者中具有相同名称的公共只读属性，此服务自动识别对包含组件的更改。 否则，开发人员必须将传递到所有者组件更改事件。 例如，如果嵌套组件的`Text`属性重新呈现上为其所属组件`Address`属性，当`Text`属性发生更改时，必须相应以编程方式进行属性更改`Address`属性，否则所做的更改将不会跟踪通过撤消。  
   
@@ -107,8 +99,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="owner" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="owner" /> 为 <see langword="null" />。</exception>
         <altmember cref="Overload:System.ComponentModel.NestedContainer.Dispose" />
       </Docs>
     </Member>
@@ -155,8 +146,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="component" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="component" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.ComponentModel.Container.CreateSite(System.ComponentModel.IComponent,System.String)" />
       </Docs>
     </Member>
@@ -202,12 +192,10 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>
+        <block subset="none" type="overrides"><para>
             <see langword="Dispose" /> 可以由其他对象多次调用。 重写时<see langword="Dispose(Boolean)" />小心不要引用已经释放的早期调用中的对象<see langword="Dispose" />。 有关如何实现详细信息<see langword="Dispose(Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
-有关详细信息<see langword="Dispose" />并<see cref="M:System.Object.Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[重写 Finalize 方法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100))。</para>
-        </block>
+有关详细信息<see langword="Dispose" />并<see cref="M:System.Object.Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[重写 Finalize 方法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100))。</para></block>
         <altmember cref="M:System.ComponentModel.NestedContainer.#ctor(System.ComponentModel.IComponent)" />
       </Docs>
     </Member>
