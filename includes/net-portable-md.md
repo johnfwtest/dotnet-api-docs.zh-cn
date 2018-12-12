@@ -1,1 +1,1 @@
-<span data-ttu-id="e3f6e-101">可移植类库</span><span class="sxs-lookup"><span data-stu-id="e3f6e-101">Portable Class Library</span></span>
+<span data-ttu-id="4128b-101">可移植类库</span><span class="sxs-lookup"><span data-stu-id="4128b-101">Portable Class Library</span></span>

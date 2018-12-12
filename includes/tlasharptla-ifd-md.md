@@ -1,1 +1,1 @@
-<span data-ttu-id="c7df7-101">图像文件目录 (IFD)</span><span class="sxs-lookup"><span data-stu-id="c7df7-101">image file directory (IFD)</span></span>
+<span data-ttu-id="e0d7b-101">图像文件目录 (IFD)</span><span class="sxs-lookup"><span data-stu-id="e0d7b-101">image file directory (IFD)</span></span>

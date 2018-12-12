@@ -1,1 +1,1 @@
-<span data-ttu-id="f2bcb-101">多文档界面 (MDI)</span><span class="sxs-lookup"><span data-stu-id="f2bcb-101">multiple-document interface (MDI)</span></span>
+<span data-ttu-id="e87e5-101">多文档界面 (MDI)</span><span class="sxs-lookup"><span data-stu-id="e87e5-101">multiple-document interface (MDI)</span></span>

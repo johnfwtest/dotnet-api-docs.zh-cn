@@ -1,1 +1,1 @@
-<span data-ttu-id="6a7fd-101">输入法编辑器 (IME)</span><span class="sxs-lookup"><span data-stu-id="6a7fd-101">Input Method Editor (IME)</span></span>
+<span data-ttu-id="7149a-101">输入法编辑器 (IME)</span><span class="sxs-lookup"><span data-stu-id="7149a-101">Input Method Editor (IME)</span></span>

@@ -1,1 +1,1 @@
-<span data-ttu-id="76720-101">二进制 XAML (BAML)</span><span class="sxs-lookup"><span data-stu-id="76720-101">binary XAML (BAML)</span></span>
+<span data-ttu-id="5789d-101">二进制 XAML (BAML)</span><span class="sxs-lookup"><span data-stu-id="5789d-101">binary XAML (BAML)</span></span>
