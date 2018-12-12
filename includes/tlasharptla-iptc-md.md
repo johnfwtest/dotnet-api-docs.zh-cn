@@ -1,1 +1,1 @@
-<span data-ttu-id="7b595-101">国际新闻通信委员会 (IPTC)</span><span class="sxs-lookup"><span data-stu-id="7b595-101">International Press Telecommunications Council (IPTC)</span></span>
+<span data-ttu-id="bdde9-101">国际新闻通信委员会 (IPTC)</span><span class="sxs-lookup"><span data-stu-id="bdde9-101">International Press Telecommunications Council (IPTC)</span></span>
