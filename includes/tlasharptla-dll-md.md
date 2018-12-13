@@ -1,1 +1,1 @@
-<span data-ttu-id="96fd9-101">动态链接库 (DLL)</span><span class="sxs-lookup"><span data-stu-id="96fd9-101">dynamic-link library (DLL)</span></span>
+<span data-ttu-id="acd1e-101">动态链接库 (DLL)</span><span class="sxs-lookup"><span data-stu-id="acd1e-101">dynamic-link library (DLL)</span></span>
