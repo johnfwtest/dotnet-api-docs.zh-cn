@@ -1,5 +1,5 @@
 <Type Name="MessageFilterTable&lt;TFilterData&gt;" FullName="System.ServiceModel.Dispatcher.MessageFilterTable&lt;TFilterData&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9081731a47fa99e232ccf8ba8bb7aa005324d9a0" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52242495" /></Metadata><TypeSignature Language="C#" Value="public class MessageFilterTable&lt;TFilterData&gt; : System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="640e3955dad160d906f28098f585f6a1bead866b" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53294457" /></Metadata><TypeSignature Language="C#" Value="public class MessageFilterTable&lt;TFilterData&gt; : System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageFilterTable`1&lt;TFilterData&gt; extends System.Object implements class System.Collections.Generic.ICollection`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.Generic.IDictionary`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.IEnumerable, class System.ServiceModel.Dispatcher.IMessageFilterTable`1&lt;!TFilterData&gt;" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" />
   <TypeSignature Language="VB.NET" Value="Public Class MessageFilterTable(Of TFilterData)&#xA;Implements ICollection(Of KeyValuePair(Of MessageFilter, TFilterData)), IDictionary(Of MessageFilter, TFilterData), IEnumerable(Of KeyValuePair(Of MessageFilter, TFilterData)), IMessageFilterTable(Of TFilterData)" />
@@ -621,8 +621,8 @@
       </Parameters>
       <Docs>
         <param name="buffer">要测试的 <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
-        <param name="filter"><see langword="out" /> 参数，该参数存储 <c>messageBuffer</c> 符合的筛选器。</param>
-        <param name="result"><see langword="out" /> 参数，该参数存储 <c>messageBuffer</c> 符合的筛选器。</param>
+        <param name="filter"><see langword="out" /> 参数，该参数存储 <paramref name="buffer" /> 符合的筛选器。</param>
+        <param name="result"><see langword="out" /> 参数，该参数存储 <paramref name="buffer" /> 符合的筛选器。</param>
         <summary>返回一个值，该值指示指定的消息是否正好满足表中的一个筛选器的匹配标准，然后在 <see langword="out" /> 参数中返回该筛选器。</summary>
         <returns>如果消息正好满足表中一个筛选器的匹配条件，则为 <see langword="true" />；如果不满足任何筛选器，则为 <see langword="false" />。</returns>
         <remarks>
@@ -837,7 +837,7 @@
       </Parameters>
       <Docs>
         <param name="buffer">要测试的 <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
-        <param name="data">存储与 <c>messageBuffer</c> 匹配的 <c>FilterData</c> 的 <see langword="out" /> 参数。</param>
+        <param name="data"><see langword="out" /> 参数，存储与 <paramref name="buffer" /> 匹配的 <c>FilterData</c>。</param>
         <summary>返回一个值，该值指示指定的缓冲消息是否正好满足表中的一个筛选器的匹配标准，然后将匹配筛选器数据添加到集合。</summary>
         <returns>如果缓冲消息满足表中一个筛选器的匹配条件，则为 <see langword="true" />；如果不满足任何筛选器，则为 <see langword="false" />。</returns>
         <remarks>
@@ -938,7 +938,7 @@
       </Parameters>
       <Docs>
         <param name="buffer">要测试的 <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
-        <param name="results">存储 <c>messageBuffer</c> 满足的筛选器的筛选数据的引用参数。</param>
+        <param name="results">存储 <paramref name="buffer" /> 满足的筛选器的筛选数据的引用参数。</param>
         <summary>返回一个值，该值指示指定的消息缓冲区是否正好满足表中一个筛选器的匹配条件，以及是否将匹配筛选器的 <paramref name="FilterData" /> 添加到 <paramref name="results" /> 集合中。</summary>
         <returns>如果缓冲消息正好满足表中一个 <see cref="T:System.ServiceModel.Dispatcher.ActionMessageFilter" /> 的匹配条件，则为 <see langword="true" />；如果不满足任何筛选器，则为 <see langword="false" />。</returns>
         <remarks>

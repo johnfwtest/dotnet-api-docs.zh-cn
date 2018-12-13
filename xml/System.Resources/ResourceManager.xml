@@ -1,5 +1,5 @@
 <Type Name="ResourceManager" FullName="System.Resources.ResourceManager">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8d1bb257276fa3550bff2f5817e0d2e8a76f4787" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52386000" /></Metadata><TypeSignature Language="C#" Value="public class ResourceManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="30d9e5bf9c2a3a84a1462baf6a29670e165bca21" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53332996" /></Metadata><TypeSignature Language="C#" Value="public class ResourceManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ResourceManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Resources.ResourceManager" />
   <TypeSignature Language="VB.NET" Value="Public Class ResourceManager" />
@@ -150,7 +150,7 @@ vbc ShowTime.vb /resource:strings.resources
   
 -   如果未显式设置当前 UI 区域性，并且未定义当前的应用程序域中，默认区域性<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>隐式设置属性由 Windows`GetUserDefaultUILanguage`函数。 提供此函数是通过多语言用户界面 (MUI)，这使用户能够设置默认语言。 如果用户未设置的 UI 语言，则默认为系统安装的语言，它是操作系统资源的语言。  
   
- 下面的简单"Hello world"示例显式设置当前 UI 区域性。 它包含三种区域性的资源： 英语 （美国） 或 EN-US、 法语 （法国） FR-FR 和俄语 （俄罗斯） 或 ru RU。 在一个名为 Greetings.txt 文本文件中包含 EN-US 资源：  
+ 下面的简单"Hello world"示例显式设置当前 UI 区域性。 它包含三种区域性的资源：英语 （美国） 或 EN-US、 法语 （法国） FR-FR，和俄语 （俄罗斯） 或 ru RU。 在一个名为 Greetings.txt 文本文件中包含 EN-US 资源：  
   
 ```  
 HelloString=Hello world!  
@@ -1419,7 +1419,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Resources.ResourceManager.GetStream%2A>方法采用存储为资源的名称<xref:System.IO.MemoryStream>对象，获取的值<xref:System.Object>资源，并返回<xref:System.IO.UnmanagedMemoryStream>对象。 它需要直接使用流的字节，然后转换成对象起作用。 此方法很有用主要是出于性能原因： 检索作为字节流而不是显式的对象可以提高性能。  
+ <xref:System.Resources.ResourceManager.GetStream%2A>方法采用存储为资源的名称<xref:System.IO.MemoryStream>对象，获取的值<xref:System.Object>资源，并返回<xref:System.IO.UnmanagedMemoryStream>对象。 它需要直接使用流的字节，然后转换成对象起作用。 此方法很有用主要是出于性能原因：检索作为字节流而不是显式的对象的资源可以提高性能。  
   
  返回的资源已本地化为当前线程，由定义的 UI 区域性<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>属性。 如果没有为此区域性本地化该资源，资源管理器使用回退规则加载适当的资源。 如果不找到任何可用的已本地化的资源集，则<xref:System.Resources.ResourceManager>回退上默认区域性的资源。 如果找不到资源集的默认区域性，该方法将引发<xref:System.Resources.MissingManifestResourceException>异常或资源集应驻留在附属程序集中，<xref:System.Resources.MissingSatelliteAssemblyException>异常。 如果资源管理器可以加载相应的资源设置，但找不到一个名为资源`name`，该方法将返回`null`。  
   
@@ -1438,7 +1438,7 @@ al /out:fr-FR\ShowNumbers.resources.dll /culture:fr-FR /embed:NumberResources.fr
  [!code-csharp[Conceptual.Resources.Retrieving#5](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstream.cs#5)]
  [!code-vb[Conceptual.Resources.Retrieving#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstream.vb#5)]  
   
- 可以使用以下批处理文件生成 C# 示例。 对于 Visual Basic 中，更改`csc`到`vbc`，并将从源代码文件的扩展名更改`.cs`到`.vb`...  
+ 可以使用以下批处理文件生成 C# 示例。 对于 Visual Basic，将 `csc` 更改为 `vbc`，并将源代码文件的扩展名由 `.cs` 更改为 `.vb`。 
   
 ```  
   
@@ -1507,7 +1507,7 @@ csc GetStream.cs /resource:AppResources.resources
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Resources.ResourceManager.GetStream%2A>方法采用存储为资源的名称<xref:System.IO.MemoryStream>对象，获取的值<xref:System.Object>资源，并返回<xref:System.IO.UnmanagedMemoryStream>对象。 它需要直接使用流的字节，然后转换成对象起作用。 此方法很有用主要是出于性能原因： 检索作为字节流而不是显式的对象可以提高性能。  
+ <xref:System.Resources.ResourceManager.GetStream%2A>方法采用存储为资源的名称<xref:System.IO.MemoryStream>对象，获取的值<xref:System.Object>资源，并返回<xref:System.IO.UnmanagedMemoryStream>对象。 它需要直接使用流的字节，然后转换成对象起作用。 此方法很有用主要是出于性能原因：检索作为字节流而不是显式的对象的资源可以提高性能。  
   
  返回的资源已本地化为指定的区域性`culture`，或由指定区域性<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>属性如果`culture`是`null`。 如果没有为此区域性本地化该资源，资源管理器使用回退规则加载适当的资源。 如果不找到任何可用的已本地化的资源集，则<xref:System.Resources.ResourceManager>回退上默认区域性的资源。 如果找不到资源集的默认区域性，该方法将引发<xref:System.Resources.MissingManifestResourceException>异常或资源集应驻留在附属程序集中，<xref:System.Resources.MissingSatelliteAssemblyException>异常。 如果资源管理器可以加载相应的资源设置，但找不到一个名为资源`name`，该方法将返回`null`。  
   

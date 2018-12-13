@@ -1,5 +1,5 @@
 <Type Name="XmlWriter" FullName="System.Xml.XmlWriter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f91dc669f6d0337a714c9a063013d5a57f6333bc" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53233557" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlWriter : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9870c95e8350beb2798552192857431604a43165" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53300520" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlWriter : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlWriter extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlWriter" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XmlWriter&#xA;Implements IDisposable" />
@@ -298,7 +298,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">在调用 <see langword="Close" /> 之后执行要编写其他输出的调用，或者此调用的结果是无效的 XML 文档。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Create">
@@ -1168,7 +1172,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -1299,7 +1307,7 @@ async Task TestWriter(Stream stream)
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IDisposable.Dispose" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IDisposable.Dispose" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1431,7 +1439,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -1518,7 +1530,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器的状态不是 <see langword="WriteState.Element" /> 或者编写器已关闭。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentException"><see langword="xml:space" /> 或 <see langword="xml:lang" /> 属性值无效。</exception>
       </Docs>
     </Member>
@@ -1594,7 +1610,10 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器的状态不是 <see langword="WriteState.Element" /> 或者编写器已关闭。
+
+或 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentException"><see langword="xml:space" /> 或 <see langword="xml:lang" /> 属性值无效。</exception>
       </Docs>
     </Member>
@@ -1667,7 +1686,10 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器的状态不是 <see langword="WriteState.Element" /> 或者编写器已关闭。
+
+或 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentException"><see langword="xml:space" /> 或 <see langword="xml:lang" /> 属性值无效。</exception>
         <exception cref="T:System.Xml.XmlException"><paramref name="localName" /> 或 <paramref name="ns" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -1726,7 +1748,10 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 - 
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -1791,7 +1816,7 @@ async Task TestWriter(Stream stream)
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 或 <paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
 缓冲区长度减去 <paramref name="index" /> 小于 <paramref name="count" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
@@ -1843,7 +1868,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -1904,7 +1933,10 @@ async Task TestWriter(Stream stream)
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器已关闭或处于错误状态。
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 或 <paramref name="count" /> 小于零。  
   
 - 或 - 
@@ -1958,7 +1990,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2051,7 +2087,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2153,7 +2193,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2217,7 +2261,7 @@ async Task TestWriter(Stream stream)
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 或 <paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
 缓冲区长度减去 <paramref name="index" /> 小于 <paramref name="count" />；此调用导致代理项对字符被拆分或写入无效的代理项对。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="buffer" /> 参数值无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
@@ -2270,7 +2314,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2377,7 +2425,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2444,7 +2496,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">在序言码外部（根元素之后）调用了此方法。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的值将导致无效的 XML。</exception>
       </Docs>
     </Member>
@@ -2497,7 +2553,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2648,7 +2708,7 @@ async Task TestWriter(Stream stream)
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="localName" /> 值是 <see langword="null" /> 或空字符串。  
   
-或 
+- 或 - 
 参数值无效。</exception>
         <exception cref="T:System.Text.EncoderFallbackException">缓冲区中有一个字符是有效的 XML 字符，但对于输出编码是无效的。 例如，如果输出编码为 ASCII，应该仅对元素和特性名使用从 0 到 127 范围内的字符。 无效的字符可能位于此方法的参数中，或者位于以前要写入缓冲区的方法的参数中。 如果可能，此类字符将使用字符实体引用进行转义（例如，在文本节点或特性值中）。 但是，不允许在元素名、特性名、注释、处理指令和 CDATA 节中使用字符实体引用。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
@@ -2765,7 +2825,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2860,7 +2924,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -2961,7 +3029,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3019,7 +3091,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">这导致无效的 XML 文档。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteEndElementAsync">
@@ -3062,7 +3138,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3165,7 +3245,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3263,7 +3347,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3360,7 +3448,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3455,7 +3547,11 @@ async Task TestWriter(Stream stream)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3725,7 +3821,11 @@ while (!reader.EOF){
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3776,7 +3876,11 @@ while (!reader.EOF){
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3900,7 +4004,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4027,7 +4135,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4234,7 +4346,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4285,7 +4401,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4359,7 +4479,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器已关闭。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Text.EncoderFallbackException">缓冲区中有一个字符是有效的 XML 字符，但对于输出编码是无效的。 例如，如果输出编码为 ASCII，应该仅对元素和特性名使用从 0 到 127 范围内的字符。 无效的字符可能位于此方法的参数中，或者位于以前要写入缓冲区的方法的参数中。 如果可能，此类字符将使用字符实体引用进行转义（例如，在文本节点或特性值中）。 但是，不允许在元素名、特性名、注释、处理指令和 CDATA 节中使用字符实体引用。</exception>
       </Docs>
     </Member>
@@ -4527,7 +4651,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4598,7 +4726,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">这不是在构造函数后调用的第一个写方法。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteStartDocument">
@@ -4651,7 +4783,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">这不是在构造函数后调用的第一个写方法。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="WriteStartDocumentAsync">
@@ -4715,7 +4851,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4762,7 +4902,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4844,7 +4988,11 @@ writer.Close();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器已关闭。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Text.EncoderFallbackException">缓冲区中有一个字符是有效的 XML 字符，但对于输出编码是无效的。 例如，如果输出编码为 ASCII，应该仅对元素和特性名使用从 0 到 127 范围内的字符。 无效的字符可能位于此方法的参数中，或者位于以前要写入缓冲区的方法的参数中。 如果可能，此类字符将使用字符实体引用进行转义（例如，在文本节点或特性值中）。 但是，不允许在元素名、特性名、注释、处理指令和 CDATA 节中使用字符实体引用。</exception>
       </Docs>
     </Member>
@@ -4913,7 +5061,11 @@ writer.WriteEndElement();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器已关闭。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Text.EncoderFallbackException">缓冲区中有一个字符是有效的 XML 字符，但对于输出编码是无效的。 例如，如果输出编码为 ASCII，应该仅对元素和特性名使用从 0 到 127 范围内的字符。 无效的字符可能位于此方法的参数中，或者位于以前要写入缓冲区的方法的参数中。 如果可能，此类字符将使用字符实体引用进行转义（例如，在文本节点或特性值中）。 但是，不允许在元素名、特性名、注释、处理指令和 CDATA 节中使用字符实体引用。</exception>
       </Docs>
     </Member>
@@ -4974,7 +5126,11 @@ writer.WriteEndElement();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器已关闭。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Text.EncoderFallbackException">缓冲区中有一个字符是有效的 XML 字符，但对于输出编码是无效的。 例如，如果输出编码为 ASCII，应该仅对元素和特性名使用从 0 到 127 范围内的字符。 无效的字符可能位于此方法的参数中，或者位于以前要写入缓冲区的方法的参数中。 如果可能，此类字符将使用字符实体引用进行转义（例如，在文本节点或特性值中）。 但是，不允许在元素名、特性名、注释、处理指令和 CDATA 节中使用字符实体引用。</exception>
       </Docs>
     </Member>
@@ -5025,7 +5181,11 @@ writer.WriteEndElement();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -5184,7 +5344,11 @@ test&lt;item&gt;test
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -5291,7 +5455,11 @@ test&lt;item&gt;test
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -5784,7 +5952,11 @@ test&lt;item&gt;test
         </remarks>
         <exception cref="T:System.ArgumentException">指定了无效值。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">编写器已关闭或处于错误状态。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteValue">
@@ -5988,7 +6160,11 @@ test&lt;item&gt;test
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlWriter" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlWriter" /> 异步方法，但未将 <see cref="P:System.Xml.XmlWriterSettings.Async" /> 标志设置为 <see langword="true" />。 在这种情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“如果要使用异步方法，请将 XmlWriterSettings.Async 设置为 true”。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>

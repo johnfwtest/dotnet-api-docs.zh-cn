@@ -1,5 +1,5 @@
 <Type Name="ApplicationDeployment" FullName="System.Deployment.Application.ApplicationDeployment">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bffa222f60e381bcefb2025bbb6831ba8a51ccd7" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51866734" /></Metadata><TypeSignature Language="C#" Value="public sealed class ApplicationDeployment" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c6183cc6f4399de605648ac8bc90cbbe6d8ae170" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53292336" /></Metadata><TypeSignature Language="C#" Value="public sealed class ApplicationDeployment" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationDeployment extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Deployment.Application.ApplicationDeployment" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ApplicationDeployment" />
@@ -47,7 +47,7 @@
   
  ]]></format>
     </remarks>
-    <related type="Article" href="https://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5">演练： 下载 ClickOnce 部署 API 使用设计器中使用按需程序集</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5">演练：下载 ClickOnce 部署 API 使用设计器中使用按需程序集</related>
   </Docs>
   <Members>
     <Member MemberName="ActivationUri">
@@ -395,7 +395,7 @@
    
   
 ## Examples  
- 下面的代码示例使用<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>事件来通知用户的部署清单中有多少剩下要下载。 该示例需要部署包含的 Windows 窗体应用程序<xref:System.Windows.Forms.StatusStrip>控件，并且此控件包含<xref:System.Windows.Forms.ToolStripStatusLabel>控件命名为`downloadStatus`...  
+ 下面的代码示例使用<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>事件来通知用户的部署清单中有多少剩下要下载。 该示例需要部署包含的 Windows 窗体应用程序<xref:System.Windows.Forms.StatusStrip>控件，并且此控件包含<xref:System.Windows.Forms.ToolStripStatusLabel>控件命名为`downloadStatus`。 
   
  [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
  [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
@@ -537,7 +537,7 @@
 ## Remarks  
  在[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]应用程序中，标记为"可选"应用程序清单中的文件不会下载在初始化或更新过程。 可以使用<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>方法，若要下载的所有文件属于命名组按需，则不会消耗网络资源和磁盘空间只有在确定用户需要使用它们。 例如，某些用户可能需要使用其他用户可能无法调用它时每天都在应用程序中包含的数据分析包。  
   
- 若要使用已下载的程序集<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>，将附加到的事件侦听器<xref:System.AppDomain.AssemblyResolve>上的事件<xref:System.AppDomain.CurrentDomain%2A>。 有关示例，请参阅 =[演练： 使用 ClickOnce 部署 API 使用设计器按需下载程序集](https://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5)。  
+ 若要使用已下载的程序集<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>，将附加到的事件侦听器<xref:System.AppDomain.AssemblyResolve>上的事件<xref:System.AppDomain.CurrentDomain%2A>。 有关示例，请参阅 =[演练：下载 ClickOnce 部署 API 使用设计器中使用按需程序集](https://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5)。  
   
  所有文件都下载到[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]应用程序缓存中，因此独立于应用程序的当前版本。 假设某个应用程序下载的文件组后，该用户安装的新版本的应用程序，但稍后又还原为以前版本的应用程序。 在这种情况下上, 一版本仍将最初下载的文件的副本。 有关访问数据文件的详细信息，请参阅[访问本地数据和 ClickOnce 应用程序中的远程数据](https://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)。  
   
@@ -604,7 +604,7 @@
 ## Remarks  
  在[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]应用程序中，标记为"可选"应用程序清单中的文件不会下载在初始化或更新过程。 可以使用<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>方法，若要下载的所有文件属于命名组按需，则不会消耗网络资源和磁盘空间只有在确定用户需要使用它们。 此方法适用于静态文件，不仅对于应用程序可能会或可能不需要的程序集。 例如，某些用户可能需要使用其他用户可能无法调用它时每天都在应用程序中包含的数据分析包。  
   
- 若要下载按需程序集，将附加到的事件侦听器<xref:System.AppDomain.AssemblyResolve>上的事件<xref:System.AppDomain.CurrentDomain%2A>。 有关示例，请参阅[演练： 使用 ClickOnce 部署 API 按需下载程序集](https://msdn.microsoft.com/library/d20e2789-8621-4806-b5b7-841122da1456)。  
+ 若要下载按需程序集，将附加到的事件侦听器<xref:System.AppDomain.AssemblyResolve>上的事件<xref:System.AppDomain.CurrentDomain%2A>。 有关示例，请参阅[演练：下载程序集使用 ClickOnce 部署 API 按需](https://msdn.microsoft.com/library/d20e2789-8621-4806-b5b7-841122da1456)。  
   
  所有程序集下载到[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]应用程序缓存。  
   
@@ -741,7 +741,7 @@
    
   
 ## Examples  
- 下面的代码示例下载在后台的帮助文件的组。 该示例需要部署包含的 Windows 窗体应用程序<xref:System.Windows.Forms.StatusStrip>控件，并且此控件包含<xref:System.Windows.Forms.ToolStripStatusLabel>控件命名为`downloadStatus`...  
+ 下面的代码示例下载在后台的帮助文件的组。 该示例需要部署包含的 Windows 窗体应用程序<xref:System.Windows.Forms.StatusStrip>控件，并且此控件包含<xref:System.Windows.Forms.ToolStripStatusLabel>控件命名为`downloadStatus`。 
   
  [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
  [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]

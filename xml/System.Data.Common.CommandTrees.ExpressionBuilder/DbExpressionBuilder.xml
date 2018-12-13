@@ -1,5 +1,5 @@
 <Type Name="DbExpressionBuilder" FullName="System.Data.Common.CommandTrees.ExpressionBuilder.DbExpressionBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3f079ada6bf4ff5b4e1c43e704b23781305d885c" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52613977" /></Metadata><TypeSignature Language="C#" Value="public static class DbExpressionBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f931a63223afc1879d5c86d60319540bb2dbdd50" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53300786" /></Metadata><TypeSignature Language="C#" Value="public static class DbExpressionBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DbExpressionBuilder extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.Common.CommandTrees.ExpressionBuilder.DbExpressionBuilder" />
   <TypeSignature Language="VB.NET" Value="Public Module DbExpressionBuilder" />
@@ -110,8 +110,16 @@
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbQuantifierExpression" />，该对象确定是否为输入集的所有元素保留给定的谓词。</summary>
         <returns>新 DbQuantifierExpression 表示所有操作。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="predicate" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException">由 <paramref name="Predicate" /> 生成的表达式不具有布尔结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 null。
+
+- 或 -
+
+由 <paramref name="predicate" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 -
+
+由 <paramref name="Predicate" /> 生成的表达式不具有布尔结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="All">
@@ -233,8 +241,15 @@
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbQuantifierExpression" />，该对象确定是否为输入集的任何元素保留给定的谓词。</summary>
         <returns>新 DbQuantifierExpression 表示任何操作。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="predicate" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException">由 <paramref name="predicate" /> 生成的表达式不具有布尔结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 null。
+
+- 或 -
+
+由 <paramref name="predicate" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 - 
+由 <paramref name="predicate" /> 生成的表达式不具有布尔结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="Any">
@@ -608,7 +623,11 @@
         <returns>使用给定实体集中的指定键值引用元素的新 DbRefExpression。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="entitySet" /> 或 <paramref name="entityType" /> 为 null，或者 <paramref name="keyValues" /> 为 null 或包含 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="keyValues" /> 的计数与 <paramref name="entitySet" /> 的元素类型声明的键成员的计数不符，或者 <paramref name="keyValues" /> 包含的表达式的结果类型与对应的键成员的类型不兼容。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entityType" /> 不是来自 <paramref name="entitySet" /> 的元素类型所在的类型层次结构（子类型、超类型或相同类型）。
+
+- 或 -
+
+<paramref name="keyValues" /> 的计数与 <paramref name="entitySet" /> 的元素类型声明的键成员的计数不符，或者 <paramref name="keyValues" /> 包含的表达式的结果类型与对应的键成员的类型不兼容。</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateRef">
@@ -644,7 +663,11 @@
         <returns>使用给定实体集中的指定键值引用元素的新 DbRefExpression。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="entitySet" /> 或 <paramref name="entityType" /> 为 null，或者 <paramref name="keyValues" /> 为 null 或包含 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="keyValues" /> 的计数与 <paramref name="entitySet" /> 的元素类型声明的键成员的计数不符，或者 <paramref name="keyValues" /> 包含的表达式的结果类型与对应的键成员的类型不兼容。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entityType" /> 不是来自 <paramref name="entitySet" /> 的元素类型所在的类型层次结构（子类型、超类型或相同类型）。
+
+或
+
+<paramref name="keyValues" /> 的计数与 <paramref name="entitySet" /> 的元素类型声明的键成员的计数不符，或者 <paramref name="keyValues" /> 包含的表达式的结果类型与对应的键成员的类型不兼容。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="CrossApply">
@@ -681,8 +704,15 @@
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbApplyExpression" />，它为每个给定输入集元素计算一次指定的 <paramref name="apply" /> 表达式，并生成具有相应 input 和 apply 列的行集合。 不包括 <paramref name="apply" /> 计算结果为空集的行。</summary>
         <returns>使用指定输入、应用绑定和 CrossApply <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" /> 的新 DbApplyExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="apply" /> 的结果包含为 null 的名称或表达式。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="apply" /> 的结果包含在表达式绑定中无效的名称或表达式。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="apply" /> 为 null。
+
+或
+
+<paramref name="apply" /> 的结果包含为 null 的名称或表达式。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 - 
+<paramref name="apply" /> 的结果包含在表达式绑定中无效的名称或表达式。</exception>
       </Docs>
     </Member>
     <Member MemberName="CrossApply">
@@ -1021,8 +1051,15 @@
         <summary>新建一个 <see cref="T:System.Data.Common.CommandTrees.DbJoinExpression" />，它将 FullOuterJoin 用作 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，在指定的联接条件下，将左侧表达式和右侧表达式指定的集联接起来。</summary>
         <returns>一个新的 DbJoinExpression，带有 FullOuterJoin 的 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，表示在给定联接条件下应用到左侧和右侧输入集的完全外部联接操作。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="joinCondition" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException">由 <paramref name="joinCondition" /> 生成的表达式不具有布尔结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="left" />、<paramref name="right" /> 或 <paramref name="joinCondition" /> 为 null。
+
+- 或 -
+
+由 <paramref name="joinCondition" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="left" /> 或 <paramref name="right" /> 不具有集合结果类型。
+
+- 或 - 
+由 <paramref name="joinCondition" /> 生成的表达式不具有布尔结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="FullOuterJoin">
@@ -1300,8 +1337,16 @@
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbJoinExpression" />，它将 InnerJoin 用作 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，以此按照指定的联接条件联接左侧表达式和右侧表达式指定的集。</summary>
         <returns>新 DbJoinExpression，使用 InnerJoin 的 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，代表应用于给定联接条件下的左右输入集的inner联接操作。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="joinCondition" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException">由 <paramref name="joinCondition" /> 生成的表达式不具有布尔结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="left" />、<paramref name="right" /> 或 <paramref name="joinCondition" /> 为 null。
+
+或
+
+由 <paramref name="joinCondition" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="left" /> 或 <paramref name="right" /> 不具有集合结果类型。
+
+- 或 -
+
+由 <paramref name="joinCondition" /> 生成的表达式不具有布尔结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="InnerJoin">
@@ -1656,8 +1701,15 @@
         <summary>新建一个 <see cref="T:System.Data.Common.CommandTrees.DbJoinExpression" />，它在指定的内部键和外部键之间达到相等的条件下，将外部表达式和内部表达式指定的集进行联接，将 InnerJoin 用作 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />。</summary>
         <returns>一个新的 DbJoinExpression，带有 InnerJoin 的 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，这表示在比较外部键值和内部键值是否相等的联接条件下将内部联接运算应用于左输入集和右输入集。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="outerKey" /> 或 <paramref name="innerKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException">无法比较由 <paramref name="outerKey" /> 和 <paramref name="innerKey" /> 生成的表达式是否相等。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="outer" />、<paramref name="inner" />、<paramref name="outerKey" /> 或 <paramref name="innerKey" /> 为 null。
+
+- 或 - 
+由 <paramref name="outerKey" /> 或 <paramref name="innerKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="outer" /> 或 <paramref name="inner" /> 不具有集合结果类型。
+
+- 或 -
+
+无法比较由 <paramref name="outerKey" /> 和 <paramref name="innerKey" /> 生成的表达式是否相等。</exception>
       </Docs>
     </Member>
     <Member MemberName="Join&lt;TSelector&gt;">
@@ -1714,8 +1766,23 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">在转换为 DbExpression 之后，<paramref name="selector" /> 的结果为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="Selector" /> 的结果与 SelectMany 不兼容。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="outer" />、<paramref name="inner" />、<paramref name="outerKey" />、<paramref name="innerKey" /> 或 <paramref name="selector" /> 为 null。
+
+- 或 -
+
+由 <paramref name="outerKey" /> 或 <paramref name="innerKey" /> 生成的表达式为 null。
+
+或
+
+在转换为 DbExpression 之后，<paramref name="selector" /> 的结果为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="outer" /> 或 <paramref name="inner" /> 不具有集合结果类型。
+
+- 或 -
+
+由 <paramref name="outerKey" /> 和 <paramref name="innerKey" /> 生成的表达式无法比较是否相等。
+
+- 或 - 
+<paramref name="selector" /> 的结果与 SelectMany 不兼容。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Lambda">
@@ -1827,8 +1894,16 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbJoinExpression" />，它将 LeftOuterJoin 用作 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，以此按照指定的联接条件联接左侧表达式和右侧表达式指定的集。</summary>
         <returns>新 DbJoinExpression，使用 LeftOuterJoin 的 <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" />，代表应用于给定联接条件下的左右输入集的左外部联接操作。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="joinCondition" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException">由 <paramref name="joinCondition" /> 生成的表达式不具有布尔结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="left" />、<paramref name="right" /> 或 <paramref name="joinCondition" /> 为 null。
+
+- 或 -
+
+由 <paramref name="joinCondition" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="left" /> 或 <paramref name="right" /> 不具有集合结果类型。
+
+- 或 -
+
+由 <paramref name="joinCondition" /> 生成的表达式不具有布尔结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="LeftOuterJoin">
@@ -2646,8 +2721,16 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，它使用升序排序顺序和默认排序规则按照指定排序关键字对给定的输入集进行排序。</summary>
         <returns>表示整个按顺序的操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="sortKey" /> 为 null。
+
+或
+
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 -
+
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="OrderBy">
@@ -2677,8 +2760,15 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，它使用升序排序顺序和指定排序规则按照指定排序关键字对给定的输入集进行排序。</summary>
         <returns>表示整个按顺序的操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sortKey" /> 或 <paramref name="collation" /> 为 null。
+
+或 
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 -
+
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="collation" /> 为空，或者只包含空白字符。</exception>
       </Docs>
     </Member>
@@ -2716,8 +2806,16 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，它使用降序排序顺序和默认排序规则按照指定排序关键字对给定的输入集进行排序。</summary>
         <returns>表示整个按顺序的操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="sortKey" /> 为 null。
+
+或
+
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+或
+
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="OrderByDescending">
@@ -2747,8 +2845,16 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，它使用降序排序顺序和指定排序规则按照指定排序关键字对给定的输入集进行排序。</summary>
         <returns>表示整个按顺序的操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sortKey" /> 或 <paramref name="collation" /> 为 null。
+
+或
+
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 -
+
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="collation" /> 为空，或者只包含空白字符。</exception>
       </Docs>
     </Member>
@@ -2786,8 +2892,15 @@ outer.Join(inner, o => o.Property("ID"), i => i.Property("ID"), (o, i) => new { 
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbApplyExpression" />，它为每个给定输入集元素计算一次指定的 <paramref name="apply" /> 表达式，并生成具有相应 input 和 apply 列的行集合。 对于 <paramref name="apply" /> 计算结果为空集的行，其 apply 列的值为 <see langword="null" />。</summary>
         <returns>使用指定输入、应用绑定和 OuterApply <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" /> 的新 DbApplyExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="apply" /> 的结果包含为 null 的名称或表达式。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="apply" /> 的结果包含在表达式绑定中无效的名称或表达式。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="apply" /> 为 null。
+
+或 
+<paramref name="apply" /> 的结果包含为 null 的名称或表达式。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="Source" /> 没有集合结果类型。
+
+或
+
+<paramref name="apply" /> 的结果包含在表达式绑定中无效的名称或表达式。</exception>
       </Docs>
     </Member>
     <Member MemberName="OuterApply">
@@ -3178,7 +3291,11 @@ source.Select(x => new { Name = x.Property("Name") })
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="projection" /> 的结果为 null。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="projection" /> 为 null。
+
+- 或 -
+
+<paramref name="projection" /> 的结果为 null。</exception>
       </Docs>
     </Member>
     <Member MemberName="SelectMany">
@@ -3206,8 +3323,16 @@ source.Select(x => new { Name = x.Property("Name") })
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbApplyExpression" />，它为每个给定输入集元素计算一次指定的 <paramref name="apply" /> 表达式，并生成具有相应 input 和 apply 列的行集合。 不包括 <paramref name="apply" /> 计算结果为空集的行。 然后创建了 <see cref="T:System.Data.Common.CommandTrees.DbProjectExpression" />，它从每一行选择 <paramref name="apply" /> 列，从而生成整个<paramref name="apply" /> 结果集。</summary>
         <returns>从指定输入、应用绑定和 CrossApply <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" /> 的新 DbApplyExpression 中选定应用程序列的新 DbProjectExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="apply" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="apply" /> 生成的表达式没有集合类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="apply" /> 为 null。
+
+- 或 -
+
+由 <paramref name="apply" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 -
+
+<paramref name="apply" /> 生成的表达式没有集合类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="SelectMany&lt;TSelector&gt;">
@@ -3237,7 +3362,7 @@ source.Select(x => new { Name = x.Property("Name") })
         <typeparam name="TSelector"><paramref name="selector" /> 的方法结果类型。</typeparam>
         <param name="source">指定输入集的 <see cref="T:System.Data.Common.CommandTrees.DbExpression" />。</param>
         <param name="apply">一个方法，表示要针对每个输入集成员计算一次的逻辑。</param>
-        <param name="selector">一个方法，指定如何在给定输入集元素和应用集元素的情况下派生结果集的元素。 此方法必须生成与 SelectMany 兼容且可以解析为 <see cref="T:System.Data.Common.CommandTrees.DbExpression" /> 的类型的实例。 “备注”中介绍了有关 <c>TSelector</c> 的兼容性要求。</param>
+        <param name="selector">一个方法，指定如何在给定输入集元素和应用集元素的情况下派生结果集的元素。 此方法必须生成与 SelectMany 兼容且可以解析为 <see cref="T:System.Data.Common.CommandTrees.DbExpression" /> 的类型的实例。 备注中介绍了有关 <typeparamref name="TSelector" /> 的兼容性要求。</param>
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbApplyExpression" />，它为每个给定输入集元素计算一次指定的 <paramref name="apply" /> 表达式，并生成具有相应 input 和 apply 列的行集合。 不包括 <paramref name="apply" /> 计算结果为空集的行。 然后创建了 <see cref="T:System.Data.Common.CommandTrees.DbProjectExpression" />，它在每一行上选择指定的 <paramref name="selector" />，从而生成整个结果集。</summary>
         <returns>从指定输入、应用绑定和 CrossApply <see cref="T:System.Data.Common.CommandTrees.DbExpressionKind" /> 的新 DbApplyExpression 中选定给定选择器结果的新 DbProjectExpression。</returns>
         <remarks>
@@ -3260,8 +3385,19 @@ source.SelectMany(x => x.Property("RelatedCollection"), (source, apply) => new {
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">在进行到 DbExpression 的转换时，<paramref name="selector" /> 的结果 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="apply" /> 生成的表达式没有集合类型。 没有集合类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="apply" /> 或 <paramref name="selector" /> 为 null。
+
+或
+
+由 <paramref name="apply" /> 生成的表达式为 null。
+
+- 或 -
+
+在进行到 DbExpression 的转换时，<paramref name="selector" /> 的结果 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+或 
+<paramref name="apply" /> 生成的表达式没有集合类型。 没有集合类型。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Skip">
@@ -3425,8 +3561,16 @@ source.SelectMany(x => x.Property("RelatedCollection"), (source, apply) => new {
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，其排序顺序包含给定顺序输入集的排序顺序、升序排序顺序的指定排序关键字以及默认排序规则。</summary>
         <returns>表示整个按顺序的新操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 没有可比较顺序的结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="sortKey" /> 为 null。
+
+- 或 -
+
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 -
+
+<paramref name="sortKey" /> 没有可比较顺序的结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="ThenBy">
@@ -3456,8 +3600,15 @@ source.SelectMany(x => x.Property("RelatedCollection"), (source, apply) => new {
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，其排序顺序包含给定顺序输入集的排序顺序、升序排序顺序的指定排序关键字以及指定排序规则。</summary>
         <returns>表示整个按顺序的新操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sortKey" /> 或 <paramref name="collation" /> 为 null。
+
+或 
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+或
+
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="collation" /> 为空，或者只包含空白字符。</exception>
       </Docs>
     </Member>
@@ -3495,8 +3646,15 @@ source.SelectMany(x => x.Property("RelatedCollection"), (source, apply) => new {
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，其排序顺序包含给定顺序输入集的排序顺序、降序排序顺序的指定排序关键字以及默认排序规则。</summary>
         <returns>表示整个按顺序的新操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="sortKey" /> 为 null。
+
+- 或 -
+
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+- 或 - 
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的结果类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="ThenByDescending">
@@ -3526,8 +3684,15 @@ source.SelectMany(x => x.Property("RelatedCollection"), (source, apply) => new {
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbSortExpression" />，其排序顺序包含给定顺序输入集的排序顺序、降序排序顺序的指定排序关键字以及指定排序规则。</summary>
         <returns>表示整个按顺序的新操作的新 DbSortExpression。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sortKey" /> 或 <paramref name="collation" /> 为 null。
+
+- 或 -
+
+由 <paramref name="sortKey" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 没有集合结果类型。
+
+或 
+<paramref name="sortKey" /> 生成的表达式没有可比较顺序的字符串结果类型。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="collation" /> 为空，或者只包含空白字符。</exception>
       </Docs>
     </Member>
@@ -3857,7 +4022,10 @@ source.SelectMany(x => x.Property("RelatedCollection"), (source, apply) => new {
         <summary>创建一个新的 <see cref="T:System.Data.Common.CommandTrees.DbFilterExpression" />，它使用指定的谓词筛选给定输入集中的元素。</summary>
         <returns>新 DbQuantifierExpression 表示任何操作。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">由 <paramref name="predicate" /> 生成的表达式为 null。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 null。
+
+或 
+由 <paramref name="predicate" /> 生成的表达式为 null。</exception>
         <exception cref="T:System.ArgumentException">由 <paramref name="predicate" /> 生成的表达式不具有布尔结果类型。</exception>
       </Docs>
     </Member>

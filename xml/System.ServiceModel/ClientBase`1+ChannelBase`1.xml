@@ -1,5 +1,5 @@
 <Type Name="ClientBase&lt;TChannel&gt;+ChannelBase&lt;T&gt;" FullName="System.ServiceModel.ClientBase&lt;TChannel&gt;+ChannelBase&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a70868191b8d31df7deab21d250d322c8248999a" /><Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/05/2018" /><Meta Name="ms.locfileid" Value="52905664" /></Metadata><TypeSignature Language="C#" Value="protected internal class ClientBase&lt;TChannel&gt;.ChannelBase&lt;T&gt; : IDisposable, System.ServiceModel.Channels.IOutputChannel, System.ServiceModel.Channels.IRequestChannel, System.ServiceModel.IClientChannel, System.ServiceModel.IExtensibleObject&lt;System.ServiceModel.IContextChannel&gt; where TChannel : class where T : class" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a3b21a59e957156257859d1812cf0263640388eb" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53297016" /></Metadata><TypeSignature Language="C#" Value="protected internal class ClientBase&lt;TChannel&gt;.ChannelBase&lt;T&gt; : IDisposable, System.ServiceModel.Channels.IOutputChannel, System.ServiceModel.Channels.IRequestChannel, System.ServiceModel.IClientChannel, System.ServiceModel.IExtensibleObject&lt;System.ServiceModel.IContextChannel&gt; where TChannel : class where T : class" />
   <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit ClientBase`1/ChannelBase`1&lt;class TChannel, class T&gt; extends System.Object implements class System.IDisposable, class System.ServiceModel.Channels.IChannel, class System.ServiceModel.Channels.IOutputChannel, class System.ServiceModel.Channels.IRequestChannel, class System.ServiceModel.IClientChannel, class System.ServiceModel.ICommunicationObject, class System.ServiceModel.IContextChannel, class System.ServiceModel.IExtensibleObject`1&lt;class System.ServiceModel.IContextChannel&gt;" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.ClientBase`1.ChannelBase`1" />
   <TypeSignature Language="VB.NET" Value="Protected Friend Class ClientBase(Of TChannel).ChannelBase(Of T)&#xA;Implements IClientChannel, IDisposable, IExtensibleObject(Of IContextChannel), IOutputChannel, IRequestChannel" />
@@ -94,7 +94,7 @@
       </Parameters>
       <Docs>
         <param name="client">用于初始化类的新实例的对象。</param>
-        <summary>初始化的新实例<see cref="T:System.ServiceModel.ClientBase`1.ChannelBase`1" />从现有类的实例的类。</summary>
+        <summary>从该类的现有实例初始化 <see cref="T:System.ServiceModel.ClientBase`1.ChannelBase`1" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -213,12 +213,12 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="methodName">以异步方式调用的方法的名称。</param>
-        <param name="args">调用方法的参数数组。</param>
+        <param name="methodName">要异步调用的方法的名称。</param>
+        <param name="args">调用的方法的参数数组。</param>
         <param name="callback"><see cref="T:System.AsyncCallback" /> 委托。</param>
-        <param name="state">状态对象中。</param>
+        <param name="state">状态对象。</param>
         <summary>按名称启动指定方法的异步调用。</summary>
-        <returns><see cref="T:System.IAsyncResult" />引用调用的异步方法。</returns>
+        <returns>引用调用的异步方法的 <see cref="T:System.IAsyncResult" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -358,11 +358,11 @@
         <Parameter Name="result" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="methodName">以异步方式调用该方法的名称。</param>
-        <param name="args">调用方法的参数数组。</param>
-        <param name="result">通过调用返回的结果。</param>
-        <summary>通过指定方法名称来完成异步调用。</summary>
-        <returns><see cref="T:System.Object" />输出调用的方法。</returns>
+        <param name="methodName">异步调用的方法的名称。</param>
+        <param name="args">调用的方法的参数数组。</param>
+        <param name="result">调用返回的结果。</param>
+        <summary>按指定方法的名称完成异步调用。</summary>
+        <returns>由该方法调用的 <see cref="T:System.Object" /> 输出。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -570,7 +570,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>执行与释放或重置与通道关联的非托管的资源的应用程序定义的任务。</summary>
+        <summary>通过释放或重置与通道相关的非托管资源来指定应用程序定义的任务。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -607,9 +607,9 @@
       </TypeParameters>
       <Parameters />
       <Docs>
-        <typeparam name="TProperty">为其查询方法的类型对象。</typeparam>
-        <summary>如果在通道堆栈中存在从的适当层，返回请求，一个类型化的对象。</summary>
-        <returns>如果不存在，则 null 如果不是所请求的类型化的对象 T。</returns>
+        <typeparam name="TProperty">方法正在查询的类型对象。</typeparam>
+        <summary>从通道堆栈的适当层返回所请求的类型化对象（如果存在）。</summary>
+        <returns>如果存在，则返回所请求的类型化对象 T，如果不存在，则返回 null。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -620,7 +620,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>开始异步操作以将消息传送。</summary>
+        <summary>开始一个发送消息的异步操作。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="System.ServiceModel.Channels.IOutputChannel.BeginSend">
@@ -652,7 +652,7 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="message">输出通道上发送的消息。</param>
+        <param name="message">正在输出通道上发送的消息。</param>
         <param name="callback"><see cref="T:System.AsyncCallback" /> 委托。</param>
         <param name="state">一个由应用程序指定的对象，包含与异步发送操作相关联的状态信息。</param>
         <summary>开始一个异步操作，向输出通道的目标传输一条消息。</summary>
@@ -690,8 +690,8 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="message">输出通道上发送的消息。</param>
-        <param name="timeout">指定时间发送操作的时间跨度必须在超时前完成。</param>
+        <param name="message">正在输出通道上发送的消息。</param>
+        <param name="timeout">指定在超时前必须完成发送操作的时间的时间跨度。</param>
         <param name="callback"><see cref="T:System.AsyncCallback" /> 委托，接收异步操作完成发送的通知。</param>
         <param name="state">一个由应用程序指定的对象，包含与异步发送操作相关联的状态信息。</param>
         <summary>开始一个异步操作，在指定时间间隔内向输出通道的目标传输消息。</summary>
@@ -727,7 +727,7 @@
         <Parameter Name="result" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="result">通过调用返回的结果。</param>
+        <param name="result">调用返回的结果。</param>
         <summary>完成一个异步操作，向输出通道的目标传输消息。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -799,7 +799,7 @@
         <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
       </Parameters>
       <Docs>
-        <param name="message">输出通道上发送的消息。</param>
+        <param name="message">正在输出通道上发送的消息。</param>
         <summary>向输出通道的目标传输一条消息。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -832,8 +832,8 @@
         <Parameter Name="timeout" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="message">输出通道上发送的消息。</param>
-        <param name="timeout">指定时间发送操作的时间跨度必须在超时前完成。</param>
+        <param name="message">正在输出通道上发送的消息。</param>
+        <param name="timeout">指定在超时前必须完成发送操作的时间的时间跨度。</param>
         <summary>在指定时间间隔内在当前输出通道上发送一条消息。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -875,7 +875,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>开始异步操作以将请求消息传送。</summary>
+        <summary>开始一个发送请求消息的异步操作。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="System.ServiceModel.Channels.IRequestChannel.BeginRequest">
@@ -907,10 +907,10 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="message">要传输的请求消息。</param>
+        <param name="message">待传输的请求消息。</param>
         <param name="callback"><see cref="T:System.AsyncCallback" /> 委托，它接收传送请求消息的异步操作的完成通知。</param>
         <param name="state">一个由应用程序指定的对象，它包含与传送请求消息的异步操作关联的状态信息。</param>
-        <summary>开始一个异步操作传输到请求-答复消息交换的回复端的请求消息。</summary>
+        <summary>开始一个异步操作，将请求消息传送到请求-答复消息交换的答复端。</summary>
         <returns>引用异步消息传输的 <see cref="T:System.IAsyncResult" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -945,11 +945,11 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="message">要传输的请求消息。</param>
-        <param name="timeout">指定的时间间隔内必须收到响应的间隔时间跨度。</param>
+        <param name="message">待传输的请求消息。</param>
+        <param name="timeout">指定时间间隔的时间跨度，在此时间间隔内必须收到响应。</param>
         <param name="callback"><see cref="T:System.AsyncCallback" /> 委托，它接收传送请求消息的异步操作的完成通知。</param>
         <param name="state">一个由应用程序指定的对象，它包含与传送请求消息的异步操作关联的状态信息。</param>
-        <summary>开始一个异步操作传输到指定的时间间隔内的请求-答复消息交换的回复端的请求消息。</summary>
+        <summary>开始一个异步操作，在指定时间间隔内将请求消息传送到请求-答复消息交换的答复端。</summary>
         <returns>引用异步消息传输的 <see cref="T:System.IAsyncResult" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -984,7 +984,7 @@
       <Docs>
         <param name="result">操作的结果。</param>
         <summary>完成异步操作以向传送的请求返回基于消息的响应。</summary>
-        <returns>在对请求响应接收的消息。</returns>
+        <returns>以响应该请求接收的消息 。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1026,7 +1026,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将发送一个基于消息的请求。</summary>
+        <summary>发送一个基于消息的请求。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="System.ServiceModel.Channels.IRequestChannel.Request">
@@ -1056,9 +1056,9 @@
         <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
       </Parameters>
       <Docs>
-        <param name="message">要传输的请求消息。</param>
+        <param name="message">待传输的请求消息。</param>
         <summary>发送一个基于消息的请求，并返回相关的基于消息的响应。</summary>
-        <returns>在对请求响应接收的消息。</returns>
+        <returns>以响应该请求接收的消息 。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1090,10 +1090,10 @@
         <Parameter Name="timeout" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="message">要传输的请求消息。</param>
-        <param name="timeout">指定的时间间隔内必须收到响应的间隔时间跨度。</param>
+        <param name="message">待传输的请求消息。</param>
+        <param name="timeout">指定时间间隔的时间跨度，在此时间间隔内必须收到响应。</param>
         <summary>发送一个基于消息的请求，并在指定的时间间隔内返回相关的基于消息的响应。</summary>
-        <returns>在对请求响应接收的消息。</returns>
+        <returns>以响应该请求接收的消息 。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1123,7 +1123,7 @@
         <ReturnType>System.Uri</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取向其发送请求的传输地址。</summary>
+        <summary>获取将请求发送至的目标传输地址。</summary>
         <value><see cref="T:System.Uri" />，包含要将消息发送至的传输地址。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1153,8 +1153,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，指示客户端通道是否允许初始化 UI。</summary>
-        <value><see langword="True" /> 如果客户端通道允许初始化 UR;否则为<see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示客户端是否允许初始化 UI。</summary>
+        <value>如果客户渠道允许初始化 UR，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1186,7 +1186,7 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="callback">此方法完成时调用该方法。</param>
+        <param name="callback">此方法完成时调用的方法。</param>
         <param name="state">有关通道状态的信息。</param>
         <summary>要开始使用用户接口获取凭据信息的异步调用。</summary>
         <returns>处理完成时用于回调的 <see cref="T:System.IAsyncResult" />。</returns>
@@ -1218,8 +1218,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否以获取凭据信息的用户接口执行调用。</summary>
-        <value><see langword="True" /> 如果对一个用户界面来获取凭据信息; 调用否则为<see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否对用户接口执行调用以获取凭据信息。</summary>
+        <value>如果对用户接口执行调用以获取凭据信息，则 <see langword="true" />；否则，为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1248,7 +1248,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>指定的用户接口的调用以获取凭据信息。</summary>
+        <summary>指定用以获取凭据信息的用户接口的调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1280,7 +1280,7 @@
       </Parameters>
       <Docs>
         <param name="result">操作的结果。</param>
-        <summary>当对 BeginDisplayInitializationUI 的调用已完成时调用。</summary>
+        <summary>在对 BeginDisplayInitializationUI 的调用完成时调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1307,7 +1307,7 @@
         <ReturnType>System.EventHandler&lt;System.ServiceModel.UnknownMessageReceivedEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>ClientBase 对象接收未知的消息时调用事件处理程序。</summary>
+        <summary>当 ClientBase 对象接收一条未知消息时调用的事件处理程序。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1337,7 +1337,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取 URI，该 URI 包含客户端信道上发送的消息将要到达的传输地址。</summary>
-        <value>包含通道向其发送消息的传输地址的 URI。</value>
+        <value>包含客户端信道上发送的消息将要到达的传输地址的 URI。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1411,9 +1411,9 @@
       </Parameters>
       <Docs>
         <param name="callback">接收异步关闭操作完成通知的 <see cref="T:System.AsyncCallback" /> 委托。</param>
-        <param name="state">一个指定应用程序，它包含与异步关闭操作相关联的状态信息的对象。</param>
+        <param name="state">一个由应用程序指定的对象，它包含与异步关闭操作相关联的状态信息。</param>
         <summary>开始一个异步操作以关闭通信对象。</summary>
-        <returns><see cref="T:System.IAsyncResult" /> ，它引用异步关闭操作。</returns>
+        <returns>引用异步关闭操作的 <see cref="T:System.IAsyncResult" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1447,10 +1447,10 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="timeout">指定时间发送操作的时间跨度必须在超时前完成。</param>
+        <param name="timeout">指定在超时前必须完成发送操作的时间的时间跨度。</param>
         <param name="callback">接收异步关闭操作完成通知的 <see cref="T:System.AsyncCallback" /> 委托。</param>
         <param name="state">一个由应用程序指定的对象，它包含与异步关闭操作相关联的状态信息。</param>
-        <summary>开始一个异步操作以关闭通信对象的指定超时。</summary>
+        <summary>开始一个异步操作以在指定超时时间内关闭通信对象。</summary>
         <returns>引用异步关闭操作的 <see cref="T:System.IAsyncResult" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1531,7 +1531,7 @@
         <Parameter Name="state" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="timeout">指定时间发送操作的时间跨度必须在超时前完成。</param>
+        <param name="timeout">指定在超时前必须完成发送操作的时间的时间跨度。</param>
         <param name="callback">接收异步打开操作完成通知的 <see cref="T:System.AsyncCallback" /> 委托。</param>
         <param name="state">一个由应用程序指定的对象，它包含与异步打开操作相关联的状态信息。</param>
         <summary>开始一个异步操作以在指定时间间隔内打开通信对象。</summary>
@@ -1607,7 +1607,7 @@
         <Parameter Name="timeout" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="timeout">指定时间发送操作的时间跨度必须在超时前完成。</param>
+        <param name="timeout">指定在超时前必须完成发送操作的时间的时间跨度。</param>
         <summary>使通信对象从其当前状态转换到关闭状态。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1636,7 +1636,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>ClientBase 对象已从其当前状态转换为关闭状态时调用的事件处理程序。</summary>
+        <summary>ClientBase 对象已从其当前状态转换到已关闭状态时调用的事件处理程序。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1664,7 +1664,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>ClientBase 对象从其当前状态转换为关闭状态时调用事件处理程序。</summary>
+        <summary>ClientBase 对象从其当前状态转换到已关闭状态时调用的事件处理程序。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1696,7 +1696,7 @@
         <Parameter Name="result" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="result"><see cref="T:System.IAsyncResult" />到 beginclose （） 方法的调用返回。</param>
+        <param name="result">通过调用返回到 BeginClose() 方法的 <see cref="T:System.IAsyncResult" />。</param>
         <summary>完成一个异步操作以关闭通信对象。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1729,7 +1729,7 @@
         <Parameter Name="result" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="result"><see cref="T:System.IAsyncResult" />到 beginopen （） 方法的调用返回。</param>
+        <param name="result">通过调用返回到 BeginOpen() 方法的 <see cref="T:System.IAsyncResult" />。</param>
         <summary>完成一个异步操作以打开通信对象。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1758,7 +1758,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当 ClientBase 对象上执行操作过程中发生错误时调用事件处理程序。</summary>
+        <summary>在对 ClientBase 对象执行操作过程中发生错误时调用的事件处理程序。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1830,7 +1830,7 @@
         <Parameter Name="timeout" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="timeout">指定时间发送操作的时间跨度必须在超时前完成。</param>
+        <param name="timeout">指定在超时前必须完成发送操作的时间的时间跨度。</param>
         <summary>使通信对象在指定时间间隔内从已创建状态转换到已打开状态。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1887,7 +1887,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>ClientBase 对象从已创建状态转换为已打开状态时调用事件处理程序。</summary>
+        <summary>ClientBase 对象从已创建状态转换为已打开状态时调用的事件处理程序。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1947,8 +1947,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，指示是否允许分批处理传出消息;否则为 false。</summary>
-        <value>如果允许对传出消息进行批处理，则为 <see langword="True" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置指示是否允许传出消息的批处理的值；如果不允许，则为 false。</summary>
+        <value>如果允许对传出消息进行批处理，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1978,7 +1978,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取通道的输入会话。</summary>
-        <value>通道输入的会话。</value>
+        <value>适用于通道的输入会话。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2038,7 +2038,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个时间段，操作必须在此时间段内完成否则将引发异常。</summary>
-        <value>时间跨度，指定操作必须在其中完成的时间段。</value>
+        <value>指定操作必须在此期间内完成的时间段的时间跨度。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2068,7 +2068,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取与通道关联的输出会话（如果有）。</summary>
-        <value>一个<see cref="T:System.ServiceModel.Channels.IOutputSession" />实现如果存在输入的会话; 否则为 null。</value>
+        <value>如果存在输入会话，则为 <see cref="T:System.ServiceModel.Channels.IOutputSession" /> 实现；否则为 null。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2127,7 +2127,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>如果有，则当前会话中获取的标识符。</summary>
+        <summary>获取当前会话的标识符（如果有）。</summary>
         <value>当前会话的标识符（如果有）。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -2159,7 +2159,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此可扩展对象的扩展对象集合。</summary>
-        <value><see cref="T:System.ServiceModel.IExtensionCollection`1" />的扩展对象。</value>
+        <value>扩展对象的该 <see cref="T:System.ServiceModel.IExtensionCollection`1" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

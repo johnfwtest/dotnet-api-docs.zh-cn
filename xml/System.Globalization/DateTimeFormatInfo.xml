@@ -1,5 +1,5 @@
 <Type Name="DateTimeFormatInfo" FullName="System.Globalization.DateTimeFormatInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="df2108aac824f5567b98c638d59255e77f9a56af" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52365759" /></Metadata><TypeSignature Language="C#" Value="public sealed class DateTimeFormatInfo : ICloneable, IFormatProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2f7444dcbcb4fe45b5c5328da64aa39961c484f9" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53291400" /></Metadata><TypeSignature Language="C#" Value="public sealed class DateTimeFormatInfo : ICloneable, IFormatProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DateTimeFormatInfo extends System.Object implements class System.ICloneable, class System.IFormatProvider" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.DateTimeFormatInfo" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DateTimeFormatInfo&#xA;Implements ICloneable, IFormatProvider" />
@@ -190,7 +190,7 @@
 |`CultureInfo.CurrentCulture.DateTimeFormat` 属性|是|  
 |<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A?displayProperty=nameWithType> 属性|是|  
 |<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType> 方法|是|  
-|<xref:System.Globalization.CultureInfo.GetCultureInfo%2A?displayProperty=nameWithType> 方法|否|  
+|<xref:System.Globalization.CultureInfo.GetCultureInfo%2A?displayProperty=nameWithType> 方法|No|  
 |<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> 构造函数|是|  
 |<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> 构造函数|取决于值`useUserOverride`参数|  
   
@@ -728,8 +728,10 @@
   
 ## Remarks  
  <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>属性接受仅适用于与之关联的区域性的日历<xref:System.Globalization.DateTimeFormatInfo>对象。 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType>属性指定可由特定区域性的日历和<xref:System.Globalization.CultureInfo.Calendar%2A?displayProperty=nameWithType>属性指定区域性的默认日历。  
-  
- 更改此属性的值会影响以下属性： <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.DayNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.CalendarWeekRule%2A>， <xref:System.Globalization.DateTimeFormatInfo.FirstDayOfWeek%2A>， <xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>， <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>， <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>， <xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A>和<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>。  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
+更改此属性的值会影响以下属性： <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.DayNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>， <xref:System.Globalization.DateTimeFormatInfo.CalendarWeekRule%2A>， <xref:System.Globalization.DateTimeFormatInfo.FirstDayOfWeek%2A>， <xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>， <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>， <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>， <xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A>和<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>。  
   
  例如，如果当前线程的区域性为日语，则此属性接受<xref:System.Globalization.JapaneseCalendar>， <xref:System.Globalization.GregorianCalendarTypes.Localized> <xref:System.Globalization.GregorianCalendar>，或<xref:System.Globalization.GregorianCalendarTypes.USEnglish> <xref:System.Globalization.GregorianCalendar>。 当<xref:System.Globalization.JapaneseCalendar>使用默认的长日期说明符是"gg y '\x5e74 AM' \x6708 有 \x65e5'"。 当<xref:System.Globalization.GregorianCalendarTypes.Localized> <xref:System.Globalization.GregorianCalendar>，使用默认的长日期说明符是"yyyy '\x5e74 AM' \x6708 有 \x65e5'"。  
   
@@ -1626,9 +1628,9 @@
  <xref:System.Globalization.DateTimeFormatInfo.GetEra%2A> 仅当将忽略缩写的纪元名称中的标点<xref:System.Globalization.GregorianCalendar>中选择<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>和区域性使用"公元" 作为纪元名称，即"公元" 等效于"AD"。  
   
  <xref:System.Globalization.DateTimeFormatInfo.GetEra%2A> 比较`eraName`返回的完整纪元名称与<xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A>使用缩写的纪元名称返回<xref:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName%2A>。  
-  
-   
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
 ## Examples  
  下面的示例演示<xref:System.Globalization.DateTimeFormatInfo>才日历为公历和区域性使用纪元名称"公元"忽略标点符号纪元名称中的。  
   
@@ -1689,6 +1691,8 @@
  纪元名称是日历用来指代一段时间推测从固定的点或事件的名称。 例如，"公元" 或者"公元" 是公历中的当前纪元。  
   
  有效值`era`中列出<xref:System.Globalization.Calendar.Eras%2A>属性的合适的类派生自<xref:System.Globalization.Calendar>。 例如：<xref:System.Globalization.JapaneseCalendar.Eras%2A?displayProperty=nameWithType>显示的此实现支持的纪元列表。  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
   
  ]]></format>
         </remarks>
@@ -1794,7 +1798,7 @@
       <Docs>
         <param name="provider">获取 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象的 <see cref="T:System.IFormatProvider" />。  
   
-或 
+- 或 - 
  要获取 <see cref="P:System.Globalization.DateTimeFormatInfo.CurrentInfo" /> 的 <see langword="null" />。</param>
         <summary>返回与指定 <see cref="T:System.IFormatProvider" /> 关联的 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象。</summary>
         <returns>与 <see cref="T:System.IFormatProvider" /> 关联的 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象。</returns>
@@ -2657,7 +2661,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="patterns" /> 是 <see langword="null" /> 或长度为零的数组。  
   
-或 
+- 或 - 
  <paramref name="format" /> 不是有效的标准格式字符串，或者是不能设置其模式的标准格式字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="patterns" /> 有一个值为 <see langword="null" /> 的数组元素。</exception>
         <exception cref="T:System.InvalidOperationException">此 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象是只读的。</exception>

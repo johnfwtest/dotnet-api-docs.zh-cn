@@ -1,5 +1,5 @@
 <Type Name="SqlUserDefinedTypeAttribute" FullName="Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="60314fccfad8d53c8d60eebb608027e1278f8a9b" /><Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/05/2018" /><Meta Name="ms.locfileid" Value="52919015" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlUserDefinedTypeAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="324aa4c3f7aa70058032e1eacbccc13cbad320a1" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53290347" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlUserDefinedTypeAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlUserDefinedTypeAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SqlUserDefinedTypeAttribute&#xA;Inherits Attribute" />
@@ -142,7 +142,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果设置为`true`，则<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>属性实际上保证，可用于序列化的二进制数据的信息的语义排序。 因此，字节顺序的 UDT 对象的每个实例只能有一种序列化表示形式。 当在 SQL Server 中对序列化字节执行比较运算时，其结果应相同的相同的比较操作好像在托管代码中执行的位置...  
+ 如果设置为`true`，则<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>属性实际上保证，可用于序列化的二进制数据的信息的语义排序。 因此，字节顺序的 UDT 对象的每个实例只能有一种序列化表示形式。 时在 SQL Server 中对序列化字节执行比较运算，其结果应为相同的相同的比较操作好像在托管代码中执行的位置。  
   
  支持以下功能时<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>设置为`true`:  
   
@@ -244,7 +244,7 @@
   
  在连接到 SQL Server 2008 或更高版本时，设置<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>之间 1 和 8000，其实例始终是 8,000 个字节的类型或更少。 对于可以具有大于 8000 的实例的类型，指定为-1。  
   
- 有关与指定，用户定义序列化 UDT<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>定义的用户是指其序列化的窗体中的 UDT 的总大小。 考虑这样一个 UDT 属性值为 10 个字符的字符串 (<xref:System.Char>)。 用户定义的类型使用序列化时<xref:System.IO.BinaryWriter>、 序列化字符串的总大小为 22 字节： 2 个字节，每个 Unicode utf-16 字符，乘以最大字符数，以及所产生的开销 2 个控制字节序列化二进制流。 因此，当确定的值<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>，必须考虑序列化 UDT 的总大小： 以二进制格式序列化的数据加上因序列化所产生的开销大小。  
+ 有关与指定，用户定义序列化 UDT<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>定义的用户是指其序列化的窗体中的 UDT 的总大小。 考虑这样一个 UDT 属性值为 10 个字符的字符串 (<xref:System.Char>)。 用户定义的类型使用序列化时<xref:System.IO.BinaryWriter>，序列化字符串的总大小为 22 字节：每个 Unicode utf-16 字符占 2 个字节的字符，再加上 2 个控件的最大数目个字节的序列化二进制流所产生的开销的乘积。 因此，当确定的值<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.MaxByteSize%2A>，必须考虑序列化 UDT 的总大小： 以二进制格式序列化的数据加上因序列化所产生的开销大小。  
   
  此属性不应与`Native`序列化<xref:Microsoft.SqlServer.Server.Format>。  
   
