@@ -1,13 +1,5 @@
 <Type Name="HwndHost" FullName="System.Windows.Interop.HwndHost">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="b858ef2a82eab1e5e84d744a4e6f0ed72f8cd724" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51925207" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class HwndHost : System.Windows.FrameworkElement, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b858ef2a82eab1e5e84d744a4e6f0ed72f8cd724" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51925207" /></Metadata><TypeSignature Language="C#" Value="public abstract class HwndHost : System.Windows.FrameworkElement, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract HwndHost extends System.Windows.FrameworkElement implements class System.IDisposable, class System.Windows.Interop.IKeyboardInputSink, class System.Windows.Interop.IWin32Window" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Interop.HwndHost" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HwndHost&#xA;Inherits FrameworkElement&#xA;Implements IDisposable, IKeyboardInputSink, IWin32Window" />
@@ -112,13 +104,11 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>重写此方法以生成要承载的窗口。  
+        <block subset="none" type="overrides"><para>重写此方法以生成要承载的窗口。  
   
 返回窗口必须是指定的窗口的子级<paramref name="hwndParent" />。  
   
-此外，如果由调用线程拥有该窗口将仅创建子窗口。</para>
-        </block>
+此外，如果由调用线程拥有该窗口将仅创建子窗口。</para></block>
       </Docs>
     </Member>
     <Member MemberName="DestroyWindowCore">
@@ -153,9 +143,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>重写此方法要销毁所承载的窗口，因为由创建<see cref="M:System.Windows.Interop.HwndHost.BuildWindowCore(System.Runtime.InteropServices.HandleRef)" />。 <paramref name="hwnd" />参数应为句柄所返回的<see cref="M:System.Windows.Interop.HwndHost.BuildWindowCore(System.Runtime.InteropServices.HandleRef)" />。</para>
-        </block>
+        <block subset="none" type="overrides"><para>重写此方法要销毁所承载的窗口，因为由创建<see cref="M:System.Windows.Interop.HwndHost.BuildWindowCore(System.Runtime.InteropServices.HandleRef)" />。 <paramref name="hwnd" />参数应为句柄所返回的<see cref="M:System.Windows.Interop.HwndHost.BuildWindowCore(System.Runtime.InteropServices.HandleRef)" />。</para></block>
       </Docs>
     </Member>
     <MemberGroup MemberName="Dispose">
@@ -422,11 +410,9 @@
         <Parameter Name="constraint" Type="System.Windows.Size" />
       </Parameters>
       <Docs>
-        <param name="constraint">
-          <see cref="T:System.Windows.Interop.HwndHost" /> 对象的大小。</param>
+        <param name="constraint"><see cref="T:System.Windows.Interop.HwndHost" /> 对象的大小。</param>
         <summary>按照布局引擎操作的要求，返回 <see cref="T:System.Windows.Interop.HwndHost" /> 对象所表示的窗口的大小。</summary>
-        <returns>
-          <see cref="T:System.Windows.Interop.HwndHost" /> 对象的大小。</returns>
+        <returns><see cref="T:System.Windows.Interop.HwndHost" /> 对象的大小。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -438,11 +424,9 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要调整布局 (通过让布局引擎起作用时所承载的区域)。 关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
-        <block subset="none" type="overrides">
-          <para>在[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]，窗口应为在创建窗口时请求布局的大小。 派生的类应重写此方法，只有在具有所需的窗口大小有关的其他信息。  
+        <block subset="none" type="overrides"><para>在[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]，窗口应为在创建窗口时请求布局的大小。 派生的类应重写此方法，只有在具有所需的窗口大小有关的其他信息。  
   
-此处的特定实现已重写<see cref="T:System.Windows.FrameworkElement" />大小约束基于窗口句柄并将一个或多个维度中的零值视为非约束的虚拟成员。 <see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />类还重写<see cref="M:System.Windows.Forms.Integration.WindowsFormsHost.MeasureOverride(System.Windows.Size)" />如果太大，将导致窗体的剪辑的实现。</para>
-        </block>
+此处的特定实现已重写<see cref="T:System.Windows.FrameworkElement" />大小约束基于窗口句柄并将一个或多个维度中的零值视为非约束的虚拟成员。 <see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />类还重写<see cref="M:System.Windows.Forms.Integration.WindowsFormsHost.MeasureOverride(System.Windows.Size)" />如果太大，将导致窗体的剪辑的实现。</para></block>
       </Docs>
     </Member>
     <Member MemberName="MessageHook">
@@ -705,9 +689,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides">
-          <para>子类可以重写此方法以调整窗口根据提供的维度的大小<paramref name="rcBoundingBox" />。</para>
-        </block>
+        <block subset="none" type="overrides"><para>子类可以重写此方法以调整窗口根据提供的维度的大小<paramref name="rcBoundingBox" />。</para></block>
       </Docs>
     </Member>
     <Member MemberName="RegisterKeyboardInputSinkCore">
@@ -1196,9 +1178,7 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要调用此方法。 关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
-        <block subset="none" type="overrides">
-          <para>中的基实现<see cref="T:System.Windows.Interop.HwndHost" />不返回实际的进程，但将返回<c>IntPtr.Zero</c>作为安全模式。</para>
-        </block>
+        <block subset="none" type="overrides"><para>中的基实现<see cref="T:System.Windows.Interop.HwndHost" />不返回实际的进程，但将返回<c>IntPtr.Zero</c>作为安全模式。</para></block>
       </Docs>
     </Member>
   </Members>
