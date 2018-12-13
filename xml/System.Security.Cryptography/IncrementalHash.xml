@@ -1,13 +1,5 @@
 <Type Name="IncrementalHash" FullName="System.Security.Cryptography.IncrementalHash">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="3a744315edf825f42d86a55c78e0b24b824e3951" />
-    <Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/20/2018" />
-    <Meta Name="ms.locfileid" Value="52238839" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public sealed class IncrementalHash : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3a744315edf825f42d86a55c78e0b24b824e3951" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52238839" /></Metadata><TypeSignature Language="C#" Value="public sealed class IncrementalHash : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IncrementalHash extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.IncrementalHash" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class IncrementalHash&#xA;Implements IDisposable" />
@@ -126,10 +118,8 @@
         <param name="data">要处理的数据。</param>
         <summary>将指定数据追加到已进行哈希或 HMAC 处理的数据。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="data" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Security.Cryptography.IncrementalHash" /> 对象已被释放。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="data" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Security.Cryptography.IncrementalHash" /> 对象已被释放。</exception>
       </Docs>
     </Member>
     <Member MemberName="AppendData">
@@ -201,17 +191,13 @@
         <param name="count">要从 <paramref name="data" /> 中使用的字节数。</param>
         <summary>从指定偏移量开始，向已经过哈希或基于哈希的消息验证代码 (HMAC) 处理的数据追加指定数据的指定字节数。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="data" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="count" /> 或 <paramref name="offset" /> 为负数。  
+        <exception cref="T:System.ArgumentNullException"><paramref name="data" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 或 <paramref name="offset" /> 为负数。  
   
 或 
  <paramref name="count" /> 大于 <paramref name="data" /> 的长度。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="offset" /> 与 <paramref name="count" /> 的总和大于数据长度。</exception>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Security.Cryptography.IncrementalHash" /> 对象已被释放。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> 与 <paramref name="count" /> 的总和大于数据长度。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Security.Cryptography.IncrementalHash" /> 对象已被释放。</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateHash">
@@ -253,10 +239,8 @@
         <summary>为指定算法创建 <see cref="T:System.Security.Cryptography.IncrementalHash" />。</summary>
         <returns>一个 <see cref="T:System.Security.Cryptography.IncrementalHash" /> 实例，该实例已准备好计算 <paramref name="hashAlgorithm" /> 指定的哈希算法。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="hashAlgorithm" />.<see cref="P:System.Security.Cryptography.HashAlgorithmName.Name" /> 为 <see langword="null" /> 或空字符串。</exception>
-        <exception cref="T:System.Security.Cryptography.CryptographicException">
-          <paramref name="hashAlgorithm" /> 不是已知的哈希算法。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="hashAlgorithm" />.<see cref="P:System.Security.Cryptography.HashAlgorithmName.Name" /> 为 <see langword="null" /> 或空字符串。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="hashAlgorithm" /> 不是已知的哈希算法。</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateHMAC">
@@ -298,15 +282,11 @@
         <param name="hashAlgorithm">要在 HMAC 内执行的哈希算法的名称。</param>
         <param name="key">HMAC 的密钥。 密钥可以为任何长度，但将对长度超过指定哈希算法的输出大小的密钥进行哈希处理，以便派生大小正确的密钥。 因此，建议的密钥大小为指定哈希算法的输出大小。</param>
         <summary>使用指定的哈希算法和密钥为基于哈希的消息验证代码 (HMAC) 算法创建 <see cref="T:System.Security.Cryptography.IncrementalHash" />。</summary>
-        <returns>
-          <see cref="T:System.Security.Cryptography.IncrementalHash" /> 类的一个实例，该实例已准备好计算指定的哈希算法。</returns>
+        <returns><see cref="T:System.Security.Cryptography.IncrementalHash" /> 类的一个实例，该实例已准备好计算指定的哈希算法。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentNullException">
-          <paramref name="key" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException">
-          <paramref name="hashAlgorithm" />.<see cref="P:System.Security.Cryptography.HashAlgorithmName.Name" /> 为 <see langword="null" /> 或空字符串。</exception>
-        <exception cref="T:System.Security.Cryptography.CryptographicException">
-          <paramref name="hashAlgorithm" /> 不是已知的哈希算法。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="hashAlgorithm" />.<see cref="P:System.Security.Cryptography.HashAlgorithmName.Name" /> 为 <see langword="null" /> 或空字符串。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="hashAlgorithm" /> 不是已知的哈希算法。</exception>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -385,8 +365,7 @@
         <summary>检索哈希或基于哈希的消息验证代码 (HMAC)（用于从之前对 <see cref="M:System.Security.Cryptography.IncrementalHash.AppendData(System.Byte[])" /> 方法的调用中累积的数据），并将对象重置为初始状态。</summary>
         <returns>计算所得的哈希或 HMAC。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ObjectDisposedException">
-          <see cref="T:System.Security.Cryptography.IncrementalHash" /> 对象已被释放。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Security.Cryptography.IncrementalHash" /> 对象已被释放。</exception>
       </Docs>
     </Member>
     <Member MemberName="TryGetHashAndReset">
