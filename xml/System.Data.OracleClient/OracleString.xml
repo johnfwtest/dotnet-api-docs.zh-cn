@@ -1,5 +1,5 @@
 <Type Name="OracleString" FullName="System.Data.OracleClient.OracleString">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4d46c2fe619d3009130865a7c9f843b4800f5015" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="37675947" /></Metadata><TypeSignature Language="C#" Value="public struct OracleString : IComparable, System.Data.SqlTypes.INullable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ea4af41124b845c56623f020ea6ae152911c4b92" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53301046" /></Metadata><TypeSignature Language="C#" Value="public struct OracleString : IComparable, System.Data.SqlTypes.INullable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit OracleString extends System.ValueType implements class System.Data.SqlTypes.INullable, class System.IComparable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleString" />
   <TypeSignature Language="VB.NET" Value="Public Structure OracleString&#xA;Implements IComparable, INullable" />
@@ -38,41 +38,41 @@
 using System;  
 using System.Data.OracleClient;  
 public class Class1 {  
-   public static void Main() {  
-      OracleString oraclestring1 = new OracleString("MyOracleString1");  
-      OracleString oraclestring2 = new OracleString("MyOracleString2");  
-      OracleString oraclestring3 = new OracleString("MyOracleString1");  
+   public static void Main() {  
+      OracleString oraclestring1 = new OracleString("MyOracleString1");  
+      OracleString oraclestring2 = new OracleString("MyOracleString2");  
+      OracleString oraclestring3 = new OracleString("MyOracleString1");  
   
-      // Type: System.Data.OracleClient.OracleString  
-      Console.WriteLine("Type: " + oraclestring1.GetType());  
+      // Type: System.Data.OracleClient.OracleString  
+      Console.WriteLine("Type: " + oraclestring1.GetType());  
   
-      // Length: 15  
-      Console.WriteLine("Length: " + oraclestring1.Length);  
+      // Length: 15  
+      Console.WriteLine("Length: " + oraclestring1.Length);  
   
-      // False  
-      Console.WriteLine(oraclestring1.IsNull);  
+      // False  
+      Console.WriteLine(oraclestring1.IsNull);  
   
-      // -1  
-      Console.WriteLine(oraclestring1.CompareTo(oraclestring2));  
+      // -1  
+      Console.WriteLine(oraclestring1.CompareTo(oraclestring2));  
   
-      // 0  
-      Console.WriteLine(oraclestring1.CompareTo(oraclestring3));  
+      // 0  
+      Console.WriteLine(oraclestring1.CompareTo(oraclestring3));  
   
-      // 1  
-      Console.WriteLine(oraclestring2.CompareTo(oraclestring3));  
+      // 1  
+      Console.WriteLine(oraclestring2.CompareTo(oraclestring3));  
   
-      // False  
-      Console.WriteLine(oraclestring1.Equals(oraclestring2));  
+      // False  
+      Console.WriteLine(oraclestring1.Equals(oraclestring2));  
   
-      // True  
-      Console.WriteLine(oraclestring1.Equals(oraclestring3));  
+      // True  
+      Console.WriteLine(oraclestring1.Equals(oraclestring3));  
   
-      // MyOracleString1  
-      Console.WriteLine(oraclestring1.Value);  
+      // MyOracleString1  
+      Console.WriteLine(oraclestring1.Value);  
   
-      // MyOracleString2  
-      Console.WriteLine(oraclestring2.ToString());  
-   }  
+      // MyOracleString2  
+      Console.WriteLine(oraclestring2.ToString());  
+   }  
 }  
   
 ```  
@@ -132,7 +132,19 @@ public class Class1 {
         <summary>将 <see cref="T:System.Data.OracleClient.OracleString" /> 的此实例与所提供的对象进行比较，并返回其相对值的指示值。</summary>
         <returns>一个有符号的数字，它指示该实例和对象的相对值。  
   
- <list type="table"><listheader><term> 返回值 </term><description> 条件 </description></listheader><item><term> 小于零 </term><description> 此实例小于该对象。</description></item><item><term> 零 </term><description> 此实例与该对象相同。</description></item><item><term> 大于零 </term><description> 此实例大于该对象，或者，对象为空引用 (<see langword="Nothing" />) </description></item></list></returns>
+ <list type="table"><listheader><term> 返回值 
+ </term><description> 条件 
+ </description></listheader><item><term> 小于零 
+ </term><description> 此实例小于对象。  
+  
+ </description></item><item><term> 零 
+ </term><description> 此实例等于对象。  
+  
+ </description></item><item><term> 大于零 
+ </term><description> 此实例大于对象 
+- 或 - 
+对象是 null 引用 (<see langword="Nothing" />) 
+ </description></item></list></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,7 +171,7 @@ public class Class1 {
       </Parameters>
       <Docs>
         <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>串连两个指定的 <see cref="T:System.Data.OracleClient.OracleString" /> 结构。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleString" />，它包含表示两个 <see cref="T:System.Data.OracleClient.OracleString" /> 参数内容的新连接的值。</returns>
         <remarks>To be added.</remarks>
@@ -245,8 +257,8 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定它们是否相等。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，它在两个实例相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />，在两个实例不相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>To be added.</remarks>
@@ -298,7 +310,7 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否大于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例大于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
@@ -444,7 +456,7 @@ public class Class1 {
       </Parameters>
       <Docs>
         <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否小于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例小于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>To be added.</remarks>
@@ -472,8 +484,8 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否小于或等于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例小于或等于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>To be added.</remarks>
@@ -501,8 +513,8 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，确定它们是否相等。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，它在两个实例不相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />，在两个实例相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>To be added.</remarks>
@@ -559,7 +571,7 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>串连两个指定的 <see cref="T:System.Data.OracleClient.OracleString" /> 结构。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleString" />，它包含表示两个 <see cref="T:System.Data.OracleClient.OracleString" /> 参数内容的新连接的值。</returns>
@@ -590,7 +602,7 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定它们是否相等。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，它在两个实例相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />，在两个实例不相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
@@ -651,7 +663,7 @@ public class Class1 {
       </Parameters>
       <Docs>
         <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否大于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例大于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>
@@ -681,8 +693,8 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否大于或等于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例大于或等于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>
@@ -739,8 +751,8 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定它们是否相等。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，它在两个实例不相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />，在两个实例相等时为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>
@@ -770,7 +782,7 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否小于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例小于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
@@ -801,8 +813,8 @@ public class Class1 {
         <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
       </Parameters>
       <Docs>
-        <param name="x">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
-        <param name="y">一个 <see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
         <summary>对两个 <see cref="T:System.Data.OracleClient.OracleString" /> 操作数执行逻辑比较，以确定第一个操作数是否小于或等于第二个操作数。</summary>
         <returns>一个 <see cref="T:System.Data.OracleClient.OracleBoolean" />，如果第一个实例小于或等于第二个实例，则它为 <see cref="F:System.Data.OracleClient.OracleBoolean.True" />；否则为 <see cref="F:System.Data.OracleClient.OracleBoolean.False" />。 如果 <see cref="T:System.Data.OracleClient.OracleString" /> 的任一实例为空，则 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> 的 <see cref="T:System.Data.OracleClient.OracleBoolean" /> 将为 <see cref="F:System.Data.OracleClient.OracleBoolean.Null" />。</returns>
         <remarks>
@@ -853,9 +865,7 @@ public class Class1 {
       </ReturnValue>
       <Docs>
         <summary>获取存储在此 <see cref="T:System.Data.OracleClient.OracleString" /> 结构中的字符串。</summary>
-        <value>存储的字符串。  
-  
-此属性是只读的。</value>
+        <value>存储的字符串。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
