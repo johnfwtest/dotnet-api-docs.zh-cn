@@ -1,13 +1,5 @@
 <Type Name="SafeHandle" FullName="System.Runtime.InteropServices.SafeHandle">
-  <Metadata>
-    <Meta Name="ms.openlocfilehash" Value="2df2050dc2138073d3f5a6997faff754918bedf1" />
-    <Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" />
-    <Meta Name="ms.translationtype" Value="HT" />
-    <Meta Name="ms.contentlocale" Value="zh-CN" />
-    <Meta Name="ms.lasthandoff" Value="11/17/2018" />
-    <Meta Name="ms.locfileid" Value="51879512" />
-  </Metadata>
-  <TypeSignature Language="C#" Value="public abstract class SafeHandle : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2df2050dc2138073d3f5a6997faff754918bedf1" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51879512" /></Metadata><TypeSignature Language="C#" Value="public abstract class SafeHandle : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract beforefieldinit SafeHandle extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.SafeHandle" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class SafeHandle&#xA;Inherits CriticalFinalizerObject&#xA;Implements IDisposable" />
@@ -120,13 +112,11 @@
     </remarks>
     <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">继承者完全信任。 此成员不能由部分受信任代码继承。</permission>
     <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
-    <block subset="none" type="overrides">
-      <para>若要创建派生自的类<see cref="T:System.Runtime.InteropServices.SafeHandle" />，您必须知道如何创建和释放操作系统句柄。 此过程是不同的类型不同的句柄，因为一些使用[CloseHandle](https://msdn.microsoft.com/library/windows/desktop/ms724211.aspx)函数，而其他人使用更具体的函数，例如[UnmapViewOfFile](https://msdn.microsoft.com/library/windows/desktop/aa366882.aspx)或[FindClose](https://msdn.microsoft.com/library/windows/desktop/aa364413.aspx). 出于此原因，必须创建的派生的类<see cref="T:System.Runtime.InteropServices.SafeHandle" />你想要在安全句柄中包装每个操作系统句柄类型。  
+    <block subset="none" type="overrides"><para>若要创建派生自的类<see cref="T:System.Runtime.InteropServices.SafeHandle" />，您必须知道如何创建和释放操作系统句柄。 此过程是不同的类型不同的句柄，因为一些使用[CloseHandle](https://msdn.microsoft.com/library/windows/desktop/ms724211.aspx)函数，而其他人使用更具体的函数，例如[UnmapViewOfFile](https://msdn.microsoft.com/library/windows/desktop/aa366882.aspx)或[FindClose](https://msdn.microsoft.com/library/windows/desktop/aa364413.aspx). 出于此原因，必须创建的派生的类<see cref="T:System.Runtime.InteropServices.SafeHandle" />你想要在安全句柄中包装每个操作系统句柄类型。  
   
 当从 <see cref="T:System.Runtime.InteropServices.SafeHandle" /> 继承时，必须重写下面的成员：<see cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" /> 和 <see cref="M:System.Runtime.InteropServices.SafeHandle.ReleaseHandle" />。  
   
-您还应提供调用基构造函数提供一个值，表示无效句柄的值，该值的默认构造函数和一个<see cref="T:System.Boolean" />值，该值指示是否由拥有的本机句柄<see cref="T:System.Runtime.InteropServices.SafeHandle" />，因此应释放时<see cref="T:System.Runtime.InteropServices.SafeHandle" />已被释放。</para>
-    </block>
+您还应提供调用基构造函数提供一个值，表示无效句柄的值，该值的默认构造函数和一个<see cref="T:System.Boolean" />值，该值指示是否由拥有的本机句柄<see cref="T:System.Runtime.InteropServices.SafeHandle" />，因此应释放时<see cref="T:System.Runtime.InteropServices.SafeHandle" />已被释放。</para></block>
     <altmember cref="N:Microsoft.Win32.SafeHandles" />
     <altmember cref="T:System.Runtime.InteropServices.CriticalHandle" />
     <altmember cref="T:System.Runtime.ConstrainedExecution.CriticalFinalizerObject" />
@@ -388,8 +378,7 @@
       <Parameters />
       <Docs>
         <summary>返回 <see cref="F:System.Runtime.InteropServices.SafeHandle.handle" /> 字段的值。</summary>
-        <returns>
-          <see langword="IntPtr" />，表示 <see cref="F:System.Runtime.InteropServices.SafeHandle.handle" /> 字段的值。 如果句柄已使用 <see cref="M:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid" /> 标记为无效，此方法仍返回原来的句柄值，该值可能已失效。</returns>
+        <returns><see langword="IntPtr" />，表示 <see cref="F:System.Runtime.InteropServices.SafeHandle.handle" /> 字段的值。 如果句柄已使用 <see cref="M:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid" /> 标记为无效，此方法仍返回原来的句柄值，该值可能已失效。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
