@@ -1,1 +1,1 @@
-<span data-ttu-id="562c3-101">此类型支持 .NET Framework 基础结构，不应从代码直接使用。</span><span class="sxs-lookup"><span data-stu-id="562c3-101">This type supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>
+<span data-ttu-id="6f488-101">此类型支持 .NET Framework 基础结构，不能在代码中直接使用。</span><span class="sxs-lookup"><span data-stu-id="6f488-101">This type supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>
