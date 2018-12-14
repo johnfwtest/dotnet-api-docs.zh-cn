@@ -1,5 +1,5 @@
 <Type Name="ProjectElement" FullName="Microsoft.Build.Construction.ProjectElement">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b132039f851c078de30d2bd0862393a549745b18" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52604071" /></Metadata><TypeSignature Language="C#" Value="public abstract class ProjectElement" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a943910440d60fd4360f2b5b3ac5821dc8f828ff" /><Meta Name="ms.sourcegitcommit" Value="26e1e91358cabfb3e80ad7de3936c99807f775a3" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53399201" /></Metadata><TypeSignature Language="C#" Value="public abstract class ProjectElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProjectElement extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Construction.ProjectElement" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ProjectElement" />
@@ -47,7 +47,7 @@
 如果这是 ProjectRootElement，则 None。  
   
 如果还没有附加到一个父级，则没有。</summary>
-        <value>返回可枚举所有父元素的枚举器。 没有父元素，如果对象元素是 ProjectRootElement 或者还没有附加到一个父级元素。</value>
+        <value>所有父元素的枚举。 没有父元素，如果对象元素是 ProjectRootElement 或者还没有附加到一个父级元素。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,7 +84,7 @@
 如果要设置的值为空，则移除该特性。  
   
 如果设置条件不适用于那些元素，派生类引发 <see cref="T:System.InvalidOperationException" /> 是可能的。</summary>
-        <value>返回 Condition 特性的值。 如果该特性不存在，则返回空字符串。</value>
+        <value>Condition 特性的值或为空字符串，如果该属性不存在。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -153,7 +153,7 @@
         <summary>包含该 XML 的 ProjectRootElement(可以导入) 。  
   
 不能为 null。</summary>
-        <value>返回包含此项目的项目根容器。</value>
+        <value>包含此项目的项目根容器。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,7 +186,7 @@
 如果该特性不存在，则返回空字符串。  
   
 如果要设置的值为空，则移除该特性。</summary>
-        <value>返回标签。 如果标签不存在，则返回空字符串。</value>
+        <value>该标签或为空字符串，如果标签不存在。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -278,7 +278,7 @@
         <summary>下一个同级元素。  
   
 可能为 null。</summary>
-        <value>返回此项目元素的下一个同级元素。 如果不存在下一个同级元素，则返回 null。</value>
+        <value>此项目元素的下一个同级或<see langword="null" />如果没有下一个同级节点存在。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -309,7 +309,7 @@
         <summary>如果是 ProjectRootElement，则为 null。  
   
 如果还没有附加到一个父级，则为 Null。</summary>
-        <value>返回包含此项目的项目元素容器。</value>
+        <value>包含此项目的项目元素容器。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -353,7 +353,7 @@
         <summary>上一个同级元素。  
   
 可能为 null。</summary>
-        <value>返回此项目元素的上一个同级元素。 如果不存在上一个同级元素，则返回 null。</value>
+        <value>此项目元素的上一个同级或<see langword="null" />如果前一个同级元素不存在。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
