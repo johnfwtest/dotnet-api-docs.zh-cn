@@ -1,5 +1,5 @@
 <Type Name="HttpRequest" FullName="System.Web.HttpRequest">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f984df15bcbc5d9602eeab75f3665eef2c17e570" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52598143" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpRequest" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f5e927b6dd4443feead33b37497ab93ccb239d7a" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53393721" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpRequest extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpRequest" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpRequest" />
@@ -109,7 +109,7 @@ Public Class RestrictedPage
 End Class  
 ```  
   
- Visual Studio Web 站点项目的源代码是可随附于本主题：[下载](https://go.microsoft.com/fwlink/?LinkID=191455)。  
+ 包含源代码的 Visual Studio Web 站点项目是可随附于本主题：[下载](https://go.microsoft.com/fwlink/?LinkID=191455)。  
   
  此示例使用<xref:System.IO.StreamWriter>类来编写多个值<xref:System.Web.HttpRequest>类到文件的属性。 对于字符串类型的属性，值为 HTML 编码的文件写入时。 表示集合的属性将遍历，并且它们包含每个键/值对会写入到文件。  
   
@@ -399,7 +399,7 @@ End Class
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为 0。  
   
-\- 或 - 
+- 或 - 
  <paramref name="count" /> 大于可用的字节数。</exception>
       </Docs>
     </Member>
@@ -1221,7 +1221,7 @@ End Class
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">在 IIS 7.0 以前的 IIS 版本上调用该方法。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 是负值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 或 <paramref name="count" /> 是负值。</exception>
         <exception cref="T:System.ArgumentException">如果给定 <paramref name="offset" /> 值，则 <paramref name="count" /> 中的项目数大于 <paramref name="buffer" /> 中的可用空间。</exception>
         <permission cref="T:System.Web.AspNetHostingPermission">用于在宿主环境中进行操作。 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。 关联的枚举： <see cref="F:System.Web.AspNetHostingPermissionLevel.High" /></permission>
       </Docs>
@@ -1516,7 +1516,10 @@ End Class
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">没有为请求定义 <see cref="T:System.Web.HttpContext" /> 对象。</exception>
+        <exception cref="T:System.Web.HttpException"><paramref name="allowCrossMapping" /> 为 <see langword="false" /> 且 <paramref name="virtualPath" /> 属于另一个应用程序。
+
+或 
+没有为请求定义 <see cref="T:System.Web.HttpContext" /> 对象。</exception>
       </Docs>
     </Member>
     <Member MemberName="MapRawImageCoordinates">
@@ -1563,7 +1566,7 @@ End Class
       </ReturnValue>
       <Docs>
         <summary>获取 <see cref="P:System.Web.HttpRequest.QueryString" />、<see cref="P:System.Web.HttpRequest.Form" />、<see cref="P:System.Web.HttpRequest.Cookies" /> 和 <see cref="P:System.Web.HttpRequest.ServerVariables" /> 项的组合集合。</summary>
-        <value><see cref="T:System.Collections.Specialized.NameValueCollection" /> 对象。</value>
+        <value>一个 <see cref="T:System.Collections.Specialized.NameValueCollection" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1901,8 +1904,8 @@ Dim fullname2 As String = Request("fullname")
   
  ]]></format>
         </remarks>
-        <related type="Article" href="https://msdn.microsoft.com/library/b2decba4-2400-491c-8907-89a7b9e0874c">演练： 使用 ASP.NET Web 窗体应用程序中的路由</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/dc88e6ba-470c-4b20-b644-35874cfd781d">如何： 访问路由页中的 URL 参数</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/b2decba4-2400-491c-8907-89a7b9e0874c">演练：使用 ASP.NET Web 窗体应用程序中的路由</related>
+        <related type="Article" href="https://msdn.microsoft.com/library/dc88e6ba-470c-4b20-b644-35874cfd781d">如何：路由页中访问 URL 参数</related>
       </Docs>
     </Member>
     <Member MemberName="RequestType">

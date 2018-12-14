@@ -1,5 +1,5 @@
 <Type Name="HttpRequestWrapper" FullName="System.Web.HttpRequestWrapper">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c1d25a16acb6bfbd92583f5c9fd9c28cee971606" /><Meta Name="ms.sourcegitcommit" Value="c902e847cd05ac37d93eca981b0fb009aae0a790" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/28/2018" /><Meta Name="ms.locfileid" Value="52454687" /></Metadata><TypeSignature Language="C#" Value="public class HttpRequestWrapper : System.Web.HttpRequestBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="90df13eb0d8b6a6922d8109fb182e3c58cc5527f" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53392609" /></Metadata><TypeSignature Language="C#" Value="public class HttpRequestWrapper : System.Web.HttpRequestBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpRequestWrapper extends System.Web.HttpRequestBase" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpRequestWrapper" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpRequestWrapper&#xA;Inherits HttpRequestBase" />
@@ -219,7 +219,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 小于 0。  
   
-\- 或 - 
+- 或 - 
  <paramref name="count" /> 大于可用的字节数。</exception>
       </Docs>
     </Member>
@@ -822,7 +822,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">在 IIS 7.0 以前的 IIS 版本上调用该方法。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 是负值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 或 <paramref name="count" /> 是负值。</exception>
         <exception cref="T:System.ArgumentException">如果给定 <paramref name="offset" /> 值，则 <paramref name="count" /> 中的项目数大于 <paramref name="buffer" /> 中的可用空间。</exception>
       </Docs>
     </Member>
@@ -1053,7 +1053,10 @@
         <summary>将指定的虚拟路径映射到服务器上的物理路径。</summary>
         <returns>服务器上的物理路径。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Web.HttpException">没有为请求定义 <see cref="T:System.Web.HttpContext" /> 对象。</exception>
+        <exception cref="T:System.Web.HttpException"><paramref name="allowCrossAppMapping" /> 为 <see langword="false" /> 且 <paramref name="virtualPath" /> 属于另一个应用程序。
+
+- 或 - 
+没有为请求定义 <see cref="T:System.Web.HttpContext" /> 对象。</exception>
       </Docs>
     </Member>
     <Member MemberName="MapRawImageCoordinates">

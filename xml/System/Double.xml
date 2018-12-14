@@ -1,5 +1,5 @@
 <Type Name="Double" FullName="System.Double">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f6efd450291ee1ecb6fb857186be54a8c761d4b7" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52384895" /></Metadata><TypeSignature Language="C#" Value="public struct Double : IComparable, IComparable&lt;double&gt;, IConvertible, IEquatable&lt;double&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8f873f6c5385cd0327a3c79f43b454526fa7bbd0" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53391947" /></Metadata><TypeSignature Language="C#" Value="public struct Double : IComparable, IComparable&lt;double&gt;, IConvertible, IEquatable&lt;double&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit float64 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;float64&gt;, class System.IConvertible, class System.IEquatable`1&lt;float64&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Double" />
   <TypeSignature Language="VB.NET" Value="Public Structure Double&#xA;Implements IComparable, IComparable(Of Double), IConvertible, IEquatable(Of Double), IFormattable" />
@@ -336,13 +336,13 @@
  </description></listheader><item><term> 小于零 
  </term><description> 此实例小于 <paramref name="value" />。  
   
-或 
+- 或 - 
 此实例不是数字 (<see cref="F:System.Double.NaN" />) 而 <paramref name="value" /> 是数字。  
   
  </description></item><item><term> 零 
  </term><description> 此实例等于 <paramref name="value" />。  
   
-或 
+- 或 - 
 此实例和 <paramref name="value" /> 都不是数字 (<see cref="F:System.Double.NaN" />)、<see cref="F:System.Double.PositiveInfinity" /> 或 <see cref="F:System.Double.NegativeInfinity" />。  
   
  </description></item><item><term> 大于零 
@@ -438,11 +438,11 @@
  </description></item><item><term> 零 
  </term><description> 此实例等于 <paramref name="value" />。  
   
-或 
+- 或 - 
 此实例和 <paramref name="value" /> 都是 <see langword="Double.NaN" />、<see cref="F:System.Double.PositiveInfinity" /> 或 <see cref="F:System.Double.NegativeInfinity" /></description></item><item><term> 正整数 
  </term><description> 此实例大于 <paramref name="value" />。  
   
-或 
+- 或 - 
 此实例是数字而 <paramref name="value" /> 不是数字 (<see cref="F:System.Double.NaN" />)。  
   
 或 
@@ -624,7 +624,7 @@
 > [!NOTE]
 >  因为<xref:System.Double.Epsilon>定义的最小的表达式的范围是接近于零的正值，两个类似的值之间的差异的边距必须是大于<xref:System.Double.Epsilon>。 通常情况下，它是比<xref:System.Double.Epsilon>。 因此，我们建议不要使用<xref:System.Double.Epsilon>比较时<xref:System.Double>值是否相等。  
   
- 第二种方法涉及比较两个浮点数与某些绝对值的数值之间的差异。 其差异是小于或等于该绝对值的数值，如果数字相等。 如果超出该时间，则数字不相等。 一种替代方法是任意选择一个绝对值。 这是有问题，但是，因为差异的可接受幅度取决于度量值的<xref:System.Double>值。 浮点格式的设计功能利用了第二个备选： 两个浮点值的整数表示形式之间的差异指示分隔这些可能的浮点值的数目。 例如，0.0 之间的差异并<xref:System.Double.Epsilon>为 1，因为<xref:System.Double.Epsilon>使用时是最小的可表示值<xref:System.Double>其值为零。 下面的示例使用此方法比较.33333 和 1/3，这两种<xref:System.Double>的值与前面的代码示例<xref:System.Double.Equals%28System.Double%29>方法找到不相等。 请注意，该示例使用<xref:System.BitConverter.DoubleToInt64Bits%2A?displayProperty=nameWithType>方法将一个双精度浮点值转换为整数表示形式。  
+ 第二种方法涉及比较两个浮点数与某些绝对值的数值之间的差异。 其差异是小于或等于该绝对值的数值，如果数字相等。 如果超出该时间，则数字不相等。 一种替代方法是任意选择一个绝对值。 这是有问题，但是，因为差异的可接受幅度取决于度量值的<xref:System.Double>值。 第二个备选利用某个设计功能上的浮点格式：两个浮点值的整数表示形式之间的差异指示分隔这些可能的浮点值的数目。 例如，0.0 之间的差异并<xref:System.Double.Epsilon>为 1，因为<xref:System.Double.Epsilon>使用时是最小的可表示值<xref:System.Double>其值为零。 下面的示例使用此方法比较.33333 和 1/3，这两种<xref:System.Double>的值与前面的代码示例<xref:System.Double.Equals%28System.Double%29>方法找到不相等。 请注意，该示例使用<xref:System.BitConverter.DoubleToInt64Bits%2A?displayProperty=nameWithType>方法将一个双精度浮点值转换为整数表示形式。  
   
  [!code-csharp[System.Double.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.equals/cs/equalsabs1.cs#1)]
  [!code-vb[System.Double.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.equals/vb/equalsabs1.vb#1)]  
@@ -1924,7 +1924,7 @@
         <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Double.MinValue" /> 或大于 <see cref="F:System.Double.MaxValue" /> 的数字。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 包括 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 值。</exception>
         <altmember cref="M:System.Double.ToString" />
         <altmember cref="Overload:System.Double.TryParse" />
@@ -2171,7 +2171,7 @@
         <exception cref="T:System.FormatException"><paramref name="s" /> 不表示一个数值。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 是 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 值。</exception>
         <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Double.MinValue" /> 或大于 <see cref="F:System.Double.MaxValue" /> 的数字。</exception>
         <altmember cref="M:System.Double.ToString" />
@@ -2569,7 +2569,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，未更改。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2617,7 +2617,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Int16" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2713,7 +2713,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Int64" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2814,7 +2814,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Single" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2863,7 +2863,7 @@
       <Docs>
         <param name="type">此 <see cref="T:System.Double" /> 值要转换为的类型。</param>
         <param name="provider">一个 <see cref="T:System.IFormatProvider" /> 实现，提供有关返回值格式的区域性特定信息。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <paramref name="type" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2916,7 +2916,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.UInt16" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3022,7 +3022,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.UInt64" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3785,7 +3785,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 包括 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 值。</exception>
         <altmember cref="M:System.Double.ToString" />
         <related type="Article" href="~/docs/standard/base-types/parsing-numeric.md">分析 .NET 中的数字字符串</related>

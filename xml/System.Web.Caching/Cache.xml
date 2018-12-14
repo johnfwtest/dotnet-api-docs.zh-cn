@@ -1,5 +1,5 @@
 <Type Name="Cache" FullName="System.Web.Caching.Cache">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9898a825a2e90770ebcff9ce24b2c6b0485fddff" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52201113" /></Metadata><TypeSignature Language="C#" Value="public sealed class Cache : System.Collections.IEnumerable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="64d2a9b42b95915774a0b306704660efa5030e38" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53390984" /></Metadata><TypeSignature Language="C#" Value="public sealed class Cache : System.Collections.IEnumerable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Cache extends System.Object implements class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.Caching.Cache" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Cache&#xA;Implements IEnumerable" />
@@ -33,7 +33,7 @@
    
   
 ## Examples  
- 以下示例是一个页面，向用户显示分配给在缓存中的项的值，并从缓存移除项时通知他们。 它会创建`RemovedCallback`方法，它具有签名的`CacheItemRemovedCallback`委托，以通知用户，当删除缓存项，并且它使用<xref:System.Web.Caching.CacheItemRemovedReason>枚举告诉用户移除的原因。 此外，它使用<xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType>属性向缓存添加对象和检索这些对象的值。 在中`AddItemToCache`方法，它将使用<xref:System.Web.Caching.Cache.Add%2A?displayProperty=nameWithType>方法将项添加到缓存。 若要使用`CacheItemRemovedCallback`委派，您必须使用此方法将项添加到缓存或<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>方法，因此，ASP.NET 可以自动进行适当的方法调用时删除该项。 自定义`RemoveItemFromCache`方法使用<xref:System.Web.Caching.Cache.Remove%2A?displayProperty=nameWithType>方法以显式从缓存中删除项导致`RemovedCallback`要调用的方法。  
+ 以下示例是一个页面，向用户显示分配给在缓存中的项的值，并从缓存移除项时通知他们。 它会创建`RemovedCallback`方法，它具有签名的`CacheItemRemovedCallback`委托，以通知用户，当删除缓存项，并且它使用<xref:System.Web.Caching.CacheItemRemovedReason>枚举告诉用户移除的原因。 此外，它使用<xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType>属性向缓存添加对象和检索这些对象的值。 在中`AddItemToCache`方法，它将使用<xref:System.Web.Caching.Cache.Add%2A?displayProperty=nameWithType>方法将项添加到缓存。 若要使用`CacheItemRemovedCallback`委派，您必须使用此方法将项添加到缓存或<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>时删除项，则调用方法，因此该 ASP.NET 可以自动进行适当的方法。 自定义`RemoveItemFromCache`方法使用<xref:System.Web.Caching.Cache.Remove%2A?displayProperty=nameWithType>方法以显式从缓存中删除项导致`RemovedCallback`要调用的方法。  
   
 > [!NOTE]
 >  可通过下面的代码片段的缓存的实例是成员<xref:System.Web.UI.Page>此示例将继承的对象。  
@@ -543,7 +543,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException">将 <paramref name="slidingExpiration" /> 参数设置为小于 <see langword="TimeSpan.Zero" /> 或大于一年的等效值。</exception>
         <exception cref="T:System.ArgumentException">为要添加到 <see langword="Cache" /> 中的项设置 <paramref name="absoluteExpiration" /> 和 <paramref name="slidingExpiration" /> 参数。  
   
-或 
+- 或 - 
 <paramref name="dependencies" /> 参数为 <see langword="null" />，<paramref name="absoluteExpiration" /> 参数设置为 <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" /> 并且 <paramref name="slidingExpiration" /> 参数设置为 <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />。</exception>
         <altmember cref="T:System.Web.Caching.CacheItemUpdateCallback" />
       </Docs>
@@ -599,7 +599,7 @@
  下面的示例演示如何将其插入到您的应用程序时，分配项高优先级`Cache`对象。  
   
 > [!NOTE]
->  详细了解如何使用此方法替换<xref:System.Web.Caching.CacheItemRemovedCallback>委派，请参阅[如何： 通知应用程序时项已从缓存](https://msdn.microsoft.com/library/38c33aa0-afe9-40ba-a1a4-1ebab95286ef)。  
+>  详细了解如何使用此方法替换<xref:System.Web.Caching.CacheItemRemovedCallback>委派，请参阅[如何：从缓存移除项时通知应用程序](https://msdn.microsoft.com/library/38c33aa0-afe9-40ba-a1a4-1ebab95286ef)。  
   
  [!code-csharp[Classic Cache.Insert3 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Cache.Insert3 Example/CS/source.cs#1)]
  [!code-vb[Classic Cache.Insert3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Cache.Insert3 Example/VB/source.vb#1)]  

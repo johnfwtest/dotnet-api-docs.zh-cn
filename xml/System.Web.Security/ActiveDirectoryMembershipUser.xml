@@ -1,5 +1,5 @@
 <Type Name="ActiveDirectoryMembershipUser" FullName="System.Web.Security.ActiveDirectoryMembershipUser">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9ea3a59d6aefbf7ba33d60f2319e9260807b68e8" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52378045" /></Metadata><TypeSignature Language="C#" Value="public class ActiveDirectoryMembershipUser : System.Web.Security.MembershipUser" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="20296800e2c59bf57a48fecc4f955306c7236393" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53391049" /></Metadata><TypeSignature Language="C#" Value="public class ActiveDirectoryMembershipUser : System.Web.Security.MembershipUser" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActiveDirectoryMembershipUser extends System.Web.Security.MembershipUser" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.ActiveDirectoryMembershipUser" />
   <TypeSignature Language="VB.NET" Value="Public Class ActiveDirectoryMembershipUser&#xA;Inherits MembershipUser" />
@@ -37,20 +37,20 @@
   
  <xref:System.Web.Security.ActiveDirectoryMembershipUser> 属性映射到 Active Directory 属性。 下表列出了<xref:System.Web.Security.ActiveDirectoryMembershipUser>属性和其默认属性映射。  
   
-|Property|默认目录属性|可以映射？|  
+|属性|默认目录属性|可以映射？|  
 |--------------|---------------------------------|--------------------|  
-|<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>|`securityIdentifier`|否|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>|`securityIdentifier`|No|  
 |<xref:System.Web.Security.MembershipUser.UserName%2A>|`userPrincipalName`|是的但必须为 userPrincipalName 或 sAMAccountName|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>|`comment`|否|  
 |<xref:System.Web.Security.MembershipUser.CreationDate%2A>|`whenCreated`|否|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.Email%2A>|`mail`|是的但必须是 Unicode 字符串类型的单值属性。|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>|n/a|不支持通过<xref:System.Web.Security.ActiveDirectoryMembershipProvider>。|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>|n/a|不支持通过<xref:System.Web.Security.ActiveDirectoryMembershipProvider>。|  
-|<xref:System.Web.Security.MembershipUser.LastPasswordChangedDate%2A>|`pwdLastSet`|否|  
+|<xref:System.Web.Security.MembershipUser.LastPasswordChangedDate%2A>|`pwdLastSet`|No|  
 |<xref:System.Web.Security.MembershipUser.PasswordQuestion%2A>|无，但如果使用密码重置或检索的问题和答案安全必须映射到属性。|是的但必须是 Unicode 字符串类型的单值属性。|  
-|<xref:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved%2A>|`User-Account-Control` (AD)<br /><br /> `mDS-UserAccountDisabled` (ADAM)|否|  
-|<xref:System.Web.Security.MembershipUser.IsLockedOut%2A>|从计算`lockoutTime`和 AD 锁定持续时间 (在 Windows 2000 上的 AD)<br /><br /> `msDS-User-Account-Control-Computed` (在 Windows Server 2003 上的 AD)<br /><br /> `msDS-User-Account-Control-Computed` (ADAM)|否|  
-|<xref:System.Web.Security.MembershipUser.LastLockoutDate%2A>|如果由于错误密码尝试次数过多而被锁定，则返回的锁定时间属性。<br /><br /> 如果锁定由于过多的错误的密码提示问题答案尝试，由定义的属性中存储的值`attributeMapFailedPasswordAnswerLockoutTime`返回。<br /><br /> 如果因锁定的密码不正确和太多错误密码尝试次数，则返回的最新的日期/时间值。<br /><br /> 如果帐户未锁定，则返回 1/1/1753 的 SQL 兼容性。|否|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved%2A>|`User-Account-Control` (AD)<br /><br /> `mDS-UserAccountDisabled` (ADAM)|No|  
+|<xref:System.Web.Security.MembershipUser.IsLockedOut%2A>|从计算`lockoutTime`和 AD 锁定持续时间 (在 Windows 2000 上的 AD)<br /><br /> `msDS-User-Account-Control-Computed` (在 Windows Server 2003 上的 AD)<br /><br /> `msDS-User-Account-Control-Computed` (ADAM)|No|  
+|<xref:System.Web.Security.MembershipUser.LastLockoutDate%2A>|如果由于错误密码尝试次数过多而被锁定，则返回的锁定时间属性。<br /><br /> 如果锁定由于过多的错误的密码提示问题答案尝试，由定义的属性中存储的值`attributeMapFailedPasswordAnswerLockoutTime`返回。<br /><br /> 如果因锁定的密码不正确和太多错误密码尝试次数，则返回的最新的日期/时间值。<br /><br /> 如果帐户未锁定，则返回 1/1/1753 的 SQL 兼容性。|No|  
   
    
   
@@ -156,7 +156,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="providerUserKey" /> 不是 <see cref="T:System.Security.Principal.SecurityIdentifier" /> 对象。  
   
-\- 或 - 
+- 或 - 
  <paramref name="providerName" /> 为 <see langword="null" />，并且应用程序的配置文件中未设置提供程序。</exception>
       </Docs>
     </Member>
