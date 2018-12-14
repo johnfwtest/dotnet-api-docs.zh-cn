@@ -1,5 +1,5 @@
 <Type Name="GC" FullName="System.GC">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6c38b21659aa141b32c988dfe140585d7feda29b" /><Meta Name="ms.sourcegitcommit" Value="9d1bf7e4c6d697123f26c810c1a049a755634634" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/06/2018" /><Meta Name="ms.locfileid" Value="52982015" /></Metadata><TypeSignature Language="C#" Value="public static class GC" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2f2b4ba00cf0c1761c43492973ebca8a4d1f83dc" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53222074" /></Metadata><TypeSignature Language="C#" Value="public static class GC" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit GC extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.GC" />
   <TypeSignature Language="VB.NET" Value="Public Class GC" />
@@ -428,7 +428,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="generation" /> 无效。  
   
-或 
+- 或 - 
  <paramref name="mode" /> 不是 <see cref="T:System.GCCollectionMode" /> 值之一。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/019008fe-4708-4e65-bebf-04fd9941e149">被动回收</related>
       </Docs>
@@ -494,7 +494,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="generation" /> 无效。  
   
-或 
+- 或 - 
  <paramref name="mode" /> 不是 <see cref="T:System.GCCollectionMode" /> 值之一。</exception>
       </Docs>
     </Member>
@@ -669,10 +669,10 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">垃圾回收器不处于无 GC 区域延迟模式。  
   
-或 
+- 或 - 
 无 GC 区域延迟模式已结束，可能是因为已引发垃圾回收。  
   
-或 
+- 或 - 
 内存分配超过了 <see cref="M:System.GC.TryStartNoGCRegion(System.Int64)" /> 方法调用中指定的量。</exception>
         <altmember cref="M:System.GC.TryStartNoGCRegion(System.Int64)" />
         <altmember cref="P:System.Runtime.GCSettings.LatencyMode" />
@@ -1189,7 +1189,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="bytesAllocated" /> 小于或等于 0。  
   
-或 
+- 或 - 
 在 32 位的计算机上，<paramref name="bytesAllocated" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">表示操作垃圾回收优先级时调用非托管的代码的能力。 关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
@@ -1514,7 +1514,7 @@
         <Parameter Name="lohSize" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="totalSize">在不会触发垃圾回收的情况下分配的内存量（以字节为单位）。 <paramref name="totalSize" /> –<paramref name="lohSize" /> 必须小于或等于临时段的大小。 有关暂时段大小的信息，请参阅[垃圾回收基础知识](~/docs/standard/garbage-collection/fundamentals.md)一文中“暂时代和暂时段”一节。</param>
+        <param name="totalSize">在不会触发垃圾回收的情况下分配的内存量（以字节为单位）。 <paramref name="totalSize" /> -<paramref name="lohSize" /> 必须小于或等于临时段的大小。 有关暂时段大小的信息，请参阅[垃圾回收基础知识](~/docs/standard/garbage-collection/fundamentals.md)一文中“暂时代和暂时段”一节。</param>
         <param name="lohSize"><paramref name="totalSize" /> 中用于大对象堆 (LOH) 分配的字节数。</param>
         <summary>如果指定数量的内存可用于大对象堆和小对象堆，则在关键路径执行期间尝试禁止垃圾回收。</summary>
         <returns>如果运行时能够调配所需数量的内存，且垃圾回收器能够进入无 GC 区域延迟模式，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
@@ -1522,9 +1522,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Int64%29>方法尝试将垃圾回收器放在应用程序执行代码的关键区域时，不允许垃圾回收无 GC 区域延迟模式。  如果运行时无法最初分配所需的内存，垃圾回收器尝试释放更多的内存中执行完整的阻碍性垃圾回收。 垃圾回收器进入无 GC 区域延迟模式，如果能够分配`lohSize`回收 loh 和`totalSize`–`lohSize`针对小型对象堆 (SOH)。  
+ <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Int64%29>方法尝试将垃圾回收器放在应用程序执行代码的关键区域时，不允许垃圾回收无 GC 区域延迟模式。  如果运行时无法最初分配所需的内存，垃圾回收器尝试释放更多的内存中执行完整的阻碍性垃圾回收。 垃圾回收器进入无 GC 区域延迟模式，如果能够分配`lohSize`回收 loh 和`totalSize`  -  `lohSize`针对小型对象堆 (SOH)。  
   
- `lohSize` 必须足够大，以处理对于 LOH，在关键路径中发生的所有内存分配和`totalSize`–`lohSize`必须足够大，能够都处理的 SOH 在关键路径中发生的所有内存分配。 这包括分配的应用程序，以及应用的代表，运行时做出的分配。  
+ `lohSize` 必须足够大，以处理对于 LOH，在关键路径中发生的所有内存分配和`totalSize`  -  `lohSize`必须足够大，能够都处理的 SOH 在关键路径中发生的所有内存分配。 这包括分配的应用程序，以及应用的代表，运行时做出的分配。  
   
 > [!IMPORTANT]
 >  不能嵌套调用<xref:System.GC.TryStartNoGCRegion%2A>方法，并且你应只调用<xref:System.GC.EndNoGCRegion%2A>方法如果运行时当前处于无 GC 区域延迟模式。 换而言之，不应调用<xref:System.GC.TryStartNoGCRegion%2A>多个时间 （在第一个方法调用后，后续调用将不会成功），并且不应期望调用<xref:System.GC.EndNoGCRegion%2A>成功只是因为第一次调用到<xref:System.GC.TryStartNoGCRegion%2A>成功。  
@@ -1533,7 +1533,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="totalSize" /> – <paramref name="lohSize" /> 超出了暂时段大小。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="totalSize" /> - <paramref name="lohSize" /> 超出了暂时段大小。</exception>
         <exception cref="T:System.InvalidOperationException">进程已进入无 GC 区域延迟模式。</exception>
         <altmember cref="M:System.GC.EndNoGCRegion" />
         <related type="Article" href="https://msdn.microsoft.com/library/67c5a20d-1be1-4ea7-8a9a-92b0b08658d2">垃圾回收的基础</related>
@@ -1576,7 +1576,7 @@
         <Parameter Name="disallowFullBlockingGC" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="totalSize">在不会触发垃圾回收的情况下分配的内存量（以字节为单位）。 <paramref name="totalSize" /> –<paramref name="lohSize" /> 必须小于或等于临时段的大小。 有关暂时段大小的信息，请参阅[垃圾回收基础知识](~/docs/standard/garbage-collection/fundamentals.md)一文中“暂时代和暂时段”一节。</param>
+        <param name="totalSize">在不会触发垃圾回收的情况下分配的内存量（以字节为单位）。 <paramref name="totalSize" /> -<paramref name="lohSize" /> 必须小于或等于临时段的大小。 有关暂时段大小的信息，请参阅[垃圾回收基础知识](~/docs/standard/garbage-collection/fundamentals.md)一文中“暂时代和暂时段”一节。</param>
         <param name="lohSize"><paramref name="totalSize" /> 中用于大对象堆 (LOH) 分配的字节数。</param>
         <param name="disallowFullBlockingGC"><see langword="true" /> 表示如果垃圾回收器初始无法分配小对象堆 (SOH) 和 LOH 上的指定内存，则忽略完整的阻碍性垃圾回收；否则为 <see langword="false" />。</param>
         <summary>如果指定数量的内存可用大对象堆和小对象堆，则在关键路径执行期间尝试禁止垃圾回收；并在初始没有足够内存可用的情况下，控制垃圾回收器是否进行完整的阻碍性垃圾回收。</summary>
@@ -1585,9 +1585,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Int64%2CSystem.Boolean%29>方法尝试将垃圾回收器放在应用程序执行代码的关键区域时，不允许垃圾回收无 GC 区域延迟模式。  如果运行时无法最初分配请求的内存量和`disallowFullBlockingGC`自变量是`false`，垃圾回收器执行完整的阻碍性垃圾回收中尝试释放更多内存; 否则为分配失败，并且该方法返回`false`。 垃圾回收器进入无 GC 区域延迟模式，如果能够分配`lohSize`回收 loh 和`totalSize`–`lohSize`针对小型对象堆 (SOH)。  
+ <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Int64%2CSystem.Boolean%29>方法尝试将垃圾回收器放在应用程序执行代码的关键区域时，不允许垃圾回收无 GC 区域延迟模式。  如果运行时无法最初分配请求的内存量和`disallowFullBlockingGC`自变量是`false`，垃圾回收器执行完整的阻碍性垃圾回收中尝试释放更多内存; 否则为分配失败，并且该方法返回`false`。 垃圾回收器进入无 GC 区域延迟模式，如果能够分配`lohSize`回收 loh 和`totalSize`  -  `lohSize`针对小型对象堆 (SOH)。  
   
- `lohSize` 必须足够大，以处理对于 LOH，在关键路径中发生的所有内存分配和`totalSize`–`lohSize`必须足够大，能够都处理的 SOH 在关键路径中发生的所有内存分配。 这包括分配的应用程序，以及应用的代表，运行时做出的分配。  
+ `lohSize` 必须足够大，以处理对于 LOH，在关键路径中发生的所有内存分配和`totalSize`  -  `lohSize`必须足够大，能够都处理的 SOH 在关键路径中发生的所有内存分配。 这包括分配的应用程序，以及应用的代表，运行时做出的分配。  
   
  设置`disallowFullBlockingGC`到`true`以免完整的阻碍性垃圾回收集合最初可没有足够的内存是否是在负载平衡方案中最有用： 一个系统可以调用此方法并报告本身为准备好接受请求，如果它返回`true`，并且具有负载均衡器将请求重定向到其他系统，如果它返回`false`。 它可以进行完整的阻碍性垃圾回收时不处理请求通过调用<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29>方法。  
   
@@ -1598,7 +1598,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="totalSize" /> – <paramref name="lohSize" /> 超出了暂时段大小。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="totalSize" /> - <paramref name="lohSize" /> 超出了暂时段大小。</exception>
         <exception cref="T:System.InvalidOperationException">进程已进入无 GC 区域延迟模式。</exception>
         <altmember cref="M:System.GC.EndNoGCRegion" />
         <related type="Article" href="https://msdn.microsoft.com/library/67c5a20d-1be1-4ea7-8a9a-92b0b08658d2">垃圾回收的基础</related>

@@ -1,5 +1,5 @@
 <Type Name="AutomationPeer" FullName="System.Windows.Automation.Peers.AutomationPeer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c850155b596513b99463ac01f7d29e81e6dd5d6d" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52739085" /></Metadata><TypeSignature Language="C#" Value="public abstract class AutomationPeer : System.Windows.Threading.DispatcherObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5d757f56361d3c6792da8ca9e2f15ef21451b5e3" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53228175" /></Metadata><TypeSignature Language="C#" Value="public abstract class AutomationPeer : System.Windows.Threading.DispatcherObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract AutomationPeer extends System.Windows.Threading.DispatcherObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.AutomationPeer" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AutomationPeer&#xA;Inherits DispatcherObject" />
@@ -97,8 +97,9 @@
       <Parameters />
       <Docs>
         <summary>获取与 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 对等方关联的元素的加速键组合。</summary>
-        <returns>快捷键。</returns>
+        <returns>加速键。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -121,8 +122,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAcceleratorKey" /> 调用。</summary>
-        <returns>快捷键。</returns>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAcceleratorKey" /> 调用。</summary>
+        <returns>加速键。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -153,8 +154,9 @@
       <Parameters />
       <Docs>
         <summary>获取与自动化对等关联的元素的访问密钥。</summary>
-        <returns>包含快捷键的字符串。</returns>
+        <returns>包含访问密钥的字符串。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -176,8 +178,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAccessKey" /> 调用。</summary>
-        <returns>包含快捷键的字符串。</returns>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAccessKey" /> 调用。</summary>
+        <returns>包含访问密钥的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -210,6 +212,7 @@
         <summary>获取与此对等 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 关联的元素的控件类型。</summary>
         <returns>控件类型。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -232,7 +235,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType" /> 调用。</summary>
         <returns>控件类型。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -266,6 +269,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <altmember cref="T:System.Windows.Automation.AutomationIdentifier" />
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
@@ -288,7 +292,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId" /> 调用。</summary>
         <returns>包含标识符的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -319,7 +323,7 @@
       <Parameters />
       <Docs>
         <summary>获取表示与自动化同级关联的元素的屏幕坐标的 <see cref="T:System.Windows.Rect" /> 对象。</summary>
-        <returns>边框。</returns>
+        <returns>绑定矩形。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
@@ -342,9 +346,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetBoundingRectangle" /> 调用。</summary>
-        <returns>边框。</returns>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetBoundingRectangle" /> 调用。</summary>
+        <returns>绑定矩形。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -369,6 +374,7 @@
         <summary>获取在 UI 自动化树中表示为自动化对等方的直接子元素的 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren" /> 元素的集合。</summary>
         <returns>子元素的集合。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -390,7 +396,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren" /> 调用。</summary>
         <returns>子元素的集合。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -417,6 +423,7 @@
         <summary>获取与 <see cref="T:System.Windows.Automation.Peers.AutomationControlType" /> 一起使用的名称，以区分由此 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 表示的控件。</summary>
         <returns>类名。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -438,7 +445,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName" /> 调用。</summary>
         <returns>类名。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -472,6 +479,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -493,7 +501,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClickablePoint" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClickablePoint" /> 调用。</summary>
         <returns>元素的可单击区域中的点。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -516,9 +524,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>为 UI 自动化提供受此 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 影响或控制的元素列表。</summary>
+        <returns>可控元素的自动化对等列表。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetControlledPeersCore">
@@ -538,8 +547,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>在派生类中替代时，为 UI 自动化提供受此 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 影响或控制的元素列表。</summary>
+        <returns>可控元素的自动化对等列表。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -571,6 +580,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -592,7 +602,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText" /> 调用。</summary>
         <returns>帮助文本。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -624,13 +634,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>通知 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 要将由 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 元素承载的 <see langword="hwnd" /> 放置在 [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]树中的位置。</summary>
-        <returns>此方法将承载的 <see langword="hwnd" /> 返回到承载 <see langword="hwnd" /> 的控件的 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 对象。</returns>
+        <summary>告知 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 在 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 树中何处放置由 [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] 元素托管的 <see langword="hwnd" />。</summary>
+        <returns>此方法会将托管的 <see langword="hwnd" /> 返回到托管 <see langword="hwnd" /> 对象的控件的 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法将承载的 `hwnd` 返回到承载 `hwnd` 的控件的 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 对象。  
+ 此方法会将托管的 `hwnd` 返回到托管 `hwnd` 对象的控件的 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]。  
   
  <xref:System.Windows.Automation.Peers.AutomationPeer>直接承载的元素与该键相关联`hwnd`必须重写此方法。  
   
@@ -676,6 +686,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -697,7 +708,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetItemStatus" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetItemStatus" /> 调用。</summary>
         <returns>状态。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -731,6 +742,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -752,7 +764,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetItemType" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetItemType" /> 调用。</summary>
         <returns>项的类型。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -776,8 +788,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取以此元素为目标的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 的 <see cref="T:System.Windows.Controls.Label" />。</summary>
-        <returns>作为 <see cref="T:System.Windows.Automation.Peers.LabelAutomationPeer" /> 目标的元素的 <see cref="T:System.Windows.Controls.Label" />。</returns>
+        <summary>获取以元素为目标的 <see cref="T:System.Windows.Controls.Label" /> 的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />。</summary>
+        <returns><see cref="T:System.Windows.Controls.Label" /> 所使用的元素的 <see cref="T:System.Windows.Automation.Peers.LabelAutomationPeer" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -792,6 +804,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -814,8 +827,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetLabeledBy" /> 调用。</summary>
-        <returns>作为 <see cref="T:System.Windows.Automation.Peers.LabelAutomationPeer" /> 目标的元素的 <see cref="T:System.Windows.Controls.Label" />。</returns>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetLabeledBy" /> 调用。</summary>
+        <returns><see cref="T:System.Windows.Controls.Label" /> 所使用的元素的 <see cref="T:System.Windows.Automation.Peers.LabelAutomationPeer" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
@@ -848,6 +861,7 @@
 
 ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetLiveSettingCore">
@@ -893,6 +907,7 @@
         <summary>获取一个可读的本地化字符串，该字符串表示与此自动化对等方关联的控件的 <see cref="T:System.Windows.Automation.Peers.AutomationControlType" /> 值。</summary>
         <returns>控件的类型。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -915,7 +930,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetLocalizedControlType" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetLocalizedControlType" /> 调用。</summary>
         <returns>控件的类型。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -950,6 +965,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -972,7 +988,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName" /> 调用。</summary>
         <returns>包含标签的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1009,6 +1025,7 @@
         <summary>获取指示显式控件方向（如果有）的值。</summary>
         <returns>控件的方向。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1031,7 +1048,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetOrientation" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetOrientation" /> 调用。</summary>
         <returns>控件的方向。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1155,9 +1172,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>尝试获取 <see cref="P:System.Windows.Automation.AutomationProperties.PositionInSet" /> 属性的值。</summary>
+        <returns><see cref="P:System.Windows.Automation.AutomationProperties.PositionInSet" /> 属性的值。</returns>
+        <remarks>如果另一个公共的调用正在进行中，不能尝试公共调用此方法。</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetPositionInSetCore">
@@ -1177,8 +1195,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>在派生类中替代时，为 UI 自动化提供一个从 1 开始的整数值，该值描述此元素在组或集中占据的位置。</summary>
+        <returns>从 1 开始的整数值，该值描述此元素在组或集中占据的位置。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1199,9 +1217,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <summary>尝试获取 <see cref="P:System.Windows.Automation.AutomationProperties.SizeOfSet" /> 属性的值。</summary>
+        <returns><see cref="P:System.Windows.Automation.AutomationProperties.SizeOfSet" /> 属性的值。</returns>
+        <remarks>如果另一个公共的调用正在进行中，不能尝试公共调用此方法。</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSizeOfSetCore">
@@ -1221,8 +1240,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>在派生类中替代时，为 UI 自动化提供此元素所属的组或集的大小。</summary>
+        <returns>描述此元素所属的组或集的大小的整数值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1247,6 +1266,7 @@
         <summary>获取一个值，该值指示与此自动化同级关联的元素当前是否具有键盘焦点。</summary>
         <returns>如果此元素具有键盘焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1269,7 +1289,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.HasKeyboardFocus" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.HasKeyboardFocus" /> 调用。</summary>
         <returns>如果此元素具有键盘焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1327,7 +1347,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取一个值，该值指示与此自动化同级关联的元素是否包含向用户显示的数据。</summary>
+        <summary>获取一个值，该值指示与此自动化对等方关联的元素是否包含向用户显示的数据。</summary>
         <returns>如果元素为内容元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1337,6 +1357,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1359,7 +1380,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsContentElement" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsContentElement" /> 调用。</summary>
         <returns>如果元素为内容元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1387,6 +1408,7 @@
         <summary>获取一个值，该值指示用户将元素理解为交互元素，还是理解为组成 [!INCLUDE[TLA2#tla_gui](~/includes/tla2sharptla-gui-md.md)] 中控件的逻辑结构的一部分。</summary>
         <returns>如果元素为控件，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1409,7 +1431,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsControlElement" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsControlElement" /> 调用。</summary>
         <returns>如果元素为控件，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1437,6 +1459,7 @@
         <summary>获取一个值，该值指示与此自动化同级关联的元素是否支持交互。</summary>
         <returns>如果元素支持交互，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1459,8 +1482,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsEnabled" /> 调用。</summary>
-        <returns>如果自动化同级可以接收和发送事件，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsEnabled" /> 调用。</summary>
+        <returns>如果自动化对等方可以接收和发送事件，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
@@ -1519,6 +1542,7 @@
         <summary>获取一个值，该值指示此元素是否可以接受键盘焦点。</summary>
         <returns>如果此元素可以接受键盘焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1541,7 +1565,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsKeyboardFocusable" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsKeyboardFocusable" /> 调用。</summary>
         <returns>如果此元素可以接受键盘焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1567,7 +1591,7 @@
       <Parameters />
       <Docs>
         <summary>获取一个值，该值指示元素是否不在屏幕上。</summary>
-        <returns>如果元素不在屏幕上，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果该元素不在屏幕上，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1576,6 +1600,7 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1598,8 +1623,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsOffscreen" /> 调用。</summary>
-        <returns>如果元素不在屏幕上，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsOffscreen" /> 调用。</summary>
+        <returns>如果该元素不在屏幕上，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
@@ -1626,6 +1651,7 @@
         <summary>获取一个值，该值指示元素是否包含敏感内容。</summary>
         <returns>如果元素包含密码等敏感内容，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1648,7 +1674,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsPassword" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsPassword" /> 调用。</summary>
         <returns>如果元素包含敏感内容，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1676,6 +1702,7 @@
         <summary>获取一个值，该值指示是否必须在窗体中完成与此同级关联的元素。</summary>
         <returns>如果必须完成此元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <altmember cref="P:System.Windows.Automation.AutomationProperties.IsRequiredForForm" />
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
@@ -1699,7 +1726,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsRequiredForForm" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsRequiredForForm" /> 调用。</summary>
         <returns>如果必须完成此元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1763,7 +1790,7 @@
         <Parameter Name="provider" Type="System.Windows.Automation.Provider.IRawElementProviderSimple" />
       </Parameters>
       <Docs>
-        <param name="provider">实现 <see cref="T:System.Windows.Automation.Provider.IRawElementProviderSimple" /> 的类。</param>
+        <param name="provider">可实现 <see cref="T:System.Windows.Automation.Provider.IRawElementProviderSimple" /> 的类。</param>
         <summary>获取指定的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 代理的 <see cref="T:System.Windows.Automation.Provider.IRawElementProviderSimple" />。</summary>
         <returns>指定的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 代理的 <see cref="T:System.Windows.Automation.Provider.IRawElementProviderSimple" />。</returns>
         <remarks>To be added.</remarks>
@@ -1792,7 +1819,7 @@
       </Parameters>
       <Docs>
         <param name="peer">自动化同级。</param>
-        <summary>获取指定 <see cref="T:System.Windows.Automation.Provider.IRawElementProviderSimple" /> 的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />。</summary>
+        <summary>获取指定的 <see cref="T:System.Windows.Automation.Provider.IRawElementProviderSimple" /> 的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />。</summary>
         <returns>代理。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
@@ -1822,6 +1849,7 @@
         <param name="args">事件数据。</param>
         <summary>由 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 调用以引发 <see cref="F:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent" /> 事件。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="args" /> 为 <see langword="null" />。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
       </Docs>
     </Member>
@@ -1905,7 +1933,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>通过调用 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildrenCore" /> 同步重置子元素的树。</summary>
+        <summary>通过调用 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildrenCore" /> 同步重置子元素树。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1939,6 +1967,7 @@
       <Docs>
         <summary>对与此自动化同级关联的元素设置键盘焦点。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">目前正在对此方法进行公开调用。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>
       </Docs>
@@ -1961,7 +1990,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.SetFocus" /> 调用。</summary>
+        <summary>在派生类中重写时，由 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.SetFocus" /> 调用。</summary>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/65847654-9994-4a9e-b36d-2dd5d998770b">UI 自动化概述</related>
         <related type="Article" href="https://msdn.microsoft.com/library/6acc6d08-bd67-4e2e-915c-9c1d34eb86fe">服务器端 UI 自动化提供程序实现</related>

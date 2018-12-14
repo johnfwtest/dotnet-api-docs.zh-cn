@@ -1,5 +1,5 @@
 <Type Name="KeyedCollection&lt;TKey,TItem&gt;" FullName="System.Collections.ObjectModel.KeyedCollection&lt;TKey,TItem&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="540b26c1c1712527c2690403b525da736685fb01" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52353515" /></Metadata><TypeSignature Language="C#" Value="public abstract class KeyedCollection&lt;TKey,TItem&gt; : System.Collections.ObjectModel.Collection&lt;TItem&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5ade3ca878e68845149c363b46ee8dd67dfc022b" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53232088" /></Metadata><TypeSignature Language="C#" Value="public abstract class KeyedCollection&lt;TKey,TItem&gt; : System.Collections.ObjectModel.Collection&lt;TItem&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit KeyedCollection`2&lt;TKey, TItem&gt; extends System.Collections.ObjectModel.Collection`1&lt;!TItem&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Collections.ObjectModel.KeyedCollection`2" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class KeyedCollection(Of TKey, TItem)&#xA;Inherits Collection(Of TItem)" />
@@ -61,7 +61,7 @@
   
  与字典的元素不同<xref:System.Collections.ObjectModel.KeyedCollection%602>不是键/值对; 相反，整个元素是值，该密钥嵌入在值内。  例如，集合的元素派生自`KeyedCollection\<String,String>`(`KeyedCollection(Of String, String)`在 Visual Basic 中) 可能是"John Doe Jr。" 其中的值是"John Doe Jr。" 键为"Doe";无法从派生的员工记录包含整数键的集合或`KeyedCollection\<int,Employee>`。 抽象<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>方法从元素提取键。  
   
- 默认情况下<xref:System.Collections.ObjectModel.KeyedCollection%602>包括一个查找字典，其中你可以获取与<xref:System.Collections.ObjectModel.KeyedCollection%602.Dictionary%2A>属性。  当某项添加到<xref:System.Collections.ObjectModel.KeyedCollection%602>，一次提取并保存在更快速的搜索的查找字典中项的键。 通过在创建时指定字典创建阈值重写此行为<xref:System.Collections.ObjectModel.KeyedCollection%602>。 第一次的元素数超过该阈值创建查找字典。  如果指定的阈值为-1，永远不会创建查找字典。  
+ 默认情况下<xref:System.Collections.ObjectModel.KeyedCollection%602>包括一个查找字典，其中你可以获取与<xref:System.Collections.ObjectModel.KeyedCollection%602.Dictionary%2A>属性。  当某项添加到<xref:System.Collections.ObjectModel.KeyedCollection%602>，一次提取并保存在更快速的搜索的查找字典中项的键。 通过在创建时指定字典创建阈值重写此行为<xref:System.Collections.ObjectModel.KeyedCollection%602>。 第一次的元素数超过该阈值创建查找字典。  如果您指定的阈值为-1，永远不会创建查找字典。  
   
 > [!NOTE]
 >  使用内部查找字典时，它包含对集合中的所有项的引用，如果`TItem`是引用类型，或如果在集合中的所有项的复制`TItem`是值类型。 因此，使用的查找字典可能不适合如果`TItem`是值类型。  
@@ -253,7 +253,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 默认情况下，<xref:System.Collections.ObjectModel.KeyedCollection%602>包括添加的第一项时，创建一个查找字典。 当某项添加到<xref:System.Collections.ObjectModel.KeyedCollection%602>，一次提取并保存在更快速的搜索的查找字典中项的键。 此构造函数，可重写该行为。 指定 0 若要添加的第一个元素时，创建字典，1 创建字典添加第二个元素，依此类推。 如果指定的阈值为-1，永远不会创建查找字典。  
+ 默认情况下，<xref:System.Collections.ObjectModel.KeyedCollection%602>包括添加的第一项时，创建一个查找字典。 当某项添加到<xref:System.Collections.ObjectModel.KeyedCollection%602>，一次提取并保存在更快速的搜索的查找字典中项的键。 此构造函数，可重写该行为。 指定 0 若要添加的第一个元素时，创建字典，1 创建字典添加第二个元素，依此类推。 如果您指定的阈值为-1，永远不会创建查找字典。  
   
  对于非常小的集合中提供的查找字典检索速度的改进可能不值得字典所需的额外内存。 设置阈值，可以决定何时进行的权衡。  
   
@@ -281,7 +281,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dictionaryCreationThreshold" /> 小于 1。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dictionaryCreationThreshold" /> 小于 -1。</exception>
         <altmember cref="T:System.Collections.Generic.IEqualityComparer`1" />
       </Docs>
     </Member>
@@ -334,9 +334,9 @@
  此方法为 o （1） 运算。  
   
 ## <a name="notes-for-implementers"></a>实施者的说明  
- 修改键嵌入在项中之前，必须调用此方法以更新中的查找字典的密钥。 如果字典创建阈值为 – 1，则不需要调用此方法。  
+ 修改键嵌入在项中之前，必须调用此方法以更新中的查找字典的密钥。 如果字典创建阈值为-1，则不需要调用此方法。  
   
- 不会公开<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>方法作为派生类的公共方法。 此方法使用不当将同步的与项的键的查找字典。 例如，将密钥设置为`null`，然后将其设置为另一个值将多个键的项添加到的查找字典。 公开此方法在内部以允许可变项密钥： 当项的键更改时，此方法用于更改的查找字典中的密钥。  
+ 不会公开<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>方法作为派生类的公共方法。 此方法使用不当将同步的与项的键的查找字典。 例如，将密钥设置为`null`，然后将其设置为另一个值将多个键的项添加到的查找字典。 公开此方法在内部以允许可变项密钥：当项的键更改时，此方法用于更改的查找字典中的密钥。  
   
    
   
@@ -354,11 +354,11 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="item" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="key" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="item" /> 未找到。  
   
-或 
+- 或 - 
  <paramref name="key" /> 在 <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> 中已存在。</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.GetKeyForItem(`1)" />
         <altmember cref="P:System.Collections.ObjectModel.KeyedCollection`2.Item(`0)" />
@@ -753,7 +753,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="index" /> 大于 <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />。</exception>
         <altmember cref="M:System.Collections.ObjectModel.KeyedCollection`2.SetItem(System.Int32,`1)" />
       </Docs>

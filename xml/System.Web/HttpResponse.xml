@@ -1,5 +1,5 @@
 <Type Name="HttpResponse" FullName="System.Web.HttpResponse">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2a2c38199f65c61be323dc197dcecf58e28e371a" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52740540" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpResponse" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6c2cd3bd3afa7a1ebb3a7199346575059bba8ad7" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53230619" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpResponse" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpResponse extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpResponse" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpResponse" />
@@ -389,7 +389,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当你使用<xref:System.Web.HttpResponse.AddFileDependency%2A>方法添加文件依赖关系，则还必须指定输出缓存以编程方式或以声明方式。 例如，若要指定输出缓存以声明方式，使用指令。 有关详细信息，请参阅[如何： 使用文件依赖项的缓存页面输出](https://msdn.microsoft.com/library/95ad1c54-329e-45af-9343-a03a1d2ce9db)。  
+ 当你使用<xref:System.Web.HttpResponse.AddFileDependency%2A>方法添加文件依赖关系，则还必须指定输出缓存以编程方式或以声明方式。 例如，若要指定输出缓存以声明方式，使用指令。 有关更多信息，请参见[如何：具有文件依赖项的页面输出缓存](https://msdn.microsoft.com/library/95ad1c54-329e-45af-9343-a03a1d2ce9db)。  
   
    
   
@@ -1319,7 +1319,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 提供此方法仅为了与 ASP 的兼容性 — 也就是说，与前面带有 ASP.NET 的基于 COM 的 Web 编程技术的兼容性。 如果你想要跳转到<xref:System.Web.HttpApplication.EndRequest>事件并发送到客户端的响应，通常最好是调用<xref:System.Web.HttpApplication.CompleteRequest%2A>相反。  
+ 提供此方法是仅与 ASP 的兼容性，即与前面带有 ASP.NET 的基于 COM 的 Web 编程技术的兼容性。 如果你想要跳转到<xref:System.Web.HttpApplication.EndRequest>事件并发送到客户端的响应，通常最好是调用<xref:System.Web.HttpApplication.CompleteRequest%2A>相反。  
   
  若要模拟的行为`End`ASP 中的方法，此方法尝试引发<xref:System.Threading.ThreadAbortException>异常。 如果此尝试成功，将中止调用线程，这是对站点的性能造成不利影响。 在这种情况下，在调用任何代码<xref:System.Web.HttpResponse.End%2A>执行方法。  
   
@@ -1596,7 +1596,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">该操作要求使用 [!INCLUDE[iisver](~/includes/iisver-md.md)] 中的集成管道模式，并且 .NET Framework 至少为 3.0 版本。</exception>
-        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=86952">升级到 IIS 7.0 的 ASP.NET 应用程序： IIS 7.0 集成模式和经典模式之间的差异</related>
+        <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=86952">升级到 IIS 7.0 的 ASP.NET 应用程序：IIS 7.0 集成模式和经典模式之间的差异</related>
       </Docs>
     </Member>
     <Member MemberName="HeadersWritten">
@@ -1954,7 +1954,7 @@
 > [!NOTE]
 >  移动页仅，如果你的应用程序依赖无 cookie 会话，或从移动设备需要的无 cookie 会话可能会收到请求，使用波形符 (\~) 的路径中可能会导致创建新的会话，并有可能丢失会话数据。 如使用路径移动控件上设置属性"\~/path"，路径使用解析<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"\~/path"之前将其分配给该属性。  
   
- ASP.NET 执行通过返回 HTTP 状态代码为 302 重定向。 将控制转移到另一页的替代方法是<xref:System.Web.HttpServerUtility.Transfer%2A>方法。 <xref:System.Web.HttpServerUtility.Transfer%2A>方法是通常效率更高，因为它不会一次往返过程导致向客户端。 有关详细信息，请参阅[如何： 将用户重定向到另一页](https://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)。  
+ ASP.NET 执行通过返回 HTTP 状态代码为 302 重定向。 将控制转移到另一页的替代方法是<xref:System.Web.HttpServerUtility.Transfer%2A>方法。 <xref:System.Web.HttpServerUtility.Transfer%2A>方法是通常效率更高，因为它不会一次往返过程导致向客户端。 有关更多信息，请参见[如何：将用户重定向到另一页](https://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)。  
   
    
   
@@ -2010,7 +2010,7 @@
 > [!NOTE]
 >  移动页，如果你的应用程序依赖无 cookie 会话，或从移动设备需要的无 cookie 会话可能会收到请求，使用波形符 (\~) 路径可在创建新的会话和有可能会丢失会话数据。 如使用路径移动控件上设置属性"\~/path"，路径使用解析<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>"\~/path"之前将其分配给该属性。  
   
- ASP.NET 执行通过返回 HTTP 状态代码为 302 重定向。 将控制转移到另一页的替代方法是<xref:System.Web.HttpServerUtility.Transfer%2A>方法。 <xref:System.Web.HttpServerUtility.Transfer%2A>方法是通常效率更高，因为它不会一次往返过程导致向客户端。 有关详细信息，请参阅[如何： 将用户重定向到另一页](https://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)。  
+ ASP.NET 执行通过返回 HTTP 状态代码为 302 重定向。 将控制转移到另一页的替代方法是<xref:System.Web.HttpServerUtility.Transfer%2A>方法。 <xref:System.Web.HttpServerUtility.Transfer%2A>方法是通常效率更高，因为它不会一次往返过程导致向客户端。 有关更多信息，请参见[如何：将用户重定向到另一页](https://msdn.microsoft.com/library/daef3f43-e018-43aa-b43c-46b27bac599e)。  
   
    
   
@@ -3000,7 +3000,7 @@ Response.RedirectToRoutePermanent("Product",
    
   
 ## Examples  
- 下面的示例设置<xref:System.Web.HttpResponse.SubStatusCode%2A>中的事件处理程序属性<xref:System.Web.HttpApplication>的实例<xref:System.Web.HttpApplication.PostAuthenticateRequest>事件。 将代码文件放在 Web 应用程序的 App_Code 文件夹中并配置 Web.config 文件以注册该模块。 有关详细信息，请参阅[演练： 创建和注册自定义 HTTP 模块](https://msdn.microsoft.com/library/7787d5be-40a4-4072-9075-c2b767428453)。  
+ 下面的示例设置<xref:System.Web.HttpResponse.SubStatusCode%2A>中的事件处理程序属性<xref:System.Web.HttpApplication>的实例<xref:System.Web.HttpApplication.PostAuthenticateRequest>事件。 将代码文件放在 Web 应用程序的 App_Code 文件夹中并配置 Web.config 文件以注册该模块。 有关详细信息，请参阅[演练：创建和注册自定义 HTTP 模块](https://msdn.microsoft.com/library/7787d5be-40a4-4072-9075-c2b767428453)。  
   
  [!code-csharp[System.Web.HttpResponse.SubStatusCode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.SubStatusCode/CS/App_Code/TestModule.cs#1)]
  [!code-vb[System.Web.HttpResponse.SubStatusCode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.SubStatusCode/VB/App_Code/TestModule.vb#1)]  
@@ -3447,7 +3447,7 @@ Response.RedirectToRoutePermanent("Product",
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:: Response.WriteFile 不能下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
+ 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:Response.WriteFile 无法下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
   
    
   
@@ -3491,7 +3491,7 @@ Response.RedirectToRoutePermanent("Product",
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:: Response.WriteFile 不能下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
+ 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:Response.WriteFile 无法下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
   
    
   
@@ -3537,7 +3537,7 @@ Response.RedirectToRoutePermanent("Product",
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:: Response.WriteFile 不能下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
+ 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:Response.WriteFile 无法下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
   
    
   
@@ -3587,7 +3587,7 @@ Response.RedirectToRoutePermanent("Product",
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:: Response.WriteFile 不能下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
+ 当此方法用于大型文件时，调用该方法可能引发异常。 可以使用此方法使用的文件的大小取决于 Web 服务器的硬件配置。 有关详细信息，参见位于，"PRB:Response.WriteFile 无法下载大型文件"上[Microsoft 知识库文章](https://go.microsoft.com/fwlink/?linkid=149903)Web 站点。  
   
    
   

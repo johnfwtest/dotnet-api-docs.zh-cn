@@ -1,5 +1,5 @@
 <Type Name="Monitor" FullName="System.Threading.Monitor">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="df70f7cc62e1ef013835d69cf0220d9e8b42bc5a" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48729795" /></Metadata><TypeSignature Language="C#" Value="public static class Monitor" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e925d576d52267c0e301b6428f677609e99940d3" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53230736" /></Metadata><TypeSignature Language="C#" Value="public static class Monitor" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Monitor extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Monitor" />
   <TypeSignature Language="VB.NET" Value="Public Class Monitor" />
@@ -42,14 +42,14 @@
   
  本文内容：  
   
- [Monitor 类： 概述](#Overview)   
+ [Monitor 类：概述](#Overview)   
  [锁对象](#Lock)   
  [关键节](#CriticalSection)   
  [Pulse 和 PulseAll 等待](#Pulse)   
  [监视器和等待句柄](#WaitHandles)  
   
 <a name="Overview"></a>   
-## <a name="the-monitor-class-an-overview"></a>Monitor 类： 概述  
+## <a name="the-monitor-class-an-overview"></a>Monitor 类：概述  
  <xref:System.Threading.Monitor> 具有以下功能：  
   
 -   它是与按需的对象相关联。  
@@ -65,7 +65,7 @@
   
 |操作|描述|  
 |------------|-----------------|  
-|<xref:System.Threading.Monitor.Enter%2A>, <xref:System.Threading.Monitor.TryEnter%2A>|获取一个对象的锁。 此操作还表示关键部分的开头。 没有其他线程可以进入关键节，除非它使用不同的锁定的对象的关键部分中执行的说明。|  
+|<xref:System.Threading.Monitor.Enter%2A>， <xref:System.Threading.Monitor.TryEnter%2A>|获取一个对象的锁。 此操作还表示关键部分的开头。 没有其他线程可以进入关键节，除非它使用不同的锁定的对象的关键部分中执行的说明。|  
 |<xref:System.Threading.Monitor.Wait%2A>|若要允许其他线程锁定，并访问该对象释放对象上的锁。 另一个线程访问对象时，调用线程等待。 脉冲信号用于通知等待线程有关对象的状态更改。|  
 |<xref:System.Threading.Monitor.Pulse%2A> （信号） <xref:System.Threading.Monitor.PulseAll%2A>|将信号发送到一个或多个等待线程。 该信号通知的锁定对象的状态已更改，在等待线程和锁的所有者已准备好释放锁。 等待线程位于对象的准备就绪的队列，以便它最终可能会收到对象的锁。 一旦线程拥有该锁，它可以检查以查看是否已到达所需的状态的对象的新状态。|  
 |<xref:System.Threading.Monitor.Exit%2A>|释放对象锁。 此操作还将标记的关键部分保护锁定对象的末尾。|  
@@ -149,18 +149,18 @@
   
  由于它们可以从任何线程池线程上运行的任务进行访问，访问到的变量`total`和`n`也必须同步。 <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType>方法用于此目的。  
   
- 下面的示例演示如何组合的使用的<xref:System.Threading.Monitor>类 (通过实现`lock`或`SyncLock`语言构造)，则<xref:System.Threading.Interlocked>类，和<xref:System.Threading.AutoResetEvent>类。 它定义了两个`internal`（在 C# 中) 或`Friend`（在 Visual Basic) 类，`SyncResource`和`UnSyncResource`，它们分别提供对资源的同步和不同步访问。 若要确保该示例阐释了同步和不同步访问 （这可能是这种情况，如果每个方法调用快速完成） 之间的差异，此方法包含随机延迟： 对于线程<xref:System.Threading.Thread.ManagedThreadId%2A?displayProperty=nameWithType>属性为偶数，方法调用<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>引入 2,000 毫秒的延迟。 注意，因为`SyncResource`类不是公共的没有任何客户端代码对同步资源采用锁; 内部类本身所需的锁。 这可以防止恶意代码对公共对象采用锁。  
+ 下面的示例演示如何组合的使用的<xref:System.Threading.Monitor>类 (通过实现`lock`或`SyncLock`语言构造)，则<xref:System.Threading.Interlocked>类，和<xref:System.Threading.AutoResetEvent>类。 它定义了两个 `internal`（在 C# 中）或 `Friend`（在 Visual Basic）类（`SyncResource` 和 `UnSyncResource`），它们分别提供对资源的同步和不同步访问。 为了确保此示例展示同步和不同步访问的差异（如果每个方法调用快速完成，可能出现这种情况），此方法包含一次随机延迟：对于其 <xref:System.Threading.Thread.ManagedThreadId%2A?displayProperty=nameWithType> 属性为偶数的线程，此方法调用 <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> 以引入 2,000 毫秒延迟。 注意，由于 `SyncResource` 类不是公共类，因此没有客户端代码会对同步资源采用锁，内部类将自己采用锁。 这可以防止恶意代码对公共对象采用锁。  
   
  [!code-csharp[Conceptual.Monitors#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.monitors/cs/source.cs#1)]
  [!code-vb[Conceptual.Monitors#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.monitors/vb/source.vb#1)]  
   
- 该示例定义一个变量， `numOps`，定义将要尝试访问资源的线程数。 应用程序线程调用<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType>方法的同步和不同步访问五次每个。 <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType>方法具有一个参数，不接受任何参数且不返回值的委托。 对于同步访问，它将调用`SyncUpdateResource`方法; 因此，对于不同步访问，它将调用`UnSyncUpdateResource`方法。 在方法调用的每个集之后, 应用程序线程调用[AutoResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne*)方法，以便阻止，直到<xref:System.Threading.AutoResetEvent>实例发出信号。  
+ 该示例定义一个变量（即 `numOps`），用于定义尝试访问资源的线程数。 该应用程序线程为每个同步和不同步的访问调用五次 <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType> 方法。 <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType> 方法具有一个参数，该参数是一个不接受任何参数且不返回任何值的委托。 对于同步访问，它将调用 `SyncUpdateResource` 方法；对于不同步访问，它将调用 `UnSyncUpdateResource` 方法。 在方法调用的每个集之后, 应用程序线程调用[AutoResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne*)方法，以便阻止，直到<xref:System.Threading.AutoResetEvent>实例发出信号。  
   
- 每次调用`SyncUpdateResource`方法都会调用内部`SyncResource.Access`方法，然后调用<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>方法以递减`numOps`计数器。 <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>方法用于递减该计数器，因为否则您无法确保第二个线程将访问的值之前第一个线程的递减, 值已存储在变量。 当上一次同步工作线程递减为零的计数器时，指示所有同步线程已完成访问资源`SyncUpdateResource`方法调用<xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType>方法，发出主线程继续的信号执行。  
+ 每次调用 `SyncUpdateResource` 方法都会调用内部 `SyncResource.Access` 方法，然后调用 <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> 方法以递减 `numOps` 计数器。 <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>方法用于递减该计数器，因为否则您无法确保第二个线程将访问的值之前第一个线程的递减, 值已存储在变量。 当上一次同步工作线程递减为零的计数器时，指示所有同步线程已完成访问资源`SyncUpdateResource`方法调用<xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType>方法，发出主线程继续的信号执行。  
   
- 每次调用`UnSyncUpdateResource`方法都会调用内部`UnSyncResource.Access`方法，然后调用<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>方法以递减`numOps`计数器。 再次重申，<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>方法用于递减的计数器以确保第二个线程不会在第一个线程的递减值已分配给变量之前访问值。 当上一次同步工作线程递减为零的计数器时，指示没有更多不同步线程需要访问的资源，`UnSyncUpdateResource`方法调用<xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType>方法，发出主线程继续执行的信号.  
+ 每次调用 `UnSyncUpdateResource` 方法都会调用内部 `UnSyncResource.Access` 方法，然后调用 <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType> 方法以递减 `numOps` 计数器。 再次重申，<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>方法用于递减的计数器以确保第二个线程不会在第一个线程的递减值已分配给变量之前访问值。 当上一次同步工作线程递减为零的计数器时，指示没有更多不同步线程需要访问的资源，`UnSyncUpdateResource`方法调用<xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType>方法，发出主线程继续执行的信号.  
   
- 如示例的输出所示，同步访问可确保另一个线程必须在调用线程退出受保护的资源之后才能访问该资源；每个线程都在其前置任务上等待。 但是，无锁，`UnSyncResource.Access`线程到达它的顺序调用方法。  
+ 如示例的输出所示，同步访问可确保另一个线程必须在调用线程退出受保护的资源之后才能访问该资源；每个线程都在其前置任务上等待。 另一方面，在不采用锁的情况下，将按线程到达的顺序调用 `UnSyncResource.Access` 方法。  
   
  ]]></format>
     </remarks>
@@ -491,7 +491,7 @@
  当前拥有指定对象上的锁的线程调用此方法来发出信号的锁的行中的下一个线程。 一旦收到状况了如指掌，等待线程移到准备就绪的队列。 该线程的调用时`Pulse`释放锁后，在准备就绪的队列 （它不一定接收到脉冲的线程） 中的下一个线程获取该锁。  
   
 > [!IMPORTANT]
->  <xref:System.Threading.Monitor>类不维护状态，指示<xref:System.Threading.Monitor.Pulse%2A>调用方法。 因此，如果您调用<xref:System.Threading.Monitor.Pulse%2A>没有线程在等待，在下一个调用线程<xref:System.Threading.Monitor.Wait%2A>块像<xref:System.Threading.Monitor.Pulse%2A>从未被调用过。 如果使用的两个线程<xref:System.Threading.Monitor.Pulse%2A>和<xref:System.Threading.Monitor.Wait%2A>进行交互，这可能导致死锁。 与此相反的行为<xref:System.Threading.AutoResetEvent>类： 如果你发出信号<xref:System.Threading.AutoResetEvent>通过调用其<xref:System.Threading.EventWaitHandle.Set%2A>方法中，没有线程在等待，并且<xref:System.Threading.AutoResetEvent>保持终止状态，直到某个线程调用在<xref:System.Threading.WaitHandle.WaitOne%2A>， <xref:System.Threading.WaitHandle.WaitAny%2A>，或<xref:System.Threading.WaitHandle.WaitAll%2A>。 <xref:System.Threading.AutoResetEvent>释放该线程并返回到未终止的状态。  
+>  <xref:System.Threading.Monitor>类不维护状态，指示<xref:System.Threading.Monitor.Pulse%2A>调用方法。 因此，如果您调用<xref:System.Threading.Monitor.Pulse%2A>没有线程在等待，在下一个调用线程<xref:System.Threading.Monitor.Wait%2A>块像<xref:System.Threading.Monitor.Pulse%2A>从未被调用过。 如果使用的两个线程<xref:System.Threading.Monitor.Pulse%2A>和<xref:System.Threading.Monitor.Wait%2A>进行交互，这可能导致死锁。 与此相反的行为<xref:System.Threading.AutoResetEvent>类：如果你发出信号<xref:System.Threading.AutoResetEvent>通过调用其<xref:System.Threading.EventWaitHandle.Set%2A>方法中，没有线程在等待，并且<xref:System.Threading.AutoResetEvent>保持在终止状态，直到某个线程调用<xref:System.Threading.WaitHandle.WaitOne%2A>， <xref:System.Threading.WaitHandle.WaitAny%2A>，或<xref:System.Threading.WaitHandle.WaitAll%2A>。 <xref:System.Threading.AutoResetEvent>释放该线程并返回到未终止的状态。  
   
  请注意同步的对象包含多个引用，其中包括对在线程当前持有锁、 准备就绪的队列，其中包含准备好获取锁的线程，对的引用和对等待队列的引用的引用的包含的对象的状态的更改通知等待的线程。  
   
@@ -832,7 +832,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果的值`timeout`参数转换为毫秒等于 – 1，则此方法等效于<xref:System.Threading.Monitor.Enter%2A>。 如果的值`timeout`等于 0，则此方法等效于<xref:System.Threading.Monitor.TryEnter%2A>。  
+ 如果的值`timeout`参数转换为毫秒等于-1，则此方法等效于<xref:System.Threading.Monitor.Enter%2A>。 如果的值`timeout`等于 0，则此方法等效于<xref:System.Threading.Monitor.TryEnter%2A>。  
   
 > [!NOTE]
 >  使用<xref:System.Threading.Monitor>来锁定对象 （即，引用类型） 而不是值类型。 有关详细信息，请参阅<xref:System.Threading.Monitor>类主题。  
@@ -845,7 +845,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值（以毫秒计）为负数且不等于 <see cref="F:System.Threading.Timeout.Infinite" />（–1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值（以毫秒计）为负数且不等于 <see cref="F:System.Threading.Timeout.Infinite" />（-1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <altmember cref="T:System.Threading.Thread" />
         <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
       </Docs>
@@ -972,7 +972,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 如果的值`timeout`参数转换为毫秒等于 – 1，则此方法等效于<xref:System.Threading.Monitor.Enter%28System.Object%29>。 如果的值`timeout`等于 0，则此方法等效于<xref:System.Threading.Monitor.TryEnter%28System.Object%29>。  
+ 如果的值`timeout`参数转换为毫秒等于-1，则此方法等效于<xref:System.Threading.Monitor.Enter%28System.Object%29>。 如果的值`timeout`等于 0，则此方法等效于<xref:System.Threading.Monitor.TryEnter%28System.Object%29>。  
   
  如果不采取锁，因为引发了异常，所指定的变量`lockTaken`参数是`false`此方法结束后。 这样，若要确定是否需要释放锁，在所有情况下，该程序。  
   
@@ -988,7 +988,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="lockTaken" /> 的输入为 <see langword="true" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值（以毫秒计）为负数且不等于 <see cref="F:System.Threading.Timeout.Infinite" />（–1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值（以毫秒计）为负数且不等于 <see cref="F:System.Threading.Timeout.Infinite" />（-1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <altmember cref="T:System.Threading.Thread" />
         <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
       </Docs>
@@ -1223,7 +1223,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.Threading.SynchronizationLockException">调用线程不拥有指定对象的锁。</exception>
         <exception cref="T:System.Threading.ThreadInterruptedException">调用 <see langword="Wait" /> 的线程稍后从等待状态中断。 另一线程调用此线程的 <see cref="M:System.Threading.Thread.Interrupt" /> 方法时将发生这种情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 参数值（以毫秒为单位）为负且不表示 <see cref="F:System.Threading.Timeout.Infinite" />（-1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 参数的值（以毫秒计）为负数且不表示 <see cref="F:System.Threading.Timeout.Infinite" />（-1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <altmember cref="T:System.Threading.Thread" />
         <altmember cref="T:System.Threading.Monitor" />
         <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
@@ -1388,7 +1388,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.Threading.SynchronizationLockException"><see langword="Wait" /> 不是从同步的代码块中调用的。</exception>
         <exception cref="T:System.Threading.ThreadInterruptedException">调用 Wait 的线程稍后会从等待状态中中断。 另一线程调用此线程的 <see cref="M:System.Threading.Thread.Interrupt" /> 方法时将发生这种情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 参数为负数，并且不表示 <see cref="F:System.Threading.Timeout.Infinite" />（-1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 参数为负数且不表示 <see cref="F:System.Threading.Timeout.Infinite" />（-1 毫秒），或者大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <altmember cref="T:System.Threading.Thread" />
         <altmember cref="T:System.Threading.Monitor" />
         <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>

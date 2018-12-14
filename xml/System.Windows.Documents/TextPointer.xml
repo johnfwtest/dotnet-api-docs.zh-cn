@@ -1,5 +1,5 @@
 <Type Name="TextPointer" FullName="System.Windows.Documents.TextPointer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="20e032541a3b46004aebc1cb03effddcadbc38ce" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52228426" /></Metadata><TypeSignature Language="C#" Value="public class TextPointer : System.Windows.Documents.ContentPosition" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5ef1fa4261a591f0ee0dbabc844bc1a0c4f26492" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53227746" /></Metadata><TypeSignature Language="C#" Value="public class TextPointer : System.Windows.Documents.ContentPosition" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextPointer extends System.Windows.Documents.ContentPosition" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Documents.TextPointer" />
   <TypeSignature Language="VB.NET" Value="Public Class TextPointer&#xA;Inherits ContentPosition" />
@@ -118,12 +118,12 @@
       <Docs>
         <param name="position">一个 <see cref="T:System.Windows.Documents.TextPointer" />，它指定要与当前位置进行比较的位置。</param>
         <summary>对当前 <see cref="T:System.Windows.Documents.TextPointer" /> 和第二个指定 <see cref="T:System.Windows.Documents.TextPointer" /> 所表示位置的顺序进行比较。</summary>
-        <returns>如果当前 <see cref="T:System.Windows.Documents.TextPointer" /> 位于 <paramref name="position" /> 之前，则为 –1；如果位置相同，则为 0；如果当前 <see cref="T:System.Windows.Documents.TextPointer" /> 位于 <paramref name="position" /> 之后，则为 +1。</returns>
+        <returns>如果当前 <see cref="T:System.Windows.Documents.TextPointer" /> 位于 <paramref name="position" /> 之前，则为 -1；如果位置相同，则为 0；如果当前 <see cref="T:System.Windows.Documents.TextPointer" /> 位于 <paramref name="position" /> 之后，则为 +1。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 值为 – 1 指示位置指定由当前<xref:System.Windows.Documents.TextPointer>指定的位置之前`position`。  值为 0 指示所指示的位置相等。  值 + 1 指示位置指定由当前<xref:System.Windows.Documents.TextPointer>遵循指定的位置`position`。  
+ 值为-1 指示位置指定由当前<xref:System.Windows.Documents.TextPointer>指定的位置之前`position`。  值为 0 指示所指示的位置相等。  值 + 1 指示位置指定由当前<xref:System.Windows.Documents.TextPointer>遵循指定的位置`position`。  
   
    
   
@@ -341,7 +341,7 @@
 ## Remarks  
  插入位置是可在其中添加新内容而不会中断任何语义规则关联的内容的位置。  在实践中，插入位置位于任何位置内容可能会放置一个插入符号的位置。  有效的示例<xref:System.Windows.Documents.TextPointer>不是一个插入位置的位置是相邻的两个位置<xref:System.Windows.Documents.Paragraph>标记 (即上, 一段的结束标记和下一段的开始标记之间)。  
   
- 如果<xref:System.Windows.Documents.TextPointer>已指向一个有效的插入位置，但结束标记为非空的格式设置序列紧接在给定的方向，该位置则<xref:System.Windows.Documents.TextPointer>返回此方法将调整为指向插入恰好在格式设置序列的关闭后的位置。 例如，考虑标记序列`<Bold>a</Bold>b`。 请注意，有两个字母之间的插入位置`a`并`b`— 其中一个位于右`Bold`标记和另一个紧随结束`Bold`标记。 如果<xref:System.Windows.Documents.TextPointer.GetInsertionPosition%2A>上调用<xref:System.Windows.Documents.TextPointer>字母之后紧邻的位置`a`之前的右`Bold`标记，并使用`direction`的<xref:System.Windows.Documents.LogicalDirection.Forward>，返回<xref:System.Windows.Documents.TextPointer>调整为指向位置的字母前就`b`，关闭之后`Bold`标记。 用于打开格式设置标记，在相反的逻辑方向中工作时进行类似的调整。 此方法旨在提供一种在类似情况下的插入位置之间的歧义消除。  
+ 如果<xref:System.Windows.Documents.TextPointer>已指向一个有效的插入位置，但结束标记为非空的格式设置序列紧接在给定的方向，该位置则<xref:System.Windows.Documents.TextPointer>返回此方法将调整为指向插入恰好在格式设置序列的关闭后的位置。 例如，考虑标记序列`<Bold>a</Bold>b`。 请注意，有两个字母之间的插入位置`a`并`b`-其中一个位于右`Bold`标记和另一个紧随结束`Bold`标记。 如果<xref:System.Windows.Documents.TextPointer.GetInsertionPosition%2A>上调用<xref:System.Windows.Documents.TextPointer>字母之后紧邻的位置`a`之前的右`Bold`标记，并使用`direction`的<xref:System.Windows.Documents.LogicalDirection.Forward>，返回<xref:System.Windows.Documents.TextPointer>调整为指向位置的字母前就`b`，关闭之后`Bold`标记。 用于打开格式设置标记，在相反的逻辑方向中工作时进行类似的调整。 此方法旨在提供一种在类似情况下的插入位置之间的歧义消除。  
   
  此外可以使用此方法涉及一系列结构标记时要谨慎的插入点。 例如，在关闭和打开段落标记之间的某个位置，该定向参数可用于选择以下段落开头最近的插入点 (通过指定<xref:System.Windows.Documents.LogicalDirection.Forward?displayProperty=nameWithType>) 或上一段落 （结尾处通过指定<xref:System.Windows.Documents.LogicalDirection.Backward?displayProperty=nameWithType>)。  
   
@@ -1133,7 +1133,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 为了举例说明如何使用此属性，<xref:System.Windows.Documents.LogicalDirection>的<xref:System.Windows.Documents.TextPointer>返回命中测试方法提供两个字符的文本之间的命中。 逻辑方向指定这两个字符的实际命中 — 左侧或右侧。  
+ 为了举例说明如何使用此属性，<xref:System.Windows.Documents.LogicalDirection>的<xref:System.Windows.Documents.TextPointer>返回命中测试方法提供两个字符的文本之间的命中。 逻辑方向指定实际影响这两个字符的左侧或右侧。  
   
  ]]></format>
         </remarks>
