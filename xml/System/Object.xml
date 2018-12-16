@@ -1,5 +1,5 @@
 <Type Name="Object" FullName="System.Object">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="795aa213f55320afb69e8ac92a851b4700704644" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52734496" /></Metadata><TypeSignature Language="C#" Value="public class Object" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e0ad93c4c32e3ceb162cffaa6ee0d915121c92a5" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53449874" /></Metadata><TypeSignature Language="C#" Value="public class Object" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit object" />
   <TypeSignature Language="DocId" Value="T:System.Object" />
   <TypeSignature Language="VB.NET" Value="Public Class Object" />
@@ -492,9 +492,9 @@
 > [!NOTE]
 >  C# 编译器不允许你重写<xref:System.Object.Finalize%2A>方法。 相反，通过实现提供终结器[析构函数](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)为您的类。 C# 析构函数自动调用其基类的析构函数。  
 >   
->  Visual c + + 还提供其自己的语法用于实现<xref:System.Object.Finalize%2A>方法。 有关详细信息，请参阅的"析构函数和终结器"部分[如何： 定义和使用类和结构 (C + + CLI)](https://msdn.microsoft.com/library/1c03cb0d-1459-4b5e-af65-97d6b3094fd7)。  
+>  Visual c + + 还提供其自己的语法用于实现<xref:System.Object.Finalize%2A>方法。 有关详细信息，请参阅的"析构函数和终结器"部分[如何：定义和使用类和结构 (C + + CLI)](https://msdn.microsoft.com/library/1c03cb0d-1459-4b5e-af65-97d6b3094fd7)。  
   
- 垃圾回收是不确定的因为您不知道准确地说当垃圾回收器执行终止。 释放资源立即，您还可以选择实现[释放模式](~/docs/standard/design-guidelines/dispose-pattern.md)和<xref:System.IDisposable>接口。 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>实现可由使用者类的释放非托管的资源，并且你可以使用<xref:System.Object.Finalize%2A>方法来释放非托管的资源的事件中<xref:System.IDisposable.Dispose%2A>不会调用方法。  
+ 垃圾回收是不确定的因为您不知道准确地说当垃圾回收器执行终止。 释放资源立即，您还可以选择实现 [dispose 模式](~/docs/standard/garbage-collection/implementing-dispose.md) 和<xref:System.IDisposable>接口。 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>实现可由使用者类的释放非托管的资源，并且你可以使用<xref:System.Object.Finalize%2A>方法来释放非托管的资源的事件中<xref:System.IDisposable.Dispose%2A>不会调用方法。  
   
  <xref:System.Object.Finalize%2A> 后它已清除垃圾回收期间，可以执行几乎任何操作，包括复活 （亦即，使该对象可访问再次） 的对象。 但是，该对象能够仅重新一次;<xref:System.Object.Finalize%2A>垃圾回收期间不能在来恢复对象上调用。 一个操作的实现<xref:System.Object.Finalize%2A>应永远不会采取： 它应永远不会引发异常。 如果从调用的方法引发的任何异常<xref:System.Object.Finalize%2A>处理方法<xref:System.Object.Finalize%2A>方法中，运行时假定<xref:System.Object.Finalize%2A>方法返回，并继续调用<xref:System.Object.Finalize%2A>其他对象的方法。 
   
@@ -516,7 +516,7 @@
   
 -   <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> 是一个等待句柄的包装器类。  
   
- 下面的示例使用[释放模式](~/docs/standard/design-guidelines/dispose-pattern.md)使用安全句柄而不是替代<xref:System.Object.Finalize%2A>方法。 它定义`FileAssociation`包装有关处理具有特定文件扩展名的文件的应用程序的注册表信息的类。 作为返回两个注册表句柄`out`参数的 Windows [RegOpenKeyEx](https://msdn.microsoft.com/library/windows/desktop/ms724897.aspx)函数调用传递给<xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle>构造函数。 类型的受保护`Dispose`方法随后调用`SafeRegistryHandle.Dispose`方法来释放这些两个句柄。  
+ 下面的示例使用[释放模式](~/docs/standard/garbage-collection/implementing-dispose.md)使用安全句柄而不是替代<xref:System.Object.Finalize%2A>方法。 它定义`FileAssociation`包装有关处理具有特定文件扩展名的文件的应用程序的注册表信息的类。 作为返回两个注册表句柄`out`参数的 Windows [RegOpenKeyEx](https://msdn.microsoft.com/library/windows/desktop/ms724897.aspx)函数调用传递给<xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle>构造函数。 类型的受保护`Dispose`方法随后调用`SafeRegistryHandle.Dispose`方法来释放这些两个句柄。  
   
  [!code-csharp[System.Object.Finalize#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.finalize/cs/finalize_safe.cs#2)]
  [!code-vb[System.Object.Finalize#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.finalize/vb/finalize_safe.vb#2)]  
@@ -1012,7 +1012,7 @@
 |结构|是 (<xref:System.ValueType.ToString%2A?displayProperty=nameWithType>)|Object.tostring （） 相同|  
 |枚举|是 (<xref:System.Enum.ToString?displayProperty=nameWithType>)|成员名称|  
 |接口|否|n/a|  
-|委托|否|n/a|  
+|委托|No|n/a|  
   
  重写，请参阅备注继承者部分以了解更多信息<xref:System.Object.ToString%2A>。  
   
@@ -1020,7 +1020,7 @@
 ## <a name="overloading-the-tostring-method"></a>重载的 ToString 方法  
  除了重写的无参数<xref:System.Object.ToString?displayProperty=nameWithType>方法中，许多类型重载`ToString`方法以提供接受参数的方法的版本。 大多数情况下，这可为变量的格式设置和区分区域性的格式提供支持。  
   
- 以下示例重载`ToString`方法以返回包含的各个字段的值的结果字符串`Automobile`类。 它定义了四个格式字符串： G，它将返回的模型名称和年;D，返回模型名称、 两年和门; 数C，它将返回模型名称、 两年和柱面;和一个，它将返回所有四个字段值的字符串。  
+ 以下示例重载`ToString`方法以返回包含的各个字段的值的结果字符串`Automobile`类。 它定义了四个格式字符串：G，它将返回的模型名称和年;D，返回模型名称、 两年和门; 数C，它将返回模型名称、 两年和柱面;和一个，它将返回所有四个字段值的字符串。  
   
  [!code-csharp[System.Object.ToString#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/tostringoverload1.cs#4)]
  [!code-vb[System.Object.ToString#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/tostringoverload1.vb#4)]  
