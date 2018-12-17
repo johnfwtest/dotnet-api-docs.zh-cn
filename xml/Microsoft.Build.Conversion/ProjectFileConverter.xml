@@ -1,5 +1,5 @@
 <Type Name="ProjectFileConverter" FullName="Microsoft.Build.Conversion.ProjectFileConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0423df5a7a1e56ef437d160e446f3e812d12f7c4" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48770595" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ee11a6257e6552808c92ae2e8866e7d5d441922a" /><Meta Name="ms.sourcegitcommit" Value="26e1e91358cabfb3e80ad7de3936c99807f775a3" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53399344" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProjectFileConverter extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Conversion.ProjectFileConverter" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ProjectFileConverter" />
@@ -69,7 +69,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否因为项目文件已处于最新格式而跳过了上次尝试的转换。</summary>
-        <value>如果因为项目文件已经为最新格式而跳过最后一次转换尝试，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value>如果因为项目文件已处于最新格式而跳过了上次尝试的转换，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,7 +204,7 @@
       </Parameters>
       <Docs>
         <param name="msbuildBinPath">MSBuild.exe 的完全限定路径。</param>
-        <summary>这是入口点方法，用于执行项目文件的格式转换。 如果该方法已存在，则它将覆盖“newProjectFile”，因此该方法的调用方应向用户确认这是他真正要做的。</summary>
+        <summary>这是入口点方法，用于执行项目文件的格式转换。 如果此方法已存在，它将覆盖“newProjectFile”，因此此方法的调用方应向用户确认这是否是他真正要做的。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -243,7 +243,7 @@
       <Parameters />
       <Docs>
         <summary>用 <see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> 在内存中创建新项目。</summary>
-        <returns>返回转换的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
+        <returns>转换后的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -286,7 +286,7 @@
       <Docs>
         <param name="engine">要在其中创建新项目的 <see cref="T:Microsoft.Build.BuildEngine.Engine" />。</param>
         <summary>用 <see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> 在内存中创建新项目。</summary>
-        <returns>返回转换的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
+        <returns>转换后的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -319,9 +319,9 @@
       </Parameters>
       <Docs>
         <param name="engine">要在其中创建新项目的 <see cref="T:Microsoft.Build.BuildEngine.Engine" />。</param>
-        <param name="projectLoadSettings">一个 <see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" /> 标志，该标志确定加载时项目是否忽略不存在的 .target 文件。</param>
+        <param name="projectLoadSettings">一个 <see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" /> 标志，用于确定项目是否在加载时忽略不存在的 .target 文件。</param>
         <summary>这是入口点方法，用于执行项目文件的格式转换。 此方法将仅在内存中创建新的 MSBuild 项目对象，而不尝试将其写入到磁盘。</summary>
-        <returns>返回转换的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
+        <returns>转换后的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -348,7 +348,7 @@
         <summary>执行特定于 F# 项目 (VS2008 CTP -&gt; VS2012) 和 (VS2010 -&gt; VS2012) 的转换。  
   
 这包括：更改 FSharp 目标的位置，对于 2008CTP，则是添加显式 mscorlib 和 FSharp.Core 引用。</summary>
-        <returns>如果发生了（将会发生）任何更改，则返回 true，否则返回 false。</returns>
+        <returns>如果发生了（将会发生）任何更改，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -381,7 +381,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示被转换的项目文件是否为 .user 文件。</summary>
-        <value>如果正在转换的项目文件为 .user 文件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value>如果被转换的项目文件是 .user 文件则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

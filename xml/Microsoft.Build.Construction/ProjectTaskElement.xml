@@ -1,5 +1,5 @@
 <Type Name="ProjectTaskElement" FullName="Microsoft.Build.Construction.ProjectTaskElement">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3f0717bb0585988d886cf0a843289a0ba1fb14f6" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51896113" /></Metadata><TypeSignature Language="C#" Value="public class ProjectTaskElement : Microsoft.Build.Construction.ProjectElementContainer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="653ef00c6140cf84abb6a801db88ad066f21d4e1" /><Meta Name="ms.sourcegitcommit" Value="26e1e91358cabfb3e80ad7de3936c99807f775a3" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53399149" /></Metadata><TypeSignature Language="C#" Value="public class ProjectTaskElement : Microsoft.Build.Construction.ProjectElementContainer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProjectTaskElement extends Microsoft.Build.Construction.ProjectElementContainer" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Construction.ProjectTaskElement" />
   <TypeSignature Language="VB.NET" Value="Public Class ProjectTaskElement&#xA;Inherits ProjectElementContainer" />
@@ -58,7 +58,7 @@
         <param name="taskParameter">将输出到该项的任务的名称。</param>
         <param name="itemType">其值将设置为任务的输出的新项的项类型。</param>
         <summary>在最后一个子级后添加 Output 项。</summary>
-        <returns>返回添加的 Output 项。</returns>
+        <returns>添加的 Output 项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -87,7 +87,7 @@
         <param name="itemType">该项的项类型。</param>
         <param name="condition">参数的条件。</param>
         <summary>在最后一个子级后向此任务添加一个条件 Output 项。</summary>
-        <returns>返回添加的条件 Output 项。</returns>
+        <returns>添加的条件 Output 项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,7 +123,7 @@
         <param name="taskParameter">参数的名称。</param>
         <param name="propertyName">属性的名称。</param>
         <summary>在最后一个子级后向此任务添加一个 Output 属性。</summary>
-        <returns>返回添加的 Output 属性。</returns>
+        <returns>添加的 Output 属性。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -152,7 +152,7 @@
         <param name="propertyName">属性的名称。</param>
         <param name="condition">属性的条件。</param>
         <summary>在最后一个子级后向此任务添加一个条件 Output 属性。</summary>
-        <returns>返回添加的条件 Output 属性。</returns>
+        <returns>添加的条件 Output 属性。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -181,12 +181,12 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <c>ContinueOnError</c> 特性值。</summary>
-        <value>返回<c>ContinueOnError</c>属性值。 如果该特性不存在，则返回空字符串。</value>
+        <value><c>ContinueOnError</c>属性值或为空字符串，如果该属性不存在。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 删除`ContinueOnError`属性如果要设置的值设置为 null 或空字符串。  
+ 删除`ContinueOnError`特性的值设置为 null 或空字符串。  
   
  ]]></format>
         </remarks>
@@ -208,10 +208,8 @@
         <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>此元素 "ContinueOnError" 特性的位置（如果有）。  
-  
-如果没有这样的属性，则返回 null。</summary>
-        <value>返回 <see cref="T:Microsoft.Build.Construction.ElementLocation" />。</value>
+        <summary>获取此元素“ContinueOnError”特性的位置（如果有）。 如果没有这样的特性，则返回 <see langword="null" />。</summary>
+        <value>此元素"ContinueOnError"特性的位置或<see langword="null" />是否存在任何"ContinueOnError"特性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -236,7 +234,7 @@
       <Docs>
         <param name="name">参数的名称。</param>
         <summary>获取具有指定名称的参数的值。</summary>
-        <returns>返回具有指定名称的参数的值。 如果任务中没有该名称的参数，则返回一个空字符串。</returns>
+        <returns>具有指定名称的参数的值，或如果任务中不存在具有该名称的参数，则为空字符串。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -264,12 +262,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置任务的架构值。  
-  
-如果该特性不存在，则返回空字符串。  
-  
-如果要设置的值为空，则移除该特性。</summary>
-        <value>返回 <see cref="T:System.String" />。</value>
+        <summary>获取或设置任务的架构值。 如果不存在，则返回空字符串。 如果值设置为空，则移除该特性。</summary>
+        <value>任务中或如果体系结构值不存在的空字符串的体系结构值。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -289,10 +283,8 @@
         <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>此元素 "MSBuildArchitecture" 特性的位置（如果有）。  
-  
-如果没有这样的属性，则返回 null。</summary>
-        <value>返回 <see cref="T:Microsoft.Build.Construction.ElementLocation" />。</value>
+        <summary>获取此元素“MSBuildArchitecture”特性的位置（如果有）。 如果没有这样的特性，则返回 <see langword="null" />。</summary>
+        <value>此元素"MSBuildArchitecture"特性的位置或<see langword="null" />如果没有"MSBuildArchitecture"特性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -345,10 +337,8 @@
         <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>此元素 "MSBuildRuntime" 特性的位置（如果有）。  
-  
-如果没有这样的属性，则返回 null。</summary>
-        <value>返回 <see cref="T:Microsoft.Build.Construction.ElementLocation" />。</value>
+        <summary>获取此元素“MSBuildRuntime”特性的位置（如果有）。 如果没有这样的特性，则返回 <see langword="null" />。</summary>
+        <value>此元素"MSBuildRuntime"特性的位置或<see langword="null" />如果没有"MSBuildRuntime"特性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -369,7 +359,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此任务的名称。</summary>
-        <value>返回此任务的名称。</value>
+        <value>此任务的名称。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -390,7 +380,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取所有 <see href="https://msdn.microsoft.com/library/34bc7cd1-efd3-4b57-b691-4584eeb6a0e9">Output 元素 (MSBuild)</see> 子级。</summary>
-        <value>返回所有 Output 元素子级。</value>
+        <value>所有 Output 元素子级。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -438,7 +428,7 @@ Condition 和 ContinueOnError 特性具有自己的属性，不在此集合中�
       </ReturnValue>
       <Docs>
         <summary>获取此任务的所有未计算参数。</summary>
-        <value>返回此任务的所有未计算参数。</value>
+        <value>此任务的所有未计算的参数。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
