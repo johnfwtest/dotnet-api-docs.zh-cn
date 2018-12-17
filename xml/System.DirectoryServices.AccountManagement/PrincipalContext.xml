@@ -1,5 +1,5 @@
 <Type Name="PrincipalContext" FullName="System.DirectoryServices.AccountManagement.PrincipalContext">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bc21c689f1c4014dd43e5fb3a39328c10ac19508" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53231191" /></Metadata><TypeSignature Language="C#" Value="public class PrincipalContext : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c3a1f55195e9666b0bd26f1c4e3d487d2b1f5f61" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53300566" /></Metadata><TypeSignature Language="C#" Value="public class PrincipalContext : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrincipalContext extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.PrincipalContext" />
   <TypeSignature Language="VB.NET" Value="Public Class PrincipalContext&#xA;Implements IDisposable" />
@@ -51,7 +51,7 @@
   
  时创建的主体上下文对象时没有指定一个容器，它可以用于表示多个不同的容器。 一个容器可能会用作查询操作的基础，而更多的容器可以容纳新创建的主体对象。 例如，域上下文类型插入时会用户或组，帐户管理 API 将使用默认的已知用户容器中，"CN = Users，DC = Fabrikam，DC = com"。 API 时的存储中插入计算机时，使用的默认"CN = Computers，DC = Fabrikam，DC = com"容器。 请注意，可以由域管理员更改默认容器名称。 主体对象构造函数可以仅指定一个主体上下文，因为其他上下文被称为默认行为时应用程序创建的域上下文，而无需指定一个容器。 由于应用程序目录不具有已知的容器，该应用程序必须在构造函数中指定一个容器或<xref:System.ArgumentException>引发。 因为 SAM 没有容器，<xref:System.ArgumentException>如果应用程序尝试在构造函数中指定的容器，将引发。  
   
- 构造函数采用用户名称作为参数，每个版本中`userName`字符串可以是各种不同的格式。  为三个支持的 NameFormats 是 Nt4Name、 UserPrincipalName 和 SamAccountName。  有关名称格式的详细信息，请参阅 ADS_NAME_TYPE_ENUM 文档[此处](https://go.microsoft.com/fwlink/?LinkID=99942)。  
+ 构造函数采用用户名称作为参数，每个版本中`userName`字符串可以是各种不同的格式。 为三个支持的 NameFormats 是 Nt4Name、 UserPrincipalName 和 SamAccountName。 有关名称格式的详细信息，请参阅 ADS_NAME_TYPE_ENUM 文档[此处](https://go.microsoft.com/fwlink/?LinkID=99942)。  
   
  ]]></format>
         </remarks>
@@ -102,7 +102,7 @@
         <param name="contextType">一个 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值，指定主体上下文的存储区的类型。</param>
         <param name="name">用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的计算机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器和端口的名称。  
   
-如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 null，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 null，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 null。</param>
+如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 <see langword="null" />，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 <see langword="null" />，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 <see langword="null" />。</param>
         <summary>使用指定的上下文类型和名称初始化 <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">在 <paramref name="contextType" /> 参数中指定 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 时，必须指定名称。</exception>
@@ -131,12 +131,12 @@
         <param name="contextType">一个 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值，指定主体上下文的存储区的类型。</param>
         <param name="name">用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的计算机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器和端口的名称。  
   
-如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 null，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 null，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 null。</param>
+如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 <see langword="null" />，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 <see langword="null" />，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 <see langword="null" />。</param>
         <param name="container">存储区上要用作上下文的根的容器。 所有查询都在此根下执行，并且所有插入都在此容器中执行。  
   
 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 和 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数是容器对象的可分辨名称。  
   
-对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 null。</param>
+对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 <see langword="null" />。</param>
         <summary>使用指定的上下文类型、名称和容器初始化 <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -180,13 +180,13 @@
         <param name="contextType">一个 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值，指定主体上下文的存储区的类型。</param>
         <param name="name">用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的计算机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器和端口的名称。  
   
-如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 null，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 null，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 null。</param>
+如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 <see langword="null" />，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 <see langword="null" />，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 <see langword="null" />。</param>
         <param name="container">存储区上要用作上下文的根的容器。 所有查询都在此根下执行，并且所有插入都在此容器中执行。  
   
 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 和 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数是容器对象的可分辨名称。  
   
-对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 null。</param>
-        <param name="options">一个或多个 <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" /> 枚举值的组合，这些枚举值指定用于绑定到服务器的选项。 如果此参数为 null，则默认选项为 ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing。</param>
+对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 <see langword="null" />。</param>
+        <param name="options">一个或多个 <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" /> 枚举值的组合，这些枚举值指定用于绑定到服务器的选项。 如果此参数为 <see langword="null" />，则默认选项为 ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing。</param>
         <summary>使用指定的上下文类型、名称、容器和上下文选项初始化 <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -227,12 +227,12 @@
         <param name="contextType">一个 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值，指定主体上下文的存储区的类型。</param>
         <param name="name">用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的计算机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器和端口的名称。  
   
-如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 null，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 null，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 null。</param>
-        <param name="userName">用于连接到存储区的用户名。 如果 <c>username</c> 和 <paramref name="password" /> 参数都为 null，则使用当前进程的凭据。 否则，<c>username</c> 和 <paramref name="password" /> 都不能为 null，并使用这两个参数指定的凭据来连接到存储。</param>
-        <param name="password">用于连接到存储区的密码。 如果 <c>username</c> 和 <paramref name="password" /> 参数都为 null，则使用当前进程的凭据。 否则，<c>username</c> 和 <paramref name="password" /> 都不能为 null，并使用这两个参数指定的凭据来连接到存储。</param>
+如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 <see langword="null" />，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 <see langword="null" />，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 <see langword="null" />。</param>
+        <param name="userName">用于连接到存储区的用户名。 如果 <paramref name="userName" /> 和 <paramref name="password" /> 参数都为 <see langword="null" />，则使用当前进程的凭据。 否则，<paramref name="userName" /> 和 <paramref name="password" /> 都不可以为 null，并使用这两个参数指定的凭据来连接到存储区。</param>
+        <param name="password">用于连接到存储区的密码。 如果 <paramref name="userName" /> 和 <paramref name="password" /> 参数都为 <see langword="null" />，则使用当前进程的凭据。 否则，<paramref name="userName" /> 和 <paramref name="password" /> 都不可以为 null，并使用这两个参数指定的凭据来连接到存储区。</param>
         <summary>使用指定的上下文类型、名称、用户名和密码初始化 <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="username" /> 和 <paramref name="password" /> 参数必须为 null 或包含值。  
+        <exception cref="T:System.ArgumentException"><paramref name="username" /> 和 <paramref name="password" /> 参数必须为 <see langword="null" /> 或包含值。  
   
 在 <paramref name="contextType" /> 参数中指定 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 时，必须指定名称。</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" /> 参数不包含有效的 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值。</exception>
@@ -262,14 +262,14 @@
         <param name="contextType">一个 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值，指定主体上下文的存储区的类型。</param>
         <param name="name">用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的计算机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器和端口的名称。  
   
-如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 null，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 null，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 null。</param>
+如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 <see langword="null" />，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 <see langword="null" />，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 <see langword="null" />。</param>
         <param name="container">存储区上要用作上下文的根的容器。 所有查询都在此根下执行，并且所有插入都在此容器中执行。  
   
 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 和 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数是容器对象的可分辨名称。  
   
-对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 null。</param>
-        <param name="userName">用于连接到存储区的用户名。 如果 <c>username</c> 和 <paramref name="password" /> 参数都为 null，则使用当前主体的默认凭据。  否则，<c>username</c> 和 <paramref name="password" /> 都不能为 null，并使用这两个参数指定的凭据来连接到存储。</param>
-        <param name="password">用于连接到存储区的密码。 如果 <c>username</c> 和 <paramref name="password" /> 参数都为 null，则使用当前主体的默认凭据。  否则，<c>username</c> 和 <paramref name="password" /> 都不能为 null，并使用这两个参数指定的凭据来连接到存储。</param>
+对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 <see langword="null" />。</param>
+        <param name="userName">用于连接到存储区的用户名。 如果 <paramref name="userName" /> 和 <paramref name="password" /> 参数都为 <see langword="null" />，则使用当前主体的默认凭据。 否则，<paramref name="userName" /> 和 <paramref name="password" /> 都不可以为 null，并使用这两个参数指定的凭据来连接到存储区。</param>
+        <param name="password">用于连接到存储区的密码。 如果 <paramref name="userName" /> 和 <paramref name="password" /> 参数都为 <see langword="null" />，则使用当前主体的默认凭据。 否则，<paramref name="userName" /> 和 <paramref name="password" /> 都不可以为 null，并使用这两个参数指定的凭据来连接到存储区。</param>
         <summary>使用指定的上下文类型、名称、容器、用户名和密码初始化 <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -279,7 +279,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="username" /> 和 <paramref name="password" /> 参数必须为 null 或包含值。  
+        <exception cref="T:System.ArgumentException"><paramref name="username" /> 和 <paramref name="password" /> 参数必须为 <see langword="null" /> 或包含值。  
   
 在 <paramref name="contextType" /> 参数中指定 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型时，不能指定容器。  
   
@@ -312,15 +312,15 @@
         <param name="contextType">一个 <see cref="T:System.DirectoryServices.AccountManagement.ContextType" /> 枚举值，指定主体上下文的存储区的类型。</param>
         <param name="name">用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的计算机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器和端口的名称。  
   
-如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 null，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 null，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 null。</param>
+如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的名称为 <see langword="null" />，则此上下文是运行该线程的用户主体的域的域控制器。 如果 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的名称为 <see langword="null" />，则此名称是本地计算机名称。 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数不能为 <see langword="null" />。</param>
         <param name="container">存储区上要用作上下文的根的容器。 所有查询都在此根下执行，并且所有插入都在此容器中执行。  
   
 对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 和 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 上下文类型，此参数是容器对象的可分辨名称。  
   
-对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 null。</param>
-        <param name="options">一个或多个 <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" /> 枚举值的组合，这些枚举值指定用于绑定到服务器的选项。 如果此参数为 null，则默认选项为 ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing。</param>
-        <param name="userName">用于连接到存储区的用户名。 如果 <c>username</c> 和 <paramref name="password" /> 参数都为 null，则使用当前主体的默认凭据。 否则，<c>username</c> 和 <paramref name="password" /> 都不能为 null，并使用这两个参数指定的凭据来连接到存储。</param>
-        <param name="password">用于连接到存储区的密码。 如果 <c>username</c> 和 <paramref name="password" /> 参数都为 null，则使用当前主体的默认凭据。  否则，<c>username</c> 和 <paramref name="password" /> 都不能为 null，并使用这两个参数指定的凭据来连接到存储。</param>
+对于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型，此参数必须设置为 <see langword="null" />。</param>
+        <param name="options">一个或多个 <see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" /> 枚举值的组合，这些枚举值指定用于绑定到服务器的选项。 如果此参数为 <see langword="null" />，则默认选项为 ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing。</param>
+        <param name="userName">用于连接到存储区的用户名。 如果 <paramref name="userName" /> 和 <paramref name="password" /> 参数都为 <see langword="null" />，则使用当前主体的默认凭据。 否则，<paramref name="userName" /> 和 <paramref name="password" /> 都不可以为 null，并使用这两个参数指定的凭据来连接到存储区。</param>
+        <param name="password">用于连接到存储区的密码。 如果 <paramref name="userName" /> 和 <paramref name="password" /> 参数都为 <see langword="null" />，则使用当前主体的默认凭据。 否则，<paramref name="userName" /> 和 <paramref name="password" /> 都不可以为 null，并使用这两个参数指定的凭据来连接到存储区。</param>
         <summary>使用指定的上下文类型、名称、容器、上下文选项、用户名和密码初始化 <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -330,7 +330,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="username" /> 和 <paramref name="password" /> 参数必须为 null 或包含值。  
+        <exception cref="T:System.ArgumentException"><paramref name="username" /> 和 <paramref name="password" /> 参数必须为 <see langword="null" /> 或包含值。  
   
 在 <paramref name="contextType" /> 参数中指定 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型时，不能指定容器。  
   
@@ -359,7 +359,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取主体上下文连接到的服务器的名称。</summary>
-        <value>主体上下文连接到的服务器的名称；如果主体上下文未连接到服务器，则为 null。</value>
+        <value>主体上下文连接到的服务器的名称或<see langword="null" />如果主体上下文未连接到服务器。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -389,12 +389,12 @@
       </ReturnValue>
       <Docs>
         <summary>获取在构造函数的容器参数中指定的值。</summary>
-        <value>存储区上要用作上下文的根的容器；如果未指定容器，则为 null。</value>
+        <value>要用作上下文的根的存储区中的容器或<see langword="null" />如果未指定的容器。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 所有查询都在此根下执行，并且所有插入都在此容器中执行。 有关<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>和<xref:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory>上下文类型，此属性是容器对象的可分辨的名称。 有关<xref:System.DirectoryServices.AccountManagement.ContextType.Machine>上下文类型，此属性必须为 null。  
+ 所有查询都在此根下执行，并且所有插入都在此容器中执行。 有关<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>和<xref:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory>上下文类型，此属性是容器对象的可分辨的名称。 有关<xref:System.DirectoryServices.AccountManagement.ContextType.Machine>上下文类型，此属性必须为`null`。  
   
  ]]></format>
         </remarks>
@@ -475,7 +475,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取构造函数中指定作为 <paramref name="name" /> 参数的值。</summary>
-        <value>用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" /> 上下文类型的域或服务器的名称、用于 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" /> 上下文类型的主机名称或承载 <see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" /> 实例的服务器的名称，如果未设置名称，则为 null。</value>
+        <value>在域或服务器的名称<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />上下文类型、 主机名<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />上下文类型的承载的服务器名称<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />实例，或<see langword="null" />如果未设置。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -521,12 +521,12 @@
       </ReturnValue>
       <Docs>
         <summary>获取在构造函数的用户名参数中指定的值。</summary>
-        <value>用于连接到存储区的用户名；如果不存在用户名，则为 null。</value>
+        <value>用于连接到存储的用户名或<see langword="null" />如果用户名不存在。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 可以通过将其传递用户名称的任意一种各种不同的格式设置此属性。  有关可接受类型的格式的完整列表，请参阅 ADS_NAME_TYPE_ENUM 文档[此处](https://go.microsoft.com/fwlink/?LinkID=99942)。  
+ 可以通过将其传递用户名称的任意一种各种不同的格式设置此属性。 有关可接受类型的格式的完整列表，请参阅 ADS_NAME_TYPE_ENUM 文档[此处](https://go.microsoft.com/fwlink/?LinkID=99942)。  
   
  ]]></format>
         </remarks>
@@ -619,7 +619,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A>方法将绑定到构造函数中指定的服务器。 如果`username`和`password`参数为 null，此方法验证当前主体的默认凭据。  
+ <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A>方法将绑定到构造函数中指定的服务器。 如果`username`并`password`参数是`null`，此方法验证当前主体的默认凭据。  
 
 `userName`参数必须采用格式*用户名*(例如， *mcampbell*) 而非*域 \ 用户名*或*用户名\@域*。 
  

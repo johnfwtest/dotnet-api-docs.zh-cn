@@ -1,5 +1,5 @@
 <Type Name="XmlReader" FullName="System.Xml.XmlReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e3d6e8c09f67f39f8167c55b3e732a5a93bcc2db" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53233635" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fd2f7abf93e14907023ccadcff7c4b17dba68021" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53300981" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlReader extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlReader" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XmlReader&#xA;Implements IDisposable" />
@@ -1109,7 +1109,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1278,7 +1278,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
         <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">如果 <see cref="T:System.Xml.XmlReaderSettings" /> 对象指定的一致性级别与基础读取器一致性级别不一致。  
   
-或 
+- 或 - 
 基础 <see cref="T:System.Xml.XmlReader" /> 处于 <see cref="F:System.Xml.ReadState.Error" /> 或 <see cref="F:System.Xml.ReadState.Closed" /> 状态。</exception>
       </Docs>
     </Member>
@@ -1410,7 +1410,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1545,7 +1545,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -2035,7 +2035,11 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在这种情况下，将通过消息“异步操作已在进行中”引发 <see cref="T:System.InvalidOperationException" />。
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3188,7 +3192,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3765,7 +3773,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -3919,7 +3931,11 @@ public class Sample
         <exception cref="T:System.FormatException">内容格式不是目标类型的正确格式。</exception>
         <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="returnType" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">当前节点不是所支持的节点类型。 有关详细信息，请参见下表。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.OverflowException">读取 <see langword="Decimal.MaxValue" />。</exception>
       </Docs>
     </Member>
@@ -3973,7 +3989,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4039,7 +4059,11 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
@@ -4093,7 +4117,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4159,7 +4187,11 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
@@ -4213,7 +4245,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4797,7 +4833,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4903,7 +4943,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -4984,7 +5028,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5047,10 +5095,14 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
+或 
 无法将元素内容转换成请求的类型。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -5107,7 +5159,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -5178,7 +5233,11 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">当前节点不是元素节点。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
@@ -5233,7 +5292,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -5304,7 +5367,11 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">当前节点不是元素节点。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
@@ -5359,7 +5426,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -5421,7 +5492,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5479,7 +5554,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 或 
@@ -5556,7 +5635,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5614,7 +5697,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5681,7 +5768,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5739,7 +5830,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5818,7 +5913,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5876,7 +5975,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -5943,7 +6046,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -6001,10 +6108,13 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 元素内容不能转换为单精度浮点数。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -6068,10 +6178,13 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 - 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-或 
+- 或 - 
 无法将元素内容转换为 32 位有符号整数。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
       </Docs>
@@ -6126,10 +6239,13 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
+或 
 无法将元素内容转换为 32 位有符号整数。</exception>
         <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
         <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
@@ -6205,7 +6321,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 或 
@@ -6263,7 +6382,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 - 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 或 
@@ -6348,7 +6470,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 或 
@@ -6404,7 +6529,10 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 - 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -6458,7 +6586,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -6532,7 +6664,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 或 
@@ -6600,7 +6736,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
 - 或 - 
@@ -6665,7 +6805,11 @@ public class Sample
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <summary>读取只有简单文本的元素。 但是，建议改用 <see cref="Overload:System.Xml.XmlReader.ReadElementContentAsString" /> 方法，因为该方法可以更直接地处理此操作。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7019,7 +7163,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -7316,7 +7464,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。  
   
-或 
+- 或 - 
 所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 属性与给定的参数不匹配。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadEndElement" />
@@ -7508,7 +7656,11 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">调用此方法时 XML 读取器没有定位在某个元素上。
+
+- 或 -
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadToDescendant">
@@ -7958,7 +8110,10 @@ reader.ReadToFollowing("item", "urn:1");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">当前节点没有值（<see cref="P:System.Xml.XmlReader.HasValue" /> 为 <see langword="false" />）。
+
+- 或 - 
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
@@ -8012,7 +8167,10 @@ reader.ReadToFollowing("item", "urn:1");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>
@@ -8060,7 +8218,11 @@ reader.ReadToFollowing("item", "urn:1");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
+        <exception cref="T:System.InvalidOperationException">读取器未定位在 <see langword="EntityReference" /> 节点上；该读取器的实现不能解析实体（<see cref="P:System.Xml.XmlReader.CanResolveEntity" /> 返回 <see langword="false" />）。
+
+或
+
+在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="T:System.Xml.EntityHandling" />
         <altmember cref="P:System.Xml.XmlReader.CanResolveEntity" />
       </Docs>
@@ -8287,7 +8449,11 @@ reader.ReadToFollowing("item", "urn:1");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
+        <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
+
+- 或 -
+
+调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
       </Docs>
     </Member>

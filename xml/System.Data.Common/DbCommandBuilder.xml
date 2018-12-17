@@ -1,5 +1,5 @@
 <Type Name="DbCommandBuilder" FullName="System.Data.Common.DbCommandBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e18de439f80b7e2876e01e5d4c73e11a44048441" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52246886" /></Metadata><TypeSignature Language="C#" Value="public abstract class DbCommandBuilder : System.ComponentModel.Component" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bf8d1ca73de548fad0cdcf91b58b9c459b06453c" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53291961" /></Metadata><TypeSignature Language="C#" Value="public abstract class DbCommandBuilder : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbCommandBuilder extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Data.Common.DbCommandBuilder" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DbCommandBuilder&#xA;Inherits Component" />
@@ -162,7 +162,7 @@
       </ReturnValue>
       <Docs>
         <summary>对于 <see cref="T:System.Data.Common.CatalogLocation" /> 类的实例，设置或获取 <see cref="T:System.Data.Common.DbCommandBuilder" />。</summary>
-        <value><see cref="T:System.Data.Common.CatalogLocation" /> 对象。</value>
+        <value>一个 <see cref="T:System.Data.Common.CatalogLocation" /> 对象。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
         <related type="Article" href="~/docs/framework/data/adonet/ado-net-overview.md">ADO.NET 概述</related>
@@ -368,7 +368,7 @@
   
  首先生成的 SQL 语句后，应用程序必须显式调用<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>如果发生更改以任何方式的语句。 否则为<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A>仍将使用从上一语句，这可能不是正确的信息。 SQL 语句是第一个当应用程序调用<xref:System.Data.Common.DbDataAdapter.Update%2A>或<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A>。  
   
- 生成参数名称时的默认行为是使用@p1， @p2，为各种参数，依此类推。 如果的重载的版本<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A>您可以通过提供一个布尔值，指定此行为可能会导致<xref:System.Data.Common.DbCommandBuilder>来生成表示通过改为基于列名称的参数`True`。  
+ 生成参数名称时的默认行为是使用`@p1`， `@p2`，为各种参数，依此类推。 如果的重载的版本<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A>您可以通过提供一个布尔值，指定此行为可能会导致<xref:System.Data.Common.DbCommandBuilder>来生成表示通过改为基于列名称的参数`True`。  
   
  ]]></format>
         </remarks>
@@ -452,7 +452,7 @@
         <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则生成与列名匹配的参数名（如果可能）。 如果为 <see langword="false" />，则生成 @p1、@p2，以此类推。</param>
+        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则生成与列名匹配的参数名（如果可能）。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
         <summary>获取对数据源执行删除操作所必需的自动生成的 <see cref="T:System.Data.Common.DbCommand" /> 对象，可选择使用列作为参数名。</summary>
         <returns>自动生成的、执行删除操作所需的 <see cref="T:System.Data.Common.DbCommand" /> 对象。</returns>
         <remarks>
@@ -465,7 +465,7 @@
   
  首先生成的 SQL 语句后，应用程序必须显式调用<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>如果发生更改以任何方式的语句。 否则为<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A>仍将使用从上一语句，这可能不是正确的信息。 SQL 语句是第一个当应用程序调用<xref:System.Data.Common.DbDataAdapter.Update%2A>或<xref:System.Data.Common.DbCommandBuilder.GetDeleteCommand%2A>。  
   
- 生成参数名称时的默认行为是使用@p1， @p2，为各种参数，依此类推。 传递`true`有关`useColumnsForParameterNames`参数，可强制<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。 仅当满足以下条件时，此操作将成功：  
+ 生成参数名称时的默认行为是使用`@p1`， `@p2`，为各种参数，依此类推。 传递`true`有关`useColumnsForParameterNames`参数，可强制<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。 仅当满足以下条件时，此操作将成功：  
   
 -   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>已指定并且其长度等于或大于生成的参数名称。  
   
@@ -497,7 +497,7 @@
   
  首先生成的 SQL 语句后，应用程序必须显式调用<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>如果发生更改以任何方式的语句。 否则为<xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A>仍将使用从上一语句，这可能不是正确的信息。 SQL 语句是第一个当应用程序调用<xref:System.Data.Common.DbDataAdapter.Update%2A>或<xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A>。  
   
- 生成参数名称时的默认行为是使用@p1， @p2，为各种参数，依此类推。 如果的重载的版本<xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A>允许你指定此行为，可能会导致<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。  
+ 生成参数名称时的默认行为是使用`@p1`， `@p2`，为各种参数，依此类推。 如果的重载的版本<xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A>允许你指定此行为，可能会导致<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。  
   
  ]]></format>
         </remarks>
@@ -581,7 +581,7 @@
         <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则生成与列名匹配的参数名（如果可能）。 如果为 <see langword="false" />，则生成 @p1、@p2，以此类推。</param>
+        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则生成与列名匹配的参数名（如果可能）。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
         <summary>获取对数据源执行插入操作所必需的自动生成的 <see cref="T:System.Data.Common.DbCommand" /> 对象，可选择使用列作为参数名。</summary>
         <returns>自动生成的、执行插入操作所需的 <see cref="T:System.Data.Common.DbCommand" /> 对象。</returns>
         <remarks>
@@ -594,7 +594,7 @@
   
  首先生成的 SQL 语句后，应用程序必须显式调用<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>如果发生更改以任何方式的语句。 否则为<xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A>仍将使用从上一语句，这可能不是正确的信息。 SQL 语句是第一个当应用程序调用<xref:System.Data.Common.DbDataAdapter.Update%2A>或<xref:System.Data.Common.DbCommandBuilder.GetInsertCommand%2A>。  
   
- 生成参数名称时的默认行为是使用@p1， @p2，为各种参数，依此类推。 传递`true`有关`useColumnsForParameterNames`参数，可强制<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。 仅当满足以下条件时，将成功生成的基于列名称的参数：  
+ 生成参数名称时的默认行为是使用`@p1`， `@p2`，为各种参数，依此类推。 传递`true`有关`useColumnsForParameterNames`参数，可强制<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。 仅当满足以下条件时，将成功生成的基于列名称的参数：  
   
 -   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>已指定并且其长度等于或大于生成的参数名称。  
   
@@ -650,7 +650,7 @@
       </Parameters>
       <Docs>
         <param name="parameterOrdinal">作为参数名的一部分而包含的数字。</param>
-        <summary>以 @p# 格式返回指定参数的名称。 在生成自定义命令生成器时使用。</summary>
+        <summary>以 <c>@p#</c> 格式返回指定参数的名称。 在生成自定义命令生成器时使用。</summary>
         <returns>参数名，其中包含作为参数名的一部分而附加的指定数字。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
@@ -803,7 +803,7 @@
   
  首先生成的 SQL 语句后，应用程序必须显式调用<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>如果发生更改以任何方式的语句。 否则为<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A>仍将使用从上一语句，这可能不是正确的信息。 SQL 语句是第一个当应用程序调用<xref:System.Data.Common.DbDataAdapter.Update%2A>或<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A>。  
   
- 生成参数名称时的默认行为是使用@p1， @p2，为各种参数，依此类推。 如果的重载的版本<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A>允许你指定此行为，可能会导致<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。  
+ 生成参数名称时的默认行为是使用`@p1`， `@p2`，为各种参数，依此类推。 如果的重载的版本<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A>允许你指定此行为，可能会导致<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。  
   
  ]]></format>
         </remarks>
@@ -887,7 +887,7 @@
         <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则生成与列名匹配的参数名（如果可能）。 如果为 <see langword="false" />，则生成 @p1、@p2，以此类推。</param>
+        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则生成与列名匹配的参数名（如果可能）。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
         <summary>获取对数据源执行更新操作所必需的自动生成的 <see cref="T:System.Data.Common.DbCommand" /> 对象，可选择使用列作为参数名。</summary>
         <returns>自动生成的、执行更新所需的 <see cref="T:System.Data.Common.DbCommand" /> 对象。</returns>
         <remarks>
@@ -900,7 +900,7 @@
   
  首先生成的 SQL 语句后，应用程序必须显式调用<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>如果发生更改以任何方式的语句。 否则为<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A>仍将使用从上一语句，这可能不是正确的信息。 SQL 语句是第一个当应用程序调用<xref:System.Data.Common.DbDataAdapter.Update%2A>或<xref:System.Data.Common.DbCommandBuilder.GetUpdateCommand%2A>。  
   
- 生成参数名称时的默认行为是使用@p1， @p2，为各种参数，依此类推。 传递`true`有关`useColumnsForParameterNames`参数，可强制<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。 仅当满足以下条件时，将成功生成的基于列名称的参数：  
+ 生成参数名称时的默认行为是使用`@p1`， `@p2`，为各种参数，依此类推。 传递`true`有关`useColumnsForParameterNames`参数，可强制<xref:System.Data.Common.DbCommandBuilder>生成改为基于列名称的参数。 仅当满足以下条件时，将成功生成的基于列名称的参数：  
   
 -   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>已指定并且其长度等于或大于生成的参数名称。  
   

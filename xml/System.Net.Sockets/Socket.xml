@@ -1,5 +1,5 @@
 <Type Name="Socket" FullName="System.Net.Sockets.Socket">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5cfe2d1765fa134583bd7a7f5de2f7ae430097d2" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53233726" /></Metadata><TypeSignature Language="C#" Value="public class Socket : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="528c249ecf9ee5530e3c595f4ceee28d34332910" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53301163" /></Metadata><TypeSignature Language="C#" Value="public class Socket : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Socket extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.Socket" />
   <TypeSignature Language="VB.NET" Value="Public Class Socket&#xA;Implements IDisposable" />
@@ -365,9 +365,9 @@
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始一个异步操作来接受一个传入的连接尝试。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -731,7 +731,7 @@
         <exception cref="T:System.NotSupportedException">此方法需要 Windows NT。</exception>
         <exception cref="T:System.InvalidOperationException">正在接受的套接字不会侦听连接。 在调用 <see cref="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)" /> 之前必须调用 <see cref="M:System.Net.Sockets.Socket.Listen(System.Int32)" /> 和 <see cref="M:System.Net.Sockets.Socket.BeginAccept(System.AsyncCallback,System.Object)" />。  
   
-或 
+- 或 - 
 已接受的套接字是绑定的。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="receiveSize" /> 小于 0。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
@@ -1723,7 +1723,7 @@
 - 或 - 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
-或 
+- 或 - 
  <paramref name="size" /> 小于 0。  
   
 - 或 - 
@@ -1846,7 +1846,7 @@
 - 或 - 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
-- 或 - 
+或 
  <paramref name="size" /> 小于 0。  
   
 - 或 - 
@@ -1940,18 +1940,18 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
-- 或 - 
+或 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
 或 
  <paramref name="size" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="size" /> 大于 <paramref name="buffer" /> 的长度减去 <paramref name="offset" /> 参数的值。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
         <exception cref="T:System.NotSupportedException">操作系统为 Windows 2000 或更低版本，而此方法需要在 Windows XP 中使用。</exception>
@@ -2233,10 +2233,10 @@
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。 请参见下面的备注部分。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="offset" /> 小于 <paramref name="buffer" /> 的长度。  
   
-- 或 - 
+或 
  <paramref name="size" /> 小于 0。  
   
 - 或 - 
@@ -2352,7 +2352,7 @@
 - 或 - 
  <paramref name="offset" /> 小于 <paramref name="buffer" /> 的长度。  
   
-- 或 - 
+或 
  <paramref name="size" /> 小于 0。  
   
 - 或 - 
@@ -2653,7 +2653,7 @@
 - 或 - 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
-或 
+- 或 - 
  <paramref name="size" /> 小于 0。  
   
 或 
@@ -3369,9 +3369,9 @@
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始一个对远程主机连接的异步请求。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3460,9 +3460,9 @@
         <param name="protocolType"><see cref="T:System.Net.Sockets.ProtocolType" /> 值之一。</param>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始一个对远程主机连接的异步请求。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3665,9 +3665,9 @@
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始异步请求从远程终结点断开连接。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4708,7 +4708,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 为 <see langword="null" />  
   
-- 或 - 
+或 
  <paramref name="endPoint" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException">对 <see cref="M:System.Net.Sockets.Socket.BeginReceiveMessageFrom(System.Byte[],System.Int32,System.Int32,System.Net.Sockets.SocketFlags,System.Net.EndPoint@,System.AsyncCallback,System.Object)" /> 方法的调用未返回 <paramref name="asyncResult" />。</exception>
         <exception cref="T:System.InvalidOperationException">先前曾为异步读取调用过 <see cref="M:System.Net.Sockets.Socket.EndReceiveMessageFrom(System.IAsyncResult,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />。</exception>
@@ -5261,7 +5261,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         </remarks>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。  
   
-或 
+- 或 - 
  <paramref name="optionName" /> 设置为不支持的值 <see cref="F:System.Net.Sockets.SocketOptionName.MaxConnections" />。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
         <altmember cref="M:System.Net.Sockets.Socket.SetSocketOption(System.Net.Sockets.SocketOptionLevel,System.Net.Sockets.SocketOptionName,System.Int32)" />
@@ -6112,17 +6112,17 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  </description></listheader><item><term><see cref="F:System.Net.Sockets.SelectMode.SelectRead" /></term><description>如果已调用 <see cref="M:System.Net.Sockets.Socket.Listen(System.Int32)" /> 并且有挂起的连接，则为 <see langword="true" />。 
 - 或 - 
  如果有数据可供读取，则为 <see langword="true" />。 
-或 
+- 或 - 
  如果连接已关闭、重置或终止，则返回 <see langword="true" />； 
 否则，返回 <see langword="false" />。  
   
  </description></item><item><term><see cref="F:System.Net.Sockets.SelectMode.SelectWrite" /></term><description>如果正在处理 <see cref="M:System.Net.Sockets.Socket.Connect(System.Net.EndPoint)" /> 并且连接已成功，则为 <see langword="true" />； 
-- 或 - 
+或 
  如果可以发送数据，则返回 <see langword="true" />； 
 否则，返回 <see langword="false" />。  
   
  </description></item><item><term><see cref="F:System.Net.Sockets.SelectMode.SelectError" /></term><description>如果正在处理不阻止的 <see cref="M:System.Net.Sockets.Socket.Connect(System.Net.EndPoint)" />，并且连接已失败，则为 <see langword="true" />； 
-或 
+- 或 - 
  如果 <see cref="F:System.Net.Sockets.SocketOptionName.OutOfBandInline" /> 未设置，并且带外数据可用，则为 <see langword="true" />； 
 否则，返回 <see langword="false" />。  
   
@@ -6578,7 +6578,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         <altCompliant cref="M:System.Net.Sockets.Socket.Receive(System.Byte[],System.Net.Sockets.SocketFlags)" />
         <exception cref="T:System.ArgumentNullException"><paramref name="buffers" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="buffers" />.Count 是零。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
@@ -6789,7 +6789,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         <altCompliant cref="M:System.Net.Sockets.Socket.Receive(System.Byte[],System.Net.Sockets.SocketFlags)" />
         <exception cref="T:System.ArgumentNullException"><paramref name="buffers" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="buffers" />.Count 是零。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
@@ -6915,7 +6915,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
-- 或 - 
+或 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
 - 或 - 
@@ -7070,9 +7070,9 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始一个异步请求以便从连接的 <see cref="T:System.Net.Sockets.Socket" /> 对象中接收数据。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7262,7 +7262,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
@@ -7461,14 +7461,14 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="size" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="size" /> 大于 <paramref name="buffer" /> 的长度。</exception>
         <exception cref="T:System.Net.Sockets.SocketException"><paramref name="socketFlags" /> 不是有效的值组合。  
   
-或 
+- 或 - 
 未设置 <see cref="P:System.Net.Sockets.Socket.LocalEndPoint" /> 属性。  
   
-或 
+- 或 - 
 访问 <see cref="T:System.Net.Sockets.Socket" /> 时出现操作系统错误。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
         <exception cref="T:System.Security.SecurityException">调用堆栈中的调用方没有所需的权限。</exception>
@@ -7562,11 +7562,11 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
-- 或 - 
+或 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
 或 
@@ -7576,10 +7576,10 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <paramref name="size" /> 大于 <paramref name="buffer" /> 的长度减去偏移量参数的值。</exception>
         <exception cref="T:System.Net.Sockets.SocketException"><paramref name="socketFlags" /> 不是有效的值组合。  
   
-- 或 - 
+或 
 未设置 <see cref="P:System.Net.Sockets.Socket.LocalEndPoint" /> 属性。  
   
-- 或 - 
+或 
 尝试访问套接字时出错。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
         <permission cref="T:System.Net.SocketPermission">用于接受来自网络的连接。 关联枚举：<see cref="F:System.Net.NetworkAccess.Accept" />。</permission>
@@ -7627,9 +7627,9 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始从指定网络设备中异步接收数据。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7759,7 +7759,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
 或 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
-或 
+- 或 - 
  <paramref name="size" /> 小于 0。  
   
 - 或 - 
@@ -7825,9 +7825,9 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>开始使用指定的 <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags" /> 将指定字节数的数据异步接收到数据缓冲区的指定位置，并存储终结点和数据包信息。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8548,7 +8548,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="size" /> 小于 0 或超过缓冲区的大小。</exception>
         <exception cref="T:System.Net.Sockets.SocketException"><paramref name="socketFlags" /> 不是有效的值组合。  
   
-或 
+- 或 - 
 访问套接字时发生操作系统错误。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
         <altmember cref="M:System.Net.Sockets.Socket.Connect(System.Net.EndPoint)" />
@@ -8751,10 +8751,10 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
-- 或 - 
+或 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
-或 
+- 或 - 
  <paramref name="size" /> 小于 0。  
   
 或 
@@ -8853,13 +8853,13 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="offset" /> 大于 <paramref name="buffer" /> 的长度。  
   
 - 或 - 
  <paramref name="size" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="size" /> 大于 <paramref name="buffer" /> 的长度减去 <paramref name="offset" /> 参数的值。</exception>
         <exception cref="T:System.Net.Sockets.SocketException"><paramref name="socketFlags" /> 不是有效的值组合。  
   
@@ -8908,9 +8908,9 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>将数据异步发送到连接的 <see cref="T:System.Net.Sockets.Socket" /> 对象。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9215,9 +9215,9 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>将文件集合或者内存中的数据缓冲区以异步方法发送给连接的 <see cref="T:System.Net.Sockets.Socket" /> 对象。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9399,7 +9399,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
@@ -9485,7 +9485,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Net.Sockets.SocketException">尝试访问套接字时出错。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> 已关闭。</exception>
@@ -9669,7 +9669,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="remoteEP" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 0。  
   
@@ -9731,9 +9731,9 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
       <Docs>
         <param name="e">要用于此异步套接字操作的 <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> 对象。</param>
         <summary>以异步方式将数据发送到特定远程主机。</summary>
-        <returns>如果 I/O 操作挂起，将返回 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
+        <returns>如果 I/O 操作挂起，则为 <see langword="true" />。 操作完成时，将引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件。  
   
-如果 I/O 操作同步完成，将返回 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
+ 如果 I/O 操作同步完成，则为 <see langword="false" />。 在这种情况下，将不会引发 <paramref name="e" /> 参数的 <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> 事件，并且可能在方法调用返回后立即检查作为参数传递的 <paramref name="e" /> 对象以检索操作的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

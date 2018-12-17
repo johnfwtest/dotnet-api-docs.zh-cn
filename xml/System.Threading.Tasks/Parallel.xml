@@ -1,5 +1,5 @@
 <Type Name="Parallel" FullName="System.Threading.Tasks.Parallel">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="772fa50da47119d829d6c80f447fa876718c81d8" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52610389" /></Metadata><TypeSignature Language="C#" Value="public static class Parallel" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2e5877b668a67baf4ed3de602d3e7d81869f3db6" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53297172" /></Metadata><TypeSignature Language="C#" Value="public static class Parallel" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Parallel extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Parallel" />
   <TypeSignature Language="VB.NET" Value="Public Class Parallel" />
@@ -104,7 +104,7 @@
   
  调用<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>方法将通知`for`迭代后当前无需执行的操作。 但是，早于当前的所有迭代一个仍都将需要如果它们尚未准备好执行。  
   
- 因此，调用<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>类似于使用中断操作的传统`for`循环中一种语言如 C# 中，但并不是理想的替代： 例如，则之后当前迭代肯定将不会不能保证执行。  
+ 因此，调用<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>类似于使用中断操作的传统`for`等语言中的循环C#，但并不是理想的替代：例如，就不能保证该迭代后当前都不会执行。  
   
  如果当前没有必要之前执行所有迭代，使用<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>方法而不是使用<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>。 调用<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>通知`for`循环，它可能会放弃所有剩余迭代，而不考虑是否它们之前或之后的当前迭代，因为所有所需的工作将已完成。 但是，作为与<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>，不有哪些其他迭代不会执行任何保证。  
   
@@ -233,7 +233,7 @@
   
  调用<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>方法将通知`for`迭代后当前无需执行，但在当前数据表之前的所有迭代都执行的操作。  
   
- 因此，调用中断是类似于使用中断操作的传统`for`循环中一种语言如 C# 中，但并不是理想的替代： 例如，则不能保证该迭代后当前都不会执行。  
+ 因此，调用中断是类似于使用中断操作的传统`for`等语言中的循环C#，但并不是理想的替代：例如，就不能保证该迭代后当前都不会执行。  
   
  如果当前没有必要之前执行所有迭代，使用<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>方法而不是使用<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>。 调用<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>通知`for`循环，它可能会放弃所有剩余迭代，而不考虑是否它们之前或之后的当前迭代，因为所有所需的工作将已完成。 但是，作为与<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>，不有哪些其他迭代不会执行任何保证。  
   
@@ -349,7 +349,7 @@
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -414,7 +414,7 @@
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -479,7 +479,7 @@
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -544,7 +544,7 @@
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -607,13 +607,13 @@
   
  如果`fromInclusive`大于或等于`toExclusive`，则该方法立即返回而不执行任何迭代。  
   
- 使用此方法的示例，请参阅[如何： 编写具有线程局部变量的 Parallel.For 循环](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)。  
+ 使用此方法的示例，请参阅[如何：编写具有线程局部变量的 Parallel.For 循环](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
 或 
@@ -678,16 +678,16 @@
   
  如果`fromInclusive`大于或等于`toExclusive`，则该方法立即返回而不执行任何迭代。  
   
- 使用此方法的示例，请参阅[如何： 编写具有线程局部变量的 Parallel.For 循环](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)。  
+ 使用此方法的示例，请参阅[如何：编写具有线程局部变量的 Parallel.For 循环](~/docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">并行循环</related>
@@ -765,10 +765,10 @@
 或 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -837,13 +837,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -903,20 +903,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在 <paramref name="source" /> 可排序的分区程序的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />。  
   
-或 
+- 或 - 
 在 <see langword="false" /> 可排序的分区程序的 <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> 属性返回 。  
   
-或 
+- 或 - 
 在源可排序的分区程序的所有方法都返回 <see langword="null" />。</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">并行循环</related>
       </Docs>
@@ -963,17 +963,17 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在 <paramref name="source" /> 的分区程序的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />。  
   
-或 
+- 或 - 
 <paramref name="source" /> 分区程序中的方法返回 <see langword="null" />。  
   
 或 
@@ -1023,7 +1023,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
    
   
@@ -1037,11 +1037,11 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在 <paramref name="source" /> 的分区程序的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />。  
   
-或 
+- 或 - 
 在 <paramref name="source" /> 分区程序中的任何方法返回 <see langword="null" /> 时引发的异常。  
   
 或 
@@ -1097,7 +1097,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">并行循环</related>
@@ -1151,7 +1151,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">并行循环</related>
@@ -1262,14 +1262,14 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" />参数。 </exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
 或 
@@ -1277,10 +1277,10 @@
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
         <exception cref="T:System.InvalidOperationException">在 <paramref name="source" /> 可排序的分区程序的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />。  
   
-或 
+- 或 - 
 在 <paramref name="source" /> 可排序的分区程序的 <see cref="P:System.Collections.Concurrent.OrderablePartitioner`1.KeysNormalized" /> 属性返回 <see langword="false" />。  
   
-或 
+- 或 - 
 当 <paramref name="source" /> 可排序分区程序中的任何方法返回 <see langword="null" /> 时引发的异常。</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">并行循环</related>
       </Docs>
@@ -1328,7 +1328,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  ]]></format>
         </remarks>
@@ -1339,7 +1339,7 @@
 或 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">在 <paramref name="source" /> 的分区程序的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />。  
   
@@ -1391,7 +1391,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  ]]></format>
         </remarks>
@@ -1464,7 +1464,7 @@
 或 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -1524,7 +1524,7 @@
 或 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -1581,10 +1581,10 @@
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" />参数。 </exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -1639,7 +1639,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  `localInit`参与循环的执行，这些任务的每个返回初始本地状态的每个任务一次调用委托。 这些初始状态传递给第一个`body`上每个任务的调用。 然后，每个后续正文调用返回传递给下一个正文调用一个可能已修改的状态值。 最后，每个任务上的最后一个正文调用返回传递给的州值`localFinally`委托。 `localFinally`每个任务，每个任务的本地状态执行一个最终操作一次调用委托。 在多个任务; 可能会同时调用此委托因此，必须同步对共享的任何变量的访问。  
   
@@ -1649,10 +1649,10 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
 或 
@@ -1710,7 +1710,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  `localInit`委托会调用一次为每个线程都参与循环的执行，这些任务的每个返回初始本地状态。 这些初始状态传递给第一个`body`上每个任务的调用。 然后，每个后续正文调用返回传递给下一个正文调用一个可能已修改的状态值。 最后，每个任务上的最后一个正文调用返回传递给的州值`localFinally`委托。 `localFinally`每个任务，每个任务的本地状态执行一个最终操作一次调用委托。 在多个任务; 可能会同时调用此委托因此，必须同步对共享的任何变量的访问。  
   
@@ -1720,13 +1720,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> 中的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />，或者分区程序返回 <see langword="null" /> 分区。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
@@ -1791,10 +1791,10 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
 或 
@@ -1869,13 +1869,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
 或 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/msp-n-p/ff963552(v=pandp.10)">并行循环</related>
@@ -1930,7 +1930,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  `localInit`参与循环的执行，这些任务的每个返回初始本地状态的每个任务一次调用委托。 这些初始状态传递给第一个`body`上每个任务的调用。 然后，每个后续正文调用返回传递给下一个正文调用一个可能已修改的状态值。 最后，每个线程上的最后一个正文调用返回传递给的州值`localFinally`委托。 `localFinally`每个任务，每个任务的本地状态执行一个最终操作一次调用委托。 在多个任务; 可能会同时调用此委托因此，必须同步对共享的任何变量的访问。  
   
@@ -1940,13 +1940,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
 或 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 或 <paramref name="localFinally" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> 中的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />，或者分区程序返回 <see langword="null" /> 分区。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
@@ -2004,7 +2004,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 对于使用小型循环体可能会受益于静态范围分区方案提供了此重载。 分区程序必须支持动态分区。  有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)并[如何： 实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
+ 对于想要重写默认分区方案的方案提供了此重载。 例如，小型循环体可能受益于分区范围。 <xref:System.Threading.Tasks.Parallel.ForEach%2A>方法需要自定义分区程序来支持动态分区。 对于使用小型循环体可能会受益于静态范围分区方案提供了此重载。 分区程序必须支持动态分区。  有关详细信息，请参阅[PLINQ 和 TPL 的自定义分区程序](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)和[如何：实现动态分区](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)。  
   
  `localInit`参与循环的执行，这些任务的每个返回初始本地状态的每个任务一次调用委托。 这些初始状态传递给第一个`body`上每个任务的调用。 然后，每个后续正文调用返回传递给下一个正文调用一个可能已修改的状态值。 最后，每个任务上的最后一个正文调用返回传递给的州值`localFinally`委托。 `localFinally`每个任务，每个任务的本地状态执行一个最终操作一次调用委托。 在多个任务; 可能会同时调用此委托因此，必须同步对共享的任何变量的访问。  
   
@@ -2014,16 +2014,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="source" /><see cref="T:System.Collections.Concurrent.Partitioner" /> 中的 <see cref="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" /> 属性返回 <see langword="false" />，或者分区程序返回 <see langword="null" /> 分区。</exception>
         <exception cref="T:System.AggregateException">包含在所有线程上引发的全部单个异常的异常。</exception>
@@ -2091,13 +2091,13 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
 或 
@@ -2167,16 +2167,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="body" /> 参数为 <see langword="null" />。  
   
 或 
 <paramref name="localInit" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="localFinally" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.OperationCanceledException">在 <paramref name="parallelOptions" /> 取消的 <see cref="T:System.Threading.CancellationToken" /> 参数。</exception>
         <exception cref="T:System.ObjectDisposedException">在 <paramref name="parallelOptions" /> 中与 <see cref="T:System.Threading.CancellationTokenSource" /> 关联的 <see cref="T:System.Threading.CancellationToken" /> 已被释放。</exception>
@@ -2309,7 +2309,7 @@
         <exception cref="T:System.OperationCanceledException"><see cref="T:System.Threading.CancellationToken" /> 处于 <paramref name="parallelOptions" /> 设置。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="actions" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="parallelOptions" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.AggregateException">当 <paramref name="actions" /> 数组中的任何操作引发异常时引发的异常。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="actions" />数组包含 <see langword="null" /> 个元素。</exception>

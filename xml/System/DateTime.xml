@@ -1,5 +1,5 @@
 <Type Name="DateTime" FullName="System.DateTime">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fa3f7d4eee2778992089a62f7eef6c3dd4191614" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52599833" /></Metadata><TypeSignature Language="C#" Value="public struct DateTime : IComparable, IComparable&lt;DateTime&gt;, IConvertible, IEquatable&lt;DateTime&gt;, IFormattable, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="190ce0737f6b3781405614356c1684490478e4bd" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53295313" /></Metadata><TypeSignature Language="C#" Value="public struct DateTime : IComparable, IComparable&lt;DateTime&gt;, IConvertible, IEquatable&lt;DateTime&gt;, IFormattable, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DateTime extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;valuetype System.DateTime&gt;, class System.IConvertible, class System.IEquatable`1&lt;valuetype System.DateTime&gt;, class System.IFormattable, class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.DateTime" />
   <TypeSignature Language="VB.NET" Value="Public Structure DateTime&#xA;Implements IComparable, IComparable(Of DateTime), IConvertible, IEquatable(Of DateTime), IFormattable, ISerializable" />
@@ -60,6 +60,8 @@
     <summary>表示时间上的一刻，通常以日期和当天的时间表示。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
 
 ## <a name="quick-links-to-example-code"></a>示例代码的快速链接
 
@@ -304,7 +306,9 @@
 -   <xref:System.Globalization.TaiwanLunisolarCalendar> 类。  
 -   <xref:System.Globalization.ThaiBuddhistCalendar> 类。  
 -   <xref:System.Globalization.UmAlQuraCalendar> 类。  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
 每个区域性使用的默认日历，定义其只读<xref:System.Globalization.CultureInfo.Calendar%2A?displayProperty=nameWithType>属性。 每个区域性可能会支持一个或多个日历定义其只读<xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType>属性。 特定于当前使用的日历<xref:System.Globalization.CultureInfo>对象由定义其<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>属性。 它必须是之一中找到的日历<xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType>数组。  
   
 区域性的当前日历是该区域性的所有格式设置操作中使用。 例如，泰国佛区域性的默认日历是由表示泰国佛教日历<xref:System.Globalization.ThaiBuddhistCalendar>类。  当<xref:System.Globalization.CultureInfo>对象，表示泰国佛区域性使用日期和时间格式设置操作中，默认情况下使用泰国佛教日历。 公历时才使用区域性的<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>更改属性，如以下示例所示：  
@@ -651,10 +655,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 小于 1 或大于 9999。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。</exception>
       </Docs>
     </Member>
@@ -700,7 +704,9 @@
  为生成的一天的时间<xref:System.DateTime>表示午夜 (00: 00:00)。 将 <xref:System.DateTime.Kind%2A> 属性初始化为 <xref:System.DateTimeKind.Unspecified>。  
   
  允许值为`year`， `month`，并`day`取决于`calendar`。 如果不能使用以表示指定的日期和时间引发异常`calendar`。  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  <xref:System.Globalization>命名空间提供了多个日历，包括<xref:System.Globalization.GregorianCalendar>和<xref:System.Globalization.JulianCalendar>。  
   
    
@@ -716,10 +722,10 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="calendar" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 不在 <paramref name="calendar" /> 支持的范围内。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。</exception>
         <altmember cref="T:System.Int32" />
         <altmember cref="T:System.Globalization.Calendar" />
@@ -791,19 +797,19 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 小于 1 或大于 9999。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
 或 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="second" /> 小于 0 或大于 59。</exception>
       </Docs>
     </Member>
@@ -875,13 +881,13 @@
 或 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 或 
@@ -937,7 +943,9 @@
  将 <xref:System.DateTime.Kind%2A> 属性初始化为 <xref:System.DateTimeKind.Unspecified>。  
   
  允许值为`year`， `month`，并`day`取决于`calendar`。 如果不能使用以表示指定的日期和时间引发异常`calendar`。  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  <xref:System.Globalization>命名空间提供了多个日历，包括<xref:System.Globalization.GregorianCalendar>和<xref:System.Globalization.JulianCalendar>。  
   
    
@@ -956,12 +964,12 @@
 或 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23 
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 或 
@@ -1038,22 +1046,22 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 小于 1 或大于 9999。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 或 
  <paramref name="second" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="millisecond" /> 小于 0 或大于 999。</exception>
         <altmember cref="T:System.Int32" />
       </Docs>
@@ -1128,19 +1136,19 @@
 或 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
 或 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="second" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="millisecond" /> 小于 0 或大于 999。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="kind" /> 不是 <see cref="T:System.DateTimeKind" /> 值之一。</exception>
       </Docs>
@@ -1197,7 +1205,9 @@
  允许值为`year`， `month`，并`day`取决于`calendar`。 如果不能使用以表示指定的日期和时间引发异常`calendar`。  
   
  对于应用程序的可移植性的日期和时间数据或一定的程度的时区感知非常重要，可以使用相应<xref:System.DateTimeOffset>构造函数。  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  <xref:System.Globalization>命名空间提供了多个日历，包括<xref:System.Globalization.GregorianCalendar>和<xref:System.Globalization.JulianCalendar>。  
   
    
@@ -1213,19 +1223,19 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="calendar" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 不在 <paramref name="calendar" /> 支持的范围内。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
 或 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="second" /> 小于 0 或大于 59。  
   
 或 
@@ -1285,7 +1295,9 @@
  允许值为`year`， `month`，并`day`参数取决于`calendar`参数。 如果不能使用以表示指定的日期和时间引发异常`calendar`。  
   
  对于应用程序的可移植性的日期和时间数据或一定的程度的时区感知非常重要，可以使用相应<xref:System.DateTimeOffset>构造函数。  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
  <xref:System.Globalization>命名空间提供了多个日历，包括<xref:System.Globalization.GregorianCalendar>和<xref:System.Globalization.JulianCalendar>。  
   
    
@@ -1304,19 +1316,19 @@
 或 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 或 
  <paramref name="second" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="millisecond" /> 小于 0 或大于 999。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="kind" /> 不是 <see cref="T:System.DateTimeKind" /> 值之一。</exception>
       </Docs>
@@ -1703,7 +1715,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">生成的 <see cref="T:System.DateTime" /> 小于 <see cref="F:System.DateTime.MinValue" /> 或大于 <see cref="F:System.DateTime.MaxValue" />。  
   
-或 
+- 或 - 
  <paramref name="months" /> 小于 -120,000 或大于 120,000。</exception>
       </Docs>
     </Member>
@@ -1973,7 +1985,7 @@
 ## Remarks  
  两个重载<xref:System.DateTime.CompareTo%2A>方法返回一个有符号的数字，指示此实例的相关值和`value`参数下, 表中所示。  
   
-|“值”|描述|  
+|值|描述|  
 |-----------|-----------------|  
 |小于零|此实例早于 `value`。|  
 |零|此实例与 `value` 相同。|  
@@ -2024,7 +2036,7 @@
         <summary>将此实例的值与指定的 <see cref="T:System.DateTime" /> 值相比较，并返回一个整数，该整数指示此实例是早于、等于还是晚于指定的 <see cref="T:System.DateTime" /> 值。</summary>
         <returns>有符号数字，指示此实例和 <paramref name="value" /> 参数的相对值。  
   
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 描述 
  </description></listheader><item><term> 小于零 
  </term><description> 此实例早于 <paramref name="value" />。  
@@ -2298,7 +2310,7 @@
 ## Remarks  
  中的常量值<xref:System.DayOfWeek>枚举的范围从<xref:System.DayOfWeek.Sunday?displayProperty=nameWithType>到<xref:System.DayOfWeek.Saturday?displayProperty=nameWithType>。 如果强制转换为一个整数，其值的范围是从零 (指示<xref:System.DayOfWeek.Sunday?displayProperty=nameWithType>) 为 6 (表示<xref:System.DayOfWeek.Saturday?displayProperty=nameWithType>)。  
   
- <xref:System.DateTime.DayOfWeek%2A>属性将返回一个枚举的常量; 它不反映系统的区域和语言设置。 若要检索表示特定日期的本地化的星期几名称的字符串，调用的重载之一<xref:System.DateTime.ToString%2A>方法，包括`format`参数并将其传递要么`ddd`或`dddd`自定义格式字符串。 有关详细信息，请参阅[如何： 从特定日期中提取星期几](~/docs/standard/base-types/how-to-extract-the-day-of-the-week-from-a-specific-date.md)。  
+ <xref:System.DateTime.DayOfWeek%2A>属性将返回一个枚举的常量; 它不反映系统的区域和语言设置。 若要检索表示特定日期的本地化的星期几名称的字符串，调用的重载之一<xref:System.DateTime.ToString%2A>方法，包括`format`参数并将其传递要么`ddd`或`dddd`自定义格式字符串。 有关详细信息，请参阅[如何：从特定日期中提取星期几](~/docs/standard/base-types/how-to-extract-the-day-of-the-week-from-a-specific-date.md)。  
   
    
   
@@ -4701,7 +4713,9 @@ juillet 2009
 <a name="Culture"></a>   
 ### <a name="parsing-and-cultural-conventions"></a>分析和区域性约定  
  所有重载<xref:System.DateTime.Parse%2A>方法是区分区域性的除非要分析的字符串 (这由`s`下表中) 是否符合 ISO 8601 模式。 在分析操作使用中的格式设置信息<xref:System.Globalization.DateTimeFormatInfo>对象，它派生的如下所示：  
-  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
 |如果调用|和`provider`是|格式设置信息派生自|  
 |-----------------|-----------------------|--------------------------------------------|  
 |<xref:System.DateTime.Parse%28System.String%29>|-|当前线程区域性 (<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>属性)|  
@@ -4962,12 +4976,14 @@ juillet 2009
         <Parameter Name="styles" Type="System.Globalization.DateTimeStyles" />
       </Parameters>
       <Docs>
-        <param name="s">To be added.</param>
-        <param name="provider">To be added.</param>
-        <param name="styles">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="s">包含要分析的字符串的内存范围。 有关详细信息，请参阅[要分析的字符串](#StringToParse)。</param>
+        <param name="provider">一个对象，提供有关 <paramref name="s" /> 的区域性特定格式信息。  请参阅[分析和区域性约定](#Culture)</param>
+        <param name="styles">枚举值的按位组合，用于指示 <paramref name="s" /> 成功执行分析操作所需的样式元素以及定义如何根据当前时区或当前日期解释已分析日期的样式元素。 要指定的一个典型值为 <see cref="F:System.Globalization.DateTimeStyles.None" />。</param>
+        <summary>使用指定的区域性特定格式设置信息和格式类型，将包含日期和时间的字符串表示形式的内存范围转换为其等效的 <see cref="T:System.DateTime" />。</summary>
+        <returns>一个对象，它等效于 <paramref name="s" /> 中包含的日期和时间，由 <paramref name="provider" /> 和 <paramref name="styles" /> 指定。</returns>
+        <remarks>To be added.</remarks>  
+        <exception cref="T:System.FormatException"><paramref name="s" /> 不包含日期和时间的有效字符串表示形式。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="styles" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合。 例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />。</exception>  
       </Docs>
     </Member>
     <Member MemberName="Parse">
@@ -5064,6 +5080,13 @@ juillet 2009
       <Docs>
         <summary>将日期和时间的指定字符串表示形式转换为其等效的 <see cref="T:System.DateTime" />。 字符串表示形式的格式必须与指定的格式完全匹配，否则会引发异常。</summary>
         <altmember cref="Overload:System.DateTime.TryParseExact" />
+        <remarks>  
+          <format type="text/markdown"><![CDATA[  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
+         ]]></format>
+        </remarks>
       </Docs>
     </MemberGroup>
     <Member MemberName="ParseExact">
@@ -5115,7 +5138,7 @@ juillet 2009
  <xref:System.DateTime.ParseExact%28System.String%2CSystem.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>方法分析的日期，必须在所定义的格式的字符串表示形式`format`参数。 它还需要\<日期 > 和\<时间 > 日期和时间的字符串表示形式中的元素出现在指定的顺序`format`，并且`s`不有任何空格，而不是允许使用的`format`. 如果`format`用于定义一个日期包含任何时间元素，并且分析操作成功，则生成<xref:System.DateTime>值具有时间为午夜 (00: 00:00)。 如果`format`定义的时间与任何日期元素，并且分析操作成功，则生成<xref:System.DateTime>值具有的日期`DateTime.Now.Date`。  
   
  如果`s`不的表示时间以特定时区和分析操作成功，<xref:System.DateTime.Kind%2A>所返回的属性<xref:System.DateTime>值是<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>。 如果`s`确实表示特定时区中的时间和`format`允许存在的时区信息 (例如，如果`format`等同于"o"、"r"或"u"标准格式说明符，或如果它包含"z"、"zz"或"zzz"自定义格式说明符）<xref:System.DateTime.Kind%2A>所返回的属性<xref:System.DateTime>值是<xref:System.DateTimeKind.Local?displayProperty=nameWithType>。  
-  
+
  `format`参数是一个包含单一的标准格式说明符或一个或多个自定义格式说明符用于定义所需的格式的字符串`s`。 有关有效的格式设置代码的详细信息，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)或[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。  
   
 > [!NOTE]
@@ -5144,7 +5167,7 @@ juillet 2009
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 或 <paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 或 <paramref name="format" /> 是一个空字符串。  
   
-或 
+- 或 - 
  <paramref name="s" /> 不包含与 <paramref name="format" /> 中指定的模式相对应的日期和时间。  
   
 或 
@@ -5332,7 +5355,7 @@ juillet 2009
 或 
  <paramref name="s" /> 不包含与 <paramref name="format" /> 中指定的模式相对应的日期和时间。  
   
-或 
+- 或 - 
 <paramref name="s" /> 中的小时组成部分和 AM/PM 指示符不一致。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合。 例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.ParseExact" />方法会抛出<see cref="T:System.FormatException" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
@@ -5443,7 +5466,7 @@ juillet 2009
 或 
 <paramref name="formats" /> 的一个元素为空字符串。  
   
-或 
+- 或 - 
  <paramref name="s" /> 不包含与 <paramref name="formats" /> 中任意元素相对应的日期和时间。  
   
 或 
@@ -7522,7 +7545,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.FormatException"><paramref name="format" /> 的长度为 1，而且它不是为 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 定义的格式说明符字符之一。  
   
-或 
+- 或 - 
  <paramref name="format" /> 不包含有效的自定义格式模式。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">此日期和时间超出了当前区域性所用日历支持的日期范围。</exception>
         <block subset="none" type="usage"><para><see cref="M:System.DateTime.ToString(System.String)" />方法返回的日期和时间的字符串表示形式中使用当前区域性的日历。 如果当前的值<see cref="T:System.DateTime" />实例是早于<see cref="P:System.Globalization.Calendar.MinSupportedDateTime" />或更高版本比<see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" />，该方法将引发<see cref="T:System.ArgumentOutOfRangeException" />。 下面的示例进行了这方面的演示。 它会尝试设置的范围之外的日期格式<see cref="T:System.Globalization.HebrewCalendar" />类时的当前区域性是希伯来语 （以色列）。  
@@ -7617,7 +7640,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.FormatException"><paramref name="format" /> 的长度为 1，而且它不是为 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 定义的格式说明符字符之一。  
   
-或 
+- 或 - 
  <paramref name="format" /> 不包含有效的自定义格式模式。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">日期和时间超出了 <paramref name="provider" /> 所用日历支持的日期范围。</exception>
         <block subset="none" type="usage"><para><see cref="M:System.DateTime.ToString(System.String,System.IFormatProvider)" />方法返回的日期和时间的字符串表示形式中使用的日历<paramref name="provider" />参数。 由定义其日历<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />属性。 如果当前的值<see cref="T:System.DateTime" />实例是早于<see cref="P:System.Globalization.Calendar.MinSupportedDateTime" />或更高版本比<see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" />，该方法将引发<see cref="T:System.ArgumentOutOfRangeException" />。 下面的示例进行了这方面的演示。 它会尝试设置的范围之外的日期格式<see cref="T:System.Globalization.UmAlQuraCalendar" />类。  
@@ -7762,6 +7785,13 @@ juillet 2009
       <Docs>
         <summary>将日期和时间的指定字符串表示形式转换为其 <see cref="T:System.DateTime" /> 等效项，并返回一个指示转换是否成功的值。</summary>
         <altmember cref="Overload:System.DateTime.Parse" />
+        <remarks>  
+          <format type="text/markdown"><![CDATA[  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
+         ]]></format>
+         </remarks>
       </Docs>
     </MemberGroup>
     <Member MemberName="TryParse">
@@ -8022,7 +8052,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="styles" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合（例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />）。</exception>
         <exception cref="T:System.NotSupportedException"><paramref name="provider" /> 是一个非特定区域性，并且不能在分析操作中使用。</exception>
         <block subset="none" type="usage"><para>格式设置受当前的属性<see cref="T:System.Globalization.DateTimeFormatInfo" />对象，它提供由<paramref name="provider" />参数。 <see cref="Overload:System.DateTime.TryParse" />方法可以意外失败，并返回<see langword="False" />如果当前<see cref="P:System.Globalization.DateTimeFormatInfo.DateSeparator" />和<see cref="P:System.Globalization.DateTimeFormatInfo.TimeSeparator" />属性设置为相同的值。</para></block>
@@ -8045,6 +8075,13 @@ juillet 2009
       </AssemblyInfo>
       <Docs>
         <summary>将日期和时间的指定字符串表示形式转换为其等效的 <see cref="T:System.DateTime" />。 字符串表示形式的格式必须与指定的格式完全匹配。 该方法返回一个指示转换是否成功的值。</summary>
+        <remarks>  
+          <format type="text/markdown"><![CDATA[  
+
+[!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
+         ]]></format>
+         </remarks>
         <altmember cref="Overload:System.DateTime.ParseExact" />
       </Docs>
     </MemberGroup>
@@ -8225,7 +8262,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="styles" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合（例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />）。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.TryParseExact" />方法将返回<see langword="false" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
         <altmember cref="Overload:System.DateTime.ParseExact" />
@@ -8332,7 +8369,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="styles" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合（例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />）。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.TryParseExact" />方法将返回<see langword="false" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
         <altmember cref="Overload:System.DateTime.ParseExact" />

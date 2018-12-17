@@ -1,5 +1,5 @@
 <Type Name="MsmqTransportBindingElement" FullName="System.ServiceModel.Channels.MsmqTransportBindingElement">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="402a3e6a0ac2893494ac7cef8a1b19d0648efc3d" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39996278" /></Metadata><TypeSignature Language="C#" Value="public sealed class MsmqTransportBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fd45951351fc2f31bab1a0a8b34353fb56cd801b" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53333698" /></Metadata><TypeSignature Language="C#" Value="public sealed class MsmqTransportBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqTransportBindingElement extends System.ServiceModel.Channels.MsmqBindingElementBase" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MsmqTransportBindingElement" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class MsmqTransportBindingElement&#xA;Inherits MsmqBindingElementBase" />
@@ -100,7 +100,47 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">上下文值为 null。</exception>
         <exception cref="T:System.ArgumentException">TChannel 不为 IOutputChannel 或 IOutputSessionChannel。</exception>
-        <exception cref="T:System.InvalidOperationException">MsmqTransportSecurity.MsmqProtectionLevel 为 EncryptAndSign，而 UseActiveDirectory 为 false。</exception>
+        <exception cref="T:System.InvalidOperationException">ExactlyOnce 为 true，而 Durable 为 false。
+
+- 或 -
+
+UseActiveDirectory 为 true，而 QueueTransferProtocol 不为 Native。
+
+- 或 -
+
+CustomDeadLetterQueue 不为 null，DeadLetterQueue 不为 Custom。
+
+或
+
+在 Windows 2003/XP 中，DeadLetterQueue 设置为 Custom。
+
+- 或 -
+
+ExactlyOnce 为 false，而 DeadLetterQueue 为 Custom。
+
+- 或 -
+
+设置了 CustomDeadLetterQueue，但是对队列没有写权限或队列不存在。
+
+- 或 -
+
+CustomDeadLetterQueue 是非事务性的。
+
+- 或 -
+
+MsmqTransportSecurity.MsmqAuthenticationMode 设置为 WindowsDomain，而 MSMQ 是在没有 ActiveDirectory 集成的情况下安装的。
+
+- 或 -
+
+MsmqTransportSecurity.MsmqAuthenticationMode 为 None，而 MsmqTransportSecurity.MsmqProtectionLevel 不为 None。
+
+- 或 -
+
+MsmqTransportSecurity.MsmqAuthenticationMode 为 Certificate 或 WindowsDomain，而 MsmqTransportSecurity.MsmqProtectionLevel 为 None。
+
+- 或 -
+
+MsmqTransportSecurity.MsmqProtectionLevel 为 EncryptAndSign，而 UseActiveDirectory 为 false。</exception>
       </Docs>
     </Member>
     <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
@@ -145,7 +185,43 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">上下文值为 null。</exception>
         <exception cref="T:System.ArgumentException">TChannel 不为 IInputChannel 或 IInputSessionChannel。</exception>
-        <exception cref="T:System.InvalidOperationException">MsmqTransportSecurity.MsmqAuthenticationMode 为 Certificate 或 WindowsDomain，而 MsmqTransportSecurity.MsmqProtectionLevel 为 None。</exception>
+        <exception cref="T:System.InvalidOperationException">ExactlyOnce 为 true，而 Durable 为 false。
+
+- 或 -
+
+不可读队列。
+
+- 或 -
+
+ExactlyOnce 为 true，而队列是非事务性的。
+
+- 或 -
+
+ExactlyOnce 为 false，而队列是事务性的。
+
+或
+
+在 Windows Vista 中，ReceiveErrorHandling 设置为 Move，而队列名称中包含一个“;”。
+
+或
+
+在 Windows Vista 中，ExactlyOnce 设置为 true，但是不能打开重试子队列。
+
+- 或 -
+
+ReceiveErrorHandling 设置为 Reject 或 Move，而平台是 Windows Vista。
+
+或
+
+MsmqTransportSecurity.MsmqAuthenticationMode 设置为 WindowsDomain，而 MSMQ 是在没有 ActiveDirectory 集成的情况下安装的。
+
+- 或 -
+
+MsmqTransportSecurity.MsmqAuthenticationMode 为 None，而 MsmqTransportSecurity.MsmqProtectionLevel 不为 None。
+
+- 或 -
+
+MsmqTransportSecurity.MsmqAuthenticationMode 为 Certificate 或 WindowsDomain，而 MsmqTransportSecurity.MsmqProtectionLevel 为 None。</exception>
       </Docs>
     </Member>
     <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">

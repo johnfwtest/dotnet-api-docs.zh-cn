@@ -1,5 +1,5 @@
 <Type Name="WorkflowApplication" FullName="System.Activities.WorkflowApplication">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f3823380661482a43a8cc40c25fb70788b8dbf4d" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39861018" /></Metadata><TypeSignature Language="C#" Value="public sealed class WorkflowApplication : System.Activities.Hosting.WorkflowInstance" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c0bf7171683bfcf700a6829397846a86eebe8e09" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53291283" /></Metadata><TypeSignature Language="C#" Value="public sealed class WorkflowApplication : System.Activities.Hosting.WorkflowInstance" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowApplication extends System.Activities.Hosting.WorkflowInstance" />
   <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowApplication" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class WorkflowApplication&#xA;Inherits WorkflowInstance" />
@@ -86,7 +86,7 @@ Workflow 593976e8-558d-4989-94d6-50a14b34fd7b Unloaded.
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- 下面的示例使用 <xref:System.Activities.WorkflowApplication> 承载一个工作流。 该示例使用包含单个 <xref:System.Activities.WorkflowApplication> 活动的工作流定义构造一个  `DiceRoll` 实例。 `DiceRoll` 活动包含两个表示掷骰子操作结果的输出参数。 工作流完成时，将在 <xref:System.Activities.WorkflowApplication.Completed%2A> 处理程序中检索输出，并向控制台显示以下输出。  
+ 下面的示例使用 <xref:System.Activities.WorkflowApplication> 承载一个工作流。 该示例使用包含单个 <xref:System.Activities.WorkflowApplication> 活动的工作流定义构造一个  `DiceRoll` 实例。 `DiceRoll` 活动包含两个表示掷骰子操作结果的输出自变量。 工作流完成时，将在 <xref:System.Activities.WorkflowApplication.Completed%2A> 处理程序中检索输出，并向控制台显示以下输出。  
   
 ```Output  
 Workflow aae3fb48-7229-4737-b969-d63e131b96b3 Completed.   
@@ -144,7 +144,7 @@ The two dice are 1 and 5.
       <Docs>
         <param name="workflowDefinition">工作流定义。</param>
         <param name="inputs">在工作流定义的根活动上定义的自变量的值，由自变量名称键控。</param>
-        <summary>创建 <see cref="T:System.Activities.WorkflowApplication" /> 类的新实例，该实例使用指定的工作流定义和参数值。</summary>
+        <summary>创建 <see cref="T:System.Activities.WorkflowApplication" /> 类的新实例，该实例使用指定的工作流定义和自变量值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2597,7 +2597,7 @@ Hello, Steve
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- 下面的代码示例检查传递给 <xref:System.Activities.WorkflowApplicationIdleEventArgs> 实例的 <xref:System.Activities.WorkflowApplication.Idle%2A>  处理程序的 <xref:System.Activities.WorkflowApplication>。 在此示例中，进入空闲状态的工作流包含一个由名为 <xref:System.Activities.Bookmark> 的活动所拥有的名为 `EnterGuess` 的 `ReadInt`。 此代码示例为基础的中断[如何： 运行工作流](~/docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)，这是的一部分[入门教程&#91;.NET Framework 4.5&#93;](~/docs/framework/windows-workflow-foundation/getting-started-tutorial.md)。 如果修改了该阶段中的 <xref:System.Activities.WorkflowApplication.Idle%2A> 处理程序以包含此示例中的代码，则将显示以下输出。  
+ 下面的代码示例检查传递给 <xref:System.Activities.WorkflowApplicationIdleEventArgs> 实例的 <xref:System.Activities.WorkflowApplication.Idle%2A>  处理程序的 <xref:System.Activities.WorkflowApplication>。 在此示例中，进入空闲状态的工作流包含一个由名为 <xref:System.Activities.Bookmark> 的活动所拥有的名为 `EnterGuess` 的 `ReadInt`。 此代码示例为基础的中断[如何：运行工作流](~/docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)，这是的一部分[入门教程&#91;.NET Framework 4.5&#93;](~/docs/framework/windows-workflow-foundation/getting-started-tutorial.md)。 如果修改了该阶段中的 <xref:System.Activities.WorkflowApplication.Idle%2A> 处理程序以包含此示例中的代码，则将显示以下输出。  
   
 ```Output  
 BookmarkName: EnterGuess - OwnerDisplayName: ReadInt  
@@ -2636,7 +2636,7 @@ BookmarkName: EnterGuess - OwnerDisplayName: ReadInt
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- 下面的示例创建 WorkflowApplication 实例，然后使用 <xref:System.Activities.WorkflowApplication.InstanceStore%2A> 配置 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>。 此代码示例摘自[如何： 创建和运行长时间运行工作流](~/docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md)，这是的一部分[入门教程&#91;.NET Framework 4.5&#93;](~/docs/framework/windows-workflow-foundation/getting-started-tutorial.md)。  
+ 下面的示例创建 WorkflowApplication 实例，然后使用 <xref:System.Activities.WorkflowApplication.InstanceStore%2A> 配置 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>。 此代码示例摘自[如何：创建和运行长时间运行工作流](~/docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md)，这是的一部分[入门教程&#91;.NET Framework 4.5&#93;](~/docs/framework/windows-workflow-foundation/getting-started-tutorial.md)。  
   
  [!code-csharp[CFX_WorkflowApplicationExample#28](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#28)]  
   

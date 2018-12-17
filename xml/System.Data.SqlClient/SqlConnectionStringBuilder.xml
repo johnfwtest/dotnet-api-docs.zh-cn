@@ -1,5 +1,5 @@
 <Type Name="SqlConnectionStringBuilder" FullName="System.Data.SqlClient.SqlConnectionStringBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="47fcc19dc920228c71615df7af5722068fdf36ff" /><Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/05/2018" /><Meta Name="ms.locfileid" Value="52916610" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlConnectionStringBuilder : System.Data.Common.DbConnectionStringBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="15884ab20bb86294189841c8a32042f107b375ce" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53333490" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlConnectionStringBuilder : System.Data.Common.DbConnectionStringBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlConnectionStringBuilder extends System.Data.Common.DbConnectionStringBuilder" />
   <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlConnectionStringBuilder" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SqlConnectionStringBuilder&#xA;Inherits DbConnectionStringBuilder" />
@@ -556,7 +556,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
         <ReturnType>System.Data.SqlClient.SqlConnectionColumnEncryptionSetting</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取和设置连接字符串生成器的列加密设置。</summary>
+        <summary>获取或设置连接字符串生成器的列加密设置。</summary>
         <value>连接字符串生成器的列加密设置。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -2325,7 +2325,7 @@ Database = AdventureWorks
   
  下表列出了 <xref:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding%2A> 属性的可能值：  
   
-|“值”|描述|  
+|值|描述|  
 |-----------|-----------------|  
 |Implicit Unbind|默认值。 事务结束时，使连接与事务分离。 分离后，在自动模式下对连接执行其他请求。 在事务处于活动状态的情况下，执行请求时不会检查 <xref:System.Transactions.Transaction.Current%2A> 属性。 事务结束后，会在自动模式下执行其他请求。|  
 |Explicit Unbind|原因连接一直附加到事务直到关闭的连接，或者直到<xref:System.Data.SqlClient.SqlConnection.EnlistTransaction%2A>使用调用`null`(`Nothing`在 Visual Basic 中) 值。 如果 <xref:System.InvalidOperationException> 不是登记事务或者登记事务未处于活动状态，则将引发 <xref:System.Transactions.Transaction.Current%2A>。 此行为强制实施 <xref:System.Transactions.TransactionScope> 支持所需的严格范围限定规则。|  
@@ -2494,7 +2494,7 @@ Database = AdventureWorks
       </Parameters>
       <Docs>
         <param name="keyword">要检索的项的键。</param>
-        <param name="value">与 <c>keyword</c> 相对应的值。</param>
+        <param name="value">与 <paramref name="keyword" /> 对应的值。</param>
         <summary>从此 <see cref="T:System.Data.SqlClient.SqlConnectionStringBuilder" /> 中检索与提供的键相对应的值。</summary>
         <returns>如果在连接字符串中找到 <paramref name="keyword" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -2569,7 +2569,7 @@ Unable to retrieve value for null key.
       <Docs>
         <summary>获取或设置一个字符串值，该值指示应用程序所需的类型系统。</summary>
         <value>下表列出了 <see cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.TypeSystemVersion" /> 属性的可能值： 
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 描述 
  </description></listheader><item><term> SQL Server 2005 
  </term><description> 使用 SQL Server 2005 类型系统。 未对当前版本的 ADO.NET 执行转换。  
