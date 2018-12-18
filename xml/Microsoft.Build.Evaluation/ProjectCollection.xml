@@ -1,5 +1,5 @@
 <Type Name="ProjectCollection" FullName="Microsoft.Build.Evaluation.ProjectCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4745ecc45a2905923c4f1b2fa6b447719da285b4" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53294884" /></Metadata><TypeSignature Language="C#" Value="public class ProjectCollection : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="21aa94ccfe77e7121df48487115cb4544d7cdb6e" /><Meta Name="ms.sourcegitcommit" Value="26e1e91358cabfb3e80ad7de3936c99807f775a3" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53399526" /></Metadata><TypeSignature Language="C#" Value="public class ProjectCollection : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ProjectCollection extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Evaluation.ProjectCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class ProjectCollection&#xA;Implements IDisposable" />
@@ -236,7 +236,7 @@
       <Docs>
         <param name="toolsVersion">要搜索的工具版本。</param>
         <summary>确定是否为给定的工具版本定义了工具集。</summary>
-        <returns>如果为给定的工具版本定义了工具集，则返回 true；否则返回 false。</returns>
+        <returns>如果为给定的工具版本定义了工具集，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,7 +257,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前加载到此集合中的项目的数量。</summary>
-        <value>返回当前加载到此集合中的项目的数量。</value>
+        <value>当前加载到此集合的项目的数量。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -278,7 +278,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此项目集合的默认工具版本。</summary>
-        <value>返回此项目集合的默认工具版本（始终会定义此版本）。</value>
+        <value>始终定义此项目集合中的默认工具版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -412,7 +412,7 @@
       <Docs>
         <param name="unescapedString">要转换的字符串。</param>
         <summary>将字符串中的特殊字符转换为 MSBuild 转义格式。</summary>
-        <returns>返回转换的字符串。</returns>
+        <returns>已转换的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -444,7 +444,7 @@
       <Docs>
         <param name="name">要检索的属性的名称。</param>
         <summary>获取该项目集合的任何具有指定名称的全局属性。</summary>
-        <returns>返回该项目集合的任何具有指定名称的全局属性；否则返回 null。</returns>
+        <returns>该项目集合的任何具有指定名称的全局属性；否则返回 null。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -469,7 +469,7 @@
       <Docs>
         <param name="fullPath">要匹配的项目文件的路径。</param>
         <summary>获取其项目路径与给定路径相匹配的所有项目。</summary>
-        <returns>返回其项目路径与给定路径相匹配的所有项目。</returns>
+        <returns>其项目路径与给定路径相匹配的所有项目。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -503,8 +503,8 @@
       </Parameters>
       <Docs>
         <param name="toolsVersion">要匹配的工具版本。</param>
-        <summary>获取具有指定的工具版本的工具集。</summary>
-        <returns>返回具有指定的工具版本的工具集。 如果不存在与此工具版本相匹配的工具集，则返回 null。</returns>
+        <summary>获取具有指定工具版本的工具集。</summary>
+        <returns>具有指定工具版本的工具集，或者如果不存在匹配此工具版本的工具集，则为 <see langword="null" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -525,7 +525,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取全局项目集合对象。</summary>
-        <value>返回全局项目集合对象。 这是一个没有全局属性或记录器的单一实例项目集合。 将从配置文件和注册表获取工具集信息。</value>
+        <value>全局项目集合对象。 这是一个没有全局属性或记录器的单一实例项目集合。 将从配置文件和注册表获取工具集信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -553,7 +553,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此集合中的所有项目的只读默认全局属性。</summary>
-        <value>返回此集合中的所有项目的只读默认全局属性。</value>
+        <value>此集合中的所有项目只读默认全局属性。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -586,7 +586,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个对象，在生成项目集合中包含的项目的过程中，该对象将为各个任务提供主机服务。</summary>
-        <value>返回主机服务对象。</value>
+        <value>宿主服务对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -627,8 +627,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个属性，该属性在默认情况下选择是否可以生成项目集合中的项目的目标和任务。</summary>
-        <value>获取或设置一个属性，该属性在默认情况下选择是否可以生成此项目集合中的项目的目标和任务。</value>
+        <summary>获取或设置一个值，该值指示是否可构建项目集合中项目的目标和任务。</summary>
+        <value><see langword="true" /> 如果可以生成的目标和任务的此项目集合中的项目;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -656,7 +656,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前加载到此集合中的所有项目。</summary>
-        <value>返回当前加载到此集合中的所有项目。</value>
+        <value>当前加载到此集合的所有项目。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -746,7 +746,7 @@
       <Docs>
         <param name="xmlReader">从中读取项目源代码的 Xml 读取器。</param>
         <summary>利用从给定的 XML 读取器读取的源代码计算一个项目。 将使用此项目集合的全局属性和工具版本来计算源代码。</summary>
-        <returns>返回新项目。</returns>
+        <returns>新项目。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -825,7 +825,7 @@
         <param name="xmlReader">从中读取项目源代码的 Xml 读取器。</param>
         <param name="toolsVersion">要使用的工具版本。 可能为 null。</param>
         <summary>利用从给定的 XML 读取器读取的源代码计算一个项目。 将使用此项目集合的全局属性和给定的工具版本来计算源代码。</summary>
-        <returns>返回新项目。</returns>
+        <returns>新项目。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -898,7 +898,7 @@
         <param name="globalProperties">要使用的全局属性。 可以为 null，在此情况下，将使用包含项目集合的全局属性。</param>
         <param name="toolsVersion">工具版本。 可能为 null。</param>
         <summary>利用从给定的 XML 读取器读取的源代码计算一个项目。 将使用给定的全局属性和工具版本计算源代码。</summary>
-        <returns>返回新项目。</returns>
+        <returns>新项目。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -933,7 +933,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此集合中的项目可用于其生成的所有记录器。</summary>
-        <value>返回此集合中的项目可用于其生成的所有记录器。</value>
+        <value>此集合中的项目可用于其生成的所有记录器。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -968,8 +968,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个开关，该开关确定是否仅记录关键事件，例如警告和错误。</summary>
-        <value>如果仅记录关键事件（例如警告和错误），则为 true；否则为 false。</value>
+        <summary>获取或设置一个值，该值指示是否仅记录关键事件，例如警告和错误。</summary>
+        <value><see langword="true" /> 如果仅记录关键事件，例如警告和错误;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1202,7 +1202,7 @@
       <Docs>
         <param name="name">要移除的默认全局属性的名称。</param>
         <summary>从默认全局属性集中移除一个全局属性。</summary>
-        <returns>如果在移除之前存在该全局属性，则返回 true；否则返回 false。</returns>
+        <returns>如果在移除之前存在该全局属性，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1227,7 +1227,7 @@
       <Docs>
         <param name="toolsVersion">要移除的工具集。</param>
         <summary>从项目集合中移除一个工具集。</summary>
-        <returns>如果在移除之前存在该工具集，则返回 true；否则返回 false。</returns>
+        <returns>如果在移除之前存在该工具集，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1288,8 +1288,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个标志，该标志确定是否对此集合中的项目临时禁用 ReevaluateIfNecessary。 当主机希望对项目进行大量读写操作并希望临时牺牲准确性以换取性能，则可以使用此标志。</summary>
-        <value>返回一个标志，该标志确定是否临时禁用 ReevaluateIfNecessary。</value>
+        <summary>获取或设置一个值，该值指示是否对此集合中的项目临时禁用 ReevaluateIfNecessary。 当主机希望对项目进行大量读写操作并希望临时牺牲准确性以换取性能，则可以使用此标志。</summary>
+        <value>一个标志，确定是否临时禁用 ReevaluateIfNecessary。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1318,7 +1318,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取用于查找工具集的位置。</summary>
-        <value>返回用于查找工具集的位置。</value>
+        <value>用于查找工具集的位置。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1342,7 +1342,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取可用于此项目集合的工具集。</summary>
-        <value>返回可用于此项目集合的工具集。</value>
+        <value>可用于此项目集合工具集。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1366,7 +1366,7 @@
       <Docs>
         <param name="projectRootElement">要卸载的项目的根元素。</param>
         <summary>从集合中移除项目的尝试。</summary>
-        <returns>如果该项目已卸载，则返回 true。</returns>
+        <returns>如果该项目已卸载，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1391,7 +1391,7 @@
       <Docs>
         <param name="escapedString">要转换的字符串。</param>
         <summary>将字符串中的转义字符转换为具有特殊意义的 MSBuild 字符。</summary>
-        <returns>返回转换的字符串。</returns>
+        <returns>已转换的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1540,7 +1540,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取包含 MSBuild 引擎的程序集文件的文件版本。</summary>
-        <value>返回包含 MSBuild 引擎的程序集文件的文件版本。</value>
+        <value>包含 MSBuild 引擎的程序集文件的文件版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
