@@ -1,5 +1,5 @@
 <Type Name="DelegatingConfigHost" FullName="System.Configuration.Internal.DelegatingConfigHost">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6f869a076ed17412ab2091339c6b09e2a9767244" /><Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/05/2018" /><Meta Name="ms.locfileid" Value="52918807" /></Metadata><TypeSignature Language="C#" Value="public class DelegatingConfigHost : System.Configuration.Internal.IInternalConfigHost" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1d555b714dfaf82ee87af3db5e36479cb7dc8bc1" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53447568" /></Metadata><TypeSignature Language="C#" Value="public class DelegatingConfigHost : System.Configuration.Internal.IInternalConfigHost" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DelegatingConfigHost extends System.Object implements class System.Configuration.Internal.IInternalConfigHost" />
   <TypeSignature Language="DocId" Value="T:System.Configuration.Internal.DelegatingConfigHost" />
   <TypeSignature Language="VB.NET" Value="Public Class DelegatingConfigHost&#xA;Implements IInternalConfigHost" />
@@ -188,7 +188,7 @@
         <param name="encryptedXml">配置文件中已加密的节。</param>
         <param name="protectionProvider"><see cref="T:System.Configuration.ProtectedConfigurationProvider" /> 对象。</param>
         <param name="protectedConfigSection"><see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
-        <param name="protectedSection"><see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
+        <param name="protectedSection">一个 <see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
         <summary>对已加密的配置节进行解密。</summary>
         <returns>表示已解密的配置节的字符串。</returns>
         <remarks>To be added.</remarks>
@@ -267,9 +267,9 @@
       <Docs>
         <param name="clearTextXml">未加密的配置节。</param>
         <param name="encryptedXml">未加密的配置节。</param>
-        <param name="protectionProvider"><see cref="T:System.Configuration.ProtectedConfigurationProvider" /> 对象。</param>
-        <param name="protectedConfigSection"><see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
-        <param name="protectedSection"><see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
+        <param name="protectionProvider">一个 <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> 对象。</param>
+        <param name="protectedConfigSection">一个 <see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
+        <param name="protectedSection">一个 <see cref="T:System.Configuration.ProtectedConfigurationSection" /> 对象。</param>
         <summary>对配置对象的节进行加密。</summary>
         <returns>表示配置对象的已加密节的字符串。</returns>
         <remarks>To be added.</remarks>
@@ -384,7 +384,7 @@
         <Parameter Name="t" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="t"><see cref="T:System.Type" /> 对象。</param>
+        <param name="t">一个 <see cref="T:System.Type" /> 对象。</param>
         <summary>返回表示配置对象的类型名称的字符串。</summary>
         <returns>表示配置对象的类型名称的字符串。</returns>
         <remarks>To be added.</remarks>
@@ -421,7 +421,7 @@
       </Parameters>
       <Docs>
         <param name="configRecord">一个 <see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> 对象。</param>
-        <param name="permissionSet"><see cref="T:System.Security.PermissionSet" /> 对象。</param>
+        <param name="permissionSet">一个 <see cref="T:System.Security.PermissionSet" /> 对象。</param>
         <param name="isHostReady">如果主机已完成初始化，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>如果在主机对象内可用，则设置指定的权限集。</summary>
         <remarks>To be added.</remarks>
@@ -606,7 +606,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <see cref="T:System.Configuration.Internal.IInternalConfigHost" /> 对象。</summary>
-        <value><see cref="T:System.Configuration.Internal.IInternalConfigHost" /> 对象。</value>
+        <value>一个 <see cref="T:System.Configuration.Internal.IInternalConfigHost" /> 对象。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1158,7 +1158,7 @@
       <Docs>
         <param name="streamName">对配置文件执行 I/O 任务的 <see cref="T:System.IO.Stream" /> 对象的名称。</param>
         <summary>打开一个 <see cref="T:System.IO.Stream" /> 对象，以便读取配置文件。</summary>
-        <returns>返回由 <paramref name="streamName" /> 指定的 <see cref="T:System.IO.Stream" /> 对象。</returns>
+        <returns><paramref name="streamName" /> 指定的对象。</returns>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1195,7 +1195,7 @@
         <param name="streamName">对配置文件执行 I/O 任务的 <see cref="T:System.IO.Stream" /> 对象的名称。</param>
         <param name="assertPermissions">如果断言权限，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>打开一个 <see cref="T:System.IO.Stream" /> 对象，以便读取配置文件。</summary>
-        <returns>返回由 <paramref name="streamName" /> 指定的 <see cref="T:System.IO.Stream" /> 对象。</returns>
+        <returns><paramref name="streamName" /> 指定的对象。</returns>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1243,7 +1243,7 @@
         <param name="templateStreamName">`<see cref="T:System.IO.Stream" /> 对象的名称，从该对象复制文件特性作为模板。</param>
         <param name="writeContext"><see cref="T:System.IO.Stream" /> 对象的写上下文（按引用传递）。</param>
         <summary>打开一个 <see cref="T:System.IO.Stream" /> 对象，以便写入配置文件或写入用于生成配置文件的临时文件。 允许将 <see cref="T:System.IO.Stream" /> 对象指定为模板，以便复制文件特性。</summary>
-        <returns><see cref="T:System.IO.Stream" /> 对象。</returns>
+        <returns>一个 <see cref="T:System.IO.Stream" /> 对象。</returns>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1284,7 +1284,7 @@
         <param name="writeContext">对配置文件执行 I/O 任务的 <see cref="T:System.IO.Stream" /> 对象的写上下文（按引用传递）。</param>
         <param name="assertPermissions">如果断言权限，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>打开一个 <see cref="T:System.IO.Stream" /> 对象，以便写入配置文件。 允许将 <see cref="T:System.IO.Stream" /> 对象指定为模板，以便复制文件特性。</summary>
-        <returns>返回由 <paramref name="streamName" /> 参数指定的 <see cref="T:System.IO.Stream" /> 对象。</returns>
+        <returns>由 <paramref name="streamName" /> 参数指定的对象。</returns>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1554,7 +1554,7 @@
       </Parameters>
       <Docs>
         <param name="streamName">对配置文件执行 I/O 任务的 <see cref="T:System.IO.Stream" /> 对象的名称。</param>
-        <param name="callback"><see cref="T:System.Configuration.Internal.StreamChangeCallback" /> 对象。</param>
+        <param name="callback">一个 <see cref="T:System.Configuration.Internal.StreamChangeCallback" /> 对象。</param>
         <summary>指示主机对象停止监视配置文件中关联 <see cref="T:System.IO.Stream" /> 对象的更改。</summary>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />

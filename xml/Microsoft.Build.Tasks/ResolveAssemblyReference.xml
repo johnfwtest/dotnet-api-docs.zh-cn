@@ -1,5 +1,5 @@
 <Type Name="ResolveAssemblyReference" FullName="Microsoft.Build.Tasks.ResolveAssemblyReference">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0e928c48a835c31a92aa9171156c79b604d382fd" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52733533" /></Metadata><TypeSignature Language="C#" Value="public class ResolveAssemblyReference : Microsoft.Build.Tasks.TaskExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="50e43ee3c6d63467ba1eec8f2d82f8d1c0e4617f" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53448964" /></Metadata><TypeSignature Language="C#" Value="public class ResolveAssemblyReference : Microsoft.Build.Tasks.TaskExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveAssemblyReference extends Microsoft.Build.Tasks.TaskExtension" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ResolveAssemblyReference" />
   <TypeSignature Language="VB.NET" Value="Public Class ResolveAssemblyReference&#xA;Inherits TaskExtension" />
@@ -351,14 +351,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个开关，该开关决定依赖项的确定方式以及是否仅在本地复制依赖项。</summary>
-        <value>如果在确定是否应在本地复制依赖项时所执行的一项检查是查看项目文件中的父引用是否设置了 Private 元数据，则返回 true。 如果设置了该元数据，则也会将该元数据用于依赖项。  
+        <summary>获取或设置一个值，该值决定依赖项的确定方式以及是否仅在本地复制依赖项。</summary>
+        <value><see langword="true" /> 如果当确定如果依赖项应在本地复制，完成的检查之一是查看项目文件中的父引用是否了 Private 元数据设置。 如果设置的元数据，我们将使用的依赖项。  
   
 如果没有设置该元数据，则依赖项将通过与父引用相同的检查。 其中一项检查是查看该引用是否位于 GAC 中。 如果某个引用位于 GAC 中，则不会对该引用进行本地复制，因为它假定该引用也位于目标计算机上的 gac 中。 但是，这只适用于具体引用，而不适用于其依赖项。  
   
 这意味着项目文件中的某个引用可能是复制本地 false，原因是该引用位于 GAC 中，但由于依赖项不在 GAC 中，因此可能仍然会对依赖项进行本地复制。 这是 RAR 的默认行为，该行为会导致此属性的默认值为 true。  
   
-如果仍然检查项目文件引用以查看它们是否位于 GAC 中，则会返回 false，并根据需要设置它们的复制本地状态。  
+返回<see langword="false" />如果我们仍将检查项目文件引用，以查看它们是否位于 GAC 中并根据需要设置其复制本地状态。  
   
 但是，对于依赖项，我们不仅要检查它们是否位于 GAC 中，还要检查项目文件中的父引用是否位于 GAC 中。  
   
@@ -650,7 +650,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个项列表，这些项表示包含配置文件的完全框架的 XML 文件。</summary>
-        <value>返回一个项列表，这些项表示包含配置文件的完全框架的 XML 文件。</value>
+        <value>表示包含配置文件的完全框架的 XML 文件的项的列表。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -698,7 +698,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个文件夹列表，这些文件夹中包含一个表示给定客户端配置文件的完全框架的 RedistList 目录，例如：%programfiles%\reference assemblies\microsoft\framework\v4.0</summary>
-        <value>返回一个文件夹列表，这些文件夹中包含一个表示给定客户端配置文件的完全框架的 RedistList 目录</value>
+        <value>文件夹包含 RedistList 目录表示给定客户端配置文件的完整框架的列表</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -821,7 +821,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置指示检查程序集是否与目标框架兼容时是否忽略框架属性的值。</summary>
-        <value>返回标志。</value>
+        <value><see langword="true" /> 若要忽略框架属性;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -842,8 +842,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个标志，此标志指示是否忽略框架程序集的版本信息，实际通过当前目标框架解析框架程序集。 如果主引用是框架程序集，则标志适用。</summary>
-        <value>返回标志。</value>
+        <summary>获取或设置一个值，该值指示是否忽略框架程序集的版本信息，实际通过当前目标框架解析框架程序集。 如果主引用是框架程序集，则标志适用。</summary>
+        <value><see langword="true" /> 若要忽略的版本信息;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -953,7 +953,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置目录列表，这些目录包含面向计算机的最新框架的 redist 列表。</summary>
-        <value>返回目录列表，这些目录包含面向计算机的最新框架的 redist 列表。  如果未设置该列表，则我们将针对给定的目标框架标识符查找计算机上安装的最高框架并使用该框架。</value>
+        <value>这些目录包含的 redist 列表列出了可以为目标计算机上的最新框架。 如果未设置，然后搜索给定的目标框架标识符的计算机上安装的最高框架的值，并将使用。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -979,8 +979,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置目标框架配置文件的名称，例如，客户端、Web 或网络</summary>
-        <value>返回目标框架配置文件的名称，例如，客户端、Web 或网络</value>
+        <summary>获取或设置目标框架配置文件的名称。 例如，客户端、Web 或网络。</summary>
+        <value>目标框架配置文件的名称。 例如，客户端、Web 或网络。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1397,8 +1397,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置目标运行时的名称，例如，2.0.57027。</summary>
-        <value>返回目标运行时的名称，例如，2.0.57027。 可以将“v”作为名称前缀。</value>
+        <summary>获取或设置目标运行时的名称。 例如：2.0.57027。</summary>
+        <value>目标运行时的名称。 可以将“v”作为名称前缀。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1471,7 +1471,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置目标框架名字对象（如果有）。</summary>
-        <value>返回目标框架名字对象（如果有）。 默认情况下，返回空字符串。</value>
+        <value>目标框架名字对象，如果有或默认情况下为空字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1508,7 +1508,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置目标框架名字对象的显示名称（如果有）。</summary>
-        <value>返回目标框架名字对象的显示名称（如果有）。</value>
+        <value>目标框架名字对象，如果有显示名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1635,7 +1635,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个字符串值，此值指定目标处理器架构和主引用架构之间不匹配时的行为。 如果它为“错误”，将为不匹配记录错误。 如果它为“警告”，将为不匹配记录警告。 如果它为“无”，不会为不匹配记录任何错误或警告。</summary>
-        <value>返回"Error"、"警告"或"None"的字符串值。</value>
+        <value>"错误"、"警告"或"None"的一个字符串值。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>

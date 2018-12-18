@@ -1,5 +1,5 @@
 <Type Name="TimeZoneInfo" FullName="System.TimeZoneInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="70054d455b955161ef448f2b29946549404baabf" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53232166" /></Metadata><TypeSignature Language="C#" Value="public sealed class TimeZoneInfo : IEquatable&lt;TimeZoneInfo&gt;, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a0c1b671172dcff914cfb84a095c579b475828bb" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53449887" /></Metadata><TypeSignature Language="C#" Value="public sealed class TimeZoneInfo : IEquatable&lt;TimeZoneInfo&gt;, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TimeZoneInfo extends System.Object implements class System.IEquatable`1&lt;class System.TimeZoneInfo&gt;, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.TimeZoneInfo" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class TimeZoneInfo&#xA;Implements IDeserializationCallback, IEquatable(Of TimeZoneInfo), ISerializable" />
@@ -79,13 +79,13 @@
 |静态成员名称|描述|  
 |------------------------|-----------------|  
 |<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 方法|从应用程序提供的数据创建自定义时区。|  
-|<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A> 方法|实例化基于区域的标识符在系统注册表中定义的时区。|  
+|<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A> 方法|实例化时区根据其标识符。|  
 |<xref:System.TimeZoneInfo.FromSerializedString%2A> 方法|反序列化要重新创建以前序列化的字符串值<xref:System.TimeZoneInfo>对象。|  
 |<xref:System.TimeZoneInfo.GetSystemTimeZones%2A> 方法|返回可枚举<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>的<xref:System.TimeZoneInfo>对象，表示所有本地系统上可用的时区。|  
 |<xref:System.TimeZoneInfo.Local%2A> 属性|实例化<xref:System.TimeZoneInfo>对象，表示本地时区。|  
 |<xref:System.TimeZoneInfo.Utc%2A> 属性|实例化<xref:System.TimeZoneInfo>对象，表示 UTC 时区。|  
   
- 可以使用<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法来创建未在本地系统注册表中定义的时区。 然后，可以使用<xref:System.TimeZoneInfo.ToSerializedString%2A>属性将时区对象的信息另存为可以存储在应用程序可以访问某种形式的字符串。 可以使用<xref:System.TimeZoneInfo.FromSerializedString%2A>方法将序列化的字符串转换回<xref:System.TimeZoneInfo>对象。  
+ 可以使用<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法来创建未在本地系统注册表在 Windows 系统上或通过中的时区类中定义的时区[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 或 macOS 上。 然后，可以使用<xref:System.TimeZoneInfo.ToSerializedString%2A>属性将时区对象的信息另存为可以存储在应用程序可以访问某种形式的字符串。 可以使用<xref:System.TimeZoneInfo.FromSerializedString%2A>方法将序列化的字符串转换回<xref:System.TimeZoneInfo>对象。  
   
  ]]></format>
     </remarks>
@@ -193,11 +193,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 已缓存的时区数据包括本地时区、 协调世界时 (UTC) 区域中，和使用方法类似于检索任何时区数据<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>和<xref:System.TimeZoneInfo.GetSystemTimeZones%2A>。  
+ 已缓存的时区数据包括本地时区和协调世界时 (UTC) 区域上的数据。  
   
- 您可能要调用<xref:System.TimeZoneInfo.ClearCachedData%2A>方法，以减少内存专门用于应用程序的缓存的时区信息或以反映本地系统时区已更改的事实。  
+ 您可能要调用`ClearCachedData`方法，以减少内存专门用于应用程序的缓存的时区信息或以反映本地系统时区已更改的事实。  
   
- 不建议存储对本地和 UTC 时区的引用。 在调用<xref:System.TimeZoneInfo.ClearCachedData%2A>方法，这些对象变量将是未定义<xref:System.TimeZoneInfo>不再对引用的对象<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>或<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>。 例如，下面的代码中的第二个调用到<xref:System.TimeZoneInfo.ConvertTime%28System.DateTime%2CSystem.TimeZoneInfo%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType>方法会抛出<xref:System.ArgumentException>因为`local`变量不再被视为等于<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>。  
+ 不建议存储对本地和 UTC 时区的引用。 在调用`ClearCachedData`方法，这些对象变量将是未定义<xref:System.TimeZoneInfo>不再对引用的对象<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>或<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>。 例如，下面的代码中的第二个调用到<xref:System.TimeZoneInfo.ConvertTime%28System.DateTime%2CSystem.TimeZoneInfo%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType>方法会抛出<xref:System.ArgumentException>因为`local`变量不再被视为等于<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>。  
   
  [!code-csharp[System.TimeZone2.BestPractices#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.BestPractices/cs/System.TimeZone2.BestPractices.cs#1)]
  [!code-vb[System.TimeZone2.BestPractices#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.BestPractices/vb/System.TimeZone2.BestPractices.vb#1)]  
@@ -459,7 +459,7 @@
 - 或 - 
 <paramref name="dateTime" /> 参数的 <see cref="P:System.DateTime.Kind" /> 属性是 <see cref="F:System.DateTimeKind.Utc" />，但 <paramref name="sourceTimeZone" /> 参数不等于 <see cref="P:System.TimeZoneInfo.Utc" />。  
   
-或 
+- 或 - 
 <paramref name="dateTime" /> 参数是无效时间（即，由于时区的调整规则，它表示不存在的时间）。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="sourceTimeZone" /> 参数为 <see langword="null" />。  
   
@@ -544,7 +544,7 @@
   
  如果转换`dateTime`早于的日期和时间值会导致<xref:System.DateTime.MinValue?displayProperty=nameWithType>或更高版本比<xref:System.DateTime.MaxValue?displayProperty=nameWithType>，此方法返回<xref:System.DateTime.MinValue?displayProperty=nameWithType>或<xref:System.DateTime.MaxValue?displayProperty=nameWithType>分别。  
   
- 此方法检索其标识符指定的时区`destinationTimeZoneId`注册表中的参数。 它不能检索使用创建的时区对象<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。 `destinationTimeZoneId`参数必须精确对应于时区的注册表项的长度，但不是在情况下，成功匹配发生; 也就是说，比较`destinationTimeZoneId`时区标识符不区分大小写。  
+ 此方法检索信息由其标识符指定的时区`destinationTimeZoneId`在 Windows 系统上并从注册表中的参数[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上。 它不能检索使用创建的时区对象<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。 `destinationTimeZoneId`参数必须精确对应于时区的标识符的长度，但不是在情况下，成功匹配发生; 也就是说，比较`destinationTimeZoneId`时区标识符不区分大小写。  
   
  ]]></format>
         </remarks>
@@ -602,7 +602,7 @@
   
  因为`dateTimeOffset`参数表示的日期和时间再加上该时间的偏移量从协调世界时 (UTC)，它不能表示不明确时间无效。  
   
- 此方法检索其标识符指定的时区`destinationTimeZoneId`注册表中的参数。 它不能检索使用创建的时区对象<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。 `destinationTimeZoneId`参数必须精确对应于时区的注册表项的长度，但不是在情况下，成功匹配发生; 也就是说，比较`destinationTimeZoneId`时区标识符不区分大小写。  
+ 此方法检索其标识符指定的时区`destinationTimeZoneId`在 Windows 系统上并从注册表中的参数[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上。 它不能检索使用创建的时区对象<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。 `destinationTimeZoneId`参数必须精确对应于时区的标识符的长度，但不是在情况下，成功匹配发生; 也就是说，比较`destinationTimeZoneId`时区标识符不区分大小写。  
   
  在转换`dateTimeOffset`会考虑任何调整规则目标时区中的有效的值为目标时区，该方法中的时间。  
   
@@ -664,7 +664,7 @@
   
  尽管它是类似于<xref:System.TimeZoneInfo.ConvertTime%28System.DateTime%2CSystem.TimeZoneInfo%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType>方法中，可以使用<xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%28System.DateTime%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType>来指定使用其标识符，而不是在源和目标时区其<xref:System.TimeZoneInfo>对象。 当必须将时间转换而无需检索与之相对应的时区对象并且不需要知道转换后的时间是标准或夏时制，则此方法是最有用。  
   
- 此方法检索其标识符是时区`sourceTimeZoneId`和`destinationTimeZoneId`注册表中的参数。 它不能检索时区对象，使用创建<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。  
+ 此方法检索其标识符是时区`sourceTimeZoneId`并`destinationTimeZoneId`在 Windows 系统上并从注册表中的参数[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上。 它不能检索时区对象，使用创建<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。  
   
  值<xref:System.DateTime.Kind%2A>的属性`dateTime`参数必须对应于`sourceTimeZoneId`参数，如下表所示。  
   
@@ -698,7 +698,7 @@
  <paramref name="dateTime" /> 是源时区中的无效时间。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="sourceTimeZoneId" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="destinationTimeZoneId" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidTimeZoneException">已找到时区标识符，但注册表数据已损坏。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有读取包含时区数据的注册表项所需的权限。</exception>
@@ -920,7 +920,7 @@
 - 或 - 
  <paramref name="dateTime" /><see langword=".Kind" /> 为 <see cref="F:System.DateTimeKind.Local" />，而 <paramref name="sourceTimeZone" /> 不等于 <see cref="P:System.TimeZoneInfo.Local" />。  
   
-- 或 - 
+或 
  <paramref name="sourceTimeZone" /><see langword=".IsInvalidDateTime(" /><paramref name="dateTime" /><see langword=")" /> 返回 <see langword="true" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="sourceTimeZone" /> 为 <see langword="null" />。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/a51e1a3b-c983-4320-b31a-1f9fa3cf824a">在不同时区之间转换时间</related>
@@ -1014,7 +1014,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="id" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="id" /> 参数为空字符串 ("")。  
   
-或 
+- 或 - 
 <paramref name="baseUtcOffset" /> 参数不表示整分钟数。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseUtcOffset" /> 参数大于 14 小时或小于 -14 小时。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/a6af8647-7893-4f29-95a9-d94c65a6e8dd">如何：创建不带调整规则的时区</related>
@@ -1114,21 +1114,21 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="id" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="id" /> 参数为空字符串 ("")。  
   
-- 或 - 
+或 
 <paramref name="baseUtcOffset" /> 参数不表示整分钟数。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseUtcOffset" /> 参数大于 14 小时或小于 -14 小时。</exception>
         <exception cref="T:System.InvalidTimeZoneException">在 <paramref name="adjustmentRules" /> 参数中指定的调整规则重叠。  
   
-或 
+- 或 - 
 在 <paramref name="adjustmentRules" /> 参数中指定的调整规则未按时间顺序排列。  
   
-- 或 - 
+或 
 <paramref name="adjustmentRules" /> 中的一个或多个元素为 <see langword="null" />。  
   
-- 或 - 
+或 
 一个日期可能有多个应用于它的调整规则。  
   
-或 
+- 或 - 
 <paramref name="baseUtcOffset" /> 参数与 <paramref name="adjustmentRules" /> 数组中一个或多个对象的 <see cref="P:System.TimeZoneInfo.AdjustmentRule.DaylightDelta" /> 值的和大于 14 小时或小于 -14 小时。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/c52ef192-13a9-435f-8015-3b12eae8c47c">如何：创建带有调整规则的时区</related>
       </Docs>
@@ -1235,7 +1235,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseUtcOffset" /> 参数大于 14 小时或小于 -14 小时。</exception>
         <exception cref="T:System.InvalidTimeZoneException">在 <paramref name="adjustmentRules" /> 参数中指定的调整规则重叠。  
   
-或 
+- 或 - 
 在 <paramref name="adjustmentRules" /> 参数中指定的调整规则未按时间顺序排列。  
   
 - 或 - 
@@ -1244,7 +1244,7 @@
 - 或 - 
 一个日期可能有多个应用于它的调整规则。  
   
-或 
+- 或 - 
 <paramref name="baseUtcOffset" /> 参数与 <paramref name="adjustmentRules" /> 数组中一个或多个对象的 <see cref="P:System.TimeZoneInfo.AdjustmentRule.DaylightDelta" /> 值的和大于 14 小时或小于 -14 小时。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/a6af8647-7893-4f29-95a9-d94c65a6e8dd">如何：创建不带调整规则的时区</related>
         <related type="Article" href="https://msdn.microsoft.com/library/c52ef192-13a9-435f-8015-3b12eae8c47c">如何：创建带有调整规则的时区</related>
@@ -1294,7 +1294,7 @@
   
  一个<xref:System.TimeZoneInfo.DaylightName%2A>属性的值不是<xref:System.String.Empty?displayProperty=nameWithType>或`null`并不一定表示时区支持夏令时。 若要确定是否时区支持夏令时，检查的值及其<xref:System.TimeZoneInfo.SupportsDaylightSavingTime%2A>属性。  
   
- 在大多数情况下，<xref:System.TimeZoneInfo.DaylightName%2A>属性在注册表中定义的时区不是<xref:System.String.Empty?displayProperty=nameWithType>或`null`。 但是，<xref:System.TimeZoneInfo.DaylightName%2A>的自定义时区的属性可以设置为<xref:System.String.Empty?displayProperty=nameWithType>。 通过创建自定义时区时将发生这种情况<xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType>或<xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.TimeZoneInfo.AdjustmentRule%5B%5D%2CSystem.Boolean%29?displayProperty=nameWithType>重载并`disableDaylightSavingTime`参数是`true`。 因此，你的代码应永远不会假设的值<xref:System.TimeZoneInfo.DaylightName%2A>属性不是`null`或为空。  
+ 在大多数情况下，`DaylightName`属性的系统定义的时区不是<xref:System.String.Empty?displayProperty=nameWithType>或`null`。 但是，<xref:System.TimeZoneInfo.DaylightName%2A>的自定义时区的属性可以设置为<xref:System.String.Empty?displayProperty=nameWithType>。 通过创建自定义时区时将发生这种情况<xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType>或<xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.TimeZoneInfo.AdjustmentRule%5B%5D%2CSystem.Boolean%29?displayProperty=nameWithType>重载并`disableDaylightSavingTime`参数是`true`。 因此，你的代码应永远不会假设的值<xref:System.TimeZoneInfo.DaylightName%2A>属性不是`null`或为空。  
   
  <xref:System.TimeZoneInfo.DaylightName%2A>属性等效于<xref:System.TimeZone.DaylightName%2A>属性的<xref:System.TimeZone>类。  
   
@@ -1557,17 +1557,17 @@
       </Parameters>
       <Docs>
         <param name="id">时区标识符，它对应于 <see cref="P:System.TimeZoneInfo.Id" /> 属性。</param>
-        <summary>根据其标识符从注册表中检索 <see cref="T:System.TimeZoneInfo" /> 对象。</summary>
+        <summary>根据新的 <see cref="T:System.TimeZoneInfo" /> 对象的标识符实例化该对象。</summary>
         <returns>一个对象，其标识符为 <paramref name="id" /> 参数的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- `id`参数必须精确对应于时区的注册表项的长度，但不是在情况下，成功匹配发生; 也就是说，比较`id`时区标识符不区分大小写。 如果你想要检索时区对象基于部分匹配项，您可以编写使用的只读集合的自定义过程<xref:System.TimeZoneInfo>返回的对象<xref:System.TimeZoneInfo.GetSystemTimeZones%2A>方法。  
+ `id`参数必须精确对应于时区的标识符的长度，但不是在情况下，成功匹配发生; 也就是说，比较`id`时区标识符不区分大小写。 如果你想要检索时区对象基于部分匹配项，您可以编写使用的只读集合的自定义过程<xref:System.TimeZoneInfo>返回的对象<xref:System.TimeZoneInfo.GetSystemTimeZones%2A>方法。  
   
- 在 Windows 系统上<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>尝试匹配`id`到注册表的 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time Zones 分支的子项名称。 此分支不一定包含时区标识符的完整列表。 如果所需的应用程序，您可以创建特定的时间区域通过调用的重载之一<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法或通过调用<xref:System.TimeZoneInfo.FromSerializedString%2A>要反序列化<xref:System.TimeZoneInfo>对象，表示所需的时间区域。 但是，通过这些方法调用的时区不包括在注册表中和不能使用检索<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>方法。 可以仅通过返回的对象引用访问这些自定义的时区<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>或<xref:System.TimeZoneInfo.FromSerializedString%2A>方法调用。  
+ 在 Windows 系统上`FindSystemTimeZoneById`尝试匹配`id`到注册表的 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time Zones 分支的子项名称。 在 Linux 和 macOS 上，它使用时区信息中提供[ICU 库](http://userguide.icu-project.org/datetime/timezone)。 如果在注册表或库不具有所需时区的信息，您可以创建特定的时间区域通过调用的重载之一<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法或通过调用<xref:System.TimeZoneInfo.FromSerializedString%2A>要反序列化<xref:System.TimeZoneInfo>对象表示所需的时间区域。 但是，通过这些方法调用创建时区不是系统定义的时间，从而不能使用检索<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>方法。 可以仅通过返回的对象引用访问这些自定义的时区<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>或<xref:System.TimeZoneInfo.FromSerializedString%2A>方法调用。  
   
-   
+此方法返回一个新<xref:System.TimeZoneInfo>实例为每个方法调用; 它不会返回缓存的对象。 这可能会影响中调用的应用程序的性能`FindSystemTimeZoneById`方法重复使用相同的标识符。   
   
 ## Examples  
  下面的示例使用<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>方法来检索东京标准时区。 这<xref:System.TimeZoneInfo>在东京中将本地时间转换为时间并确定它是东京标准时间还是东京夏时制时间，然后使用对象。  
@@ -1579,7 +1579,7 @@
         </remarks>
         <exception cref="T:System.OutOfMemoryException">系统没有足够的内存来存放有关时区的信息。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="id" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.TimeZoneNotFoundException">未找到 <paramref name="id" /> 指定的时区标识符。 这意味着其名称与 <paramref name="id" /> 匹配的注册表项不存在，或者该注册表项存在，但不包含任何时区数据。</exception>
+        <exception cref="T:System.TimeZoneNotFoundException">未找到 <paramref name="id" /> 指定的时区标识符。 这意味着名称与 <paramref name="id" /> 匹配的时区标识符不存在，或者该标识符存在但不包含任何时区数据。</exception>
         <exception cref="T:System.Security.SecurityException">该进程没有读取包含时区信息的注册表项所需的权限。</exception>
         <exception cref="T:System.InvalidTimeZoneException">时区标识符已找到，但注册表数据已损坏。</exception>
         <altmember cref="P:System.TimeZoneInfo.Id" />
@@ -1626,7 +1626,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 没有提供了创建时区，在注册表中找不到所需的所有代码的替代方法。 您可以定义自定义时区，然后使用<xref:System.TimeZoneInfo.ToSerializedString%2A>独立可执行文件或使用应用程序的安装程序也可以将时区保存为一个字符串中的方法。 应用程序然后可以从其存储位置检索此字符串并使用它进行实例化<xref:System.TimeZoneInfo.FromSerializedString%2A>方法。  
+ 没有提供了创建时区，在 Windows 上或在注册表中找不到所需的所有代码的替代方法[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上。 您可以定义自定义时区，然后使用<xref:System.TimeZoneInfo.ToSerializedString%2A>独立可执行文件或使用应用程序的安装程序也可以将时区保存为一个字符串中的方法。 应用程序然后可以从其存储位置检索此字符串并使用它进行实例化<xref:System.TimeZoneInfo.FromSerializedString%2A>方法。  
   
    
   
@@ -1942,10 +1942,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.TimeZoneInfo.GetSystemTimeZones%2A>方法从注册表的 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time Zones 项的子项中检索所有可用的时区信息。 如果无法成功检索和分析的特定字符串属性的单个值<xref:System.TimeZoneInfo>对象，此方法将其值设置为空字符串 ("")。  
+ <xref:System.TimeZoneInfo.GetSystemTimeZones%2A>方法从 Windows 系统上并从注册表的 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time Zones 项的子项中检索所有可用的时区信息[ICU 库](http://userguide.icu-project.org/datetime/timezone)在 Linux 和 macOS 上。 如果无法成功检索和分析的特定字符串属性的单个值<xref:System.TimeZoneInfo>对象，此方法将其值设置为空字符串 ("")。  
   
 > [!IMPORTANT]
->  <xref:System.TimeZoneInfo.GetSystemTimeZones%2A>方法返回的集合<xref:System.TimeZoneInfo>对象仅在注册表中定义的时区。 它不包括使用的重载创建时区<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。 它们只能通过时区创建方法返回的对象引用。  
+>  <xref:System.TimeZoneInfo.GetSystemTimeZones%2A>方法返回的集合<xref:System.TimeZoneInfo>中定义的时区对象或 ICU 库。 它不包括使用的重载创建时区<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法。 它们只能通过时区创建方法返回的对象引用。  
   
  此方法返回的集合被按 UTC 偏移量，并且对于具有相同的 UTC 偏移量的时间范围按使用当前区域性的显示名称。 显示名称的信息，请参阅<xref:System.TimeZoneInfo.DisplayName%2A>。  
   
@@ -2139,7 +2139,7 @@
    
   
 ## Examples  
- 通常情况下，多个注册表中定义的时间区域具有相同的偏移量从协调世界时 (UTC) 和相同的调整规则。 下面的示例向控制台显示这些时间区域的列表。  
+ 通常情况下，大量的 Windows 上的注册表中定义的时区和[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上具有相同的偏移量从协调世界时 (UTC) 和相同的调整规则。 下面的示例向控制台显示这些时间区域的列表。  
   
  [!code-csharp[System.TimeZone2.HasSameRules#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.HasSameRules/cs/HasSameRules.cs#1)]
  [!code-vb[System.TimeZone2.HasSameRules#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.HasSameRules/vb/HasSameRules.vb#1)]  
@@ -2187,7 +2187,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 时区标识符是唯一标识特定时区的键字符串。 在 Windows 系统中，它对应于注册表的 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time 区域分支的子项。 它可以作为参数传递<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>方法来从注册表检索某个特定时区。  
+ 时区标识符是唯一标识特定时区的键字符串。 在 Windows 系统中，它对应于在 Windows 系统上并从注册表的 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time 区域分支的子项[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上。 它可以作为参数传递<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>方法来实例化<xref:System.TimeZoneInfo>对象，表示特定时区。  
   
 > [!IMPORTANT]
 >  尽管 Windows 注册表中的密钥名称最多可包含 255 个字符，但我们建议你将分配给自定义时区的标识符，是 32 个字符或更少。 标识符的时间越长，概率就越大，不正确的密钥名称将为检索它时提供。  
@@ -2872,11 +2872,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 依赖于的 Windows 系统注册表中通常不定义的时区应用程序可以使用<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法来实例化必要的时间区域<xref:System.TimeZoneInfo>对象。 然后，应用程序可以调用<xref:System.TimeZoneInfo.ToSerializedString%2A>方法，将时区对象转换为字符串。  
+ 依赖于的 Windows 系统注册表中通常不定义的时区应用程序或[ICU 库](http://userguide.icu-project.org/datetime/timezone)在 Linux 和 macOScan 可以使用<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>方法必要时区化为<xref:System.TimeZoneInfo>对象。 然后，应用程序可以调用<xref:System.TimeZoneInfo.ToSerializedString%2A>方法，将时区对象转换为字符串。  
   
  <xref:System.TimeZoneInfo>对象也存储在其中应用程序中检索它时所需的位置。 可能的位置包括：  
   
--   在注册表中。  
+-   在 Windows 系统注册表。  
   
 -   应用程序资源文件。  
   
@@ -2937,7 +2937,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当将集合分配包含<xref:System.TimeZoneInfo>如对象添加到列表控件<xref:System.Windows.Forms.ListBox>控件，该控件会自动调用<xref:System.TimeZoneInfo.ToString%2A>方法提取一个字符串，描述每个对象表示在列表中。 结果是，不需要将对象的有意义说明存储为一个字符串，并且用户无需使用该字符串从集合中提取对象。 请参阅[如何：枚举在计算机上存在的时区](~/docs/standard/datetime/enumerate-time-zones.md)以了解详细信息。  
+ 当将集合分配包含<xref:System.TimeZoneInfo>如对象添加到列表控件<xref:System.Windows.Forms.ListBox>控件，该控件会自动调用<xref:System.TimeZoneInfo.ToString%2A>方法提取一个字符串，描述每个对象表示在列表中。 结果是，不需要将对象的有意义说明存储为一个字符串，并且用户无需使用该字符串从集合中提取对象。 请参阅[操作方法：枚举在计算机上存在的时区](~/docs/standard/datetime/enumerate-time-zones.md)以了解详细信息。  
   
  ]]></format>
         </remarks>
@@ -2983,7 +2983,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 这是一个内置的对象;此类信息<xref:System.TimeZoneInfo>从注册表检索不到对象。  
+ 这是一个内置的对象;此类信息<xref:System.TimeZoneInfo>从 Windows 系统上并从注册表检索不到对象[ICU 库](http://userguide.icu-project.org/datetime/timezone)Linux 和 macOS 上。  
   
 > [!IMPORTANT]
 >  您应始终访问通过协调世界时 (UTC) 区域<xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType>属性，而无需分配到 UTC 时区<xref:System.TimeZoneInfo>对象变量。 这可以防止<xref:System.TimeZoneInfo>调用而失效的对象变量<xref:System.TimeZoneInfo.ClearCachedData%2A>方法。  

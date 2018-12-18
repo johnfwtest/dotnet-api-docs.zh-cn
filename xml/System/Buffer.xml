@@ -1,5 +1,5 @@
 <Type Name="Buffer" FullName="System.Buffer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="771999aacef6c237d25fc4e8e2c3b4a3fe393f7b" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52226554" /></Metadata><TypeSignature Language="C#" Value="public static class Buffer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0cf64e13fc071de6fcc3edff003091676b6172cf" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53446219" /></Metadata><TypeSignature Language="C#" Value="public static class Buffer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Buffer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Buffer" />
   <TypeSignature Language="VB.NET" Value="Public Class Buffer" />
@@ -132,7 +132,7 @@
    
   
 ## Examples  
- 下面的示例通过使用复制的数组的区域<xref:System.Buffer.BlockCopy%2A>方法。 每个<xref:System.Buffer.BlockCopy%2A>操作，它列出的源和目标数组，这两个数组值，可作为一个字节序列。 该示例演示如何使用时考虑系统的字节顺序的重要性<xref:System.Buffer.BlockCopy%2A>方法： 因为 Windows 系统是小字节序、 基元数据类型的值较低序位字节前加上更高序位字节。  
+ 下面的示例通过使用复制的数组的区域<xref:System.Buffer.BlockCopy%2A>方法。 每个<xref:System.Buffer.BlockCopy%2A>操作，它列出的源和目标数组，这两个数组值，可作为一个字节序列。 该示例演示如何使用时考虑系统的字节顺序的重要性<xref:System.Buffer.BlockCopy%2A>方法：由于 Windows 系统是小字节序，基元数据类型的值较低序位字节前加上更高序位字节。  
   
  [!code-cpp[System.Buffer.BlockCopy#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CPP/bcopy.cpp#2)]
  [!code-csharp[System.Buffer.BlockCopy#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CS/bcopy.cs#2)]
@@ -143,10 +143,10 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="src" /> 或 <paramref name="dst" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="src" /> 或 <paramref name="dst" /> 不是基元数组。  
   
-或 
+- 或 - 
 <paramref name="src" /> 中的字节数小于 <paramref name="srcOffset" /> 加上<paramref name="count" /> 之和。  
   
-或 
+- 或 - 
 <paramref name="dst" /> 中的字节数小于 <paramref name="dstOffset" /> 加上<paramref name="count" /> 之和。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="srcOffset" />、<paramref name="dstOffset" /> 或 <paramref name="count" /> 小于 0。</exception>
       </Docs>
@@ -253,7 +253,7 @@
         <param name="array">一个数组。</param>
         <param name="index">数组中的位置。</param>
         <summary>检索指定数组中指定位置的字节。</summary>
-        <returns>返回数组中的 <paramref name="index" /> 字节。</returns>
+        <returns>数组中指定位置的字节。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="GenerateResource" FullName="Microsoft.Build.Tasks.GenerateResource">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d2e9a6c360f63b993b4127faafd12ae7081d9353" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51898596" /></Metadata><TypeSignature Language="C#" Value="public sealed class GenerateResource : Microsoft.Build.Tasks.TaskExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b9272a6b172262a4914774ef5da315ce6259ad8f" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53450017" /></Metadata><TypeSignature Language="C#" Value="public sealed class GenerateResource : Microsoft.Build.Tasks.TaskExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GenerateResource extends Microsoft.Build.Tasks.TaskExtension" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.GenerateResource" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class GenerateResource&#xA;Inherits TaskExtension" />
@@ -112,7 +112,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置除了（或者有选择地重写）常规的环境块之外，应传递到生成的 resgen.exe 的环境变量名称-值对的数组。</summary>
-        <value>返回环境变量名称-值对的数组。</value>
+        <value>环境变量的名称-值对的数组。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -149,7 +149,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置项的数组，这些项指定最新检查期间将从其忽略跟踪输入的路径。</summary>
-        <value>返回项的数组，这些项指定最新检查期间将从其忽略跟踪输入的路径。</value>
+        <value>指定最新检查期间将从中忽略跟踪的输入的路径的项的数组。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -205,7 +205,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>允许 ResolveComReferences 的多目标功能的属性：如果为 true，则来自适当的目标框架的 tlbimp.exe 和 aximp.exe 将在进程外运行以生成必要的包装程序集。</summary>
+        <summary>允许 ResolveComReferences 的多目标功能的属性：如果为 true，则将从进程外运行适当目标框架中的 tlbimp.exe 和 aximp.exe 以生成所需的包装器程序集。</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
@@ -227,8 +227,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个标志，此标志指定该规则是否正生成 .resources 文件或通过程序集提取 .ResW 文件。</summary>
-        <value>返回标志。</value>
+        <summary>获取或设置一个值，该值指定该规则是否生成 .resources 文件或从程序集提取 .ResW 文件。</summary>
+        <value>表示的标志。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -295,8 +295,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个开关，用于指定是否使用跟踪的增量生成。 如果为 true，则打开增量生成；否则将强制重新生成。</summary>
-        <value>返回一个开关，该开关指定是否将使用跟踪的增量生成。 如果为 true，则打开增量生成；否则将强制重新生成。</value>
+        <summary>获取或设置一个值，该值指示是否将使用跟踪的增量生成。</summary>
+        <value><see langword="true" /> 如果启用了增量生成;<see langword="false" />如果将强制重新生成。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -359,7 +359,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置指定提取 .ResW 文件的位置的值。</summary>
-        <value>返回值。</value>
+        <value>指定从中提取的值。ResW 文件。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -564,13 +564,13 @@
 ## Remarks  
  传递到此参数的项必须具有以下文件扩展名之一：  
   
--   `.txt`： 指定要转换的文本文件扩展名。 文本文件只能包含字符串资源。  
+-   `.txt`：指定要转换的文本文件的扩展。 文本文件只能包含字符串资源。  
   
--   `.resx`： 指定要转换的基于 XML 的资源文件的扩展名。  
+-   `.resx`：指定要转换的基于 XML 的资源文件的扩展名。  
   
--   `.restext`： 指定相同的格式为.txt。 如果要在生成过程中明确区分包含资源的源文件与其他源文件，则这个不相同的扩展名非常有用。  
+-   `.restext`：指定相同的格式为.txt。 如果要在生成过程中明确区分包含资源的源文件与其他源文件，则这个不相同的扩展名非常有用。  
   
- `.resources`： 指定要转换的资源文件的扩展名。  
+ `.resources`：指定要转换的资源文件的扩展名。  
   
  ]]></format>
         </remarks>
@@ -830,7 +830,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取表示读取跟踪日志的项的数组。</summary>
-        <value>返回项的数组，这些项表示读取跟踪日志。</value>
+        <value>表示读取跟踪日志项的数组。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -852,7 +852,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取表示写入跟踪日志的项的数组。</summary>
-        <value>返回项的数组，这些项表示写入跟踪日志。</value>
+        <value>表示写入跟踪日志项的数组。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -939,7 +939,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置中间目录，将在该目录中放置运行此任务的跟踪日志。</summary>
-        <value>返回中间目录，将在该目录中放置运行此任务的跟踪日志。</value>
+        <value>运行此任务的跟踪日志将放置中间目录。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -998,8 +998,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个开关，该开关指定是否应跟踪文件访问模式。</summary>
-        <value>如果应跟踪文件访问模式，则为 true；否则为 false。</value>
+        <summary>获取或设置一个值，该值指示是否应跟踪文件访问模式。</summary>
+        <value><see langword="true" /> 如果应跟踪文件访问模式;，否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="ToolTask" FullName="Microsoft.Build.Utilities.ToolTask">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="57c54120a16bf1466b84eaa1dd29666f08c6c05e" /><Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/09/2018" /><Meta Name="ms.locfileid" Value="51312453" /></Metadata><TypeSignature Language="C#" Value="public abstract class ToolTask : Microsoft.Build.Utilities.Task, Microsoft.Build.Framework.ICancelableTask" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2c8275bc037a160bf5b135c9c133d4daae3ba7c5" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53447326" /></Metadata><TypeSignature Language="C#" Value="public abstract class ToolTask : Microsoft.Build.Utilities.Task, Microsoft.Build.Framework.ICancelableTask" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolTask extends Microsoft.Build.Utilities.Task implements class Microsoft.Build.Framework.ICancelableTask, class Microsoft.Build.Framework.ITask" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.ToolTask" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ToolTask&#xA;Inherits Task&#xA;Implements ICancelableTask" />
@@ -259,8 +259,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>指示命令行回显已关闭。</summary>
-        <value>如果命令行回显已关闭，则为 true。</value>
+        <summary>获取或设置指示是否关闭命令行回显的值。</summary>
+        <value><see langword="true" /> 如果命令行回显已关闭;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -301,7 +301,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一组环境变量名称-值对。 可在自定义任务类（从 ToolTask 派生）中重写以返回一组新的或更改的环境变量，从而创建关联工具的执行上下文。</summary>
-        <value>返回一组环境变量。 每个字典键均为要重写的环境变量的名称，而字典值是要为该环境变量设置的值。 EnvironmentOverride 的默认实现返回 null。</value>
+        <value>一组环境变量。 每个字典键是要重写，环境变量的名称，而字典值是要为该环境变量设置的值。 EnvironmentOverride 的默认实现返回<see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -998,7 +998,7 @@ abstract class CustomToolTask : ToolTask
       <Docs>
         <param name="responseString">响应字符串。</param>
         <summary>用来转义响应文件的可重写方法。</summary>
-        <returns>返回响应字符串。</returns>
+        <returns>响应字符串。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1130,7 +1130,7 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Docs>
         <summary>获取记录标准错误消息的实际重要性。</summary>
-        <value>返回记录标准错误消息的实际重要性。</value>
+        <value>将标准错误记录消息的实际重要性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1227,7 +1227,7 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>任务参数：关于记录标准输出流的文本的重要性。</summary>
+        <summary>任务参数：用于从标准输出流记录文本的重要性。</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1254,7 +1254,7 @@ abstract class CustomToolTask : ToolTask
       </ReturnValue>
       <Docs>
         <summary>获取记录标准输出消息的实际重要性。</summary>
-        <value>返回记录标准输出消息的实际重要性。</value>
+        <value>将在其中记录标准输出消息的实际重要性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1509,8 +1509,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个开关，该开关指定工具任务是否将为命令行创建一个批处理文件并使用命令处理器执行该文件，而不是直接执行该命令。</summary>
-        <value>如果为 true，则该工具任务将为命令行创建一个批处理文件并使用命令处理器执行该文件。 如果为 false，则工具任务将直接执行该命令。</value>
+        <summary>获取或设置一个值，该值指定工具任务是否将为命令行创建一个批处理文件并使用命令处理器执行该文件，而不是直接执行该命令。</summary>
+        <value><see langword="true" /> 如果工具任务将创建一个用于命令行批处理文件并执行，使用命令处理器;<see langword="false" />如果工具任务将直接执行命令。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1568,8 +1568,8 @@ abstract class CustomToolTask : ToolTask
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>指示该任务是否将在工具执行过程中产生该节点。</summary>
-        <value>如果该任务将在工具执行过程中产生该节点，则为 true。</value>
+        <summary>获取或设置一个值，该值指示在工具执行期间任务是否将生成节点。</summary>
+        <value><see langword="true" /> 如果该任务将在工具执行; 过程中产生该节点，否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

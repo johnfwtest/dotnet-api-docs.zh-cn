@@ -1,5 +1,5 @@
 <Type Name="OleDbEnumerator" FullName="System.Data.OleDb.OleDbEnumerator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b0acceacd4161f1ef7341893171b16290bc7da0d" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51887273" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbEnumerator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f03f35fb6322f0a6f80f601f34842821ae94e1c5" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53446676" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbEnumerator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbEnumerator extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbEnumerator" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbEnumerator" />
@@ -56,7 +56,7 @@
       <Parameters />
       <Docs>
         <summary>检索一个 <see cref="T:System.Data.DataTable" />，该数据表包含所有可见 OLE DB 提供程序的信息。</summary>
-        <returns>返回一个 <see cref="T:System.Data.DataTable" />，该数据表包含可见 OLE DB 提供程序的信息。</returns>
+        <returns>一个 <see cref="T:System.Data.DataTable" />，其中包含可见 OLE DB 提供程序的信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -68,7 +68,7 @@
 |0|SOURCES_NAME|本机 OLEDB 数据源或枚举器的固定名称。|  
 |1|SOURCES_PARSENAME|可以通过使用本机 COM 接口 IParseDisplayName 转换为一个名字对象的可读名称。 对应于返回本机 OLE DB 源行集的 SOURCES_PARSENAME 列。|  
 |2|SOURCES_DESCRIPTION|本机 OLE DB 数据源的说明。 对应于返回本机 OLE DB 源行集的 SOURCES_DESCRIPTION 列。|  
-|3|SOURCES_TYPE|以下枚举成员之一： 联编程序 (0)、 DataSource_MDP (1)、 DataSource_TDP (2)、 (3) 的枚举器。 这些对应于在本机 OLE DB 源行集的 SOURCES_TYPE 列中返回的值。|  
+|3|SOURCES_TYPE|以下枚举成员之一：联编程序 (0)，(1)，DataSource_MDP DataSource_TDP (2)、 (3) 的枚举器。 这些对应于在本机 OLE DB 源行集的 SOURCES_TYPE 列中返回的值。|  
 |4|SOURCES_ISPARENT|适用于仅枚举器。 如果`true`，指示该条目适用于相同的枚举器在其调用 GetSourcesRowset，这意味着它还包括子枚举中。 对应于本机 OLE DB 源行集的 SOURCES_ISPARENT 列|  
 |5|SOURCES_CLSID|用户可读名称，可以转换为使用本机 COM 接口 IParseDisplayName 一个名字对象。 对应于返回本机 OLE DB 源行集的 SOURCES_CLSID 列。|  
   
@@ -163,7 +163,7 @@ class Program
       <Docs>
         <param name="type"><see cref="T:System.Type" />。</param>
         <summary>使用特定的 OLE DB 枚举数，无需 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 类的实例即可返回 <see cref="T:System.Data.OleDb.OleDbEnumerator" />，该读取器包含有关当前安装的 OLE DB 提供程序的信息。</summary>
-        <returns>使用指定的 OLE DB 枚举数返回一个 <see cref="T:System.Data.OleDb.OleDbDataReader" />，其中包含有关请求的 OLE DB 提供程序的信息。</returns>
+        <returns>一个 <see cref="T:System.Data.OleDb.OleDbDataReader" />，该数据表使用指定的 OLE DB 枚举器包含有关请求的 OLE DB 提供程序的信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -175,7 +175,7 @@ class Program
 |0|SOURCES_NAME|枚举器的本机 OLE DB 数据源的固定名称。|  
 |1|SOURCES_PARSENAME|可以通过使用本机 COM 接口转换为一个名字对象的用户可读名称**IParseDisplayName**。 对应于返回本机 OLE DB 源行集的 SOURCES_PARSENAME 列。|  
 |2|SOURCES_DESCRIPTION|本机 OLE DB 数据源的说明。 对应于返回本机 OLE DB 源行集的 SOURCES_DESCRIPTION 列。|  
-|3|SOURCES_TYPE|以下枚举成员之一： 联编程序 (0)、 DataSource_MDP (1)、 DataSource_TDP (2)、 (3) 的枚举器。 这些对应于在本机 OLE DB 源行集的 SOURCES_TYPE 列中返回的值。|  
+|3|SOURCES_TYPE|以下枚举成员之一：联编程序 (0)，(1)，DataSource_MDP DataSource_TDP (2)、 (3) 的枚举器。 这些对应于在本机 OLE DB 源行集的 SOURCES_TYPE 列中返回的值。|  
 |4|SOURCES_ISPARENT|适用于仅枚举器。 如果`true`，指示该条目适用于在其上相同的枚举器**GetSourcesRowset**调用，这意味着它还包括子枚举中。 对应于本机 OLE DB 源行集的 SOURCES_ISPARENT 列|  
   
  OLE DB 提供多个枚举器组件，包括 MSDAENUM、 MSDASQL 枚举器、 SQLNCLI 枚举器、 SQLOLEDB 枚举器和其他。 有关枚举器组件以及如何使用它们的详细信息，请参阅[OLE DB 程序员参考](https://go.microsoft.com/fwlink/?LinkId=45232)。  
@@ -273,7 +273,7 @@ class Program
       <Parameters />
       <Docs>
         <summary>无需 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 类的实例，即可返回一个 <see cref="T:System.Data.OleDb.OleDbEnumerator" />，该读取器包含当前安装的 OLE DB 提供程序的信息。</summary>
-        <returns>返回一个 <see cref="T:System.Data.OleDb.OleDbDataReader" />，该数据表包含可见 OLE DB 提供程序的信息。</returns>
+        <returns>一个 <see cref="T:System.Data.OleDb.OleDbDataReader" />，其中包含可见 OLE DB 提供程序的信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -285,7 +285,7 @@ class Program
 |0|SOURCES_NAME|本机 OLEDB 数据源或枚举器的固定名称。|  
 |1|SOURCES_PARSENAME|可以转换为使用本机 COM 接口 IParseDisplayName 一个名字对象的可读名称。 对应于返回本机 OLE DB 源行集的 SOURCES_PARSENAME 列。|  
 |2|SOURCES_DESCRIPTION|本机 OLE DB 数据源的说明。 对应于返回本机 OLE DB 源行集的 SOURCES_DESCRIPTION 列。|  
-|3|SOURCES_TYPE|以下枚举成员之一： 联编程序 (0)、 DataSource_MDP (1)、 DataSource_TDP (2)、 (3) 的枚举器。 这些对应于在本机 OLE DB 源行集的 SOURCES_TYPE 列中返回的值。|  
+|3|SOURCES_TYPE|以下枚举成员之一：联编程序 (0)，(1)，DataSource_MDP DataSource_TDP (2)、 (3) 的枚举器。 这些对应于在本机 OLE DB 源行集的 SOURCES_TYPE 列中返回的值。|  
 |4|SOURCES_ISPARENT|适用于仅枚举器。 如果`true`，指示该条目适用于相同的枚举器在其调用 GetSourcesRowset，这意味着它还包括子枚举中。 对应于本机 OLE DB 源行集的 SOURCES_ISPARENT 列|  
 |5|SOURCES_CLSID|用户可读名称，可以转换为使用本机 COM 接口 IParseDisplayName 一个名字对象。 对应于返回本机 OLE DB 源行集的 SOURCES_CLSID 列。|  
   
