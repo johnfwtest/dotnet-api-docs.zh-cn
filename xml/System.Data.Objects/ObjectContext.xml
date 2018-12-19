@@ -1,5 +1,5 @@
 <Type Name="ObjectContext" FullName="System.Data.Objects.ObjectContext">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="af4c737271ed74bbe4b35580d4cddb1cc39d7154" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53299292" /></Metadata><TypeSignature Language="C#" Value="public class ObjectContext : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c4c61b90ae2f963aca259d27a203726c7f73eb98" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53525366" /></Metadata><TypeSignature Language="C#" Value="public class ObjectContext : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectContext extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectContext" />
   <TypeSignature Language="VB.NET" Value="Public Class ObjectContext&#xA;Implements IDisposable" />
@@ -347,7 +347,7 @@
 或 
 该对象未处于 <see cref="T:System.Data.Objects.ObjectStateManager" /> 状态或处于 <see cref="F:System.Data.EntityState.Detached" /> 状态。  
   
-或 
+- 或 - 
 所提供对象的实体键无效。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="entitySetName" /> 是一个空字符串。</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.ApplyCurrentValues(`0)" />
@@ -405,7 +405,7 @@
 对象的 <see cref="T:System.Data.Objects.ObjectStateEntry" /> 无法在 <see cref="T:System.Data.Objects.ObjectStateManager" /> 中找到。 或 
 该对象处于 <see cref="F:System.Data.EntityState.Added" /> 或 <see cref="F:System.Data.EntityState.Detached" /> 状态。  
   
-或 
+- 或 - 
 所提供对象的实体键无效，或者有属性更改。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="entitySetName" /> 是一个空字符串。</exception>
         <altmember cref="M:System.Data.Objects.ObjectSet`1.ApplyOriginalValues(`0)" />
@@ -430,10 +430,10 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
+          <AttributeName>System.Obsolete("Use ApplyCurrentValues instead")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Obsolete("Use ApplyCurrentValues instead")</AttributeName>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -467,14 +467,14 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">当 <paramref name="entitySetName" /> 为 <see langword="null" /> 或空字符串时。  
   
-- 或 - 
+或 
 当 <paramref name="changed" /> 为 <see langword="null" /> 时。</exception>
         <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.EntityKey" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 不匹配时。  
   
 - 或 - 
 当实体处于 <see cref="F:System.Data.EntityState.Modified" /> 或 <see cref="F:System.Data.EntityState.Unchanged" /> 之外的状态时。  
   
-- 或 - 
+或 
 原始对象未附加到上下文。</exception>
         <exception cref="T:System.ArgumentException">当 <paramref name="changed" /> 对象的类型与原始对象的类型不同时。</exception>
       </Docs>
@@ -591,7 +591,7 @@
 - 或 - 
 对象具有 <see cref="T:System.Data.EntityKey" /> 且 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与作为方法参数传入的实体集不匹配。  
   
-或 
+- 或 - 
 对象没有 <see cref="T:System.Data.EntityKey" />，且未提供任何实体集。  
   
 - 或 - 
@@ -600,7 +600,7 @@
 - 或 - 
 对象图中的任何对象都具有无效的 <see cref="T:System.Data.EntityKey" />（例如，键中的值与对象中的值不匹配）。  
   
-- 或 - 
+或 
 未能根据给定的 <paramref name="entitySetName" /> 名称和实体容器名称找到实体集。  
   
 - 或 - 
@@ -834,7 +834,7 @@
         <exception cref="T:System.ArgumentNullException">当任一参数为 <see langword="null" /> 时。</exception>
         <exception cref="T:System.ArgumentException">当 <paramref name="entitySetName" /> 为空时。  
   
-或 
+- 或 - 
 当 <paramref name="entity" /> 对象的类型不存在于实体集中时。  
   
 - 或 - 
@@ -946,7 +946,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">来自 <paramref name="entitySetName" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 与对象的 <see cref="T:System.Data.EntityKey" /> 的 <see cref="T:System.Data.Metadata.Edm.EntitySet" /> 不匹配。  
   
-或 
+- 或 - 
 在 <see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" /> 上没有设置 <see cref="T:System.Data.Objects.ObjectContext" /> 属性，且名称未限定为 <paramref name="entitySetName" /> 参数。  
   
 - 或 - 
@@ -1391,7 +1391,7 @@
  <paramref name="function" /> 未找到。</exception>
         <exception cref="T:System.InvalidOperationException">实体读取器不支持此 <paramref name="function" />。  
   
-或 
+- 或 - 
 读取器的类型与 <paramref name="function" /> 的类型不匹配。</exception>
       </Docs>
     </Member>
@@ -1448,7 +1448,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="function" /> 为 null 或为空。 
-- 或 - 
+或 
  <paramref name="function" /> 未找到。</exception>
         <exception cref="T:System.InvalidOperationException">实体读取器不支持此 <paramref name="function" />。  
   
@@ -1897,7 +1897,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> 处于 <see cref="F:System.Data.EntityState.Detached" />、 <see cref="F:System.Data.EntityState.Added" /> 或 <see cref="F:System.Data.EntityState.Deleted" /> 状态。 
-- 或 - 
+或 
 <paramref name="entity" /> 附加到 <see cref="T:System.Data.Objects.ObjectContext" /> 的另一个实例。</exception>
       </Docs>
     </Member>
@@ -1945,7 +1945,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="selector" /> 未提供有效的输入参数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="selector" /> 为 null。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> 处于 <see cref="F:System.Data.EntityState.Detached" />、 <see cref="F:System.Data.EntityState.Added" /> 或 <see cref="F:System.Data.EntityState.Deleted" /> 状态。 
-或 
+- 或 - 
 <paramref name="entity" /> 附加到 <see cref="T:System.Data.Objects.ObjectContext" /> 的另一个实例。</exception>
       </Docs>
     </Member>
@@ -1994,7 +1994,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="selector" /> 未提供有效的输入参数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="selector" /> 为 null。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> 处于 <see cref="F:System.Data.EntityState.Detached" />、 <see cref="F:System.Data.EntityState.Added" /> 或 <see cref="F:System.Data.EntityState.Deleted" /> 状态。 
-- 或 - 
+或 
 <paramref name="entity" /> 附加到 <see cref="T:System.Data.Objects.ObjectContext" /> 的另一个实例。</exception>
       </Docs>
     </Member>
@@ -2180,7 +2180,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="refreshMode" /> 无效。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="collection" /> 为空。  
   
-- 或 - 
+或 
 对象未附加到上下文。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/338d8a55-05cc-46b0-bbb8-1379d77068e9">使用对象（实体框架）</related>
       </Docs>
@@ -2315,10 +2315,10 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.ComponentModel.EditorBrowsable</AttributeName>
+          <AttributeName>System.Obsolete("Use SaveChanges(SaveOptions options) instead.")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Obsolete("Use SaveChanges(SaveOptions options) instead.")</AttributeName>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
