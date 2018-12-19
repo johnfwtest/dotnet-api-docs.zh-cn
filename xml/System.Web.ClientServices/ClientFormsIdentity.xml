@@ -1,5 +1,5 @@
 <Type Name="ClientFormsIdentity" FullName="System.Web.ClientServices.ClientFormsIdentity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a3d13dfdee2c05f8540f244f6a1af940096c3f89" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51917667" /></Metadata><TypeSignature Language="C#" Value="public class ClientFormsIdentity : IDisposable, System.Security.Principal.IIdentity" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4ba10aea8537e9462a1568aff18b4c55f7382282" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53525984" /></Metadata><TypeSignature Language="C#" Value="public class ClientFormsIdentity : IDisposable, System.Security.Principal.IIdentity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientFormsIdentity extends System.Object implements class System.IDisposable, class System.Security.Principal.IIdentity" />
   <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.ClientFormsIdentity" />
   <TypeSignature Language="VB.NET" Value="Public Class ClientFormsIdentity&#xA;Implements IDisposable, IIdentity" />
@@ -39,7 +39,7 @@
  下面的代码示例演示如何使用此类应用程序退出脱机状态时以无提示方式重新验证用户。 在此示例中，<xref:System.Windows.Forms.CheckBox.CheckedChanged>事件处理程序更新脱机状态以与复选框的值匹配。 如果用户设置应用程序进入联机状态，事件处理程序将尝试重新验证用户，通过调用<xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A>方法。 但是，如果身份验证服务器不可用，事件处理程序将返回为脱机状态的应用程序。  
   
 > [!NOTE]
->  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> 方法只是为了方便。 因为它没有返回值，所以无法指示重新验证是否失败。 例如，如果在服务器上更改了用户凭据，则重新验证可能会失败。 在这种情况下，你可能要包含在服务调用失败之后显式验证用户的代码。 有关详细信息，请参阅中的访问 Web 设置部分[演练： 使用客户端应用程序服务](~/docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)。  
+>  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> 方法只是为了方便。 因为它没有返回值，所以无法指示重新验证是否失败。 例如，如果在服务器上更改了用户凭据，则重新验证可能会失败。 在这种情况下，你可能要包含在服务调用失败之后显式验证用户的代码。 有关详细信息，请参阅中的访问 Web 设置部分[演练：使用客户端应用程序服务](~/docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)。  
   
  [!code-csharp[ClientApplicationServices#315](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#315)]
  [!code-vb[ClientApplicationServices#315](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#315)]  
@@ -136,6 +136,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AuthenticationType { System::String ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.AuthenticationType : string" Usage="System.Web.ClientServices.ClientFormsIdentity.AuthenticationType" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Security.Principal.IIdentity.AuthenticationType</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
@@ -269,6 +272,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAuthenticated { bool get(); };" />
       <MemberSignature Language="F#" Value="member this.IsAuthenticated : bool" Usage="System.Web.ClientServices.ClientFormsIdentity.IsAuthenticated" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Security.Principal.IIdentity.IsAuthenticated</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
@@ -320,6 +326,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Name { System::String ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.Name : string" Usage="System.Web.ClientServices.ClientFormsIdentity.Name" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Security.Principal.IIdentity.Name</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
@@ -391,10 +400,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当您使用窗体身份验证来验证当前用户<xref:System.Web.ClientServices.ClientFormsIdentity>类存储用户凭据，只要运行应用程序。 但是，身份验证 cookie 过期之前，只被验证该用户。 在 cookie 过期后，用户必须重新验证来访问远程角色或 Web 设置服务。 可以使用**服务的高级设置**对话框可以配置你的应用程序以自动重新验证用户，如中所述[如何： 配置客户端应用程序服务](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)。 但是，如果您应用程序配置为接受 cookie 到期时间，您可以以编程方式重新验证用户通过调用<xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A>方法。 此方法也是有用时从脱机模式切换到联机模式下，因为该应用程序可能已关闭下脱机。  
+ 当您使用窗体身份验证来验证当前用户<xref:System.Web.ClientServices.ClientFormsIdentity>类存储用户凭据，只要运行应用程序。 但是，身份验证 cookie 过期之前，只被验证该用户。 在 cookie 过期后，用户必须重新验证来访问远程角色或 Web 设置服务。 可以使用**服务的高级设置**对话框可以配置你的应用程序以自动重新验证用户，如中所述[如何：配置客户端应用程序服务](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)。 但是，如果您应用程序配置为接受 cookie 到期时间，您可以以编程方式重新验证用户通过调用<xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A>方法。 此方法也是有用时从脱机模式切换到联机模式下，因为该应用程序可能已关闭下脱机。  
   
 > [!NOTE]
->  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> 方法只是为了方便。 因为它没有返回值，所以无法指示重新验证是否失败。 例如，如果在服务器上更改了用户凭据，则重新验证可能会失败。 在这种情况下，你可能要包含在服务调用失败之后显式验证用户的代码。 有关详细信息，请参阅中的访问 Web 设置部分[演练： 使用客户端应用程序服务](~/docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)。  
+>  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> 方法只是为了方便。 因为它没有返回值，所以无法指示重新验证是否失败。 例如，如果在服务器上更改了用户凭据，则重新验证可能会失败。 在这种情况下，你可能要包含在服务调用失败之后显式验证用户的代码。 有关详细信息，请参阅中的访问 Web 设置部分[演练：使用客户端应用程序服务](~/docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)。  
   
    
   

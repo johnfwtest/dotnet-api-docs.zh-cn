@@ -1,5 +1,5 @@
 <Type Name="ModelItemCollection" FullName="System.Activities.Presentation.Model.ModelItemCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4605198dcb687b1301a15c7304a2e11378b9b144" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53228006" /></Metadata><TypeSignature Language="C#" Value="public abstract class ModelItemCollection : System.Activities.Presentation.Model.ModelItem, System.Collections.Generic.ICollection&lt;System.Activities.Presentation.Model.ModelItem&gt;, System.Collections.Generic.IEnumerable&lt;System.Activities.Presentation.Model.ModelItem&gt;, System.Collections.Generic.IList&lt;System.Activities.Presentation.Model.ModelItem&gt;, System.Collections.IList, System.Collections.Specialized.INotifyCollectionChanged" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="57785b7c8ecfb101b68ead09fc9a2883efe194b4" /><Meta Name="ms.sourcegitcommit" Value="662f143e6be46d519ff8ab4451d543d91e651478" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/18/2018" /><Meta Name="ms.locfileid" Value="53564869" /></Metadata><TypeSignature Language="C#" Value="public abstract class ModelItemCollection : System.Activities.Presentation.Model.ModelItem, System.Collections.Generic.ICollection&lt;System.Activities.Presentation.Model.ModelItem&gt;, System.Collections.Generic.IEnumerable&lt;System.Activities.Presentation.Model.ModelItem&gt;, System.Collections.Generic.IList&lt;System.Activities.Presentation.Model.ModelItem&gt;, System.Collections.IList, System.Collections.Specialized.INotifyCollectionChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ModelItemCollection extends System.Activities.Presentation.Model.ModelItem implements class System.Collections.Generic.ICollection`1&lt;class System.Activities.Presentation.Model.ModelItem&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Activities.Presentation.Model.ModelItem&gt;, class System.Collections.Generic.IList`1&lt;class System.Activities.Presentation.Model.ModelItem&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.Collections.Specialized.INotifyCollectionChanged" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Model.ModelItemCollection" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ModelItemCollection&#xA;Inherits ModelItem&#xA;Implements ICollection(Of ModelItem), IEnumerable(Of ModelItem), IList, IList(Of ModelItem), INotifyCollectionChanged" />
@@ -176,6 +176,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract event System::Collections::Specialized::NotifyCollectionChangedEventHandler ^ CollectionChanged;" />
       <MemberSignature Language="F#" Value="member this.CollectionChanged : System.Collections.Specialized.NotifyCollectionChangedEventHandler " Usage="member this.CollectionChanged : System.Collections.Specialized.NotifyCollectionChangedEventHandler " />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Activities.Presentation</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -303,7 +306,7 @@
       </ReturnValue>
       <Docs>
         <summary>返回集合中项的计数。</summary>
-        <value>返回集合中项的 <see cref="T:System.Int32" /> 计数。</value>
+        <value>集合中项的计数。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -335,7 +338,7 @@
       <Parameters />
       <Docs>
         <summary>获取循环访问 <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" /> 的枚举器。</summary>
-        <returns>返回 <see cref="T:System.Collections.Generic.IEnumerator`1" /> 的 <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" />。</returns>
+        <returns>用于 <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" /> 的枚举数。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -709,7 +712,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取可用于同步对集合的访问的对象。</summary>
-        <value>返回 <see cref="T:System.Object" />。</value>
+        <value>可用于同步集合访问的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -765,7 +768,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取集合中包含的元素数。</summary>
-        <value>返回一个 <see cref="T:System.Int32" /> 值，该值是集合中包含的元素数。</value>
+        <value>集合中包含的元素数。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -823,7 +826,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取可用于同步对 <see cref="T:System.Collections.ICollection" /> 的访问的对象。</summary>
-        <value>返回可用于同步对 <see cref="T:System.Object" /> 的访问的 <see cref="T:System.Collections.ICollection" />。</value>
+        <value>可用于同步对 <see cref="T:System.Collections.ICollection" /> 的访问的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -855,7 +858,7 @@
       <Parameters />
       <Docs>
         <summary>返回循环访问集合的枚举数。</summary>
-        <returns>返回一个可用于循环访问集合的 <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <returns>用于循环访问集合的枚举数。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -882,7 +885,7 @@
       <Docs>
         <param name="value">要添加到集合中的对象。</param>
         <summary>将模型项添加到 <see cref="T:System.Activities.Presentation.Model.ModelItemCollection" /> 的末尾。</summary>
-        <returns>返回新添加对象的索引。</returns>
+        <returns>新添加对象的索引。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -970,7 +973,7 @@
       <Docs>
         <param name="value">要在 <see cref="T:System.Object" /> 中定位的 <see cref="T:System.Collections.IList" />。</param>
         <summary>确定 <see cref="T:System.Collections.IList" /> 中特定项的索引。</summary>
-        <returns>返回 <see cref="T:System.Int32" /> 的 <paramref name="value" /> 索引（如果在列表中找到）；否则返回 -1。</returns>
+        <returns>如果在列表中找到，则为 <paramref name="value" /> 的索引；否则为 -1。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
