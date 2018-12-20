@@ -1,5 +1,5 @@
 <Type Name="Interlocked" FullName="System.Threading.Interlocked">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a8c91429c4211b1e1da8ab9a2544c92e96f992ae" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52732246" /></Metadata><TypeSignature Language="C#" Value="public static class Interlocked" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3b2fdb41b1e5f8614494e0d69b0a97131cab338e" /><Meta Name="ms.sourcegitcommit" Value="662f143e6be46d519ff8ab4451d543d91e651478" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/18/2018" /><Meta Name="ms.locfileid" Value="53567025" /></Metadata><TypeSignature Language="C#" Value="public static class Interlocked" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Interlocked extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Interlocked" />
   <TypeSignature Language="VB.NET" Value="Public Class Interlocked" />
@@ -526,7 +526,7 @@
 ## Remarks
 
 > [!IMPORTANT]
-> 从.NET Framework 2.0 开始<xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29>方法重载为引用类型提供类型安全的替代方法。 我们建议你而不是此重载调用它。
+> 从 .NET Framework 2.0 开始，<xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29> 方法重载为引用类型提供类型安全的替代项。 我们建议你而不是此重载调用它。
 
 如果`comparand`和中的对象`location1`是否相等的引用，然后`value`存储在`location1`。 否则，不会执行任何操作。 以原子操作的方式执行比较和交换操作。 返回值<xref:System.Threading.Interlocked.CompareExchange%2A>是中的原始值`location1`、 指示是否发生交换。  
 
@@ -741,7 +741,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法通过包装处理溢出情况： 如果`location`  =  <xref:System.Int32.MinValue?displayProperty=nameWithType>， `location` -1 = <xref:System.Int32.MaxValue?displayProperty=nameWithType>。 不引发异常。  
+ 此方法可处理通过包装溢出条件：如果`location`  =  <xref:System.Int32.MinValue?displayProperty=nameWithType>， `location` -1 = <xref:System.Int32.MaxValue?displayProperty=nameWithType>。 不引发异常。  
   
    
   
@@ -1093,7 +1093,7 @@
 ## Remarks
 
 > [!IMPORTANT]
-> 从.NET Framework 2.0 开始<xref:System.Threading.Interlocked.Exchange%60%601%28%60%600%40%2C%60%600%29>方法重载为引用类型提供类型安全的替代方法。 我们建议你而不是此重载调用它。
+> 从 .NET Framework 2.0 开始，<xref:System.Threading.Interlocked.Exchange%60%601%28%60%600%40%2C%60%600%29> 方法重载为引用类型提供类型安全的替代项。 我们建议你而不是此重载调用它。
 
  ]]></format>
         </remarks>
@@ -1395,7 +1395,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>按如下方式同步内存存取：执行当前线程的处理器在对指令重新排序时，不能采用先执行 <see cref="M:System.Threading.Interlocked.MemoryBarrier" /> 调用之后的内存存取，再执行 <see cref="M:System.Threading.Interlocked.MemoryBarrier" /> 调用之前的内存存取的方式。</summary>
+        <summary>按如下方式同步内存访问：执行当前线程的处理器在对指令重新排序时，不能先执行 <see cref="M:System.Threading.Interlocked.MemoryBarrier" /> 调用之后的内存存取，再执行 <see cref="M:System.Threading.Interlocked.MemoryBarrier" /> 调用之前的内存存取。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1434,8 +1434,24 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>提供覆盖整个过程的内存屏障，确保来自任何 CPU 的读写都不能越过该屏障。</summary>
+        <remarks>  
+          <format type="text/markdown"><![CDATA[  
+
+`MemoryBarrierProcessWide`方法不同于"normal"<xref:System.Threading.Interlocked.MemoryBarrier%2A>方法，如下所示：
+
+- 正常的内存屏障将确保跨屏障移动不能读取和写入操作从当前的 CPU。 过程范围内的内存屏障可确保任何读取或写入从任何 CPU 正在使用在进程中不能跨移动屏障。
+
+- 正常的内存屏障允许合理的共享的访问，如果*每个*线程访问的数据使用障碍。 过程范围内的内存屏障强制*其他 Cpu*与进程内存 （例如，若要刷新写入缓冲区并同步读取的缓冲区） 进行同步。 这样一些线程上非互锁操作并仍获得合理的共享访问。 
+
+- 正常的内存屏障施加开销极少;正常互锁的操作可能花费少于 100 个周期。 过程范围内的内存屏障是占用大量资源。 它必须强制执行过程中的每个 CPU 是否为内容，在数千个周期的可能成本。 
+
+`MemoryBarrierProcessWide`方法也存在无锁编程的所有微妙之处。 不过，当您实际需要调用它，这应该很少见，此方法会很非常有用。
+
+此方法包装对的调用[FlushProcessWriteBuffers](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-flushprocesswritebuffers)在 Windows 上并[sys_membarrier](https://lore.kernel.org/patchwork/patch/188708/) Linux 上。
+
+         ]]></format>
+         </remarks>
       </Docs>
     </Member>
     <Member MemberName="Read">
