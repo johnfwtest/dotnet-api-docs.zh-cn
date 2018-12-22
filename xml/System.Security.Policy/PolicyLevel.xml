@@ -41,13 +41,13 @@
   
  安全策略的最高级别是企业范围。 连续较低级别的层次结构表示更多的策略限制，但永远不会授予超出允许的更高级别权限。 实现以下策略级别：  
   
-1.  在企业中的所有托管代码的 Enterprise： 安全策略。  
+1.  Enterprise:在企业中的所有托管代码的安全策略。  
   
-2.  在计算机上运行的所有托管代码的计算机： 安全策略。  
+2.  计算机：在计算机上运行的所有托管代码的安全策略。  
   
-3.  在用户运行的所有托管代码的用户： 安全策略。  
+3.  用户：在用户运行的所有托管代码的安全策略。  
   
-4.  应用程序域： 应用程序中的所有托管代码的安全策略。  
+4.  应用程序域：应用程序中的所有托管代码的安全策略。  
   
  策略级别均包含一组组织到取得 root 权限的单个树的代码组 (请参阅<xref:System.Security.Policy.CodeGroup>)、 一组命名的权限集引用的指定权限授予属于代码组的代码的代码组和一系列完全受信任的程序集。  
   
@@ -64,7 +64,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将添加<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />名单<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为不应评估的程序集组的成员。</summary>
+        <summary>将 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 添加到 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对象列表中，这些对象用于确定程序集是否为不应评估的程序集组的成员。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddFullTrustAssembly">
@@ -108,8 +108,8 @@
         <Parameter Name="sn" Type="System.Security.Policy.StrongName" />
       </Parameters>
       <Docs>
-        <param name="sn"><see cref="T:System.Security.Policy.StrongName" />用来创建<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />将添加到列表的<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为不应评估的程序集组的成员。</param>
-        <summary>将添加<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对应于指定<see cref="T:System.Security.Policy.StrongName" />的列表到<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为不应评估的程序集组的成员。</summary>
+        <param name="sn">用于创建要添加到 <see cref="T:System.Security.Policy.StrongName" /> 对象（这些对象用于确定程序集是否为不应评估的程序集组的成员）列表的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" />。</param>
+        <summary>将与指定的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对应的 <see cref="T:System.Security.Policy.StrongName" /> 添加到 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对象列表中，这些对象用于确定程序集是否为不应评估的程序集组的成员。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -119,7 +119,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="sn" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.Policy.StrongName" />指定的<paramref name="sn" />参数已获得完全信任。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="sn" /> 参数指定的 <see cref="T:System.Security.Policy.StrongName" /> 已获得完全信任。</exception>
         <altmember cref="P:System.Security.Policy.PolicyLevel.FullTrustAssemblies" />
       </Docs>
     </Member>
@@ -164,8 +164,8 @@
         <Parameter Name="snMC" Type="System.Security.Policy.StrongNameMembershipCondition" />
       </Parameters>
       <Docs>
-        <param name="snMC"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />将添加到列表的<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为不应评估的程序集组的成员。</param>
-        <summary>添加指定<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />名单<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为不应评估的程序集组的成员。</summary>
+        <param name="snMC">要添加到 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对象（这些对象用于确定程序集是否为不应评估的程序集组的成员）的列表中的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" />。</param>
+        <summary>将指定的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 添加到 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对象（这些对象用于确定程序集是否为不应评估的程序集组的成员）的列表中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -175,7 +175,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="snMC" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />指定的<paramref name="snMC" />参数已获得完全信任。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="snMC" /> 参数指定的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 已获得完全信任。</exception>
         <altmember cref="P:System.Security.Policy.PolicyLevel.FullTrustAssemblies" />
       </Docs>
     </Member>
@@ -211,8 +211,8 @@
         <Parameter Name="permSet" Type="System.Security.NamedPermissionSet" />
       </Parameters>
       <Docs>
-        <param name="permSet"><see cref="T:System.Security.NamedPermissionSet" />将添加到当前策略级别。</param>
-        <summary>添加<see cref="T:System.Security.NamedPermissionSet" />到当前策略级别。</summary>
+        <param name="permSet">要添加到当前策略级别中的 <see cref="T:System.Security.NamedPermissionSet" />。</param>
+        <summary>将 <see cref="T:System.Security.NamedPermissionSet" /> 添加到当前的策略级别中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -222,7 +222,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="permSet" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="permSet" />参数具有相同名称的现有<see cref="T:System.Security.NamedPermissionSet" />中<see cref="T:System.Security.Policy.PolicyLevel" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="permSet" /> 参数与 <see cref="T:System.Security.NamedPermissionSet" /> 中的现有 <see cref="T:System.Security.Policy.PolicyLevel" /> 具有相同的名称。</exception>
       </Docs>
     </Member>
     <Member MemberName="ChangeNamedPermissionSet">
@@ -258,19 +258,19 @@
         <Parameter Name="pSet" Type="System.Security.PermissionSet" />
       </Parameters>
       <Docs>
-        <param name="name">名称<see cref="T:System.Security.NamedPermissionSet" />替换。</param>
-        <param name="pSet"><see cref="T:System.Security.PermissionSet" />替换<see cref="T:System.Security.NamedPermissionSet" />指定的<paramref name="name" />参数。</param>
-        <summary>将替换<see cref="T:System.Security.NamedPermissionSet" />具有指定的当前策略级别中<see cref="T:System.Security.PermissionSet" />。</summary>
-        <returns>一份<see cref="T:System.Security.NamedPermissionSet" />的被替换。</returns>
+        <param name="name">要替换的 <see cref="T:System.Security.NamedPermissionSet" /> 的名称。</param>
+        <param name="pSet">用于替换 <paramref name="name" /> 参数所指定的 <see cref="T:System.Security.PermissionSet" /> 的 <see cref="T:System.Security.NamedPermissionSet" />。</param>
+        <summary>用指定的 <see cref="T:System.Security.NamedPermissionSet" /> 替换当前策略级别中的 <see cref="T:System.Security.PermissionSet" />。</summary>
+        <returns>已替换的 <see cref="T:System.Security.NamedPermissionSet" /> 的副本。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="pSet" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="name" />参数等于保留的权限集的名称。  
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> 参数等于保留权限集的名称。  
   
-或 
-<see cref="T:System.Security.PermissionSet" />指定的<paramref name="pSet" />找不到参数。</exception>
+- 或 - 
+找不到 <paramref name="pSet" /> 参数所指定的 <see cref="T:System.Security.PermissionSet" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateAppDomainLevel">
@@ -309,7 +309,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在应用程序域策略级别中创建新的策略级别使用。</summary>
+        <summary>创建供在应用程序域策略级别使用的新的策略级别。</summary>
         <returns>新创建的 <see cref="T:System.Security.Policy.PolicyLevel" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -355,10 +355,10 @@
       </Parameters>
       <Docs>
         <param name="e">用于重新构造安全对象的 XML 编码。</param>
-        <summary>重新构造具有给定状态的 XML 编码的安全对象。</summary>
+        <summary>从 XML 编码重新构造具有给定状态的安全对象。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="e" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.SecurityElement" />指定的<paramref name="e" />参数无效。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="e" /> 参数所指定的 <see cref="T:System.Security.SecurityElement" /> 无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="FullTrustAssemblies">
@@ -399,8 +399,8 @@
         <ReturnType>System.Collections.IList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一系列<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为用于评估安全策略的程序集组的成员。</summary>
-        <value>一系列<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />对象用于确定程序集是否为用于评估安全策略的程序集组的成员。 这些程序集的程序集不在列表中的安全策略评估期间授予完全信任。</value>
+        <summary>获取 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对象列表，这些对象用于确定程序集是否为用于评估安全策略的程序集组的成员。</summary>
+        <value><see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 对象列表，这些对象用于确定程序集是否为用于评估安全策略的程序集组的成员。 在对列表中没有的程序集进行安全策略评估的过程中，这些程序集被授予完全信任。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -445,9 +445,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">名称<see cref="T:System.Security.NamedPermissionSet" />查找。</param>
-        <summary>返回<see cref="T:System.Security.NamedPermissionSet" />具有指定名称的当前策略级别中。</summary>
-        <returns><see cref="T:System.Security.NamedPermissionSet" />具有指定名称，如果找到; 否则为当前策略级别中<see langword="null" />。</returns>
+        <param name="name">要查找的 <see cref="T:System.Security.NamedPermissionSet" /> 的名称。</param>
+        <summary>返回具有指定名称的当前策略级别中的 <see cref="T:System.Security.NamedPermissionSet" />。</summary>
+        <returns>如果找到，则为具有指定名称的当前策略级别中的 <see cref="T:System.Security.NamedPermissionSet" />；否则为 <see langword="null" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 参数为 <see langword="null" />。</exception>
         <altmember cref="T:System.Security.NamedPermissionSet" />
@@ -518,8 +518,8 @@
         <ReturnType>System.Collections.IList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取为策略级别定义的命名的权限集的列表。</summary>
-        <value>为策略级别定义的命名的权限集的列表。</value>
+        <summary>获取为策略级别定义的命名权限集的列表。</summary>
+        <value>为策略级别定义的命名权限集的列表。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -553,7 +553,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将配置文件替换为此<see cref="T:System.Security.Policy.PolicyLevel" />与在上一次备份 （反映最后一次保存之前的策略状态），并返回到的最后一个状态保存。</summary>
+        <summary>用上一次的备份（反映上一次保存之前的策略状态）替换此 <see cref="T:System.Security.Policy.PolicyLevel" /> 的配置文件，并将它返回到上一次保存的状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -564,7 +564,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.Policy.PolicyException">策略级别没有有效的配置文件。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">该策略级别没有有效的配置文件。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="RemoveFullTrustAssembly">
@@ -574,7 +574,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>从策略级别用来评估策略的程序集的列表中移除程序集。</summary>
+        <summary>将程序集从该策略级别用来评估策略的程序集列表中移除。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RemoveFullTrustAssembly">
@@ -618,8 +618,8 @@
         <Parameter Name="sn" Type="System.Security.Policy.StrongName" />
       </Parameters>
       <Docs>
-        <param name="sn"><see cref="T:System.Security.Policy.StrongName" />要从用于评估策略的程序集列表中删除的程序集。</param>
-        <summary>删除具有指定的程序集<see cref="T:System.Security.Policy.StrongName" />从列表中的程序集的策略级别用来评估策略。</summary>
+        <param name="sn">要从用于评估策略的程序集列表中移除的程序集的 <see cref="T:System.Security.Policy.StrongName" />。</param>
+        <summary>将具有指定 <see cref="T:System.Security.Policy.StrongName" /> 的程序集从策略级别用来评估策略的程序集列表中移除。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -629,7 +629,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="sn" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException">使用程序集<see cref="T:System.Security.Policy.StrongName" />指定的<paramref name="sn" />参数没有完全信任。</exception>
+        <exception cref="T:System.ArgumentException">具有 <paramref name="sn" /> 参数所指定的 <see cref="T:System.Security.Policy.StrongName" /> 的程序集未获得完全信任。</exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveFullTrustAssembly">
@@ -673,8 +673,8 @@
         <Parameter Name="snMC" Type="System.Security.Policy.StrongNameMembershipCondition" />
       </Parameters>
       <Docs>
-        <param name="snMC"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />要从用于评估策略的程序集列表中删除的程序集。</param>
-        <summary>删除具有指定的程序集<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />从列表中的程序集的策略级别用来评估策略。</summary>
+        <param name="snMC">要从用于评估策略的程序集列表中移除的程序集的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" />。</param>
+        <summary>将具有指定 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 的程序集从策略级别用来评估策略的程序集列表中移除。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -684,7 +684,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="snMC" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />指定的<paramref name="snMC" />参数没有完全信任。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="snMC" /> 参数所指定的 <see cref="T:System.Security.Policy.StrongNameMembershipCondition" /> 未获得完全信任。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="RemoveNamedPermissionSet">
@@ -694,7 +694,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>删除<see cref="T:System.Security.NamedPermissionSet" />从当前策略级别。</summary>
+        <summary>从当前策略级别中移除 <see cref="T:System.Security.NamedPermissionSet" />。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RemoveNamedPermissionSet">
@@ -729,11 +729,11 @@
         <Parameter Name="permSet" Type="System.Security.NamedPermissionSet" />
       </Parameters>
       <Docs>
-        <param name="permSet"><see cref="T:System.Security.NamedPermissionSet" />若要从当前策略级别中移除。</param>
-        <summary>移除指定<see cref="T:System.Security.NamedPermissionSet" />从当前策略级别。</summary>
-        <returns><see cref="T:System.Security.NamedPermissionSet" />的已删除。</returns>
+        <param name="permSet">要从当前策略级别中移除的 <see cref="T:System.Security.NamedPermissionSet" />。</param>
+        <summary>从当前策略级别中移除指定的 <see cref="T:System.Security.NamedPermissionSet" />。</summary>
+        <returns>已移除的 <see cref="T:System.Security.NamedPermissionSet" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.NamedPermissionSet" />指定的<paramref name="permSet" />找不到参数。</exception>
+        <exception cref="T:System.ArgumentException">未找到 <paramref name="permSet" /> 参数所指定的 <see cref="T:System.Security.NamedPermissionSet" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="permSet" /> 参数为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -770,13 +770,13 @@
       </Parameters>
       <Docs>
         <param name="name">要移除的 <see cref="T:System.Security.NamedPermissionSet" /> 的名称。</param>
-        <summary>删除<see cref="T:System.Security.NamedPermissionSet" />具有从当前策略级别指定的名称。</summary>
-        <returns><see cref="T:System.Security.NamedPermissionSet" />的已删除。</returns>
+        <summary>从当前策略级别中移除具有指定名称的 <see cref="T:System.Security.NamedPermissionSet" />。</summary>
+        <returns>已移除的 <see cref="T:System.Security.NamedPermissionSet" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="name" />参数等于保留的权限集的名称。  
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> 参数等于保留权限集的名称。  
   
-或 
-一个<see cref="T:System.Security.NamedPermissionSet" />找不到具有指定名称。</exception>
+- 或 - 
+找不到具有指定名称的 <see cref="T:System.Security.NamedPermissionSet" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 参数为 <see langword="null" />。</exception>
         <altmember cref="T:System.Security.NamedPermissionSet" />
       </Docs>
@@ -811,7 +811,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回当前策略级别的默认状态。</summary>
+        <summary>将当前策略级别返回到默认状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -853,8 +853,8 @@
         <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
       </Parameters>
       <Docs>
-        <param name="evidence"><see cref="T:System.Security.Policy.Evidence" />用来解析<see cref="T:System.Security.Policy.PolicyLevel" />。</param>
-        <summary>解析策略基于证据的策略级别中，并返回生成<see cref="T:System.Security.Policy.PolicyStatement" />。</summary>
+        <param name="evidence">用于解析 <see cref="T:System.Security.Policy.Evidence" /> 的 <see cref="T:System.Security.Policy.PolicyLevel" />。</param>
+        <summary>根据策略级别的证据移除策略，并返回产生的 <see cref="T:System.Security.Policy.PolicyStatement" />。</summary>
         <returns>生成的 <see cref="T:System.Security.Policy.PolicyStatement" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -875,7 +875,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.Policy.PolicyException">策略级别包含标记为独占的多个匹配代码组。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">策略级别包含多个标记为独占的匹配代码组。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> 参数为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -910,9 +910,9 @@
         <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
       </Parameters>
       <Docs>
-        <param name="evidence"><see cref="T:System.Security.Policy.Evidence" />用于解析策略。</param>
-        <summary>解析策略级别的策略，并返回与证据匹配的代码组树的根。</summary>
-        <returns>一个<see cref="T:System.Security.Policy.CodeGroup" />表示与指定的证据匹配的代码组树的根。</returns>
+        <param name="evidence">用于解析策略的 <see cref="T:System.Security.Policy.Evidence" />。</param>
+        <summary>解析策略级别的策略并返回与证据匹配的代码组树的根。</summary>
+        <returns><see cref="T:System.Security.Policy.CodeGroup" />，表示与指定证据匹配的代码组树的根。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -923,7 +923,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.Policy.PolicyException">策略级别包含标记为独占的多个匹配代码组。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">策略级别包含多个标记为独占的匹配代码组。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> 参数为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -960,7 +960,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置策略级别的根代码组。</summary>
-        <value><see cref="T:System.Security.Policy.CodeGroup" />的策略级别代码组树的根。</value>
+        <value><see cref="T:System.Security.Policy.CodeGroup" />，它是策略级别代码组的树的根。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -969,7 +969,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">值<see cref="P:System.Security.Policy.PolicyLevel.RootCodeGroup" />是<see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Policy.PolicyLevel.RootCodeGroup" /> 的值为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="StoreLocation">
@@ -1002,7 +1002,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取存储策略文件的路径。</summary>
-        <value>存储策略文件路径或<see langword="null" />如果<see cref="T:System.Security.Policy.PolicyLevel" />没有存储位置。</value>
+        <value>存储策略文件的路径，或者 <see langword="null" />（如果 <see cref="T:System.Security.Policy.PolicyLevel" /> 没有存储位置）。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1015,7 +1015,7 @@
   
  ]]></format>
         </remarks>
-        <permission cref="T:System.Security.Permissions.SecurityPermission">能够操作主体对象。 关联枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">能够操作主体对象。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />。</permission>
       </Docs>
     </Member>
     <Member MemberName="ToXml">
@@ -1097,7 +1097,7 @@
   
 4.  应用程序域  
   
- 有关详细信息，请参阅 <xref:System.Security.PolicyLevelType> 。  
+ 有关详情，请参阅<xref:System.Security.PolicyLevelType>。  
   
  ]]></format>
         </remarks>

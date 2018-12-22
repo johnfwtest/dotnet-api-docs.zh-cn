@@ -33,7 +33,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>指定有关文档的打印方式，包括打印，从 Windows 窗体应用程序打印时的打印机信息。</summary>
+    <summary>指定有关在从 Windows 窗体应用程序打印时如何打印文档的信息，包括打印文档的打印机。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -122,8 +122,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示打印机是否支持双面打印。</summary>
-        <value><see langword="true" /> 如果打印机支持双面打印;否则为<see langword="false" />。</value>
+        <summary>获取指示打印机是否支持双面打印的值。</summary>
+        <value>若打印机支持双面打印，则为 <see langword="true" />，反之，则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -166,7 +166,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建一份<see cref="T:System.Drawing.Printing.PrinterSettings" />。</summary>
+        <summary>创建此 <see cref="T:System.Drawing.Printing.PrinterSettings" /> 的副本。</summary>
         <returns>该对象的一个副本。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -194,8 +194,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示打印的文档是否逐份打印。</summary>
-        <value><see langword="true" /> 如果逐份打印的文档否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示打印文档是否逐份打印。</summary>
+        <value>若文档是逐份打印的，则为 <see langword="true" />；反之，则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -235,7 +235,7 @@
         <ReturnType>System.Int16</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要打印的文档的副本数。</summary>
+        <summary>获取或设置要打印的文档份数。</summary>
         <value>要打印的份数。 默认值为 1。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -248,7 +248,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">值<see cref="P:System.Drawing.Printing.PrinterSettings.Copies" />属性小于零。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.Copies" /> 属性的值小于零。</exception>
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.DefaultPageSettings" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MaximumCopies" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.Collate" />
@@ -268,7 +268,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回<see cref="T:System.Drawing.Graphics" />包含打印机信息。</summary>
+        <summary>返回 <see cref="T:System.Drawing.Graphics" />，它包含打印机信息。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CreateMeasurementGraphics">
@@ -295,8 +295,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回<see cref="T:System.Drawing.Graphics" />包含创建时非常有用的打印机信息<see cref="T:System.Drawing.Printing.PrintDocument" />。</summary>
-        <returns>一个<see cref="T:System.Drawing.Graphics" />包含来自打印机的信息。</returns>
+        <summary>返回 <see cref="T:System.Drawing.Graphics" />，它包含创建 <see cref="T:System.Drawing.Printing.PrintDocument" /> 时有用的打印机信息。</summary>
+        <returns><see cref="T:System.Drawing.Graphics" />，包含来自打印机的信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -305,7 +305,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">中指定的打印机<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />属性不存在。</exception>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException"><see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 属性中命名的打印机不存在。</exception>
         <altmember cref="T:System.Drawing.Printing.PrintDocument" />
         <altmember cref="T:System.Drawing.Graphics" />
       </Docs>
@@ -335,9 +335,9 @@
         <Parameter Name="honorOriginAtMargins" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="honorOriginAtMargins"><see langword="true" /> 若要指示边距; 处的原点否则为<see langword="false" />。</param>
-        <summary>返回<see cref="T:System.Drawing.Graphics" />包含打印机信息，有选择地指定边距处的原点。</summary>
-        <returns>一个<see cref="T:System.Drawing.Graphics" />包含打印机信息从<see cref="T:System.Drawing.Printing.PageSettings" />。</returns>
+        <param name="honorOriginAtMargins"><see langword="true" /> 表示边距处的原点；否则为 <see langword="false" />。</param>
+        <summary>返回包含打印机信息的 <see cref="T:System.Drawing.Graphics" />，选择性地指定边距处的原点。</summary>
+        <returns><see cref="T:System.Drawing.Graphics" />，包含来自 <see cref="T:System.Drawing.Printing.PageSettings" /> 的打印机信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -372,9 +372,9 @@
         <Parameter Name="pageSettings" Type="System.Drawing.Printing.PageSettings" />
       </Parameters>
       <Docs>
-        <param name="pageSettings"><see cref="T:System.Drawing.Printing.PageSettings" />检索的图形对象。</param>
-        <summary>返回<see cref="T:System.Drawing.Graphics" />，包含具有指定关联的打印机信息<see cref="T:System.Drawing.Printing.PageSettings" />。</summary>
-        <returns>一个<see cref="T:System.Drawing.Graphics" />包含打印机信息从<see cref="T:System.Drawing.Printing.PageSettings" />。</returns>
+        <param name="pageSettings">要检索其图形对象的 <see cref="T:System.Drawing.Printing.PageSettings" />。</param>
+        <summary>返回 <see cref="T:System.Drawing.Graphics" />，包含与指定 <see cref="T:System.Drawing.Printing.PageSettings" /> 关联的打印机信息。</summary>
+        <returns><see cref="T:System.Drawing.Graphics" />，包含来自 <see cref="T:System.Drawing.Printing.PageSettings" /> 的打印机信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -410,10 +410,10 @@
         <Parameter Name="honorOriginAtMargins" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="pageSettings"><see cref="T:System.Drawing.Printing.PageSettings" />来检索<see cref="T:System.Drawing.Graphics" />对象。</param>
-        <param name="honorOriginAtMargins"><see langword="true" /> 若要指定边距; 处的原点否则为<see langword="false" />。</param>
-        <summary>创建<see cref="T:System.Drawing.Graphics" />与指定的页设置关联，并选择性地指定边距处的原点。</summary>
-        <returns>一个<see cref="T:System.Drawing.Graphics" />包含打印机信息从<see cref="T:System.Drawing.Printing.PageSettings" />。</returns>
+        <param name="pageSettings">要检索其 <see cref="T:System.Drawing.Printing.PageSettings" /> 对象的 <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="honorOriginAtMargins"><see langword="true" /> 即指定边距处的原点；否则为 <see langword="false" />。</param>
+        <summary>创建与指定页设置关联的 <see cref="T:System.Drawing.Graphics" /> 并选择性地指定边距处的原点。</summary>
+        <returns><see cref="T:System.Drawing.Graphics" />，包含来自 <see cref="T:System.Drawing.Printing.PageSettings" /> 的打印机信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -452,8 +452,8 @@
         <ReturnType>System.Drawing.Printing.PageSettings</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取默认值为此打印机的页设置。</summary>
-        <value>一个<see cref="T:System.Drawing.Printing.PageSettings" />，表示此台打印机的默认页设置。</value>
+        <summary>获取此打印机的默认页设置。</summary>
+        <value><see cref="T:System.Drawing.Printing.PageSettings" />，它表示此台打印机的默认页设置。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -498,7 +498,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">值<see cref="P:System.Drawing.Printing.PrinterSettings.Duplex" />属性不是其中一个<see cref="T:System.Drawing.Printing.Duplex" />值。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.Duplex" /> 属性的值并非 <see cref="T:System.Drawing.Printing.Duplex" /> 值之一。</exception>
         <altmember cref="T:System.Drawing.Printing.Duplex" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.CanDuplex" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.Copies" />
@@ -552,7 +552,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />属性的值小于零。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> 属性的值小于零。</exception>
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MaximumPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MinimumPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.PrintRange" />
@@ -565,7 +565,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>创建句柄<see langword="DEVMODE" />结构，它对应于打印机设置。</summary>
+        <summary>创建与打印机设置相对应的 <see langword="DEVMODE" /> 结构的句柄。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetHdevmode">
@@ -592,8 +592,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建句柄<see langword="DEVMODE" />结构，它对应于打印机设置。</summary>
-        <returns>句柄<see langword="DEVMODE" />结构。</returns>
+        <summary>创建与打印机设置相对应的 <see langword="DEVMODE" /> 结构的句柄。</summary>
+        <returns><see langword="DEVMODE" /> 结构的句柄。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -602,8 +602,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">中指定的打印机<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />属性不存在。</exception>
-        <exception cref="T:System.ComponentModel.Win32Exception">无法检索打印机的初始化信息。</exception>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException"><see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 属性中命名的打印机不存在。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">未能检索打印机的初始化信息。</exception>
         <permission cref="T:System.Drawing.Printing.PrintingPermission">针对打印和对网络上的所有打印机的访问。 关联的枚举： <see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
       </Docs>
     </Member>
@@ -632,9 +632,9 @@
         <Parameter Name="pageSettings" Type="System.Drawing.Printing.PageSettings" />
       </Parameters>
       <Docs>
-        <param name="pageSettings"><see cref="T:System.Drawing.Printing.PageSettings" />对象的<see langword="DEVMODE" />结构的句柄对应。</param>
-        <summary>创建句柄<see langword="DEVMODE" />结构，它对应于打印机和通过指定的页设置<paramref name="pageSettings" />参数。</summary>
-        <returns>句柄<see langword="DEVMODE" />结构。</returns>
+        <param name="pageSettings"><see langword="DEVMODE" /> 结构的句柄所对应于的 <see cref="T:System.Drawing.Printing.PageSettings" /> 对象。</param>
+        <summary>创建一个 <see langword="DEVMODE" /> 结构的句柄，它对应于通过 <paramref name="pageSettings" /> 参数指定的打印机和页设置。</summary>
+        <returns><see langword="DEVMODE" /> 结构的句柄。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -645,8 +645,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">中指定的打印机<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />属性不存在。</exception>
-        <exception cref="T:System.ComponentModel.Win32Exception">无法检索打印机的初始化信息。</exception>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException"><see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 属性中命名的打印机不存在。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">未能检索打印机的初始化信息。</exception>
         <permission cref="T:System.Drawing.Printing.PrintingPermission">针对打印和对网络上的所有打印机的访问。 关联的枚举： <see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
       </Docs>
     </Member>
@@ -674,8 +674,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建句柄<see langword="DEVNAMES" />结构，它对应于打印机设置。</summary>
-        <returns>句柄<see langword="DEVNAMES" />结构。</returns>
+        <summary>创建与打印机设置相对应的 <see langword="DEVNAMES" /> 结构的句柄。</summary>
+        <returns><see langword="DEVNAMES" /> 结构的句柄。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -710,8 +710,8 @@
         <ReturnType>System.Drawing.Printing.PrinterSettings+StringCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在计算机上安装的所有打印机的名称。</summary>
-        <value>一个<see cref="T:System.Drawing.Printing.PrinterSettings.StringCollection" />，表示在计算机上安装的所有打印机的名称。</value>
+        <summary>获取安装在计算机上所有打印机的名称。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterSettings.StringCollection" />，它表示安装在计算机上所有打印机的名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -757,8 +757,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />属性指定默认打印机，除非用户显式设置<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />。</summary>
-        <value><see langword="true" /> 如果<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />指定默认打印机; 否则为<see langword="false" />。</value>
+        <summary>获取一个值，该值指示 <see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 属性是否指定默认打印机（用户显式设置 <see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 的情况除外）。</summary>
+        <value>若 <see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 指定默认打印机，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -813,7 +813,7 @@
       <Docs>
         <param name="image">要打印的图像。</param>
         <summary>获取一个值，该值指示打印机是否支持打印指定的图像文件。</summary>
-        <returns><see langword="true" /> 如果打印机支持打印指定的图像;，否则为<see langword="false" />。</returns>
+        <returns>若打印机支持打印指定的图像，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -841,9 +841,9 @@
         <Parameter Name="imageFormat" Type="System.Drawing.Imaging.ImageFormat" />
       </Parameters>
       <Docs>
-        <param name="imageFormat"><see cref="T:System.Drawing.Imaging.ImageFormat" />打印。</param>
+        <param name="imageFormat">要打印的 <see cref="T:System.Drawing.Imaging.ImageFormat" />。</param>
         <summary>返回一个值，该值指示打印机是否支持打印指定的图像格式。</summary>
-        <returns><see langword="true" /> 如果打印机支持打印指定的图像格式;，否则为<see langword="false" />。</returns>
+        <returns>若打印机支持打印指定的图像格式，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -870,8 +870,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取指示打印机是否绘图仪的值。</summary>
-        <value><see langword="true" /> 如果打印机是绘图仪;<see langword="false" />如果打印机是光栅。</value>
+        <summary>获取指示该打印机是否是绘图仪的值。</summary>
+        <value>若打印机是绘图仪，则为 <see langword="true" />；若打印机是光栅打印机，则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -906,8 +906,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />属性指定了有效的打印机。</summary>
-        <value><see langword="true" /> 如果<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />属性指定了有效的打印机; 否则为<see langword="false" />。</value>
+        <summary>获取一个值，该值指示 <see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 属性是否指定了有效的打印机。</summary>
+        <value>若 <see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" /> 属性指定了有效的打印机，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -959,8 +959,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取旋转纵向方向时以生成横向方向的角度，以度为单位。</summary>
-        <value>角度 （以度为单位，旋转纵向方向以生成横向方向）。</value>
+        <summary>获取旋转纵向方向以生成横向方向的角度，以度为单位。</summary>
+        <value>从纵向到横向所需旋转的角度（以度为单位）。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -996,8 +996,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取最大的打印机使用户能够一次打印的份数。</summary>
-        <value>最大打印机使用户能够一次打印的份数。</value>
+        <summary>获取打印机允许用户一次打印的最大份数。</summary>
+        <value>打印机允许用户一次打印的最大份数。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1037,8 +1037,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置的最大<see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />或<see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" />可选择在<see cref="T:System.Windows.Forms.PrintDialog" />。</summary>
-        <value>最大值<see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />或<see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" />可选择在<see cref="T:System.Windows.Forms.PrintDialog" />。</value>
+        <summary>获取或设置可以在 <see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> 中选定的最大的 <see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> 或 <see cref="T:System.Windows.Forms.PrintDialog" />。</summary>
+        <value>可以从 <see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> 中选定的最大的 <see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> 或 <see cref="T:System.Windows.Forms.PrintDialog" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1047,7 +1047,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">值<see cref="P:System.Drawing.Printing.PrinterSettings.MaximumPage" />属性小于零。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.MaximumPage" /> 属性的值小于零。</exception>
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MinimumPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.PrintRange" />
@@ -1082,8 +1082,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置所需的最低<see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />或<see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" />可选择在<see cref="T:System.Windows.Forms.PrintDialog" />。</summary>
-        <value>所需的最低<see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />或<see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" />可选择在<see cref="T:System.Windows.Forms.PrintDialog" />。</value>
+        <summary>获取或设置可以在 <see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> 中选定的最小的 <see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> 或 <see cref="T:System.Windows.Forms.PrintDialog" />。</summary>
+        <value>可以在 <see cref="P:System.Drawing.Printing.PrinterSettings.FromPage" /> 中选定的最小的 <see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> 或 <see cref="T:System.Windows.Forms.PrintDialog" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1092,7 +1092,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">值<see cref="P:System.Drawing.Printing.PrinterSettings.MinimumPage" />属性小于零。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.MinimumPage" /> 属性的值小于零。</exception>
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MaximumPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.PrintRange" />
@@ -1122,8 +1122,8 @@
         <ReturnType>System.Drawing.Printing.PrinterSettings+PaperSizeCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取受此打印机的纸张大小。</summary>
-        <value>一个<see cref="T:System.Drawing.Printing.PrinterSettings.PaperSizeCollection" />，表示此台打印机支持的纸张大小。</value>
+        <summary>获取该打印机支持的纸张大小。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterSettings.PaperSizeCollection" />，它表示此台打印机所支持的纸张大小。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1176,8 +1176,8 @@
         <ReturnType>System.Drawing.Printing.PrinterSettings+PaperSourceCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取打印机可用的纸张来源纸盒。</summary>
-        <value>一个<see cref="T:System.Drawing.Printing.PrinterSettings.PaperSourceCollection" />，它表示此台打印机可用的纸张来源纸盒。</value>
+        <summary>获取打印机上可用的纸张来源纸盒。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterSettings.PaperSourceCollection" />，表示此台打印机上可用的纸张来源纸盒。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1287,8 +1287,8 @@
         <ReturnType>System.Drawing.Printing.PrinterSettings+PrinterResolutionCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取该打印机支持的所有解决方法。</summary>
-        <value>一个<see cref="T:System.Drawing.Printing.PrinterSettings.PrinterResolutionCollection" />，它表示此台打印机支持的解决方法。</value>
+        <summary>获取该打印机支持的所有分辨率。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterSettings.PrinterResolutionCollection" />，它显示此打印机所支持的分辨率。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1339,8 +1339,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置打印到文件时，该文件名。</summary>
-        <value>打印到文件时文件名称。</value>
+        <summary>打印到文件时，获取或设置文件名。</summary>
+        <value>打印到文件时的文件名。</value>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.FileIOPermission">有关读取访问权限设置的文件的名称时获取文件的名称和写访问权限时。 相关枚举<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />。</permission>
       </Docs>
@@ -1387,7 +1387,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">值<see cref="P:System.Drawing.Printing.PrinterSettings.PrintRange" />属性不是其中一个<see cref="T:System.Drawing.Printing.PrintRange" />值。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.PrintRange" /> 属性的值并非 <see cref="T:System.Drawing.Printing.PrintRange" /> 值之一。</exception>
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MaximumPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MinimumPage" />
@@ -1426,8 +1426,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否打印输出发送到文件而不是一个端口。</summary>
-        <value><see langword="true" /> 如果打印输出发送到一个文件;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示打印输出是否发送到文件，而不发送到端口。</summary>
+        <value>若打印输出发送到文件，则为 <see langword="true" />；反之，则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1468,8 +1468,8 @@
         <Parameter Name="hdevmode" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <param name="hdevmode">Win32 窗口的句柄<see langword="DEVMODE" />结构。</param>
-        <summary>将复制的相关信息从给定句柄和到<see cref="T:System.Drawing.Printing.PrinterSettings" />。</summary>
+        <param name="hdevmode">Win32 <see langword="DEVMODE" /> 结构的句柄。</param>
+        <summary>将相关信息从给定句柄复制到 <see cref="T:System.Drawing.Printing.PrinterSettings" /> 中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1508,8 +1508,8 @@
         <Parameter Name="hdevnames" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <param name="hdevnames">Win32 窗口的句柄<see langword="DEVNAMES" />结构。</param>
-        <summary>将复制的相关信息从给定句柄和到<see cref="T:System.Drawing.Printing.PrinterSettings" />。</summary>
+        <param name="hdevnames">Win32 <see langword="DEVNAMES" /> 结构的句柄。</param>
+        <summary>将相关信息从给定句柄复制到 <see cref="T:System.Drawing.Printing.PrinterSettings" /> 中。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">打印机句柄无效。</exception>
         <permission cref="T:System.Drawing.Printing.PrintingPermission">针对打印和对网络上的所有打印机的访问。 关联的枚举： <see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
@@ -1538,8 +1538,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示该打印机是否支持彩色打印。</summary>
-        <value><see langword="true" /> 如果此打印机支持彩色打印否则为<see langword="false" />。</value>
+        <summary>获取指示该打印机是否支持彩色打印的值。</summary>
+        <value>若该打印机支持彩色打印，则为 <see langword="true" />；反之，则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1590,7 +1590,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要打印的最后一页的数目。</summary>
+        <summary>获取或设置要打印的最后一页的页码。</summary>
         <value>要打印的最后一页的页码。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1604,7 +1604,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">值<see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" />属性小于零。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.PrinterSettings.ToPage" /> 属性的值小于零。</exception>
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.FromPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MaximumPage" />
         <altmember cref="P:System.Drawing.Printing.PrinterSettings.MinimumPage" />
@@ -1635,7 +1635,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>提供以下信息<see cref="T:System.Drawing.Printing.PrinterSettings" />以字符串形式。</summary>
+        <summary>以字符串形式提供有关 <see cref="T:System.Drawing.Printing.PrinterSettings" /> 的信息。</summary>
         <returns>一个字符串。</returns>
         <remarks>To be added.</remarks>
       </Docs>
