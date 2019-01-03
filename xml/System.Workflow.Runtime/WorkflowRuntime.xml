@@ -1,5 +1,5 @@
 <Type Name="WorkflowRuntime" FullName="System.Workflow.Runtime.WorkflowRuntime">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="62912a088109489fa3be1e9eac166682f7501112" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53391140" /></Metadata><TypeSignature Language="C#" Value="public class WorkflowRuntime : IDisposable, IServiceProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7f7231e23a0b76819757cabf698d136f3256fc40" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53505788" /></Metadata><TypeSignature Language="C#" Value="public class WorkflowRuntime : IDisposable, IServiceProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi WorkflowRuntime extends System.Object implements class System.IDisposable, class System.IServiceProvider" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowRuntime" />
   <TypeSignature Language="VB.NET" Value="Public Class WorkflowRuntime&#xA;Implements IDisposable, IServiceProvider" />
@@ -85,7 +85,7 @@
   
  下表显示 <xref:System.Workflow.Runtime.WorkflowRuntime> 类的实例的初始属性值。  
   
-|属性|初始值|  
+|Property|初始值|  
 |--------------|-------------------|  
 |<xref:System.Workflow.Runtime.WorkflowRuntime.Name%2A>|"WorkflowRuntime"|  
 |<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>|`false`|  
@@ -242,7 +242,7 @@
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> 已释放。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="service" /> 已向工作流运行时引擎注册。  
   
-或 
+- 或 - 
  <paramref name="service" /> 为核心服务，且工作流运行时引擎已运行（此时 <see cref="P:System.Workflow.Runtime.WorkflowRuntime.IsStarted" /> 为 <see langword="true" />）。</exception>
       </Docs>
     </Member>
@@ -739,6 +739,9 @@ static void Main(string[] args)
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ GetService(Type ^ serviceType);" />
       <MemberSignature Language="F#" Value="abstract member GetService : Type -&gt; obj&#xA;override this.GetService : Type -&gt; obj" Usage="workflowRuntime.GetService serviceType" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IServiceProvider.GetService(System.Type)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1107,7 +1110,7 @@ static void Main(string[] args)
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> 已释放。</exception>
         <exception cref="T:System.InvalidOperationException">工作流 <see langword="CommitWorkBatch" /> 服务向此 <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> 注册了多个服务。  
   
-或 
+- 或 - 
 注册到此 <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> 的计划程序服务有多个。  
   
 - 或 - 

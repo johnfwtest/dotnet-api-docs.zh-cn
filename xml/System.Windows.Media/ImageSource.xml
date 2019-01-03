@@ -1,5 +1,5 @@
 <Type Name="ImageSource" FullName="System.Windows.Media.ImageSource">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="607befea6feeaa4872e2beb3685e5cb1194aa50a" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48726904" /></Metadata><TypeSignature Language="C#" Value="public abstract class ImageSource : System.Windows.Media.Animation.Animatable, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e794c929eab7ef8ddc3bd134fbd5627a4a9cd015" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53480633" /></Metadata><TypeSignature Language="C#" Value="public abstract class ImageSource : System.Windows.Media.Animation.Animatable, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ImageSource extends System.Windows.Media.Animation.Animatable implements class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.ImageSource" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ImageSource&#xA;Inherits Animatable&#xA;Implements IFormattable" />
@@ -52,8 +52,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建此 <see cref="T:System.Windows.Media.ImageSource" /> 的可修改复本，并制作该对象的值的深层副本。 在复制依赖项属性时，此方法会复制资源引用和数据绑定（但可能不再解析），但不复制动画或其当前值。</summary>
-        <returns>当前对象的可修改复本。 即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="false" />，所克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性也将为 <see langword="true." />。</returns>
+        <summary>创建此 <see cref="T:System.Windows.Media.ImageSource" /> 的可修改克隆，从而深度复制此对象的值。 在复制依赖项属性时，此方法会复制资源引用和数据绑定（但可能不再解析），但不复制动画或其当前值。</summary>
+        <returns>当前对象的可修改复本。 即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="true." />，所克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性也将为 <see langword="false" /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -72,7 +72,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.ImageSource.CloneCurrentValue" />
       <MemberSignature Language="VB.NET" Value="Public Function CloneCurrentValue () As ImageSource" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Media::ImageSource ^ CloneCurrentValue();" />
-      <MemberSignature Language="F#" Value="member this.CloneCurrentValue : unit -&gt; System.Windows.Media.ImageSource" Usage="imageSource.CloneCurrentValue " />
+      <MemberSignature Language="F#" Value="override this.CloneCurrentValue : unit -&gt; System.Windows.Media.ImageSource" Usage="imageSource.CloneCurrentValue " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -84,8 +84,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建此 <see cref="T:System.Windows.Media.ImageSource" /> 对象的可修改复本，从而深度复制此对象的当前值。 不复制资源引用、数据绑定和动画，但复制其当前值。</summary>
-        <returns>当前对象的可修改复本。 即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="false" />，所克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性也将为 <see langword="true" />。</returns>
+        <summary>创建此 <see cref="T:System.Windows.Media.ImageSource" /> 对象的可修改复本，从而深度复制此对象的当前值。 不复制资源引用、数据绑定和动画，而是复制其当前值。</summary>
+        <returns>当前对象的可修改复本。 即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="true" />，所克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性也将为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -196,13 +196,13 @@
         <param name="format">要使用的格式。  
   
 - 或 - 
-null 引用（Visual Basic 中为 <see langword="Nothing" />）将使用为 <see cref="T:System.IFormattable" /> 实现的类型所定义的默认格式。</param>
+null 引用（在 Visual Basic 中为 <see langword="Nothing" />），用于使用为 <see cref="T:System.IFormattable" /> 实现的类型定义的默认格式。</param>
         <param name="provider">要用于对值设置格式的提供程序。  
   
 - 或 - 
-null 引用（Visual Basic 中为 <see langword="Nothing" />）将从操作系统的当前区域设置中获取数字格式信息。</param>
-        <summary>使用指定的格式格式化当前实例的值。</summary>
-        <returns>使用指定格式的当前实例的值。</returns>
+null 引用（在 Visual Basic 中为 <see langword="Nothing" />），用于从操作系统的当前区域设置获取数字格式信息。</param>
+        <summary>使用指定格式对当前实例的值设置格式。</summary>
+        <returns>采用指定格式的当前实例的值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,7 +221,7 @@ null 引用（Visual Basic 中为 <see langword="Nothing" />）将从操作系�
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.ImageSource.ToString" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
-      <MemberSignature Language="F#" Value="abstract member ToString : unit -&gt; string&#xA;override this.ToString : unit -&gt; string" Usage="imageSource.ToString " />
+      <MemberSignature Language="F#" Value="override this.ToString : unit -&gt; string" Usage="imageSource.ToString " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -244,7 +244,7 @@ null 引用（Visual Basic 中为 <see langword="Nothing" />）将从操作系�
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.ImageSource.ToString(System.IFormatProvider)" />
       <MemberSignature Language="VB.NET" Value="Public Function ToString (provider As IFormatProvider) As String" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ ToString(IFormatProvider ^ provider);" />
-      <MemberSignature Language="F#" Value="member this.ToString : IFormatProvider -&gt; string" Usage="imageSource.ToString provider" />
+      <MemberSignature Language="F#" Value="override this.ToString : IFormatProvider -&gt; string" Usage="imageSource.ToString provider" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
