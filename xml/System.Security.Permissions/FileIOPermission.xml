@@ -1,5 +1,5 @@
 <Type Name="FileIOPermission" FullName="System.Security.Permissions.FileIOPermission">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b4a0bc343a0c062f4e0f18879d09478614cbc7a1" /><Meta Name="ms.sourcegitcommit" Value="d40b35262cbc997b79bf76da3a39ccf59b738efc" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/05/2018" /><Meta Name="ms.locfileid" Value="52911839" /></Metadata><TypeSignature Language="C#" Value="public sealed class FileIOPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="58e2c3d29a5407c6176e9461dade418dae34fbb1" /><Meta Name="ms.sourcegitcommit" Value="9802d4c6745a8ae514b26f144fb3969265b224ba" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/22/2018" /><Meta Name="ms.locfileid" Value="53750252" /></Metadata><TypeSignature Language="C#" Value="public sealed class FileIOPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed FileIOPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Security.Permissions.FileIOPermission" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FileIOPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
@@ -41,13 +41,13 @@
 ## Remarks  
  此权限可区分以下四种类型的文件 IO 访问提供的<xref:System.Security.Permissions.FileIOPermissionAccess>:  
   
--   `Read`： 对文件或访问文件，例如它的长度或上次修改时间有关的信息的内容的读取访问。  
+-   `Read`：对文件或访问文件，例如它的长度或上次修改时间有关的信息的内容读取访问。  
   
--   `Write`： 对文件或更改的文件，如其名称信息的访问权限的内容的写入访问。 此外可以删除和覆盖。  
+-   `Write`：写入到文件或更改的文件，如其名称信息的访问权限的内容的访问权限。 此外可以删除和覆盖。  
   
--   `Append`： 可以写入到只有文件的末尾。 无法读取。  
+-   `Append`：要写入到文件仅末尾的功能。 无法读取。  
   
--   `PathDiscovery`： 访问路径本身中的信息。 这有助于保护敏感信息在路径中，如用户名称，以及有关路径中显示的目录结构的信息。 此值不授予对路径所指代的文件或文件夹的访问权限。  
+-   `PathDiscovery`：对路径本身中的信息的访问。 这有助于保护敏感信息在路径中，如用户名称，以及有关路径中显示的目录结构的信息。 此值不授予对路径所指代的文件或文件夹的访问权限。  
   
 > [!NOTE]
 >  为提供<xref:System.Security.Permissions.FileIOPermissionAccess.Write>对程序集的访问是类似于它授予完全信任。 如果应用程序不应写入到文件系统，它不应具有<xref:System.Security.Permissions.FileIOPermissionAccess.Write>访问。  
@@ -61,7 +61,7 @@
  文件夹的访问权限就意味着访问包含，以及对所有文件和文件夹及其子文件夹中的所有文件。 例如， `Read` C:\folder1\ 访问意味着`Read`权 C:\folder1\file1.txt，C:\folder1\folder2\\，C:\folder1\folder2\file2.txt，依次类推。  
   
 > [!NOTE]
->  在之前的.NET framework 版本[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，可以使用<xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType>方法，以防止对系统资源的意外访问受信任的代码。 <xref:System.Security.CodeAccessPermission.Deny%2A> 现已过时，并对资源的访问现在只能由授予的权限集的程序集来决定。 若要限制访问文件，必须运行沙盒中部分受信任的代码，并将它分配给代码可以访问的资源的权限。 有关在沙盒中运行的应用程序的信息，请参阅[如何： 运行部分受信任的代码在沙盒中](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)。  
+>  在之前的.NET framework 版本[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，可以使用<xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType>方法，以防止对系统资源的意外访问受信任的代码。 <xref:System.Security.CodeAccessPermission.Deny%2A> 现已过时，并对资源的访问现在只能由授予的权限集的程序集来决定。 若要限制访问文件，必须运行沙盒中部分受信任的代码，并将它分配给代码可以访问的资源的权限。 有关在沙盒中运行的应用程序的信息，请参阅[如何：运行沙盒中部分受信任的代码](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)。  
   
    
   
@@ -192,10 +192,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数不是有效的字符串。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数未指定文件或目录的绝对路径。</exception>
       </Docs>
     </Member>
@@ -242,7 +242,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="pathList" /> 数组中的条目不是有效的字符串。</exception>
       </Docs>
     </Member>
@@ -283,7 +283,7 @@
       <Docs>
         <param name="access"><see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 枚举值的按位组合。</param>
         <param name="control"><see cref="T:System.Security.AccessControl.AccessControlActions" /> 枚举值的按位组合。</param>
-        <param name="actions">To be added.</param>
+        <param name="actions"><see cref="T:System.Security.AccessControl.AccessControlActions" /> 枚举值的按位组合。</param>
         <param name="path">文件或目录的绝对路径。</param>
         <summary>使用对指定文件或目录的指定访问权限和对文件控制信息的指定访问权限初始化 <see cref="T:System.Security.Permissions.FileIOPermission" /> 类的新实例。</summary>
         <remarks>
@@ -301,10 +301,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数不是有效的字符串。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数未指定文件或目录的绝对路径。</exception>
       </Docs>
     </Member>
@@ -345,7 +345,7 @@
       <Docs>
         <param name="access"><see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 枚举值的按位组合。</param>
         <param name="control"><see cref="T:System.Security.AccessControl.AccessControlActions" /> 枚举值的按位组合。</param>
-        <param name="actions">To be added.</param>
+        <param name="actions"><see cref="T:System.Security.AccessControl.AccessControlActions" /> 枚举值的按位组合。</param>
         <param name="pathList">包含文件和目录的绝对路径的数组。</param>
         <summary>使用对指定文件和目录的指定访问权限和对文件控制信息的指定访问权限初始化 <see cref="T:System.Security.Permissions.FileIOPermission" /> 类的新实例。</summary>
         <remarks>
@@ -363,7 +363,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="pathList" /> 数组中的条目不是有效的字符串。</exception>
       </Docs>
     </Member>
@@ -432,10 +432,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数不是有效的字符串。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数未指定文件或目录的绝对路径。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="path" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException"><paramref name="path" /> 参数的格式无效。</exception>
@@ -487,7 +487,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="pathList" /> 数组中的条目无效。</exception>
         <exception cref="T:System.NotSupportedException"><paramref name="pathList" /> 数组中的条目具有无效的格式。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="pathList" /> 参数为 <see langword="null" />。</exception>
@@ -661,7 +661,7 @@
       </Parameters>
       <Docs>
         <param name="o">要与当前的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 比较的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 对象。</param>
-        <param name="obj">To be added.</param>
+        <param name="obj">要与当前的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 比较的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 对象。</param>
         <summary>确定指定的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 对象是否等于当前的 <see cref="T:System.Security.Permissions.FileIOPermission" />。</summary>
         <returns>如果指定的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 等于当前的 <see cref="T:System.Security.Permissions.FileIOPermission" /> 对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -712,7 +712,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="esd" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="esd" /> 参数不是有效的权限元素。  
   
-或 
+- 或 - 
 <paramref name="esd" /> 参数的版本号不兼容。</exception>
       </Docs>
     </Member>
@@ -814,7 +814,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的一个有效值。  
   
-或 
+- 或 - 
  <paramref name="access" /> 的值是 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.AllAccess" /> ，表示多种文件访问类型，或为 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />，表示任何文件访问类型。</exception>
       </Docs>
     </Member>
@@ -1010,10 +1010,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数不是有效的字符串。  
   
-或 
+- 或 - 
 <paramref name="path" /> 参数未指定文件或目录的绝对路径。</exception>
       </Docs>
     </Member>
@@ -1064,7 +1064,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="access" /> 参数不是 <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 的有效值。  
   
-或 
+- 或 - 
 <paramref name="pathList" /> 参数中的某一项不是有效的字符串。</exception>
       </Docs>
     </Member>

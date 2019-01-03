@@ -1,5 +1,5 @@
 <Type Name="ParallelTimeline" FullName="System.Windows.Media.Animation.ParallelTimeline">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="dc97ff6f56de39d3b10d64c528de8c9a498b173f" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48636745" /></Metadata><TypeSignature Language="C#" Value="public class ParallelTimeline : System.Windows.Media.Animation.TimelineGroup" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="589703875abf106caf74c13e83f0ba9561a312ce" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53475134" /></Metadata><TypeSignature Language="C#" Value="public class ParallelTimeline : System.Windows.Media.Animation.TimelineGroup" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParallelTimeline extends System.Windows.Media.Animation.TimelineGroup" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.ParallelTimeline" />
   <TypeSignature Language="VB.NET" Value="Public Class ParallelTimeline&#xA;Inherits TimelineGroup" />
@@ -215,7 +215,7 @@
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ParallelTimeline.CreateInstanceCore" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateInstanceCore () As Freezable" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Freezable ^ CreateInstanceCore();" />
-      <MemberSignature Language="F#" Value="abstract member CreateInstanceCore : unit -&gt; System.Windows.Freezable&#xA;override this.CreateInstanceCore : unit -&gt; System.Windows.Freezable" Usage="parallelTimeline.CreateInstanceCore " />
+      <MemberSignature Language="F#" Value="override this.CreateInstanceCore : unit -&gt; System.Windows.Freezable" Usage="parallelTimeline.CreateInstanceCore " />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -293,8 +293,8 @@
         <ReturnType>System.Windows.Media.Animation.SlipBehavior</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示此时间线在其一个或多个 <see cref="T:System.Windows.Media.Animation.Timeline" /> 子时间线滑动时的行为方式。</summary>
-        <value>一个指示此时间线在其一个或多个 <see cref="T:System.Windows.Media.Animation.Timeline" /> 子级滑动时的行为方式的值。 默认值为 <see cref="F:System.Windows.Media.Animation.SlipBehavior.Grow" />。</value>
+        <summary>获取或设置一个值，该值指定在其中一个或多个 <see cref="T:System.Windows.Media.Animation.Timeline" /> 子级滑动时此时间线的行为方式。</summary>
+        <value>一个值，它指示在其中一个或多个 <see cref="T:System.Windows.Media.Animation.Timeline" /> 子级滑动时此时间线的行为方式。 默认值为 <see cref="F:System.Windows.Media.Animation.SlipBehavior.Grow" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -303,13 +303,13 @@
   
  这<xref:System.Windows.Media.Animation.Storyboard>播放视频和动画。 当<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>设置为<xref:System.Windows.Media.Animation.SlipBehavior.Grow>并<xref:System.Windows.Media.Animation.Timeline.Duration%2A>属性<xref:System.Windows.Media.Animation.Storyboard>设置为<xref:System.Windows.Duration.Automatic%2A>，则<xref:System.Windows.Media.Animation.Storyboard>变宽，以播放所有媒体和动画。  
   
- ![示意图： slipbehavior 要点示意图键](~/add/media/slipbehaviorkey.png "示意图： slipbehavior 要点示意图密钥")  
+ ![关系图：密钥 slipbehavior 要点示意图](~/add/media/slipbehaviorkey.png "关系图：Slipbehavior")  
   
- ![示意图： SlipBehavior 属性值 Grow](~/add/media/slipbehaviorgrow1.png "示意图： SlipBehavior 属性值 Grow")  
+ ![关系图：SlipBehavior 属性值 Grow](~/add/media/slipbehaviorgrow1.png "关系图：Grow SlipBehavior 属性值")  
   
  这<xref:System.Windows.Media.Animation.Storyboard>已<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>的<xref:System.Windows.Media.Animation.SlipBehavior.Grow>和一个<xref:System.Windows.Media.Animation.Timeline.Duration%2A>的 5 秒，因此媒体和动画 5 秒播放而不考虑滑动了多少。  
   
- ![示意图： SlipBehavior 属性值 Grow](~/add/media/slipbehaviorgrow2.png "示意图： SlipBehavior 属性值 Grow")  
+ ![关系图：SlipBehavior 属性值 Grow](~/add/media/slipbehaviorgrow2.png "关系图：Grow SlipBehavior 属性值")  
   
  这<xref:System.Windows.Media.Animation.Storyboard>已<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>的<xref:System.Windows.Media.Animation.SlipBehavior.Slip>。 请注意， <xref:System.Windows.Media.Animation.DoubleAnimation> (和任何其他非媒体子级的<xref:System.Windows.Media.Animation.Storyboard>) 无法进行除非媒体时间线时也的进展情况。  如果媒体需要一段时间才能加载，或者它缓冲，动画将以它等待 （滑动）。  这样，动画将与单个媒体文件同步。  
   
@@ -317,7 +317,7 @@
   
  这<xref:System.Windows.Media.Animation.Storyboard>已<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>的<xref:System.Windows.Media.Animation.SlipBehavior.Slip>和一个<xref:System.Windows.Media.Animation.Timeline.Duration%2A>为 5 秒。  在此方案中，确保媒体文件和动画播放 5 秒钟。  
   
- ![示意图： slipbehavior 情节提要](~/add/media/slipbehaviorslip2.png "关系图： 演示图板的 SlipBehavior 属性")  
+ ![关系图：演示图板的 SlipBehavior 属性](~/add/media/slipbehaviorslip2.png "关系图：演示图板的 SlipBehavior 属性")  
   
 <a name="dependencyPropertyInfo_SlipBehavior"></a>   
 ## <a name="dependency-property-information"></a>依赖项属性信息  
