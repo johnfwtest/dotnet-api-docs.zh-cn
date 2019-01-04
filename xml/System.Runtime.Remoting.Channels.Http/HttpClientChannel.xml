@@ -1,9 +1,9 @@
 <Type Name="HttpClientChannel" FullName="System.Runtime.Remoting.Channels.Http.HttpClientChannel">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fe49144d346311f97290e3be5174ab5333e714e7" /><Meta Name="ms.sourcegitcommit" Value="9dda17222b9f7d3edf130133bfb1370d5b410a4b" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="09/22/2018" /><Meta Name="ms.locfileid" Value="46592353" /></Metadata><TypeSignature Language="C#" Value="public class HttpClientChannel : System.Runtime.Remoting.Channels.BaseChannelWithProperties, System.Runtime.Remoting.Channels.IChannel, System.Runtime.Remoting.Channels.IChannelSender, System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="27b7ecaa113b722c61463933a57d54671db6f5c4" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53508544" /></Metadata><TypeSignature Language="C#" Value="public class HttpClientChannel : System.Runtime.Remoting.Channels.BaseChannelWithProperties, System.Runtime.Remoting.Channels.IChannelSender, System.Runtime.Remoting.Channels.ISecurableChannel" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpClientChannel extends System.Runtime.Remoting.Channels.BaseChannelWithProperties implements class System.Runtime.Remoting.Channels.IChannel, class System.Runtime.Remoting.Channels.IChannelSender, class System.Runtime.Remoting.Channels.ISecurableChannel" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.Http.HttpClientChannel" />
-  <TypeSignature Language="VB.NET" Value="Public Class HttpClientChannel&#xA;Inherits BaseChannelWithProperties&#xA;Implements IChannel, IChannelSender, ISecurableChannel" />
-  <TypeSignature Language="C++ CLI" Value="public ref class HttpClientChannel : System::Runtime::Remoting::Channels::BaseChannelWithProperties, System::Runtime::Remoting::Channels::IChannel, System::Runtime::Remoting::Channels::IChannelSender, System::Runtime::Remoting::Channels::ISecurableChannel" />
+  <TypeSignature Language="VB.NET" Value="Public Class HttpClientChannel&#xA;Inherits BaseChannelWithProperties&#xA;Implements IChannelSender, ISecurableChannel" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpClientChannel : System::Runtime::Remoting::Channels::BaseChannelWithProperties, System::Runtime::Remoting::Channels::IChannelSender, System::Runtime::Remoting::Channels::ISecurableChannel" />
   <TypeSignature Language="F#" Value="type HttpClientChannel = class&#xA;    inherit BaseChannelWithProperties&#xA;    interface IChannelSender&#xA;    interface IChannel&#xA;    interface ISecurableChannel" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Remoting</AssemblyName>
@@ -201,6 +201,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ChannelName { System::String ^ get(); };" />
       <MemberSignature Language="F#" Value="member this.ChannelName : string" Usage="System.Runtime.Remoting.Channels.Http.HttpClientChannel.ChannelName" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.IChannel.ChannelName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -212,7 +215,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前信道的名称。</summary>
-        <value>一个 <see cref="T:System.String" /> 包含信道名称。</value>
+        <value>一个<see cref="T:System.String" />，其中包含的通道的名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -231,6 +234,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ChannelPriority { int get(); };" />
       <MemberSignature Language="F#" Value="member this.ChannelPriority : int" Usage="System.Runtime.Remoting.Channels.Http.HttpClientChannel.ChannelPriority" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.IChannel.ChannelPriority</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -242,7 +248,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前信道的优先级。</summary>
-        <value>一个整数，表示分配给该信道的优先级。</value>
+        <value>一个整数，表示分配给此信道的优先级。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -261,6 +267,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Runtime::Remoting::Messaging::IMessageSink ^ CreateMessageSink(System::String ^ url, System::Object ^ remoteChannelData, [Runtime::InteropServices::Out] System::String ^ % objectURI);" />
       <MemberSignature Language="F#" Value="abstract member CreateMessageSink : string * obj *  -&gt; System.Runtime.Remoting.Messaging.IMessageSink&#xA;override this.CreateMessageSink : string * obj *  -&gt; System.Runtime.Remoting.Messaging.IMessageSink" Usage="httpClientChannel.CreateMessageSink (url, remoteChannelData, objectURI)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IChannelSender.CreateMessageSink(System.String,System.Object,System.String@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>
@@ -307,6 +316,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSecured { bool get(); void set(bool value); };" />
       <MemberSignature Language="F#" Value="member this.IsSecured : bool with get, set" Usage="System.Runtime.Remoting.Channels.Http.HttpClientChannel.IsSecured" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Remoting.Channels.ISecurableChannel.IsSecured</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -317,7 +329,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置客户端信道是否受保护。</summary>
-        <value>如果客户端信道受保护，则为 <see langword="true" />，否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 否则保护客户端通道<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -344,7 +356,7 @@
       <Docs>
         <param name="key">要检索的信道属性的键。</param>
         <summary>返回指定的信道属性。</summary>
-        <value>一个 <see cref="T:System.Object" />，表示由 <paramref name="key" /> 指定的信道属性。</value>
+        <value>一个<see cref="T:System.Object" />，表示由指定的信道属性<paramref name="key" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -377,7 +389,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取与信道属性关联的键的 <see cref="T:System.Collections.ICollection" /> 。</summary>
-        <value>与信道属性关联的键的 <see cref="T:System.Collections.ICollection" />。</value>
+        <value>一个<see cref="T:System.Collections.ICollection" />的与之关联的信道属性的键。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -405,6 +417,9 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::String ^ Parse(System::String ^ url, [Runtime::InteropServices::Out] System::String ^ % objectURI);" />
       <MemberSignature Language="F#" Value="abstract member Parse : string *  -&gt; string&#xA;override this.Parse : string *  -&gt; string" Usage="httpClientChannel.Parse (url, objectURI)" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Channels.IChannel.Parse(System.String,System.String@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Remoting</AssemblyName>
         <AssemblyVersion>1.0.5000.0</AssemblyVersion>

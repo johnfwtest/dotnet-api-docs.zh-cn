@@ -1,5 +1,5 @@
 <Type Name="HwndSource" FullName="System.Windows.Interop.HwndSource">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c2546228b5a14a651f38af57edcd738eef883ae1" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52737745" /></Metadata><TypeSignature Language="C#" Value="public class HwndSource : System.Windows.PresentationSource, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3cc8175bf9daa0180e48f51319e301bc465242a1" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53505686" /></Metadata><TypeSignature Language="C#" Value="public class HwndSource : System.Windows.PresentationSource, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi HwndSource extends System.Windows.PresentationSource implements class System.IDisposable, class System.Windows.Interop.IKeyboardInputSink, class System.Windows.Interop.IWin32Window" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Interop.HwndSource" />
   <TypeSignature Language="VB.NET" Value="Public Class HwndSource&#xA;Inherits PresentationSource&#xA;Implements IDisposable, IKeyboardInputSink, IWin32Window" />
@@ -56,7 +56,7 @@
   
 -   窗口中，其中包括是否指定的大小，或应根据确定的大小的初始大小[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]内容。  
   
--   父窗口。  
+-   父窗口中。  
   
 -   <xref:System.Windows.Interop.HwndSourceHook>要包含在窗口过程链中。 如果在构造时指定了挂钩，它接收窗口的所有消息。 可以使用<xref:System.Windows.Interop.HwndSource.AddHook%2A>来添加挂钩后创建窗口。  
   
@@ -443,7 +443,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一系列注册的输入接收器。</summary>
-        <value>键盘输入接收器的枚举。</value>
+        <value>枚举的键盘输入接收器。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -813,7 +813,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，指示是否已对此 <see cref="M:System.Windows.Interop.HwndSource.Dispose" /> 调用 <see cref="T:System.Windows.Interop.HwndSource" />。</summary>
-        <value>如果已对该对象调用了 <see cref="M:System.Windows.Interop.HwndSource.Dispose" />，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果对象已有<see cref="M:System.Windows.Interop.HwndSource.Dispose" />对其调用; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -850,7 +850,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置对组件容器的 <see cref="T:System.Windows.Interop.IKeyboardInputSite" /> 接口的引用。</summary>
-        <value>对容器的 <see cref="T:System.Windows.Interop.IKeyboardInputSite" /> 接口的引用；或者，如果未分配站点，则为 <see langword="null" />。 默认值为 <see langword="null" />。</value>
+        <value>对容器的引用<see cref="T:System.Windows.Interop.IKeyboardInputSite" />接口; 或<see langword="null" />如果没有站点分配。 默认值为 <see langword="null" />。</value>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">若要设置此属性。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
         <altmember cref="P:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />
@@ -926,7 +926,7 @@
         <param name="msg">助记键和关联数据的消息。</param>
         <param name="modifiers">修改键。</param>
         <summary>调用此接收器的助记键（访问键）之一时调用。</summary>
-        <returns>如果消息已得到处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果消息已处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException"><paramref name="msg" /> 不是 WM_KEYDOWN、WM_SYSKEYDOWN、WM_CHAR 或 WM_DEADCHAR。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">若要调用此方法。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
@@ -1029,7 +1029,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取窗口的 <see cref="T:System.Windows.Input.RestoreFocusMode" />。</summary>
-        <value>窗口的 <see cref="T:System.Windows.Input.RestoreFocusMode" />。</value>
+        <value><see cref="T:System.Windows.Input.RestoreFocusMode" />窗口。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1101,7 +1101,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置窗口是否根据其内容调整大小以及如何调整大小。</summary>
-        <value>枚举值之一。 默认值为 <see cref="F:System.Windows.SizeToContent.Manual" />，它指定窗口不会根据内容调整大小。</value>
+        <value>枚举值之一。 默认值是<see cref="F:System.Windows.SizeToContent.Manual" />，它指定窗口未设置其内容大小。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1152,6 +1152,9 @@
       <MemberSignature Language="VB.NET" Value="Function HasFocusWithin () As Boolean Implements IKeyboardInputSink.HasFocusWithin" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.Windows.Interop.IKeyboardInputSink.HasFocusWithin() = System::Windows::Interop::IKeyboardInputSink::HasFocusWithin;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1173,7 +1176,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1187,6 +1190,9 @@
       <MemberSignature Language="C++ CLI" Value="property System::Windows::Interop::IKeyboardInputSite ^ System::Windows::Interop::IKeyboardInputSink::KeyboardInputSite { System::Windows::Interop::IKeyboardInputSite ^ get(); void set(System::Windows::Interop::IKeyboardInputSite ^ value); };" />
       <MemberSignature Language="F#" Usage="System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1211,12 +1217,12 @@
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="P:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />。</summary>
-        <value>对容器的 <see cref="T:System.Windows.Interop.IKeyboardInputSite" /> 接口的引用。</value>
+        <value>对容器的引用<see cref="T:System.Windows.Interop.IKeyboardInputSite" />接口。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1232,6 +1238,9 @@
       <MemberSignature Language="VB.NET" Value="Function OnMnemonic (ByRef msg As MSG, modifiers As ModifierKeys) As Boolean Implements IKeyboardInputSink.OnMnemonic" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System::Windows::Interop::MSG % msg, System::Windows::Input::ModifierKeys modifiers) = System::Windows::Interop::IKeyboardInputSink::OnMnemonic;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1259,12 +1268,12 @@
         <param name="msg">助记键和关联数据的消息。 请勿修改此消息结构。 仅由于性能原因，通过引用来传递此消息。</param>
         <param name="modifiers">修改键。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />。</summary>
-        <returns>如果消息已得到处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果消息已处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1277,6 +1286,9 @@
       <MemberSignature Language="VB.NET" Value="Function RegisterKeyboardInputSink (sink As IKeyboardInputSink) As IKeyboardInputSite Implements IKeyboardInputSink.RegisterKeyboardInputSink" />
       <MemberSignature Language="C++ CLI" Value=" virtual System::Windows::Interop::IKeyboardInputSite ^ System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(System::Windows::Interop::IKeyboardInputSink ^ sink) = System::Windows::Interop::IKeyboardInputSink::RegisterKeyboardInputSink;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(System.Windows.Interop.IKeyboardInputSink)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1304,7 +1316,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1318,6 +1330,9 @@
       <MemberSignature Language="VB.NET" Value="Function TabInto (request As TraversalRequest) As Boolean Implements IKeyboardInputSink.TabInto" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.Windows.Interop.IKeyboardInputSink.TabInto(System::Windows::Input::TraversalRequest ^ request) = System::Windows::Interop::IKeyboardInputSink::TabInto;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Interop.IKeyboardInputSink.TabInto(System.Windows.Input.TraversalRequest)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1337,7 +1352,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1351,6 +1366,9 @@
       <MemberSignature Language="VB.NET" Value="Function TranslateAccelerator (ByRef msg As MSG, modifiers As ModifierKeys) As Boolean Implements IKeyboardInputSink.TranslateAccelerator" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(System::Windows::Interop::MSG % msg, System::Windows::Input::ModifierKeys modifiers) = System::Windows::Interop::IKeyboardInputSink::TranslateAccelerator;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1383,7 +1401,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1397,6 +1415,9 @@
       <MemberSignature Language="VB.NET" Value="Function TranslateChar (ByRef msg As MSG, modifiers As ModifierKeys) As Boolean Implements IKeyboardInputSink.TranslateChar" />
       <MemberSignature Language="C++ CLI" Value=" virtual bool System.Windows.Interop.IKeyboardInputSink.TranslateChar(System::Windows::Interop::MSG % msg, System::Windows::Input::ModifierKeys modifiers) = System::Windows::Interop::IKeyboardInputSink::TranslateChar;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Interop.IKeyboardInputSink.TranslateChar(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
         <AssemblyVersion>3.0.0.0</AssemblyVersion>
@@ -1429,7 +1450,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndSource> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1552,7 +1573,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值声明是否遵守源窗口内容的每像素不透明度。</summary>
-        <value>如果系统使用每像素不透明度，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果系统使用每像素不透明度;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
