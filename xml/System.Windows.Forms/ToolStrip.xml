@@ -1,5 +1,5 @@
 <Type Name="ToolStrip" FullName="System.Windows.Forms.ToolStrip">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7566a9df7fc5117ac22fef56ffef6fb03bb428fa" /><Meta Name="ms.sourcegitcommit" Value="662f143e6be46d519ff8ab4451d543d91e651478" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/18/2018" /><Meta Name="ms.locfileid" Value="53568663" /></Metadata><TypeSignature Language="C#" Value="public class ToolStrip : System.Windows.Forms.ScrollableControl, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c7d0cc716c834d4caeb931f6895eb004f6b14476" /><Meta Name="ms.sourcegitcommit" Value="84230e7a361e71d9f5259c4fb54d708d0c84a65d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/19/2018" /><Meta Name="ms.locfileid" Value="53615112" /></Metadata><TypeSignature Language="C#" Value="public class ToolStrip : System.Windows.Forms.ScrollableControl, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStrip extends System.Windows.Forms.ScrollableControl implements class System.ComponentModel.IComponent, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStrip" />
   <TypeSignature Language="VB.NET" Value="Public Class ToolStrip&#xA;Inherits ScrollableControl&#xA;Implements IDisposable" />
@@ -3951,10 +3951,16 @@
         <Parameter Name="deviceDpiNew" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="deviceDpiOld">To be added.</param>
-        <param name="deviceDpiNew">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="deviceDpiOld">旧 DPI 值。</param>
+        <param name="deviceDpiNew">新 DPI 值。</param>
+        <summary>在派生类中重写时，处理在控件绘制中使用的任何幻术的重新缩放。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+ 必须调用基类方法获取当前的 DPI 值。 `RescaleConstantsForDpi`仅当选择应用程序时调用方法[每个监视器版本 2](~/docs/framework/whats-new/whats-new-in-accessibility.md#accessibility-switches)，面向.NET Framework 4.7.1 或更高版本，并且具有`EnableDpiChangedMessageHandling`和`EnableDpiChangedHighDpiImprovements`开启配置切换。 
+        
+         ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ResetMinimumSize">

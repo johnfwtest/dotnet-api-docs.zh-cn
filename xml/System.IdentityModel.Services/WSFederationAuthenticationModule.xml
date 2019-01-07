@@ -1,5 +1,5 @@
 <Type Name="WSFederationAuthenticationModule" FullName="System.IdentityModel.Services.WSFederationAuthenticationModule">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4946a226efb8c22b2cb54ac00bf7e2cedea35d6e" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="36558370" /></Metadata><TypeSignature Language="C#" Value="public class WSFederationAuthenticationModule : System.IdentityModel.Services.HttpModuleBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="84794e52ef0e355ba168bb4ee4a2b5b1926e30a9" /><Meta Name="ms.sourcegitcommit" Value="9802d4c6745a8ae514b26f144fb3969265b224ba" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/22/2018" /><Meta Name="ms.locfileid" Value="53751240" /></Metadata><TypeSignature Language="C#" Value="public class WSFederationAuthenticationModule : System.IdentityModel.Services.HttpModuleBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSFederationAuthenticationModule extends System.IdentityModel.Services.HttpModuleBase" />
   <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />
   <TypeSignature Language="VB.NET" Value="Public Class WSFederationAuthenticationModule&#xA;Inherits HttpModuleBase" />
@@ -49,29 +49,29 @@
   
  WS 联合身份验证登录请求发送到 STS 之前，将引发以下事件：  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>： 当启用被动重定向和授权请求的资源上失败时引发。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>：当启用被动重定向和授权请求的资源上失败时引发。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>： 前一刻引发 WSFAM 发送到 STS WS 联合身份验证登录请求。 此事件可用于更改登录请求中的参数。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>：前一刻引发 WSFAM 发送到 STS WS 联合身份验证登录请求。 此事件可用于更改登录请求中的参数。  
   
  从 STS 接收 （发出安全令牌） 的登录响应时，将引发以下事件：  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived>： 由 STS 发送的安全令牌从响应中读取之后引发。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived>：发送由 STS 的安全令牌从响应中读取之后引发。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>： 验证令牌后引发。 此事件可用于筛选、 转换或添加到声明主体的声明 (<xref:System.Security.Claims.ClaimsPrincipal>) 创建的安全令牌。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>：验证令牌后引发。 此事件可用于筛选、 转换或添加到声明主体的声明 (<xref:System.Security.Claims.ClaimsPrincipal>) 创建的安全令牌。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>： 会话令牌前一刻引发 (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) 从主体用来设置线程主体的声明和当前用户创建并写入会话 cookie。 使你有机会修改会话令牌或启用或禁用写入会话 cookie。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>：会话令牌前一刻引发 (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) 从主体用来设置线程主体的声明和当前用户创建并写入会话 cookie。 使你有机会修改会话令牌或启用或禁用写入会话 cookie。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn>： 身份验证的末尾之后引发已设置线程主体和当前用户。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn>：之后已设置线程主体和当前用户的身份验证结束时引发。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError>： 如果在登录过程中发生异常引发。 可以取消请求，并防止异常返回给调用方。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError>：如果在登录过程中发生异常，引发。 可以取消请求，并防止异常返回给调用方。  
   
  登录时从会话中注销或处理 WS 联合身份验证注销清理请求 (wsignoutcleanup1.0) 时，将引发以下事件：  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>： 删除该会话以便你执行任何可能依赖于会话的清理或取消注销前引发。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>：删除该会话以便你执行任何可能依赖于会话的清理或取消注销前引发。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>： 删除该会话后引发。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>：只需删除该会话后引发。  
   
--   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>： 如果在注销期间会发生异常引发。可以取消注销，并防止异常返回给调用方。  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>：如果在注销期间会发生异常，引发。可以取消注销，并防止异常返回给调用方。  
   
 > [!NOTE]
 >  注销事件不会引发时通过调用注销在 STS<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>方法。  
@@ -343,7 +343,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> 属性为 <see langword="null" /> 或空字符串。  
   
-或 
+- 或 - 
 <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> 属性为 <see langword="null" /> 或空字符串。</exception>
         <altmember cref="M:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider(System.String,System.String,System.Boolean)" />
       </Docs>
@@ -394,7 +394,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="signOutUrl" /> 不是 <see langword="null" /> 并且不是绝对 URI。  
   
-或 
+- 或 - 
  <paramref name="replyUrl" /> 不是 <see langword="null" /> 并且不是绝对 URI。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="signOutUrl" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut" />
@@ -930,7 +930,7 @@
       <Docs>
         <param name="request">传入的 HTTP 请求。</param>
         <summary>获取指示指定请求是否为 WS-Federation 登录响应消息的值。</summary>
-        <returns>如果请求为 ws-discovery 联合登录响应消息，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果请求为 WS 联合登录响应消息，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -976,7 +976,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">尝试将此属性设置为 <see langword="null" /> 或者空字符串。  
   
-或 
+- 或 - 
 尝试设置这个属性为一个值，该值不是有效的绝对 URI。</exception>
       </Docs>
     </Member>
@@ -1021,7 +1021,7 @@
   
 5.  引发 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> 事件。 您可以取消进一步处理或修改此事件的处理程序中的声明主体。  
   
-6.  使用配置的会话身份验证模块 (SAM) 来创建<xref:System.IdentityModel.Tokens.SessionSecurityToken>对象。 (已配置的 SAM 是<xref:System.IdentityModel.Services.SessionAuthenticationModule>返回对象<xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule%2A?displayProperty=nameWithType>属性。)使用在步骤 5 中返回的声明主体创建的会话令牌。 <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A?displayProperty=nameWithType>和<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A?displayProperty=nameWithType>属性设置通过使用<xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A>并<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>的属性<xref:System.IdentityModel.Tokens.SecurityToken>步骤 3 中返回，并根据当前时间和令牌生存期由任一指定验证<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A>或<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A>属性的<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>正由 WSFAM 令牌处理程序集合中的对象。 可以通过配置中指定会话标记处理程序上的令牌生存期[ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)元素。 注意：<xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime%2A>属性配置为不使用 SAM 的 cookie 处理程序。  
+6.  使用配置的会话身份验证模块 (SAM) 来创建<xref:System.IdentityModel.Tokens.SessionSecurityToken>对象。 (已配置的 SAM 是<xref:System.IdentityModel.Services.SessionAuthenticationModule>返回对象<xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule%2A?displayProperty=nameWithType>属性。)使用在步骤 5 中返回的声明主体创建的会话令牌。 <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A?displayProperty=nameWithType>和<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A?displayProperty=nameWithType>属性设置通过使用<xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A>并<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>的属性<xref:System.IdentityModel.Tokens.SecurityToken>步骤 3 中返回，并根据当前时间和令牌生存期由任一指定验证<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A>或<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A>属性的<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>正由 WSFAM 令牌处理程序集合中的对象。 可以通过配置中指定会话标记处理程序上的令牌生存期[ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)元素。 注意:<xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime%2A>属性配置为不使用 SAM 的 cookie 处理程序。  
   
 7.  调用<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken%2A>与要写入会话 cookie 的会话令牌的方法。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken%2A>方法将第一个引发<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>事件。 您可以更改会话令牌的属性或更改是否应将该 cookie 保留在此事件的处理程序。 引发该事件后，该方法然后将使用 SAM 的 cookie。  
   
@@ -1450,7 +1450,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException">尝试将此属性设置为 <see langword="null" /> 或者空字符串。  
   
-或 
+- 或 - 
 尝试设置这个属性为一个值，该值不是有效的绝对 URI。</exception>
       </Docs>
     </Member>
@@ -1545,13 +1545,13 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> 为 <see langword="null" /> 或空字符串。  
   
-或 
+- 或 - 
  <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> 为 <see langword="null" /> 或空字符串。  
   
-或 
+- 或 - 
 <see cref="P:System.Web.HttpContext.Current" /> 属性为 <see langword="null" /> 或为空。  
   
-或 
+- 或 - 
 由 <see cref="P:System.Web.HttpContext.Response" />返回的上下文的 <see cref="P:System.Web.HttpContext.Current" /> 属性为 <see langword="null" /> 或空。</exception>
       </Docs>
     </Member>
@@ -1827,7 +1827,7 @@
       </Parameters>
       <Docs>
         <param name="sessionToken">从 STS 的 WS-Federation 登录响应消息生成的会话安全标识。</param>
-        <param name="isSession">编写表示会话的包含该响应 cookie，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="isSession"> 编写表示会话的包含该响应 cookie，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>设置线程用户和选择写入会话 Cookie。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2343,13 +2343,13 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> 为 <see langword="null" /> 或空字符串。  
   
-或 
+- 或 - 
  <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> 为 <see langword="null" /> 或空字符串。  
   
-或 
+- 或 - 
  <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" /> 为 <see langword="true" />，且 <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> 不兼容 HTTPS。  
   
-或 
+- 或 - 
  <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" /> 为 <see langword="true" />，且 <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> 不兼容 HTTPS。</exception>
       </Docs>
     </Member>

@@ -1,5 +1,5 @@
 <Type Name="ServiceHealthBehavior" FullName="System.ServiceModel.Description.ServiceHealthBehavior">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3841c3dc2d4904aa1529e4f0fee2976b24352b46" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53225159" /></Metadata><TypeSignature Language="C#" Value="public class ServiceHealthBehavior : System.ServiceModel.Description.ServiceHealthBehaviorBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8e3ad8db5d4cbbdf18997d7f0c0aa509d1e83c53" /><Meta Name="ms.sourcegitcommit" Value="3e5b9cbcf240184d559eec68c1f59d76a46c1c38" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/20/2018" /><Meta Name="ms.locfileid" Value="53709754" /></Metadata><TypeSignature Language="C#" Value="public class ServiceHealthBehavior : System.ServiceModel.Description.ServiceHealthBehaviorBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceHealthBehavior extends System.ServiceModel.Description.ServiceHealthBehaviorBase" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceHealthBehavior" />
   <TypeSignature Language="VB.NET" Value="Public Class ServiceHealthBehavior&#xA;Inherits ServiceHealthBehaviorBase" />
@@ -16,7 +16,7 @@
   <Docs>
     <summary>提供可提供运行状况终结点的 Windows Communication Foundation (WCF) 服务行为。</summary>
     <remarks>
-          <format type="text/markdown"><![CDATA[  
+      <format type="text/markdown"><![CDATA[  
 
 ## Remarks
 
@@ -66,7 +66,7 @@
     host.Description.Behaviors.Add(healthBehavior);
     ```
 
-       ]]></format>    
+       ]]></format>
     </remarks>
   </Docs>
   <Members>
@@ -213,7 +213,7 @@
         <Parameter Name="serviceHost" Type="System.ServiceModel.ServiceHostBase" />
       </Parameters>
       <Docs>
-        <param name="serviceHost">To be added.</param>
+        <param name="serviceHost">包含启用了 <see cref="T:System.ServiceModel.Description.ServiceHealthBehavior" /> 的 WCF 服务的服务主机实例。</param>
         <summary>串行化与指定的 <paramref name="serviceHost" /> 关联的 <see cref="T:System.ServiceModel.Description.ServiceHealthModel" /> 对象，并将其以 XML 格式返回。</summary>
         <returns>与串行化的 <see cref="T:System.ServiceModel.Description.ServiceHealthModel" /> 对象响应的 XML 文档。</returns>
         <remarks>To be added.</remarks>
@@ -247,7 +247,7 @@
         <param name="queries">包含查询字符串的字段/值对的数组。</param>
         <param name="replyMessage">返回方法时，运行状况行为的响应消息。 此消息的内容类型为 <see langword="text/html" /> 或 <see langword="text/xml" />，具体取决于请求是针对 XML 还是 HTML。</param>
         <summary>返回指定请求的响应消息。</summary>
-        <remarks>  
+        <remarks>
           <format type="text/markdown"><![CDATA[  
 
 此方法由调用<xref:System.ServiceModel.Description.ServiceHealthBehaviorBase>实例，并负责编写到运行状况终结点的响应消息。
@@ -260,7 +260,7 @@
 
 <paramref name="httpGetRequest" /> 为 <see langword="null" />
 
-或
+- 或 -
 
 <paramref name="queries" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -314,7 +314,7 @@
         <param name="result">返回方法时，分析的布尔参数的值。</param>
         <summary>尝试分析布尔查询字符串参数，并返回一个值，该值指示分析操作是否成功。</summary>
         <returns>如果分析操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
-        <remarks>  
+        <remarks>
           <format type="text/markdown"><![CDATA[  
 
 该方法返回`true`如果字段的值已成功分析通过<xref:System.Boolean.TryParse%2A?displayProperty=nameWithType>方法。
@@ -323,7 +323,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="parameterName" /> 为 <see langword="null" />。
         
-或
+- 或 -
 
 <paramref name="parameter" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -352,14 +352,14 @@
       <Docs>
         <param name="parameterName">此方法尝试分析值的参数名。</param>
         <param name="parameter">查询字符串的字段/值对。</param>
-        <param name="defaultValue">如果查询字符串中指定的 HTTP 状态代码无效，则为要分配给 <paramName name="result" /> 参数的值。</param>
+        <param name="defaultErrorCode">如果分析操作失败，则为要分配给参数的值。</param>
         <param name="result">返回方法时，分析的 HTTP 状态代码参数的值。</param>
         <summary>尝试分析查询字符串变量的 HTTP 状态代码，并返回一个值，该值指示分析操作是否成功。</summary>
         <returns>如果分析操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="parameterName" /> 为 <see langword="null" />。
         
-或
+- 或 -
 
 <paramref name="parameter" /> 为 <see langword="null" />。</exception>
       </Docs>

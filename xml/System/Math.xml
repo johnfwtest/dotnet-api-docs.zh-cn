@@ -1,5 +1,5 @@
 <Type Name="Math" FullName="System.Math">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a65abb2d011ed017c4b44637bd58cd80c56744be" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52365252" /></Metadata><TypeSignature Language="C#" Value="public static class Math" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0bce3a604f0009de6cf1241c026dea07f4edbc55" /><Meta Name="ms.sourcegitcommit" Value="ddcb3720c12736c085c9f6a8b0cff080ee777b69" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/20/2018" /><Meta Name="ms.locfileid" Value="53655095" /></Metadata><TypeSignature Language="C#" Value="public static class Math" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Math extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Math" />
   <TypeSignature Language="VB.NET" Value="Public Class Math" />
@@ -529,7 +529,7 @@
         <param name="d">一个表示余弦值的数字，其中 <paramref name="d" /> 必须大于或等于 -1 但小于或等于 1。</param>
         <summary>返回余弦值为指定数字的角度。</summary>
         <returns>角度 θ，以弧度为单位，满足 0 ≤θ≤π 
-或 
+- 或 - 
  如果 <paramref name="d" /> &lt; -1 或 <paramref name="d" /> &gt; 1 或 <paramref name="d" /> 等于 <see cref="F:System.Double.NaN" />，则为 <see cref="F:System.Double.NaN" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -623,7 +623,7 @@
         <param name="d">一个表示正弦值的数字，其中 <paramref name="d" /> 必须大于或等于 -1 但小于或等于 1。</param>
         <summary>返回正弦值为指定数字的角度。</summary>
         <returns>角度 θ，以弧度为单位，满足 -π/2 ≤θ≤π/2 
-或 
+- 或 - 
  如果 <paramref name="d" /> &lt; -1 或 <paramref name="d" /> &gt; 1 或 <paramref name="d" /> 等于 <see cref="F:System.Double.NaN" />，则为 <see cref="F:System.Double.NaN" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -720,7 +720,7 @@
         <summary>返回正切值为指定数字的角度。</summary>
         <returns>角度 θ，以弧度为单位，满足 -π/2 ≤θ≤π/2。  
   
-或 
+- 或 - 
  如果 <paramref name="d" /> 等于 <see cref="F:System.Double.NaN" />，则为 <see cref="F:System.Double.NaN" />；如果 <paramref name="d" /> 等于 <see cref="F:System.Double.NegativeInfinity" />，则 -π/2 舍入为双精度值 (-1.5707963267949)；或者如果 <paramref name="d" /> 等于 <see cref="F:System.Double.PositiveInfinity" />，则 π/2 舍入为双精度值 (1.5707963267949)。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -957,7 +957,11 @@
   
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向正无穷舍入。  
-  
+
+## Examples
+
+[!INCLUDE[midpoint-rounding](~/includes/csharp-interactive-note.md)]
+
  ]]></format>
         </remarks>
       </Docs>
@@ -1004,12 +1008,10 @@
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向正无穷舍入。 换而言之，如果`d`是正数，是否存在任何小数部分导致`d`要舍入为下一步的最大整数。 如果`d`为负，则舍入运算会导致任何小数部分`d`被放弃。 此方法的操作不同于<xref:System.Math.Floor%28System.Decimal%29>方法支持向负无穷舍入。  
   
-   
-  
 ## Examples  
  下面的示例阐释<xref:System.Math.Ceiling%28System.Decimal%29?displayProperty=nameWithType>方法并将其与进行比较<xref:System.Math.Floor%28System.Decimal%29>方法。  
   
- [!code-csharp[System.Math.Ceiling#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#1)]
+ [!code-csharp-interactive[System.Math.Ceiling#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#1)]
  [!code-vb[System.Math.Ceiling#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Math.Ceiling/vb/Ceiling1.vb#1)]  
   
  ]]></format>
@@ -1066,7 +1068,7 @@
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向正无穷舍入。 换而言之，如果`a`是正数，是否存在任何小数部分导致`a`要舍入为下一步的最大整数。 如果`a`为负，则舍入运算会导致任何小数部分`a`被放弃。 此方法的操作不同于<xref:System.Math.Floor%28System.Double%29>方法支持向负无穷舍入。  
   
-从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Ceiling`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Ceiling`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例演示了这种优化的转换：
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Ceiling`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Ceiling`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 此优化使代码可以更快运行 -- 对于进行大量到整型类型的转换的代码，可快达两倍。 下面的示例演示了这种优化的转换：
    
 ```vb
 Dim d1 As Double = 1043.75133
@@ -1079,7 +1081,7 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7969
 ## Examples  
  下面的示例阐释<xref:System.Math.Ceiling%28System.Double%29?displayProperty=nameWithType>方法并将其与进行比较<xref:System.Math.Floor%28System.Double%29>方法。  
   
- [!code-csharp[System.Math.Ceiling#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#2)]
+ [!code-csharp-interactive[System.Math.Ceiling#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#2)]
  [!code-vb[System.Math.Ceiling#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Math.Ceiling/vb/Ceiling1.vb#2)]  
   
  ]]></format>
@@ -1896,7 +1898,11 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7969
   
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向负无穷舍入。  
-  
+
+## Examples
+
+[!INCLUDE[midpoint-rounding](~/includes/csharp-interactive-note.md)]
+
  ]]></format>
         </remarks>
       </Docs>
@@ -1942,13 +1948,11 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7969
   
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向负无穷舍入。 换而言之，如果`d`为正，任何小数部分被截断。 如果`d`是负数，任何小数部分的存在会导致它被舍入到较小的整数。 此方法的操作不同于<xref:System.Math.Ceiling%2A>方法支持向正无穷舍入。  
-  
-   
-  
+
 ## Examples  
  下面的示例阐释<xref:System.Math.Floor%28System.Decimal%29?displayProperty=nameWithType>方法并将其与进行比较<xref:System.Math.Ceiling%28System.Decimal%29>方法。  
   
- [!code-csharp[System.Math.Ceiling#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#1)]
+ [!code-csharp-interactive[System.Math.Ceiling#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#1)]
  [!code-vb[System.Math.Ceiling#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Math.Ceiling/vb/Ceiling1.vb#1)]  
   
  ]]></format>
@@ -2006,7 +2010,7 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7969
 ## Remarks  
  此方法的行为遵循 IEEE 标准 754，第 4 节。 这种舍入有时称为向负无穷舍入。 换而言之，如果`d`为正，任何小数部分被截断。 如果`d`是负数，任何小数部分的存在会导致它被舍入到较小的整数。 此方法的操作不同于<xref:System.Math.Ceiling%2A>方法支持向正无穷舍入。  
 
-从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Floor`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Floor`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例演示了这种优化的转换：
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Floor`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Floor`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 此优化使代码可以更快运行 -- 对于进行大量到整型类型的转换的代码，可快达两倍。 下面的示例演示了这种优化的转换：
    
 ```vb
 Dim d1 As Double = 1043.75133
@@ -2019,7 +2023,7 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
 ## Examples  
  下面的示例阐释<xref:System.Math.Floor%28System.Double%29?displayProperty=nameWithType>方法并将其与进行比较<xref:System.Math.Ceiling%28System.Double%29>方法。  
   
- [!code-csharp[System.Math.Ceiling#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#2)]
+ [!code-csharp-interactive[System.Math.Ceiling#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Math.Ceiling/cs/Ceiling1.cs#2)]
  [!code-vb[System.Math.Ceiling#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Math.Ceiling/vb/Ceiling1.vb#2)]  
   
  ]]></format>
@@ -3891,124 +3895,58 @@ Remainder = (Math.Abs(dividend) - (Math.Abs(divisor) *
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- 本节内容：  
-  
- [重载的方法语法](#Syntax)   
- [参数](#Params)   
- [返回值](#Returns)   
- [异常](#Exceptions)   
- [我调用哪个方法？](#Tasks)   
- [中点值和舍入的约定](#Midpoint)   
- [舍入和精度](#Precision)   
- [舍入和单精度浮点值](#Single)   
- 示例：   
- [Math.Round(Decimal)](#Round1_Example)  
- [Math.Round(Double)](#Round2_Example)  
- [Math.Round （小数，Int32）](#Round3_Example)  
- [Math.Round （十进制、 MidpointRounding）](#Round4_Example)  
- [Math.Round （双精度型，Int32）](#Round5_Example)  
- [Math.Round(Double, MidpointRounding)](#Round6_Example)  
- [Math.Round (十进制、 Int32，MidpointRounding)](#Round7_Example)  
- [Math.Round (双精度型，Int32，MidpointRounding)](#Round8_Example)  
-[版本信息](#Round_Versions)  
-  
-<a name="Syntax"></a>   
-## <a name="overloaded-method-syntax"></a>重载的方法语法  
- 选择重载方法的其他指导，请参阅[我调用哪个方法？](#Tasks)  
-  
- `Decimal Math.Round(Decimal` `d` `)`  
- 将舍入为最接近的整数，十进制值，并舍入到最接近的偶数的中点值 ([示例](#Round1_Example))。  
-  
- `Double Math.Round(Double` `a` `)`  
- 将舍入为最接近的整数，双精度浮点值，并舍入到最接近的偶数的中点值 ([示例](#Round2_Example))。  
-  
- `Decimal Math.Round(Decimal` `d` `, Int32`  `decimals` `)`  
- 将十进制值为指定数字的小数位数舍入，并舍入到最接近的偶数的中点值 ([示例](#Round3_Example))。  
-  
- `Double Math.Round(Double` `value` `, Int32`  `digits` `)`  
- 将双精度浮点值指定的小数位数舍入以及舍入到最接近的偶数的中点值 ([示例](#Round4_Example))。  
-  
- `Decimal Math.Round(Decimal` `d` `, MidpointRounding`  `mode` `)`  
- 将舍入为最接近的整数，十进制值，并使用指定的舍入约定的中点值 ([示例](#Round5_Example))。  
-  
- `Double Math.Round(Double` `value` `, MidpointRounding`  `mode` `)`  
- 将舍入为最接近的整数，双精度浮点值，并使用指定的舍入约定的中点值 ([示例](#Round6_Example))。  
-  
- `Decimal Math.Round(Decimal` `d` `, Int32`  `decimals` `, MidpointRounding`  `mode` `)`  
- 将十进制值为指定数字的小数位数舍入并使用指定的舍入约定的中点值 ([示例](#Round7_Example))。  
-  
- `Double Math.Round(Double` `value` `, Int32`  `digits` `, MidpointRounding`  `mode` `)`  
- 将双精度浮点值指定的小数位数舍入并使用指定的舍入约定的中点值 ([示例](#Round8_Example))。  
-  
-<a name="Params"></a>   
-## <a name="parameters"></a>参数  
- 这是参数的完整列表<xref:System.Math.Round%2A>方法。 使用每个重载的参数，请参阅上述重载语法。  
-  
-|参数|类型|描述|  
-|---------------|----------|-----------------|  
-|`d`|<xref:System.Decimal>|要舍入的数字。|  
-|`a`<br /><br /> 或<br /><br /> `value`|<xref:System.Double>|要舍入的双精度浮点数。|  
-|`decimals`<br /><br /> 或<br /><br /> `digits`|<xref:System.Int32>|返回值中的小数数字。 有关<xref:System.Decimal>值，其范围可以介于 0 到 28。 有关<xref:System.Double>值，它的范围从 0 到 15。 请注意，15 是支持的整数和小数位数的最大数目<xref:System.Double>类型。<br /><br /> 默认值： 0，取整为整数|  
-|`mode`|<xref:System.MidpointRounding>|一个标志，指定要用于中点值舍入的约定。 请参阅[中点值和舍入的约定](#Midpoint)。<br /><br /> 默认值： <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>|  
-  
-<a name="Returns"></a>   
-## <a name="return-value"></a>返回值  
- 类型：<xref:System.Decimal>或<xref:System.Double>，具体取决于要舍入的值的类型。   
-与相同类型的数值`d`， `a`，或`value`，但舍入为整数或十进制数字的指定数目。 请参阅[中点值和舍入的约定](#Midpoint)有关舍入中点值的数字信息。  
-  
-> [!WARNING]
->  时点值舍入，舍入的算法执行相等测试。 由于二进制表示形式和精度浮点格式中的问题，该方法返回的值可以是意外。 有关详细信息，请参阅[舍入和精度](#Precision)。  
-  
- 如果使用的重载<xref:System.Double>使用调用参数<xref:System.Double.NaN?displayProperty=nameWithType>，该方法将返回<xref:System.Double.NaN?displayProperty=nameWithType>。 如果使用调用<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>，该方法将返回<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>分别。  
-  
-<a name="Exceptions"></a>   
-## <a name="exceptions"></a>异常  
-  
-|例外|条件|引发的|  
-|---------------|---------------|---------------|  
-|<xref:System.OverflowException>|结果超出了范围的<xref:System.Decimal>类型。|<xref:System.Math.Round%28System.Decimal%29><br /><br /> <xref:System.Math.Round%28System.Decimal%2CSystem.Int32%29><br /><br /> <xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29><br /><br /> <xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29>|  
-|<xref:System.ArgumentOutOfRangeException>|`decimals` 小于 0 或大于 28。<br /><br /> 或<br /><br /> `digits` 小于 0 或大于 15。|<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%29><br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%29><br /><br /> <xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29><br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>|  
-|<xref:System.ArgumentException>|`mode` 不是 <xref:System.MidpointRounding> 的一个有效值。|<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29><br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29><br /><br /> <xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29><br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>|  
-  
-<a name="Tasks"></a>   
-## <a name="which-method-do-i-call"></a>我调用哪个方法？  
-  
+<a name="remarks_round"></a> 
+## Remarks 
+
+本节内容：
+
+- [我调用哪个方法？](#which-method-do-i-call)
+- [中点值和舍入的约定](#midpoint-values-and-rounding-conventions)   
+- [舍入和精度](#rounding-and-precision) 
+- [舍入和单精度浮点值](#rounding-and-single-precision-floating-point-values)
+- [单个重载的示例](#examples)
+
+### <a name="which-method-do-i-call"></a>我调用哪个方法？
+
+下表可用于选择适当的舍入方法。 除了`Math.Round`方法，它还包括<xref:System.Math.Ceiling%2A?displayProperty=nameWithType>和<xref:System.Math.Floor%2A?displayProperty=nameWithType>。
+
 |到|Call|  
 |--------|----------|  
-|数值舍入为整数使用舍入为最接近的约定。|<xref:System.Math.Round%28System.Decimal%29><br /><br /> 或<br /><br /> <xref:System.Math.Round%28System.Double%29>|  
-|舍入到通过使用指定的整数的数字舍入约定。|<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29><br /><br /> 或<br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>|  
-|数值舍入到指定的小数位数使用舍入为最接近的约定。|<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%29><br /><br /> 或<br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%29>|  
-|舍入到指定数目的通过使用指定的小数位数的数字舍入约定。|<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29><br /><br /> 或<br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>|  
+|数值舍入为整数使用舍入为最接近的约定。|<xref:System.Math.Round%28System.Decimal%29><br /><br /> - 或 -<br /><br /> <xref:System.Math.Round%28System.Double%29>|  
+|舍入到通过使用指定的整数的数字舍入约定。|<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29><br /><br /> - 或 -<br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>|  
+|数值舍入到指定的小数位数使用舍入为最接近的约定。|<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%29><br /><br /> - 或 -<br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%29>|  
+|舍入到指定数目的通过使用指定的小数位数的数字舍入约定。|<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29><br /><br /> - 或 -<br /><br /> <xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>|  
 |Round<xref:System.Single>到指定数目的通过使用指定舍入约定和最大程度减少丢失精度的小数位数的值。|将转换<xref:System.Single>到<xref:System.Decimal>，并调用<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29>。|  
 |数值舍入到指定的小数部分位数同时降到最低的中点值舍入精度的问题。|调用实现"晚于或约等于"比较的舍入方法。 请参阅[舍入和精度](#Precision)。|  
 |将为一个整数，小数部分值舍入大于小数部分值。 例如，舍入 3.1 到 4。|<xref:System.Math.Ceiling%2A>|  
 |将为一个整数，小数部分值舍入，小于的小数部分值。 例如，舍入 3.9 到 3。|<xref:System.Math.Floor%2A>|  
+
+### <a name="midpoint-values-and-rounding-conventions"></a>中点值和舍入的约定 
+
+舍入涉及到将值指定的精度的数值转换为精度较低的最接近值。 例如，可以使用<xref:System.Math.Round%28System.Double%29>方法以 3.4 到 3.0 的数值进行舍入和<xref:System.Math.Round%28System.Double%2CSystem.Int32%29>方法要舍入到 3.58 3.579 的值。  
   
-<a name="Midpoint"></a>   
-## <a name="midpoint-values-and-rounding-conventions"></a>中点值和舍入的约定  
- 舍入涉及到将值指定的精度的数值转换为精度较低的最接近值。 例如，可以使用<xref:System.Math.Round%28System.Double%29>方法以 3.4 到 3.0 的数值进行舍入和<xref:System.Math.Round%28System.Double%2CSystem.Int32%29>方法要舍入到 3.58 3.579 的值。  
+在一个中点值后结果中的最高有效位, 的值是两个数字之间准确地说的一半。 例如，3.47500 是一个中点值，如果要舍入两个小数位，而且 7.500 是一个中点值，如果要舍入为整数。 在这些情况下，最接近的值不能轻松地标识不舍入的约定。  
   
- 在一个中点值后结果中的最高有效位, 的值是两个数字之间准确地说的一半。 例如，3.47500 是一个中点值，如果要舍入两个小数位，而且 7.500 是一个中点值，如果要舍入为整数。 在这些情况下，最接近的值不能轻松地标识不舍入的约定。  
+<xref:System.Math.Round%2A>方法支持两种舍入的约定来处理中点值：  
   
- <xref:System.Math.Round%2A>方法支持两种舍入的约定来处理中点值：  
+- **远离零方向舍入**  
+
+   中点值舍入为下一个编号从零开始。 例如，3.75 将舍入到 3.8，3.85 将舍入到 3.9，-3.75 舍入到-3.8，和-3.85 舍入到-3.9。 这种形式的舍入由<xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType>枚举成员。  
   
- **远离零方向舍入**  
- 中点值舍入为下一个编号从零开始。 例如，3.75 将舍入到 3.8，3.85 将舍入到 3.9，-3.75 舍入到-3.8，和-3.85 舍入到-3.9。 这种形式的舍入由<xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType>枚举成员。  
+   远离零方向舍入为最广泛已知的形式的舍入。  
   
- 远离零方向舍入为最广泛已知的形式的舍入。  
+- **舍入为最接近，或银行家的舍入**  
+
+   中点值舍入为最接近的偶数。 例如，3.75 和 3.85 舍入到 3.8，和-3.75 和-3.85 舍入到-3.8。 这种形式的舍入由<xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>枚举成员。  
   
- **舍入为最接近，或银行家的舍入**  
- 中点值舍入为最接近的偶数。 例如，3.75 和 3.85 舍入到 3.8，和-3.75 和-3.85 舍入到-3.8。 这种形式的舍入由<xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>枚举成员。  
+  舍入为最接近是标准形式的舍入在财务和统计操作中使用。 它符合 IEEE 标准 754，第 4 节。 多个舍入操作中使用时，它减少了通过一致地在单方向的中点值舍入导致的舍入错误。 在某些情况下，此舍入错误非常显著。  
   
- 舍入为最接近是标准形式的舍入在财务和统计操作中使用。 它符合 IEEE 标准 754，第 4 节。 多个舍入操作中使用时，它减少了通过一致地在单方向的中点值舍入导致的舍入错误。 在某些情况下，此舍入错误非常显著。  
+  下面的示例说明了可能会导致持续舍入的一个方向的中点值的偏差。 该示例计算的数组，则返回 true 平均数<xref:System.Decimal>值，并当数组中的值将舍入使用的两个约定时，然后计算平均值。 在此示例中，则返回 true 的平均偏差和结果时舍入为最接近平均值是相同的。 但是时远离零方向舍入, 结果的平均值与不同.05 （或 3.6%），则返回 true 的平均值。  
   
- 下面的示例说明了可能会导致持续舍入的一个方向的中点值的偏差。 该示例计算的数组，则返回 true 平均数<xref:System.Decimal>值，并当数组中的值将舍入使用的两个约定时，然后计算平均值。 在此示例中，则返回 true 的平均偏差和结果时舍入为最接近平均值是相同的。 但是时远离零方向舍入, 结果的平均值与不同.05 （或 3.6%），则返回 true 的平均值。  
+  [!code-csharp-interactive[System.Math.Round.Overload#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/mean1.cs#2)]
+  [!code-vb[System.Math.Round.Overload#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/mean1.vb#2)]  
   
- [!code-csharp[System.Math.Round.Overload#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/mean1.cs#2)]
- [!code-vb[System.Math.Round.Overload#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/mean1.vb#2)]  
-  
- 默认情况下，<xref:System.Math.Round%2A>方法使用舍入为最接近的约定。 下表列出了的重载<xref:System.Math.Round%2A>方法，并舍入的约定，每个使用。  
+默认情况下，<xref:System.Math.Round%2A>方法使用舍入为最接近的约定。 下表列出了的重载<xref:System.Math.Round%2A>方法，并舍入的约定，每个使用。  
   
 |重载|舍入约定|  
 |--------------|-------------------------|  
@@ -4020,119 +3958,62 @@ Remainder = (Math.Abs(dividend) - (Math.Abs(divisor) *
 |<xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>|由`mode`参数|  
 |<xref:System.Math.Round%28System.Decimal%2CSystem.Int32%2CSystem.MidpointRounding%29>|由`mode`参数|  
 |<xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>|由`mode`参数|  
-  
-<a name="Precision"></a>   
+
 ## <a name="rounding-and-precision"></a>舍入和精度  
- 若要确定舍入运算是否涉及一个中点值，<xref:System.Math.Round%2A>方法将原始值与要舍入 10 相乘<sup>n</sup>，其中*n*是所需的小数部分数返回值中的数字，然后确定剩余的小数部分的值是否大于或等于.5。 这是在"测试相等"部分中的测试是否相等，并按论述的方式稍有变化<xref:System.Double>参考主题，具有浮点值是否相等的测试存在问题由于浮点格式的问题与二进制文件表示形式和精度。 这意味着，任何略小于.5 （由于精度损失） 的数字的小数部分将不会舍入上升。  
+
+若要确定舍入运算是否涉及一个中点值，<xref:System.Math.Round%2A>方法将原始值与要舍入 10 相乘<sup>n</sup>，其中*n*是所需的小数部分数返回值中的数字，然后确定剩余的小数部分的值是否大于或等于.5。 这是在"测试相等"部分中的测试是否相等，并按论述的方式稍有变化<xref:System.Double>参考主题，具有浮点值是否相等的测试存在问题由于浮点格式的问题与二进制文件表示形式和精度。 这意味着，任何略小于.5 （由于精度损失） 的数字的小数部分将不会舍入上升。  
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+以下示例演示了该问题。 重复添加.1 为 11.0，并将舍入到最接近的整数结果。 舍入的约定，不管 11.5 应舍入到 12。 但是，如中的示例所示的输出，事实并非如此。 该示例使用"R"[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)要显示的浮点值的完全精度，并显示要舍入的值在重复添加内容，期间失去精度和其值实际是11.499999999999998。 因为.499999999999998 小于.5，值不进行舍入为下一步的最大整数。 如该示例还表明，如果我们只需向其分配常量值 11.5 不会出现此问题<xref:System.Double>变量。  
   
- 以下示例演示了该问题。 重复添加.1 为 11.0，并将舍入到最接近的整数结果。 舍入的约定，不管 11.5 应舍入到 12。 但是，如中的示例所示的输出，事实并非如此。 该示例使用"R"[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)要显示的浮点值的完全精度，并显示要舍入的值在重复添加内容，期间失去精度和其值实际是11.499999999999998。 因为.499999999999998 小于.5，值不进行舍入为下一步的最大整数。 如该示例还表明，如果我们只需向其分配常量值 11.5 不会出现此问题<xref:System.Double>变量。  
+[!code-csharp-interactive[System.Math.Round.Overload#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/precision1.cs#7)]
+[!code-vb[System.Math.Round.Overload#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/precision1.vb#7)]  
   
- [!code-csharp[System.Math.Round.Overload#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/precision1.cs#7)]
- [!code-vb[System.Math.Round.Overload#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/precision1.vb#7)]  
+问题中舍入中点值是精度的最有可能会出现在下列情况：  
   
- 问题中舍入中点值是精度的最有可能会出现在下列情况：  
+- 当不能准确地说以浮点类型的二进制格式表示的小数部分值。  
   
--   当不能准确地说以浮点类型的二进制格式表示的小数部分值。  
+- 当要舍入的值会计算从一个或多个浮点运算。  
   
--   当要舍入的值会计算从一个或多个浮点运算。  
-  
--   当要舍入的值是<xref:System.Single>而非<xref:System.Double>或<xref:System.Decimal>。 有关详细信息，请参阅下一部分中，[舍入和单精度浮点值](#Single)。  
+- 当要舍入的值是<xref:System.Single>而非<xref:System.Double>或<xref:System.Decimal>。 有关详细信息，请参阅下一部分中，[舍入和单精度浮点值](#Single)。  
   
  在缺乏精确地进行舍入操作有问题的情况下，可以执行以下操作：  
   
--   如果舍入运算调用的重载，将舍入<xref:System.Double>值，您可以更改<xref:System.Double>到<xref:System.Decimal>值，并调用重载的舍入<xref:System.Decimal>相反值。 尽管<xref:System.Decimal>数据类型还具有精度损失和表示形式的问题，这些问题都得不太常见。  
+- 如果舍入运算调用的重载，将舍入<xref:System.Double>值，您可以更改<xref:System.Double>到<xref:System.Decimal>值，并调用重载的舍入<xref:System.Decimal>相反值。 尽管<xref:System.Decimal>数据类型还具有精度损失和表示形式的问题，这些问题都得不太常见。  
   
--   定义自定义的舍入算法来执行"几乎 equal"的测试，以确定是否要舍入的值为接受接近中点值。 下面的示例定义`RoundApproximate`检查小数部分值是否足够接近要受到舍入中点的中点值的方法。 如示例输出所示，它可以解决在前面的示例所示舍入问题。  
+- 定义自定义的舍入算法来执行"几乎 equal"的测试，以确定是否要舍入的值为接受接近中点值。 下面的示例定义`RoundApproximate`检查小数部分值是否足够接近要受到舍入中点的中点值的方法。 如示例输出所示，它可以解决在前面的示例所示舍入问题。  
   
-     [!code-csharp[System.Math.Round.Overload#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/precision2.cs#8)]
+     [!code-csharp-interactive[System.Math.Round.Overload#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/precision2.cs#8)]
      [!code-vb[System.Math.Round.Overload#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/precision2.vb#8)]  
   
-<a name="Single"></a>   
-## <a name="rounding-and-single-precision-floating-point-values"></a>舍入和单精度浮点值  
- <xref:System.Math.Round%2A>方法包含接受的类型参数的重载<xref:System.Decimal>和<xref:System.Double>。 舍入值的类型没有方法<xref:System.Single>。 如果传递<xref:System.Single>值的重载之一<xref:System.Math.Round%2A>方法，它是强制转换 （在 C#) 或 （在 Visual Basic) 转换成<xref:System.Double>，和相应<xref:System.Math.Round%2A>重载，并<xref:System.Double>调用参数。 虽然这是一个扩大转换，但它通常涉及到丢失精度，如以下示例所示。 当<xref:System.Single>16.325 值传递给<xref:System.Math.Round%2A>方法和舍入为两个小数位使用舍入为最接近的约定，结果是 16.32 16.33 和非预期结果。  
+### <a name="rounding-and-single-precision-floating-point-values"></a>舍入和单精度浮点值  
+
+<xref:System.Math.Round%2A>方法包含接受的类型参数的重载<xref:System.Decimal>和<xref:System.Double>。 舍入值的类型没有方法<xref:System.Single>。 如果传递<xref:System.Single>值的重载之一<xref:System.Math.Round%2A>方法，它是强制转换 （在 C#) 或 （在 Visual Basic) 转换成<xref:System.Double>，和相应<xref:System.Math.Round%2A>重载，并<xref:System.Double>调用参数。 虽然这是一个扩大转换，但它通常涉及到丢失精度，如以下示例所示。 当<xref:System.Single>16.325 值传递给<xref:System.Math.Round%2A>方法和舍入为两个小数位使用舍入为最接近的约定，结果是 16.32 16.33 和非预期结果。  
   
- [!code-csharp[System.Math.Round.Overload#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/single1.cs#1)]
- [!code-vb[System.Math.Round.Overload#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/single1.vb#1)]  
+[!code-csharp-interactive[System.Math.Round.Overload#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/single1.cs#1)]
+[!code-vb[System.Math.Round.Overload#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/single1.vb#1)]  
   
- 此意外的结果是导致精度的转换中丢失<xref:System.Single>值设为<xref:System.Double>。 因为得到<xref:System.Double>16.325000762939453 的值不是一个中点值且大于 16.325、 始终向上四舍五入。  
+此意外的结果是导致精度的转换中丢失<xref:System.Single>值设为<xref:System.Double>。 因为得到<xref:System.Double>16.325000762939453 的值不是一个中点值且大于 16.325、 始终向上四舍五入。  
   
- 在许多情况下，如示例所示，精度损失可以最小化或消除转换或转换<xref:System.Single>值设为<xref:System.Decimal>。 请注意，由于这是收缩转换，它需要使用转换运算符或调用转换方法。  
+在许多情况下，如示例所示，精度损失可以最小化或消除转换或转换<xref:System.Single>值设为<xref:System.Decimal>。 请注意，由于这是收缩转换，它需要使用转换运算符或调用转换方法。  
   
-<a name="Round1_Example"></a>   
-## <a name="mathrounddecimal-example"></a>Math.Round(Decimal) 示例  
- 下面的示例演示<xref:System.Math.Round%28System.Decimal%29>方法。 请注意， <xref:System.Decimal> 4.5 的值将舍入到 4，而不是 5，因为此重载使用默认<xref:System.MidpointRounding.ToEven>约定。  
-  
- [!code-csharp[System.Math.Round#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round/cs/rounddecimal1.cs#6)]
- [!code-vb[System.Math.Round#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round/vb/rounddecimal1.vb#6)]  
-  
-<a name="Round2_Example"></a>   
-## <a name="mathrounddouble-example"></a>Math.Round(Double) 示例  
- 下面的示例演示了舍入为最接近的整数值。  
-  
- [!code-cpp[Classic Math.Round Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Math.Round Example/CPP/source.cpp#1)]
- [!code-csharp[Classic Math.Round Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Math.Round Example/CS/source.cs#1)]
- [!code-vb[Classic Math.Round Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Math.Round Example/VB/source.vb#1)]  
-  
-<a name="Round3_Example"></a>   
-## <a name="mathrounddecimal-int32-example"></a>Math.Round （小数，Int32） 示例  
- 下面的示例将舍入小数值，并且两个小数位到具有小数部分位数的值。  
-  
- [!code-csharp[System.Math.Round.Overload#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/source.cs#3)]
- [!code-vb[System.Math.Round.Overload#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/source.vb#3)]  
-  
-<a name="Round4_Example"></a>   
-## <a name="mathrounddouble-int32-example"></a>Math.Round （双精度型，Int32） 示例  
- 下面的示例将舍入到具有小数部分位数的双精度数的两个小数位数与双精度值。  
-  
- [!code-cpp[Classic Math.Round2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Math.Round2 Example/CPP/source.cpp#1)]
- [!code-csharp[Classic Math.Round2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Math.Round2 Example/CS/source.cs#1)]
- [!code-vb[Classic Math.Round2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Math.Round2 Example/VB/source.vb#1)]  
-  
-<a name="Round5_Example"></a>   
-## <a name="mathrounddecimal-midpointrounding-example"></a>Math.Round （十进制、 MidpointRounding） 示例  
- 下面的示例显示返回的值<xref:System.Math.Round%28System.Decimal%29>方法，<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29>方法替换`mode`自变量<xref:System.MidpointRounding.ToEven>，和<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29>方法替换`mode`自变量的<xref:System.MidpointRounding.AwayFromZero>。  
-  
- [!code-csharp[System.Math.Round.Overload#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/midpoint1.cs#5)]
- [!code-vb[System.Math.Round.Overload#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/midpoint1.vb#5)]  
-  
-<a name="Round6_Example"></a>   
-## <a name="mathrounddouble-midpointrounding-example"></a>Math.Round （双精度型，MidpointRounding） 示例  
- 下面的示例显示返回的值<xref:System.Math.Round%28System.Double%29>方法，<xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>方法替换`mode`自变量<xref:System.MidpointRounding.ToEven>，和<xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>方法替换`mode`自变量的<xref:System.MidpointRounding.AwayFromZero>。  
-  
- [!code-csharp[System.Math.Round.Overload#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/midpoint2.cs#6)]
- [!code-vb[System.Math.Round.Overload#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/midpoint2.vb#6)]  
-  
-<a name="Round7_Example"></a>   
-## <a name="mathrounddecimal-int32-midpointrounding-example"></a>Math.Round (十进制、 Int32，MidpointRounding) 示例  
- 下面的示例演示如何使用<xref:System.Math.Round%2A>方法替换<xref:System.MidpointRounding>枚举。  
-  
- [!code-cpp[math.midpointrounding#1](~/samples/snippets/cpp/VS_Snippets_CLR/math.midpointrounding/cpp/mpr.cpp#1)]
- [!code-csharp[math.midpointrounding#1](~/samples/snippets/csharp/VS_Snippets_CLR/math.midpointrounding/CS/mpr.cs#1)]
- [!code-vb[math.midpointrounding#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/math.midpointrounding/VB/mpr.vb#1)]  
-  
-<a name="Round8_Example"></a>   
-## <a name="mathrounddouble-int32-midpointrounding-example"></a>Math.Round (双精度型，Int32，MidpointRounding) 示例  
- 下面的示例演示如何使用<xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>方法替换<xref:System.MidpointRounding>枚举。  
-  
- [!code-csharp[System.Math.Round.Overload#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/mpr.cs#4)]
- [!code-vb[System.Math.Round.Overload#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/mpr.vb#4)]  
-  
-<a name="Round_Versions"></a>   
-## <a name="version-information"></a>版本信息  
- .NET Framework  
- 无需重载<xref:System.MidpointRounding>中支持参数： 4.5、 4、 3.5、 3.0、 2.0、 1.1 和 1.0  
-使用重载<xref:System.MidpointRounding>中支持参数： 4.5、 4、 3.5、 3.0、 2.0  
-  
- .NET Framework Client Profile  
- 所有重载都受都支持中： 4、 3.5 SP1  
-  
- 可移植类库  
- 所有重载都受都支持  
-  
- 用于 Windows 应用商店应用的 .NET  
- 所有重载都中受都支持： Windows 8  
-  
- ]]></format>
+### Examples 
+
+除了中的示例之外[备注](#remarks-round)部分中，这篇文章包括示例，介绍的以下重载`Math.Round`方法：
+
+[Math.Round(Decimal)](#Round1_Example)  
+[Math.Round(Double)](#Round2_Example)  
+[Math.Round （小数，Int32）](#Round3_Example)  
+[Math.Round （十进制、 MidpointRounding）](#Round4_Example)  
+[Math.Round （双精度型，Int32）](#Round5_Example)  
+[Math.Round(Double, MidpointRounding)](#Round6_Example)  
+[Math.Round (十进制、 Int32，MidpointRounding)](#Round7_Example)  
+[Math.Round (双精度型，Int32，MidpointRounding)](#Round8_Example)  
+
+[!INCLUDE[midpoint-rounding](~/includes/csharp-interactive-note.md)]
+
+       ]]></format>
         </remarks>
         <altmember cref="M:System.Math.Ceiling(System.Decimal)" />
         <altmember cref="M:System.Math.Floor(System.Decimal)" />
@@ -4175,17 +4056,26 @@ Remainder = (Math.Abs(dividend) - (Math.Abs(divisor) *
       </Parameters>
       <Docs>
         <param name="d">要舍入的小数。</param>
-        <summary>将小数值舍入到最接近的整数值。</summary>
-        <returns>最接近参数 <paramref name="d" /> 的整数。 如果 <paramref name="d" /> 的小数部分正好处于两个整数中间，其中一个整数为偶数，另一个整数为奇数，则返回偶数。 请注意，此方法返回 <see cref="T:System.Decimal" />，而不是整数类型。</returns>
+        <summary>将小数值舍入到最接近的整数值，并将中点值舍入到最接近的偶数。</summary>
+        <returns>最接近 <paramref name="d" /> 参数的整数。 如果 <paramref name="d" /> 的小数部分正好处于两个整数中间，其中一个整数为偶数，另一个整数为奇数，则返回偶数。 请注意，此方法返回 <see cref="T:System.Decimal" />，而不是整数类型。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
-  
+
 ## Remarks  
   
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
+此方法使用的默认舍入的约定<xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>。 请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+<a name="Round1_Example"></a> 
+## <a name="example"></a>示例
+
+下面的示例演示<xref:System.Math.Round%28System.Decimal%29>方法。 请注意， <xref:System.Decimal> 4.5 的值将舍入到 4，而不是 5，因为此重载使用默认<xref:System.MidpointRounding.ToEven>约定。  
   
- ]]></format>
+[!code-csharp-interactive[System.Math.Round#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round/cs/rounddecimal1.cs#6)]
+[!code-vb[System.Math.Round#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round/vb/rounddecimal1.vb#6)]  
+
+       ]]></format>
         </remarks>
         <exception cref="T:System.OverflowException">结果超出了 <see cref="T:System.Decimal" /> 的范围。</exception>
         <altmember cref="M:System.Math.Ceiling(System.Double)" />
@@ -4233,17 +4123,20 @@ Remainder = (Math.Abs(dividend) - (Math.Abs(divisor) *
       </Parameters>
       <Docs>
         <param name="a">要舍入的双精度浮点数。</param>
-        <summary>将双精度浮点值舍入为最接近的整数值。</summary>
+        <summary>将双精度浮点值舍入到最接近的整数值，并将中点值舍入到最接近的偶数。</summary>
         <returns>最接近 <paramref name="a" /> 的整数。 如果 <paramref name="a" /> 的小数部分正好处于两个整数中间，其中一个整数为偶数，另一个整数为奇数，则返回偶数。 请注意，此方法返回 <see cref="T:System.Double" />，而不是整数类型。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-  
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
 
-从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Round`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Round`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例演示了这种优化的转换：
+此方法使用的默认舍入的约定<xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>。 请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+如果的值`a`自变量是<xref:System.Double.NaN?displayProperty=nameWithType>，该方法将返回<xref:System.Double.NaN?displayProperty=nameWithType>。 如果`a`是<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>，该方法将返回<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>分别。  
+
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Round`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Round`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 此优化使代码可以更快运行 -- 对于进行大量到整型类型的转换的代码，可快达两倍。 下面的示例演示了这种优化的转换：
    
 ```vb
 Dim d1 As Double = 1043.75133
@@ -4253,7 +4146,16 @@ Dim d2 As Double = 7968.4136
 Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
 ```
 
- ]]></format>
+<a name="Round2_Example"></a>   
+## <a name="example"></a>示例  
+
+下面的示例演示了舍入为最接近的整数值。  
+  
+[!code-cpp[Classic Math.Round Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Math.Round Example/CPP/source.cpp#1)]
+[!code-csharp-interactive[Classic Math.Round Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Math.Round Example/CS/source.cs#1)]
+[!code-vb[Classic Math.Round Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Math.Round Example/VB/source.vb#1)]  
+
+       ]]></format>
         </remarks>
         <block subset="none" type="usage"><para>由于表示十进制值为浮点数，或在某些情况下执行浮点值的算术运算可能会导致精度丢失<see cref="M:System.Math.Round(System.Double)" />方法可能不会显示要舍入到中点值接近的偶数。 在以下示例中，因为浮点值.1 有没有有限的二进制表示形式的首次调用到<see cref="M:System.Math.Round(System.Double)" />11.5 值的方法将返回而不是 12 11。  
   
@@ -4300,17 +4202,28 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
       <Docs>
         <param name="d">要舍入的小数。</param>
         <param name="decimals">返回值中的小数位数。</param>
-        <summary>将小数值按指定的小数位数舍入。</summary>
+        <summary>将小数值舍入到指定数量的小数位，并将中点值舍入到最接近的偶数。</summary>
         <returns>最接近 <paramref name="d" /> 的 <paramref name="decimals" /> 位小数的数字。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
   
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
+值`decimals`自变量的范围可以介于 0 到 28。
+
+此方法使用的默认舍入的约定<xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>。 请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+<a name="Round3_Example"></a>   
+## <a name="example"></a>示例  
+
+下面的示例将舍入小数值，并且两个小数位到具有小数部分位数的值。  
   
- ]]></format>
+[!code-csharp-interactive[System.Math.Round.Overload#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/source.cs#3)]
+[!code-vb[System.Math.Round.Overload#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/source.vb#3)]  
+  
+      ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="decimals" /> 小于 0 或大于 28。</exception>
         <exception cref="T:System.OverflowException">结果超出了 <see cref="T:System.Decimal" /> 的范围。</exception>
@@ -4360,17 +4273,26 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
       <Docs>
         <param name="d">要舍入的小数。</param>
         <param name="mode">在两个数字之间时如何舍入 <paramref name="d" /> 的规范。</param>
-        <summary>将小数值舍入到最接近的整数。 一个参数，指定当一个值正好处于两个数中间时如何舍入这个值。</summary>
-        <returns>最接近 <paramref name="d" /> 的整数。 如果 <paramref name="d" /> 是两个数字的中值，这两个数字一个为偶数，另一个为奇数，则 <paramref name="mode" /> 确定返回两个数字中的哪一个。</returns>
+        <summary>将小数值舍入到最接近的整数，并为中点值使用指定的舍入规则。</summary>
+        <returns>最接近 <paramref name="d" /> 的整数。 如果 <paramref name="d" /> 是两个数字的中值，这两个数字一个为偶数，另一个为奇数，则 <paramref name="mode" /> 确定返回两个数字中的哪一个。 请注意，此方法返回 <see cref="T:System.Decimal" />，而不是整数类型。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
+
+请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+<a name="Round5_Example"></a>   
+## <a name="example"></a>示例  
+
+下面的示例显示返回的值<xref:System.Math.Round%28System.Decimal%29>方法，<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29>方法替换`mode`自变量<xref:System.MidpointRounding.ToEven>，和<xref:System.Math.Round%28System.Decimal%2CSystem.MidpointRounding%29>方法替换`mode`自变量的<xref:System.MidpointRounding.AwayFromZero>。  
   
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
+[!code-csharp-interactive[System.Math.Round.Overload#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/midpoint1.cs#5)]
+[!code-vb[System.Math.Round.Overload#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/midpoint1.vb#5)]  
   
- ]]></format>
+       ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="mode" /> 不是 <see cref="T:System.MidpointRounding" /> 的一个有效值。</exception>
         <exception cref="T:System.OverflowException">结果超出了 <see cref="T:System.Decimal" /> 的范围。</exception>
@@ -4416,22 +4338,36 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
       <Docs>
         <param name="value">要舍入的双精度浮点数。</param>
         <param name="digits">返回值中的小数数字。</param>
-        <summary>将双精度浮点值按指定的小数位数舍入。</summary>
+        <summary>将双精度浮点值舍入到指定数量的小数位，并将中点值舍入到最接近的偶数。</summary>
         <returns>最接近 <paramref name="value" /> 的 <paramref name="digits" /> 位小数的数字。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
   
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
+值`digits`自变量的范围可以介于 0 到 15。 请注意，15 是支持的整数和小数位数的最大数目<xref:System.Double>类型。
+
+此方法使用的默认舍入的约定<xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>。 请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+如果的值`value`自变量是<xref:System.Double.NaN?displayProperty=nameWithType>，该方法将返回<xref:System.Double.NaN?displayProperty=nameWithType>。 如果`value`是<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>，该方法将返回<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>分别。  
+
+<a name="Round4_Example"></a>   
+## <a name="example"></a>示例  
+
+下面的示例将舍入到具有小数部分位数的双精度数的两个小数位数与双精度值。  
   
- ]]></format>
+[!code-cpp[Classic Math.Round2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Math.Round2 Example/CPP/source.cpp#1)]
+[!code-csharp-interactive[Classic Math.Round2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Math.Round2 Example/CS/source.cs#1)]
+[!code-vb[Classic Math.Round2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Math.Round2 Example/VB/source.vb#1)]  
+  
+       ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="digits" /> 小于 0 或大于 15。</exception>
         <block subset="none" type="usage"><para>由于表示十进制值为浮点数，或在某些情况下执行浮点值的算术运算可能会导致精度丢失<see cref="M:System.Math.Round(System.Double,System.Int32)" />方法可能不会显示要舍入到中点值最近的偶数值中<paramref name="digits" />小数位置。 下面的示例，其中 2.135 将舍入到而不是 2.14 2.13 所示。 这是因为该方法将在内部相乘<paramref name="value" />10<sup>数字</sup>，和乘法运算在这种情况下会精度损失。  
   
-[！ 代码 csharp[System.Math.Round#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round/cs/round3.cs#2)] [！ 代码 vb[System.Math.Round#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round/vb/round3.vb#2)]</para></block>
+[！ 代码 c# interactive[System.Math.Round#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round/cs/round3.cs#2)] [！ 代码 vb[System.Math.Round#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round/vb/round3.vb#2)]</para></block>
         <altmember cref="M:System.Math.Ceiling(System.Double)" />
         <altmember cref="M:System.Math.Floor(System.Double)" />
         <altmember cref="M:System.Decimal.Round(System.Decimal,System.Int32)" />
@@ -4473,22 +4409,32 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
       <Docs>
         <param name="value">要舍入的双精度浮点数。</param>
         <param name="mode">在两个数字之间时如何舍入 <paramref name="value" /> 的规范。</param>
-        <summary>将双精度浮点值舍入为最接近的整数。 一个参数，指定当一个值正好处于两个数中间时如何舍入这个值。</summary>
-        <returns>最接近 <paramref name="value" /> 的整数。 如果 <paramref name="value" /> 是两个整数的中值，这两个整数一个为偶数，另一个为奇数，则 <paramref name="mode" /> 确定返回两个整数中的哪一个。</returns>
+        <summary>将双精度浮点值舍入到最接近的整数，并为中点值使用指定的舍入约定。</summary>
+        <returns>最接近 <paramref name="value" /> 的整数。 如果 <paramref name="value" /> 是两个整数的中值，这两个整数一个为偶数，另一个为奇数，则 <paramref name="mode" /> 确定返回两个整数中的哪一个。 请注意，此方法返回 <see cref="T:System.Double" />，而不是整数类型。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
+
+请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+如果的值`value`自变量是<xref:System.Double.NaN?displayProperty=nameWithType>，该方法将返回<xref:System.Double.NaN?displayProperty=nameWithType>。 如果`value`是<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>，该方法将返回<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>分别。  
+
+<a name="Round6_Example"></a>   
+## <a name="example"></a>示例  
+下面的示例显示返回的值<xref:System.Math.Round%28System.Double%29>方法，<xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>方法替换`mode`自变量<xref:System.MidpointRounding.ToEven>，和<xref:System.Math.Round%28System.Double%2CSystem.MidpointRounding%29>方法替换`mode`自变量的<xref:System.MidpointRounding.AwayFromZero>。  
   
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
+[!code-csharp[System.Math.Round.Overload#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/midpoint2.cs#6)]
+[!code-vb[System.Math.Round.Overload#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/midpoint2.vb#6)]  
   
- ]]></format>
+       ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="mode" /> 不是 <see cref="T:System.MidpointRounding" /> 的一个有效值。</exception>
         <block subset="none" type="usage"><para>由于表示十进制值为浮点数，或在某些情况下执行浮点值的算术运算可能会导致精度丢失<see cref="M:System.Math.Round(System.Double,System.MidpointRounding)" />方法可能不会显示要舍入到中点值接近的偶数。 在以下示例中，因为浮点值.1 有没有有限的二进制表示形式的首次调用到<see cref="M:System.Math.Round(System.Double)" />11.5 值的方法将返回而不是 12 11。  
   
-[！ 代码 csharp[System.Math.Round#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round/cs/round5.cs#4)] [！ 代码 vb[System.Math.Round#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round/vb/round5.vb#4)]</para></block>
+[！ 代码 c# interactive[System.Math.Round#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round/cs/round5.cs#4)] [！ 代码 vb[System.Math.Round#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round/vb/round5.vb#4)]</para></block>
         <altmember cref="M:System.Math.Ceiling(System.Double)" />
         <altmember cref="M:System.Math.Floor(System.Double)" />
         <altmember cref="M:System.Decimal.Round(System.Decimal,System.MidpointRounding)" />
@@ -4537,17 +4483,29 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
         <param name="d">要舍入的小数。</param>
         <param name="decimals">返回值中的小数位数。</param>
         <param name="mode">在两个数字之间时如何舍入 <paramref name="d" /> 的规范。</param>
-        <summary>将小数值按指定的小数位数舍入。 一个参数，指定当一个值正好处于两个数中间时如何舍入这个值。</summary>
+        <summary>将小数值舍入到指定数量的小数位，并为中点值使用指定的舍入规则。</summary>
         <returns>最接近 <paramref name="d" /> 的 <paramref name="decimals" /> 位小数的数字。 如果 <paramref name="d" /> 比 <paramref name="decimals" /> 少部分数字，<paramref name="d" /> 原样返回。</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]  
+
+值`decimals`自变量的范围可以介于 0 到 28。
+
+<a name="Round7_Example"></a>   
+## <a name="example"></a>示例  
+
+下面的示例演示如何使用<xref:System.Math.Round%2A>方法替换<xref:System.MidpointRounding>枚举。  
   
-## Remarks  
-  
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
-  
- ]]></format>
+[!code-cpp[math.midpointrounding#1](~/samples/snippets/cpp/VS_Snippets_CLR/math.midpointrounding/cpp/mpr.cpp#1)]
+[!code-csharp-interactive[math.midpointrounding#1](~/samples/snippets/csharp/VS_Snippets_CLR/math.midpointrounding/CS/mpr.cs#1)]
+[!code-vb[math.midpointrounding#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/math.midpointrounding/VB/mpr.vb#1)]  
+
+       ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="decimals" /> 小于 0 或大于 28。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="mode" /> 不是 <see cref="T:System.MidpointRounding" /> 的一个有效值。</exception>
@@ -4595,17 +4553,30 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
         <param name="value">要舍入的双精度浮点数。</param>
         <param name="digits">返回值中的小数数字。</param>
         <param name="mode">在两个数字之间时如何舍入 <paramref name="value" /> 的规范。</param>
-        <summary>将双精度浮点值按指定的小数位数舍入。 一个参数，指定当一个值正好处于两个数中间时如何舍入这个值。</summary>
+        <summary>将双精度浮点值舍入到指定数量的小数位，并为中点值使用指定的舍入规则。</summary>
         <returns>最接近 <paramref name="value" /> 的 <paramref name="digits" /> 位小数的数字。 如果 <paramref name="value" /> 比 <paramref name="digits" /> 少部分数字，<paramref name="value" /> 原样返回。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
+
+值`digits`自变量的范围可以介于 0 到 15。 请注意，15 是支持的整数和小数位数的最大数目<xref:System.Double>类型。
+
+请参阅[中点值和舍入的约定](#midpoint-values-and-rounding-conventions)有关舍入中点值的数字信息。
+
+[!INCLUDE[midpoint-rounding](~/includes/floating-point-equality.md)]
+
+如果的值`value`自变量是<xref:System.Double.NaN?displayProperty=nameWithType>，该方法将返回<xref:System.Double.NaN?displayProperty=nameWithType>。 如果`value`是<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>，该方法将返回<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>或<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>分别。  
+
+<a name="Round8_Example"></a>   
+## <a name="example"></a>示例  
+
+下面的示例演示如何使用<xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29>方法替换<xref:System.MidpointRounding>枚举。  
   
-> [!NOTE]
->  有关示例和全面的使用情况信息和其他重载`Round`方法，请参阅<xref:System.Math.Round%2A>参考页。  
+[!code-csharp-interactive[System.Math.Round.Overload#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.math.round.overload/cs/mpr.cs#4)]
+[!code-vb[System.Math.Round.Overload#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.math.round.overload/vb/mpr.vb#4)]  
   
- ]]></format>
+       ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="digits" /> 小于 0 或大于 15。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="mode" /> 不是 <see cref="T:System.MidpointRounding" /> 的一个有效值。</exception>
@@ -5552,7 +5523,7 @@ Dim i2 As Integer = CInt(Math.Ceiling(d2))        ' Result: 7968
 
 <xref:System.Math.Truncate%2A> 将舍入`d`到推向零最接近的整数。  
   
-从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Truncate`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Truncate`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 这种优化允许代码运行速度更快，最多两次同样快的大量转换为整数类型的实现代码。 下面的示例说明了这种优化的转换：
+从 Visual Basic 15.8 开始，双到整数的转换的性能如果返回的值传递优化`Truncate`方法的任何[整型的转换函数](~/docs/visual-basic/language-reference/functions/conversion-functions.md)，或者如果的双精度值返回的`Truncate`自动转换为一个整数，其[Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md)设置为 Off。 此优化使代码可以更快运行 -- 对于进行大量到整型类型的转换的代码，可快达两倍。 下面的示例说明了这种优化的转换：
    
 ```vb
 Dim d As Double = 164.7194
