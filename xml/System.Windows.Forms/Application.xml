@@ -1,5 +1,5 @@
 <Type Name="Application" FullName="System.Windows.Forms.Application">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5e0f8ee34f05ce1cd10a6b6d926a14e622d5a322" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53514394" /></Metadata><TypeSignature Language="C#" Value="public sealed class Application" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7c192fa67a894162598711daa924754ad4b68e96" /><Meta Name="ms.sourcegitcommit" Value="19b66619a469ee45c85c618f8a605859882eb638" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/10/2019" /><Meta Name="ms.locfileid" Value="54183845" /></Metadata><TypeSignature Language="C#" Value="public sealed class Application" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Application extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Application" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Application" />
@@ -156,16 +156,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 必须将附加到的事件处理程序<xref:System.Windows.Forms.Application.Exit%2A>事件来执行未处理状态，该应用程序停止运行前必需任务。 你可以关闭打开的此应用程序或释放的垃圾回收未回收的对象文件。  
+ 必须将附加到的事件处理程序`ApplicationExit`事件来执行未处理状态，该应用程序停止运行前必需任务。 你可以关闭打开的此应用程序或释放的垃圾回收未回收的对象文件。  
   
- 由于这是一个静态事件，必须分离附加到此事件中的任何事件处理程序<xref:System.Windows.Forms.Application.ApplicationExit>事件处理程序本身。 如果未分离这些处理程序，它们将保持附加在该事件并继续占用的内存。  
+ 由于这是一个静态事件，必须分离附加到此事件中的任何事件处理程序`ApplicationExit`事件处理程序本身。 如果未分离这些处理程序，它们将保持附加在该事件并继续占用的内存。  
   
    
   
 ## Examples  
- 下面的代码示例显示两个窗体，并退出应用程序，这两个窗体关闭时。 当应用程序启动并退出时，会记住每个窗体的位置。 此示例演示如何使用<xref:System.Windows.Forms.Application.ApplicationExit>事件，以了解窗体位置应永久保存到文件，以及时`FileStream`应将其关闭。  
+ 下面的代码示例显示两个窗体，并退出应用程序，这两个窗体关闭时。 当应用程序启动并退出时，会记住每个窗体的位置。 此示例演示如何使用`ApplicationExit`事件，以了解窗体位置应永久保存到文件，以及时`FileStream`应将其关闭。  
   
- 该类`MyApplicationContext`继承<xref:System.Windows.Forms.ApplicationContext>和跟踪的每个窗体处于关闭状态，并在它们都时退出当前线程时间。 在关闭时，类会记住每个窗体的位置。 当<xref:System.Windows.Forms.Application.ApplicationExit>发生事件时，类将每个用户的位置写入到文件。 窗体位置数据存储在名为的文件`appdata.txt`由在位置创建<xref:System.Windows.Forms.Application.UserAppDataPath%2A>。 `Main`方法调用`Application.Run(context)`以启动应用程序提供<xref:System.Windows.Forms.ApplicationContext>。  
+ 该类`MyApplicationContext`继承<xref:System.Windows.Forms.ApplicationContext>和跟踪的每个窗体处于关闭状态，并在它们都时退出当前线程时间。 在关闭时，类会记住每个窗体的位置。 当`ApplicationExit`发生事件时，类将每个用户的位置写入到文件。 窗体位置数据存储在名为的文件`appdata.txt`由在位置创建<xref:System.Windows.Forms.Application.UserAppDataPath%2A>。 `Main`方法调用`Application.Run(context)`以启动应用程序提供<xref:System.Windows.Forms.ApplicationContext>。  
   
  此代码是一段摘录所示示例<xref:System.Windows.Forms.ApplicationContext>类概述。 请参阅<xref:System.Windows.Forms.ApplicationContext>有关整个代码列表。  
   
