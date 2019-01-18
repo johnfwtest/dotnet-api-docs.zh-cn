@@ -1,5 +1,5 @@
 <Type Name="ScriptManager" FullName="System.Web.UI.ScriptManager">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8b0522f68883930ffce007ceaf3e66800a7df67c" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53465202" /></Metadata><TypeSignature Language="C#" Value="public class ScriptManager : System.Web.UI.Control, System.Web.UI.IPostBackDataHandler, System.Web.UI.IPostBackEventHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6b06a5f39f55dfd26501100b8ca62f7583702edf" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54235094" /></Metadata><TypeSignature Language="C#" Value="public class ScriptManager : System.Web.UI.Control, System.Web.UI.IPostBackDataHandler, System.Web.UI.IPostBackEventHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ScriptManager extends System.Web.UI.Control implements class System.Web.UI.IPostBackDataHandler, class System.Web.UI.IPostBackEventHandler" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.ScriptManager" />
   <TypeSignature Language="VB.NET" Value="Public Class ScriptManager&#xA;Inherits Control&#xA;Implements IPostBackDataHandler, IPostBackEventHandler" />
@@ -57,7 +57,7 @@
   
 -   [介绍](#introduction)  
   
--   [在局部页面呈现](#partial_page_rendering)  
+-   [Partial-Page Rendering](#partial_page_rendering)  
   
 -   [使用母版页、 用户控件和其他子组件使用 ScriptManager 控件](#using_the_scriptmanager_control_with_master_pages__user_controls__and_other_child_components)  
   
@@ -90,7 +90,7 @@
 -   注册实现的服务器控件<xref:System.Web.UI.IExtenderControl>或<xref:System.Web.UI.IScriptControl>与<xref:System.Web.UI.ScriptManager>控件，以便呈现所需的客户端组件和行为的脚本。  
   
 <a name="partial_page_rendering"></a>   
-## <a name="partial-page-rendering"></a>在局部页面呈现  
+## <a name="partial-page-rendering"></a>Partial-Page Rendering  
  ASP.NET 页面的支持局部页面呈现的功能受以下因素：  
   
 -   <xref:System.Web.UI.ScriptManager>控件的<xref:System.Web.UI.ScriptManager.EnablePartialRendering%2A>属性必须为`true`（默认值）。  
@@ -267,7 +267,7 @@
   
  **全球化的日期和时间显示在浏览器中**  
   
- 下面的示例演示如何设置<xref:System.Web.UI.ScriptManager.EnableScriptGlobalization%2A>属性，以便该客户端脚本可以在浏览器中显示特定于区域性的日期和时间。 在示例中，`Culture`指令的特性设置为`auto`。 因此，在当前的浏览器设置中指定的第一个语言确定区域性和 UI 区域性的页。 有关更多信息，请参见[如何：为 ASP.NET 网页全球化设置区域性和 UI 区域性](https://msdn.microsoft.com/library/76091f86-f967-4687-a40f-de87bd8cc9a0)。  
+ 下面的示例演示如何设置<xref:System.Web.UI.ScriptManager.EnableScriptGlobalization%2A>属性，以便该客户端脚本可以在浏览器中显示特定于区域性的日期和时间。 在示例中，`Culture`的属性[@ Page](https://msdn.microsoft.com/library/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)指令设置为`auto`。 因此，在当前的浏览器设置中指定的第一个语言确定区域性和 UI 区域性的页。 有关详细信息，请参阅[如何：为 ASP.NET 网页全球化设置区域性和 UI 区域性](https://msdn.microsoft.com/library/76091f86-f967-4687-a40f-de87bd8cc9a0)。  
   
  [!code-aspx-csharp[System.Web.UI.ScriptManager.EnableScriptGlobalization#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptManager.EnableScriptGlobalization/CS/default.aspx#1)]
  [!code-aspx-vb[System.Web.UI.ScriptManager.EnableScriptGlobalization#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptManager.EnableScriptGlobalization/VB/default.aspx#1)]  
@@ -1148,7 +1148,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 当<xref:System.Web.UI.ScriptManager.EnableScriptGlobalization%2A>属性设置为`true`，全球化的 ECMAScript (JavaScript) 功能，如方法显示特定于区域性的信息。 在浏览器中，在服务器代码中，或网站的配置文件中，可以设置的区域性。  
+ 当<xref:System.Web.UI.ScriptManager.EnableScriptGlobalization%2A>属性设置为`true`，如全球化 ECMAScript (JavaScript) 函数`Date.localeFormat`方法显示特定于区域性的信息。 在浏览器中，在服务器代码中，或网站的配置文件中，可以设置的区域性。  
   
  ]]></format>
         </remarks>
@@ -1564,14 +1564,14 @@
 ## Remarks  
  <xref:System.Web.UI.ScriptManager.IsDebuggingEnabled%2A>属性返回`false`以下条件的任何一个条件为 true 时：  
   
--   中的配置文件中，元素`retail`属性设置为`true`。 这会替代所有其他设置。  
+-   在中[部署](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms228298(v%3dvs.100))配置文件中，元素`retail`属性设置为`true`。 这会替代所有其他设置。  
   
 -   <xref:System.Web.UI.ScriptManager.ScriptMode%2A>属性设置为`Auto`或设置为`Inherit`，并在未启用调试`compilation`应用程序根 Web.config 文件部分。  
   
 -   <xref:System.Web.UI.ScriptManager.ScriptMode%2A> 属性设置为 `Release`。  
   
     > [!NOTE]
-    >  `debug`指令的特性不会影响已启用 Ajax 的 ASP.NET 应用程序。 <xref:System.Web.UI.ScriptManager>控件使用的设置仅在 Web.config 文件，并在其<xref:System.Web.UI.ScriptManager.IsDebuggingEnabled%2A>和<xref:System.Web.UI.ScriptManager.ScriptMode%2A>属性以确定是否呈现调试脚本。  
+    >  `debug`的属性[@ Page](https://msdn.microsoft.com/library/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)指令不会影响已启用 Ajax 的 ASP.NET 应用程序。 <xref:System.Web.UI.ScriptManager>控件使用的设置仅在 Web.config 文件，并在其<xref:System.Web.UI.ScriptManager.IsDebuggingEnabled%2A>和<xref:System.Web.UI.ScriptManager.ScriptMode%2A>属性以确定是否呈现调试脚本。  
   
  有关详细信息，请参阅[调试和跟踪 Ajax 应用程序概述](https://msdn.microsoft.com/library/92684ea0-7bb4-4a34-9203-3aa6394ce375)。  
   
@@ -1737,7 +1737,7 @@
 ## Remarks  
  <xref:System.Web.UI.ScriptManager.LoadScriptsBeforeUI%2A>属性确定如何在脚本<xref:System.Web.UI.ScriptManager.Scripts%2A>相对于页 UI 的标记加载集合。  
   
- 当<xref:System.Web.UI.ScriptManager.LoadScriptsBeforeUI%2A>属性是`true`、`script`元素呈现在加载页面的 UI 标记之前。 在此方案中，如果 UI 元素定义在脚本中，UI 完全正常运行时将其加载。 但是，如果脚本访问为其实例尚未已创建的标记中的 UI 元素，则可能发生错误。 若要确保访问它们之前加载了 UI 元素，处理的事件的类。  
+ 当<xref:System.Web.UI.ScriptManager.LoadScriptsBeforeUI%2A>属性是`true`、`script`元素呈现在加载页面的 UI 标记之前。 在此方案中，如果 UI 元素定义在脚本中，UI 完全正常运行时将其加载。 但是，如果脚本访问为其实例尚未已创建的标记中的 UI 元素，则可能发生错误。 若要确保访问它们之前是否加载了 UI 元素，请处理`load`事件的`Sys.Application`类。  
   
  当<xref:System.Web.UI.ScriptManager.LoadScriptsBeforeUI%2A>属性是`false`、`script`元素呈现在呈现页面的 UI 标记后。 在此方案中，UI 的加载速度更快，但它可能无法完全正常运行如果定义其他 UI 元素的脚本未完成加载。  
   
@@ -2614,7 +2614,7 @@
   
  <xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>可以仅在异步回发过程中调用方法。 若要确定是否异步回发，请使用<xref:System.Web.UI.ScriptManager.IsInAsyncPostBack%2A>属性。 此方法将调用接受一个名为参数的重载`isJsonSerialized`设置为`false`。 当`isJsonSerialized`参数设置为`false`，该字符串不序列化 JavaScript 对象表示法 (JSON)。 有关 JSON 格式的详细信息，请参阅[JSON 简介](https://go.microsoft.com/fwlink/?LinkId=77297)Web 站点。  
   
- 使用注册的数据项目<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>方法可以访问客户端脚本过程中的、 和对象的事件。 在您处理这些事件，事件参数对象中传递自定义数据。 例如，如果事件提供处理程序，自定义数据类，该类公开的属性中传递。  
+ 注册到的数据项<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>方法可以在过程的客户端脚本中访问`pageLoading`， `pageLoaded`，和`endRequest`的事件`PageRequestManager`对象。 在您处理这些事件，事件参数对象中传递自定义数据。 例如，如果提供的处理程序`pageLoading`自定义数据传入事件，`PageLoadingEventArgs`类，该类公开的属性。  
   
    
   
@@ -2666,16 +2666,16 @@
 ## Remarks  
  您使用<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>方法将数据发送从服务器到客户端在异步回发，而不考虑接收数据的控件是否是内部过程<xref:System.Web.UI.UpdatePanel>控件。  
   
- 如果`dataItem`注册为参数`control`未序列化为 JSON，设置`isJsonSerialized`参数`false`。 这样可以避免需要使用用于发送到客户端每个字符串的函数。 有关 JSON 格式的详细信息，请参阅[JSON 简介](https://go.microsoft.com/fwlink/?LinkId=77297)Web 站点。  
+ 如果`dataItem`注册为参数`control`未序列化为 JSON，设置`isJsonSerialized`参数`false`。 这就无需使用`eval`发送到客户端每个字符串的函数。 有关 JSON 格式的详细信息，请参阅[JSON 简介](https://go.microsoft.com/fwlink/?LinkId=77297)Web 站点。  
   
  <xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>可以仅在异步回发过程中调用方法。 若要确定是否异步回发，请使用<xref:System.Web.UI.ScriptManager.IsInAsyncPostBack%2A>属性。  
   
- 使用注册的数据项目<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>方法可以访问客户端脚本过程中的、 和对象的事件。 在您处理这些事件，事件参数对象中传递自定义数据。 例如，如果事件提供处理程序，自定义数据类，该类公开的属性中传递。  
+ 使用注册的数据项<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>方法可以访问在客户端脚本期间`pageLoading`， `pageLoaded`，和`endRequest`的事件`PageRequestManager`对象。 在您处理这些事件，事件参数对象中传递自定义数据。 例如，如果提供的处理程序`pageLoading`自定义数据传入事件，`PageLoadingEventArgs`类，该类公开的属性。  
   
    
   
 ## Examples  
- 下面的示例演示如何将数据发送到两个<xref:System.Web.UI.WebControls.Label>异步回发期间页面上的控件。 <xref:System.Web.UI.WebControls.Label>控件不是深入了解<xref:System.Web.UI.UpdatePanel>控件。 此示例演示的重载不采用`isJsonSerialized`参数。 否则，用于检索对象的属性的过程是相同的像未使用该重载。  
+ 下面的示例演示如何将数据发送到两个<xref:System.Web.UI.WebControls.Label>异步回发期间页面上的控件。 <xref:System.Web.UI.WebControls.Label>控件不是深入了解<xref:System.Web.UI.UpdatePanel>控件。 此示例演示的重载不采用`isJsonSerialized`参数。 否则为用于检索过程`dataItems`属性的`PageLoadingEventArgs`对象是否相同像未使用该重载。  
   
 > [!NOTE]
 >  在此示例中发送的数据是仅用于说明目的。 在实际应用程序中，将使用<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>方法以从服务器发送自定义数据。 例如，可以使用的数据项目发送有关是否要隐藏或显示不是内部的元素的客户端信息<xref:System.Web.UI.UpdatePanel>控件。  
@@ -2727,7 +2727,7 @@
   
  <xref:System.Web.UI.ScriptManager.RegisterDispose%2A>方法可以多次调用控件。 聚合多个脚本。 释放脚本的顺序与在其中注册脚本的顺序相匹配。  
   
- 如果你注册`dispose`控件不在脚本<xref:System.Web.UI.UpdatePanel>控件，将引发异常。 `dispose`之间调用脚本和类的事件。  
+ 如果你注册`dispose`控件不在脚本<xref:System.Web.UI.UpdatePanel>控件，将引发异常。 `dispose`脚本调用之间`pageLoading`并`pageLoaded`事件的`PageRequestManager`类。  
   
  ]]></format>
         </remarks>
@@ -3433,7 +3433,7 @@
   
  ]]></format>
         </remarks>
-        <block subset="none" type="overrides"><para>当重写此方法，调用基<see cref="M:System.Web.UI.ScriptManager.Render(System.Web.UI.HtmlTextWriter)" />方法，以便在页面上呈现定义类的客户端脚本。</para></block>
+        <block subset="none" type="overrides"><para>当重写此方法，调用基<see cref="M:System.Web.UI.ScriptManager.Render(System.Web.UI.HtmlTextWriter)" />方法，以便客户端脚本定义`Sys.WebForms.PageRequestManager`类呈现在页上。</para></block>
         <altmember cref="M:System.Web.UI.Control.Render(System.Web.UI.HtmlTextWriter)" />
       </Docs>
     </Member>
@@ -3588,15 +3588,15 @@
   
  下表列出了此属性的有效值。  
   
-|值|定义|  
+|“值”|定义|  
 |-----------|----------------|  
-|<xref:System.Web.UI.ScriptMode.Auto>|在网页中使用库的客户端脚本的调试版本时`retail`配置元素的属性设置为`false`。 否则，使用客户端脚本库的发行版本。|  
+|<xref:System.Web.UI.ScriptMode.Auto>|在网页中使用库的客户端脚本的调试版本时`retail`的属性[部署](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms228298(v%3dvs.100))配置元素设置为`false`。 否则，使用客户端脚本库的发行版本。|  
 |<xref:System.Web.UI.ScriptMode.Inherit>|当应用于<xref:System.Web.UI.ScriptManager.ScriptMode%2A>的属性<xref:System.Web.UI.ScriptManager>对象，此值等同于<xref:System.Web.UI.ScriptMode.Auto>。|  
-|<xref:System.Web.UI.ScriptMode.Debug>|除非在网页中使用库的客户端脚本的调试版本`retail`配置元素的属性设置为`true`。|  
-|<xref:System.Web.UI.ScriptMode.Release>|客户端脚本库的发布版本使用在网页中，除非`retail`配置元素的属性设置为`false`。|  
+|<xref:System.Web.UI.ScriptMode.Debug>|除非在网页中使用库的客户端脚本的调试版本`retail`的属性[部署](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms228298(v%3dvs.100))配置元素设置为`true`。|  
+|<xref:System.Web.UI.ScriptMode.Release>|客户端脚本库的发布版本使用在网页中，除非`retail`的属性[部署](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ms228298(v%3dvs.100))配置元素设置为`false`。|  
   
 > [!NOTE]
->  `debug`指令的特性不会影响已启用 Ajax 的 ASP.NET 应用程序。 <xref:System.Web.UI.ScriptManager>控件使用的设置仅在 Web.config 文件，并在其<xref:System.Web.UI.ScriptManager.IsDebuggingEnabled%2A>和<xref:System.Web.UI.ScriptManager.ScriptMode%2A>属性以确定是否呈现调试脚本。  
+>  `debug`的属性[@ Page](https://msdn.microsoft.com/library/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)指令不会影响已启用 Ajax 的 ASP.NET 应用程序。 <xref:System.Web.UI.ScriptManager>控件使用的设置仅在 Web.config 文件，并在其<xref:System.Web.UI.ScriptManager.IsDebuggingEnabled%2A>和<xref:System.Web.UI.ScriptManager.ScriptMode%2A>属性以确定是否呈现调试脚本。  
   
  有关详细信息，请参阅[调试和跟踪 Ajax 应用程序概述](https://msdn.microsoft.com/library/92684ea0-7bb4-4a34-9203-3aa6394ce375)。  
   

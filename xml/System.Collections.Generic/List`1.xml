@@ -1,5 +1,5 @@
 <Type Name="List&lt;T&gt;" FullName="System.Collections.Generic.List&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5035684f29f82639926fd626a0bd3d07d7928ac0" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53334725" /></Metadata><TypeSignature Language="C#" Value="public class List&lt;T&gt; : System.Collections.Generic.ICollection&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.IList" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d2cd21c473d2a8e7d15784e964161e6a1da7bcfa" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54235133" /></Metadata><TypeSignature Language="C#" Value="public class List&lt;T&gt; : System.Collections.Generic.ICollection&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit List`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.ICollection`1&lt;!T&gt;, class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.Generic.IList`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyList`1&lt;!T&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
   <TypeSignature Language="DocId" Value="T:System.Collections.Generic.List`1" />
   <TypeSignature Language="VB.NET" Value="Public Class List(Of T)&#xA;Implements ICollection(Of T), IEnumerable(Of T), IList, IList(Of T), IReadOnlyCollection(Of T), IReadOnlyList(Of T)" />
@@ -86,7 +86,7 @@
   
  可以使用整数索引访问此集合中的元素。  在此集合中的索引都是从零开始的。  
   
- 对于非常大<xref:System.Collections.Generic.List%601>对象，可以通过设置增加到 20 亿元素在 64 位系统上的最大容量`enabled`到的配置元素的特性`true`在运行时环境中。  
+ **仅限.NET framework:** 对于非常大<xref:System.Collections.Generic.List%601>对象，可以通过设置增加到 20 亿元素在 64 位系统上的最大容量`enabled`的属性[ `<gcAllowVeryLargeObjects>` ](~/docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) configuration 元素`true`中运行时环境。  
   
  <xref:System.Collections.Generic.List%601> 接受`null`是有效的引用值类型以及允许重复的元素。  
   
@@ -102,7 +102,7 @@
  它是为您带来益处，若要使用的特定于类型的实现<xref:System.Collections.Generic.List%601>类而不是使用<xref:System.Collections.ArrayList>类或自己编写强类型化的包装集合。 原因是您的实现必须执行什么.NET 框架的用途，且公共语言运行时可以共享 Microsoft 中间语言代码和元数据，您的实现不能。  
   
 ## <a name="f-considerations"></a>F#注意事项  
- <xref:System.Collections.Generic.List%601>类用于不常在F#代码。  相反，[列出了](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d)，这是不可变、 单向链接列表，通常最好是。 F#列表提供有序的、 不可变的一系列值，并支持在函数式开发中使用。 通过F#，则<xref:System.Collections.Generic.List%601>类通常将按引用[ResizeArray\<不 >](https://msdn.microsoft.com/library/ee353447.aspx)类型缩写，以避免命名冲突与F#列出了  
+ <xref:System.Collections.Generic.List%601>类用于不常在F#代码。 相反，[列出了](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d)，这是不可变、 单向链接列表，通常最好是。 F#列表提供有序的、 不可变的一系列值，并支持在函数式开发中使用。 通过F#，则<xref:System.Collections.Generic.List%601>类通常将按引用[ResizeArray\<不 >](https://msdn.microsoft.com/library/ee353447.aspx)类型缩写，以避免命名冲突与F#列出了  
   
    
   
@@ -637,7 +637,7 @@
         <param name="item">要定位的对象。 对于引用类型，该值可以为 <see langword="null" />。</param>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.Generic.IComparer`1" /> 实现。  
   
-或 
+- 或 - 
  如果使用默认比较器 <see cref="P:System.Collections.Generic.Comparer`1.Default" />，则为 <see langword="null" />。</param>
         <summary>使用指定的比较器在整个已排序的 <see cref="T:System.Collections.Generic.List`1" /> 中搜索元素，并返回该元素从零开始的索引。</summary>
         <returns>如果找到 <paramref name="item" />，则为已排序的 <see cref="T:System.Collections.Generic.List`1" /> 中 <paramref name="item" /> 的从零开始的索引；否则为一个负数，该负数是大于 <paramref name="item" /> 的下一个元素的索引的按位求补。如果没有更大的元素，则为 <see cref="P:System.Collections.Generic.List`1.Count" /> 的按位求补。</returns>
@@ -1240,11 +1240,11 @@
 - 或 - 
  <paramref name="arrayIndex" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于 0。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 等于或大于源 <see cref="T:System.Collections.Generic.List`1" /> 的 <see cref="P:System.Collections.Generic.List`1.Count" />。  
   
-或 
+- 或 - 
 从 <paramref name="index" /> 到源 <see cref="T:System.Collections.Generic.List`1" /> 的末尾的元素数大于从 <paramref name="arrayIndex" /> 到目标 <paramref name="array" /> 的末尾的可用空间。</exception>
       </Docs>
     </Member>
@@ -1820,7 +1820,7 @@ Public Function StartsWith(e As Employee) As Boolean
         <exception cref="T:System.ArgumentNullException"><paramref name="match" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <see cref="T:System.Collections.Generic.List`1" /> 的有效索引范围。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于 0。  
   
 - 或 - 
@@ -2560,7 +2560,7 @@ Public Function StartsWith(e As Employee) As Boolean
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 超出了 <see cref="T:System.Collections.Generic.List`1" /> 的有效索引范围。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于 0。  
   
 - 或 - 
@@ -2712,7 +2712,7 @@ Public Function StartsWith(e As Employee) As Boolean
         <exception cref="T:System.ArgumentNullException"><paramref name="collection" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="index" /> 大于 <see cref="P:System.Collections.Generic.List`1.Count" />。</exception>
         <altmember cref="M:System.Collections.Generic.List`1.Insert(System.Int32,`0)" />
         <altmember cref="M:System.Collections.Generic.List`1.AddRange(System.Collections.Generic.IEnumerable{`0})" />
@@ -2784,7 +2784,7 @@ Public Function StartsWith(e As Employee) As Boolean
 > [!NOTE]
 >  Visual Basic、 C# 和 c + + 所有具有访问语法<xref:System.Collections.Generic.List%601.Item%2A>而无需使用其名称的属性。 相反，变量包含<xref:System.Collections.Generic.List%601>，就好像数组使用。  
   
- C# 语言使用关键字来定义而不是实现索引器<xref:System.Collections.Generic.List%601.Item%2A>属性。 Visual Basic 将 <xref:System.Collections.Generic.List%601.Item%2A> 实现为默认属性，该属性提供相同的索引功能。  
+ C#语言中使用[ `this` ](~/docs/csharp/language-reference/keywords/this.md)关键字来定义而不是实现索引器<xref:System.Collections.Generic.List%601.Item%2A>属性。 Visual Basic 将 <xref:System.Collections.Generic.List%601.Item%2A> 实现为默认属性，该属性提供相同的索引功能。  
   
  [!code-csharp[List`1_Class#2](~/samples/snippets/csharp/VS_Snippets_CLR/List`1_Class/cs/source.cs#2)]
  [!code-vb[List`1_Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/List`1_Class/vb/source.vb#2)]  
@@ -3216,7 +3216,7 @@ Public Function StartsWith(e As Employee) As Boolean
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于 0。  
   
-或 
+- 或 - 
  <paramref name="index" /> 等于或大于 <see cref="P:System.Collections.Generic.List`1.Count" />。</exception>
         <altmember cref="M:System.Collections.Generic.List`1.Remove(`0)" />
         <altmember cref="M:System.Collections.Generic.List`1.RemoveRange(System.Int32,System.Int32)" />
@@ -3739,7 +3739,7 @@ Public Function StartsWith(e As Employee) As Boolean
  <paramref name="count" /> 小于 0。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 未在 <see cref="T:System.Collections.Generic.List`1" /> 中指定有效范围。  
   
-或 
+- 或 - 
 <paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，且默认比较器 <see cref="P:System.Collections.Generic.Comparer`1.Default" /> 找不到 <see cref="T:System.IComparable`1" /> 泛型接口或类型为 <paramref name="T" /> 的 <see cref="T:System.IComparable" /> 接口的实现。</exception>
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md">在集合中执行不区分区域性的字符串操作</related>

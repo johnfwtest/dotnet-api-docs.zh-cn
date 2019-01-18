@@ -1,5 +1,5 @@
 <Type Name="HttpRuntimeSection" FullName="System.Web.Configuration.HttpRuntimeSection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b9ab0d3c723b543ec6fe789e870189a7d0bc2797" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51903419" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpRuntimeSection : System.Configuration.ConfigurationSection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="32474195e6f926004eb005963a23568c59d61a7a" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54234795" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpRuntimeSection : System.Configuration.ConfigurationSection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpRuntimeSection extends System.Configuration.ConfigurationSection" />
   <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpRuntimeSection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpRuntimeSection&#xA;Inherits ConfigurationSection" />
@@ -22,7 +22,7 @@
 ## Remarks  
  <xref:System.Web.Configuration.HttpRuntimeSection>使您可以处理这些参数会影响 ASP.NET 运行时的行为。  
   
- 它指由该元素，可在配置层次结构中任何级别上使用的配置文件中的节点。  
+ 它是指由指示配置文件中的节点`<httpRuntime>`元素，可以在配置层次结构中任何级别上使用。  
   
  <xref:System.Web.Configuration.HttpRuntimeSection>部分包含管理以下指令：  
   
@@ -552,9 +552,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Configuration.HttpRuntimeSection.ExecutionTimeout%2A>属性指示的最大允许请求执行 ASP.NET 自动关闭前的秒数。 默认值为 110 秒。 此超时仅适用于在元素中的调试属性设置为`false`。  
+ <xref:System.Web.Configuration.HttpRuntimeSection.ExecutionTimeout%2A>属性指示的最大允许请求执行 ASP.NET 自动关闭前的秒数。 默认值为 110 秒。 此超时仅适用于调试属性中`<compilation>`元素设置为`false`。  
   
- 如果超时过期被引发异常。 可以在应用程序文件夹中的事件日志中记录的相关的信息。 通过启用应用程序运行状况监视的配置元素中执行此操作。  
+ 如果超时过期被引发异常。 可以在应用程序文件夹中的事件日志中记录的相关的信息。 为此，可启用应用程序运行状况监视在`<healthMonitoring>`配置元素。  
   
    
   
@@ -1052,9 +1052,9 @@
   
 -   `4.5 (the default).` 在此模式下，延迟加载值，也就是说，它们并不读取，直到被请求。  
   
--   `4.0` <xref:System.Web.HttpRequest>对象在内部设置一个标志，指示访问任何 HTTP 请求数据时应触发请求验证。 这可确保之前数据，例如 cookie 未触发请求验证，并在请求过程中访问的 Url。 将忽略请求验证设置的配置文件中的元素 （如果有） 或在单个页面中的指令。  
+-   `4.0` <xref:System.Web.HttpRequest>对象在内部设置一个标志，指示访问任何 HTTP 请求数据时应触发请求验证。 这可确保之前数据，例如 cookie 未触发请求验证，并在请求过程中访问的 Url。 请求验证设置的`<pages>`元素 （如果有的话） 配置文件中或[@ Page](https://msdn.microsoft.com/library/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)单个页面中的指令将被忽略。  
   
--   `2.0`。 仅对于页面，不适用于所有 HTTP 请求启用请求验证。 此外，请求验证设置的配置文件中的元素 （如果有） 或在单个页面中的指令用于确定哪一页请求验证。  
+-   `2.0`。 仅对于页面，不适用于所有 HTTP 请求启用请求验证。 此外，请求的验证设置`<pages>`元素 （如果有的话） 配置文件中或[@ Page](https://msdn.microsoft.com/library/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)单个页面中的指令用于确定哪一页请求验证。  
 
 -   `0.0`。 请求验证已禁用应用程序。 `0.0` 仅识别 ASP.NET 4.6 及更高版本。
   

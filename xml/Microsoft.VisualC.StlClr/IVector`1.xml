@@ -1,5 +1,5 @@
 <Type Name="IVector&lt;TValue&gt;" FullName="Microsoft.VisualC.StlClr.IVector&lt;TValue&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2a591b7c50c3a9953f05b878b4a089555e976e8e" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52739448" /></Metadata><TypeSignature Language="C#" Value="public interface IVector&lt;TValue&gt; : ICloneable, Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer&lt;TValue&gt;, System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a712328a1d5b543c2d73cac3ce749af6b265e4d7" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54313502" /></Metadata><TypeSignature Language="C#" Value="public interface IVector&lt;TValue&gt; : ICloneable, Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer&lt;TValue&gt;, System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract beforefieldinit IVector`1&lt;TValue&gt; implements class Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer`1&lt;!TValue&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualC.StlClr.IVector`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IVector(Of TValue)&#xA;Implements ICloneable, ICollection, IRandomAccessContainer(Of TValue)" />
@@ -269,7 +269,7 @@
         <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="">To be added.</param>
+        <param name="">一个随机访问迭代器，指定受控序列的第一个元素，或刚好在空序列的末尾之外。 用于获取一个迭代器，该迭代器指定受控序列的 <paramref name="current" /> 开头，但如果受控序列的长度发生更改，则该迭代器的状态也会发生更改。</param>
         <summary>指定受控序列的开头。</summary>
         <returns>迭代器。</returns>
         <remarks>
@@ -391,7 +391,7 @@
         <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="">To be added.</param>
+        <param name="">一个随机访问迭代器，刚好指向受控序列的末尾之外。 用于获取一个迭代器，该迭代器指定受控序列的 <paramref name="current" /> 末尾，但如果受控序列的长度发生更改，则该迭代器的状态也会发生更改。</param>
         <summary>指定受控序列的末尾。</summary>
         <returns>迭代器。</returns>
         <remarks>
@@ -442,7 +442,7 @@
         <Parameter Name="_Where" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;" />
       </Parameters>
       <Docs>
-        <param name="">To be added.</param>
+        <param name="">一个迭代器，指定任何已移除的元素之外剩余元素中的第一个元素；如果在不存在这样的元素，则为 <see cref="M:Microsoft.VisualC.StlClr.IVector`1.end(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@)" />。</param>
         <param name="_Where">要移除的元素的位置。</param>
         <summary>删除受控序列中由 \_Where 指向的单个元素。</summary>
         <returns>迭代器。</returns>
@@ -613,9 +613,9 @@
         <Parameter Name="_Right" Type="System.Collections.IEnumerable" />
       </Parameters>
       <Docs>
-        <param name="_Where_iter">To be added.</param>
-        <param name="_Right">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="_Where_iter">容器中要在其前面进行插入的位置。</param>
+        <param name="_Right">要插入到容器中的枚举。</param>
+        <summary>将枚举器指定的序列插入到容器中。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -641,11 +641,11 @@
         <Parameter Name="_Val" Type="TValue" />
       </Parameters>
       <Docs>
-        <param name="">To be added.</param>
-        <param name="_Where">To be added.</param>
-        <param name="_Val">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="">指定新插入元素的迭代器。</param>
+        <param name="_Where">容器中要在其前面进行插入的位置。</param>
+        <param name="_Val">要插入到容器中的元素的值。</param>
+        <summary>将指定的值插入到容器中。</summary>
+        <returns>迭代器。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -671,10 +671,10 @@
         <Parameter Name="_Last" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
       </Parameters>
       <Docs>
-        <param name="_Where">To be added.</param>
-        <param name="_First">To be added.</param>
-        <param name="_Last">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="_Where">容器中要在其前面进行插入的位置。</param>
+        <param name="_First">要插入到容器中的范围的开始位置。</param>
+        <param name="_Last">要插入到容器中的范围之外的第一个位置。</param>
+        <summary>将以 <paramref name="_First" /> 开头并以 <paramref name="_Last" /> 之前的元素结尾的序列插入到容器中。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -828,7 +828,7 @@
         <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ReverseRandomAccessIterator&lt;TValue&gt;" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="">To be added.</param>
+        <param name="">一个反向迭代器，指定受控序列的最后一个元素，或刚好在空序列的开头之外。 因此，它指定反向序列的 <paramref name="beginning" />。 用于获取一个迭代器，该迭代器指定相反顺序的受控序列的 <paramref name="current" /> 开头，但如果受控序列的长度发生更改，则该迭代器的状态也会发生更改。</param>
         <summary>指定反向受控序列的开头。</summary>
         <returns>迭代器。</returns>
         <remarks>
@@ -861,7 +861,7 @@
         <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ReverseRandomAccessIterator&lt;TValue&gt;" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="">To be added.</param>
+        <param name="">一个反向迭代器，刚好指向受控序列的开头之外。 因此，它指定反向序列的 <paramref name="end" />。 用于获取一个迭代器，该迭代器指定相反顺序的受控序列的 <paramref name="current" /> 末尾，但如果受控序列的长度发生更改，则该迭代器的状态也会发生更改。</param>
         <summary>指定反向受控序列的末尾。</summary>
         <returns>迭代器。</returns>
         <remarks>
@@ -1045,7 +1045,7 @@
       </Parameters>
       <Docs>
         <param name="A_0">要与其交换内容的容器。</param>
-        <param name="">To be added.</param>
+        <param name="">要与其交换内容的容器。</param>
         <summary>交换两个容器的内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[

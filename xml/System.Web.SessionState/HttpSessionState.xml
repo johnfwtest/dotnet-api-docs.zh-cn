@@ -1,5 +1,5 @@
 <Type Name="HttpSessionState" FullName="System.Web.SessionState.HttpSessionState">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="33031367315dc81ba32dd3d2db84b16fdb961f01" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53394221" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpSessionState : System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f8fcb577b3eef6e83f80e2f3006b906931541441" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54234938" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpSessionState : System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpSessionState extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.SessionState.HttpSessionState" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpSessionState&#xA;Implements ICollection" />
@@ -30,7 +30,7 @@
 ## Remarks  
  ASP.NET 提供了会话状态管理，使你可以存储多个请求间关联与唯一的浏览器会话的信息。 您可以存储值引用键的名称或数字索引的集合。 会话值和功能的访问权限是可使用<xref:System.Web.SessionState.HttpSessionState>类，该类可通过访问<xref:System.Web.HttpContext.Session%2A>属性与当前<xref:System.Web.HttpContext>，或<xref:System.Web.UI.Page.Session%2A>属性<xref:System.Web.UI.Page>。  
   
- 会话数据均关联有特定的浏览器会话使用的唯一标识符。 默认情况下，此标识符存储在不过期的会话 cookie 在浏览器中，但您还可以配置你的应用程序通过设置存储在 URL 中的会话标识符`cookieless`归于`true`或<xref:System.Web.HttpCookieMode.UseUri>元素中应用程序配置。 您可以确定是否支持 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.UseDeviceProfile>为`cookieless`属性。 您还可以确定是否启用 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.AutoDetect>为`cookieless`属性。 如果支持 cookie，则当<xref:System.Web.HttpCookieMode.UseDeviceProfile>已指定，或者当已启用<xref:System.Web.HttpCookieMode.AutoDetect>指定，则的会话标识符将存储在 cookie 中，否则为将在 URL 中存储的会话标识符。  
+ 会话数据均关联有特定的浏览器会话使用的唯一标识符。 默认情况下，此标识符存储在不过期的会话 cookie 在浏览器中，但您还可以配置你的应用程序通过设置存储在 URL 中的会话标识符`cookieless`归于`true`或<xref:System.Web.HttpCookieMode.UseUri>中[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))的应用程序配置元素。 您可以确定是否支持 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.UseDeviceProfile>为`cookieless`属性。 您还可以确定是否启用 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.AutoDetect>为`cookieless`属性。 如果支持 cookie，则当<xref:System.Web.HttpCookieMode.UseDeviceProfile>已指定，或者当已启用<xref:System.Web.HttpCookieMode.AutoDetect>指定，则的会话标识符将存储在 cookie 中，否则为将在 URL 中存储的会话标识符。  
   
  在第一个请求期间开始会话和会话值将保持不变，只要新请求时，由浏览器中指定的分钟数之前<xref:System.Web.SessionState.HttpSessionState.Timeout%2A>属性传递。 新的会话开始时，该会话<xref:System.Web.SessionState.SessionStateModule.Start>引发事件。 此事件可用于执行任何额外的工作会话，例如，设置会话值的默认值的开头。 如果会话超时<xref:System.Web.SessionState.HttpSessionState.Abandon%2A>调用方法时，或 ASP.NET 应用程序已关闭，会话<xref:System.Web.SessionState.SessionStateModule.End>引发事件。 此事件可用于执行任何必要的清理。 <xref:System.Web.SessionState.SessionStateModule.End>引发事件时，才会话状态`mode`设置为<xref:System.Web.SessionState.SessionStateMode.InProc>。  
   
@@ -38,7 +38,7 @@
   
  会话状态不会保留在 ASP.NET 应用程序边界。 如果浏览器导航到另一个应用程序时，将会话信息不可用的新应用程序。  
   
- 默认情况下，会话值存储在 Web 服务器上的内存。 也可以将会话值存储在 SQL Server 数据库、 ASP.NET 状态服务器或自定义服务器。 这使您可以保留在其中 ASP.NET 或 IIS 进程或 ASP.NET 应用程序重新启动的情况下的会话值并使会话值可在 Web 场中的所有服务器。 通过设置来配置此行为`mode`属性为有效<xref:System.Web.SessionState.SessionStateMode>的应用程序配置元素中的值。 有关详细信息，请参阅[会话状态模式](https://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)。  
+ 默认情况下，会话值存储在 Web 服务器上的内存。 也可以将会话值存储在 SQL Server 数据库、 ASP.NET 状态服务器或自定义服务器。 这使您可以保留在其中 ASP.NET 或 IIS 进程或 ASP.NET 应用程序重新启动的情况下的会话值并使会话值可在 Web 场中的所有服务器。 通过设置来配置此行为`mode`属性为有效<xref:System.Web.SessionState.SessionStateMode>中的值[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))的应用程序配置元素。 有关详细信息，请参阅[会话状态模式](https://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)。  
   
  会话状态的替代方法包括应用程序状态 (请参阅<xref:System.Web.HttpApplication.Application%2A>属性) 和 ASP.NET 缓存 (请参阅<xref:System.Web.Caching>命名空间)，可以访问的 ASP.NET 应用程序的所有用户的存储区变量; ASP.NET 配置文件 (请参阅<xref:System.Web.Profile>命名空间)，该用户将值保留在数据存储区不会过期它们使用超时;ASP.NET <xref:System.Web.UI.WebControls?displayProperty=nameWithType>，其中保留中的控件值<xref:System.Web.UI.Control.ViewState%2A>;<xref:System.Web.HttpResponse.Cookies%2A>;<xref:System.Web.HttpRequest.QueryString%2A>属性; 和 HTML 窗体上字段的可从 HTTP`POST`使用<xref:System.Web.HttpRequest.Form%2A>集合。 有关会话状态和其他状态管理备选方法之间的差异的详细信息，请参阅[ASP.NET 状态管理建议](https://msdn.microsoft.com/library/af79fa0d-4bc8-47a6-9915-d8e355bfb732)。  
   
@@ -87,7 +87,7 @@
 ## Remarks  
  一次<xref:System.Web.SessionState.HttpSessionState.Abandon%2A>调用方法、 当前会话不再有效，可以启动一个新的会话。 <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> 导致<xref:System.Web.SessionState.SessionStateModule.End>事件被引发。 一个新<xref:System.Web.SessionState.SessionStateModule.Start>将在下一个请求上引发事件。  
   
- 默认情况下，正在更新已放弃或已过期的会话的会话标识符。 也就是说，如果发出请求，包括已过期或已放弃会话的会话标识符，被启动新会话使用相同的会话标识符。 您可以通过设置来禁用此`regenerateExpiredSessionId`到配置元素属性的`true`。 有关详细信息，请参阅[会话标识符](https://msdn.microsoft.com/library/146ca206-d151-4f2e-a548-bcca05ccf0cb)。  
+ 默认情况下，正在更新已放弃或已过期的会话的会话标识符。 也就是说，如果发出请求，包括已过期或已放弃会话的会话标识符，被启动新会话使用相同的会话标识符。 您可以通过设置来禁用此`regenerateExpiredSessionId`的属性[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))到的配置元素`true`。 有关详细信息，请参阅[会话标识符](https://msdn.microsoft.com/library/146ca206-d151-4f2e-a548-bcca05ccf0cb)。  
   
  <xref:System.Web.SessionState.SessionStateModule.End>支持事件时，才<xref:System.Web.SessionState.HttpSessionState.Mode%2A>属性设置为<xref:System.Web.SessionState.SessionStateMode.InProc>。  
   
@@ -406,7 +406,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- ASP.NET 唯一地标识与每个浏览器会话。 默认情况下，在浏览器中不会过期的会话 cookie 中存储会话的唯一标识符。 可以指定会话标识符不存储在 cookie 中通过设置`cookieless`属性为`true`配置元素中。  
+ ASP.NET 唯一地标识与每个浏览器会话。 默认情况下，在浏览器中不会过期的会话 cookie 中存储会话的唯一标识符。 可以指定会话标识符不存储在 cookie 中通过设置`cookieless`归于`true`中[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))配置元素。  
   
 > [!NOTE]
 >  若要提高你的应用程序的安全性，你的应用程序应允许的用户注销，此时它应调用<xref:System.Web.SessionState.HttpSessionState.Abandon%2A>方法。 这减少了潜在的不需要在 URL 中使用的唯一标识符，以检索存储在用户会话中的专用数据的源。  
@@ -421,7 +421,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
   
  之后的斜杠之后的应用程序名称和任何剩余的文件或虚拟目录标识符之前，在 URL 中嵌入会话 ID。 这使 ASP.NET 可以解决应用程序名称，然后涉及<xref:System.Web.SessionState.SessionStateModule>请求中。  
   
- 默认情况下，使用无 cookie 会话中的会话标识符将被回收。 也就是说，如果已过期的会话 id 请求时，被启动新的会话使用随请求一起提供的会话 ID。 此行为可能导致不需要共享会话数据，包含无 cookie 会话 ID 的链接进行共享时使用多个浏览器，可能是通过搜索引擎或其他程序。 您可以降低多个客户端通过禁用会话标识符的回收共享会话数据的可能性。 若要执行此操作，设置`regenerateExpiredSessionId`到配置元素属性的`true`。 这将导致无 cookie 会话请求由过期的会话 id 时，将生成新的会话 ID 请注意，如果具有过期的会话 ID 发出的请求使用 HTTP`POST`方法，则发送的所有数据都将丢失时`regenerateExpiredSessionId`是`true`，如 ASP.NET 执行重定向，以确保浏览器在 URL 中具有新的会话标识符。  
+ 默认情况下，使用无 cookie 会话中的会话标识符将被回收。 也就是说，如果已过期的会话 id 请求时，被启动新的会话使用随请求一起提供的会话 ID。 此行为可能导致不需要共享会话数据，包含无 cookie 会话 ID 的链接进行共享时使用多个浏览器，可能是通过搜索引擎或其他程序。 您可以降低多个客户端通过禁用会话标识符的回收共享会话数据的可能性。 若要执行此操作，设置`regenerateExpiredSessionId`的属性[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))到的配置元素`true`。 这将导致无 cookie 会话请求由过期的会话 id 时，将生成新的会话 ID 请注意，如果具有过期的会话 ID 发出的请求使用 HTTP`POST`方法，则发送的所有数据都将丢失时`regenerateExpiredSessionId`是`true`，如 ASP.NET 执行重定向，以确保浏览器在 URL 中具有新的会话标识符。  
   
 > [!NOTE]
 >  虽然设置`regenerateExpiredSessionId`归于`true`减少的可能性的不需要共享会话数据，它不会保护对通过获取访问另一个用户的会话不需要源<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>值和其包括在对服务器的请求。 如果要在会话状态中存储私有或敏感信息，建议使用 SSL 来加密在浏览器和包括的服务器之间的任何通信<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>。  
@@ -829,7 +829,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
 ## Remarks  
  <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>属性用于唯一地标识与服务器上的会话数据的浏览器。 <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>值是随机由 ASP.NET 生成并存储在浏览器中不会过期的会话 cookie。 <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>值然后发送包含 ASP.NET 应用程序的每个请求的 cookie 中。  
   
- 如果你想要禁用使用 ASP.NET 应用程序中的 cookie 并仍进行的会话状态使用，您可以配置你的应用程序通过设置 URL 而不是一个 cookie 中存储的会话标识符`cookieless`配置的属性元素`true`，或设置为<xref:System.Web.HttpCookieMode.UseUri>，你的应用程序的 Web.config 文件中。 您可以确定是否支持 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.UseDeviceProfile>为`cookieless`属性。 您还可以确定是否启用 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.AutoDetect>为`cookieless`属性。 如果支持 cookie，则当<xref:System.Web.HttpCookieMode.UseDeviceProfile>已指定，或者当已启用<xref:System.Web.HttpCookieMode.AutoDetect>指定，则的会话标识符将存储在 cookie 中，否则为将在 URL 中存储的会话标识符。 有关更多信息，请参见 <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> 属性。  
+ 如果你想要禁用使用 ASP.NET 应用程序中的 cookie 并仍进行的会话状态使用，您可以配置你的应用程序通过设置 URL 而不是一个 cookie 中存储的会话标识符`cookieless`属性的[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))配置元素`true`，或设置为<xref:System.Web.HttpCookieMode.UseUri>，你的应用程序的 Web.config 文件中。 您可以确定是否支持 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.UseDeviceProfile>为`cookieless`属性。 您还可以确定是否启用 cookie 的浏览器通过指定的值的 ASP.NET<xref:System.Web.HttpCookieMode.AutoDetect>为`cookieless`属性。 如果支持 cookie，则当<xref:System.Web.HttpCookieMode.UseDeviceProfile>已指定，或者当已启用<xref:System.Web.HttpCookieMode.AutoDetect>指定，则的会话标识符将存储在 cookie 中，否则为将在 URL 中存储的会话标识符。 有关更多信息，请参见 <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> 属性。  
   
  <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>以明文形式，在 cookie 中或在 URL 中发送服务器和浏览器之间。 因此，不需要的源能获得访问权限的另一个用户会话，通过获取<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>值并将其包括在对服务器的请求。 如果要在会话状态中存储私有或敏感信息，建议使用 SSL 来加密在浏览器和包括的服务器之间的任何通信<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>。  
   
@@ -950,7 +950,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.SessionState.HttpSessionState.Timeout%2A>属性可以在应用程序中使用的 Web.config 文件中设置`timeout`属性的配置元素，或者你可以设置<xref:System.Web.SessionState.HttpSessionState.Timeout%2A>直接使用应用程序代码的属性值。  
+ <xref:System.Web.SessionState.HttpSessionState.Timeout%2A>属性可以在应用程序中使用的 Web.config 文件中设置`timeout`的属性[sessionState](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v%3dvs.100))配置元素，或者可以设置<xref:System.Web.SessionState.HttpSessionState.Timeout%2A>直接使用的属性值应用程序代码。  
   
  <xref:System.Web.SessionState.HttpSessionState.Timeout%2A>属性不能设置为一个值大于 525600 分钟 （1 年）。 默认值为 20 分钟。  
   

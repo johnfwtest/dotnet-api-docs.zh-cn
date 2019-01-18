@@ -1,5 +1,5 @@
 <Type Name="SettingsAllowAnonymousAttribute" FullName="System.Web.Profile.SettingsAllowAnonymousAttribute">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6eac8ebde968ee41be2510824da9536790645a85" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51925441" /></Metadata><TypeSignature Language="C#" Value="public sealed class SettingsAllowAnonymousAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e9df9cb5ee47ebc17d34bc93d802714c11078de1" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54312226" /></Metadata><TypeSignature Language="C#" Value="public sealed class SettingsAllowAnonymousAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SettingsAllowAnonymousAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Web.Profile.SettingsAllowAnonymousAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SettingsAllowAnonymousAttribute&#xA;Inherits Attribute" />
@@ -25,95 +25,56 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Profile.SettingsAllowAnonymousAttribute>类用于确定是否可访问的自定义配置文件实现的属性，如果用户是匿名用户。 有关启用匿名身份验证的信息，请参阅提供的配置元素的文档。  
+ <xref:System.Web.Profile.SettingsAllowAnonymousAttribute>类用于确定是否可访问的自定义配置文件实现的属性，如果用户是匿名用户。 有关启用匿名身份验证的信息，请参阅提供的文档[anonymousIdentification](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/91ka2e6a(v%3dvs.100))配置元素。  
   
  如果没有<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>指定不允许使用配置文件属性，配置文件属性的匿名访问。  
   
- 实现的自定义配置文件是一个类，继承自<xref:System.Web.Profile.ProfileBase>抽象类，并定义用户配置文件的配置元素中未指定的属性。 可以使用的应用程序的 Web.config 文件中指定自定义用户配置文件类型`inherits`配置元素，如下面的示例中所示的属性。  
-  
- `<configuration>`  
-  
- `<connectionStrings>`  
-  
- `<add`  
-  
- `name="SqlServices"`  
-  
- `connectionString="Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />`  
-  
- `</connectionStrings>`  
-  
- `<system.web>`  
-  
- `<authentication mode="Forms" >`  
-  
- `<forms`  
-  
- `loginUrl="login.aspx"`  
-  
- `name=".ASPXFORMSAUTH" />`  
-  
- `</authentication>`  
-  
- `<authorization>`  
-  
- `<deny users="?" />`  
-  
- `</authorization>`  
-  
- `<profile inherits="Samples.AspNet.Profile.EmployeeProfile"`  
-  
- `defaultProvider="SqlProvider">`  
-  
- `<providers>`  
-  
- `<clear />`  
-  
- `<add`  
-  
- `name="SqlProvider"`  
-  
- `type="System.Web.Profile.SqlProfileProvider"`  
-  
- `connectionStringName="SqlServices"`  
-  
- `description="SQL Profile Provider for Sample"/>`  
-  
- `<add`  
-  
- `name="EmployeeInfoProvider"`  
-  
- `type="System.Web.Profile.SqlProfileProvider"`  
-  
- `connectionStringName="SqlServices"`  
-  
- `description="SQL Profile Provider for Employee Info"/>`  
-  
- `</providers>`  
-  
- `<properties>`  
-  
- `<add name="GarmentSize" />`  
-  
- `</properties>`  
-  
- `</profile>`  
-  
- `</system.web>`  
-  
- `</configuration>`  
-  
-   
+ 实现的自定义配置文件是一个类，继承自<xref:System.Web.Profile.ProfileBase>抽象类，并定义中未指定的用户配置文件的属性[配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100))配置元素。 可以使用的应用程序的 Web.config 文件中指定自定义用户配置文件类型`inherits`的属性[配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100))配置元素，如以下示例所示。  
+
+ ```xml
+<configuration>  
+  <connectionStrings> 
+    <add name="SqlServices"  
+         connectionString="Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx"  
+             name=".ASPXFORMSAUTH" />  
+    </authentication>  
+    <authorization>  
+      <deny users="?" />  
+    </authorization>  
+    <profile inherits="Samples.AspNet.Profile.EmployeeProfile"  
+             defaultProvider="SqlProvider">  
+      <providers>  
+        <clear />  
+        <add name="SqlProvider"  
+             type="System.Web.Profile.SqlProfileProvider"  
+             connectionStringName="SqlServices"  
+             description="SQL Profile Provider for Sample"/>  
+        <add name="EmployeeInfoProvider"  
+             type="System.Web.Profile.SqlProfileProvider"  
+             connectionStringName="SqlServices"  
+             description="SQL Profile Provider for Employee Info"/>  
+      </providers>  
+      <properties>  
+        <add name="GarmentSize" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
   
 ## Examples  
- 下面的代码示例定义继承的类<xref:System.Web.Profile.ProfileBase>创建自定义配置文件。 中指定的自定义配置文件的类型`inherits`应用程序的 Web.config 文件中的配置元素的属性。  
+ 下面的代码示例定义继承的类<xref:System.Web.Profile.ProfileBase>创建自定义配置文件。 中指定的自定义配置文件类型`inherits`的属性[配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100))应用程序的 Web.config 文件中的配置元素。  
   
  [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
  [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
   
  ]]></format>
     </remarks>
-    <related type="Article" href="https://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d">ASP.NET 配置文件属性概述</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/2y3fs9xs(v=vs.140)">ASP.NET 配置文件属性概述</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -144,23 +105,23 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.Profile.SettingsAllowAnonymousAttribute>类用于确定是否可访问的自定义配置文件实现的属性，如果用户是匿名用户。 有关启用匿名身份验证的信息，请参阅配置元素。  
+ <xref:System.Web.Profile.SettingsAllowAnonymousAttribute>类用于确定是否可访问的自定义配置文件实现的属性，如果用户是匿名用户。 有关启用匿名身份验证的信息，请参阅[anonymousIdentification](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/91ka2e6a(v%3dvs.100))配置元素。  
   
  如果没有<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>指定不允许使用配置文件属性，对配置文件属性的匿名访问。  
   
- 实现的自定义配置文件是一个类，继承自<xref:System.Web.Profile.ProfileBase>抽象类，并定义用户配置文件的配置元素中未指定的属性。  
+ 实现的自定义配置文件是一个类，继承自<xref:System.Web.Profile.ProfileBase>抽象类，并定义中未指定的用户配置文件的属性[配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100))配置元素。  
   
    
   
 ## Examples  
- 下面的示例定义继承的类<xref:System.Web.Profile.ProfileBase>类，以创建自定义配置文件。 中指定的自定义配置文件的类型`inherits`应用程序的 Web.config 文件中的配置元素的属性。 指定自定义配置文件实现的配置文件的示例，请参阅<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>类概述。  
+ 下面的示例定义继承的类<xref:System.Web.Profile.ProfileBase>类，以创建自定义配置文件。 中指定的自定义配置文件类型`inherits`的属性[配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100))应用程序的 Web.config 文件中的配置元素。 指定自定义配置文件实现的配置文件的示例，请参阅<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>类概述。  
   
  [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
  [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
   
  ]]></format>
         </remarks>
-        <related type="Article" href="https://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d">ASP.NET 配置文件属性概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/2y3fs9xs(v=vs.140)">ASP.NET 配置文件属性概述</related>
       </Docs>
     </Member>
     <Member MemberName="Allow">
@@ -188,7 +149,7 @@
         <summary>获取一个指示自定义配置文件实现的某个关联属性是否可由匿名用户访问的值。</summary>
         <value>如果用户能够匿名访问关联的配置文件属性，则为 <see langword="true" />，否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="https://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d">ASP.NET 配置文件属性概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/2y3fs9xs(v=vs.140)">ASP.NET 配置文件属性概述</related>
       </Docs>
     </Member>
     <Member MemberName="IsDefaultAttribute">
@@ -212,7 +173,7 @@
         <summary>获取一个指示 <see cref="P:System.Web.Profile.SettingsAllowAnonymousAttribute.Allow" /> 属性是否被设置为默认值的值。</summary>
         <returns>如果 <see cref="P:System.Web.Profile.SettingsAllowAnonymousAttribute.Allow" /> 属性被设置为默认值，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
-        <related type="Article" href="https://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d">ASP.NET 配置文件属性概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/2y3fs9xs(v=vs.140)">ASP.NET 配置文件属性概述</related>
       </Docs>
     </Member>
   </Members>

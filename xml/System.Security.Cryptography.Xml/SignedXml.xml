@@ -1,5 +1,5 @@
 <Type Name="SignedXml" FullName="System.Security.Cryptography.Xml.SignedXml">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="57ff8c6bf7f3c8ba6e7c66c8563e3be841a798f0" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53222507" /></Metadata><TypeSignature Language="C#" Value="public class SignedXml" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="65a35d1f0721d13fc7ab878187edcd3b9a036496" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54312395" /></Metadata><TypeSignature Language="C#" Value="public class SignedXml" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SignedXml extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.SignedXml" />
   <TypeSignature Language="VB.NET" Value="Public Class SignedXml" />
@@ -65,7 +65,7 @@
  此结构的主要部分是：  
   
  <`CanonicalizationMethod`> 元素  
- 指定用于重写规则`Signature`从 XML/文本元素插入签名验证的字节数。 .NET Framework 中的默认值是http://www.w3.org/TR/2001/REC-xml-c14n-20010315，用于标识可信的算法。 此元素表示由<xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod%2A?displayProperty=nameWithType>属性。  
+ 指定用于重写规则`Signature`从 XML/文本元素插入签名验证的字节数。 .NET Framework 中的默认值是https://www.w3.org/TR/2001/REC-xml-c14n-20010315，用于标识可信的算法。 此元素表示由<xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod%2A?displayProperty=nameWithType>属性。  
   
  <`SignatureMethod`> 元素  
  指定用于签名生成和验证，已应用到的算法 <`Signature`> 元素以生成中的值 <`SignatureValue`>。 在示例中，值http://www.w3.org/2000/09/xmldsig#rsa-sha1标识的 RSA PKCS1 sha-1 签名。 此元素表示由<xref:System.Security.Cryptography.Xml.SignedXml.SignatureMethod%2A>属性。  
@@ -91,7 +91,7 @@
   
 -   每个转换算法被定义为作为输出生成 XML 或字节数。  
   
--   如果以字节为单位未定义的最后一个转换算法的输出 （或指定不转换），然后规范化方法http://www.w3.org/TR/2001/REC-xml-c14n-20010315用作隐式转换 (即使在指定了不同的算法 <`CanonicalizationMethod`>元素）。  
+-   如果以字节为单位未定义的最后一个转换算法的输出 （或指定不转换），则[规范化方法](https://www.w3.org/TR/2001/REC-xml-c14n-20010315)用作隐式转换 (即使在指定了不同的算法 <`CanonicalizationMethod`> 元素)。  
   
 -   值为http://www.w3.org/2000/09/xmldsig#enveloped-signature转换算法进行编码的规则将被解释为删除 <`Signature`> 从文档元素。 否则为被包封签名的验证程序将摘要式文档，包括签名，但签名人会有融会贯通文档之前应用签名，从而导致不同的答案。  
   
@@ -99,7 +99,7 @@
  标识要在转换后的内容由标识应用的摘要 （加密哈希） 方法`URI`属性的 <`Reference`> 元素。 这由<xref:System.Security.Cryptography.Xml.Reference.DigestMethod%2A?displayProperty=nameWithType>属性。  
   
 ## <a name="choosing-a-canonicalization-method"></a>选择规范化方法  
- 除非需要使用不同的值的规范与进行互操作，否则我们建议你这是 XML C14N 1.0 算法，其值是在.NET Framework 中使用默认的规范化方法http://www.w3.org/TR/2001/REC-xml-c14n-20010315。 XML C14N 1.0 算法需要支持的所有实现的 XMLDSIG，特别是因为它是隐式的最后一个转换以将应用。  
+ 除非需要使用不同的值的规范与进行互操作，否则我们建议你这是 XML C14N 1.0 算法，其值是在.NET Framework 中使用默认的规范化方法https://www.w3.org/TR/2001/REC-xml-c14n-20010315。 XML C14N 1.0 算法需要支持的所有实现的 XMLDSIG，特别是因为它是隐式的最后一个转换以将应用。  
   
  有版本支持保留注释规范化算法。 不建议保留注释的规范化方法，因为他们违反"签名所看到的内容"原则。 也就是说中的注释 <`Signature`> 有关如何执行签名，元素不会更改处理逻辑，只是哪些签名值。 与弱签名算法，从而为包含的提供的注释允许攻击者不必要可以自由地强制执行哈希冲突，结合使用时进行篡改的文档显示合法。  在.NET Framework 中，默认情况下支持仅内置 canonicalizers。 若要支持其他或自定义 canonicalizers，请参阅<xref:System.Security.Cryptography.Xml.SignedXml.SafeCanonicalizationMethods%2A>属性。 如果文档是否使用不是由表示集合中的规范化方法<xref:System.Security.Cryptography.Xml.SignedXml.SafeCanonicalizationMethods%2A>属性，则<xref:System.Security.Cryptography.Xml.SignedXml.CheckSignature%2A>方法将返回`false`。  
   
@@ -281,7 +281,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="document" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="document" /> 参数含有 null <see cref="P:System.Xml.XmlDocument.DocumentElement" /> 属性。</exception>
       </Docs>
     </Member>
@@ -611,7 +611,7 @@
 - 或 - 
 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" /> 属性为 <see langword="null" />。  
   
-或 
+- 或 - 
 未能创建用于检查签名的加密转换。</exception>
       </Docs>
     </Member>
@@ -654,7 +654,7 @@
         <summary>确定 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" /> 属性是否验证指定的 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> 对象，并确定该证书是否有效（可选）。</summary>
         <returns>如果签名有效，则为 <see langword="true" />；否则为 <see langword="false" />。  
   
-或 
+- 或 - 
  如果签名和证书都有效，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1666,13 +1666,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl>字段是"http://www.w3.org/TR/2001/REC-xml-c14n-20010315"。  
+ 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl>字段是`http://www.w3.org/TR/2001/REC-xml-c14n-20010315`。  
   
  使用此字段来方便地提供到使用 XMLDSIG 的元素的 URI 属性之一的值。  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NTransform>类实现所描述的转换<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl>字段。  
   
- 有关详细信息，请参阅 World Wide Web 联合会 (W3C) 规范在http://www.w3.org/TR/2001/REC-xml-c14n-20010315。  
+ 有关详细信息，请参阅 World Wide Web 联合会 (W3C)[规范化 XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315)规范。  
   
  此字段的长度相同的值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl>字段。  
   
@@ -1716,13 +1716,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl>字段是"http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments "。  
+ 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl>字段是`http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments`。  
   
  使用此字段来方便地提供到使用 XMLDSIG 的元素的 URI 属性之一的值。  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform>类实现所描述的转换<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl>字段。  
   
- 有关详细信息，请参阅 World Wide Web 联合会 (W3C) 规范在http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments。  
+ 有关详细信息，请参阅 World Wide Web 联合会 (W3C)[规范化 XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments)规范。  
   
  此字段的长度相同的值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl>字段。  
   
@@ -1758,13 +1758,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl>字段是"http://www.w3.org/TR/2001/REC-xml-c14n-20010315"。  
+ 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl>字段是`http://www.w3.org/TR/2001/REC-xml-c14n-20010315`。  
   
  使用此字段来方便地提供到使用 XMLDSIG 的元素的 URI 属性之一的值。  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NTransform>类实现所描述的转换<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl>字段。  
   
- 有关详细信息，请参阅 World Wide Web 联合会 (W3C) 规范在http://www.w3.org/TR/2001/REC-xml-c14n-20010315。  
+ 有关详细信息，请参阅 World Wide Web 联合会 (W3C)[规范化 XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315)规范。  
   
  此字段的长度相同的值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl>字段。  
   
@@ -1800,13 +1800,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl>字段是"http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"。  
+ 值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl>字段是`http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments`。  
   
  使用此字段来方便地提供到使用 XMLDSIG 的元素的 URI 属性之一的值。  
   
  <xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform>类实现所描述的转换<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl>字段。  
   
- 有关详细信息，请参阅 World Wide Web 联合会 (W3C) 规范在http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments。  
+ 有关详细信息，请参阅 World Wide Web 联合会 (W3C)[规范化 XML](https://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments)规范。  
   
  此字段的长度相同的值<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl>字段。  
   

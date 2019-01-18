@@ -1,5 +1,5 @@
 <Type Name="SessionSecurityTokenHandler" FullName="System.IdentityModel.Tokens.SessionSecurityTokenHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c6944a4f4dd5dc6782848c1f9b25f2933587be8a" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52611247" /></Metadata><TypeSignature Language="C#" Value="public class SessionSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eb46d17c5de71b55a21efc4f9d285842b34f8c1a" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54313890" /></Metadata><TypeSignature Language="C#" Value="public class SessionSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionSecurityTokenHandler extends System.IdentityModel.Tokens.SecurityTokenHandler" />
   <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />
   <TypeSignature Language="VB.NET" Value="Public Class SessionSecurityTokenHandler&#xA;Inherits SecurityTokenHandler" />
@@ -24,7 +24,7 @@
  在被动方案中，<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>调入<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM) 中创建的会话令牌的身份验证管道<xref:System.Security.Claims.ClaimsPrincipal>表示已经过身份验证的用户。 SAM 使用其配置<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>创建令牌和其序列化到 cookie （以及要反序列化中的后续请求的 cookie 令牌）。 SAM 使用其已配置的实例<xref:System.IdentityModel.Services.CookieHandler>类将写回到 HTTP 响应的 cookie。 保存的 cookie，然后返回到客户端和客户端可以在后续请求提供 cookie，而不是无需进行一次往返过程返回到要重新获取安全令牌的标识提供程序。 有关会话如何运行使用 WIF 的详细信息，请参阅[WIF 会话管理](~/docs/framework/security/wif-session-management.md)。  
   
 > [!NOTE]
->  \<SecurityTokenHandlers > 配置元素可用于指定<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>，其职责是保护应用程序的会话。 开发人员应格外小心在更改此配置设置，因为配置不正确的系统可能会导致应用程序被破坏。 例如，如果指定的派生的超链接"http://msdn.microsoft.com/library/hh193426%28v=vs.110%29.aspx"\t"_blank"<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>和将一个空的转换 (CookieTransform) 集合传递给基，会导致正在序列化到未受保护的 cookie 的用户标识。 这可能允许攻击者修改的标识，因此更改访问权限。  
+>  \<SecurityTokenHandlers > 配置元素可用于指定<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>，其职责是保护应用程序的会话。 开发人员应格外小心在更改此配置设置，因为配置不正确的系统可能会导致应用程序被破坏。 例如，如果指定派生<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>和将一个空的转换 (CookieTransform) 集合传递给基，会导致正在序列化到未受保护的 cookie 的用户标识。 这可能允许攻击者修改的标识，因此更改访问权限。  
   
  如果会话令牌是在引用模式下，即，其<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>属性是`true`，该会话标记处理程序只序列化属性的会话令牌所需重新生成其密钥<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>。 默认情况下，<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>类用于表示缓存密钥，并标记处理程序写入<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A?displayProperty=nameWithType>和<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A?displayProperty=nameWithType>令牌的属性。 如果会话令牌是不在引用模式下，即<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>属性是`false`，然后，除了前面提到的属性，该处理程序调用<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>方法从该令牌，然后存储序列化的字节数组还在 cookie 中的结果值。 有关如何序列化令牌的更多详细信息，请参阅<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%28System.Xml.XmlWriter%2CSystem.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>方法。  
   
@@ -649,7 +649,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="tokenResolver" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">读取器不放置在 <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> 或 <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> 无法读取。</exception>
       </Docs>
@@ -887,7 +887,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="token" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="endpointId" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="token" /> 不可从 <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> 中指定。</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">指定令牌的 <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId" /> 属性不为 <see langword="null" /> 或空并且其值不同于 <paramref name="endpointId" /> 参数指定的值。</exception>
@@ -979,11 +979,11 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="writer" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="token" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="token" /> 不可从 <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> 中指定。  
   
-或 
+- 或 - 
 令牌的 <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.SecureConversationVersion" /> 指定处理程序不支持的 WS 安全对话的版本。</exception>
         <altmember cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanWriteToken" />
       </Docs>

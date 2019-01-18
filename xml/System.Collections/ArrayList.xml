@@ -1,5 +1,5 @@
 <Type Name="ArrayList" FullName="System.Collections.ArrayList">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cf52f8cf6bc04e528bdcb846b45ce2ac3377ec4d" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52614185" /></Metadata><TypeSignature Language="C#" Value="public class ArrayList : ICloneable, System.Collections.IList" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0ef7b63168c6a4bd1a6b2e5181cbe630e5c8e19b" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54235120" /></Metadata><TypeSignature Language="C#" Value="public class ArrayList : ICloneable, System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ArrayList extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Collections.ArrayList" />
   <TypeSignature Language="VB.NET" Value="Public Class ArrayList&#xA;Implements ICloneable, IList" />
@@ -74,7 +74,7 @@
   
  容量<xref:System.Collections.ArrayList>是元素数目<xref:System.Collections.ArrayList>可以容纳。 元素添加到<xref:System.Collections.ArrayList>，自动增加容量通过重新分配所需的方式。 可以通过调用减少容量<xref:System.Collections.ArrayList.TrimToSize%2A>或通过设置<xref:System.Collections.ArrayList.Capacity%2A>属性显式。  
   
- 对于非常大<xref:System.Collections.ArrayList>对象，可以通过设置增加到 20 亿元素在 64 位系统上的最大容量`enabled`到的配置元素的特性`true`在运行时环境中。  
+ **仅限.NET framework:** 对于非常大<xref:System.Collections.ArrayList>对象，可以通过设置增加到 20 亿元素在 64 位系统上的最大容量`enabled`的属性[ `<gcAllowVeryLargeObjects>` ](~/docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) configuration 元素`true`中运行时环境。  
   
  可以使用整数索引访问此集合中的元素。  在此集合中的索引都是从零开始的。  
   
@@ -389,7 +389,7 @@
         </remarks>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.AddRange(System.Collections.ICollection)" />
         <altmember cref="M:System.Collections.ArrayList.Insert(System.Int32,System.Object)" />
@@ -465,7 +465,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="c" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="T:System.Collections.ICollection" />
         <altmember cref="P:System.Collections.ArrayList.Capacity" />
@@ -593,7 +593,7 @@
         <param name="value">要查找的 <see cref="T:System.Object" />。 该值可以为 <see langword="null" />。</param>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
-或 
+- 或 - 
  如果为 <see langword="null" />，则使用默认比较器，即每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定的比较器在整个已排序的 <see cref="T:System.Collections.ArrayList" /> 中搜索元素，并返回该元素从零开始的索引。</summary>
         <returns>如果找到 <paramref name="value" />，则为排序的 <see cref="T:System.Collections.ArrayList" /> 中从零开始的 <paramref name="value" /> 索引；否则为一个负数，它是大于 <paramref name="value" /> 的下一个元素索引的按位求补，或者，如果没有更大的元素，则为 <see cref="P:System.Collections.ArrayList.Count" /> 的按位求补。</returns>
@@ -674,7 +674,7 @@
         <param name="value">要查找的 <see cref="T:System.Object" />。 该值可以为 <see langword="null" />。</param>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
-或 
+- 或 - 
  如果为 <see langword="null" />，则使用默认比较器，即每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定的比较器在已排序 <see cref="T:System.Collections.ArrayList" /> 的某个元素范围中搜索元素，并返回该元素从零开始的索引。</summary>
         <returns>如果找到 <paramref name="value" />，则为排序的 <see cref="T:System.Collections.ArrayList" /> 中从零开始的 <paramref name="value" /> 索引；否则为一个负数，它是大于 <paramref name="value" /> 的下一个元素索引的按位求补，或者，如果没有更大的元素，则为 <see cref="P:System.Collections.ArrayList.Count" /> 的按位求补。</returns>
@@ -700,12 +700,12 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 不表示 <see cref="T:System.Collections.ArrayList" /> 中的有效范围。  
   
-或 
+- 或 - 
  <paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="value" /> 和 <see cref="T:System.Collections.ArrayList" /> 的元素均不实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="value" /> 和 <see cref="T:System.Collections.ArrayList" /> 的元素不属于同一类型。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.IComparable" />
@@ -825,7 +825,7 @@
         </remarks>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.TrimToSize" />
         <altmember cref="P:System.Collections.ArrayList.Capacity" />
@@ -1013,7 +1013,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
-或 
+- 或 - 
 源 <see cref="T:System.Collections.ArrayList" /> 中的元素个数大于目标 <paramref name="array" /> 可以包含的元素个数。</exception>
         <exception cref="T:System.InvalidCastException">无法自动将源 <see cref="T:System.Collections.ArrayList" /> 的类型转换为目标 <paramref name="array" /> 的类型。</exception>
       </Docs>
@@ -1086,7 +1086,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
-或 
+- 或 - 
 源 <see cref="T:System.Collections.ArrayList" /> 中的元素个数大于从 <paramref name="arrayIndex" /> 到目标 <paramref name="array" /> 末尾之间的可用空间。</exception>
         <exception cref="T:System.InvalidCastException">无法自动将源 <see cref="T:System.Collections.ArrayList" /> 的类型转换为目标 <paramref name="array" /> 的类型。</exception>
       </Docs>
@@ -1159,17 +1159,17 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="arrayIndex" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
-或 
+- 或 - 
  <paramref name="index" /> 等于或大于源 <see cref="T:System.Collections.ArrayList" /> 的 <see cref="P:System.Collections.ArrayList.Count" />。  
   
-或 
+- 或 - 
 从 <paramref name="index" /> 到源 <see cref="T:System.Collections.ArrayList" /> 的末尾的元素数大于从 <paramref name="arrayIndex" /> 到目标 <paramref name="array" /> 的末尾的可用空间。</exception>
         <exception cref="T:System.InvalidCastException">无法自动将源 <see cref="T:System.Collections.ArrayList" /> 的类型转换为目标 <paramref name="array" /> 的类型。</exception>
       </Docs>
@@ -1515,7 +1515,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 未在 <see cref="T:System.Collections.ArrayList" /> 中指定有效范围。</exception>
         <altmember cref="T:System.Collections.IEnumerator" />
@@ -1582,7 +1582,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 不表示 <see cref="T:System.Collections.ArrayList" /> 中元素的有效范围。</exception>
         <altmember cref="M:System.Collections.ArrayList.RemoveRange(System.Int32,System.Int32)" />
@@ -1810,10 +1810,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <see cref="T:System.Collections.ArrayList" /> 的有效索引范围。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 和 <paramref name="count" /> 未在 <see cref="T:System.Collections.ArrayList" /> 中指定有效部分。</exception>
         <altmember cref="M:System.Collections.ArrayList.LastIndexOf(System.Object)" />
         <altmember cref="M:System.Collections.ArrayList.Contains(System.Object)" />
@@ -1889,11 +1889,11 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="index" /> 大于 <see cref="P:System.Collections.ArrayList.Count" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.InsertRange(System.Int32,System.Collections.ICollection)" />
         <altmember cref="M:System.Collections.ArrayList.Add(System.Object)" />
@@ -1969,11 +1969,11 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="c" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="index" /> 大于 <see cref="P:System.Collections.ArrayList.Count" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.Insert(System.Int32,System.Object)" />
         <altmember cref="M:System.Collections.ArrayList.AddRange(System.Collections.ICollection)" />
@@ -2222,7 +2222,7 @@
   
  可以使用下面的语法通过此属性访问集合中的特定元素：`myCollection[index]`。  
   
- C# 语言使用关键字来定义而不是实现索引器<xref:System.Collections.ArrayList.Item%2A>属性。 Visual Basic 将 <xref:System.Collections.ArrayList.Item%2A> 实现为默认属性，该属性提供相同的索引功能。  
+ C#语言中使用[ `this` ](~/docs/csharp/language-reference/keywords/this.md)关键字来定义而不是实现索引器<xref:System.Collections.ArrayList.Item%2A>属性。 Visual Basic 将 <xref:System.Collections.ArrayList.Item%2A> 实现为默认属性，该属性提供相同的索引功能。  
   
  检索此属性的值是 o （1） 的操作;将属性设置也是 o （1） 操作。  
   
@@ -2245,7 +2245,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="index" /> 等于或大于 <see cref="P:System.Collections.ArrayList.Count" />。</exception>
         <altmember cref="P:System.Collections.ArrayList.Count" />
       </Docs>
@@ -2459,10 +2459,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <see cref="T:System.Collections.ArrayList" /> 的有效索引范围。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 和 <paramref name="count" /> 未在 <see cref="T:System.Collections.ArrayList" /> 中指定有效部分。</exception>
         <altmember cref="M:System.Collections.ArrayList.IndexOf(System.Object)" />
         <altmember cref="M:System.Collections.ArrayList.Contains(System.Object)" />
@@ -2665,7 +2665,7 @@
         </remarks>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.RemoveAt(System.Int32)" />
         <altmember cref="M:System.Collections.ArrayList.RemoveRange(System.Int32,System.Int32)" />
@@ -2737,11 +2737,11 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="index" /> 等于或大于 <see cref="P:System.Collections.ArrayList.Count" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.Remove(System.Object)" />
         <altmember cref="M:System.Collections.ArrayList.RemoveRange(System.Int32,System.Int32)" />
@@ -2809,12 +2809,12 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 不表示 <see cref="T:System.Collections.ArrayList" /> 中元素的有效范围。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.Remove(System.Object)" />
         <altmember cref="M:System.Collections.ArrayList.RemoveAt(System.Int32)" />
@@ -3011,7 +3011,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 不表示 <see cref="T:System.Collections.ArrayList" /> 中元素的有效范围。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。</exception>
@@ -3079,7 +3079,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="index" /> 加上 <paramref name="c" /> 中的元素数大于 <see cref="P:System.Collections.ArrayList.Count" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="c" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。</exception>
@@ -3192,7 +3192,7 @@
       <Docs>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
-或 
+- 或 - 
 一个空引用（在 Visual Basic 中为 <see langword="Nothing" />），将使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定的比较器对整个 <see cref="T:System.Collections.ArrayList" /> 中的元素进行排序。</summary>
         <remarks>
@@ -3263,7 +3263,7 @@
         <param name="count">要排序的范围的长度。</param>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
-或 
+- 或 - 
 一个空引用（在 Visual Basic 中为 <see langword="Nothing" />），将使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定的比较器对 <see cref="T:System.Collections.ArrayList" /> 中某个范围内的元素进行排序。</summary>
         <remarks>
@@ -3287,7 +3287,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="count" /> 未在 <see cref="T:System.Collections.ArrayList" /> 中指定有效范围。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。</exception>
@@ -3677,7 +3677,7 @@
         </remarks>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList" /> 为只读。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.ArrayList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.ArrayList.Clear" />
         <altmember cref="P:System.Collections.ArrayList.Capacity" />

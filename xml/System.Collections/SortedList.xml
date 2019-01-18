@@ -1,5 +1,5 @@
 <Type Name="SortedList" FullName="System.Collections.SortedList">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="be729c719d90801bc8d48c06f1885cb99fd4a5fe" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53334608" /></Metadata><TypeSignature Language="C#" Value="public class SortedList : ICloneable, System.Collections.IDictionary" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8480f7240e183ff7f80273ad720bb2d3da77e384" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54234977" /></Metadata><TypeSignature Language="C#" Value="public class SortedList : ICloneable, System.Collections.IDictionary" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SortedList extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Collections.SortedList" />
   <TypeSignature Language="VB.NET" Value="Public Class SortedList&#xA;Implements ICloneable, IDictionary" />
@@ -69,7 +69,7 @@
   
  容量<xref:System.Collections.SortedList>对象是元素数目<xref:System.Collections.SortedList>可以容纳。 元素添加到<xref:System.Collections.SortedList>，自动增加容量通过重新分配所需的方式。 可以通过调用减少容量<xref:System.Collections.SortedList.TrimToSize%2A>或通过设置<xref:System.Collections.SortedList.Capacity%2A>属性显式。  
   
- 对于非常大<xref:System.Collections.SortedList>对象，可以通过设置增加到 20 亿元素在 64 位系统上的最大容量`enabled`到的配置元素的特性`true`在运行时环境中。  
+ **仅限.NET framework:** 对于非常大<xref:System.Collections.SortedList>对象，可以通过设置增加到 20 亿元素在 64 位系统上的最大容量`enabled`的属性[ `<gcAllowVeryLargeObjects>` ](~/docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) configuration 元素`true`中运行时环境。  
   
  元素<xref:System.Collections.SortedList>对象进行排序的键按照特定<xref:System.Collections.IComparer>时指定实现<xref:System.Collections.SortedList>是创建或根据<xref:System.IComparable>密钥本身提供实现。 在任一情况下，<xref:System.Collections.SortedList>不允许重复的键。  
   
@@ -397,7 +397,7 @@
       <Docs>
         <param name="comparer">在对键进行比较时使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
-或 
+- 或 - 
  <see langword="null" />，使用每一个键的 <see cref="T:System.IComparable" /> 实现。</param>
         <param name="capacity"><see cref="T:System.Collections.SortedList" /> 对象可包含的初始元素数。</param>
         <summary>初始化 <see cref="T:System.Collections.SortedList" /> 类的新实例，该实例为空、具有指定的初始容量并根据指定的 <see cref="T:System.Collections.IComparer" /> 接口排序。</summary>
@@ -572,7 +572,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException">带有指定 <paramref name="key" /> 的元素已经存在于 <see cref="T:System.Collections.SortedList" /> 对象中。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.SortedList" /> 设置为使用 <see cref="T:System.IComparable" /> 接口，并且 <paramref name="key" /> 不实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.SortedList" /> 为只读。  
   
@@ -1010,7 +1010,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
-或 
+- 或 - 
 源 <see cref="T:System.Collections.SortedList" /> 对象中的元素数目大于从 <paramref name="arrayIndex" /> 到目标 <paramref name="array" /> 末尾之间的可用空间。</exception>
         <exception cref="T:System.InvalidCastException">无法自动将源 <see cref="T:System.Collections.SortedList" /> 的类型转换为目标 <paramref name="array" /> 的类型。</exception>
         <altmember cref="T:System.Array" />
@@ -1705,7 +1705,7 @@
   
  元素<xref:System.Collections.SortedList>按照键排序按照特定<xref:System.Collections.IComparer>时指定实现<xref:System.Collections.SortedList>是创建或根据<xref:System.IComparable>密钥本身提供实现。  
   
- C# 语言使用关键字来定义而不是实现索引器<xref:System.Collections.SortedList.Keys%2A>属性。 Visual Basic 将 <xref:System.Collections.SortedList.Item%2A> 实现为默认属性，该属性提供相同的索引功能。  
+ C#语言中使用[ `this` ](~/docs/csharp/language-reference/keywords/this.md)关键字来定义而不是实现索引器<xref:System.Collections.SortedList.Keys%2A>属性。 Visual Basic 将 <xref:System.Collections.SortedList.Item%2A> 实现为默认属性，该属性提供相同的索引功能。  
   
  检索此属性的值是 O (log `n`) 操作，其中`n`是<xref:System.Collections.SortedList.Count%2A>。 将属性设置为 O (log `n`) 操作，如果键已存在于<xref:System.Collections.SortedList>。 如果键不在列表中，将属性设置为 O (`n`) 操作的未排序的数据或 O (log `n`) 如果在列表的末尾添加了新元素。 如果插入导致大小调整，运算复杂度为 O (`n`)。  
   
@@ -1839,7 +1839,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.SortedList" /> 对象是只读的。  
   
-或 
+- 或 - 
 <see cref="T:System.Collections.SortedList" /> 具有固定的大小。</exception>
         <altmember cref="M:System.Collections.SortedList.RemoveAt(System.Int32)" />
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md">在集合中执行不区分区域性的字符串操作</related>

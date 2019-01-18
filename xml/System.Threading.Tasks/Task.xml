@@ -1,5 +1,5 @@
 <Type Name="Task" FullName="System.Threading.Tasks.Task">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7eb4e73011dcc6387d4b3dac6d38b797fd4d76cd" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53395846" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5d056e10f0f6359174b4d6104cef93d5732bd979" /><Meta Name="ms.sourcegitcommit" Value="2d8393b83688679d14f9fafe22c1fddd0ea39674" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/17/2019" /><Meta Name="ms.locfileid" Value="54363188" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Task extends System.Object implements class System.IAsyncResult, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Task" />
   <TypeSignature Language="VB.NET" Value="Public Class Task&#xA;Implements IAsyncResult, IDisposable" />
@@ -115,7 +115,7 @@
   
  此外可以通过调用提供的取消标记<xref:System.Threading.Tasks.Task.Wait%28System.Threading.CancellationToken%29>和<xref:System.Threading.Tasks.Task.Wait%28System.Int32%2CSystem.Threading.CancellationToken%29>方法。 如果该令牌的<xref:System.Threading.CancellationToken.IsCancellationRequested%2A>属性是`true`或变得`true`虽然<xref:System.Threading.Tasks.Task.Wait%2A>执行方法，该方法将引发<xref:System.OperationCanceledException>。  
   
- 在某些情况下，你可能想要等待执行任务的一系列的第一个问题以完成，但不是任务它的护理。  为此，可以调用的重载之一<xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>方法。  以下示例创建三个任务，其中每个休眠的时间间隔确定由随机数生成器。 <xref:System.Threading.Tasks.Task.WaitAny%28System.Threading.Tasks.Task%5B%5D%29>方法等待第一个任务完成。 该示例然后显示所有三个任务的状态信息。  
+ 在某些情况下，你可能想要等待执行任务的一系列的第一个问题以完成，但不是任务它的护理。  为此，可以调用的重载之一<xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType>方法。  以下示例创建三个任务，其中每个休眠的时间间隔确定由随机数生成器。 <xref:System.Threading.Tasks.Task.WaitAny%28System.Threading.Tasks.Task%5B%5D%29>方法等待第一个任务完成。 该示例然后显示所有三个任务的状态信息。  
   
  [!code-csharp[System.Threading.Tasks.Task#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task/cs/WhenAny1.cs#10)]
  [!code-vb[System.Threading.Tasks.Task#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task/vb/WaitAny1.vb#10)]  
@@ -1283,7 +1283,7 @@ End Sub
         <exception cref="T:System.ObjectDisposedException">创建了该标记的 <see cref="T:System.Threading.CancellationTokenSource" /> 已被释放。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="continuationAction" /> 参数为 null。  
   
-或 
+- 或 - 
 <paramref name="scheduler" /> 参数为 null。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" /> 参数为 <see cref="T:System.Threading.Tasks.TaskContinuationOptions" /> 指定无效值。</exception>
       </Docs>
@@ -2288,7 +2288,7 @@ Task t Status: RanToCompletion, Result: 42
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="delay" /> 表示除 <see langword="TimeSpan.FromMillseconds(-1)" /> 以外的负时间间隔。  
   
-或 
+- 或 - 
 <paramref name="delay" /> 参数的 <see cref="P:System.TimeSpan.TotalMilliseconds" /> 属性大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.Threading.Tasks.TaskCanceledException">该任务已取消。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放提供的 <paramref name="cancellationToken" />。</exception>
@@ -2477,7 +2477,7 @@ Task t Status: RanToCompletion, Result: 42
 ## Remarks  
  此属性返回的默认实例<xref:System.Threading.Tasks.TaskFactory>类为通过调用无参数创建完全相同的<xref:System.Threading.Tasks.TaskFactory.%23ctor?displayProperty=nameWithType>构造函数。 它具有以下属性值：  
   
-|Property|值|  
+|Property|“值”|  
 |--------------|-----------|  
 |<xref:System.Threading.Tasks.TaskFactory.CancellationToken%2A?displayProperty=nameWithType>|<xref:System.Threading.CancellationToken.None%2A?displayProperty=nameWithType>|  
 |<xref:System.Threading.Tasks.TaskFactory.ContinuationOptions%2A?displayProperty=nameWithType>|<xref:System.Threading.Tasks.TaskContinuationOptions.None?displayProperty=nameWithType>|  
@@ -4190,7 +4190,7 @@ Task t Status: RanToCompletion, Result: 42
         </remarks>
         <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.Threading.Tasks.Task" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
-或 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.AggregateException">已取消任务。 <see cref="P:System.AggregateException.InnerExceptions" /> 集合包含 <see cref="T:System.Threading.Tasks.TaskCanceledException" /> 对象。  
   
@@ -4270,7 +4270,7 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.AggregateException">已取消任务。 <see cref="P:System.AggregateException.InnerExceptions" /> 集合包含 <see cref="T:System.Threading.Tasks.TaskCanceledException" /> 对象。  
   
-或 
+- 或 - 
 执行任务期间引发了一个异常。 <see cref="P:System.AggregateException.InnerExceptions" /> 集合包含一个或多个异常的相关信息。</exception>
       </Docs>
     </Member>
@@ -4345,7 +4345,7 @@ Task t Status: RanToCompletion, Result: 42
 <paramref name="tasks" /> 参数为空数组。</exception>
         <exception cref="T:System.AggregateException">至少一个 <see cref="T:System.Threading.Tasks.Task" /> 实例已取消。 如果任务取消，则 <see cref="T:System.AggregateException" /> 异常在其 <see cref="P:System.AggregateException.InnerExceptions" /> 集合中包含 <see cref="T:System.OperationCanceledException" /> 异常。  
   
-或 
+- 或 - 
 在至少一个 <see cref="T:System.Threading.Tasks.Task" /> 实例的执行过程中引发了异常。</exception>
       </Docs>
     </Member>
@@ -4780,7 +4780,7 @@ Task t Status: RanToCompletion, Result: 42
         <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.Threading.Tasks.Task" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
-或 
+- 或 - 
  <paramref name="timeout" /> 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="tasks" /> 参数包含一个 null 元素。</exception>
       </Docs>
