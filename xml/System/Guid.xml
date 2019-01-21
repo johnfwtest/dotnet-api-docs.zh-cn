@@ -1,5 +1,5 @@
 <Type Name="Guid" FullName="System.Guid">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2dff029b859851de093fb90b84946eeb950dd25b" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52382594" /></Metadata><TypeSignature Language="C#" Value="public struct Guid : IComparable, IComparable&lt;Guid&gt;, IEquatable&lt;Guid&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d4c4e3dbeda3a15fe2d2cde04b7fcd4ca2541527" /><Meta Name="ms.sourcegitcommit" Value="e3904cb57bb8e1854a7de1615afac7a569a2064b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/14/2019" /><Meta Name="ms.locfileid" Value="54252419" /></Metadata><TypeSignature Language="C#" Value="public struct Guid : IComparable, IComparable&lt;Guid&gt;, IEquatable&lt;Guid&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Guid extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;valuetype System.Guid&gt;, class System.IEquatable`1&lt;valuetype System.Guid&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Guid" />
   <TypeSignature Language="VB.NET" Value="Public Structure Guid&#xA;Implements IComparable, IComparable(Of Guid), IEquatable(Of Guid), IFormattable" />
@@ -187,14 +187,14 @@
         <param name="g">包含下面任一格式的 GUID 的字符串（“d”表示忽略大小写的十六进制数字）： 
 32 个连续的数字： 
 dddddddddddddddddddddddddddddddd 
-或 
+- 或 - 
 8、4、4、4 和 12 位数字的分组，各组之间有连线符。 也可以用一对大括号或者圆括号将整个 GUID 括起来： 
 dddddddd-dddd-dddd-dddd-dddddddddddd 
-或 
+- 或 - 
 {dddddddd-dddd-dddd-dddd-dddddddddddd} 
-或 
+- 或 - 
 (dddddddd-dddd-dddd-dddd-dddddddddddd) 
-或 
+- 或 - 
 8、4 和 4 位数字的分组，和一个 8 组 2 位数字的子集，每组都带有前缀“0x”或“0X”，以逗号分隔。 整个 GUID 和子集用大括号括起来： 
 {0xdddddddd, 0xdddd, 0xdddd,{0xdd,0xdd,0xdd,0xdd,0xdd,0xdd,0xdd,0xdd}} 
 所有大括号、逗号和“0x”前缀都是必需的。 所有内置的空格都将被忽略。 组中的所有前导零都将被忽略。  
@@ -1043,7 +1043,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
 |`D`|由连字符分隔的 32 位数字|00000000-0000-0000-0000-000000000000|  
 |`B`|由括在大括号中的连字符分隔的 32 位数字|{00000000-0000-0000-0000-000000000000}|  
 |`P`|由括在括号中的连字符分隔的 32 位数字|(00000000-0000-0000-0000-000000000000)|  
-|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值|{0x00000000、 0x0000、 0x0000，{0x00，0x00，0x00，0x00，0x00，0x00，0x00，0x00}}|  
+|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值|{0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}}|  
   
  该方法将引发<xref:System.FormatException>如果无法成功分析字符串。 以下是一些可能出现此问题原因的原因包括：  
   
@@ -1141,7 +1141,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
       </Parameters>
       <Docs>
         <param name="input">要转换的 GUID。</param>
-        <param name="format">下列说明符之一，指示当解释 <paramref name="input" /> 时要使用的确切格式：“N”、“D”、“B”、“P”或“X”。</param>
+        <param name="format">下列说明符之一，指示解释 <paramref name="input" /> 时要使用的确切格式：“N”、“D”、“B”、“P”或“X”。</param>
         <summary>将 GUID 的字符串表示形式转换为等效的 <see cref="T:System.Guid" /> 结构，前提是该字符串采用的是指定格式。</summary>
         <returns>一个包含已分析的值的结构。</returns>
         <remarks>
@@ -1156,7 +1156,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
 |D|由连字符分隔的 32 位数字：<br /><br /> 00000000-0000-0000-0000-000000000000|  
 |B|由连字符，括在大括号分隔的 32 位数字：<br /><br /> {00000000-0000-0000-0000-000000000000}|  
 |P|由括在括号中的连字符分隔的 32 位数字：<br /><br /> (00000000-0000-0000-0000-000000000000)|  
-|X|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000、 0x0000、 0x0000，{0x00，0x00，0x00，0x00，0x00，0x00，0x00，0x00}}|  
+|X|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}}|  
   
    
   
@@ -1240,11 +1240,12 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
         <Parameter Name="provider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="format">To be added.</param>
+        <param name="format">一个单格式说明符，它指示如何格式化此 <see cref="T:System.Guid" /> 的值。 <paramref name="format" /> 参数可以是“N”、“D”、“B”、“P”或“X”。 如果 <paramref name="format" />为 NULL 或空字符串 ("")，则使用“D”。</param>
         <param name="provider">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>根据所提供的格式说明符和区域性特定的格式信息，返回此实例值的字符串表示形式。</summary>
+        <returns>此 <see cref="T:System.Guid" /> 的值，用一系列指定格式的小写十六进制位表示。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.FormatException"><paramref name="format" /> 的值不是 NULL，一个空字符串 ("")，或者下列格式说明符之一：“N”、“D”、“B”、“P”或“X”。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToByteArray">
@@ -1413,7 +1414,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
 |`D`|由连字符分隔的 32 位数字：<br /><br /> 00000000-0000-0000-0000-000000000000|  
 |`B`|由连字符，括在大括号分隔的 32 位数字：<br /><br /> {00000000-0000-0000-0000-000000000000}|  
 |`P`|由括在括号中的连字符分隔的 32 位数字：<br /><br /> (00000000-0000-0000-0000-000000000000)|  
-|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000、 0x0000、 0x0000，{0x00，0x00，0x00，0x00，0x00，0x00，0x00，0x00}}|  
+|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}}|  
   
  十六进制数字 a 到 f 是小写返回的字符串中。 若要将它们转换为大写，调用<xref:System.String.ToUpper%2A?displayProperty=nameWithType>对返回的字符串的方法。  
   
@@ -1480,7 +1481,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
 |`D`|由连字符分隔的 32 位数字：<br /><br /> 00000000-0000-0000-0000-000000000000|  
 |`B`|由连字符，括在大括号分隔的 32 位数字：<br /><br /> {00000000-0000-0000-0000-000000000000}|  
 |`P`|由括在括号中的连字符分隔的 32 位数字：<br /><br /> (00000000-0000-0000-0000-000000000000)|  
-|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000、 0x0000、 0x0000，{0x00，0x00，0x00，0x00，0x00，0x00，0x00，0x00}}|  
+|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}}|  
   
  十六进制数字 a 到 f 是小写返回的字符串中。 若要将它们转换为大写，调用<xref:System.String.ToUpper%2A?displayProperty=nameWithType>对返回的字符串的方法。  
   
@@ -1608,7 +1609,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
 |`D`|由连字符分隔的 32 位数字|00000000-0000-0000-0000-000000000000|  
 |`B`|由括在大括号中的连字符分隔的 32 位数字|{00000000-0000-0000-0000-000000000000}|  
 |`P`|由括在括号中的连字符分隔的 32 位数字|(00000000-0000-0000-0000-000000000000)|  
-|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值|{0x00000000、 0x0000、 0x0000，{0x00，0x00，0x00，0x00，0x00，0x00，0x00，0x00}}|  
+|`X`|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值|{0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}}|  
   
    
   
@@ -1694,7 +1695,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
       </Parameters>
       <Docs>
         <param name="input">要转换的 GUID。</param>
-        <param name="format">下列说明符之一，指示当解释 <paramref name="input" /> 时要使用的确切格式：“N”、“D”、“B”、“P”或“X”。</param>
+        <param name="format">下列说明符之一，指示解释 <paramref name="input" /> 时要使用的确切格式：“N”、“D”、“B”、“P”或“X”。</param>
         <param name="result">将包含已分析的值的结构。 如果此方法返回 <see langword="true" />，<paramref name="result" /> 将包含有效的 <see cref="T:System.Guid" />。 如果 <paramref name="result" /> 等于 <see cref="F:System.Guid.Empty" />，则此方法将返回 <see langword="false" />。</param>
         <summary>将 GUID 的字符串表示形式转换为等效的 <see cref="T:System.Guid" /> 结构，前提是该字符串采用的是指定格式。</summary>
         <returns>如果分析操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
@@ -1712,7 +1713,7 @@ dddddddd-dddd-dddd-dddd-dddddddddddd
 |D|由连字符分隔的 32 位数字：<br /><br /> 00000000-0000-0000-0000-000000000000|  
 |B|由连字符，括在大括号分隔的 32 位数字：<br /><br /> {00000000-0000-0000-0000-000000000000}|  
 |P|由括在括号中的连字符分隔的 32 位数字：<br /><br /> (00000000-0000-0000-0000-000000000000)|  
-|X|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000、 0x0000、 0x0000，{0x00，0x00，0x00，0x00，0x00，0x00，0x00，0x00}}|  
+|X|括在大括号，其中的第四个值是 8 个十六进制值的子集也括在大括号中的四个十六进制值：<br /><br /> {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}}|  
   
    
   

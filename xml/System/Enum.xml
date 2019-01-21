@@ -1,5 +1,5 @@
 <Type Name="Enum" FullName="System.Enum">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a7a137de938199a0dd7dc074b7bb42e54b3c7461" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52359922" /></Metadata><TypeSignature Language="C#" Value="public abstract class Enum : ValueType, IComparable, IConvertible, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f4922a1d1b0f0515d3bff5e3792f8a607712d05b" /><Meta Name="ms.sourcegitcommit" Value="e3904cb57bb8e1854a7de1615afac7a569a2064b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/14/2019" /><Meta Name="ms.locfileid" Value="54252887" /></Metadata><TypeSignature Language="C#" Value="public abstract class Enum : ValueType, IComparable, IConvertible, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Enum extends System.ValueType implements class System.IComparable, class System.IConvertible, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Enum" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Enum&#xA;Inherits ValueType&#xA;Implements IComparable, IConvertible, IFormattable" />
@@ -319,7 +319,7 @@
         <summary>将此实例与指定对象进行比较并返回一个对二者的相对值的指示。</summary>
         <returns>一个指示此实例和 <paramref name="target" /> 的相对值的带符号数字。  
   
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 含义 
  </description></listheader><item><term> 小于零 
  </term><description> 此实例的值小于 <paramref name="target" /> 的值。  
@@ -330,7 +330,7 @@
  </description></item><item><term> 大于零 
  </term><description> 此实例的值大于 <paramref name="target" /> 的值。  
   
-或 
+- 或 - 
  <paramref name="target" /> 为 <see langword="null" />。  
   
  </description></item></list></returns>
@@ -349,6 +349,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="target" /> 和此实例不是同一类型。</exception>
         <exception cref="T:System.InvalidOperationException">此实例不是类型 <see cref="T:System.SByte" />、<see cref="T:System.Int16" />、<see cref="T:System.Int32" />、<see cref="T:System.Int64" />、<see cref="T:System.Byte" />、<see cref="T:System.UInt16" />、<see cref="T:System.UInt32" /> 或 <see cref="T:System.UInt64" />。</exception>
         <altmember cref="M:System.Enum.Equals(System.Object)" />
+        <exception cref="T:System.NullReferenceException">此实例为 NULL。</exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -474,7 +475,7 @@
   
 |格式|描述|  
 |------------|-----------------|  
-|“G”或“g”|如果`value`是等于命名的枚举常数，该常量的名称是返回; 否则为十进制值的`value`返回。<br /><br /> 例如，假设仅枚举的常量名为红色，并且其值为 1。 如果`value`指定为 1，则此格式返回"Red"。 但是，如果`value`指定为 2，这种格式返回"2"。<br /><br /> 或<br /><br /> 如果<xref:System.FlagsAttribute>自定义特性应用于枚举`value`视为位字段，其中包含一个或多个包含一个或多个位的标志。<br /><br /> 如果`value`等于的组合，名为的枚举的常数，则返回分隔符分隔的列表，这些常量的名称。 `value` 搜索标志，则返回的最大值用到的最小值。 对应于一个位字段在每个标志`value`的常数的名称连接到分隔符分隔的列表。 从其他考虑，然后排除该标志的值，搜索继续下一步的标志。<br /><br /> 如果`value`不相等的组合到名为枚举的常量的十进制等效值`value`返回。|  
+|“G”或“g”|如果`value`是等于命名的枚举常数，该常量的名称是返回; 否则为十进制值的`value`返回。<br /><br /> 例如，假设仅枚举的常量名为红色，并且其值为 1。 如果`value`指定为 1，则此格式返回"Red"。 但是，如果`value`指定为 2，这种格式返回"2"。<br /><br /> - 或 -<br /><br /> 如果<xref:System.FlagsAttribute>自定义特性应用于枚举`value`视为位字段，其中包含一个或多个包含一个或多个位的标志。<br /><br /> 如果`value`等于的组合，名为的枚举的常数，则返回分隔符分隔的列表，这些常量的名称。 `value` 搜索标志，则返回的最大值用到的最小值。 对应于一个位字段在每个标志`value`的常数的名称连接到分隔符分隔的列表。 从其他考虑，然后排除该标志的值，搜索继续下一步的标志。<br /><br /> 如果`value`不相等的组合到名为枚举的常量的十进制等效值`value`返回。|  
 |“X”或“x”|表示`value`以十六进制格式，而无需前导"0x"。|  
 |“D”或“d”|表示`value`十进制格式。|  
 |“F”或“f”|"G"或"g"的行为相同，只不过<xref:System.FlagsAttribute>不需要存在于<xref:System.Enum>声明。|  
@@ -493,10 +494,10 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" />、<paramref name="value" /> 或 <paramref name="format" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 参数不是 <see cref="T:System.Enum" /> 类型。  
   
-或 
+- 或 - 
 <paramref name="value" /> 来自于类型与 <paramref name="enumType" /> 不同的枚举。  
   
-或 
+- 或 - 
 <paramref name="value" /> 的类型不是 <paramref name="enumType" /> 的基础类型。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 参数包含无效值。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="format" /> 等于“X”，但枚举类型未知。</exception>
@@ -613,7 +614,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> 或 <paramref name="value" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 不是 <see cref="T:System.Enum" />。  
   
-或 
+- 或 - 
  <paramref name="value" /> 既不属于类型 <paramref name="enumType" />，也不具有与 <paramref name="enumType" /> 相同的基础类型。</exception>
       </Docs>
     </Member>
@@ -870,7 +871,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 不是 <see cref="T:System.Enum" />。</exception>
         <exception cref="T:System.InvalidOperationException">在仅限反射的上下文中通过反射调用方法， 
-或 
+- 或 - 
  <paramref name="enumType" /> 是在仅限反射的上下文中加载的程序集中的类型。</exception>
       </Docs>
     </Member>
@@ -1021,15 +1022,15 @@ thisInstance And flag = flag
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> 或 <paramref name="value" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 不是 <see langword="Enum" />。  
   
-或 
+- 或 - 
 <paramref name="value" /> 的类型是枚举，但它不是类型 <paramref name="enumType" /> 的枚举。  
   
-或 
+- 或 - 
 <paramref name="value" /> 的类型不是 <paramref name="enumType" /> 的基础类型。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="value" /> 的类型不为 <see cref="T:System.SByte" />、<see cref="T:System.Int16" />、<see cref="T:System.Int32" />、<see cref="T:System.Int64" />、<see cref="T:System.Byte" />、<see cref="T:System.UInt16" />、<see cref="T:System.UInt32" /><see cref="T:System.UInt64" /> 或 <see cref="T:System.String" />。</exception>
         <block subset="none" type="usage"><para>如果<paramref name="enumType" />是使用定义的枚举<see cref="T:System.FlagsAttribute" />属性，该方法将返回<see langword="false" />如果中的多个位字段<paramref name="value" />设置，但<paramref name="value" />不对应一个复合枚举值，或者如果<paramref name="value" />是多个位标志的名称的字符串串联。 在以下示例中，<c>宠物</c>枚举定义与<see cref="T:System.FlagsAttribute" />属性。 <see cref="M:System.Enum.IsDefined(System.Type,System.Object)" />方法将返回<see langword="false" />时您将其传递一个枚举值，有两位域 (<c>Pets.Dog</c>和<c>Pets.Cat</c>) 设置，并当您将其传递的字符串表示形式，枚举值 （"狗、 猫"）。  
   
-[！ 代码 csharp[System.Enum.IsDefined#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.IsDefined/cs/isdefined2.cs#2)] [！ 代码 vb[System.Enum.IsDefined#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.IsDefined/vb/isdefined2.vb#2)] 
+[!code-csharp[System.Enum.IsDefined#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.IsDefined/cs/isdefined2.cs#2)] [!code-vb[System.Enum.IsDefined#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.IsDefined/vb/isdefined2.vb#2)] 
 您可以确定是否通过调用设置多个位域<see cref="M:System.Enum.HasFlag(System.Enum)" />方法。</para></block>
         <altmember cref="M:System.Enum.GetName(System.Type,System.Object)" />
         <altmember cref="M:System.Enum.GetNames(System.Type)" />
@@ -1123,11 +1124,11 @@ thisInstance And flag = flag
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> 或 <paramref name="value" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 不是 <see cref="T:System.Enum" />。  
   
-或 
+- 或 - 
  <paramref name="value" /> 为空字符串或只包含空格。  
   
-或 
- <paramref name="value" /> 是一个名称，而不是为该枚举定义的命名常量之一。</exception>
+- 或 - 
+ <paramref name="value" /> 是一个名称，但不是为该枚举定义的指定常量之一。</exception>
         <exception cref="T:System.OverflowException"><paramref name="value" /> 超出了 <paramref name="enumType" /> 的基础类型范围。</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -1205,11 +1206,11 @@ thisInstance And flag = flag
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> 或 <paramref name="value" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 不是 <see cref="T:System.Enum" />。  
   
-或 
+- 或 - 
  <paramref name="value" /> 为空字符串 ("") 或只包含空格。  
   
-或 
- <paramref name="value" /> 是一个名称，而不是为该枚举定义的命名常量之一。</exception>
+- 或 - 
+ <paramref name="value" /> 是一个名称，但不是为该枚举定义的指定常量之一。</exception>
         <exception cref="T:System.OverflowException"><paramref name="value" /> 超出了 <paramref name="enumType" /> 的基础类型范围。</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2154,11 +2155,13 @@ thisInstance And flag = flag
         <Parameter Name="provider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="format">To be added.</param>
+        <param name="format">格式规范。</param>
         <param name="provider">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>此方法重载已过时；请使用 <see cref="M:System.Enum.ToString(System.String)" />。</summary>
+        <returns>此实例的值的字符串表示形式，由 <paramref name="format" /> 指定。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.FormatException"><paramref name="format" /> 不包含有效的格式规范。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="format" /> 等于“X”，但枚举类型未知。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ToObject">
@@ -2465,7 +2468,7 @@ thisInstance And flag = flag
         <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> 或 <paramref name="value" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="enumType" /> 不是 <see cref="T:System.Enum" />。  
   
-或 
+- 或 - 
  <paramref name="value" /> 不是类型 <see cref="T:System.SByte" />、<see cref="T:System.Int16" />、<see cref="T:System.Int32" />、<see cref="T:System.Int64" />、<see cref="T:System.Byte" />、<see cref="T:System.UInt16" />、<see cref="T:System.UInt32" /> 或 <see cref="T:System.UInt64" />。</exception>
         <altmember cref="M:System.Enum.IsDefined(System.Type,System.Object)" />
       </Docs>
@@ -2786,10 +2789,10 @@ thisInstance And flag = flag
         </remarks>
         <block subset="none" type="usage"><para>如果多个枚举成员具有相同的基础值，并且尝试检索基于其基础值的枚举成员的名称的字符串表示形式，你的代码不应造成任何假设，该方法将返回有关的名称。 例如，以下枚举定义两个成员<c>Shade.Gray</c>并<c>Shade.Grey</c>，具有相同的基础值。  
   
-[！ 代码 csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [！ 代码 vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
+[!code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [!code-vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
 下面的方法调用尝试检索的成员的名称<c>阴影</c>枚举其基础值为 1。 该方法可以返回"Gray"或"Grey"和你的代码不应进行哪些返回字符串的任何假设。  
   
-[！ 代码 csharp[System.Enum.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#2)] [！ 代码 vb[System.Enum.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#2)]</para></block>
+[!code-csharp[System.Enum.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#2)] [!code-vb[System.Enum.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#2)]</para></block>
         <altmember cref="M:System.Enum.Format(System.Type,System.Object,System.String)" />
         <altmember cref="M:System.Enum.Parse(System.Type,System.String)" />
       </Docs>
@@ -2886,7 +2889,7 @@ thisInstance And flag = flag
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- `format`参数可以是以下格式字符串之一:"G"或"g"、"D"或"d"、"X"或"x"和"F"或"f"（格式字符串不区分大小写）。 如果`format`是`null`或空字符串 ("")，使用常规格式说明符 ("G")。 有关枚举格式字符串和格式设置的枚举值的详细信息，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。 有关格式设置的常规详细信息，请参阅[格式设置类型](~/docs/standard/base-types/formatting-types.md)。  
+ `format`参数可以是以下格式字符串之一："G"或"g"、"D"或"d"、"X"或"x"和"F"或"f"（格式字符串不区分大小写）。 如果`format`是`null`或空字符串 ("")，使用常规格式说明符 ("G")。 有关枚举格式字符串和格式设置的枚举值的详细信息，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。 有关格式设置的常规详细信息，请参阅[格式设置类型](~/docs/standard/base-types/formatting-types.md)。  
   
    
   
@@ -2903,10 +2906,10 @@ thisInstance And flag = flag
         <exception cref="T:System.InvalidOperationException"><paramref name="format" /> 等于“X”，但枚举类型未知。</exception>
         <block subset="none" type="usage"><para>如果多个枚举成员具有相同的基础值，并且尝试检索基于其基础值的枚举成员的名称的字符串表示形式，你的代码不应造成任何假设，该方法将返回有关的名称。 例如，以下枚举定义两个成员<c>Shade.Gray</c>并<c>Shade.Grey</c>，具有相同的基础值。  
   
-[！ 代码 csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [！ 代码 vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
+[!code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)] [!code-vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)] 
 下面的方法调用尝试检索的成员的名称<c>阴影</c>枚举其基础值为 1。 该方法可以返回"Gray"或"Grey"和你的代码不应进行哪些返回字符串的任何假设。  
   
-[！ 代码 csharp[System.Enum.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#3)] [！ 代码 vb[System.Enum.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#3)]</para></block>
+[!code-csharp[System.Enum.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#3)] [!code-vb[System.Enum.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#3)]</para></block>
         <altmember cref="M:System.Enum.Format(System.Type,System.Object,System.String)" />
         <altmember cref="M:System.Enum.Parse(System.Type,System.String)" />
         <altmember cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />
@@ -2962,7 +2965,7 @@ thisInstance And flag = flag
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- `format`参数可以是以下格式字符串之一:"G"或"g"、"D"或"d"、"X"或"x"和"F"或"f"（格式字符串不区分大小写）。 如果`format`是`null`或空字符串 ("")，使用常规格式说明符 ("G")。 有关枚举格式字符串和格式设置的枚举值的详细信息，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。 有关格式设置的常规详细信息，请参阅[格式设置类型](~/docs/standard/base-types/formatting-types.md)。  
+ `format`参数可以是以下格式字符串之一："G"或"g"、"D"或"d"、"X"或"x"和"F"或"f"（格式字符串不区分大小写）。 如果`format`是`null`或空字符串 ("")，使用常规格式说明符 ("G")。 有关枚举格式字符串和格式设置的枚举值的详细信息，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。 有关格式设置的常规详细信息，请参阅[格式设置类型](~/docs/standard/base-types/formatting-types.md)。  
   
  仅指定`format`;`provider`参数已作废。  
   

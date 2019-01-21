@@ -1,5 +1,5 @@
 <Type Name="EncryptedSecurityTokenHandler" FullName="System.IdentityModel.Tokens.EncryptedSecurityTokenHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="507c8ae4a41ab1611cbfdc5cfc59def824969537" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="36557856" /></Metadata><TypeSignature Language="C#" Value="public class EncryptedSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a9aa80db899cbdb2270485d63b92f32034eab914" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54310843" /></Metadata><TypeSignature Language="C#" Value="public class EncryptedSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EncryptedSecurityTokenHandler extends System.IdentityModel.Tokens.SecurityTokenHandler" />
   <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler" />
   <TypeSignature Language="VB.NET" Value="Public Class EncryptedSecurityTokenHandler&#xA;Inherits SecurityTokenHandler" />
@@ -19,7 +19,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 序列化和反序列化的令牌处理程序<xref:System.IdentityModel.Tokens.EncryptedSecurityToken>中的对象`<xenc:EncryptedData>`元素并<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause>中的对象`<xenc:EncryptedKey>`XML 加密语法和处理规范中定义的元素 (http://www.w3.org/TR/2002/REC-xmlenc-core-20021210)。  
+ 序列化和反序列化的令牌处理程序<xref:System.IdentityModel.Tokens.EncryptedSecurityToken>中的对象`<xenc:EncryptedData>`元素并<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause>中的对象`<xenc:EncryptedKey>`元素中定义[XML 加密语法和处理规范](https://www.w3.org/TR/xmlenc-core1/).  
   
  ]]></format>
     </remarks>
@@ -63,7 +63,7 @@
       <Docs>
         <param name="reader">在开始元素上指定的 XML 读取器。 不能将读取器前移。</param>
         <summary>返回一个值，该值指示当前 XML 元素是否指向可通过此实例反序列化为 <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" /> 元素的 <see langword="&lt;xenc:EncryptedKey&gt;" /> 元素。</summary>
-        <returns>如果按照 XML 加密语法和处理规范 (http://www.w3.org/TR/2002/REC-xmlenc-core-20021210)) 的第 3.5.1 节的定义将 XML 读取器放置于 <see langword="&lt;xenc:EncryptedKey&gt;" /> 元素，则为 <see langword="true" />，否则为 <see langword="false" />。</returns>
+        <returns>如果按照 <see href="https://www.w3.org/TR/xmlenc-core1/">XML 加密语法和处理</see> 的第 3.5.1 节的定义将 XML 读取器放置于 <see langword="&lt;xenc:EncryptedKey&gt;" /> 元素，则为 <see langword="true" />，否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -184,7 +184,7 @@
         <Parameter Name="reader" Type="System.Xml.XmlReader" />
       </Parameters>
       <Docs>
-        <param name="reader">按照“http://www.w3.org/TR/2002/REC-xmlenc-core-20021210”中的定义将 XML 读取器放置于 <see langword="&lt;xenc:EncryptedKey&gt;" /> 元素；否则为 <see langword="false" />。</param>
+        <param name="reader">按照 <see href="https://www.w3.org/TR/xmlenc-core1/">XML 加密语法和处理</see> 的定义而放置于 <see langword="&lt;xenc:EncryptedKey&gt;" /> 元素的 XML 读取器，否则为 <see langword="false" />。</param>
         <summary>从 XML 流中读取 <see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" />。</summary>
         <returns><see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" /> 类型的密钥标识符子句。</returns>
         <remarks>To be added.</remarks>
@@ -218,11 +218,11 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">未配置的服务标记解析器。 所引用的该标记处理配置的 <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> 属性或 <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.ServiceTokenResolver" /> 属性为 <see langword="null" />。 请求服务标记的解析器获取解密的密钥。  
   
-或 
+- 或 - 
 通过 <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.ContainingCollection" /> 属性引用的 <see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollection" /> 无法找到一个能读取已解密的 XML 并返回一个 <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> 的 <see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />。</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">在 XML 中未找到由读取器指向的 <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />。  
   
-或 
+- 或 - 
 <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" /> 不是一个  <see cref="T:System.IdentityModel.Tokens.SymmetricSecurityKey" />。</exception>
         <exception cref="T:System.IdentityModel.Tokens.EncryptedTokenDecryptionFailedException">在 XML 中找到的<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" /> 不能被配置服务令牌解析器解析为一个 <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</exception>
       </Docs>
@@ -274,12 +274,12 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="writer" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="token" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="token" /> 不可作为 <see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />。</exception>
         <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> 属性为 <see langword="null" />。 此属性为获取加密密钥所必需的。  
   
-或 
+- 或 - 
 标记处理程序收集 <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.ContainingCollection" /> 属性返回未能发现可以编写 <see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" /> 属性返回的 <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> 的 <see cref="P:System.IdentityModel.Tokens.EncryptedSecurityToken.Token" />。</exception>
         <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException"><see cref="P:System.IdentityModel.Tokens.EncryptingCredentials.SecurityKey" /> 属性不是作为可赋值的  <see cref="T:System.IdentityModel.Tokens.SymmetricSecurityKey" />.</exception>
       </Docs>

@@ -1,5 +1,5 @@
 <Type Name="XmlConvert" FullName="System.Xml.XmlConvert">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ae5492bae114de55817128211067a2af7aca5ce7" /><Meta Name="ms.sourcegitcommit" Value="9802d4c6745a8ae514b26f144fb3969265b224ba" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/22/2018" /><Meta Name="ms.locfileid" Value="53750994" /></Metadata><TypeSignature Language="C#" Value="public class XmlConvert" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="560ef8ff66448c7761a321efa185a96d17fad07e" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54311745" /></Metadata><TypeSignature Language="C#" Value="public class XmlConvert" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlConvert extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlConvert" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlConvert" />
@@ -52,7 +52,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
   
 |方法|描述|  
 |------------|-----------------|  
-|<xref:System.Xml.XmlConvert.EncodeName%2A>|将名称并返回已编码的名称以及由转义字符串替换为任何无效字符。 此方法允许冒号位于任何位置，这意味着，名称可能仍然是符合 W3C [XML 1.0 建议中的命名空间](http://www.w3.org/TR/REC-xml-names)。|  
+|<xref:System.Xml.XmlConvert.EncodeName%2A>|将名称并返回已编码的名称以及由转义字符串替换为任何无效字符。 此方法允许冒号位于任何位置，这意味着，名称可能仍然是符合 W3C [XML 1.0 建议中的命名空间](https://www.w3.org/TR/REC-xml-names/)。|  
 |<xref:System.Xml.XmlConvert.EncodeNmToken%2A>|将名称并返回已编码的名称。|  
 |<xref:System.Xml.XmlConvert.EncodeLocalName%2A>|与相同<xref:System.Xml.XmlConvert.EncodeName%2A>不同之处在于它还对冒号进行编码，保证名称可作为`LocalName`命名空间限定名称的一部分。|  
 |<xref:System.Xml.XmlConvert.DecodeName%2A>|反转对所有编码方法的转换。|  
@@ -291,7 +291,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
   
  下划线字符不需要转义，除非它后面跟有一个字符序列，并且在对名称解码时，该序列与下划线一起会被错误地解释为转义序列。 例如，Order_Details 不编码，而 Order_x0020_ 编码为 Order_x005f_x0020_。 不允许的任何缩写。 例如，窗体 _x20\_并且不会生成 __。  
   
- 此方法可保证该名称有效根据 XML 规范。 它允许冒号位于任何位置，这意味着，名称可能仍然会根据无效[W3C Namespace 规范](http://www.w3.org/TR/REC-xml-names)。 若要保证它是有效的命名空间限定名称，请使用<xref:System.Xml.XmlConvert.EncodeLocalName%2A>前缀和本地名称部分，并加入一个冒号的结果。  
+ 此方法可保证该名称有效根据 XML 规范。 它允许冒号位于任何位置，这意味着，名称可能仍然会根据无效[W3C Namespace 规范](https://www.w3.org/TR/REC-xml-names/)。 若要保证它是有效的命名空间限定名称，请使用<xref:System.Xml.XmlConvert.EncodeLocalName%2A>前缀和本地名称部分，并加入一个冒号的结果。  
   
    
   
@@ -988,7 +988,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       <Docs>
         <param name="s">要转换的字符串。  
   
- **注意** 该字符串必须属于针对 XML dateTime 类型的 W3C 建议的子集。 有关详细信息，请参阅 http://www.w3.org/TR/xmlschema-2/#dateTime。</param>
+ **注意** 该字符串必须属于针对 XML dateTime 类型的 W3C 建议的子集。 有关详细信息，请参阅 XML 架构规范的 <see href="https://www.w3.org/TR/xmlschema-2/#dateTime">dateTime</see> 部分。</param>
         <summary>将提供的 <see cref="T:System.String" /> 转换为等效的 <see cref="T:System.DateTimeOffset" />。</summary>
         <returns>与提供的字符串等效的 <see cref="T:System.DateTimeOffset" />。</returns>
         <remarks>
@@ -1023,7 +1023,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">传递给此方法的参数不在允许值的范围内。 有关允许值的信息，请参见 <see cref="T:System.DateTimeOffset" />。</exception>
-        <exception cref="T:System.FormatException">传递给此方法的参数不符合 XML DateTime 类型的 W3C 建议的子集。 有关详细信息，请参阅 [http://www.w3.org/TR/xmlschema-2/#dateTime](https://go.microsoft.com/fwlink/?LinkId=97914)。</exception>
+        <exception cref="T:System.FormatException">传递给此方法的参数不符合 XML DateTime 类型的 W3C 建议的子集。 有关详细信息，请参阅 XML 架构规范的 <see href="https://www.w3.org/TR/xmlschema-2/#dateTime">dateTime</see> 部分。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToDateTimeOffset">
@@ -1061,7 +1061,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       </Parameters>
       <Docs>
         <param name="s">要转换的字符串。</param>
-        <param name="format">从中转换 <paramref name="s" /> 的格式。 该格式参数可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 http://www.w3.org/TR/xmlschema-2/#dateTime.) 根据此格式验证字符串 <paramref name="s" />。</param>
+        <param name="format">从中转换 <paramref name="s" /> 的格式。 该格式参数可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 XML 架构规范的 <see href="https://www.w3.org/TR/xmlschema-2/#dateTime">dateTime</see> 部分。）根据此格式验证字符串 <paramref name="s" />。</param>
         <summary>将提供的 <see cref="T:System.String" /> 转换为等效的 <see cref="T:System.DateTimeOffset" />。</summary>
         <returns>与提供的字符串等效的 <see cref="T:System.DateTimeOffset" />。</returns>
         <remarks>
@@ -1135,7 +1135,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       </Parameters>
       <Docs>
         <param name="s">要转换的字符串。</param>
-        <param name="formats">可以转换 <paramref name="s" /> 的格式数组。 <paramref name="formats" /> 中的每个格式均可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 http://www.w3.org/TR/xmlschema-2/#dateTime.)。）字符串 <paramref name="s" /> 是根据这些格式中的一个格式验证的。</param>
+        <param name="formats">可以转换 <paramref name="s" /> 的格式数组。 <paramref name="formats" /> 中的每个格式均可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 XML 架构规范的 <see href="https://www.w3.org/TR/xmlschema-2/#dateTime">dateTime</see> 部分。）将根据这些格式中的一个格式验证字符串 <paramref name="s" />。</param>
         <summary>将提供的 <see cref="T:System.String" /> 转换为等效的 <see cref="T:System.DateTimeOffset" />。</summary>
         <returns>与提供的字符串等效的 <see cref="T:System.DateTimeOffset" />。</returns>
         <remarks>
@@ -2447,7 +2447,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       </Parameters>
       <Docs>
         <param name="value">要转换的 <see cref="T:System.DateTimeOffset" />。</param>
-        <param name="format"><paramref name="s" /> 转换为的格式。 该格式参数可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 http://www.w3.org/TR/xmlschema-2/#dateTime.)</param>
+        <param name="format"><paramref name="s" /> 转换为的格式。 该格式参数可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 XML 架构规范的 <see href="https://www.w3.org/TR/xmlschema-2/#dateTime">dateTime</see> 部分。）</param>
         <summary>将提供的 <see cref="T:System.DateTimeOffset" /> 转换为指定格式的 <see cref="T:System.String" />。</summary>
         <returns>提供的 <see cref="T:System.DateTimeOffset" /> 的指定格式的 <see cref="T:System.String" /> 表示形式。</returns>
         <remarks>
@@ -2820,7 +2820,7 @@ catch(Exception e) {
 }  
 ```  
   
- NMTOKEN 数据类型的详细信息，请参阅http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#NMTOKEN。  
+ NMTOKEN 数据类型的详细信息，请参阅[NMTOKEN](https://www.w3.org/TR/xmlschema-2/#NMTOKEN)的 XML 架构第 2 部分：数据类型第二版。
   
  ]]></format>
         </remarks>
@@ -2925,7 +2925,7 @@ catch(Exception e) {
 }  
 ```  
   
- 有关令牌的详细信息，请参阅[ http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#token ](https://go.microsoft.com/fwlink/?LinkId=103183)。  
+ 有关令牌的详细信息，请参阅[NMTOKEN](https://www.w3.org/TR/xmlschema-2/#NMTOKEN)。  
   
  ]]></format>
         </remarks>
