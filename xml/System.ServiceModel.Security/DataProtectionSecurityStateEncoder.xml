@@ -1,5 +1,5 @@
 <Type Name="DataProtectionSecurityStateEncoder" FullName="System.ServiceModel.Security.DataProtectionSecurityStateEncoder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="21f0e672c6f720dd7c8fab549f0052b9c5419f0b" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="HT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39872961" /></Metadata><TypeSignature Language="C#" Value="public class DataProtectionSecurityStateEncoder : System.ServiceModel.Security.SecurityStateEncoder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="21f0e672c6f720dd7c8fab549f0052b9c5419f0b" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39872961" /></Metadata><TypeSignature Language="C#" Value="public class DataProtectionSecurityStateEncoder : System.ServiceModel.Security.SecurityStateEncoder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataProtectionSecurityStateEncoder extends System.ServiceModel.Security.SecurityStateEncoder" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" />
   <TypeSignature Language="VB.NET" Value="Public Class DataProtectionSecurityStateEncoder&#xA;Inherits SecurityStateEncoder" />
@@ -15,18 +15,18 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary><span data-ttu-id="4014c-101">使用 Windows <see langword="DataProtection" /> API 功能提供安全状态的编码和解码机制。</span><span class="sxs-lookup"><span data-stu-id="4014c-101">Provides encoding and decoding mechanisms for the security state using the Windows <see langword="DataProtection" /> API functionality.</span></span></summary>
+    <summary><span data-ttu-id="f78df-101">使用 Windows <see langword="DataProtection" /> API 功能提供安全状态的编码和解码机制。</span><span class="sxs-lookup"><span data-stu-id="f78df-101">Provides encoding and decoding mechanisms for the security state using the Windows <see langword="DataProtection" /> API functionality.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="4014c-102">此类用于编码安全状态，由表示*有状态安全上下文令牌*时发送消息，并用于解码安全上下文，当消息到达接收方。</span><span class="sxs-lookup"><span data-stu-id="4014c-102">This class is used for encoding the security state as represented by a *Stateful Security Context Token* when the message is sent, and for decoding the security context when the message arrives at a recipient.</span></span>  
+ <span data-ttu-id="f78df-102">此类用于编码安全状态，由表示*有状态安全上下文令牌*时发送消息，并用于解码安全上下文，当消息到达接收方。</span><span class="sxs-lookup"><span data-stu-id="f78df-102">This class is used for encoding the security state as represented by a *Stateful Security Context Token* when the message is sent, and for decoding the security context when the message arrives at a recipient.</span></span>  
   
- <span data-ttu-id="4014c-103">编码可以位于当前用户范围（只有以用户帐户身份运行的进程可以解码安全状态），也可以位于本地计算机范围（运行在计算机上的所有进程都可以解码安全状态）。</span><span class="sxs-lookup"><span data-stu-id="4014c-103">The encoding can either be in the current user scope (whereby only processes running as the user account can decode the security state) or it can be in the local machine scope (whereby all processes running on the machine can decode the security state).</span></span> <span data-ttu-id="4014c-104">默认情况下，编码位于当前用户范围。</span><span class="sxs-lookup"><span data-stu-id="4014c-104">By default, the encoding is in the current user scope.</span></span>  
+ <span data-ttu-id="f78df-103">编码可以位于当前用户范围（只有以用户帐户身份运行的进程可以解码安全状态），也可以位于本地计算机范围（运行在计算机上的所有进程都可以解码安全状态）。</span><span class="sxs-lookup"><span data-stu-id="f78df-103">The encoding can either be in the current user scope (whereby only processes running as the user account can decode the security state) or it can be in the local machine scope (whereby all processes running on the machine can decode the security state).</span></span> <span data-ttu-id="f78df-104">默认情况下，编码位于当前用户范围。</span><span class="sxs-lookup"><span data-stu-id="f78df-104">By default, the encoding is in the current user scope.</span></span>  
   
- <span data-ttu-id="4014c-105">在中发送的安全状态时，服务器使用此类*有状态安全上下文令牌*颁发给客户端。</span><span class="sxs-lookup"><span data-stu-id="4014c-105">This class is used by the server when sending the security state in the *Stateful Security Context Token* issued to the client.</span></span>  
+ <span data-ttu-id="f78df-105">在中发送的安全状态时，服务器使用此类*有状态安全上下文令牌*颁发给客户端。</span><span class="sxs-lookup"><span data-stu-id="f78df-105">This class is used by the server when sending the security state in the *Stateful Security Context Token* issued to the client.</span></span>  
   
- <span data-ttu-id="4014c-106">基于 `DataProtection` 范围的 `CurrentUser` 需要当前用户具有用户配置文件。</span><span class="sxs-lookup"><span data-stu-id="4014c-106">`DataProtection` based on the `CurrentUser` scope requires the current user to have a user profile.</span></span> <span data-ttu-id="4014c-107">如果用户有漫游配置文件，则由运行在一台计算机上的用户进程编码的安全状态可以由运行在另一台计算机上的用户进程解码。</span><span class="sxs-lookup"><span data-stu-id="4014c-107">If the user has a roaming profile, then the security state encoded by the user process running on one machine can be decoded by a user process running on a different machine.</span></span>  
+ <span data-ttu-id="f78df-106">基于 `DataProtection` 范围的 `CurrentUser` 需要当前用户具有用户配置文件。</span><span class="sxs-lookup"><span data-stu-id="f78df-106">`DataProtection` based on the `CurrentUser` scope requires the current user to have a user profile.</span></span> <span data-ttu-id="f78df-107">如果用户有漫游配置文件，则由运行在一台计算机上的用户进程编码的安全状态可以由运行在另一台计算机上的用户进程解码。</span><span class="sxs-lookup"><span data-stu-id="f78df-107">If the user has a roaming profile, then the security state encoded by the user process running on one machine can be decoded by a user process running on a different machine.</span></span>  
   
  ]]></format>
     </remarks>
@@ -38,7 +38,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="4014c-108">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="4014c-108">Initializes a new instance of this class.</span></span></summary>
+        <summary><span data-ttu-id="f78df-108">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f78df-108">Initializes a new instance of this class.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName=".ctor">
@@ -60,7 +60,7 @@
       </Attributes>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="4014c-109">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="4014c-109">Initializes a new instance of this class.</span></span></summary>
+        <summary><span data-ttu-id="f78df-109">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f78df-109">Initializes a new instance of this class.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,8 +86,8 @@
         <Parameter Name="useCurrentUserProtectionScope" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="useCurrentUserProtectionScope"><span data-ttu-id="4014c-110">指示是否使用当前用户保护范围。</span><span class="sxs-lookup"><span data-stu-id="4014c-110">Indicates whether to use the current user protection scope.</span></span></param>
-        <summary><span data-ttu-id="4014c-111">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="4014c-111">Initializes a new instance of this class.</span></span></summary>
+        <param name="useCurrentUserProtectionScope"><span data-ttu-id="f78df-110">指示是否使用当前用户保护范围。</span><span class="sxs-lookup"><span data-stu-id="f78df-110">Indicates whether to use the current user protection scope.</span></span></param>
+        <summary><span data-ttu-id="f78df-111">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f78df-111">Initializes a new instance of this class.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,9 +109,9 @@
         <Parameter Name="entropy" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="useCurrentUserProtectionScope"><span data-ttu-id="4014c-112">指示是否使用当前用户保护范围。</span><span class="sxs-lookup"><span data-stu-id="4014c-112">Indicates whether to use the current user protection scope.</span></span></param>
-        <param name="entropy"><span data-ttu-id="4014c-113">一个指定平均信息量的 <see langword="byte" /> 数组，它指示编码器可用于编码安全状态的其他随机性。</span><span class="sxs-lookup"><span data-stu-id="4014c-113">A <see langword="byte" /> array that specifies the entropy, which indicates additional randomness that the encoder could use to encode the security state.</span></span></param>
-        <summary><span data-ttu-id="4014c-114">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="4014c-114">Initializes a new instance of this class.</span></span></summary>
+        <param name="useCurrentUserProtectionScope"><span data-ttu-id="f78df-112">指示是否使用当前用户保护范围。</span><span class="sxs-lookup"><span data-stu-id="f78df-112">Indicates whether to use the current user protection scope.</span></span></param>
+        <param name="entropy"><span data-ttu-id="f78df-113">一个指定平均信息量的 <see langword="byte" /> 数组，它指示编码器可用于编码安全状态的其他随机性。</span><span class="sxs-lookup"><span data-stu-id="f78df-113">A <see langword="byte" /> array that specifies the entropy, which indicates additional randomness that the encoder could use to encode the security state.</span></span></param>
+        <summary><span data-ttu-id="f78df-114">初始化此类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f78df-114">Initializes a new instance of this class.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,9 +135,9 @@
         <Parameter Name="data" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="data"><span data-ttu-id="4014c-115">一个表示已编码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="4014c-115">A <see langword="byte" /> array that represents the encoded security state.</span></span></param>
-        <summary><span data-ttu-id="4014c-116">解码安全状态。</span><span class="sxs-lookup"><span data-stu-id="4014c-116">Decodes the security state.</span></span></summary>
-        <returns><span data-ttu-id="4014c-117">一个表示已解码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="4014c-117">A <see langword="byte" /> array that represents the decoded security state.</span></span></returns>
+        <param name="data"><span data-ttu-id="f78df-115">一个表示已编码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="f78df-115">A <see langword="byte" /> array that represents the encoded security state.</span></span></param>
+        <summary><span data-ttu-id="f78df-116">解码安全状态。</span><span class="sxs-lookup"><span data-stu-id="f78df-116">Decodes the security state.</span></span></summary>
+        <returns><span data-ttu-id="f78df-117">一个表示已解码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="f78df-117">A <see langword="byte" /> array that represents the decoded security state.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,9 +161,9 @@
         <Parameter Name="data" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="data"><span data-ttu-id="4014c-118">一个表示已解码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="4014c-118">A <see langword="byte" /> array representing the decoded security state.</span></span></param>
-        <summary><span data-ttu-id="4014c-119">编码安全状态。</span><span class="sxs-lookup"><span data-stu-id="4014c-119">Encodes the security state.</span></span></summary>
-        <returns><span data-ttu-id="4014c-120">一个表示已编码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="4014c-120">A <see langword="byte" /> array that represents the encoded security state.</span></span></returns>
+        <param name="data"><span data-ttu-id="f78df-118">一个表示已解码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="f78df-118">A <see langword="byte" /> array representing the decoded security state.</span></span></param>
+        <summary><span data-ttu-id="f78df-119">编码安全状态。</span><span class="sxs-lookup"><span data-stu-id="f78df-119">Encodes the security state.</span></span></summary>
+        <returns><span data-ttu-id="f78df-120">一个表示已编码安全状态的 <see langword="byte" /> 数组。</span><span class="sxs-lookup"><span data-stu-id="f78df-120">A <see langword="byte" /> array that represents the encoded security state.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -185,8 +185,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="4014c-121">指示此编码器的随机性。</span><span class="sxs-lookup"><span data-stu-id="4014c-121">Indicates the randomness of this encoder.</span></span></summary>
-        <returns><span data-ttu-id="4014c-122"><see cref="T:System.Byte" /> 类型的数组。</span><span class="sxs-lookup"><span data-stu-id="4014c-122">An array of type <see cref="T:System.Byte" />.</span></span></returns>
+        <summary><span data-ttu-id="f78df-121">指示此编码器的随机性。</span><span class="sxs-lookup"><span data-stu-id="f78df-121">Indicates the randomness of this encoder.</span></span></summary>
+        <returns><span data-ttu-id="f78df-122"><see cref="T:System.Byte" /> 类型的数组。</span><span class="sxs-lookup"><span data-stu-id="f78df-122">An array of type <see cref="T:System.Byte" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -208,13 +208,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="4014c-123">返回表示当前 <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> 实例的字符串。</span><span class="sxs-lookup"><span data-stu-id="4014c-123">Returns a string that represents the current <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> instance.</span></span></summary>
-        <returns><span data-ttu-id="4014c-124">一个表示当前 <see cref="T:System.String" /> 实例的 <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" />。</span><span class="sxs-lookup"><span data-stu-id="4014c-124">A <see cref="T:System.String" /> that represents the current <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> instance.</span></span></returns>
+        <summary><span data-ttu-id="f78df-123">返回表示当前 <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> 实例的字符串。</span><span class="sxs-lookup"><span data-stu-id="f78df-123">Returns a string that represents the current <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> instance.</span></span></summary>
+        <returns><span data-ttu-id="f78df-124">一个表示当前 <see cref="T:System.String" /> 实例的 <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" />。</span><span class="sxs-lookup"><span data-stu-id="f78df-124">A <see cref="T:System.String" /> that represents the current <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> instance.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="4014c-125">此方法返回的信息包含当前实例的 <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope%2A> 和 <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.GetEntropy%2A> 值。</span><span class="sxs-lookup"><span data-stu-id="4014c-125">Information returned by this method includes the <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope%2A> and <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.GetEntropy%2A> values of the current instance.</span></span>  
+ <span data-ttu-id="f78df-125">此方法返回的信息包含当前实例的 <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope%2A> 和 <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.GetEntropy%2A> 值。</span><span class="sxs-lookup"><span data-stu-id="f78df-125">Information returned by this method includes the <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope%2A> and <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.GetEntropy%2A> values of the current instance.</span></span>  
   
  ]]></format>
         </remarks>
@@ -242,8 +242,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="4014c-126">获取一个值，该值指示是否使用当前用户保护范围。</span><span class="sxs-lookup"><span data-stu-id="4014c-126">Gets a value that indicates whether to use the current user protection scope.</span></span></summary>
-        <value><span data-ttu-id="4014c-127">如果将使用当前用户保护范围，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="4014c-127"><see langword="true" /> if the current user protection scope will be used; otherwise, <see langword="false" />.</span></span></value>
+        <summary><span data-ttu-id="f78df-126">获取一个值，该值指示是否使用当前用户保护范围。</span><span class="sxs-lookup"><span data-stu-id="f78df-126">Gets a value that indicates whether to use the current user protection scope.</span></span></summary>
+        <value><span data-ttu-id="f78df-127">如果将使用当前用户保护范围，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f78df-127"><see langword="true" /> if the current user protection scope will be used; otherwise, <see langword="false" />.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
