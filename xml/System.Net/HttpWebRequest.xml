@@ -1,5 +1,5 @@
 <Type Name="HttpWebRequest" FullName="System.Net.HttpWebRequest">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2bcbb356421d8771d79a334e95a0d90410dc304d" /><Meta Name="ms.sourcegitcommit" Value="662f143e6be46d519ff8ab4451d543d91e651478" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/18/2018" /><Meta Name="ms.locfileid" Value="53568689" /></Metadata><TypeSignature Language="C#" Value="public class HttpWebRequest : System.Net.WebRequest, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="318f970738e62c4fa84f78bdc7adb615856686a6" /><Meta Name="ms.sourcegitcommit" Value="800d45fb80a298c4bde743e8a40af69755fc850f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/24/2019" /><Meta Name="ms.locfileid" Value="54895754" /></Metadata><TypeSignature Language="C#" Value="public class HttpWebRequest : System.Net.WebRequest, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable HttpWebRequest extends System.Net.WebRequest implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpWebRequest" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpWebRequest&#xA;Inherits WebRequest&#xA;Implements ISerializable" />
@@ -76,10 +76,10 @@
 |期望|通过设置<xref:System.Net.HttpWebRequest.Expect%2A>属性。|  
 |日期|设置当前日期到系统。|  
 |Host|设置为当前主机信息系统。|  
-|如果-修改-自|通过设置<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>属性。|  
+|If-Modified-Since|通过设置<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>属性。|  
 |范围|通过设置<xref:System.Net.HttpWebRequest.AddRange%2A>方法。|  
 |引用站点|通过设置<xref:System.Net.HttpWebRequest.Referer%2A>属性。|  
-|传输编码|通过设置<xref:System.Net.HttpWebRequest.TransferEncoding%2A>属性 (<xref:System.Net.HttpWebRequest.SendChunked%2A>属性必须为`true`)。|  
+|Transfer-Encoding|通过设置<xref:System.Net.HttpWebRequest.TransferEncoding%2A>属性 (<xref:System.Net.HttpWebRequest.SendChunked%2A>属性必须为`true`)。|  
 |用户代理|通过设置<xref:System.Net.HttpWebRequest.UserAgent%2A>属性。|  
   
 > [!NOTE]
@@ -708,7 +708,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="rangeSpecifier" /> 无效。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="from" /> 大于 <paramref name="to" />  
   
-或 
+- 或 - 
  <paramref name="from" /> 或 <paramref name="to" /> 小于 0。</exception>
         <exception cref="T:System.InvalidOperationException">无法添加范围标头。</exception>
         <altmember cref="Overload:System.Net.HttpWebRequest.AddRange" />
@@ -1343,14 +1343,14 @@
         </remarks>
         <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.HttpWebRequest.Method" /> 属性为 GET 或 HEAD。  
   
-或 
+- 或 - 
  <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> 为 <see langword="true" />，<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.ContentLength" /> 为 -1，<see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.Method" /> 为 POST 或 PUT。</exception>
         <exception cref="T:System.InvalidOperationException">对 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> 的前一次调用正在使用流  
   
 - 或 - 
  将 <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> 设置为一个值，且 <see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />。  
   
-或 
+- 或 - 
 线程池中线程即将耗尽。</exception>
         <exception cref="T:System.NotSupportedException">请求缓存验证程序指示对此请求的响应可从缓存中提供；但是，写入数据的请求不得使用缓存。 如果你正在使用错误实现的自定义缓存验证程序，则会发生此异常。</exception>
         <exception cref="T:System.Net.WebException">之前已调用 <see cref="M:System.Net.HttpWebRequest.Abort" />。</exception>
@@ -1416,7 +1416,7 @@
 >  你的应用程序不能混合同步和异步方法对特定请求。 如果您调用<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>方法，则必须使用<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>方法以检索响应。  
   
 > [!NOTE]
->  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[ &#91; \<topic://conUsingNetworkTracing >&#93;](https://msdn.microsoft.com/library/e993b7c3-087f-45d8-9c02-9dded936d804)。  
+>  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
   
    
   
@@ -1434,7 +1434,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">对 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 的上一个调用已使用该流  
   
-或 
+- 或 - 
  将 <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> 设置为一个值，且 <see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />。  
   
 - 或 - 
@@ -2439,7 +2439,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">之前已使用 <paramref name="asyncResult." /> 调用了此方法  
   
-或 
+- 或 - 
 <see cref="P:System.Net.HttpWebRequest.ContentLength" /> 属性大于 0，但数据尚未写入到请求流。</exception>
         <exception cref="T:System.Net.WebException">之前已调用 <see cref="M:System.Net.HttpWebRequest.Abort" />。  
   
@@ -2657,7 +2657,7 @@ GetHashCode 方法返回的 web 请求的哈希代码。 此值可以用作哈�
         </remarks>
         <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.HttpWebRequest.Method" /> 属性为 GET 或 HEAD。  
   
-或 
+- 或 - 
  <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> 为 <see langword="true" />，<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.ContentLength" /> 为 -1，<see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.Method" /> 为 POST 或 PUT。</exception>
         <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" /> 方法被调用多次。  
   
@@ -2669,7 +2669,7 @@ GetHashCode 方法返回的 web 请求的哈希代码。 此值可以用作哈�
 - 或 - 
 请求的超时期限到期。  
   
-或 
+- 或 - 
 处理请求时出错。</exception>
         <exception cref="T:System.ObjectDisposedException">在 .NET Compact Framework 应用程序中，未正确获得和关闭一个内容长度为零的请求流。 有关处理内容长度为零的请求的详细信息，请参阅 [.NET Compact Framework 中的网络编程](https://msdn.microsoft.com/subscriptions/downloads/1afx2b0f\(v=vs.80\).aspx)。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/9d663c4b-07b4-4f6f-9b12-efbd3630354f">DefaultProxy 元素 （网络设置）</related>
@@ -2748,7 +2748,7 @@ GetHashCode 方法返回的 web 请求的哈希代码。 此值可以用作哈�
  <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> 为 <see langword="true" />，<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.ContentLength" /> 为 -1，<see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.Method" /> 为 POST 或 PUT。</exception>
         <exception cref="T:System.Net.WebException">之前已调用 <see cref="M:System.Net.HttpWebRequest.Abort" />。  
   
-或 
+- 或 - 
 请求的超时期限到期。  
   
 - 或 - 
@@ -2835,14 +2835,14 @@ GetHashCode 方法返回的 web 请求的哈希代码。 此值可以用作哈�
         </remarks>
         <exception cref="T:System.InvalidOperationException">该流已由对 <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> 的上一个调用使用。  
   
-或 
+- 或 - 
  将 <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> 设置为一个值，且 <see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />。</exception>
         <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.HttpWebRequest.Method" /> 为 GET 或 HEAD，且 <see cref="P:System.Net.HttpWebRequest.ContentLength" /> 大于或等于零，或 <see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="true" />。  
   
 - 或 - 
  <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> 为 <see langword="true" />，<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.ContentLength" /> 为 -1，<see cref="P:System.Net.HttpWebRequest.SendChunked" /> 为 <see langword="false" />，<see cref="P:System.Net.HttpWebRequest.Method" /> 为 POST 或 PUT。  
   
-或 
+- 或 - 
 <see cref="T:System.Net.HttpWebRequest" /> 具有实体主体，但在不调用 <see cref="M:System.Net.HttpWebRequest.GetRequestStream" /> 方法的情况下调用了 <see cref="M:System.Net.HttpWebRequest.GetResponse" /> 方法。  
   
 - 或 - 
@@ -2850,10 +2850,10 @@ GetHashCode 方法返回的 web 请求的哈希代码。 此值可以用作哈�
         <exception cref="T:System.NotSupportedException">请求缓存验证程序表示对此请求的响应可从缓存中提供；但是该请求包含要发送到服务器的数据。 发送数据的请求不可使用缓存。 如果你正在使用错误实现的自定义缓存验证程序，则会发生此异常。</exception>
         <exception cref="T:System.Net.WebException">之前已调用 <see cref="M:System.Net.HttpWebRequest.Abort" />。  
   
-或 
+- 或 - 
 请求的超时期限到期。  
   
-或 
+- 或 - 
 处理请求时出错。</exception>
         <altmember cref="P:System.Net.HttpWebRequest.Timeout" />
         <related type="Article" href="https://msdn.microsoft.com/library/9d663c4b-07b4-4f6f-9b12-efbd3630354f">DefaultProxy 元素 （网络设置）</related>
@@ -2961,10 +2961,10 @@ GetHashCode 方法返回的 web 请求的哈希代码。 此值可以用作哈�
 |期望|通过设置<xref:System.Net.HttpWebRequest.Expect%2A>属性。|  
 |日期|通过设置<xref:System.Net.HttpWebRequest.Date%2A>属性。|  
 |Host|通过设置<xref:System.Net.HttpWebRequest.Host%2A>属性。|  
-|如果-修改-自|通过设置<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>属性。|  
+|If-Modified-Since|通过设置<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>属性。|  
 |范围|通过设置<xref:System.Net.HttpWebRequest.AddRange%2A>方法。|  
 |引用站点|通过设置<xref:System.Net.HttpWebRequest.Referer%2A>属性。|  
-|传输编码|通过设置<xref:System.Net.HttpWebRequest.TransferEncoding%2A>属性 (<xref:System.Net.HttpWebRequest.SendChunked%2A>属性必须为 true)。|  
+|Transfer-Encoding|通过设置<xref:System.Net.HttpWebRequest.TransferEncoding%2A>属性 (<xref:System.Net.HttpWebRequest.SendChunked%2A>属性必须为 true)。|  
 |用户代理|通过设置<xref:System.Net.HttpWebRequest.UserAgent%2A>属性。|  
   
  <xref:System.Net.WebHeaderCollection.Add%2A>方法会抛出<xref:System.ArgumentException>如果尝试设置这些受保护的标头之一。  

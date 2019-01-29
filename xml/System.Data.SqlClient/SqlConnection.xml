@@ -1,5 +1,5 @@
 <Type Name="SqlConnection" FullName="System.Data.SqlClient.SqlConnection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="dbbd6a341066aa70c60cf9e458d5d5d94df2a746" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53498274" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlConnection : System.Data.Common.DbConnection, ICloneable, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f7af49432e12cc54215d763e0d0fccc1d7b9915e" /><Meta Name="ms.sourcegitcommit" Value="8c966994f39ffe6e7c21611e9ec1b91247a68500" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/26/2019" /><Meta Name="ms.locfileid" Value="55084728" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlConnection : System.Data.Common.DbConnection, ICloneable, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlConnection extends System.Data.Common.DbConnection implements class System.Data.IDbConnection, class System.ICloneable, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlConnection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SqlConnection&#xA;Inherits DbConnection&#xA;Implements ICloneable, IDisposable" />
@@ -758,7 +758,7 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 ## Examples  
  以下是更改密码的一个简单示例：  
   
-```  
+```csharp
 class Program {  
    static void Main(string[] args) {  
       System.Data.SqlClient.SqlConnection.ChangePassword(  
@@ -769,7 +769,7 @@ class Program {
   
 ```  
   
-```  
+```vb
 Module Module1  
     Sub Main()  
 System.Data.SqlClient.SqlConnection.ChangePassword(  
@@ -1273,7 +1273,7 @@ Or
 |ConnectRetryInterval|10|指定每次连接重试尝试 (ConnectRetryCount) 之间的时间。 有效值为 1 到 60 秒 (默认值 = 10)，应用后第一次重新连接尝试。 检测到断开的连接时，客户端立即尝试重新连接;这是第一次重新连接尝试，仅当 ConnectRetryCount 大于 0。 如果第一次重新连接尝试失败并且 ConnectRetryCount 大于 1，客户端将等待 ConnectRetryInterval 尝试第二个和后续的重新连接尝试。<br /><br /> 有关空闲连接复原的其他信息，请参阅[技术文章 – 空闲连接复原](https://go.microsoft.com/fwlink/?LinkId=393996)。|  
 |Context Connection|false|`true` 如果应建立到 SQL Server 进程内连接。|  
 |Current Language<br /><br /> - 或 -<br /><br /> 语言|不可用|设置数据库服务器的警告或错误消息所使用的语言。<br /><br /> 语言名称可以是 128 个字符或更少。|  
-|“数据源”<br /><br /> - 或 -<br /><br /> 服务器<br /><br /> - 或 -<br /><br /> Address<br /><br /> - 或 -<br /><br /> Addr<br /><br /> - 或 -<br /><br /> 网络地址|不可用|要连接到 SQL server 实例的名称或网络地址。 可以在服务器名之后指定的端口号：<br /><br /> `server=tcp:servername, portnumber`<br /><br /> 在指定的本地实例时，始终使用 (local)。 若要强制使用某个协议，添加以下前缀之一：<br /><br /> `np:(local),  tcp:(local), lpc:(local)`<br /><br /> 从[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，您还可以连接到 LocalDB 数据库，如下所示：<br /><br /> `server=(localdb)\\myInstance`<br /><br /> 有关 LocalDB 的详细信息，请参阅[SqlClient 对 LocalDB 的支持](~/docs/framework/data/adonet/sql/sqlclient-support-for-localdb.md)。<br /><br /> **数据源**必须使用 TCP 格式或 Named Pipes 格式。<br /><br /> TCP 格式如下所示：<br /><br /> -tcp:\<主机名 >\\< 实例名称\><br />-tcp:\<主机名称 >，\<TCP/IP 端口号 ><br /><br /> 必须以前缀开头的 TCP 格式"tcp:"且后跟数据库实例中指定的主机名和实例名称。 连接到 Azure SQL 数据库时，此格式不适用。 不指定任何协议时，自动选择将 TCP 连接到 Azure SQL 数据库的连接。<br /><br /> 必须通过以下方式之一中指定的主机名：<br /><br /> -NetBIOSName<br />-IPv4Address<br />-IPv6Address<br /><br /> 实例名称用于解析为托管数据库实例的特定 TCP/IP 端口号。 或者，还允许直接指定 TCP/IP 端口号。 如果两个实例名称和端口号不存在，则使用默认数据库实例。<br /><br /> Named Pipes 格式如下所示：<br /><br /> -np:\\\\< 主机名\>\pipe\\< 管道名称\><br /><br /> 必须以前缀开头的命名管道格式"np:"且后跟一个命名的管道名称。<br /><br /> 必须通过以下方式之一中指定的主机名：<br /><br /> -NetBIOSName<br />-IPv4Address<br />-IPv6Address<br /><br /> 管道名称用于标识.NET Framework 应用程序将连接到的数据库实例。<br /><br /> 如果的值**网络**指定键，则前缀"tcp:"和"np:"不应指定。 **注意：** 您可以强制 TCP 的使用而不是共享内存，或者由前缀**tcp:** 到在连接字符串，或使用的服务器名称**localhost**。|  
+|“数据源”<br /><br /> - 或 -<br /><br /> 服务器<br /><br /> - 或 -<br /><br /> Address<br /><br /> - 或 -<br /><br /> Addr<br /><br /> - 或 -<br /><br /> 网络地址|不可用|要连接到 SQL server 实例的名称或网络地址。 可以在服务器名之后指定的端口号：<br /><br /> `server=tcp:servername, portnumber`<br /><br /> 在指定的本地实例时，始终使用 (local)。 若要强制使用某个协议，添加以下前缀之一：<br /><br /> `np:(local),  tcp:(local), lpc:(local)`<br /><br /> 从[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，您还可以连接到 LocalDB 数据库，如下所示：<br /><br /> `server=(localdb)\\myInstance`<br /><br /> 有关 LocalDB 的详细信息，请参阅[SqlClient 对 LocalDB 的支持](~/docs/framework/data/adonet/sql/sqlclient-support-for-localdb.md)。<br /><br /> **数据源**必须使用 TCP 格式或 Named Pipes 格式。<br /><br /> TCP 格式如下所示：<br /><br /> -tcp:\<主机名 >\\< 实例名称\><br />-tcp:\<主机名称 >，\<TCP/IP 端口号 ><br /><br /> 必须以前缀开头的 TCP 格式"tcp:"且后跟数据库实例中指定的主机名和实例名称。 连接到 Azure SQL 数据库时，此格式不适用。 不指定任何协议时，自动选择将 TCP 连接到 Azure SQL 数据库的连接。<br /><br /> 必须通过以下方式之一中指定的主机名：<br /><br /> -   NetBIOSName<br />-   IPv4Address<br />-   IPv6Address<br /><br /> 实例名称用于解析为托管数据库实例的特定 TCP/IP 端口号。 或者，还允许直接指定 TCP/IP 端口号。 如果两个实例名称和端口号不存在，则使用默认数据库实例。<br /><br /> Named Pipes 格式如下所示：<br /><br /> -np:\\\\< 主机名\>\pipe\\< 管道名称\><br /><br /> 必须以前缀开头的命名管道格式"np:"且后跟一个命名的管道名称。<br /><br /> 必须通过以下方式之一中指定的主机名：<br /><br /> -   NetBIOSName<br />-   IPv4Address<br />-   IPv6Address<br /><br /> 管道名称用于标识.NET Framework 应用程序将连接到的数据库实例。<br /><br /> 如果的值**网络**指定键，则前缀"tcp:"和"np:"不应指定。 **注意：** 您可以强制 TCP 的使用而不是共享内存，或者由前缀**tcp:** 到在连接字符串，或使用的服务器名称**localhost**。|  
 |Encrypt|false|当`true`，SQL Server 的服务器是否安装了证书，客户端和服务器之间发送的所有数据使用 SSL 加密。 已识别的值为 `true`、`false`、`yes` 和 `no`。 有关详细信息，请参阅[连接字符串语法](~/docs/framework/data/adonet/connection-string-syntax.md)。<br /><br /> 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，当`TrustServerCertificate`为 false 和`Encrypt`为 true，连接字符串中指定的服务器名称 （或 IP 地址），SQL Server SSL 证书中的服务器名称 （或 IP 地址） 必须完全匹配。 否则，连接尝试将失败。 有关对其使用者启动带通配符 （*） 的证书的支持信息，请参阅[接受通配符服务器证书用于服务器身份验证](https://support.microsoft.com/kb/258858)。|  
 |Enlist|'true'|`true` 指示 SQL Server 连接池进程会自动登记在创建线程的当前事务上下文中的连接。|  
 |Failover Partner|不可用|数据库镜像配置故障转移合作伙伴服务器的名称。<br /><br /> 如果此密钥的值为""，然后**Initial Catalog**必须存在，且其值不能""。<br /><br /> 服务器名称可为 128 个字符或更少。<br /><br /> 如果指定故障转移合作伙伴，但故障转移伙伴服务器未配置为数据库镜像和 （使用 Server 关键字指定） 的主服务器不可用，则连接将失败。<br /><br /> 如果指定故障转移伙伴和主服务器未配置为数据库镜像，与主服务器 （使用 Server 关键字指定） 的连接会成功，如果主服务器不可用。|  

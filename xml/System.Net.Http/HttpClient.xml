@@ -1,5 +1,5 @@
 <Type Name="HttpClient" FullName="System.Net.Http.HttpClient">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3b44ea987abd73ea55c4988dbcf16b845d245596" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53233089" /></Metadata><TypeSignature Language="C#" Value="public class HttpClient : System.Net.Http.HttpMessageInvoker" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="50674ebbb7fa95260ef9df597b4c302873920ae6" /><Meta Name="ms.sourcegitcommit" Value="8c966994f39ffe6e7c21611e9ec1b91247a68500" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/26/2019" /><Meta Name="ms.locfileid" Value="55084689" /></Metadata><TypeSignature Language="C#" Value="public class HttpClient : System.Net.Http.HttpMessageInvoker" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpClient extends System.Net.Http.HttpMessageInvoker" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.HttpClient" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpClient&#xA;Inherits HttpMessageInvoker" />
@@ -79,29 +79,50 @@ public class GoodController : ApiController
 | Windows/.NET Framework      | <xref:System.Net.HttpWebRequest>                                                          |
 | Windows/Mono                | <xref:System.Net.HttpWebRequest>                                                          |
 | Windows/UWP                 | Windows 本机<xref:System.Net.Http.WinHttpHandler>(支持 HTTP 2.0)                   |
-| Windows/.NET Core           | Windows 本机<xref:System.Net.Http.WinHttpHandler>(支持 HTTP 2.0)                   |
+| Windows/.NET Core 1.0-2.0   | Windows 本机<xref:System.Net.Http.WinHttpHandler>(支持 HTTP 2.0)                   |
 | Android/Xamarin             | 在生成时选择。 可以使用<xref:System.Net.HttpWebRequest>或配置为使用 Android 的本机 [`HttpURLConnection`](https://developer.xamarin.com/api/type/Java.Net.HttpURLConnection/) |
 | iOS、 tvOS、 watchOS/Xamarin  | 在生成时选择。 可以使用<xref:System.Net.HttpWebRequest>或将配置为使用 Apple [ `NSUrlSession` ](https://developer.xamarin.com/api/type/MonoTouch.Foundation.NSUrlSession/) (支持 HTTP 2.0) |
 | macOS/Xamarin               | 在生成时选择。 可以使用<xref:System.Net.HttpWebRequest>或将配置为使用 Apple [ `NSUrlSession` ](https://developer.xamarin.com/api/type/MonoTouch.Foundation.NSUrlSession/) (支持 HTTP 2.0) |
-| macOS/Mono                  | <xref:System.Net.HttpWebRequest>                                                                          |
-| macOS/.NET Core             | `libcurl`-基于 HTTP 传输协议 (HTTP 2.0 支持)                                         |
+| macOS/Mono                  | <xref:System.Net.HttpWebRequest>                                                          |
+| macOS/.NET Core 1.0-2.0     | `libcurl`-基于 HTTP 传输协议 (HTTP 2.0 支持)                                         |
 | Linux/Mono                  | <xref:System.Net.HttpWebRequest>                                                          |
-| Linux/.NET Core             | `libcurl`-基于 HTTP 传输协议 (HTTP 2.0 支持)                                         |
-
+| Linux/.NET Core 1.0-2.0     | `libcurl`-基于 HTTP 传输协议 (HTTP 2.0 支持)                                         |
+| .NET core 2.1 和更高版本     | <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>                    |
 用户还可以配置的特定传输<xref:System.Net.Http.HttpClient>通过调用<xref:System.Net.Http.HttpClient.%23ctor*>构造函数采用<xref:System.Net.Http.HttpMessageHandler>。
 
 ### <a name="httpclient-and-net-core"></a>HttpClient 和.NET Core
 
-从.NET Core 2.1<xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>类而不是`HttpClientHandler`提供实现由更高级别的 HTTP 网络类如`HttpClient`。 可以配置应用程序以使用较旧<xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType>改为通过调用<xref:System.AppContext.SetSwitch%2A>方法，如下所示：
+从.NET Core 2.1<xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>类而不是`HttpClientHandler`提供实现由更高级别的 HTTP 网络类如`HttpClient`。 使用<xref:System.Net.Http.SocketsHttpHandler>提供了很多优点：
 
-```csharp
-AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", false);
-```
+- 对照以前的实现，可以看到显著的性能改进。
 
-```vb
-AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
-``` 
+- 消除平台依赖项，这样可以简化部署和维护。 例如，`libcurl`不再依赖于.NET Core 用于 macOS 和.NET Core 适用于 Linux。
+
+- 在所有.NET 平台上一致的行为。
+
+如果此更改不需要，可以配置应用程序以使用较旧<xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType>改为在多方面：
+
+- 通过调用<xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>方法，如下所示：
+
+   ```csharp
+   AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", false);
+   ```
+
+   ```vb
+   AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
+   ``` 
+- 通过定义`System.Net.Http.useSocketsHttpHandler`切入 *。 netcore.runtimeconfig.json*配置文件：
+
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "System.Net.Http.useSocketsHttpHandler": false
+    }
+  }
+  ```
   
+- 通过定义一个名为环境变量`DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER`并将其设置为`false`则为 0。
+
 ## Examples  
  [!code-csharp[System.Net.Http.HttpClient#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.net.http.httpclient/cs/source.cs#1)]  
   
