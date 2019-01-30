@@ -1,5 +1,5 @@
 <Type Name="BindingFlags" FullName="System.Reflection.BindingFlags">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="73fce1aa21d20f45653df555c778b466bca7fbbb" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52368177" /></Metadata><TypeSignature Language="C#" Value="public enum BindingFlags" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="61b76576a70d04513a7283ac5ace3dbd7521f391" /><Meta Name="ms.sourcegitcommit" Value="a489a0c68ea6b109393f1400bbd772073b4befd4" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/20/2019" /><Meta Name="ms.locfileid" Value="54416951" /></Metadata><TypeSignature Language="C#" Value="public enum BindingFlags" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed BindingFlags extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.BindingFlags" />
   <TypeSignature Language="VB.NET" Value="Public Enum BindingFlags" />
@@ -90,12 +90,12 @@
   
 |标识供具有辅助功能|标识的自变量绑定|标识的操作|  
 |---------------------------------|------------------------------------|-----------------------------|  
-|DeclaredOnly<br /><br /> FlattenHierarchy<br /><br /> IgnoreCase<br /><br /> IgnoreReturn<br /><br /> 实例<br /><br /> 非公共<br /><br /> Public<br /><br /> Static|ExactBinding<br /><br /> OptionalParamBinding|CreateInstance<br /><br /> GetField<br /><br /> SetField<br /><br /> GetProperty<br /><br /> SetProperty<br /><br /> InvokeMethod<br /><br /> PutDispProperty<br /><br /> PutRefDispProperty|  
+|DeclaredOnly<br /><br /> FlattenHierarchy<br /><br /> IgnoreCase<br /><br /> IgnoreReturn<br /><br /> 实例<br /><br /> NonPublic<br /><br /> Public<br /><br /> Static|ExactBinding<br /><br /> OptionalParamBinding|CreateInstance<br /><br /> GetField<br /><br /> SetField<br /><br /> GetProperty<br /><br /> SetProperty<br /><br /> InvokeMethod<br /><br /> PutDispProperty<br /><br /> PutRefDispProperty|  
   
 > [!NOTE]
 >  必须指定`Instance`或`Static`连同`Public`或`NonPublic`或将返回任何成员。  
   
- 下表列出了默认情况下执行的强制<xref:System.Reflection.Binder.ChangeType%2A?displayProperty=nameWithType>。 此表适用于尤其是`ExactBinding`绑定标志。  
+ 下表列出了默认情况下执行的强制<xref:System.Reflection.Binder.ChangeType%2A?displayProperty=nameWithType>。 此表适用于尤其是`BindingFlags.ExactBinding`绑定标志。 一般原则是，<xref:System.Reflection.Binder.ChangeType%2A>应执行仅扩大强制转换，永远不会丢失数据。 扩大强制转换的示例将强制转换为 64 位有符号的整数的值将 32 位有符号的整数的值。 这被有别于收缩强制转换，可能会丢失数据。 收缩强制转换的示例将强制转换为 32 位有符号整数的 64 位有符号的整数。 
   
 |源类型|目标类型|  
 |-----------------|-----------------|  
@@ -112,8 +112,13 @@
 |`Int64`|`Single`， `Double`|  
 |`Single`|`Double`|  
 |非引用|按引用。|  
+
+当`BindingFlags.ExactBinding`绑定标志，则反射建模的通用类型系统的可访问性规则。 例如，如果调用方是在同一程序集中，调用方不需要特殊权限的内部成员。 否则，调用方需要<xref:System.Security.Permissions.ReflectionPermission>。 这是与受保护的成员的查找一致、 专用和等。  
   
    
+  
+   
+     
   
 ## Examples  
  下面的示例演示了许多的绑定标志。  
@@ -312,19 +317,7 @@
       </ReturnValue>
       <MemberValue>65536</MemberValue>
       <Docs>
-        <summary>指定提供的参数的类型必须与对应形参的类型完全匹配。 如果调用方提供非 null <see langword="Binder" /> 对象，则反射会引发异常，因为这意味着调用方在提供将选取适当方法的 <see langword="BindToXXX" /> 实现。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 反射建模的通用类型系统的可访问性规则。 例如，如果调用方是在同一程序集中，调用方不需要特殊权限的内部成员。 否则，调用方需要<xref:System.Security.Permissions.ReflectionPermission>。 这是与受保护的成员的查找一致、 专用和等。  
-  
- 一般原则是，<xref:System.Reflection.Binder.ChangeType%2A>应执行仅扩大强制转换，永远不会丢失数据。 扩大强制转换的示例将强制转换为 64 位有符号的整数的值将 32 位有符号的整数的值。 这被有别于收缩强制转换，可能会丢失数据。 收缩强制转换的示例将强制转换为 32 位有符号整数的 64 位有符号的整数。  
-  
- 默认联编程序将忽略此标志，而自定义联编程序可以实现此标志的语义。  
-  
- ]]></format>
-        </remarks>
+        <summary>指定提供的参数的类型必须与对应形参的类型完全匹配。 如果调用方提供非 null <see langword="Binder" /> 对象，则反射会引发异常，因为这意味着调用方在提供将选取适当方法的 <see langword="BindToXXX" /> 实现。 当自定义绑定器可实现此标志的语义时，默认绑定器会忽略此标志。</summary>
       </Docs>
     </Member>
     <Member MemberName="FlattenHierarchy">
@@ -679,15 +672,7 @@
       </ReturnValue>
       <MemberValue>262144</MemberValue>
       <Docs>
-        <summary>返回其参数计数与提供的参数数量匹配的成员集。 此绑定标志用于参数具有默认值的方法和使用变量参数 (varargs) 的方法。 此标志只应与 <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" /> 结合使用。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 使用默认值的参数用于仅在调用中省略尾部参数的。 它们必须是最后一个参数。  
-  
- ]]></format>
-        </remarks>
+        <summary>返回其参数计数与提供的参数数量匹配的成员集。 此绑定标志用于参数具有默认值的方法和使用变量参数 (varargs) 的方法。 此标志只应与 <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" /> 结合使用。<br /><br />使用默认值的参数仅在省略了尾随参数的调用中使用。 它们必须是位于最后面的参数。</summary>
       </Docs>
     </Member>
     <Member MemberName="Public">

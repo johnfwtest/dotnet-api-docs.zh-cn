@@ -1,5 +1,5 @@
 <Type Name="HttpClientHandler" FullName="System.Net.Http.HttpClientHandler">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ba3ed49c9a90efc55711df6801abd12d767b3a33" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53291595" /></Metadata><TypeSignature Language="C#" Value="public class HttpClientHandler : System.Net.Http.HttpMessageHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4e4378873f3a5fa6c23c6de9bded7f111e986d3e" /><Meta Name="ms.sourcegitcommit" Value="8c966994f39ffe6e7c21611e9ec1b91247a68500" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/26/2019" /><Meta Name="ms.locfileid" Value="55084611" /></Metadata><TypeSignature Language="C#" Value="public class HttpClientHandler : System.Net.Http.HttpMessageHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpClientHandler extends System.Net.Http.HttpMessageHandler" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.HttpClientHandler" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpClientHandler&#xA;Inherits HttpMessageHandler" />
@@ -22,24 +22,37 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary><see cref="T:System.Net.Http.HttpClient" /> 使用的默认消息处理程序。</summary>
+    <summary>.NET Framework 和 .NET Core 2.0 及更低版本中由 <see cref="T:System.Net.Http.HttpClient" /> 使用的默认消息处理程序。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Net.Http.HttpClientHandler>类和从它派生的类使开发人员若要配置的各种选项范围从代理到身份验证。  
+ `HttpClientHandler`类和从它派生的类使开发人员若要配置的各种选项范围从代理到身份验证。  
   
 ### <a name="httpclienthandler-in-net-core"></a>在.NET Core 中的 HttpClientHandler
 
-从.NET Core 2.1<xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>类而不是`HttpClientHandler`提供了使用的网络 Api 的更高级别的 HTTP 的实现。 可以配置应用程序以使用`HttpClientHandler`改为通过调用<xref:System.AppContext.SetSwitch%2A>方法，如下所示：
+从.NET Core 2.1<xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>类而不是`HttpClientHandler`提供了使用的网络 Api 的更高级别的 HTTP 的实现。 可以配置应用程序以使用`HttpClientHandler`改为通过以下方式之一：
 
-```csharp
-AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", false);
-```
-```vb
-AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
-``` 
+- 通过调用<xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>方法，如下所示：
+
+  ```csharp
+  AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", false);
+  ```
+  ```vb
+  AppContext.SetSwitch("System.Net.Http.useSocketsHttpHandler", False)
+  ``` 
+通过定义`System.Net.Http.useSocketsHttpHandler`切入 *。 netcore.runtimeconfig.json*配置文件：
+
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "System.Net.Http.useSocketsHttpHandler": false
+    }
+  }
+  ```
   
+- 通过定义一个名为环境变量`DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER`并将其设置为`false`则为 0。
+
 ## Examples  
  [!code-csharp[System.Net.Http.HttpClientHandler#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.net.http.httpclienthandler/cs/source.cs#1)]  
   

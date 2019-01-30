@@ -1,5 +1,5 @@
 <Type Name="GCLatencyMode" FullName="System.Runtime.GCLatencyMode">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="71825bd6d7da0da68493922efe3f009ff816bdaf" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52341566" /></Metadata><TypeSignature Language="C#" Value="public enum GCLatencyMode" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6e0e2f032f5584e34758cafdf445dc8b1a38a363" /><Meta Name="ms.sourcegitcommit" Value="a489a0c68ea6b109393f1400bbd772073b4befd4" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/20/2019" /><Meta Name="ms.locfileid" Value="54416977" /></Metadata><TypeSignature Language="C#" Value="public enum GCLatencyMode" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed GCLatencyMode extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.GCLatencyMode" />
   <TypeSignature Language="VB.NET" Value="Public Enum GCLatencyMode" />
@@ -38,10 +38,12 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 可以通过设置应用程序中调整侵入性的垃圾回收<xref:System.Runtime.GCSettings.LatencyMode%2A>属性设置为任何<xref:System.Runtime.GCLatencyMode>NoGCRegion 以外的枚举值。 您还可以通过检索确定垃圾回收器的当前滞后时间模式<xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType>属性值。  
+ 可以通过设置应用程序中调整侵入性的垃圾回收<xref:System.Runtime.GCSettings.LatencyMode%2A>属性设置为任何<xref:System.Runtime.GCLatencyMode>以外的枚举值`GCLatencyMode.NoGCRegion`。 您还可以通过检索确定垃圾回收器的当前滞后时间模式<xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType>属性值。  
   
  请参阅[滞后时间模式](~/docs/standard/garbage-collection/latency.md)有关垃圾回收的运行时配置设置如何影响此枚举的默认值的讨论。  
-  
+
+<xref:System.Runtime.GCLatencyMode.Batch?displayProperty=nameWithType>模式下重写[ \<gcConcurrent >](~/docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)运行时配置设置。 如果通过启用并发垃圾回收[ \<gcConcurrent >](~/docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)元素中，切换到批处理模式可以防止任何进一步的并发集合。    
+
  ]]></format>
     </remarks>
     <related type="Article" href="https://msdn.microsoft.com/library/96278bb7-6eab-4612-8594-ceebfc887d81">滞后时间模式</related>
@@ -79,17 +81,7 @@
       </ReturnValue>
       <MemberValue>0</MemberValue>
       <Docs>
-        <summary>在批调用中禁用垃圾回收并发，并回收对象。 这是最高级别的侵入模式。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此模式适用于最大吞吐量，但要牺牲响应能力。  
-  
- 此模式重写运行时配置设置。 如果启用，则切换为批处理模式可以防止任何进一步的并发集合。  
-  
- ]]></format>
-        </remarks>
+        <summary>在批调用中禁用垃圾回收并发，并回收对象。 这是最高级别的侵入模式。 此模式专用于最大吞吐量（但以牺牲响应性为代价）。</summary>
       </Docs>
     </Member>
     <Member MemberName="Interactive">
@@ -124,15 +116,7 @@
       </ReturnValue>
       <MemberValue>1</MemberValue>
       <Docs>
-        <summary>在应用程序运行时启用垃圾回收并发，并回收对象。 这是工作站上垃圾回收的默认模式，并且较 <see cref="F:System.Runtime.GCLatencyMode.Batch" /> 少受侵入。 它可以平衡响应性和吞吐量。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此模式相当于将并发执行的工作站上垃圾回收。  
-  
- ]]></format>
-        </remarks>
+        <summary>在应用程序运行时启用垃圾回收并发，并回收对象。 这是工作站上垃圾回收的默认模式，并且较 <see cref="F:System.Runtime.GCLatencyMode.Batch" /> 少受侵入。 它可以平衡响应性和吞吐量。 此模式等同于在并发的工作站上执行垃圾回收。</summary>
       </Docs>
     </Member>
     <Member MemberName="LowLatency">
@@ -167,15 +151,7 @@
       </ReturnValue>
       <MemberValue>2</MemberValue>
       <Docs>
-        <summary>启用回收对象时比较保守的垃圾回收。 仅在系统遇到内存压力时才发生完全回收，而通常情况下发生 0 代和 1 代回收</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此模式下不可用的服务器垃圾回收器。  
-  
- ]]></format>
-        </remarks>
+        <summary>启用回收对象时比较保守的垃圾回收。 仅在系统遇到内存压力时才发生完全回收，而通常情况下发生 0 代和 1 代回收。 此模式不可用于服务器垃圾回收器。</summary>
       </Docs>
     </Member>
     <Member MemberName="NoGCRegion">
