@@ -1,5 +1,5 @@
 <Type Name="DependencyProperty" FullName="System.Windows.DependencyProperty">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="48e189814c9d38e818a9d416a18db9a92e096f66" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48623028" /></Metadata><TypeSignature Language="C#" Value="public sealed class DependencyProperty" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0129b0c47acecd870bafaaa4655db115fee937a4" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55372650" /></Metadata><TypeSignature Language="C#" Value="public sealed class DependencyProperty" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DependencyProperty extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.DependencyProperty" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DependencyProperty" />
@@ -18,7 +18,7 @@
     <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Markup.DependencyPropertyConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.DependencyPropertyValueSerializer))</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5">
@@ -35,7 +35,7 @@
   
 -   可以在样式中设置该属性。 有关详细信息，请参阅[样式设置和模板化](~/docs/framework/wpf/controls/styling-and-templating.md)。  
   
--   可通过数据绑定设置属性。 有关数据绑定依赖关系属性的详细信息，请参阅[如何： 绑定两个控件属性的](~/docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)。  
+-   可通过数据绑定设置属性。 有关数据绑定依赖关系属性的详细信息，请参阅[如何：将两个控件的属性绑定](~/docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)。  
   
 -   可以使用动态资源引用设置属性。 有关详细信息，请参阅 [XAML 资源](~/docs/framework/wpf/advanced/xaml-resources.md)。  
   
@@ -57,11 +57,11 @@
 ## <a name="xaml-attribute-usage"></a>XAML 属性用法  
   
 ```  
-<object property="dependencyPropertyName"/>  
+<object property="dependencyPropertyName"/>  
 - or -  
-<object property="ownerType.dependencyPropertyName"/>  
+<object property="ownerType.dependencyPropertyName"/>  
 - or -  
-<object property="attachedPropertyOwnerType.attachedPropertyName"/>  
+<object property="attachedPropertyOwnerType.attachedPropertyName"/>  
 ```  
   
 <a name="xamlValues_DependencyProperty"></a>   
@@ -635,7 +635,7 @@
         <param name="forType">一种类型，在该类型上继承该依赖属性并将应用所提供的替换元数据。</param>
         <param name="typeMetadata">一种元数据，它将应用于重写类型上的依赖属性。</param>
         <param name="key">只读依赖属性的访问键。</param>
-        <summary>当只读依赖属性位于指定类型的实例上时为其提供替换元数据，以便重写在最初注册依赖属性时提供的元数据。 您必须为只读依赖项对象传递 <see cref="T:System.Windows.DependencyPropertyKey" />，以避免引发异常。</summary>
+        <summary>当只读依赖属性位于指定类型的实例上时为其提供替换元数据，以便重写在最初注册依赖属性时提供的元数据。 你必须为只读依赖属性传递 <see cref="T:System.Windows.DependencyPropertyKey" />，以免引发异常。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -820,7 +820,7 @@
         <param name="propertyType">属性的类型。</param>
         <param name="ownerType">正在注册依赖属性的所有者类型。</param>
         <summary>使用指定的属性名称、属性类型和所有者类型注册依赖属性。</summary>
-        <returns>一个依赖项对象标识符，应使用它在您的类中设置 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
+        <returns>一个依赖属性标识符，应使用它来设置类中 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -872,7 +872,7 @@
         <param name="ownerType">正在注册依赖属性的所有者类型。</param>
         <param name="typeMetadata">依赖属性的属性元数据。</param>
         <summary>使用指定的属性名称、属性类型、所有者类型和属性元数据注册依赖属性。</summary>
-        <returns>一个依赖项对象标识符，应使用它在您的类中设置 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
+        <returns>一个依赖属性标识符，应使用它来设置类中 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -914,7 +914,7 @@
         <param name="typeMetadata">依赖属性的属性元数据。</param>
         <param name="validateValueCallback">对回调的引用，除了典型的类型验证之外，该引用还应执行依赖属性值的任何自定义验证。</param>
         <summary>使用指定的属性名称、属性类型、所有者类型、属性元数据和属性的值验证回叫来注册依赖属性。</summary>
-        <returns>一个依赖项对象标识符，应使用它在您的类中设置 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
+        <returns>一个依赖属性标识符，应使用它来设置类中 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -975,7 +975,7 @@
         <param name="propertyType">属性的类型。</param>
         <param name="ownerType">正在注册依赖属性的所有者类型。</param>
         <summary>使用指定的属性名称、属性类型和所有者类型注册附加属性。</summary>
-        <returns>一个依赖项对象标识符，应使用它在您的类中设置 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
+        <returns>一个依赖属性标识符，应使用它来设置类中 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1031,7 +1031,7 @@
         <param name="ownerType">正在注册依赖属性的所有者类型。</param>
         <param name="defaultMetadata">依赖属性的属性元数据。 这可以包括默认值和其他特征。</param>
         <summary>使用指定的属性名、属性类型、所有者类型和属性元数据注册附加的属性。</summary>
-        <returns>一个依赖项对象标识符，应使用它在您的类中设置 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
+        <returns>一个依赖属性标识符，应使用它来设置类中 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1078,7 +1078,7 @@
         <param name="defaultMetadata">依赖属性的属性元数据。 这可以包括默认值和其他特征。</param>
         <param name="validateValueCallback">对回调的引用，除了典型的类型验证之外，该引用还应执行依赖属性值的任何自定义验证。</param>
         <summary>使用指定的属性类型、所有者类型、属性元数据和属性的值验证回调来注册附加属性。</summary>
-        <returns>一个依赖项对象标识符，应使用它在您的类中设置 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
+        <returns>一个依赖属性标识符，应使用它来设置类中 <see langword="public static readonly" /> 字段的值。 稍后将此标识符用来引用依赖属性，从而实现以编程方式设置其值或获取元数据等操作。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
