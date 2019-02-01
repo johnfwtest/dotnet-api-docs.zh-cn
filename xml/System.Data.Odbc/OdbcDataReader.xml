@@ -1,5 +1,5 @@
 <Type Name="OdbcDataReader" FullName="System.Data.Odbc.OdbcDataReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9ed8c128dfd66d403fcf1007fcd9a743110102a6" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52255115" /></Metadata><TypeSignature Language="C#" Value="public sealed class OdbcDataReader : System.Data.Common.DbDataReader" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7a94c59f16aba859222ad25fc59edd45e97d5338" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55365058" /></Metadata><TypeSignature Language="C#" Value="public sealed class OdbcDataReader : System.Data.Common.DbDataReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcDataReader extends System.Data.Common.DbDataReader" />
   <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcDataReader" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OdbcDataReader&#xA;Inherits DbDataReader" />
@@ -149,7 +149,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;netcore-2.0;netcore-2.1;netcore-2.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="disposing">To be added.</param>
@@ -1082,13 +1082,13 @@
 |NumericPrecision|如果<xref:System.Data.DbType>是数值数据类型，这是列的最大精度。 精度取决于列的定义。 如果<xref:System.Data.DbType>不是数值数据类型，不在本专栏中使用的数据。 如果基础 ODBC 驱动程序返回非数字数据类型的精度值，则架构表中使用此值。|  
 |NumericScale|如果<xref:System.Data.DbType>是<xref:System.Data.DbType.Decimal>，小数点右侧的位数。 否则，这是一个 null 值。 如果基础 ODBC 驱动程序返回非数字数据类型的精度值，则架构表中使用此值。|  
 |数据类型|映射到公共语言运行时类型的<xref:System.Data.DbType>。|  
-|提供程序类型|基础的驱动程序类型。|  
+|ProviderType|基础的驱动程序类型。|  
 |IsLong|`true` 如果列包含二进制长对象 (BLOB)，包含非常长的数据。 很长数据的定义是特定于驱动程序。|  
 |AllowDBNull|`true` 如果使用者可以将列设置为 null 值，或驱动程序无法确定使用者是否可以将列设置为 null 值。 否则为 `false`。 列可能包含 null 值，即使它不能设置为 null 值。|  
 |为只读|`true` 如果不能修改的列;否则为`false`。|  
 |IsRowVersion|如果列包含无法写入到的永久行标识符，但除了标识行没有有意义的值，设置。|  
-|是唯一的|`true`： 两行的基表 （BaseTableName 中返回的表） 可以具有相同的值在本专栏中。 保证是唯一的是`true`如果列本身表示一个键或仅适用于此列的 UNIQUE 类型的约束。<br /><br /> `false`: 列可以包含基础表中的重复值。 此列的默认值是`false`。|  
-|IsKey|`true`： 此列是一组的行集中的列，合起来看，唯一标识行。 IsKey 具有的列集设置为`true`必须唯一地标识行集中的行。 没有任何要求这组列是列的最小集。 这组列可能会生成从基表主键、 唯一约束或唯一索引。<br /><br /> `false`: 列不需要唯一标识行。|  
+|IsUnique|`true`：在基表中任何两个行 （BaseTableName 中返回的表） 可以不具有相同的值在此列中。 保证是唯一的是`true`如果列本身表示一个键或仅适用于此列的 UNIQUE 类型的约束。<br /><br /> `false`：列可以包含基础表中的重复值。 此列的默认值是`false`。|  
+|IsKey|`true`：列是一组的行集中的列，合起来看，唯一标识行。 IsKey 具有的列集设置为`true`必须唯一地标识行集中的行。 没有任何要求这组列是列的最小集。 这组列可能会生成从基表主键、 唯一约束或唯一索引。<br /><br /> `false`：列不需要唯一标识行。|  
 |IsAutoIncrement|`true` 如果列将值分配给固定增量; 中的新行否则为`false`。 此列的默认值是`false`。|  
 |BaseSchemaName|中包含的列的数据源的架构的名称。 如果无法确定基本目录名称为 NULL。 此列的默认值为空值。|  
 |BaseCatalogName|包含的列的数据存储区中的目录的名称。 如果无法确定基本目录名称为 NULL。 此列的默认值为空值。|  
