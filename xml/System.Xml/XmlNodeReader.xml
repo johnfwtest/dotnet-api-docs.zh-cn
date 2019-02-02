@@ -1,5 +1,5 @@
 <Type Name="XmlNodeReader" FullName="System.Xml.XmlNodeReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ab2104775ed2c8b474493654fb02bbd656d9dbf2" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52736380" /></Metadata><TypeSignature Language="C#" Value="public class XmlNodeReader : System.Xml.XmlReader, System.Xml.IXmlNamespaceResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cd8d2b112297aa4dafc7f7a079d37d3353b6b55f" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55359494" /></Metadata><TypeSignature Language="C#" Value="public class XmlNodeReader : System.Xml.XmlReader, System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNodeReader extends System.Xml.XmlReader implements class System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlNodeReader" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlNodeReader&#xA;Inherits XmlReader&#xA;Implements IXmlNamespaceResolver" />
@@ -900,156 +900,6 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" /> 参数小于 0 或大于等于 <see cref="P:System.Xml.XmlNodeReader.AttributeCount" />。</exception>
-        <altmember cref="Overload:System.Xml.XmlNodeReader.GetAttribute" />
-      </Docs>
-    </Member>
-    <Member MemberName="Item">
-      <MemberSignature Language="C#" Value="public override string this[string name] { get; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
-      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeReader.Item(System.String)" />
-      <MemberSignature Language="VB.NET" Value="Default Public Overrides ReadOnly Property Item(name As String) As String" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ default[System::String ^] { System::String ^ get(System::String ^ name); };" />
-      <MemberSignature Language="F#" Value="member this.Item(string) : string" Usage="System.Xml.XmlNodeReader.Item" />
-      <MemberType>Property</MemberType>
-      <AssemblyInfo>
-        <AssemblyName>System.Xml</AssemblyName>
-        <AssemblyVersion>1.0.5000.0</AssemblyVersion>
-      </AssemblyInfo>
-      <AssemblyInfo>
-        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
-      </AssemblyInfo>
-      <AssemblyInfo>
-        <AssemblyName>netstandard</AssemblyName>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.String</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="name" Type="System.String" />
-      </Parameters>
-      <Docs>
-        <param name="name">属性的限定名称。</param>
-        <summary>获取具有指定名称的属性的值。</summary>
-        <value>指定的属性的值。 如果未找到该属性，则返回 <see langword="null" />。</value>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks  
-
-> [!NOTE]
-> 在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。
-
-此属性不会移动读取器。
-
-如果读取器位于 DocumentType 节点上，可以使用此方法以获取 PUBLIC 和 SYSTEM 文本，例如，读取器\["公共"\]。
-
-## Examples  
-下面的示例获取的 ISBN 属性的值。
-
-```vb
-Imports System
-Imports System.IO
-Imports System.Xml
-
-Public Class Sample
-
-    Public Shared Sub Main()
-        Dim reader As XmlNodeReader = Nothing
-        Try
-            'Create and load the XML document.
-            Dim doc As New XmlDocument()
-            doc.LoadXml("<book genre='novel' ISBN='1-861003-78' publicationdate='1987'>" & _
-                        "</book>")
-
-            ' Load the XmlNodeReader 
-            reader = New XmlNodeReader(doc)
-
-            'Read the ISBN attribute.
-            reader.MoveToContent()
-            Dim isbn As String = reader("ISBN")
-            Console.WriteLine("The ISBN value: " & isbn)
-        Finally
-            If Not (reader Is Nothing) Then
-                reader.Close()
-            End If
-        End Try
-    End Sub 'Main 
-End Class 'Sample
-```
-
-```csharp
-using System;
-using System.IO;
-using System.Xml;
-
-public class Sample 
-{
-  public static void Main()
-  {
-    XmlNodeReader reader = null;
-
-    try
-    {
-       //Create and load the XML document.
-       XmlDocument doc = new XmlDocument();
-       doc.LoadXml("<book genre='novel' ISBN='1-861003-78' publicationdate='1987'> " +
-                   "</book>"); 
-
-       // Load the XmlNodeReader 
-       reader = new XmlNodeReader(doc);
-
-       //Read the ISBN attribute.
-       reader.MoveToContent();
-       string isbn =reader["ISBN"];
-       Console.WriteLine("The ISBN value: " + isbn);
-
-     } 
-
-     finally 
-     {
-        if (reader != null)
-          reader.Close();
-      }
-  }
-
-} // End class
-```
-
-```cpp
-#using <System.Xml.dll>
-
-using namespace System;
-using namespace System::IO;
-using namespace System::Xml;
-
-int main()
-{
-   XmlNodeReader^ reader = nullptr;
-   try
-   {
-
-      //Create and load the XML document.
-      XmlDocument^ doc = gcnew XmlDocument;
-      doc->LoadXml( "<book genre='novel' ISBN='1-861003-78' publicationdate='1987'></book>" );
-
-      // Load the XmlNodeReader 
-      reader = gcnew XmlNodeReader( doc );
-
-      //Read the ISBN attribute.
-      reader->MoveToContent();
-      String^ isbn = reader[ "ISBN" ];
-      Console::WriteLine( "The ISBN value: {0}", isbn );
-   }
-   finally
-   {
-      if ( reader != nullptr )
-            reader->Close();
-   }
-}
-```
-
-]]></format>
-        </remarks>
         <altmember cref="Overload:System.Xml.XmlNodeReader.GetAttribute" />
       </Docs>
     </Member>
@@ -2012,7 +1862,7 @@ int main()
 > [!NOTE]
 >  在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。  
   
- 此方法的内容流式处理、 对 Base64 内容解码并返回解码后的二进制字节 （例如，内联 Base64 编码 GIF 图像） 到缓冲区。 可以连续调用此方法，以读取大的嵌入文本流。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个： 用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://www.rfc-editor.org)。  
+ 此方法的内容流式处理、 对 Base64 内容解码并返回解码后的二进制字节 （例如，内联 Base64 编码 GIF 图像） 到缓冲区。 可以连续调用此方法，以读取大的嵌入文本流。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个：用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://www.rfc-editor.org)。  
   
 > [!NOTE]
 >  不应访问的任何读取器属性调用之间<xref:System.Xml.XmlNodeReader.ReadContentAsBase64%2A>方法，直到该方法返回值 0。  
@@ -2023,7 +1873,7 @@ int main()
   
 -   如果您要求更少，或在其当前位置中保留的字节数比在流中读取器保留的精确数目。  
   
--   <xref:System.Xml.XmlNodeReader.ReadContentAsBase64%2A> 在以下 XML 节点类型上不支持： 元素、 XmlDeclaration，无、 文档，文档类型、 表示法、 实体、 DocumentFragment。  
+-   <xref:System.Xml.XmlNodeReader.ReadContentAsBase64%2A> 不支持以下 XML 节点类型：元素，XmlDeclaration，无、 文档，文档类型、 表示法、 实体、 DocumentFragment。  
   
  ]]></format>
         </remarks>
@@ -2090,7 +1940,7 @@ int main()
   
 -   如果您要求更少，或在其当前位置中保留的字节数比在流中读取器保留的精确数目。  
   
--   <xref:System.Xml.XmlNodeReader.ReadContentAsBinHex%2A> 在以下 XML 节点类型上不支持： 元素、 XmlDeclaration，无、 文档，文档类型、 表示法、 实体、 DocumentFragment。  
+-   <xref:System.Xml.XmlNodeReader.ReadContentAsBinHex%2A> 不支持以下 XML 节点类型：元素，XmlDeclaration，无、 文档，文档类型、 表示法、 实体、 DocumentFragment。  
   
  ]]></format>
         </remarks>
@@ -2146,7 +1996,7 @@ int main()
 > [!NOTE]
 >  在 [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] 中，建议的做法是使用 <xref:System.Xml.XmlReader> 类和 <xref:System.Xml.XmlReaderSettings> 方法创建 <xref:System.Xml.XmlReader.Create%2A> 实例。 这样可以充分利用 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 中引入的所有新功能。 有关详细信息，请参阅备注部分中的<xref:System.Xml.XmlReader>参考页。  
   
- 此方法读取内容，并使用 Base64 编码、 解码并返回已解码的二进制字节 （例如，内联 Base64 编码 GIF 图像） 到缓冲区。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个： 用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://www.rfc-editor.org)。  
+ 此方法读取内容，并使用 Base64 编码、 解码并返回已解码的二进制字节 （例如，内联 Base64 编码 GIF 图像） 到缓冲区。 有关详细信息，请参阅 RFC 1521"MIME （多用途 Internet 邮件扩展） 部分一个：用于指定和 Internet 消息正文的格式描述机制"。 您可以获得从 Rfc[征求意见文档网站](https://www.rfc-editor.org)。  
   
  此方法只能读取简单内容元素。 元素可以包含文本、 空白、 有效空白、 CDATA 节、 注释和处理指令。 它还可以包含实体引用，会自动扩展。 元素不能具有子元素。  
   
@@ -2551,7 +2401,7 @@ int main()
       </Parameters>
       <Docs>
         <param name="scope"><see cref="T:System.Xml.XmlNamespaceScope" /> 对象。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />。</summary>
         <returns>包含范围内命名空间的 <see cref="T:System.Collections.IDictionary" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2596,7 +2446,7 @@ int main()
       </Parameters>
       <Docs>
         <param name="prefix">包含命名空间前缀的 <see cref="T:System.String" />。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)" />。</summary>
         <returns>包含命名空间名称的 <see cref="T:System.String" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2641,7 +2491,7 @@ int main()
       </Parameters>
       <Docs>
         <param name="namespaceName">标识命名空间的 <see cref="T:System.String" /> 对象。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)" />。</summary>
         <returns>包含命名空间前缀的 <see cref="T:System.String" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
