@@ -1,5 +1,5 @@
 <Type Name="Thickness" FullName="System.Windows.Thickness">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="370dab1ed04bb04cc6972cd0a1e650a5a3fd0ba2" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48757421" /></Metadata><TypeSignature Language="C#" Value="public struct Thickness : IEquatable&lt;System.Windows.Thickness&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="edd70adbae3efa6460d8e99a3b033fb4e28546b0" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55310887" /></Metadata><TypeSignature Language="C#" Value="public struct Thickness : IEquatable&lt;System.Windows.Thickness&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Thickness extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Thickness&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Thickness" />
   <TypeSignature Language="VB.NET" Value="Public Structure Thickness&#xA;Implements IEquatable(Of Thickness)" />
@@ -19,15 +19,15 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.ThicknessConverter))</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>描述矩形边框的粗细。 四个 <see cref="T:System.Double" /> 值分别描述矩形的四个边（<see cref="P:System.Windows.Thickness.Left" />、<see cref="P:System.Windows.Thickness.Top" />、<see cref="P:System.Windows.Thickness.Right" /> 和 <see cref="P:System.Windows.Thickness.Bottom" />）。</summary>
+    <summary>描述矩形边框的粗细。 四个 <see cref="T:System.Double" /> 值分别描述矩形的 <see cref="P:System.Windows.Thickness.Left" />、<see cref="P:System.Windows.Thickness.Top" />、<see cref="P:System.Windows.Thickness.Right" /> 和 <see cref="P:System.Windows.Thickness.Bottom" /> 边。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -38,11 +38,11 @@
 ## <a name="xaml-attribute-usage"></a>XAML 属性用法  
   
 ```  
-<object property="left"/>  
+<object property="left"/>  
 - or -  
-<object property="left,top"/>  
+<object property="left,top"/>  
 - or -  
-<object property=" left,top,right,bottom" ... />  
+<object property=" left,top,right,bottom" ... />  
 ```  
   
 <a name="xamlValues_Thickness"></a>   
@@ -68,7 +68,7 @@
   
  `cm` 为厘米;1cm==(96/2.54) px  
   
- `pt` 为点;1pt==(96/72) px  
+ `pt` is points; 1pt==(96/72) px  
   
 > [!NOTE]
 >  值不需要包括小数点显式时指定为字符串。 字符串"1"中提供[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]计算结果为 1.0 时在代码中引用的值。  
@@ -149,7 +149,7 @@
         <param name="top">矩形上底的粗细。</param>
         <param name="right">矩形右侧边的粗细</param>
         <param name="bottom">矩形下底的粗细。</param>
-        <summary>初始化 <see cref="T:System.Windows.Thickness" /> 结构的新实例，该矩形结构的各边应用了特定的长度（作为 <see cref="T:System.Double" /> 提供）。</summary>
+        <summary>初始化 <see cref="T:System.Windows.Thickness" /> 结构的新实例，该结构具有矩形各边所应用的特定长度（作为 <see cref="T:System.Double" /> 提供）。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -301,7 +301,7 @@
       <Parameters />
       <Docs>
         <summary>返回结构的哈希代码。</summary>
-        <returns>此 <see cref="T:System.Windows.Thickness" /> 实例的哈希代码。</returns>
+        <returns><see cref="T:System.Windows.Thickness" /> 的此实例的哈希代码。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -331,7 +331,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置边框左侧的宽度（以像素为单位）。</summary>
-        <value><see cref="T:System.Double" /> 的此实例的 <see cref="T:System.Windows.Thickness" />，表示边框左边的宽度（以像素为单位）。 一像素等于 1/96 英寸。 默认值为 0。</value>
+        <value>一个 <see cref="T:System.Double" />，表示 <see cref="T:System.Windows.Thickness" /> 的这一实例的边框左侧的宽度（以像素为单位）。 一像素等于 1/96 英寸。 默认值为 0。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="OleDbDataReader" FullName="System.Data.OleDb.OleDbDataReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3c69cbbb2192fddf9bd2dc6f1c73a7cb8eb21f34" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53524963" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbDataReader : System.Data.Common.DbDataReader" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9008be949959cc92ec7f791eff51f0bdeb5be79f" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55408153" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbDataReader : System.Data.Common.DbDataReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbDataReader extends System.Data.Common.DbDataReader" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbDataReader" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbDataReader&#xA;Inherits DbDataReader" />
@@ -309,7 +309,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0">
+        <Attribute>
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
       </Attributes>
@@ -410,7 +410,7 @@
       <Docs>
         <param name="ordinal">从零开始的列序号。</param>
         <summary>返回请求的列序号的 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 对象。</summary>
-        <returns>一个 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 对象。</returns>
+        <returns><see cref="T:System.Data.OleDb.OleDbDataReader" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -950,12 +950,12 @@
 |NumericPrecision|DBCOLUMN_PRECISION|如果 DbType 是数值数据类型，这是列的最大精度。 列的数据类型为 DBTYPE_DECIMAL 或 DBTYPE_NUMERIC 精度取决于列的定义。 如果 DbType 不是数值数据类型，则为 null 值。|  
 |NumericScale|DBCOLUMN_SCALE|如果 DbType DBTYPE_DECIMAL 或 DBTYPE_NUMERIC，这是小数点右侧的位数。 否则，这是一个 null 值。|  
 |数据类型|无|映射到.NET Framework 类型的列。|  
-|提供程序类型|DBCOLUMN_TYPE|列的数据类型的指示符。 如果列的数据类型而异行，这必须是 DBTYPE_VARIANT。 此列不能包含 null 值。|  
+|ProviderType|DBCOLUMN_TYPE|列的数据类型的指示符。 如果列的数据类型而异行，这必须是 DBTYPE_VARIANT。 此列不能包含 null 值。|  
 |IsLong|DBCOLUMNFLAGS_ISLONG|如果列包含二进制长对象 (BLOB)，其中包含非常长的数据，提供程序设置 DBCOLUMNFLAGS_ISLONG。 很长数据的定义是特定于提供程序。 此标志的设置对应于数据类型的 PROVIDER_TYPES 行集中 IS_LONG 列的值。|  
 |AllowDBNull|DBCOLUMNFLAGS_ISNULLABLE|提供程序设置 DBCOLUMNFLAGS_ISNULLABLE，如果使用者可以将列设置为 null 值，或提供程序无法确定使用者是否可以将列设置为 null 值。 列可能包含 null 值，即使它不能设置为 null 值。|  
 |为只读|DBCOLUMNFLAGS_WRITE|`true` 如果不能修改的列;否则为`false`。 列被假定为可写，如果提供程序已设置了 DBCOLUMNFLAGS_WRITE 或 DBCOLUMNFLAGS_WRITEUNKNOWN 标志。|  
 |IsRowVersion|DBCOLUMNFLAGS_ISROWID|提供程序设置 DBCOLUMNFLAGS_ISROWID，如果列包含无法写入到的永久行标识符，除了标识行没有有意义的价值。|  
-|是唯一的|DBCOLUMN_ISUNIQUE|VARIANT_TRUE:在本专栏中，BaseTableName 可以返回表的基表中的任何两个行不具有相同的值。 保证是唯一的本身或是否仅适用于此列的 UNIQUE 类型的约束是 VARIANT_TRUE 如果列表示一个键。<br /><br /> VARIANT_FALSE:列可以包含基础表中的重复值。 此列的默认值为 VARIANT_FALSE。|  
+|IsUnique|DBCOLUMN_ISUNIQUE|VARIANT_TRUE:在本专栏中，BaseTableName 可以返回表的基表中的任何两个行不具有相同的值。 保证是唯一的本身或是否仅适用于此列的 UNIQUE 类型的约束是 VARIANT_TRUE 如果列表示一个键。<br /><br /> VARIANT_FALSE:列可以包含基础表中的重复值。 此列的默认值为 VARIANT_FALSE。|  
 |IsKey|DBCOLUMN_KEYCOLUMN|VARIANT_TRUE:列是一组的行集中的列，合起来看，唯一标识行。 IsKey 设置为 variant_true，则使用列集必须唯一地标识行集中的行。 没有任何要求这组列是列的最小集。 这组列可能会生成从基表主键、 唯一约束或唯一索引。<br /><br /> VARIANT_FALSE:列不需要唯一标识行。|  
 |IsAutoIncrement|DBCOLUMN_ISAUTOINCREMENT|VARIANT_TRUE:列将值分配给新行以固定的增量。<br /><br /> VARIANT_FALSE:列不会分配到新行以固定的增量值。 此列的默认值为 VARIANT_FALSE。|  
 |BaseSchemaName|DBCOLUMN_BASESCHEMANAME|包含的列的数据存储区中的架构的名称。 如果无法确定基本架构名称，null 值。 此列的默认值为 null 值。|  

@@ -1,5 +1,5 @@
 <Type Name="CollectionViewSource" FullName="System.Windows.Data.CollectionViewSource">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3aed367043db20a6409b9bddaa49c3f7a27ad308" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53514186" /></Metadata><TypeSignature Language="C#" Value="public class CollectionViewSource : System.Windows.DependencyObject, System.ComponentModel.ISupportInitialize, System.Windows.IWeakEventListener" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d26f5519d1a7c215eae426a3cc46f4b7eb9ec01e" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55411949" /></Metadata><TypeSignature Language="C#" Value="public class CollectionViewSource : System.Windows.DependencyObject, System.ComponentModel.ISupportInitialize, System.Windows.IWeakEventListener" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CollectionViewSource extends System.Windows.DependencyObject implements class System.ComponentModel.ISupportInitialize, class System.Windows.IWeakEventListener" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.CollectionViewSource" />
   <TypeSignature Language="VB.NET" Value="Public Class CollectionViewSource&#xA;Inherits DependencyObject&#xA;Implements ISupportInitialize, IWeakEventListener" />
@@ -113,7 +113,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CanChangeLiveFiltering" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CanChangeLiveFiltering" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,7 +173,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CanChangeLiveGrouping" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CanChangeLiveGrouping" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,7 +233,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CanChangeLiveSorting" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CanChangeLiveSorting" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -305,7 +305,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CollectionViewType" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CollectionViewType" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -323,7 +323,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CultureInfoIetfLanguageTagConverter))</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -422,7 +422,7 @@
  [!code-csharp[DataBindingLab#10](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#10)]
  [!code-vb[DataBindingLab#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#10)]  
   
- 下面显示了示例的实现`ShowOnlyBargainsFilter`筛选器事件处理程序。 此事件处理程序使用<xref:System.Windows.Data.FilterEventArgs.Accepted%2A>属性来筛选出`AuctionItem`具有对象`CurrentPrice`25 美元或更高版本。  
+ 下面展示了如何实现示例筛选器 `ShowOnlyBargainsFilter` 的事件处理程序。 此事件处理程序使用 <xref:System.Windows.Data.FilterEventArgs.Accepted%2A> 属性来过滤掉 `CurrentPrice` 至少为 25 美元的 `AuctionItem` 对象。  
   
  [!code-csharp[DataBindingLab#5](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#5)]
  [!code-vb[DataBindingLab#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#5)]  
@@ -462,7 +462,7 @@
 ## Remarks  
  此默认视图永远不会与任何关联<xref:System.Windows.Data.CollectionViewSource>对象。  
   
- 所有集合都具有默认值<xref:System.Windows.Data.CollectionView>。 WPF 会始终绑定到视图而不是集合。 如果您直接绑定到一个集合，WPF 实际上将绑定到该集合的默认视图。 此默认视图被共享的所有绑定到集合中，这将导致所有直接绑定到集合共享排序、 筛选器、 组和一个默认视图的当前项特征。 或者，可以创建你的集合中的视图[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]或使用代码<xref:System.Windows.Data.CollectionViewSource>类，然后将控件绑定到该视图。 有关示例，请参阅[如何：进行排序和分组数据在 XAML 中使用视图](~/docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)。  
+ 所有集合都具有默认值<xref:System.Windows.Data.CollectionView>。 WPF 会始终绑定到视图而不是集合。 如果您直接绑定到一个集合，WPF 实际上将绑定到该集合的默认视图。 此默认视图被共享的所有绑定到集合中，这将导致所有直接绑定到集合共享排序、 筛选器、 组和一个默认视图的当前项特征。 或者，可以创建你的集合中的视图[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]或使用代码<xref:System.Windows.Data.CollectionViewSource>类，然后将控件绑定到该视图。 有关示例，请参见 [如何：进行排序和分组数据在 XAML 中使用视图](~/docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)。  
   
  ]]></format>
         </remarks>
@@ -607,7 +607,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveFiltering" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveFiltering" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -662,7 +662,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveFilteringRequested" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveFilteringRequested" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -722,7 +722,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveGrouping" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveGrouping" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -777,7 +777,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveGroupingRequested" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveGroupingRequested" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -837,7 +837,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveSorting" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveSorting" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -892,7 +892,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveSortingRequested" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.IsLiveSortingRequested" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1162,7 +1162,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.Source" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.Source" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1265,7 +1265,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1309,7 +1309,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CollectionViewType" /> 依赖项属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.Data.CollectionViewSource.CollectionViewType" /> 依赖属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
