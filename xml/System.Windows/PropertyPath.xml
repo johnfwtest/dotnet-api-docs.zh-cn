@@ -1,5 +1,5 @@
 <Type Name="PropertyPath" FullName="System.Windows.PropertyPath">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c7a0a310d503d22acd490af6b5cf4a6c71f5dbda" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51909997" /></Metadata><TypeSignature Language="C#" Value="public sealed class PropertyPath" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c7833314e8df4ca8c343ace7b8b5275beb4ab42a" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55349809" /></Metadata><TypeSignature Language="C#" Value="public sealed class PropertyPath" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyPath extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.PropertyPath" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PropertyPath" />
@@ -15,7 +15,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute>
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.PropertyPathConverter))</AttributeName>
     </Attribute>
   </Attributes>
@@ -180,7 +180,7 @@
   
  路径字符串<xref:System.Windows.PropertyPath>通常通过构造函数建立：<xref:System.Windows.PropertyPath.%23ctor%28System.Object%29>绑定或单步情节提要目标签名<xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29>多步骤情节提要目标的签名。  
   
- **XAML:** 使用时<xref:System.Windows.PropertyPath>描述中的属性引用[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，如由类型转换器首先处理的属性值，指定的字符串 (<xref:System.Windows.PropertyPathConverter>)。 然后，此类型转换器处理字符串并基于其语法调用的其中一个<xref:System.Windows.PropertyPath>构造函数签名。 处理特性值的类型转换器通过这种间接方式通常是如何使用<xref:System.Windows.PropertyPath>中[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，而不是声明<xref:System.Windows.PropertyPath>对象元素，然后应用到属性的特定值，如<xref:System.Windows.PropertyPath.Path%2A>和<xref:System.Windows.PropertyPath.PathParameters%2A>. 有关详细信息，请参阅[PropertyPath XAML 语法](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)。  
+ **XAML:** 当你使用<xref:System.Windows.PropertyPath>来描述中的属性引用[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，如由类型转换器首先处理的属性值，指定的字符串 (<xref:System.Windows.PropertyPathConverter>)。 然后，此类型转换器处理字符串并基于其语法调用的其中一个<xref:System.Windows.PropertyPath>构造函数签名。 处理特性值的类型转换器通过这种间接方式通常是如何使用<xref:System.Windows.PropertyPath>中[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，而不是声明<xref:System.Windows.PropertyPath>对象元素，然后应用到属性的特定值，如<xref:System.Windows.PropertyPath.Path%2A>和<xref:System.Windows.PropertyPath.PathParameters%2A>. 有关详细信息，请参阅[PropertyPath XAML 语法](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)。  
   
 <a name="xamlTextUsage_Path"></a>   
 ## <a name="xaml-text-usage"></a>XAML 文本使用情况  
@@ -219,7 +219,7 @@
   
  情节提要动画机制执行属性链的实际计算。 在<xref:System.Windows.PropertyPath>级别，不执行任何验证，确保路径的步骤在所有连接。 例如，可以构造具有的属性路径<xref:System.Windows.Controls.Control.BackgroundProperty?displayProperty=nameWithType>第一步，和<xref:System.Windows.FrameworkElement.FlowDirectionProperty?displayProperty=nameWithType>作为第二个步骤。 此类的属性路径将失败; 如果这实际应用为目标，因为画笔类型来填满<xref:System.Windows.Controls.Control.BackgroundProperty?displayProperty=nameWithType>不具有<xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>属性。 无效的属性路径以静默方式失败。 有关详细信息，请参阅[情节提要概述](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)。  
   
- **XAML:** 使用时<xref:System.Windows.PropertyPath>描述中的属性引用[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，如由类型转换器首先处理的属性值，指定的字符串 (<xref:System.Windows.PropertyPathConverter>)。 然后，此类型转换器处理字符串并基于其语法调用的其中一个<xref:System.Windows.PropertyPath>构造函数签名。 处理特性值的类型转换器通过这种间接方式通常是如何使用<xref:System.Windows.PropertyPath>中[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，而不是声明<xref:System.Windows.PropertyPath>对象元素，然后应用到属性的特定值，如<xref:System.Windows.PropertyPath.Path%2A>和<xref:System.Windows.PropertyPath.PathParameters%2A>. 有关详细信息，请参阅[PropertyPath XAML 语法](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)。  
+ **XAML:** 当你使用<xref:System.Windows.PropertyPath>来描述中的属性引用[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，如由类型转换器首先处理的属性值，指定的字符串 (<xref:System.Windows.PropertyPathConverter>)。 然后，此类型转换器处理字符串并基于其语法调用的其中一个<xref:System.Windows.PropertyPath>构造函数签名。 处理特性值的类型转换器通过这种间接方式通常是如何使用<xref:System.Windows.PropertyPath>中[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]，而不是声明<xref:System.Windows.PropertyPath>对象元素，然后应用到属性的特定值，如<xref:System.Windows.PropertyPath.Path%2A>和<xref:System.Windows.PropertyPath.PathParameters%2A>. 有关详细信息，请参阅[PropertyPath XAML 语法](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)。  
   
 <a name="xamlTextUsage_PathParameters"></a>   
 ## <a name="xaml-text-usage"></a>XAML 文本使用情况  
