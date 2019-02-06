@@ -1,5 +1,5 @@
 <Type Name="AutoResetEvent" FullName="System.Threading.AutoResetEvent">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0f065cc64ff40bfc4392ac5996a4573819cea143" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53228591" /></Metadata><TypeSignature Language="C#" Value="public sealed class AutoResetEvent : System.Threading.EventWaitHandle" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="877b21e226be713e2c76d2046be804f171d3f10f" /><Meta Name="ms.sourcegitcommit" Value="22744e2f9d07a51900a968efffd9e390117d64a1" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/03/2019" /><Meta Name="ms.locfileid" Value="55670105" /></Metadata><TypeSignature Language="C#" Value="public sealed class AutoResetEvent : System.Threading.EventWaitHandle" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AutoResetEvent extends System.Threading.EventWaitHandle" />
   <TypeSignature Language="DocId" Value="T:System.Threading.AutoResetEvent" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class AutoResetEvent&#xA;Inherits EventWaitHandle" />
@@ -34,17 +34,17 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>通知正在等待的线程已发生事件。 此类不能被继承。</summary>
+    <summary>表示线程同步事件在一个等待线程释放后收到信号时自动重置。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- `AutoResetEvent` 允许线程能够相互通信通过发出信号。 通常情况下，线程需要对资源的独占访问时使用此类。  
+ 您使用`AutoResetEvent`， <xref:System.Threading.ManualResetEvent>，和<xref:System.Threading.EventWaitHandle>线程交互 （或线程发出信号）。 有关详细信息，请参阅[线程交互，或发出信号](~/docs/standard/threading/overview-of-synchronization-primitives.md#thread-interaction-or-signaling)一部分[同步基元概述](~/docs/standard/threading/overview-of-synchronization-primitives.md)一文。  
   
 > [!IMPORTANT]
 >  此类型实现<xref:System.IDisposable>接口。 在使用完类型后，您应直接或间接释放类型。 若要直接释放类型，调用其<xref:System.IDisposable.Dispose%2A>中的方法`try` / `catch`块。 若要间接释放类型，请使用 `using`（在 C# 中）或 `Using`（在 Visual Basic 中）等语言构造。 有关详细信息，请参阅中的"使用对象实现 IDisposable"一节<xref:System.IDisposable>接口主题。  
   
- 线程通过调用等待一个信号<xref:System.Threading.WaitHandle.WaitOne%2A>上`AutoResetEvent`。 如果`AutoResetEvent`处于非信号状态，线程被阻塞，等待线程当前控件要发出信号的资源是通过调用可用的资源<xref:System.Threading.EventWaitHandle.Set%2A>。  
+ 线程通过调用等待一个信号[AutoResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne%2A)。 如果`AutoResetEvent`处于非信号状态，线程阻止，直到[AutoResetEvent.Set](xref:System.Threading.EventWaitHandle.Set%2A)调用。  
   
  调用`Set`信号`AutoResetEvent`释放等待线程。 `AutoResetEvent` 将保持终止状态直到一个等待线程释放，并自动返回到非信号状态。 如果没有线程处于等待状态，状态将无限期地保持已发出信号。  
   
@@ -56,8 +56,6 @@
  您可以控制的初始状态`AutoResetEvent`通过将一个布尔值传递给构造函数：`true`如果信号的初始状态和`false`否则为。  
   
  `AutoResetEvent` 也可以用于`static`<xref:System.Threading.WaitHandle.WaitAll%2A>和<xref:System.Threading.WaitHandle.WaitAny%2A>方法。  
-  
- 有关线程同步机制的详细信息，请参阅[AutoResetEvent](~/docs/standard/threading/autoresetevent.md)概念性文档中。  
   
  从.NET Framework 2.0 版中，开始<xref:System.Threading.AutoResetEvent>派生自新<xref:System.Threading.EventWaitHandle>类。 <xref:System.Threading.AutoResetEvent>功能上等效于<xref:System.Threading.EventWaitHandle>使用创建<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>。  
   
@@ -80,6 +78,7 @@
     <threadsafe>此类是线程安全。</threadsafe>
     <altmember cref="T:System.Threading.WaitHandle" />
     <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
+    <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -139,6 +138,7 @@
         </remarks>
         <altmember cref="T:System.Threading.WaitHandle" />
         <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Reset">

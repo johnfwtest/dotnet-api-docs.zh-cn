@@ -1,5 +1,5 @@
 <Type Name="Thread" FullName="System.Threading.Thread">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fd2bf7c62b10f302d95d138e19563c498a74ec5a" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52219339" /></Metadata><TypeSignature Language="C#" Value="public sealed class Thread : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, System.Runtime.InteropServices._Thread" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6ac3291cc96e4567c96f251bc2e4f826bfbea7a8" /><Meta Name="ms.sourcegitcommit" Value="0d09f5af167c53ca4797424c362e6c2616a36009" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/05/2019" /><Meta Name="ms.locfileid" Value="55739854" /></Metadata><TypeSignature Language="C#" Value="public sealed class Thread : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, System.Runtime.InteropServices._Thread" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Thread extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.Runtime.InteropServices._Thread" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Thread" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Thread&#xA;Inherits CriticalFinalizerObject&#xA;Implements _Thread" />
@@ -710,7 +710,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 ## Remarks  
   
 > [!IMPORTANT]
->  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储： 线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
+>  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储：线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
   
  该数据槽的所有线程上分配。  
   
@@ -783,7 +783,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 ## Remarks  
   
 > [!IMPORTANT]
->  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储： 线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
+>  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储：线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
   
  线程使用本地存储内存机制来存储线程特定的数据。 在创建时，公共语言运行时分配将多个数据存储阵列分区到每个进程。 线程可以将数据存储区中的数据槽的分配、 存储和检索数据的槽中值以及该线程过期后释放以供重复使用的槽。 数据槽是每个线程的唯一的。 没有其他线程 （甚至不是子线程） 可以获取该数据。  
   
@@ -1112,7 +1112,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 > <xref:System.Threading.Thread.CurrentCulture>属性并可靠地不适用于与当前线程以外的任何线程一起使用时。 在.NET Framework 中，读取该属性是可靠的虽然不是将其设置为当前线程以外的线程。 在.NET Core<xref:System.InvalidOperationException>如果线程尝试读取或写入，将引发<xref:System.Threading.Thread.CurrentCulture>不同线程上的属性。
 > 我们建议你使用<xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=nameWithType>属性来检索和设置的当前区域性。
 
- 开头[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，可以设置<xref:System.Threading.Thread.CurrentCulture%2A>属性设置为非特定区域性。 这是因为的行为<xref:System.Globalization.CultureInfo>类已更改： 如果它表示非特定区域性，其属性值 (具体而言， <xref:System.Globalization.CultureInfo.Calendar%2A>， <xref:System.Globalization.CultureInfo.CompareInfo%2A>， <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>， <xref:System.Globalization.CultureInfo.NumberFormat%2A>，并<xref:System.Globalization.CultureInfo.TextInfo%2A>属性) 现在反映与非特定区域性关联的特定区域性。 在早期版本的.NET Framework<xref:System.Threading.Thread.CurrentCulture%2A>属性引发<xref:System.NotSupportedException>异常时分配一个非特定区域性。  
+ 开头[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，可以设置<xref:System.Threading.Thread.CurrentCulture%2A>属性设置为非特定区域性。 这是因为的行为<xref:System.Globalization.CultureInfo>类已更改：当它表示非特定区域性，其属性值 (具体而言， <xref:System.Globalization.CultureInfo.Calendar%2A>， <xref:System.Globalization.CultureInfo.CompareInfo%2A>， <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>， <xref:System.Globalization.CultureInfo.NumberFormat%2A>，和<xref:System.Globalization.CultureInfo.TextInfo%2A>属性) 现在反映与非特定区域性关联的特定区域性。 在早期版本的.NET Framework<xref:System.Threading.Thread.CurrentCulture%2A>属性引发<xref:System.NotSupportedException>异常时分配一个非特定区域性。  
   
 ## Examples  
  下面的示例显示允许 Windows 窗体应用程序显示在控制面板中设置的区域性中的用户界面的线程处理语句。 需要额外的代码。  
@@ -1632,7 +1632,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 ## Remarks  
   
 > [!IMPORTANT]
->  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储： 线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
+>  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储：线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
   
  任何线程调用后`FreeNamedDataSlot`，调用的其他任何线程<xref:System.Threading.Thread.GetNamedDataSlot%2A>具有相同名称将分配新的槽与名称相关联。 对后续调用`GetNamedDataSlot`由任何线程将返回新的槽。 但是，任何线程仍具有<xref:System.LocalDataStoreSlot?displayProperty=nameWithType>返回到以前通过调用`GetNamedDataSlot`可以继续使用旧的槽。  
   
@@ -1842,7 +1842,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 ## Remarks  
   
 > [!IMPORTANT]
->  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储： 线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
+>  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储：线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
   
  线程使用本地存储内存机制来存储线程特定的数据。 在创建时，公共语言运行时分配将多个数据存储阵列分区到每个进程。 线程可以将数据存储区中的数据槽的分配、 存储和检索数据的槽中值以及该线程过期后释放以供重复使用的槽。 数据槽是每个线程的唯一的。 没有其他线程 （甚至不是子线程） 可以获取该数据。  
   
@@ -2062,7 +2062,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 ## Remarks  
   
 > [!IMPORTANT]
->  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储： 线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
+>  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储：线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
   
  线程使用本地存储内存机制来存储线程特定的数据。 在创建时，公共语言运行时分配将多个数据存储阵列分区到每个进程。 线程可以将数据存储区中的数据槽的分配、 存储和检索数据的槽中值以及该线程过期后释放以供重复使用的槽。 数据槽是每个线程的唯一的。 没有其他线程 （甚至不是子线程） 可以获取该数据。  
   
@@ -2129,7 +2129,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>中断处于 <see langword="WaitSleepJoin" /> 线程状态的线程。</summary>
+        <summary>中断处于 <see cref="F:System.Threading.ThreadState.WaitSleepJoin" /> 线程状态的线程。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2153,7 +2153,6 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         <permission cref="T:System.Security.Permissions.SecurityPermission">对于在线程上的高级操作。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />。</permission>
         <altmember cref="T:System.Threading.ThreadState" />
         <related type="Article" href="~/docs/standard/threading/pausing-and-resuming-threads.md">暂停和中断线程</related>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
       </Docs>
     </Member>
     <Member MemberName="IsAlive">
@@ -2392,7 +2391,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.Threading.ThreadStateException">调用方尝试加入处于 <see cref="F:System.Threading.ThreadState.Unstarted" /> 状态的线程。</exception>
         <exception cref="T:System.Threading.ThreadInterruptedException">线程在等待时中断。</exception>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="Join">
@@ -2454,7 +2453,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 的值为负数，且不等于 <see cref="F:System.Threading.Timeout.Infinite" />（以毫秒为单位）。</exception>
         <exception cref="T:System.Threading.ThreadStateException">该线程尚未启动。</exception>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="Join">
@@ -2519,7 +2518,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值为负数，且不等于 <see cref="F:System.Threading.Timeout.Infinite" />（以毫秒为单位），或大于 <see cref="F:System.Int32.MaxValue" /> 毫秒。</exception>
         <exception cref="T:System.Threading.ThreadStateException">调用方尝试加入处于 <see cref="F:System.Threading.ThreadState.Unstarted" /> 状态的线程。</exception>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="ManagedThreadId">
@@ -2801,7 +2800,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         <exception cref="T:System.Security.SecurityException">调用方没有当前线程要求的安全权限。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">对于在线程上的高级操作。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />。</permission>
         <related type="Article" href="~/docs/standard/threading/destroying-threads.md">销毁线程</related>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="Resume">
@@ -2857,7 +2856,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         <exception cref="T:System.Security.SecurityException">调用方没有适当的 <see cref="T:System.Security.Permissions.SecurityPermission" />。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">对于在线程上的高级操作。 关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" /></permission>
         <related type="Article" href="~/docs/standard/threading/pausing-and-resuming-threads.md">暂停和中断线程</related>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="SetApartmentState">
@@ -3021,7 +3020,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 ## Remarks  
   
 > [!IMPORTANT]
->  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储： 线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
+>  .NET Framework 提供了使用线程本地存储 (TLS) 的两种方式： 线程相对静态字段 (即，使用标记的字段<xref:System.ThreadStaticAttribute>属性) 和数据槽。 线程相对静态字段提供更好的性能优于数据槽，并启用编译时类型检查。 有关使用 TLS 的详细信息，请参阅[线程本地存储：线程相对静态字段和数据槽](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)。  
   
  线程使用本地存储内存机制来存储线程特定的数据。 在创建时，公共语言运行时分配将多个数据存储阵列分区到每个进程。 线程可以将数据存储区中的数据槽的分配、 存储和检索数据的槽中值和自由线程过程结束之后仍以供重复使用的槽和<xref:System.Threading.Thread>垃圾回收功能回收对象。 数据槽是每个线程的唯一的。 没有其他线程 （甚至不是子线程） 可以获取该数据。  
   
@@ -3450,7 +3449,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         <exception cref="T:System.Security.SecurityException">调用方没有适当的 <see cref="T:System.Security.Permissions.SecurityPermission" />。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">对于在线程上的高级操作。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />。</permission>
         <related type="Article" href="~/docs/standard/threading/pausing-and-resuming-threads.md">暂停和中断线程</related>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Thread.GetIDsOfNames">
@@ -3682,7 +3681,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值包含当前线程的状态。</summary>
-        <value>其中一个表示当前线程的状态的 <see cref="T:System.Threading.ThreadState" /> 值。 初始值为 <see langword="Unstarted" />。</value>
+        <value>其中一个表示当前线程的状态的 <see cref="T:System.Threading.ThreadState" /> 值。 初始值为 <see cref="F:System.Threading.ThreadState.Unstarted" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3703,7 +3702,6 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
-        <related type="Article" href="~/docs/standard/threading/managed-thread-states.md">托管线程状态</related>
       </Docs>
     </Member>
     <Member MemberName="TrySetApartmentState">
