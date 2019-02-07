@@ -1,5 +1,5 @@
 <Type Name="StackOverflowException" FullName="System.StackOverflowException">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1f6d3a4b551412dd113545524fabdb90f2a0abd9" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52606073" /></Metadata><TypeSignature Language="C#" Value="public sealed class StackOverflowException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="991aa9f4b94575c2f58703680ad95ac0d43e46c1" /><Meta Name="ms.sourcegitcommit" Value="9cee676b7864fa9dcb91319dcf5c339f3a724fbf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/07/2019" /><Meta Name="ms.locfileid" Value="55828882" /></Metadata><TypeSignature Language="C#" Value="public sealed class StackOverflowException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit StackOverflowException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.StackOverflowException" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class StackOverflowException&#xA;Inherits SystemException" />
@@ -39,21 +39,25 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.StackOverflowException> 执行堆栈溢出发生错误时引发，通常在非常深度或无限递归。  
+ `StackOverflowException` 执行堆栈溢出发生错误时引发，通常在非常深度或无限递归。 因此请确保您的代码不具有无限循环或无限递归。
   
- <xref:System.StackOverflowException> 使用 HRESULT COR_E_STACKOVERFLOW，其值 0x800703E9。 <xref:System.Reflection.Emit.OpCodes.Localloc>中间语言 (IL) 指令将引发<xref:System.StackOverflowException>。 有关的初始属性值的列表<xref:System.StackOverflowException>对象，请参阅<xref:System.StackOverflowException.%23ctor%2A>构造函数。  
+ `StackOverflowException` 使用 HRESULT COR_E_STACKOVERFLOW，其值 0x800703E9。 <xref:System.Reflection.Emit.OpCodes.Localloc>中间语言 (IL) 指令将引发`StackOverflowException`。 有关的初始属性值的列表`StackOverflowException`对象，请参阅<xref:System.StackOverflowException.%23ctor%2A>构造函数。  
   
-## <a name="version-considerations"></a>版本的注意事项  
- 在.NET Framework 1.0 和 1.1 中，可以捕获<xref:System.StackOverflowException>对象 （例如，若要从此无限递归）。 从.NET Framework 2.0 开始，您无法捕捉<xref:System.StackOverflowException>对象使用`try` / `catch`块中，并且相应的进程会默认情况下终止。 因此，应编写代码来检测和防止堆栈溢出。 例如，如果您的应用程序依赖于递归，则使用一个计数器或状态条件终止递归循环。 下面的示例使用一个计数器以确保为调用递归数`Execute`方法不能超过最多由 MAX_RECURSIVE_CALLS 常量定义。  
+ 从.NET Framework 2.0 开始，您无法捕捉`StackOverflowException`对象使用`try` / `catch`块中，并且相应的进程会默认情况下终止。 因此，应编写代码来检测和防止堆栈溢出。 例如，如果您的应用程序依赖于递归，则使用一个计数器或状态条件终止递归循环。
+请参阅 （Examples)(#examples) 部分举例说明了这种技术。
+ 
+> [!NOTE]
+>  将应用<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>属性引发的方法为`StackOverflowException`不起作用。 仍不能处理用户代码中的异常。
+
+ 如果您的应用程序承载公共语言运行时 (CLR)，它可以指定 CLR 应卸载应用程序域，堆栈溢出异常时发生，并让相应的进程继续。 有关详细信息，请参阅[ICLRPolicyManager 接口](~/docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)。
+
+## Examples
+
+ 下面的示例使用一个计数器以确保为调用递归数`Execute`方法不能超过最多由 MAX_RECURSIVE_CALLS 常量定义。
   
  [!code-csharp[System.StackOverflowException.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.stackoverflowexception.class/cs/example1a.cs#1)]
  [!code-vb[System.StackOverflowException.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.stackoverflowexception.class/vb/example1a.vb#1)]  
-  
-> [!NOTE]
->  将应用<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>属性引发的方法为<xref:System.StackOverflowException>不起作用。 仍不能处理用户代码中的异常。  
-  
- 如果您的应用程序承载公共语言运行时 (CLR)，它可以指定 CLR 应卸载应用程序域，堆栈溢出异常时发生，并让相应的进程继续。 有关详细信息，请参阅[ICLRPolicyManager 接口](~/docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)。  
-  
+
  ]]></format>
     </remarks>
     <altmember cref="T:System.Exception" />
@@ -102,7 +106,7 @@
 ## Remarks  
  下表显示 <xref:System.StackOverflowException> 的实例的初始属性值。  
   
-|Property|“值”|  
+|Property|值|  
 |--------------|-----------|  
 |<xref:System.Exception.InnerException%2A>|`null`。|  
 |<xref:System.Exception.Message%2A>|本地化的错误消息字符串。|  
