@@ -1,5 +1,5 @@
 <Type Name="ManualResetEvent" FullName="System.Threading.ManualResetEvent">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="55d22a680762383ef96947462e2824d553269a1f" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52738798" /></Metadata><TypeSignature Language="C#" Value="public sealed class ManualResetEvent : System.Threading.EventWaitHandle" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9f583caf50ddbb4a7bdf1f90196e252a650505bb" /><Meta Name="ms.sourcegitcommit" Value="8b9e4a20f5d8811cfd7b034cb499f2c78ad1b2c1" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/06/2019" /><Meta Name="ms.locfileid" Value="55760664" /></Metadata><TypeSignature Language="C#" Value="public sealed class ManualResetEvent : System.Threading.EventWaitHandle" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManualResetEvent extends System.Threading.EventWaitHandle" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ManualResetEvent" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ManualResetEvent&#xA;Inherits EventWaitHandle" />
@@ -34,34 +34,35 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>通知一个或多个正在等待的线程已发生事件。 此类不能被继承。</summary>
+    <summary>表示线程同步事件，收到信号时，必须手动重置该事件。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在.NET Framework 2.0 版中，<xref:System.Threading.ManualResetEvent>派生自新<xref:System.Threading.EventWaitHandle>类。 一个<xref:System.Threading.ManualResetEvent>功能上等效于<xref:System.Threading.EventWaitHandle>使用创建<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>。  
-  
-> [!NOTE]
->  与不同<xref:System.Threading.ManualResetEvent>类，<xref:System.Threading.EventWaitHandle>类提供了对访问已命名系统同步事件。  
-  
- <xref:System.Threading.ManualResetEvent> 允许线程能够相互通信通过发出信号。 通常情况下，此通信涉及其他线程可以继续操作之前，必须完成的一个线程的任务。  
-  
- 开始之前其他必须完成的活动线程时线程继续执行，它将调用<xref:System.Threading.EventWaitHandle.Reset%2A>放置`ManualResetEvent`处于非信号状态。 此线程可以认为的控制`ManualResetEvent`。 线程调用<xref:System.Threading.WaitHandle.WaitOne%2A>上`ManualResetEvent`将阻止，正在等待信号。 当控制线程完成活动时，它将调用<xref:System.Threading.EventWaitHandle.Set%2A>发出信号等待线程可以继续执行。 将释放所有等待的线程。  
-  
- 一旦它被终止，`ManualResetEvent`手动重置前保持终止状态。 也就是说，调用`WaitOne`立即返回。  
-  
- 您可以控制的初始状态`ManualResetEvent`通过将一个布尔值传递给构造函数中，`true`如果信号的初始状态和`false`否则为。  
-  
+
+ 您使用`ManualResetEvent`， <xref:System.Threading.AutoResetEvent>，和<xref:System.Threading.EventWaitHandle>线程交互 （或线程发出信号）。 有关详细信息，请参阅[线程交互，或发出信号](~/docs/standard/threading/overview-of-synchronization-primitives.md#thread-interaction-or-signaling)一部分[同步基元概述](~/docs/standard/threading/overview-of-synchronization-primitives.md)一文。  
+
+ 开始之前其他必须完成的活动线程时线程继续执行，它将调用[ManualResetEvent.Reset](xref:System.Threading.EventWaitHandle.Reset%2A)放置`ManualResetEvent`处于非信号状态。 此线程可以认为的控制`ManualResetEvent`。 线程调用[ManualResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne%2A)块中，正在等待信号。 当控制线程完成活动时，它将调用[ManualResetEvent.Set](xref:System.Threading.EventWaitHandle.Set%2A)发出信号等待线程可以继续执行。 将释放所有等待的线程。  
+
+ 它被终止，一旦`ManualResetEvent`手动重置通过调用前保持终止状态<xref:System.Threading.EventWaitHandle.Reset>方法。 也就是说，调用<xref:System.Threading.WaitHandle.WaitOne%2A>立即返回。  
+
+ 您可以控制的初始状态`ManualResetEvent`通过将一个布尔值传递给构造函数：`true`发出信号的初始状态，如果和`false`否则为。  
+ 
  `ManualResetEvent` 也可以用于`static`<xref:System.Threading.WaitHandle.WaitAll%2A>和<xref:System.Threading.WaitHandle.WaitAny%2A>方法。  
   
- 有关线程同步机制的详细信息，请参阅[ManualResetEvent 和 ManualResetEventSlim](~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md)概念性文档中。  
+ 从.NET Framework 2.0 版中，开始<xref:System.Threading.ManualResetEvent>派生自<xref:System.Threading.EventWaitHandle>类。 一个<xref:System.Threading.ManualResetEvent>功能上等效于<xref:System.Threading.EventWaitHandle>使用创建<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>。  
   
+> [!NOTE]
+> 与不同<xref:System.Threading.ManualResetEvent>类，<xref:System.Threading.EventWaitHandle>类提供了对访问已命名系统同步事件。  
+
+ 从.NET Framework 版本 4.0 中，开始<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>类是轻量替代<xref:System.Threading.ManualResetEvent>。    
+   
    
   
 ## Examples  
  下面的示例演示如何<xref:System.Threading.ManualResetEvent>工作原理。 该示例启动与<xref:System.Threading.ManualResetEvent>中未终止的状态 (即，`false`传递给构造函数)。 此示例将创建三个线程时，每个哪些块上<xref:System.Threading.ManualResetEvent>通过调用其<xref:System.Threading.WaitHandle.WaitOne%2A>方法。 当用户按**Enter**键，此示例调用<xref:System.Threading.EventWaitHandle.Set%2A>方法中，会释放所有三个线程。 与此相反的行为<xref:System.Threading.AutoResetEvent>类，该类在每次发布后自动重置一次释放一个线程。  
   
- 按下**Enter**密钥再次演示<xref:System.Threading.ManualResetEvent>处于终止状态，直到其<xref:System.Threading.EventWaitHandle.Reset%2A>调用方法： 此示例将启动这两个线程。 当它们调用时不会阻止这些线程<xref:System.Threading.WaitHandle.WaitOne%2A>方法，但改为运行到完成。  
+ 按下**Enter**密钥再次演示<xref:System.Threading.ManualResetEvent>处于终止状态，直到其<xref:System.Threading.EventWaitHandle.Reset%2A>调用方法：此示例将启动这两个线程。 当它们调用时不会阻止这些线程<xref:System.Threading.WaitHandle.WaitOne%2A>方法，但改为运行到完成。  
   
  按下**Enter**密钥再次使该示例调用<xref:System.Threading.EventWaitHandle.Reset%2A>方法，并启动一个阻止调用时的多个线程<xref:System.Threading.WaitHandle.WaitOne%2A>。 按下**Enter**密钥一个最后一次调用<xref:System.Threading.EventWaitHandle.Set%2A>释放最后一个线程和该程序结束。  
   
@@ -74,7 +75,7 @@
     <threadsafe>此类是线程安全。</threadsafe>
     <altmember cref="T:System.Threading.WaitHandle" />
     <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
-    <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">手动重置事件</related>
+    <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -124,7 +125,7 @@
         </remarks>
         <altmember cref="T:System.Threading.WaitHandle" />
         <related type="Article" href="~/docs/standard/threading/index.md">托管线程处理</related>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Reset">

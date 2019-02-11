@@ -1,5 +1,5 @@
 <Type Name="ManualResetEventSlim" FullName="System.Threading.ManualResetEventSlim">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f0d0111daba3f5e182b38b94d497a34cf3106301" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48762789" /></Metadata><TypeSignature Language="C#" Value="public class ManualResetEventSlim : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d9db21746def864704c0909198a0151bc428b955" /><Meta Name="ms.sourcegitcommit" Value="8b9e4a20f5d8811cfd7b034cb499f2c78ad1b2c1" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/06/2019" /><Meta Name="ms.locfileid" Value="55760663" /></Metadata><TypeSignature Language="C#" Value="public class ManualResetEventSlim : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManualResetEventSlim extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ManualResetEventSlim" />
   <TypeSignature Language="VB.NET" Value="Public Class ManualResetEventSlim&#xA;Implements IDisposable" />
@@ -38,7 +38,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>提供 <see cref="T:System.Threading.ManualResetEvent" /> 的简化版本。</summary>
+    <summary>表示线程同步事件，收到信号时，必须手动重置该事件。 此类是 <see cref="T:System.Threading.ManualResetEvent" /> 的轻量替代项。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -48,7 +48,7 @@
    
   
 ## Examples  
- 下面的示例演示如何使用<xref:System.Threading.ManualResetEventSlim>。 有关使用详细信息`SpinCount`和其他最佳做法，有关使用这种类型，请参阅[ManualResetEvent 和 ManualResetEventSlim](~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md)。  
+ 下面的示例演示如何使用<xref:System.Threading.ManualResetEventSlim>。
   
  [!code-csharp[System.Threading.ManualResetEventSlim#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.manualreseteventslim/cs/mres.cs#01)]
  [!code-vb[System.Threading.ManualResetEventSlim#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.manualreseteventslim/vb/mres.vb#01)]  
@@ -56,7 +56,7 @@
  ]]></format>
     </remarks>
     <threadsafe>所有公共和受保护成员<see cref="T:System.Threading.ManualResetEventSlim" />都是线程安全的同时从多个线程，Dispose 除外，它必须仅能时使用所有其他操作<see cref="T:System.Threading.ManualResetEventSlim" />完成，并将重置，这应仅用于当没有其他线程同时访问该事件。</threadsafe>
-    <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+    <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -68,7 +68,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>初始化 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的新实例。</summary>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </MemberGroup>
     <Member MemberName=".ctor">
@@ -98,7 +98,7 @@
       <Docs>
         <summary>使用无信号初始状态初始化 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -129,10 +129,10 @@
         <Parameter Name="initialState" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="initialState">若要将初始状态设置为有信号，则为 true；若要将初始状态设置为无信号，则为 false。</param>
+        <param name="initialState">若要将初始状态设置为终止，则为 true；若要将初始状态设置为非终止，则为 false。</param>
         <summary>使用一个指示是否将初始状态设置为有信号的布尔值初始化 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -164,12 +164,12 @@
         <Parameter Name="spinCount" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="initialState">若要将初始状态设置为有信号，则为 true；若要将初始状态设置为无信号，则为 false。</param>
+        <param name="initialState">若要将初始状态设置为终止，则为 true；若要将初始状态设置为非终止，则为 false。</param>
         <param name="spinCount">在回退到基于内核的等待操作之前发生的自旋等待数量。</param>
         <summary>使用一个指示是否将初始状态设置为有信号和指定自旋计数的布尔值初始化 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="spinCount" /> 小于 0 或大于允许的最大值。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="Dispose">
@@ -181,7 +181,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>释放由 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的当前实例使用的资源。</summary>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="Dispose">
@@ -216,7 +216,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>释放由 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的当前实例占用的所有资源。</summary>
+        <summary>释放 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的当前实例所使用的所有资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -230,7 +230,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -264,7 +264,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">如果为 true，则同时释放托管资源和非托管资源；如果为 false，则仅释放非托管资源。</param>
+        <param name="disposing">为 true 则释放托管资源和非托管资源；为 false 则仅释放非托管资源。</param>
         <summary>释放由 <see cref="T:System.Threading.ManualResetEventSlim" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -274,7 +274,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="IsSet">
@@ -305,10 +305,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取是否设置了事件。</summary>
+        <summary>获取是否已设置事件。</summary>
         <value>如果设置了事件，则为 true；否则为 false。</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Reset">
@@ -340,7 +340,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将事件状态设置为非终止状态，从而导致线程受阻。</summary>
+        <summary>将事件状态设置为非终止，从而导致线程受阻。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -350,7 +350,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">对象已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Set">
@@ -384,7 +384,7 @@
       <Docs>
         <summary>将事件状态设置为有信号，从而允许一个或多个等待该事件的线程继续。</summary>
         <remarks>To be added.</remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="SpinCount">
@@ -418,7 +418,7 @@
         <summary>获取在回退到基于内核的等待操作之前将发生的自旋等待数量。</summary>
         <value>返回在回退到基于内核的等待操作之前将发生的自旋等待数量。</value>
         <remarks>To be added.</remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <MemberGroup MemberName="Wait">
@@ -430,7 +430,7 @@
       </AssemblyInfo>
       <Docs>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止。</summary>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </MemberGroup>
     <Member MemberName="Wait">
@@ -473,7 +473,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">对象已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Wait">
@@ -514,7 +514,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">对象已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Wait">
@@ -560,7 +560,7 @@
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.OperationCanceledException"><paramref name="cancellationToken" /> 已取消。</exception>
         <exception cref="T:System.ObjectDisposedException">该对象已被释放，或者创建了 <paramref name="cancellationToken" /> 的 <see cref="T:System.Threading.CancellationTokenSource" /> 已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Wait">
@@ -594,16 +594,16 @@
         <Parameter Name="timeout" Type="System.TimeSpan" />
       </Parameters>
       <Docs>
-        <param name="timeout">表示等待的毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
+        <param name="timeout">表示等待毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止，同时使用 <see cref="T:System.TimeSpan" /> 测量时间间隔。</summary>
         <returns>如果已设置 <see cref="T:System.Threading.ManualResetEventSlim" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 是一个非 -1 毫秒的负数，而 -1 表示无限期超时。 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
 - 或 - 
 <paramref name="timeout" /> 中的毫秒数大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">对象已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Wait">
@@ -646,7 +646,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">该对象已被释放，或者创建了 <paramref name="cancellationToken" /> 的 <see cref="T:System.Threading.CancellationTokenSource" /> 已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="Wait">
@@ -680,18 +680,18 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="timeout">表示等待的毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
+        <param name="timeout">表示等待毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
         <param name="cancellationToken">要观察的 <see cref="T:System.Threading.CancellationToken" />。</param>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止，并使用 <see cref="T:System.TimeSpan" /> 测量时间间隔，同时观察 <see cref="T:System.Threading.CancellationToken" />。</summary>
         <returns>如果已设置 <see cref="T:System.Threading.ManualResetEventSlim" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.OperationCanceledException"><paramref name="cancellationToken" /> 已取消。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 是一个非 -1 毫秒的负数，而 -1 表示无限期超时。 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
 - 或 - 
 <paramref name="timeout" /> 中的毫秒数大于 <see cref="F:System.Int32.MaxValue" />。</exception>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">该对象已被释放，或者创建了 <paramref name="cancellationToken" /> 的 <see cref="T:System.Threading.CancellationTokenSource" /> 已被释放。</exception>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
     <Member MemberName="WaitHandle">
@@ -732,7 +732,7 @@
   
  ]]></format>
         </remarks>
-        <related type="Article" href="~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md">ManualResetEvent 和 ManualResetEventSlim</related>
+        <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
     </Member>
   </Members>

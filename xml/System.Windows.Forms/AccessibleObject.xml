@@ -1,5 +1,5 @@
 <Type Name="AccessibleObject" FullName="System.Windows.Forms.AccessibleObject">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ae42c735468d51506a47cbf2d69ffa2ec3e3977a" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55389641" /></Metadata><TypeSignature Language="C#" Value="public class AccessibleObject : System.Runtime.InteropServices.StandardOleMarshalObject, Accessibility.IAccessible, System.Reflection.IReflect" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d614cb29b1a4ed263a25065187365155e87a0be2" /><Meta Name="ms.sourcegitcommit" Value="9cee676b7864fa9dcb91319dcf5c339f3a724fbf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/07/2019" /><Meta Name="ms.locfileid" Value="55829440" /></Metadata><TypeSignature Language="C#" Value="public class AccessibleObject : System.Runtime.InteropServices.StandardOleMarshalObject, Accessibility.IAccessible, System.Reflection.IReflect" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessibleObject extends System.Runtime.InteropServices.StandardOleMarshalObject implements class Accessibility.IAccessible, class System.Reflection.IReflect" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleObject" />
   <TypeSignature Language="VB.NET" Value="Public Class AccessibleObject&#xA;Inherits StandardOleMarshalObject&#xA;Implements IAccessible, IReflect" />
@@ -389,7 +389,7 @@
       </Parameters>
       <Docs>
         <param name="flagsSelect"><see cref="T:System.Windows.Forms.AccessibleSelection" /> 值的按位组合。</param>
-        <param name="childID">要对其执行选择操作的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <param name="childID">要对其更改选择操作的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
         <summary>修改选择内容或移动辅助性对象的键盘焦点。 有关此成员的说明，请参见 <see cref="M:Accessibility.IAccessible.accSelect(System.Int32,System.Object)" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -476,9 +476,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要检索的子对象的 ID 号。</param>
+        <summary>检索指定的子对象。</summary>
+        <returns>如果存在，则为指定的子对象，如果不存在，则为 <see langword="null" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -505,9 +505,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要为其获取默认操作的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>返回指示指定对象的默认操作的字符串。</summary>
+        <returns>字符串指示 <paramref name="childID" /> 的默认操作，或者，如果 <paramref name="childID" /> 没有默认操作，则指示 <see langword="name" /> 的默认操作。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -534,9 +534,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要为其获取描述的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>返回描述指定辅助性对象的可视外观的字符串。</summary>
+        <returns>描述指定辅助性对象的本地化字符串。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -563,9 +563,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要为其获取帮助信息的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索与指定辅助性对象相关联的 WinHelp 文件的完整路径。</summary>
+        <returns>与 <paramref name="childID" /> 相关联的 WinHelp 文件的完整路径。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -593,10 +593,10 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="pszHelpFile">To be added.</param>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="pszHelpFile">方法返回时，WinHelp 文件的完整路径与指定对象相关联。</param>
+        <param name="childID">要为其检索帮助主题的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索与指定对象相关联的 WinHelp 文件的完整路径以及该文件中指定主题的标识符。</summary>
+        <returns><paramref name="pszHelpFile" /> 中指定主题的标识符。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -628,9 +628,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要为其获取键盘快捷方式的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索指定对象的键盘快捷方式或访问密钥。</summary>
+        <returns>本地化字符串标识键盘快捷方式或 <see langword="null" />（如果键盘快捷方式与指定对象相关联）。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -662,9 +662,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要检索其名称的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索指定对象的名称。</summary>
+        <returns>指定对象的名称。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -691,9 +691,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要为其获取角色信息的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索描述指定对象的角色的信息。</summary>
+        <returns>提供有关指定辅助性对象的角色信息的 TAn 对象。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -720,9 +720,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要为其获取状态信息的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索指定辅助性对象的当前状态。</summary>
+        <returns>描述指定辅助性对象的当前状态的对象。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -749,9 +749,9 @@
         <Parameter Name="childID" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="childID">要检索其值的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <summary>检索指定辅助性对象的值。 并非所有对象都有值。</summary>
+        <returns>如果对象没有值，则为 <see langword="null" /> 值，否则，为 <paramref name="childID" /> 值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -779,9 +779,9 @@
         <Parameter Name="newName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <param name="newName">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="childID">要向其分配新名称的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <param name="newName">分配给 <paramref name="childID" /> 的新名称。</param>
+        <summary>将新名称分配给指定的辅助性对象。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -809,9 +809,9 @@
         <Parameter Name="newValue" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="childID">To be added.</param>
-        <param name="newValue">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="childID">要向其分配新值的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
+        <param name="newValue">分配给指定辅助性对象的新值。</param>
+        <summary>将新值分配给指定的辅助性对象。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2220,7 +2220,7 @@
   
  有效`objid`值。  
   
-|对象|值|描述|  
+|对象|“值”|描述|  
 |------------|-----------|-----------------|  
 |发出警报|0xFFFFFFF6|是指与窗口或应用程序关联的消息。|  
 |插入符号|0xFFFFFFF8|指的是文本插入栏 （脱字号），在窗口中。|  
