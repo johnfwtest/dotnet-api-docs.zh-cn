@@ -1,5 +1,5 @@
 <Type Name="ZipArchiveEntry" FullName="System.IO.Compression.ZipArchiveEntry">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="55e3ae90aad52d7054da1db64d761bb25654c531" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53394325" /></Metadata><TypeSignature Language="C#" Value="public class ZipArchiveEntry" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8c8bbc815a524d09bfecf3beb2be0de95e914fe5" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56392353" /></Metadata><TypeSignature Language="C#" Value="public class ZipArchiveEntry" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ZipArchiveEntry extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.Compression.ZipArchiveEntry" />
   <TypeSignature Language="VB.NET" Value="Public Class ZipArchiveEntry" />
@@ -22,7 +22,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>表示 zip 档案中的压缩文件。</summary>
+    <summary>表示压缩文档中的压缩文件。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -113,7 +113,7 @@
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在 zip 存档中的项的压缩大小。</summary>
+        <summary>获取项在 zip 存档中的已压缩大小。</summary>
         <value>在 zip 存档中的项的压缩大小。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -150,7 +150,7 @@
         <AssemblyName>netstandard</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.1;netcore-2.0;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.1;netcore-2.0;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -188,7 +188,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>删除 zip 存档中的项。</summary>
+        <summary>删除 zip 存档项。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.IO.IOException">已打开用于读取或写入的项。</exception>
         <exception cref="T:System.NotSupportedException">除 <see cref="F:System.IO.Compression.ZipArchiveMode.Update" /> 之外，此项的 zip 存档已通过一种模式中打开。</exception>
@@ -251,8 +251,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取 zip 存档中的项的相对路径。</summary>
-        <value>在 zip 存档中的项的相对路径。</value>
+        <summary>获取在 zip 存档中入口的相对路径。</summary>
+        <value>在 zip 存档中入口的相对路径。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -297,8 +297,8 @@
         <ReturnType>System.DateTimeOffset</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置最近一次更改 zip 存档中的项的时间。</summary>
-        <value>最近一次更改 zip 存档中的项的时间。</value>
+        <summary>获取或设置最后更改 zip 存档中的项的时间。</summary>
+        <value>上次在 zip 存档的入口已经改变。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -439,8 +439,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>打开 zip 存档中的项。</summary>
-        <returns>表示项的内容的流。</returns>
+        <summary>打开 zip 存档项。</summary>
+        <returns>表示输入的内容的流。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -460,14 +460,14 @@
         <exception cref="T:System.IO.IOException">当前已打开用于写入的项。  
   
 - 或 - 
-该条目已从存档中删除。  
+已从存档中删除的项。  
   
-或 
+- 或 - 
 已使用 <see cref="F:System.IO.Compression.ZipArchiveMode.Create" /> 模式打开此项的存档，并且该项已写入到该存档中。</exception>
         <exception cref="T:System.IO.InvalidDataException">存档中缺少该条目，或者该条目已损坏且无法读取。  
   
 - 或 - 
-已经通过使用一种不受支持的压缩方法压缩该条目。</exception>
+该输入已经通过使用一种不被支持的压缩方法压缩。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此项的 zip 存档。</exception>
       </Docs>
     </Member>
@@ -496,7 +496,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索 zip 存档中项的相对路径。</summary>
+        <summary>在 zip 存档中检索项的相对路径。</summary>
         <returns>项的相对路径，即存储在 <see cref="P:System.IO.Compression.ZipArchiveEntry.FullName" /> 属性中的值。</returns>
         <remarks>To be added.</remarks>
       </Docs>

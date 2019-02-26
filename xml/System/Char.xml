@@ -1,5 +1,5 @@
 <Type Name="Char" FullName="System.Char">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a5ca0b4b7eadc37ed97349de8c392420c6648619" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52369672" /></Metadata><TypeSignature Language="C#" Value="public struct Char : IComparable, IComparable&lt;char&gt;, IConvertible, IEquatable&lt;char&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6d197d2ab36d223b58e1113cd45b4ca8f83ce12d" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56373308" /></Metadata><TypeSignature Language="C#" Value="public struct Char : IComparable, IComparable&lt;char&gt;, IConvertible, IEquatable&lt;char&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit char extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;char&gt;, class System.IConvertible, class System.IEquatable`1&lt;char&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Char" />
   <TypeSignature Language="VB.NET" Value="Public Structure Char&#xA;Implements IComparable, IComparable(Of Char), IConvertible, IEquatable(Of Char)" />
@@ -48,6 +48,9 @@
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
       <AttributeName>System.Serializable</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -295,7 +298,7 @@
  </description></item><item><term> 大于零 
  </term><description> 此实例位于 <paramref name="value" /> 之后。  
   
-或 
+- 或 - 
  <paramref name="value" /> 为 <see langword="null" />。  
   
  </description></item></list></returns>
@@ -577,7 +580,7 @@
       <Docs>
         <param name="obj">要与此实例进行比较的对象。</param>
         <summary>返回一个值，该值指示此实例是否与指定的 <see cref="T:System.Char" /> 对象相等。</summary>
-        <returns>如果 <see langword="true" /> 参数与此实例的值相等，则为 <paramref name="obj" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="obj" /> 参数等于此实例的值，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -624,9 +627,9 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj">要与此示例比较的对象，或 <see langword="null" />。</param>
+        <param name="obj">与此实例进行比较的对象或为 <see langword="null" />。</param>
         <summary>返回一个值，该值指示此实例是否与指定的对象相等。</summary>
-        <returns>如果 <see langword="true" /> 是 <paramref name="obj" /> 的实例并且等于此实例的值，则为 <see cref="T:System.Char" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="obj" /> 是 <see cref="T:System.Char" /> 的实例并且等于此实例的值，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -735,7 +738,7 @@
       <Docs>
         <param name="c">要转换的 Unicode 字符。</param>
         <summary>将指定的数字 Unicode 字符转换为双精度浮点数。</summary>
-        <returns>如果该字符表示数字，则数值为 <paramref name="c" />；否则为 -1.0。</returns>
+        <returns>如果该字符表示数字，则为 <paramref name="c" /> 的数值；否则为 -1.0。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -881,7 +884,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将 Unicode 字符分类到由一个 <see cref="T:System.Globalization.UnicodeCategory" /> 值标识的组中。</summary>
+        <summary>将一个 Unicode 字符分类到由某个 <see cref="T:System.Globalization.UnicodeCategory" /> 值标识的组中。</summary>
         <altmember cref="M:System.Globalization.CharUnicodeInfo.GetUnicodeCategory(System.Char)" />
       </Docs>
     </MemberGroup>
@@ -1073,7 +1076,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于控制字符类别。</summary>
-        <returns>如果 <see langword="true" /> 是控制字符，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是控制字符，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1137,7 +1140,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于控制字符类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个控制字符，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是控制字符，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1170,7 +1173,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于十进制数字类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于十进制数字类别。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1218,7 +1221,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于十进制数字类别。</summary>
-        <returns>如果 <see langword="true" /> 是十进制数，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是十进制数字，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1286,7 +1289,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于十进制数字类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个十进制数，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是十进制数字，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1324,7 +1327,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否是一个高代理项。</summary>
+        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否为高代理项。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsHighSurrogate">
@@ -1362,8 +1365,8 @@
       </Parameters>
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
-        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否是一个高代理项。</summary>
-        <returns>如果 <see langword="true" /> 参数的数值范围是从 U+D800 到 U+DBFF，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否为高代理项。</summary>
+        <returns>如果 <paramref name="c" /> 参数的数值范围是从 U+D800 到 U+DBFF，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1421,7 +1424,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示字符串中指定位置处的 <see cref="T:System.Char" /> 对象是否为高代理项。</summary>
-        <returns>如果 <see langword="true" /> 中指定字符的数值范围是从 U+D800 到 U+DBFF，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="s" /> 参数中指定字符的数值范围从 U+D800 到 U+DBFF，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1454,7 +1457,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于 Unicode 字母类别。</summary>
+        <summary>指示是否将某个 Unicode 字符分类为 Unicode 字母。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1512,7 +1515,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于 Unicode 字母类别。</summary>
-        <returns>如果 <see langword="true" /> 是一个字母，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是字母，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1586,8 +1589,8 @@
       <Docs>
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
-        <summary>指示指定字符串中位于指定位置处的指定字符串是否属于 Unicode 字母类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个字母，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定字符串中位于指定位置处的字符是否属于 Unicode 字母类别。</summary>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 的字符是字母，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1684,7 +1687,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于字母或十进制数字类别。</summary>
-        <returns>如果 <see langword="true" /> 是字母或十进制数，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是字母或十进制数字，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1749,7 +1752,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于字母或十进制数字类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个字母或十进制数，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是字母或十进制数字，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1784,7 +1787,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于小写字母类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于小写字母类别。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsLower">
@@ -1824,7 +1827,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于小写字母类别。</summary>
-        <returns>如果 <see langword="true" /> 是一个小写字母，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是小写字母，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1890,7 +1893,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于小写字母类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个小写字母，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是小写字母，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1927,7 +1930,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否是一个低代理项。</summary>
+        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否为低代理项。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsLowSurrogate">
@@ -1965,8 +1968,8 @@
       </Parameters>
       <Docs>
         <param name="c">要计算的字符。</param>
-        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否是一个低代理项。</summary>
-        <returns>如果 <see langword="true" /> 参数的数值范围是从 U+DC00 到 U+DFFF，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定的 <see cref="T:System.Char" /> 对象是否为低代理项。</summary>
+        <returns>如果 <paramref name="c" /> 参数的数值范围是从 U+DC00 到 U+DFFF，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2024,7 +2027,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示字符串中指定位置处的 <see cref="T:System.Char" /> 对象是否为低代理项。</summary>
-        <returns>如果 <see langword="true" /> 中指定字符的数值范围是从 U+DC00 到 U+DFFF，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="s" /> 参数中指定字符的数值范围从 U+DC00 到 U+DFFF，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2058,7 +2061,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于数字类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于数字类别。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsNumber">
@@ -2098,7 +2101,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于数字类别。</summary>
-        <returns>如果 <see langword="true" /> 是一个数字，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是数字，则为 <see langword="true" />，否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2174,7 +2177,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置的字符是否属于数字类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个数字，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 的字符是数字，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2220,7 +2223,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于标点符号类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于标点符号类别。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2231,26 +2234,26 @@
 |-|-|-|-|  
 |U+0021 到 U + 0023|U + 060 C 和 U + 060 D|U + 1800 到 U + 180A|U + 3014 到 U + 301F|  
 |U + 0025 到 U + 002A|U+061B|U + 1944年和 U + 1945|U+3030|  
-|U + 002 C 到 U + 002F|U + 061E 和 U + 061F|U + 19DE 和 U + 19DF|U + 303D|  
-|U + 003A 和 U + 003B|U + 066A 到 U + 066 D|U + 1A1E 和 U + 1A1F|U + 30A0|  
-|U + 003F 和 U + 0040|U+06D4|U + 1B5A 到 U + 1B60|U + 30FB|  
+|U + 002 C 到 U + 002F|U + 061E 和 U + 061F|U + 19DE 和 U + 19DF|U+303D|  
+|U + 003A 和 U + 003B|U + 066A 到 U + 066 D|U + 1A1E 和 U + 1A1F|U+30A0|  
+|U + 003F 和 U + 0040|U+06D4|U + 1B5A 到 U + 1B60|U+30FB|  
 |U + 005B 到 U + 005 D|U+0700 到 U + 070 D|U + 2010 到 U + 2027|U + A874 到 U + A877|  
 |U+005F|U + 07F7 到 U + 07F9|U+2030 到 U + 2043|U + FD3E 和 U + FD3F|  
-|U + 007B|U + 0964年和 U + 0965|U + 2045 到 U + 2051|到 U + FE19 U+FE10|  
-|U + 007 D|U+0970|U + 2053 到 U + 205E|到 U + FE52 U+FE30|  
+|U+007B|U + 0964年和 U + 0965|U + 2045 到 U + 2051|到 U + FE19 U+FE10|  
+|U+007D|U+0970|U + 2053 到 U + 205E|到 U + FE52 U+FE30|  
 |U+00A1|U+0DF4|U + 207 D 和 U + 207E|U + FE54 到 U + FE61|  
-|U + 00AB|U + 0E4F 到 U + 0E5B|U + 208 D 和 U + 208E|U+FE63|  
-|U + 00AD|U + 0F04 到 U + 0F12|U + 2329年和 U + 232A|U+FE68|  
-|U + 00B7|U + 0F3A 到 U + 0F3D|U + 2768 到 U + 2775|U + FE6A 和 U + FE6B|  
-|U + 00BB|U+0F85|U + 27C 5 到 U + 27C 6|U + FF01 到 U + FF03|  
-|U + 00BF|U + 0FD0 和 U + 0FD1|U + 27E6 到 U + 27EB|U + FF05 到 U + FF0A|  
+|U+00AB|U + 0E4F 到 U + 0E5B|U + 208 D 和 U + 208E|U+FE63|  
+|U+00AD|U + 0F04 到 U + 0F12|U + 2329年和 U + 232A|U+FE68|  
+|U+00B7|U + 0F3A 到 U + 0F3D|U + 2768 到 U + 2775|U + FE6A 和 U + FE6B|  
+|U+00BB|U+0F85|U + 27C 5 到 U + 27C 6|U + FF01 到 U + FF03|  
+|U+00BF|U + 0FD0 和 U + 0FD1|U + 27E6 到 U + 27EB|U + FF05 到 U + FF0A|  
 |U+037E|U + 104A 到 U + 104F|U + 2983 到 U + 2998|U + FF0C 到 U + FF0F|  
-|U+0387|U + 10FB|到 U + 29DB U + 29D 8|U + FF1A 和 U + FF1B|  
+|U+0387|U+10FB|到 U + 29DB U + 29D 8|U + FF1A 和 U + FF1B|  
 |U + 055A 到 U + 055F|U + 1361 到 U + 1368|U + 29 FC 和 U + 29FD|U + FF1F 和 U + FF20|  
 |U + 0589年和 U + 058A|U + 166 D 和 U + 166E|U + 2CF9 到 U + 2CFC|U + FF3B 到 U + FF3D|  
-|U + 05BE|U + 169B 和 U + 169 C|U + 2CFE 和 U + 2CFF|U+FF3F|  
-|U+05C0|U + 16EB 到 U + 16ED|U + 2E00 到 U + 2E17|U + FF5B|  
-|U+05C3|U + 1735年和 U + 1736|U + 2E1C 和 U + 2E1D|U + FF5D|  
+|U+05BE|U + 169B 和 U + 169 C|U + 2CFE 和 U + 2CFF|U+FF3F|  
+|U+05C0|U + 16EB 到 U + 16ED|U + 2E00 到 U + 2E17|U+FF5B|  
+|U+05C3|U + 1735年和 U + 1736|U + 2E1C 和 U + 2E1D|U+FF5D|  
 |U+05C6|U + 17D 4 到 U + 17D 6|U + 3001 到 U + 3003|U + FF5F 到 U + FF65|  
 |U + 05F3 和 U + 05F4|到 U + 17DA U + 17D 8|U + 3008 到 U + 3011||  
   
@@ -2295,7 +2298,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于标点符号类别。</summary>
-        <returns>如果 <see langword="true" /> 是一个标点符号，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是标点符号，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2306,26 +2309,26 @@
 |-|-|-|-|  
 |U+0021 到 U + 0023|U + 060 C 和 U + 060 D|U + 1800 到 U + 180A|U + 3014 到 U + 301F|  
 |U + 0025 到 U + 002A|U+061B|U + 1944年和 U + 1945|U+3030|  
-|U + 002 C 到 U + 002F|U + 061E 和 U + 061F|U + 19DE 和 U + 19DF|U + 303D|  
-|U + 003A 和 U + 003B|U + 066A 到 U + 066 D|U + 1A1E 和 U + 1A1F|U + 30A0|  
-|U + 003F 和 U + 0040|U+06D4|U + 1B5A 到 U + 1B60|U + 30FB|  
+|U + 002 C 到 U + 002F|U + 061E 和 U + 061F|U + 19DE 和 U + 19DF|U+303D|  
+|U + 003A 和 U + 003B|U + 066A 到 U + 066 D|U + 1A1E 和 U + 1A1F|U+30A0|  
+|U + 003F 和 U + 0040|U+06D4|U + 1B5A 到 U + 1B60|U+30FB|  
 |U + 005B 到 U + 005 D|U+0700 到 U + 070 D|U + 2010 到 U + 2027|U + A874 到 U + A877|  
 |U+005F|U + 07F7 到 U + 07F9|U+2030 到 U + 2043|U + FD3E 和 U + FD3F|  
-|U + 007B|U + 0964年和 U + 0965|U + 2045 到 U + 2051|到 U + FE19 U+FE10|  
-|U + 007 D|U+0970|U + 2053 到 U + 205E|到 U + FE52 U+FE30|  
+|U+007B|U + 0964年和 U + 0965|U + 2045 到 U + 2051|到 U + FE19 U+FE10|  
+|U+007D|U+0970|U + 2053 到 U + 205E|到 U + FE52 U+FE30|  
 |U+00A1|U+0DF4|U + 207 D 和 U + 207E|U + FE54 到 U + FE61|  
-|U + 00AB|U + 0E4F 到 U + 0E5B|U + 208 D 和 U + 208E|U+FE63|  
-|U + 00AD|U + 0F04 到 U + 0F12|U + 2329年和 U + 232A|U+FE68|  
-|U + 00B7|U + 0F3A 到 U + 0F3D|U + 2768 到 U + 2775|U + FE6A 和 U + FE6B|  
-|U + 00BB|U+0F85|U + 27C 5 到 U + 27C 6|U + FF01 到 U + FF03|  
-|U + 00BF|U + 0FD0 和 U + 0FD1|U + 27E6 到 U + 27EB|U + FF05 到 U + FF0A|  
+|U+00AB|U + 0E4F 到 U + 0E5B|U + 208 D 和 U + 208E|U+FE63|  
+|U+00AD|U + 0F04 到 U + 0F12|U + 2329年和 U + 232A|U+FE68|  
+|U+00B7|U + 0F3A 到 U + 0F3D|U + 2768 到 U + 2775|U + FE6A 和 U + FE6B|  
+|U+00BB|U+0F85|U + 27C 5 到 U + 27C 6|U + FF01 到 U + FF03|  
+|U+00BF|U + 0FD0 和 U + 0FD1|U + 27E6 到 U + 27EB|U + FF05 到 U + FF0A|  
 |U+037E|U + 104A 到 U + 104F|U + 2983 到 U + 2998|U + FF0C 到 U + FF0F|  
-|U+0387|U + 10FB|到 U + 29DB U + 29D 8|U + FF1A 和 U + FF1B|  
+|U+0387|U+10FB|到 U + 29DB U + 29D 8|U + FF1A 和 U + FF1B|  
 |U + 055A 到 U + 055F|U + 1361 到 U + 1368|U + 29 FC 和 U + 29FD|U + FF1F 和 U + FF20|  
 |U + 0589年和 U + 058A|U + 166 D 和 U + 166E|U + 2CF9 到 U + 2CFC|U + FF3B 到 U + FF3D|  
-|U + 05BE|U + 169B 和 U + 169 C|U + 2CFE 和 U + 2CFF|U+FF3F|  
-|U+05C0|U + 16EB 到 U + 16ED|U + 2E00 到 U + 2E17|U + FF5B|  
-|U+05C3|U + 1735年和 U + 1736|U + 2E1C 和 U + 2E1D|U + FF5D|  
+|U+05BE|U + 169B 和 U + 169 C|U + 2CFE 和 U + 2CFF|U+FF3F|  
+|U+05C0|U + 16EB 到 U + 16ED|U + 2E00 到 U + 2E17|U+FF5B|  
+|U+05C3|U + 1735年和 U + 1736|U + 2E1C 和 U + 2E1D|U+FF5D|  
 |U+05C6|U + 17D 4 到 U + 17D 6|U + 3001 到 U + 3003|U + FF5F 到 U + FF65|  
 |U + 05F3 和 U + 05F4|到 U + 17DA U + 17D 8|U + 3008 到 U + 3011||  
   
@@ -2387,7 +2390,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于标点符号类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个标点符号，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是标点符号，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2400,26 +2403,26 @@
 |-|-|-|-|  
 |U+0021 到 U + 0023|U + 060 C 和 U + 060 D|U + 1800 到 U + 180A|U + 3014 到 U + 301F|  
 |U + 0025 到 U + 002A|U+061B|U + 1944年和 U + 1945|U+3030|  
-|U + 002 C 到 U + 002F|U + 061E 和 U + 061F|U + 19DE 和 U + 19DF|U + 303D|  
-|U + 003A 和 U + 003B|U + 066A 到 U + 066 D|U + 1A1E 和 U + 1A1F|U + 30A0|  
-|U + 003F 和 U + 0040|U+06D4|U + 1B5A 到 U + 1B60|U + 30FB|  
+|U + 002 C 到 U + 002F|U + 061E 和 U + 061F|U + 19DE 和 U + 19DF|U+303D|  
+|U + 003A 和 U + 003B|U + 066A 到 U + 066 D|U + 1A1E 和 U + 1A1F|U+30A0|  
+|U + 003F 和 U + 0040|U+06D4|U + 1B5A 到 U + 1B60|U+30FB|  
 |U + 005B 到 U + 005 D|U+0700 到 U + 070 D|U + 2010 到 U + 2027|U + A874 到 U + A877|  
 |U+005F|U + 07F7 到 U + 07F9|U+2030 到 U + 2043|U + FD3E 和 U + FD3F|  
-|U + 007B|U + 0964年和 U + 0965|U + 2045 到 U + 2051|到 U + FE19 U+FE10|  
-|U + 007 D|U+0970|U + 2053 到 U + 205E|到 U + FE52 U+FE30|  
+|U+007B|U + 0964年和 U + 0965|U + 2045 到 U + 2051|到 U + FE19 U+FE10|  
+|U+007D|U+0970|U + 2053 到 U + 205E|到 U + FE52 U+FE30|  
 |U+00A1|U+0DF4|U + 207 D 和 U + 207E|U + FE54 到 U + FE61|  
-|U + 00AB|U + 0E4F 到 U + 0E5B|U + 208 D 和 U + 208E|U+FE63|  
-|U + 00AD|U + 0F04 到 U + 0F12|U + 2329年和 U + 232A|U+FE68|  
-|U + 00B7|U + 0F3A 到 U + 0F3D|U + 2768 到 U + 2775|U + FE6A 和 U + FE6B|  
-|U + 00BB|U+0F85|U + 27C 5 到 U + 27C 6|U + FF01 到 U + FF03|  
-|U + 00BF|U + 0FD0 和 U + 0FD1|U + 27E6 到 U + 27EB|U + FF05 到 U + FF0A|  
+|U+00AB|U + 0E4F 到 U + 0E5B|U + 208 D 和 U + 208E|U+FE63|  
+|U+00AD|U + 0F04 到 U + 0F12|U + 2329年和 U + 232A|U+FE68|  
+|U+00B7|U + 0F3A 到 U + 0F3D|U + 2768 到 U + 2775|U + FE6A 和 U + FE6B|  
+|U+00BB|U+0F85|U + 27C 5 到 U + 27C 6|U + FF01 到 U + FF03|  
+|U+00BF|U + 0FD0 和 U + 0FD1|U + 27E6 到 U + 27EB|U + FF05 到 U + FF0A|  
 |U+037E|U + 104A 到 U + 104F|U + 2983 到 U + 2998|U + FF0C 到 U + FF0F|  
-|U+0387|U + 10FB|到 U + 29DB U + 29D 8|U + FF1A 和 U + FF1B|  
+|U+0387|U+10FB|到 U + 29DB U + 29D 8|U + FF1A 和 U + FF1B|  
 |U + 055A 到 U + 055F|U + 1361 到 U + 1368|U + 29 FC 和 U + 29FD|U + FF1F 和 U + FF20|  
 |U + 0589年和 U + 058A|U + 166 D 和 U + 166E|U + 2CF9 到 U + 2CFC|U + FF3B 到 U + FF3D|  
-|U + 05BE|U + 169B 和 U + 169 C|U + 2CFE 和 U + 2CFF|U+FF3F|  
-|U+05C0|U + 16EB 到 U + 16ED|U + 2E00 到 U + 2E17|U + FF5B|  
-|U+05C3|U + 1735年和 U + 1736|U + 2E1C 和 U + 2E1D|U + FF5D|  
+|U+05BE|U + 169B 和 U + 169 C|U + 2CFE 和 U + 2CFF|U+FF3F|  
+|U+05C0|U + 16EB 到 U + 16ED|U + 2E00 到 U + 2E17|U+FF5B|  
+|U+05C3|U + 1735年和 U + 1736|U + 2E1C 和 U + 2E1D|U+FF5D|  
 |U+05C6|U + 17D 4 到 U + 17D 6|U + 3001 到 U + 3003|U + FF5F 到 U + FF65|  
 |U + 05F3 和 U + 05F4|到 U + 17DA U + 17D 8|U + 3008 到 U + 3011||  
   
@@ -2449,7 +2452,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于分隔符类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于分隔符类别。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2506,7 +2509,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于分隔符类别。</summary>
-        <returns>如果 <see langword="true" /> 是分隔符，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是分隔符，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2580,7 +2583,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于分隔符类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个分隔符，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是分隔符，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2625,7 +2628,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示字符是否具有代理项代码单位。</summary>
+        <summary>指示字符是否具有代理项码单元。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsSurrogate">
@@ -2664,8 +2667,8 @@
       </Parameters>
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
-        <summary>指示指定的字符是否具有指定的代理项代码单位。</summary>
-        <returns>如果 <see langword="true" /> 为高代理项或低代理项，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定的字符是否具有代理项码单元。</summary>
+        <returns>如果 <paramref name="c" /> 为高代理项或低代理项，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2726,8 +2729,8 @@
       <Docs>
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
-        <summary>指示指定字符串中位于指定位置的字符是否具有代理项代码单位。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个高代理项或低代理项，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定字符串中位于指定位置的字符是否具有代理项码单元。</summary>
+        <returns>如果 <paramref name="index" /> 中位于位置 <paramref name="s" /> 的字符为高代理项或低代理项，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2764,7 +2767,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示两个指定的 <see cref="T:System.Char" /> 对象是否形成一个代理项对。</summary>
+        <summary>指示两个指定的 <see cref="T:System.Char" /> 对象是否形成代理项对。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsSurrogatePair">
@@ -2804,8 +2807,8 @@
       <Docs>
         <param name="highSurrogate">要作为代理项对的高代理项进行计算的字符。</param>
         <param name="lowSurrogate">要作为代理项对的低代理项进行计算的字符。</param>
-        <summary>指示两个指定的 <see cref="T:System.Char" /> 对象是否形成一个代理项对。</summary>
-        <returns>如果 <see langword="true" /> 参数的数值范围是从 U+D800 到 U+DBFF，且 <paramref name="highSurrogate" /> 参数的数值是从 U+DC00 到 U+DFFF，则为 <paramref name="lowSurrogate" />；否则为 <see langword="false" />。</returns>
+        <summary>指示两个指定的 <see cref="T:System.Char" /> 对象是否形成代理项对。</summary>
+        <returns>如果 <paramref name="highSurrogate" /> 参数的数值范围是从 U+D800 到 U+DBFF，并且 <paramref name="lowSurrogate" /> 参数的数值范围是从 U+DC00 到 U+DFFF，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2864,8 +2867,8 @@
       <Docs>
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符对的开始位置。</param>
-        <summary>指示字符串中指定位置处的两个相邻 <see cref="T:System.Char" /> 对象是否形成一个代理项对。</summary>
-        <returns>如果 <see langword="true" /> 参数包括 <paramref name="s" /> 和 <paramref name="index" /> + 1 位置处的相邻字符，并且 <paramref name="index" /> 位置处字符的数值范围从 U+D800 到 U+DBFF，<paramref name="index" />+1 位置处字符的数值范围从 U+DC00 到 U+DFFF，则为 <paramref name="index" />；否则为 <see langword="false" />。</returns>
+        <summary>指示字符串中指定位置处的两个相邻 <see cref="T:System.Char" /> 对象是否形成代理项对。</summary>
+        <returns>如果 <paramref name="s" /> 参数包括 <paramref name="index" /> 和 <paramref name="index" /> + 1 位置处的相邻字符，并且 <paramref name="index" /> 位置处字符的数值在 U+D800 到 U+DBFF 范围内，<paramref name="index" /> +1 位置处字符的数值在 U+DC00 到 U+DFFF 范围内，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2898,7 +2901,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于符号字符类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于符号字符类别。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2964,7 +2967,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于符号字符类别。</summary>
-        <returns>如果 <see langword="true" /> 是符号字符，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是符号字符，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3047,7 +3050,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于符号字符类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个符号字符，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是符号字符，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3101,7 +3104,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于大写字母类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于大写字母类别。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsUpper">
@@ -3141,7 +3144,7 @@
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
         <summary>指示指定的 Unicode 字符是否属于大写字母类别。</summary>
-        <returns>如果 <see langword="true" /> 是一个大写字母，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="c" /> 是大写字母，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3198,7 +3201,7 @@
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
         <summary>指示指定字符串中位于指定位置处的字符是否属于大写字母类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是一个大写字母，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是大写字母，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3224,7 +3227,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示 Unicode 字符是否属于空格类别。</summary>
+        <summary>指示某个 Unicode 字符是否属于空白类别。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3284,8 +3287,8 @@
       </Parameters>
       <Docs>
         <param name="c">要计算的 Unicode 字符。</param>
-        <summary>指示指定的 Unicode 字符是否属于空格类别。</summary>
-        <returns>如果 <see langword="true" /> 是空格，则为 <paramref name="c" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定的 Unicode 字符是否属于空白类别。</summary>
+        <returns>如果 <paramref name="c" /> 是空白，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3358,8 +3361,8 @@
       <Docs>
         <param name="s">一个字符串。</param>
         <param name="index"><paramref name="s" /> 中要计算的字符的位置。</param>
-        <summary>指示指定字符串中位于指定位置处的字符是否属于空格类别。</summary>
-        <returns>如果 <see langword="true" /> 中位于 <paramref name="index" /> 的字符是空格，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <summary>指示指定字符串中位于指定位置处的字符是否属于空白类别。</summary>
+        <returns>如果 <paramref name="index" /> 中位于 <paramref name="s" /> 处的字符是空白，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3517,7 +3520,7 @@
       <Docs>
         <param name="s">包含单个字符的字符串，或 <see langword="null" />。</param>
         <summary>将指定字符串的值转换为它的等效 Unicode 字符。</summary>
-        <returns>一个等效于 <paramref name="s" /> 中唯一字符的 Unicode 字符。</returns>
+        <returns>一个等效于 <paramref name="s" /> 中的唯一字符的 Unicode 字符。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3681,7 +3684,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3729,8 +3732,8 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToChar(System.IFormatProvider)" />。</summary>
-        <returns>当前 <see cref="T:System.Char" /> 对象的值未更改。</returns>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToChar(System.IFormatProvider)" />。</summary>
+        <returns>当前 <see cref="T:System.Char" /> 对象的值保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3903,7 +3906,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3951,7 +3954,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3999,7 +4002,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4052,7 +4055,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4175,9 +4178,9 @@
         <Parameter Name="provider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="type"><see cref="T:System.Type" /> 对象。</param>
-        <param name="provider">一个 <see cref="T:System.IFormatProvider" /> 对象。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />。</summary>
+        <param name="type">一个 <see cref="T:System.Type" /> 对象。</param>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> 对象。</param>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />。</summary>
         <returns>指定类型的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4188,7 +4191,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidCastException">当前 <see cref="T:System.Char" /> 对象的值不能转换为 <paramref name="type" /> 参数指定的类型。</exception>
+        <exception cref="T:System.InvalidCastException">无法将当前 <see cref="T:System.Char" /> 对象的值转换为由 <paramref name="type" /> 参数指定的类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.IConvertible.ToUInt16">
@@ -4231,8 +4234,8 @@
         <Parameter Name="provider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="provider">一个 <see cref="T:System.IFormatProvider" /> 对象。 （由于 <see langword="null" /> 参数已被忽略，因此指定 <paramref name="provider" />。）</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />。</summary>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> 对象。 （由于 <paramref name="provider" /> 参数已被忽略，因此指定 <see langword="null" />。）</param>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4284,8 +4287,8 @@
         <Parameter Name="provider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="provider">一个 <see cref="T:System.IFormatProvider" /> 对象。 （由于 <see langword="null" /> 参数已被忽略，因此指定 <paramref name="provider" />。）</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />。</summary>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> 对象。 （由于 <paramref name="provider" /> 参数已被忽略，因此指定 <see langword="null" />。）</param>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4337,8 +4340,8 @@
         <Parameter Name="provider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="provider">一个 <see cref="T:System.IFormatProvider" /> 对象。 （由于 <see langword="null" /> 参数已被忽略，因此指定 <paramref name="provider" />。）</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />。</summary>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> 对象。 （由于 <paramref name="provider" /> 参数已被忽略，因此指定 <see langword="null" />。）</param>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />。</summary>
         <returns>当前 <see cref="T:System.Char" /> 对象的转换值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4400,7 +4403,7 @@
       <Docs>
         <param name="c">要转换的 Unicode 字符。</param>
         <summary>将 Unicode 字符的值转换为它的小写等效项。</summary>
-        <returns><paramref name="c" /> 的小写等效项，或者，如果 <paramref name="c" /> 已经是小写字母或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
+        <returns><paramref name="c" /> 的小写等效项；如果 <paramref name="c" /> 已经是小写形式或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4465,7 +4468,7 @@
         <param name="c">要转换的 Unicode 字符。</param>
         <param name="culture">一个对象，用于提供区域性特定的大小写规则。</param>
         <summary>使用指定的区域性特定格式设置信息将指定 Unicode 字符的值转换为它的小写等效项。</summary>
-        <returns><paramref name="c" /> 的小写等效项（根据 <paramref name="culture" /> 进行修改），或者，如果 <paramref name="c" /> 已经是小写字母或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
+        <returns>根据 <paramref name="c" /> 修改的 <paramref name="culture" /> 的小写等效项；如果 <paramref name="c" /> 已经是小写形式或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4530,7 +4533,7 @@
       <Docs>
         <param name="c">要转换的 Unicode 字符。</param>
         <summary>使用固定区域性的大小写规则，将 Unicode 字符的值转换为其小写等效项。</summary>
-        <returns><paramref name="c" /> 参数的小写等效项，或者，如果 <paramref name="c" /> 已经是小写字母或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
+        <returns><paramref name="c" /> 参数的小写等效项；如果 <paramref name="c" /> 已经是小写形式或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4652,7 +4655,7 @@
       <Docs>
         <param name="c">要转换的 Unicode 字符。</param>
         <summary>将指定的 Unicode 字符转换为它的等效字符串表示形式。</summary>
-        <returns><paramref name="c" /> 值的字符串表示形式。</returns>
+        <returns><paramref name="c" /> 的值的字符串表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4777,7 +4780,7 @@
       <Docs>
         <param name="c">要转换的 Unicode 字符。</param>
         <summary>将 Unicode 字符的值转换为它的大写等效项。</summary>
-        <returns><paramref name="c" /> 的大写等效项，或者，如果 <paramref name="c" /> 已经是大写字母或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
+        <returns><paramref name="c" /> 的大写等效项；如果 <paramref name="c" /> 已经是大写形式、没有大写等效项或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4841,7 +4844,7 @@
         <param name="c">要转换的 Unicode 字符。</param>
         <param name="culture">一个对象，用于提供区域性特定的大小写规则。</param>
         <summary>使用指定的区域性特定格式设置信息将指定 Unicode 字符的值转换为它的大写等效项。</summary>
-        <returns><paramref name="c" /> 的大写等效项（根据 <paramref name="culture" /> 进行修改），或者，如果 <paramref name="c" /> 已经是大写字母、没有大写等效项或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
+        <returns><paramref name="c" /> 的大写等效项（根据 <paramref name="culture" /> 进行修改）；如果 <paramref name="c" /> 已经是大写形式、没有大写等效项或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4905,7 +4908,7 @@
       <Docs>
         <param name="c">要转换的 Unicode 字符。</param>
         <summary>使用固定区域性的大小写规则，将 Unicode 字符的值转换为其大写等效项。</summary>
-        <returns><paramref name="c" /> 参数的小写等效项，或者，如果 <paramref name="c" /> 已经是大写字母或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
+        <returns><paramref name="c" /> 参数的大写等效项；如果 <paramref name="c" /> 已经是大写形式或不是字母，则为 <paramref name="c" /> 的未更改值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4957,9 +4960,9 @@
       </Parameters>
       <Docs>
         <param name="s">包含单个字符的字符串，或 <see langword="null" />。</param>
-        <param name="result">此方法返回时，如果转换成功，则包含与 <paramref name="s" /> 中的唯一字符等效的 Unicode 字符；如果转换失败，则包含未定义的值。 如果 <paramref name="s" /> 参数为 <see langword="null" /> 或 <paramref name="s" /> 的长度不为 1，则转换失败。 此参数未经初始化即被传递。</param>
-        <summary>将指定字符串的值转换为它的等效 Unicode 字符。 一个指示转换是成功还是失败的返回代码。</summary>
-        <returns>如果 <see langword="true" /> 参数成功转换，则为 <paramref name="s" />；否则为 <see langword="false" />。</returns>
+        <param name="result">此方法返回时，如果转换成功，则包含与 <paramref name="s" /> 中的单个字符等效的 Unicode 字符；如果转换失败，则包含未定义的值。 如果 <paramref name="s" /> 参数为 <see langword="null" />，或者 <paramref name="s" /> 的长度不是 1，则转换失败。 此参数未经初始化即被传递。</param>
+        <summary>将指定字符串的值转换为它的等效 Unicode 字符。 一个指示转换是否成功的返回代码。</summary>
+        <returns>如果 <paramref name="s" /> 参数成功转换，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

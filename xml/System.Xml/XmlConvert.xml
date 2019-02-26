@@ -1,5 +1,5 @@
 <Type Name="XmlConvert" FullName="System.Xml.XmlConvert">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9b7119391e323f3222e36605a2de5c38872895dc" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55360648" /></Metadata><TypeSignature Language="C#" Value="public class XmlConvert" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b86397231d641d04128f41bea17f071284ac0a64" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56398723" /></Metadata><TypeSignature Language="C#" Value="public class XmlConvert" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlConvert extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlConvert" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlConvert" />
@@ -150,14 +150,14 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
 ## Remarks  
  对名称进行解码使用以下规则：  
   
--   名称进行解码从左到右。  
+- 名称进行解码从左到右。  
   
--   任何序列 _x `HHHH_` (其中 HHHH 代表有效，四位十六进制 ucs-2 代码) 尚未解码转换为相应的 Unicode 2.1 (Unicode 3.0 受应用程序，则) 字符。  
+- 任何序列\_x*HHHH* \_ （其中 HHHH 代表有效的、 四位数字的十六进制 ucs-2 代码），尚未解码转换为相应的 Unicode 2.1 (如果支持 Unicode 3.0应用程序） 字符。  
   
--   不识别任何缩写。 它们将传递不转换。 例如，_x20\_或未解码为 __。  
+- 不识别任何缩写。 它们将传递不转换。 例如， \_x20\_或\_\_未解码。
   
 > [!NOTE]
->  实际的编码的字符是特定于应用程序。 例如，Order_x0020_Details 将成为订单详细信息。 甚至转义在 XML 名称中无效的字符将会被识别和解码。  
+> 实际的编码的字符是特定于应用程序。 例如，订购\_x0020\_详细信息将成为订单详细信息。 甚至转义在 XML 名称中无效的字符将会被识别和解码。  
   
    
   
@@ -220,9 +220,9 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
 ## Remarks  
  此方法是类似于<xref:System.Xml.XmlConvert.EncodeName%2A>方法，但它进行编码的冒号字符，这可确保名称可以用作命名空间限定名的本地名称部分。  
   
- 例如，如果您向此方法传递无效的名称: b，它返回 a_x003a_b，这是有效的本地名称。  
+ 例如，如果您向此方法传递无效的名称: b，它将返回\_x003a\_b，后者是有效的本地名称。  
   
- 如果`name`是`null`或`String.Empty`然后获取返回的相同值。  
+ 如果`name`是`null`或<xref:System.String.Empty?displayProperty=fullName>，该方法返回相同的值。  
   
    
   
@@ -287,9 +287,9 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
 ## Remarks  
  此方法将转换为空格或半角片假名，需要映射到 XML 名称且不支持或不存在架构等无效字符。 无效的字符将转换为转义数字实体编码。  
   
- 转义符"_"。 任何不符合的 XML 名称字符[XML 1.0 规范 （第四版） 建议](https://www.w3.org/TR/2006/REC-xml-20060816/)被转义为 _xHHHH\_。 HHHH 字符串代表最高有效位的第一个订单中的字符的四位十六进制 ucs-2 代码。 例如，名称 Order Details 编码为 Order_x0020_Details。  
+ 转义符是"\_"。 任何不符合的 XML 名称字符[XML 1.0 规范 （第四版） 建议](https://www.w3.org/TR/2006/REC-xml-20060816/)转义为\_xHHHH\_。 HHHH 字符串代表最高有效位的第一个订单中的字符的四位十六进制 ucs-2 代码。 例如，名称 Order Details 编码为顺序\_x0020\_详细信息。  
   
- 下划线字符不需要转义，除非它后面跟有一个字符序列，并且在对名称解码时，该序列与下划线一起会被错误地解释为转义序列。 例如，Order_Details 不编码，而 Order_x0020_ 编码为 Order_x005f_x0020_。 不允许的任何缩写。 例如，窗体 _x20\_并且不会生成 __。  
+ 下划线字符不需要转义，除非它后面跟有一个字符序列，并且在对名称解码时，该序列与下划线一起会被错误地解释为转义序列。 例如，订购\_不编码详细信息，而排序\_x0020\_编码为顺序\_x005f\_x0020\_。 不允许的任何缩写。 例如，窗体 _x20\_并\_\_不生成。  
   
  此方法可保证该名称有效根据 XML 规范。 它允许冒号位于任何位置，这意味着，名称可能仍然会根据无效[W3C Namespace 规范](https://www.w3.org/TR/REC-xml-names/)。 若要保证它是有效的命名空间限定名称，请使用<xref:System.Xml.XmlConvert.EncodeLocalName%2A>前缀和本地名称部分，并加入一个冒号的结果。  
   
@@ -354,7 +354,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法可保证该名称有效根据 XML 规范。 例如，如果您向此方法传递了无效名称 70 +，则返回 70_x002b_，这是有效的 XML 名称。  
+ 此方法可保证该名称有效根据 XML 规范。 例如，如果您向此方法传递了无效名称 70 +，它返回 70\_x002b\_这是有效的 XML 名称。  
   
  如果`name`是`null`或 String.Empty，则 get 返回的相同值。  
   
@@ -684,7 +684,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Byte.MinValue" /> 或大于 <see cref="F:System.Byte.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Byte.MinValue" /> 或大于 <see cref="F:System.Byte.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToChar">
@@ -764,7 +764,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Use XmlConvert.ToDateTime() that takes in XmlDateTimeSerializationMode")</AttributeName>
         </Attribute>
       </Attributes>
@@ -933,7 +933,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       <Docs>
         <param name="s">要转换的 <see cref="T:System.String" /> 值。</param>
         <param name="dateTimeOption">枚举值之一，用于指定日期是应转换为本地时间，还是应保留为协调通用时间 (UTC)（如果它为 UTC 日期）。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XmlDateTimeSerializationMode" /> 将 <see cref="T:System.String" /> 转换为 <see cref="T:System.DateTime" /></summary>
+        <summary>使用指定的 <see cref="T:System.String" /> 将 <see cref="T:System.DateTime" /> 转换为 <see cref="T:System.Xml.XmlDateTimeSerializationMode" /></summary>
         <returns><see cref="T:System.DateTime" /> 的等效 <see cref="T:System.String" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NullReferenceException"><paramref name="s" /> 为 <see langword="null" />。</exception>
@@ -1212,7 +1212,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Decimal.MinValue" /> 或大于 <see cref="F:System.Decimal.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Decimal.MinValue" /> 或大于 <see cref="F:System.Decimal.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToDouble">
@@ -1275,7 +1275,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Double.MinValue" /> 或大于 <see cref="F:System.Double.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Double.MinValue" /> 或大于 <see cref="F:System.Double.MaxValue" /> 的数字。</exception>
         <altmember cref="F:System.Double.PositiveInfinity" />
         <altmember cref="F:System.Double.NegativeInfinity" />
       </Docs>
@@ -1360,7 +1360,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Int16.MinValue" /> 或大于 <see cref="F:System.Int16.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Int16.MinValue" /> 或大于 <see cref="F:System.Int16.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToInt32">
@@ -1403,7 +1403,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Int32.MinValue" /> 或大于 <see cref="F:System.Int32.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Int32.MinValue" /> 或大于 <see cref="F:System.Int32.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToInt64">
@@ -1446,7 +1446,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Int64.MinValue" /> 或大于 <see cref="F:System.Int64.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Int64.MinValue" /> 或大于 <see cref="F:System.Int64.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToSByte">
@@ -1477,7 +1477,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1494,7 +1494,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.SByte.MinValue" /> 或大于 <see cref="F:System.SByte.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.SByte.MinValue" /> 或大于 <see cref="F:System.SByte.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToSingle">
@@ -1544,7 +1544,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Single.MinValue" /> 或大于 <see cref="F:System.Single.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.Single.MinValue" /> 或大于 <see cref="F:System.Single.MaxValue" /> 的数字。</exception>
         <altmember cref="F:System.Single.PositiveInfinity" />
         <altmember cref="F:System.Single.NegativeInfinity" />
       </Docs>
@@ -1705,7 +1705,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Use XmlConvert.ToString() that takes in XmlDateTimeSerializationMode")</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1769,7 +1769,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       <Docs>
         <param name="value">要转换的 <see cref="T:System.DateTimeOffset" />。</param>
         <summary>将提供的 <see cref="T:System.DateTimeOffset" /> 转换为 <see cref="T:System.String" />。</summary>
-        <returns>提供的 <see cref="T:System.DateTimeOffset" /> 的 <see cref="T:System.String" /> 表示形式。</returns>
+        <returns>提供的 <see cref="T:System.String" /> 的 <see cref="T:System.DateTimeOffset" /> 表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2080,7 +2080,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2213,7 +2213,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2258,7 +2258,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2303,7 +2303,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2405,7 +2405,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
       <Docs>
         <param name="value">要转换的 <see cref="T:System.DateTime" /> 值。</param>
         <param name="dateTimeOption"><see cref="T:System.Xml.XmlDateTimeSerializationMode" /> 值之一，用于指定如何处理 <see cref="T:System.DateTime" /> 值。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XmlDateTimeSerializationMode" /> 将 <see cref="T:System.DateTime" /> 转换为 <see cref="T:System.String" />。</summary>
+        <summary>使用指定的 <see cref="T:System.DateTime" /> 将 <see cref="T:System.String" /> 转换为 <see cref="T:System.Xml.XmlDateTimeSerializationMode" />。</summary>
         <returns><see cref="T:System.String" /> 的等效 <see cref="T:System.DateTime" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException"><paramref name="dateTimeOption" /> 值无效。</exception>
@@ -2449,7 +2449,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <param name="value">要转换的 <see cref="T:System.DateTimeOffset" />。</param>
         <param name="format"><paramref name="s" /> 转换为的格式。 该格式参数可以是 XML DateTime 类型的 W3C 建议的任何子集。 （有关详细信息，请参阅 XML 架构规范的 <see href="https://www.w3.org/TR/xmlschema-2/#dateTime">dateTime</see> 部分。）</param>
         <summary>将提供的 <see cref="T:System.DateTimeOffset" /> 转换为指定格式的 <see cref="T:System.String" />。</summary>
-        <returns>提供的 <see cref="T:System.DateTimeOffset" /> 的指定格式的 <see cref="T:System.String" /> 表示形式。</returns>
+        <returns>提供的 <see cref="T:System.String" /> 的指定格式的 <see cref="T:System.DateTimeOffset" /> 表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2532,7 +2532,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2549,7 +2549,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.UInt16.MinValue" /> 或大于 <see cref="F:System.UInt16.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.UInt16.MinValue" /> 或大于 <see cref="F:System.UInt16.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToUInt32">
@@ -2580,7 +2580,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2597,7 +2597,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.UInt32.MinValue" /> 或大于 <see cref="F:System.UInt32.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.UInt32.MinValue" /> 或大于 <see cref="F:System.UInt32.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToUInt64">
@@ -2628,7 +2628,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -2645,7 +2645,7 @@ writer.WriteElementString(XmlConvert.EncodeName("Order Detail"),"My order");
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
-        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.UInt64.MinValue" /> 或大于 <see cref="F:System.UInt64.MaxValue" /> 的数字。</exception>
+        <exception cref="T:System.OverflowException"><paramref name="s" /> 表示小于 <see cref="F:System.UInt64.MinValue" /> 或大于 <see cref="F:System.UInt64.MaxValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="VerifyName">
@@ -2861,7 +2861,7 @@ catch(Exception e) {
       </Parameters>
       <Docs>
         <param name="publicId">包含要验证的 ID 的 <see cref="T:System.String" />。</param>
-        <summary>如果字符串自变量中的所有字符都是有效的公共 ID 字符，则返回传入的字符串实例。</summary>
+        <summary>如果字符串参数中的所有字符都是有效的公共 ID 字符，则返回传入的字符串实例。</summary>
         <returns>如果自变量中的所有字符都是有效的公共 ID 字符，则为传入字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2965,7 +2965,7 @@ catch(Exception e) {
       </Parameters>
       <Docs>
         <param name="content">要验证的 <see cref="T:System.String" />。</param>
-        <summary>如果字符串自变量中的所有字符都是有效的空白字符，则返回传入的字符串实例。</summary>
+        <summary>如果字符串参数中的所有字符都是有效的空白字符，则返回传入的字符串实例。</summary>
         <returns>如果字符串参数中的所有字符都是有效的空白字符，则为传入字符串实例；否则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

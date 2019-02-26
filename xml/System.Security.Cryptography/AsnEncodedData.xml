@@ -1,5 +1,5 @@
 <Type Name="AsnEncodedData" FullName="System.Security.Cryptography.AsnEncodedData">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a79b9b35006197cd3cc7ff315118a8d28f7ecfba" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39847709" /></Metadata><TypeSignature Language="C#" Value="public class AsnEncodedData" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="897375788e5af053d273c5f104882d06aa3c424b" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56404183" /></Metadata><TypeSignature Language="C#" Value="public class AsnEncodedData" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsnEncodedData extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.AsnEncodedData" />
   <TypeSignature Language="VB.NET" Value="Public Class AsnEncodedData" />
@@ -213,7 +213,7 @@
         <Parameter Name="rawData" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="oid">一个 <see cref="T:System.Security.Cryptography.Oid" /> 对象。</param>
+        <param name="oid"><see cref="T:System.Security.Cryptography.Oid" /> 对象。</param>
         <param name="rawData">一个包含 Abstract Syntax Notation One (ASN.1) 编码数据的字节数组。</param>
         <summary>使用一个 <see cref="T:System.Security.Cryptography.AsnEncodedData" /> 对象和一个字节数组初始化 <see cref="T:System.Security.Cryptography.Oid" /> 类的新实例。</summary>
         <remarks>
@@ -368,7 +368,14 @@
 ## Remarks  
  如果需要打印抽象语法表示法一 (ASN.1） 编码数据或将信息输出到文本框中，请使用此方法。 使用`multiLine`参数来控制输出的布局。  
   
-   
+ ### <a name="os-dependency"></a>操作系统依赖项
+  不要依赖于此方法的输出由于适用于打印，并且不保证其输出格式。
+  
+  ```csharp
+   // output "DNS Name=san1.example.com\r\nDNS Name=san2.example.com\r\n" on .NET Core 2.2 Windows
+   // output "DNS:san1.example.com, DNS:san2.example.com" on .NET Core 2.2 Linux
+   extension.Format(true);
+  ```
   
 ## Examples  
  下面的代码示例演示如何使用 <xref:System.Security.Cryptography.AsnEncodedData> 类。  
@@ -415,7 +422,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <see cref="T:System.Security.Cryptography.Oid" /> 对象的 <see cref="T:System.Security.Cryptography.AsnEncodedData" /> 值。</summary>
-        <value>一个 <see cref="T:System.Security.Cryptography.Oid" /> 对象。</value>
+        <value><see cref="T:System.Security.Cryptography.Oid" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
