@@ -1,5 +1,5 @@
 <Type Name="FileSystemWatcher" FullName="System.IO.FileSystemWatcher">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="34b59e176f6aacaeb6923e933cee1e249087efb6" /><Meta Name="ms.sourcegitcommit" Value="22744e2f9d07a51900a968efffd9e390117d64a1" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/03/2019" /><Meta Name="ms.locfileid" Value="55673691" /></Metadata><TypeSignature Language="C#" Value="public class FileSystemWatcher : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a41171f2bdab9b8632e28360edd7b39f00bce7b7" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56358701" /></Metadata><TypeSignature Language="C#" Value="public class FileSystemWatcher : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileSystemWatcher extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="DocId" Value="T:System.IO.FileSystemWatcher" />
   <TypeSignature Language="VB.NET" Value="Public Class FileSystemWatcher&#xA;Inherits Component&#xA;Implements ISupportInitialize" />
@@ -171,7 +171,7 @@
   
  下表显示的实例的初始属性值<xref:System.IO.FileSystemWatcher>。  
   
-|Property|初始值|  
+|属性|初始值|  
 |--------------|-------------------|  
 |<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>|按位 OR 组合`LastWrite`， `FileName`，和 `DirectoryName`|  
 |<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>|`false`|  
@@ -242,8 +242,8 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">要监视的目录，以标准表示法或通用命名约定 (UNC) 表示法表示。</param>
-        <summary>在给定要监视的指定目录的情况下，初始化 <see cref="T:System.IO.FileSystemWatcher" /> 类的新实例。</summary>
+        <param name="path">以标准表示法或统一命名约定 (UNC) 表示法表示的要监视的目录。</param>
+        <summary>给定要监视的指定目录，初始化 <see cref="T:System.IO.FileSystemWatcher" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -307,9 +307,9 @@
         <Parameter Name="filter" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">要监视的目录，以标准表示法或通用命名约定 (UNC) 表示法表示。</param>
+        <param name="path">以标准表示法或统一命名约定 (UNC) 表示法表示的要监视的目录。</param>
         <param name="filter">要监视的文件的类型。 例如，“*.txt”监视所有文本文件的更改。</param>
-        <summary>在给定要监视的指定目录和文件类型的情况下，初始化 <see cref="T:System.IO.FileSystemWatcher" /> 类的新实例。</summary>
+        <summary>给定要监视的指定目录和文件类型，初始化 <see cref="T:System.IO.FileSystemWatcher" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -745,8 +745,6 @@
 ## Examples  
  下面的示例创建<xref:System.IO.FileSystemWatcher>监视在运行时指定的目录。 该组件设置为监视中的更改`LastWrite`和`LastAccess`时间、 创建、 删除、 或重命名的目录中的文本文件。 如果文件是更改、 创建，或删除，文件的路径将打印到控制台。 在一个文件重命名后，旧的和新路径将打印到控制台。  
   
- 使用<xref:System.Diagnostics>和<xref:System.IO>对于此示例的命名空间。  
-  
  [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
  [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
  [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
@@ -917,7 +915,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置用于确定在目录中监视哪些文件的筛选器字符串。</summary>
+        <summary>获取或设置筛选字符串，用于确定在目录中监视哪些文件。</summary>
         <value>筛选器字符串。 默认值为"*。\*"（监视所有文件。）</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -945,8 +943,6 @@
 ## Examples  
  下面的示例创建<xref:System.IO.FileSystemWatcher>监视在运行时指定的目录。 该组件设置为监视中的更改`LastWrite`和`LastAccess`时间、 创建、 删除、 或重命名的目录中的文本文件。 如果文件是更改、 创建，或删除，文件的路径将打印到控制台。 在一个文件重命名后，旧的和新路径将打印到控制台。  
   
- 使用<xref:System.Diagnostics>和<xref:System.IO>对于此示例的命名空间。  
-  
  [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
  [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
  [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
@@ -956,6 +952,33 @@
         <altmember cref="P:System.IO.FileSystemWatcher.NotifyFilter" />
         <altmember cref="P:System.IO.FileSystemWatcher.IncludeSubdirectories" />
         <altmember cref="P:System.IO.FileSystemWatcher.InternalBufferSize" />
+      </Docs>
+    </Member>
+    <Member MemberName="Filters">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; Filters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; Filters" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.Filters" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Filters As Collection(Of String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::ObjectModel::Collection&lt;System::String ^&gt; ^ Filters { System::Collections::ObjectModel::Collection&lt;System::String ^&gt; ^ get(); };" />
+      <MemberSignature Language="F#" Value="member this.Filters : System.Collections.ObjectModel.Collection&lt;string&gt;" Usage="System.IO.FileSystemWatcher.Filters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -1028,7 +1051,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否应监视指定路径中的子目录。</summary>
+        <summary>获取或设置一个值，该值指示是否监视指定路径中的子目录。</summary>
         <value>如果要监视子目录，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1156,7 +1179,7 @@
         <ReturnType>System.IO.NotifyFilters</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要监视的更改的类型。</summary>
+        <summary>获取或设置要监视的更改类型。</summary>
         <value><see cref="T:System.IO.NotifyFilters" /> 值之一。 默认值为 <see langword="LastWrite" />、<see langword="FileName" /> 和 <see langword="DirectoryName" /> 的按位“或”组合。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1170,8 +1193,6 @@
   
 ## Examples  
  下面的示例创建<xref:System.IO.FileSystemWatcher>监视在运行时指定的目录。 该组件设置为监视中的更改`LastWrite`和`LastAccess`时间、 创建、 删除、 或重命名的目录中的文本文件。 如果文件是更改、 创建，或删除，文件的路径将打印到控制台。 在一个文件重命名后，旧的和新路径将打印到控制台。  
-  
- 使用<xref:System.Diagnostics>和<xref:System.IO>对于此示例的命名空间。  
   
  [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
  [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
@@ -1538,8 +1559,6 @@
 ## Examples  
  下面的示例创建<xref:System.IO.FileSystemWatcher>监视在运行时指定的目录。 该组件设置为监视中的更改`LastWrite`和`LastAccess`时间、 创建、 删除、 或重命名的目录中的文本文件。 如果文件是更改、 创建，或删除，文件的路径将打印到控制台。 在一个文件重命名后，旧的和新路径将打印到控制台。  
   
- 使用<xref:System.Diagnostics>和<xref:System.IO>对于此示例的命名空间。  
-  
  [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
  [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
  [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
@@ -1662,8 +1681,9 @@ Public Delegate Sub RenamedEventHandler(sender As Object, e As RenamedEventArgs)
         <ReturnType>System.ComponentModel.ISite</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置 <see cref="T:System.IO.FileSystemWatcher" /> 的 <see cref="T:System.ComponentModel.ISite" />。</summary>
-        <value><see cref="T:System.ComponentModel.ISite" /> 的一个 <see cref="T:System.IO.FileSystemWatcher" />。</value>
+        <summary>获取或设置 <see cref="T:System.ComponentModel.ISite" /> 的 <see cref="T:System.IO.FileSystemWatcher" />。</summary>
+        <value>
+  <see cref="T:System.ComponentModel.ISite" /> 的一个 <see cref="T:System.IO.FileSystemWatcher" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1719,7 +1739,7 @@ Public Delegate Sub RenamedEventHandler(sender As Object, e As RenamedEventArgs)
         <ReturnType>System.ComponentModel.ISynchronizeInvoke</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置用于封送因目录更改而发出的事件处理程序调用的对象。</summary>
+        <summary>获取或设置一个对象，该对象用于封送因目录更改而发出的事件处理程序调用。</summary>
         <value><see cref="T:System.ComponentModel.ISynchronizeInvoke" />，表示一个对象，该对象用于封送因目录更改而发出的事件处理程序调用。 默认值为 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1743,7 +1763,7 @@ Public Delegate Sub RenamedEventHandler(sender As Object, e As RenamedEventArgs)
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>一种同步方法，该方法会返回包含已发生的更改上的特定信息的结构。</summary>
+        <summary>返回结构的同步方法，该结构包含有关已发生的更改的特定信息。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="WaitForChanged">
@@ -1784,7 +1804,7 @@ Public Delegate Sub RenamedEventHandler(sender As Object, e As RenamedEventArgs)
       </Parameters>
       <Docs>
         <param name="changeType">要监视的 <see cref="T:System.IO.WatcherChangeTypes" />。</param>
-        <summary>一种同步方法，在给定要监视的更改的类型情况下，它会返回包含已发生的更改上的特定信息的结构。</summary>
+        <summary>一种给定了要监视的更改类型的同步方法，该方法返回包含有关所发生更改的特定信息的结构。</summary>
         <returns><see cref="T:System.IO.WaitForChangedResult" />，包含关于已发生的更改的特定信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1837,7 +1857,7 @@ Public Delegate Sub RenamedEventHandler(sender As Object, e As RenamedEventArgs)
       <Docs>
         <param name="changeType">要监视的 <see cref="T:System.IO.WatcherChangeTypes" />。</param>
         <param name="timeout">超时前等待的时间（以毫秒表示）。</param>
-        <summary>一种同步方法，在给定要监视的更改的类型以及在超时前等待的时间（以毫秒表示）的情况下，它会返回包含已发生的更改上的特定信息的结构。</summary>
+        <summary>一种给定了要监视的更改类型和超时前等待的时间（以毫秒表示）的同步方法，该方法返回包含有关所发生更改的特定信息的结构。</summary>
         <returns><see cref="T:System.IO.WaitForChangedResult" />，包含关于已发生的更改的特定信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

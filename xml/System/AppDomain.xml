@@ -1,5 +1,5 @@
 <Type Name="AppDomain" FullName="System.AppDomain">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="dcd9ac88a0a161873d835922b453f3bf3a1ce079" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55322418" /></Metadata><TypeSignature Language="C#" Value="public sealed class AppDomain : MarshalByRefObject, _AppDomain, System.Security.IEvidenceFactory" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cdac2e516a30ea450dd69c45beaa288a38b2c399" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56351447" /></Metadata><TypeSignature Language="C#" Value="public sealed class AppDomain : MarshalByRefObject, _AppDomain, System.Security.IEvidenceFactory" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit AppDomain extends System.MarshalByRefObject implements class System._AppDomain, class System.Security.IEvidenceFactory" />
   <TypeSignature Language="DocId" Value="T:System.AppDomain" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class AppDomain&#xA;Inherits MarshalByRefObject&#xA;Implements _AppDomain, IEvidenceFactory" />
@@ -161,6 +161,9 @@
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.AppendPrivatePath has been deprecated. Please investigate the use of AppDomainSetup.PrivateBinPath instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -544,6 +547,9 @@
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.ClearPrivatePath has been deprecated. Please investigate the use of AppDomainSetup.PrivateBinPath instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -613,6 +619,9 @@
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.ClearShadowCopyPath has been deprecated. Please investigate the use of AppDomainSetup.ShadowCopyDirectories instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -705,11 +714,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="assemblyName" /> 或 <paramref name="typeName" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.TypeLoadException">无法加载此类型。</exception>
+        <exception cref="T:System.TypeLoadException">无法加载该类型。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <exception cref="T:System.MissingMethodException">未找到公共无形参构造函数。</exception>
         <exception cref="T:System.IO.FileNotFoundException"><paramref name="assemblyName" /> 未找到。</exception>
-        <exception cref="T:System.MemberAccessException"><paramref name="typeName" /> 是一个抽象类。  
+        <exception cref="T:System.MemberAccessException"><paramref name="typeName" /> 是抽象类。  
   
 - 或 - 
 使用晚期绑定机制调用了此成员。</exception>
@@ -777,11 +786,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="assemblyName" /> 或 <paramref name="typeName" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.TypeLoadException">无法加载此类型。</exception>
+        <exception cref="T:System.TypeLoadException">无法加载该类型。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <exception cref="T:System.MissingMethodException">未找到公共无形参构造函数。</exception>
         <exception cref="T:System.IO.FileNotFoundException"><paramref name="assemblyFile" /> 未找到。</exception>
-        <exception cref="T:System.MemberAccessException"><paramref name="typeName" /> 是一个抽象类。  
+        <exception cref="T:System.MemberAccessException"><paramref name="typeName" /> 是抽象类。  
   
 - 或 - 
 使用晚期绑定机制调用了此成员。</exception>
@@ -1233,6 +1242,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1304,6 +1314,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1375,6 +1386,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1500,7 +1512,7 @@
   
 此参数与客户端激活的对象相关。客户端激活是一项传统技术，保留用于向后兼容，但不建议用于新的开发。 应改用 Windows Communication Foundation 来开发分布式应用程序。</param>
         <param name="securityAttributes">用于授权创建 <paramref name="typeName" /> 的信息。</param>
-        <summary>创建在指定程序集中定义的指定类型的新实例。 参数指定联编程序、绑定标志、构造函数自变量、特定于区域性的信息，这些信息用于解释自变量、激活特性和授权，以创建类型。</summary>
+        <summary>创建在指定程序集中定义的指定类型的新实例。 形参指定联编程序、绑定标志、构造函数实参、特定于区域性的信息，这些信息用于解释实参、激活特性和授权，以创建类型。</summary>
         <returns>一个对象，该对象是 <paramref name="typeName" /> 指定的新实例的包装。 返回值需要打开包装才能访问真实对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1562,6 +1574,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1641,6 +1654,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1719,6 +1733,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1925,6 +1940,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2026,6 +2042,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2099,6 +2116,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2281,12 +2299,16 @@
       </Docs>
     </MemberGroup>
     <Member MemberName="CreateInstanceFromAndUnwrap">
-      <MemberSignature Language="C#" Value="public object CreateInstanceFromAndUnwrap (string assemblyName, string typeName);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstanceFromAndUnwrap(string assemblyName, string typeName) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.AppDomain.CreateInstanceFromAndUnwrap(System.String,System.String)" />
-      <MemberSignature Language="VB.NET" Value="Public Function CreateInstanceFromAndUnwrap (assemblyName As String, typeName As String) As Object" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateInstanceFromAndUnwrap(System::String ^ assemblyName, System::String ^ typeName);" />
-      <MemberSignature Language="F#" Value="member this.CreateInstanceFromAndUnwrap : string * string -&gt; obj" Usage="appDomain.CreateInstanceFromAndUnwrap (assemblyName, typeName)" />
+      <MemberSignature Language="C#" Value="public object CreateInstanceFromAndUnwrap (string assemblyName, string typeName);" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstanceFromAndUnwrap(string assemblyName, string typeName) cil managed" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.AppDomain.CreateInstanceFromAndUnwrap(System.String,System.String)" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateInstanceFromAndUnwrap (assemblyName As String, typeName As String) As Object" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateInstanceFromAndUnwrap(System::String ^ assemblyName, System::String ^ typeName);" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="member this.CreateInstanceFromAndUnwrap : string * string -&gt; obj" Usage="appDomain.CreateInstanceFromAndUnwrap (assemblyName, typeName)" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C#" Value="public object CreateInstanceFromAndUnwrap (string assemblyFile, string typeName);" FrameworkAlternate="netcore-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstanceFromAndUnwrap(string assemblyFile, string typeName) cil managed" FrameworkAlternate="netcore-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateInstanceFromAndUnwrap (assemblyFile As String, typeName As String) As Object" FrameworkAlternate="netcore-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateInstanceFromAndUnwrap(System::String ^ assemblyFile, System::String ^ typeName);" FrameworkAlternate="netcore-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2297,6 +2319,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2310,11 +2333,13 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="assemblyName" Type="System.String" />
-        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="assemblyFile" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="typeName" Type="System.String" Index="1" FrameworkAlternate="netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="assemblyName">定义所请求类型的程序集的文件名和路径。</param>
+        <param name="assemblyFile">To be added.</param>
         <param name="typeName"><see cref="P:System.Type.FullName" /> 属性返回的所请求类型的完全限定名称，包含命名空间而不是程序集。</param>
         <summary>创建在指定程序集文件中定义的指定类型的新实例。</summary>
         <returns>请求的对象，或者如果找不到 <paramref name="typeName" /> 则返回 <see langword="null" />。</returns>
@@ -2348,12 +2373,16 @@
       </Docs>
     </Member>
     <Member MemberName="CreateInstanceFromAndUnwrap">
-      <MemberSignature Language="C#" Value="public object CreateInstanceFromAndUnwrap (string assemblyName, string typeName, object[] activationAttributes);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstanceFromAndUnwrap(string assemblyName, string typeName, object[] activationAttributes) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.AppDomain.CreateInstanceFromAndUnwrap(System.String,System.String,System.Object[])" />
-      <MemberSignature Language="VB.NET" Value="Public Function CreateInstanceFromAndUnwrap (assemblyName As String, typeName As String, activationAttributes As Object()) As Object" />
-      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateInstanceFromAndUnwrap(System::String ^ assemblyName, System::String ^ typeName, cli::array &lt;System::Object ^&gt; ^ activationAttributes);" />
-      <MemberSignature Language="F#" Value="member this.CreateInstanceFromAndUnwrap : string * string * obj[] -&gt; obj" Usage="appDomain.CreateInstanceFromAndUnwrap (assemblyName, typeName, activationAttributes)" />
+      <MemberSignature Language="C#" Value="public object CreateInstanceFromAndUnwrap (string assemblyName, string typeName, object[] activationAttributes);" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstanceFromAndUnwrap(string assemblyName, string typeName, object[] activationAttributes) cil managed" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.AppDomain.CreateInstanceFromAndUnwrap(System.String,System.String,System.Object[])" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateInstanceFromAndUnwrap (assemblyName As String, typeName As String, activationAttributes As Object()) As Object" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateInstanceFromAndUnwrap(System::String ^ assemblyName, System::String ^ typeName, cli::array &lt;System::Object ^&gt; ^ activationAttributes);" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="member this.CreateInstanceFromAndUnwrap : string * string * obj[] -&gt; obj" Usage="appDomain.CreateInstanceFromAndUnwrap (assemblyName, typeName, activationAttributes)" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+      <MemberSignature Language="C#" Value="public object CreateInstanceFromAndUnwrap (string assemblyFile, string typeName, object[] activationAttributes);" FrameworkAlternate="netcore-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstanceFromAndUnwrap(string assemblyFile, string typeName, object[] activationAttributes) cil managed" FrameworkAlternate="netcore-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateInstanceFromAndUnwrap (assemblyFile As String, typeName As String, activationAttributes As Object()) As Object" FrameworkAlternate="netcore-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateInstanceFromAndUnwrap(System::String ^ assemblyFile, System::String ^ typeName, cli::array &lt;System::Object ^&gt; ^ activationAttributes);" FrameworkAlternate="netcore-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2364,6 +2393,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2377,12 +2407,14 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="assemblyName" Type="System.String" />
-        <Parameter Name="typeName" Type="System.String" />
-        <Parameter Name="activationAttributes" Type="System.Object[]" />
+        <Parameter Name="assemblyName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="assemblyFile" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="typeName" Type="System.String" Index="1" FrameworkAlternate="netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" Index="2" FrameworkAlternate="netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="assemblyName">定义所请求类型的程序集的文件名和路径。</param>
+        <param name="assemblyFile">To be added.</param>
         <param name="typeName">所请求类型的完全限定名，包括命名空间而不是程序集（请参见 <see cref="P:System.Type.FullName" /> 属性）。</param>
         <param name="activationAttributes">包含一个或多个可以参与激活的特性的数组。 通常，为包含单个 <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> 对象的数组，该对象指定激活远程对象所需的 URL。  
   
@@ -2433,6 +2465,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2708,7 +2741,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
       </Docs>
     </Member>
@@ -2867,7 +2900,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要使用的证据加载程序集。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />。</permission>
       </Docs>
@@ -2941,7 +2974,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
       </Docs>
     </Member>
@@ -3083,7 +3116,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要使用的证据加载程序集。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />。</permission>
       </Docs>
@@ -3137,7 +3170,7 @@
         <param name="name">动态程序集的唯一标识。</param>
         <param name="access">访问动态程序集所采用的模式。</param>
         <param name="requiredPermissions">必需的权限请求。</param>
-        <param name="optionalPermissions">可选的权限请求。</param>
+        <param name="optionalPermissions">可选权限请求。</param>
         <param name="refusedPermissions">被拒绝的权限请求。</param>
         <summary>使用指定名称、访问模式和权限请求定义动态程序集。</summary>
         <returns>具有指定名称和功能的动态程序集。</returns>
@@ -3169,7 +3202,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
       </Docs>
     </Member>
@@ -3284,7 +3317,7 @@
         <param name="access">访问动态程序集所采用的模式。</param>
         <param name="evidence">为动态程序集提供的证据。 该证据始终作为最后一组用于策略解析的证据来使用。</param>
         <param name="requiredPermissions">必需的权限请求。</param>
-        <param name="optionalPermissions">可选的权限请求。</param>
+        <param name="optionalPermissions">可选权限请求。</param>
         <param name="refusedPermissions">被拒绝的权限请求。</param>
         <summary>使用指定名称、访问模式、证据和权限请求定义动态程序集。</summary>
         <returns>具有指定名称和功能的动态程序集。</returns>
@@ -3320,7 +3353,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要使用的证据加载程序集。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />。</permission>
       </Docs>
@@ -3376,7 +3409,7 @@
         <param name="access">访问动态程序集所采用的模式。</param>
         <param name="dir">保存程序集的目录的名称。 如果 <paramref name="dir" /> 是 <see langword="null" />，目录将默认为当前目录。</param>
         <param name="requiredPermissions">必需的权限请求。</param>
-        <param name="optionalPermissions">可选的权限请求。</param>
+        <param name="optionalPermissions">可选权限请求。</param>
         <param name="refusedPermissions">被拒绝的权限请求。</param>
         <summary>使用指定名称、访问模式、存储目录和权限请求定义动态程序集。</summary>
         <returns>具有指定名称和功能的动态程序集。</returns>
@@ -3408,7 +3441,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
       </Docs>
     </Member>
@@ -3464,7 +3497,7 @@
         <param name="dir">保存程序集的目录的名称。 如果 <paramref name="dir" /> 是 <see langword="null" />，目录将默认为当前目录。</param>
         <param name="evidence">为动态程序集提供的证据。 该证据始终作为最后一组用于策略解析的证据来使用。</param>
         <param name="requiredPermissions">必需的权限请求。</param>
-        <param name="optionalPermissions">可选的权限请求。</param>
+        <param name="optionalPermissions">可选权限请求。</param>
         <param name="refusedPermissions">被拒绝的权限请求。</param>
         <summary>使用指定名称、访问模式、存储目录、证据和权限请求定义动态程序集。</summary>
         <returns>具有指定名称和功能的动态程序集。</returns>
@@ -3500,7 +3533,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要使用的证据加载程序集。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />。</permission>
       </Docs>
@@ -3558,7 +3591,7 @@
         <param name="dir">保存动态程序集的目录的名称。 如果 <paramref name="dir" /> 是 <see langword="null" />，目录将默认为当前目录。</param>
         <param name="evidence">为动态程序集提供的证据。 该证据始终作为最后一组用于策略解析的证据来使用。</param>
         <param name="requiredPermissions">必需的权限请求。</param>
-        <param name="optionalPermissions">可选的权限请求。</param>
+        <param name="optionalPermissions">可选权限请求。</param>
         <param name="refusedPermissions">被拒绝的权限请求。</param>
         <param name="isSynchronized">若要在动态程序集中同步模块、类型和成员的创建，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>使用指定名称、访问模式、存储目录、证据、权限请求和同步选项定义动态程序集。</summary>
@@ -3595,7 +3628,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 的 <see langword="Name" /> 属性为 <see langword="null" />。  
   
 - 或 - 
-<paramref name="name" /> 的 <see langword="Name" /> 属性以空格开头，或包含正斜杠或反斜杠。</exception>
+<paramref name="name" /> 的 <see langword="Name" /> 属性以空白开始，或包含正斜杠或反斜杠。</exception>
         <exception cref="T:System.AppDomainUnloadedException">在卸载的应用程序域上尝试该操作。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">若要使用的证据加载程序集。 关联枚举：<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />。</permission>
       </Docs>
@@ -3650,7 +3683,7 @@
         <param name="dir">保存动态程序集的目录的名称。 如果 <paramref name="dir" /> 为 <see langword="null" />，则使用当前目录。</param>
         <param name="evidence">为动态程序集提供的证据。 该证据始终作为最后一组用于策略解析的证据来使用。</param>
         <param name="requiredPermissions">必需的权限请求。</param>
-        <param name="optionalPermissions">可选的权限请求。</param>
+        <param name="optionalPermissions">可选权限请求。</param>
         <param name="refusedPermissions">被拒绝的权限请求。</param>
         <param name="isSynchronized">若要在动态程序集中同步模块、类型和成员的创建，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <param name="assemblyAttributes">要应用于程序集的可枚举特性列表；如果无特性，则为 <see langword="null" />。</param>
@@ -4173,8 +4206,8 @@
       </Parameters>
       <Docs>
         <param name="assemblyFile">包含要执行程序集的文件的名称。</param>
-        <param name="args">程序集的入口点的自变量。</param>
-        <summary>使用指定的自变量执行指定文件中包含的程序集。</summary>
+        <param name="args">程序集的入口点的实参。</param>
+        <summary>使用指定的参数执行指定文件中包含的程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4257,8 +4290,8 @@
       <Docs>
         <param name="assemblyFile">包含要执行程序集的文件的名称。</param>
         <param name="assemblySecurity">为程序集提供的证据。</param>
-        <param name="args">程序集的入口点的自变量。</param>
-        <summary>使用指定的证据和自变量执行指定文件中包含的程序集。</summary>
+        <param name="args">程序集的入口点的实参。</param>
+        <summary>使用指定的证据和实参执行指定文件中包含的程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4335,10 +4368,10 @@
       </Parameters>
       <Docs>
         <param name="assemblyFile">包含要执行程序集的文件的名称。</param>
-        <param name="args">程序集的入口点的自变量。</param>
+        <param name="args">程序集的入口点的实参。</param>
         <param name="hashValue">表示计算所得的哈希代码的值。</param>
         <param name="hashAlgorithm">表示程序集清单使用的哈希算法。</param>
-        <summary>使用指定的自变量、哈希值和哈希算法执行指定文件中包含的程序集。</summary>
+        <summary>使用指定的参数、哈希值和哈希算法执行指定文件中包含的程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4420,10 +4453,10 @@
       <Docs>
         <param name="assemblyFile">包含要执行程序集的文件的名称。</param>
         <param name="assemblySecurity">为程序集提供的证据。</param>
-        <param name="args">程序集的入口点的自变量。</param>
+        <param name="args">程序集的入口点的实参。</param>
         <param name="hashValue">表示计算所得的哈希代码的值。</param>
         <param name="hashAlgorithm">表示程序集清单使用的哈希算法。</param>
-        <summary>使用指定的证据、自变量、哈希值和哈希算法执行指定文件中包含的程序集。</summary>
+        <summary>使用指定的证据、参数、哈希值和哈希算法执行指定文件中包含的程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4582,7 +4615,7 @@
       <Docs>
         <param name="assemblyName"><see cref="T:System.Reflection.AssemblyName" /> 对象，表示程序集名称。</param>
         <param name="args">启动该进程时传递的命令行参数。</param>
-        <summary>根据给定的 <see cref="T:System.Reflection.AssemblyName" /> 使用指定的自变量执行程序集。</summary>
+        <summary>根据给定的 <see cref="T:System.Reflection.AssemblyName" /> 使用指定的参数执行程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4726,7 +4759,7 @@
       <Docs>
         <param name="assemblyName">程序集的显示名称。 请参阅 <see cref="P:System.Reflection.Assembly.FullName" />。</param>
         <param name="args">启动该进程时传递的命令行参数。</param>
-        <summary>在给定显示名称的情况下，使用指定自变量执行程序集。</summary>
+        <summary>在给定显示名称的情况下，使用指定参数执行程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4884,7 +4917,7 @@
         <param name="assemblyName">程序集的显示名称。 请参阅 <see cref="P:System.Reflection.Assembly.FullName" />。</param>
         <param name="assemblySecurity">用于加载程序集的证据。</param>
         <param name="args">启动该进程时传递的命令行参数。</param>
-        <summary>在给定其显示名称的情况下，使用指定证据和自变量执行程序集。</summary>
+        <summary>在给定其显示名称的情况下，使用指定证据和实参执行程序集。</summary>
         <returns>程序集的入口点返回的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5135,6 +5168,9 @@
         <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;netframework-4.8;netcore-2.2">
           <AttributeName>System.Obsolete("AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  http://go.microsoft.com/fwlink/?linkid=14202", false)</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread.  https://go.microsoft.com/fwlink/?linkid=14202", false)</AttributeName>
+        </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -5197,7 +5233,7 @@
       <Docs>
         <param name="name">预定义应用程序域属性的名称，或已定义的应用程序域属性的名称。</param>
         <summary>为指定名称获取存储在当前应用程序域中的值。</summary>
-        <returns><paramref name="name" /> 属性的值，或 <see langword="null" />（如果属性不存在）。</returns>
+        <returns><paramref name="name" /> 属性的值，或 <see langword="null" /> （如果属性不存在）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5761,7 +5797,7 @@
       </Parameters>
       <Docs>
         <param name="assemblyRef">描述要加载的程序集的对象。</param>
-        <summary>在给定 <see cref="T:System.Reflection.AssemblyName" /> 的情况下加载 <see cref="T:System.Reflection.Assembly" />。</summary>
+        <summary>在给定 <see cref="T:System.Reflection.Assembly" /> 的情况下加载 <see cref="T:System.Reflection.AssemblyName" />。</summary>
         <returns>加载的程序集。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5984,7 +6020,7 @@
       <Docs>
         <param name="assemblyRef">描述要加载的程序集的对象。</param>
         <param name="assemblySecurity">用于加载程序集的证据。</param>
-        <summary>在给定 <see cref="T:System.Reflection.AssemblyName" /> 的情况下加载 <see cref="T:System.Reflection.Assembly" />。</summary>
+        <summary>在给定 <see cref="T:System.Reflection.Assembly" /> 的情况下加载 <see cref="T:System.Reflection.AssemblyName" />。</summary>
         <returns>加载的程序集。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6212,7 +6248,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">当前进程试图将值 <see langword="false" /> 赋予此属性。</exception>
+        <exception cref="T:System.ArgumentException">当前进程尝试将值 <see langword="false" /> 分配给该属性。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
         <related type="Article" href="https://msdn.microsoft.com/library/318bedf8-7f35-4f00-b34a-2b7b8e3fa315">应用程序域资源监控</related>
         <related type="Article" href="https://msdn.microsoft.com/library/02119ab6-1e91-448e-97ad-e7b2e5c4bbbd">&lt;appdomainResourceMonitoring&gt;元素</related>
@@ -6259,7 +6295,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see langword="static" />（Visual Basic 中的 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
         <related type="Article" href="https://msdn.microsoft.com/library/318bedf8-7f35-4f00-b34a-2b7b8e3fa315">应用程序域资源监控</related>
       </Docs>
@@ -6305,7 +6341,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see langword="static" />（Visual Basic 中的 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
         <related type="Article" href="https://msdn.microsoft.com/library/318bedf8-7f35-4f00-b34a-2b7b8e3fa315">应用程序域资源监控</related>
       </Docs>
@@ -6344,7 +6380,7 @@
         <summary>获取自从创建应用程序域后由应用程序域进行的所有内存分配的总大小（以字节为单位，不扣除已回收的内存）。</summary>
         <value>所有内存分配的总大小。</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException"><see langword="static" />（Visual Basic 中的 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
         <related type="Article" href="https://msdn.microsoft.com/library/318bedf8-7f35-4f00-b34a-2b7b8e3fa315">应用程序域资源监控</related>
       </Docs>
@@ -6394,7 +6430,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see langword="static" />（Visual Basic 中的 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）<see cref="P:System.AppDomain.MonitoringIsEnabled" /> 属性设置为 <see langword="false" />。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
         <related type="Article" href="https://msdn.microsoft.com/library/318bedf8-7f35-4f00-b34a-2b7b8e3fa315">应用程序域资源监控</related>
       </Docs>
@@ -6414,6 +6450,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -6825,6 +6862,9 @@
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.SetCachePath has been deprecated. Please investigate the use of AppDomainSetup.CachePath instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -6833,7 +6873,7 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">到卷影副本位置的完全限定路径。</param>
+        <param name="path">到影像副本位置的完全限定路径。</param>
         <summary>确定指定目录路径为对程序集进行影像复制的位置。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7019,6 +7059,9 @@
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.SetDynamicBase has been deprecated. Please investigate the use of AppDomainSetup.DynamicBase instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -7027,7 +7070,7 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">完全限定路径，是存储动态程序集的子目录的基目录。</param>
+        <param name="path">完全限定路径，它作为存储动态程序集的子目录的基目录。</param>
         <summary>建立指定的目录路径，作为存储和访问动态生成的文件的子目录的基目录。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7144,6 +7187,9 @@
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.SetShadowCopyFiles has been deprecated. Please investigate the use of AppDomainSetup.ShadowCopyFiles instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -7210,6 +7256,9 @@
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
+          <AttributeName>System.Obsolete("AppDomain.SetShadowCopyPath has been deprecated. Please investigate the use of AppDomainSetup.ShadowCopyDirectories instead. https://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -7218,7 +7267,7 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">目录名列表，各名称用分号隔开。</param>
+        <param name="path">目录名列表，每一个名称用分号隔开。</param>
         <summary>确定指定目录路径为要进行影像复制的程序集的位置。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7321,6 +7370,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -7367,7 +7417,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取应用程序域是否配置为影像副本文件的指示。</summary>
-        <value>如果应用程序域配置为卷影副本文件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value>如果应用程序域配置为影像副本文件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7557,12 +7607,12 @@
       <Docs>
         <param name="dispIdMember">标识成员。</param>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
-        <param name="lcid">要在其中解释参数的区域设置上下文。</param>
+        <param name="lcid">要在其中解释自变量的区域设置上下文。</param>
         <param name="wFlags">描述调用的上下文的标志。</param>
-        <param name="pDispParams">指向一个结构的指针，该结构包含一个自变量数组、一个命名自变量的 DISPID 自变量数组和数组中元素数的计数。</param>
+        <param name="pDispParams">指向一个结构的指针，该结构包含一个参数数组、一个命名参数的 DISPID 参数数组和数组中元素数的计数。</param>
         <param name="pVarResult">指向要存储结果的位置的指针。</param>
         <param name="pExcepInfo">指向一个包含异常信息的结构的指针。</param>
-        <param name="puArgErr">第一个出错自变量的索引。</param>
+        <param name="puArgErr">第一个出错参数的索引。</param>
         <summary>提供对某一对象公开的属性和方法的访问。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

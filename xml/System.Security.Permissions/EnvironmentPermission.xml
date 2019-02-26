@@ -1,5 +1,5 @@
 <Type Name="EnvironmentPermission" FullName="System.Security.Permissions.EnvironmentPermission">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="58c654f13e1b7e8f5919c03934427af215ff64e6" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52376900" /></Metadata><TypeSignature Language="C#" Value="public sealed class EnvironmentPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1a6cb01c7d0ce9f244b9581605a0812523edca5b" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56787073" /></Metadata><TypeSignature Language="C#" Value="public sealed class EnvironmentPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EnvironmentPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Security.Permissions.EnvironmentPermission" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EnvironmentPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
@@ -16,6 +16,7 @@
     <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
@@ -34,7 +35,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>控件访问系统和用户环境变量。 此类不能被继承。</summary>
+    <summary>控制对系统和用户环境变量的访问。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -42,7 +43,7 @@
  通过用分号分隔，每个列表的读取和写入访问权限的命名变量的一个或多个不区分大小写的名称列表指定环境变量名称。 写入访问权限包括能够创建和删除环境变量以及更改现有的值。  
   
 > [!NOTE]
->  在之前的.NET framework 版本[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，可以使用<xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType>方法，以防止对系统资源的意外访问受信任的代码。 <xref:System.Security.CodeAccessPermission.Deny%2A> 现已过时，并对资源的访问现在只能由授予的权限集的程序集来决定。 若要限制访问文件，必须运行沙盒中部分受信任的代码，并将它分配给代码可以访问的资源的权限。 有关在沙盒中运行的应用程序的信息，请参阅[如何： 运行部分受信任的代码在沙盒中](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)。  
+>  在之前的.NET framework 版本[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，可以使用<xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType>方法，以防止对系统资源的意外访问受信任的代码。 <xref:System.Security.CodeAccessPermission.Deny%2A> 现已过时，并对资源的访问现在只能由授予的权限集的程序集来决定。 若要限制访问文件，必须运行沙盒中部分受信任的代码，并将它分配给代码可以访问的资源的权限。 有关在沙盒中运行的应用程序的信息，请参阅[如何：运行沙盒中部分受信任的代码](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)中所述。  
   
  ]]></format>
     </remarks>
@@ -79,13 +80,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
       </Parameters>
       <Docs>
         <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 值之一。</param>
-        <summary>根据指定，使用受限制或不受限制的权限初始化 <see cref="T:System.Security.Permissions.EnvironmentPermission" /> 类的新实例。</summary>
+        <summary>用指定的受限制或无限制的权限初始化 <see cref="T:System.Security.Permissions.EnvironmentPermission" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -116,6 +118,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -128,8 +131,8 @@
       </Parameters>
       <Docs>
         <param name="flag"><see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 值之一。</param>
-        <param name="pathList">向其授予访问权限的环境变量的列表（用分号分隔）。</param>
-        <summary>初始化对指定环境变量具有指定访问权限的 <see cref="T:System.Security.Permissions.EnvironmentPermission" /> 类的新实例。</summary>
+        <param name="pathList">授予对其的访问权限的环境变量列表（以分号分隔）。</param>
+        <summary>用对指定环境变量的指定访问权限初始化 <see cref="T:System.Security.Permissions.EnvironmentPermission" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -161,6 +164,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -217,6 +221,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -254,6 +259,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -273,7 +279,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="esd" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="esd" /> 参数不是有效的权限元素。  
   
-或 
+- 或 - 
 <paramref name="esd" /> 参数的版本号无效。</exception>
       </Docs>
     </Member>
@@ -296,6 +302,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -304,9 +311,9 @@
         <Parameter Name="flag" Type="System.Security.Permissions.EnvironmentPermissionAccess" />
       </Parameters>
       <Docs>
-        <param name="flag">其中一个 <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 值，表示环境变量访问的单一类型。</param>
-        <summary>使用指定的 <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 获取所有环境变量。</summary>
-        <returns>针对所选标识的环境变量（以分号分隔）列表。</returns>
+        <param name="flag">代表单一的环境变量访问类型的 <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 值之一。</param>
+        <summary>获取所有具有指定 <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 的环境变量。</summary>
+        <returns>选定标志的环境变量列表（以分号分隔）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -326,10 +333,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="flag" /> 不是 <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 的一个有效值。  
+        <exception cref="T:System.ArgumentException"><paramref name="flag" /> 不是有效的 <see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 值。  
   
-或 
- <paramref name="flag" /> 是 <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.AllAccess" />，表示环境变量访问的多个类型，或 <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.NoAccess" />，它不表示任何类型的环境变量的访问。</exception>
+- 或 - 
+ <paramref name="flag" /> 为 <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.AllAccess" />（表示多种类型的环境变量访问）或 <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.NoAccess" />（不表示任何类型的环境变量访问）。</exception>
       </Docs>
     </Member>
     <Member MemberName="Intersect">
@@ -351,6 +358,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -365,8 +373,8 @@
       </Parameters>
       <Docs>
         <param name="target">要与当前权限相交的权限。 它必须与当前权限属于同一类型。</param>
-        <summary>创建并返回一个权限，该权限是当前权限与指定权限的交集。</summary>
-        <returns>表示当前权限和指定权限的交集的一个新权限。 如果交集为空，则此新权限为 <see langword="null" />。</returns>
+        <summary>创建并返回一个权限，该权限是当前权限和指定权限的交集。</summary>
+        <returns>一个新权限，它表示当前权限与指定权限的交集。 如果交集为空，则此新权限为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -375,7 +383,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="target" /> 参数不为 <see langword="null" />，并且与当前权限不属于同一类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="target" /> 参数不是 <see langword="null" />，而且与当前权限不是同一类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsSubsetOf">
@@ -397,6 +405,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -421,7 +430,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="target" /> 参数不为 <see langword="null" />，并且与当前权限不属于同一类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="target" /> 参数不是 <see langword="null" />，而且与当前权限不是同一类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsUnrestricted">
@@ -446,13 +455,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个值，该值指示当前权限是否不受限制。</summary>
+        <summary>返回一个值，该值指示当前权限是否为无限制的。</summary>
         <returns>如果当前权限不受限制，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -483,6 +493,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -499,7 +510,7 @@
       <Docs>
         <param name="flag"><see cref="T:System.Security.Permissions.EnvironmentPermissionAccess" /> 值之一。</param>
         <param name="pathList">环境变量列表（用分号分隔）。</param>
-        <summary>将指定的环境变量的指定访问权限设置为该权限的现有状态。</summary>
+        <summary>将对指定环境变量的指定访问权限设置为该权限的现有状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -539,6 +550,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.SecurityElement</ReturnType>
@@ -569,6 +581,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
@@ -593,7 +606,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="other" /> 参数不为 <see langword="null" />，并且与当前权限不属于同一类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="other" /> 参数不是 <see langword="null" />，而且与当前权限不是同一类型。</exception>
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 <Type Name="ILGenerator" FullName="System.Reflection.Emit.ILGenerator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ec36e6aa4dee6209a096b264f3d2a8a67e2a1cb3" /><Meta Name="ms.sourcegitcommit" Value="662f143e6be46d519ff8ab4451d543d91e651478" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/18/2018" /><Meta Name="ms.locfileid" Value="53565400" /></Metadata><TypeSignature Language="C#" Value="public class ILGenerator : System.Runtime.InteropServices._ILGenerator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a94c3aa8a2a2e9820a4ecfe194876744b93c5564" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56386048" /></Metadata><TypeSignature Language="C#" Value="public class ILGenerator : System.Runtime.InteropServices._ILGenerator" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi beforefieldinit ILGenerator extends System.Object implements class System.Runtime.InteropServices._ILGenerator" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.ILGenerator" />
   <TypeSignature Language="VB.NET" Value="Public Class ILGenerator&#xA;Implements _ILGenerator" />
@@ -237,7 +237,7 @@
         </remarks>
         <exception cref="T:System.NotSupportedException">生成的 MSIL 当前不在异常块中。  
   
-或 
+- 或 - 
 此 <see cref="T:System.Reflection.Emit.ILGenerator" /> 属于某个 <see cref="T:System.Reflection.Emit.DynamicMethod" />。</exception>
       </Docs>
     </Member>
@@ -437,7 +437,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="localType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">包含类型已由 <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> 方法创建。  
   
-或 
+- 或 - 
 封闭方法的方法体已由 <see cref="M:System.Reflection.Emit.MethodBuilder.CreateMethodBody(System.Byte[],System.Int32)" /> 方法创建。</exception>
         <exception cref="T:System.NotSupportedException">与此 <see cref="T:System.Reflection.Emit.ILGenerator" /> 关联的方法不由 <see cref="T:System.Reflection.Emit.MethodBuilder" /> 来表示。</exception>
       </Docs>
@@ -1105,7 +1105,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1838,7 +1838,7 @@
 ## Remarks  
  行号从 1 编制索引。 列被索引为 0。  
   
- 符号化信息通常包含每个源行的至少一个 MSIL 偏移量。 当实时 (JIT) 编译器要编译方法时，它会请求分析服务提供应保留的 MSIL 偏移量列表。 这些 MSIL 偏移量称为*序列点*。  
+ 符号化信息通常包含每个源行的至少一个 MSIL 偏移量。 当实时 (JIT) 编译器要编译方法时，它请求分析服务提供应保留的 MSIL 偏移量列表。 这些 MSIL 偏移量称为*序列点*。  
   
  如果当前<xref:System.Reflection.Emit.ILGenerator>与关联<xref:System.Reflection.Emit.DynamicMethod>对象，它不支持的符号化信息。  
   
@@ -2016,12 +2016,12 @@
       <Docs>
         <param name="dispIdMember">标识成员。</param>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
-        <param name="lcid">要在其中解释参数的区域设置上下文。</param>
+        <param name="lcid">要在其中解释自变量的区域设置上下文。</param>
         <param name="wFlags">描述调用的上下文的标志。</param>
-        <param name="pDispParams">指向一个结构的指针，该结构包含一个自变量数组、一个命名自变量的 DISPID 自变量数组和数组中元素数的计数。</param>
+        <param name="pDispParams">指向一个结构的指针，该结构包含一个参数数组、一个命名参数的 DISPID 参数数组和数组中元素数的计数。</param>
         <param name="pVarResult">指向要存储结果的位置的指针。</param>
         <param name="pExcepInfo">指向一个包含异常信息的结构的指针。</param>
-        <param name="puArgErr">第一个出错自变量的索引。</param>
+        <param name="puArgErr">第一个出错参数的索引。</param>
         <summary>提供对某一对象公开的属性和方法的访问。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2082,7 +2082,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="excType" /> 不是 <see cref="T:System.Exception" /> 类或 <see cref="T:System.Exception" /> 的派生类。  
   
-或 
+- 或 - 
 此类型没有默认的构造函数。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="excType" /> 为 <see langword="null" />。</exception>
       </Docs>
