@@ -1,5 +1,5 @@
 <Type Name="InternalsVisibleToAttribute" FullName="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d83bf90ddf1a60605372fb7c0f89950bc9ea75ea" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55376316" /></Metadata><TypeSignature Language="C#" Value="public sealed class InternalsVisibleToAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5f0b6174ea837be0c0d10d39a109f0e32df7ca13" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56393588" /></Metadata><TypeSignature Language="C#" Value="public sealed class InternalsVisibleToAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InternalsVisibleToAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.InternalsVisibleToAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class InternalsVisibleToAttribute&#xA;Inherits Attribute" />
@@ -29,7 +29,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+    <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true, Inherited=false)</AttributeName>
     </Attribute>
   </Attributes>
@@ -39,7 +39,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 通常，类型和成员`internal`（在 C# 中) 的作用域和`Friend`作用域 （在 Visual Basic 中) 是仅在定义它们的程序集可见。 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性使它们还的可见类型中指定的程序集，这被称为友元程序集。 这仅适用于`internal`(`Friend`在 VB 中) 的方法仅限非`private`的。
+ 通常，类型和成员`internal`或`private protected`作用域 (在C#) 和`Friend`并`Private Protected`作用域 （在 Visual Basic 中) 是仅在定义它们的程序集可见。 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性使它们还的可见类型中指定的程序集，这被称为友元程序集。 这仅适用于`internal`(`Friend`在 VB 中) 或`private protected`(`Private Protected`在 VB 中) 方法，但不是`private`的。
   
  程序集级别应用属性。 这意味着它可以是包含源代码文件中，开始时，或者它可以包含在 Visual Studio 项目中的 AssemblyInfo 文件。 该属性可用于指定可以访问的内部类型和成员的当前程序集的单个友元程序集。 可以通过两种方式来定义多个友元程序集。 它们可以显示作为单个程序集级别属性，如以下示例所示。  
   
@@ -155,7 +155,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A>构造函数定义友元程序集，即有权访问的内部类型和成员的当前程序集的程序集。  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A>构造函数定义友元程序集，即有权访问内部的程序集和私有受保护的当前程序集类型和成员。  
   
  当前程序集和友元程序集都必须是无符号整数，或两者都必须用强名称签名。 (有关强名称的程序集的详细信息，请参阅[创建和使用具有强名称程序集](~/docs/framework/app-domains/create-and-use-strong-named-assemblies.md)。)如果两者都是无符号整数，`assemblyName`参数包含的友元程序集，而无需的目录路径或文件扩展指定的名称。 如果两个都签名`assemblyName`包含不带其目录路径或文件扩展名，以及其完整公钥 （但不是的公钥标记） 的友元程序集的名称。 不能指定一个强名称，例如那些提供区域性、 版本或处理器体系结构信息的其他组件`assemblyName`参数。  
   

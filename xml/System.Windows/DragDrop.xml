@@ -1,5 +1,5 @@
 <Type Name="DragDrop" FullName="System.Windows.DragDrop">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="808b80721e045cc8b053be71d52107154794b486" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55423116" /></Metadata><TypeSignature Language="C#" Value="public static class DragDrop" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="84d88fdc72d2e940323f0ee0b26fe19b6d8ca6e2" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56395265" /></Metadata><TypeSignature Language="C#" Value="public static class DragDrop" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DragDrop extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.DragDrop" />
   <TypeSignature Language="VB.NET" Value="Public Class DragDrop" />
@@ -518,7 +518,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -570,14 +570,14 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>当对象被拖放到作为拖放目标的元素的边界内时发生。</summary>
+        <summary>当对象被拖入正作为放置目标元素边界时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  一次将对象拖入用作放置目标的元素的边界每次都会引发此事件。 如果不会引发此事件的元素<xref:System.Windows.UIElement.AllowDrop%2A>属性是`false`。  
   
- 处理此事件是可选的拖放目标，并不是所有拖放方案所必需的。 通常，如果适用于你的应用程序，可处理此事件，以便提供拖放操作效果预览。 请勿设置 <xref:System.Windows.DragDrop.DragEnter> 事件中的 <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> 属性，因为在 <xref:System.Windows.DragDrop.DragOver> 事件中该属性将被覆盖。  
+ 处理此事件是可选的拖放目标，并不是所有拖放方案所必需的。 通常，如果适用于你的应用程序，可处理此事件，以便提供拖放操作效果预览。 请勿设置 <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> 事件中的 <xref:System.Windows.DragDrop.DragEnter> 属性，因为在 <xref:System.Windows.DragDrop.DragOver> 事件中该属性将被覆盖。  
   
 ## <a name="routed-event-information"></a>路由事件信息  
   
@@ -592,7 +592,7 @@
    
   
 ## Examples  
- 下面的示例演示 <xref:System.Windows.Shapes.Ellipse> 元素的 <xref:System.Windows.DragDrop.DragEnter> 事件处理程序。 此代码通过保存当前的 <xref:System.Windows.Shapes.Shape.Fill%2A> 画笔预览拖放操作的效果。 它将检查以查看是否<xref:System.Windows.DataObject>正在拖动的椭圆上方包含可以转换为字符串数据<xref:System.Windows.Media.Brush>。 如果是，将 <xref:System.Windows.Media.Brush> 应用于椭圆。 在 <xref:System.Windows.DragDrop.DragLeave> 事件处理程序中还原更改。 如果数据无法转换为 <xref:System.Windows.Media.Brush>，则不执行任何操作。  
+ 下面的示例演示 <xref:System.Windows.DragDrop.DragEnter> 元素的 <xref:System.Windows.Shapes.Ellipse> 事件处理程序。 此代码通过保存当前的 <xref:System.Windows.Shapes.Shape.Fill%2A> 画笔预览拖放操作的效果。 它将检查以查看是否<xref:System.Windows.DataObject>正在拖动的椭圆上方包含可以转换为字符串数据<xref:System.Windows.Media.Brush>。 如果是，将 <xref:System.Windows.Media.Brush> 应用于椭圆。 在 <xref:System.Windows.DragDrop.DragLeave> 事件处理程序中还原更改。 如果数据无法转换为 <xref:System.Windows.Media.Brush>，则不执行任何操作。  
   
  [!code-csharp[DragDropSnippets#DragEnter](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragenter)]
  [!code-vb[DragDropSnippets#DragEnter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragenter)]  
@@ -651,7 +651,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在将对象拖出用作拖放目标的元素边界，且未放置时发生。</summary>
+        <summary>当对象被拖出正作为没有放置的放置目标的元素边界时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -673,7 +673,7 @@
    
   
 ## Examples  
- 下面的示例演示 <xref:System.Windows.Shapes.Ellipse> 元素的 <xref:System.Windows.DragDrop.DragLeave> 事件处理程序。 此代码通过将保存的 <xref:System.Windows.Media.Brush> 应用到椭圆来撤销 <xref:System.Windows.DragDrop.DragEnter> 事件处理程序中执行的预览。  
+ 下面的示例演示 <xref:System.Windows.DragDrop.DragLeave> 元素的 <xref:System.Windows.Shapes.Ellipse> 事件处理程序。 此代码通过将保存的 <xref:System.Windows.Media.Brush> 应用到椭圆来撤销 <xref:System.Windows.DragDrop.DragEnter> 事件处理程序中执行的预览。  
   
  [!code-csharp[DragDropSnippets#DragLeave](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragleave)]
  [!code-vb[DragDropSnippets#DragLeave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragleave)]  
@@ -732,7 +732,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在将对象拖入作为放置目标的元素边界时持续发生。</summary>
+        <summary>当正作为放置目标的元素边界内的拖动对象时持续发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -754,7 +754,7 @@
    
   
 ## Examples  
- 下面的示例演示 <xref:System.Windows.Shapes.Ellipse> 元素的 <xref:System.Windows.DragDrop.DragOver> 事件处理程序。 此代码检查是否已将 <xref:System.Windows.DataObject> 拖动到包含可以转换为 <xref:System.Windows.Media.Brush> 的字符串数据的椭圆上方。 如果是，它会将 <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> 属性设置为 <xref:System.Windows.DragDropEffects.Copy>。 这将向拖动源指示可以将数据复制到椭圆。 如果数据无法转换为 <xref:System.Windows.Media.Brush>，则将 <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> 属性设置为 <xref:System.Windows.DragDropEffects.None>。 这将向拖动源指示椭圆不是数据的有效拖放目标。  
+ 下面的示例演示 <xref:System.Windows.DragDrop.DragOver> 元素的 <xref:System.Windows.Shapes.Ellipse> 事件处理程序。 此代码检查是否已将 <xref:System.Windows.DataObject> 拖动到包含可以转换为 <xref:System.Windows.Media.Brush> 的字符串数据的椭圆上方。 如果是，它会将 <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> 属性设置为 <xref:System.Windows.DragDropEffects.Copy>。 这将向拖动源指示可以将数据复制到椭圆。 如果数据无法转换为 <xref:System.Windows.Media.Brush>，则将 <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> 属性设置为 <xref:System.Windows.DragDropEffects.None>。 这将向拖动源指示椭圆不是数据的有效拖放目标。  
   
  [!code-csharp[DragDropSnippets#DragOver](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragover)]
  [!code-vb[DragDropSnippets#DragOver](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragover)]  
@@ -813,7 +813,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在将对象拖入用作放置目标的元素边界时发生。</summary>
+        <summary>当对象被拖入正作为放置目标的元素边界时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -835,7 +835,7 @@
    
   
 ## Examples  
- 下面的示例演示 <xref:System.Windows.Shapes.Ellipse> 元素的 <xref:System.Windows.DragDrop.Drop> 事件处理程序。 此代码应用拖放操作的效果。 它会检查是否将 <xref:System.Windows.DataObject> 拖动到包含可以转换为 <xref:System.Windows.Media.Brush> 的字符串数据的椭圆上方。 如果是，将 <xref:System.Windows.Media.Brush> 应用于椭圆。 如果数据无法转换为 <xref:System.Windows.Media.Brush>，则不执行任何操作。  
+ 下面的示例演示 <xref:System.Windows.DragDrop.Drop> 元素的 <xref:System.Windows.Shapes.Ellipse> 事件处理程序。 此代码应用拖放操作的效果。 它会检查是否将 <xref:System.Windows.DataObject> 拖动到包含可以转换为 <xref:System.Windows.Media.Brush> 的字符串数据的椭圆上方。 如果是，将 <xref:System.Windows.Media.Brush> 应用于椭圆。 如果数据无法转换为 <xref:System.Windows.Media.Brush>，则不执行任何操作。  
   
  [!code-csharp[DragDropSnippets#Drop](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#drop)]
  [!code-vb[DragDropSnippets#Drop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#drop)]  
@@ -894,7 +894,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在拖放操作期间持续发生，使拖动源能够向用户提供反馈。</summary>
+        <summary>在拖放操作过程中持续发生，使拖动源可以向用户提供反馈。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -968,7 +968,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>当对象被拖放到作为拖放目标的元素的边界内时发生。</summary>
+        <summary>当对象被拖入正作为放置目标元素边界时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1041,7 +1041,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在将对象拖出用作拖放目标的元素边界，且未放置时发生。</summary>
+        <summary>当对象被拖出正作为没有放置的放置目标的元素边界时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1114,7 +1114,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在将对象拖入作为放置目标的元素边界时持续发生。</summary>
+        <summary>当正作为放置目标的元素边界内的拖动对象时持续发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1187,7 +1187,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在将对象拖入用作放置目标的元素边界时发生。</summary>
+        <summary>当对象被拖入正作为放置目标的元素边界时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1260,7 +1260,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在拖放操作期间持续发生，使拖动源能够向用户提供反馈。</summary>
+        <summary>在拖放操作过程中持续发生，使拖动源可以向用户提供反馈。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1331,7 +1331,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在进行拖放操作时不断出现，并启用放置源以结束拖放操作（取决于键/按钮状态）。</summary>
+        <summary>当拖放操作进行时持续发生，并使放置源依靠键/按钮状态取消拖放操作。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1402,7 +1402,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在进行拖放操作时不断出现，并启用放置源以结束拖放操作（取决于键/按钮状态）。</summary>
+        <summary>当拖放操作进行时持续发生，并使放置源依靠键/按钮状态取消拖放操作。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1481,9 +1481,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.DragEnter" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.DragEnter" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1519,9 +1519,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.DragLeave" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.DragLeave" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1557,9 +1557,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.DragOver" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.DragOver" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1595,9 +1595,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.Drop" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.Drop" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1633,9 +1633,9 @@
         <Parameter Name="handler" Type="System.Windows.GiveFeedbackEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.GiveFeedback" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.GiveFeedback" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1671,9 +1671,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.PreviewDragEnter" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.PreviewDragEnter" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1709,9 +1709,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.PreviewDragLeave" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.PreviewDragLeave" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1747,9 +1747,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.PreviewDragOver" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.PreviewDragOver" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1785,9 +1785,9 @@
         <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.PreviewDrop" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.PreviewDrop" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1823,9 +1823,9 @@
         <Parameter Name="handler" Type="System.Windows.GiveFeedbackEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.PreviewGiveFeedback" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.PreviewGiveFeedback" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1861,9 +1861,9 @@
         <Parameter Name="handler" Type="System.Windows.QueryContinueDragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.PreviewQueryContinueDrag" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.PreviewQueryContinueDrag" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1899,9 +1899,9 @@
         <Parameter Name="handler" Type="System.Windows.QueryContinueDragEventHandler" />
       </Parameters>
       <Docs>
-        <param name="element">要从中删除事件处理程序的依赖对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
-        <param name="handler">一个委托，用于引用要删除的处理程序方法。</param>
-        <summary>从指定的依赖对象中删除 <see cref="E:System.Windows.DragDrop.QueryContinueDrag" /> 事件处理程序。</summary>
+        <param name="element">要从其中移除事件处理程序的依赖项对象（<see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />）。</param>
+        <param name="handler">引用要移除的处理程序方法的委托。</param>
+        <summary>从指定的依赖项对象中移除一个 <see cref="E:System.Windows.DragDrop.QueryContinueDrag" /> 事件处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

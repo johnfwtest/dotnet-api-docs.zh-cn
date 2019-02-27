@@ -1,5 +1,5 @@
 <Type Name="SqlFileStream" FullName="System.Data.SqlTypes.SqlFileStream">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="74b17b15b936004ca87b1747f66dce9839ec6be7" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55406723" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlFileStream : System.IO.Stream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d13e8a2d0e6ea7d98b6dee15a952022a92fc9711" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56766715" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlFileStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlFileStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.Data.SqlTypes.SqlFileStream" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SqlFileStream&#xA;Inherits Stream" />
@@ -10,12 +10,16 @@
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.IO.Stream</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>公开与作为字节序列的 FILESTREAM 列属性存储的 SQL Server 数据。</summary>
+    <summary>公开使用 FILESTREAM 列特性作为字节序列存储的 SQL Server 数据。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -79,6 +83,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
         <Parameter Name="transactionContext" Type="System.Byte[]" />
@@ -108,7 +116,7 @@
   
  <paramref name="path" /> 以“\\\\.\\”开头，例如“\\\\\PHYSICALDRIVE0”。  
   
-通过调用 NTCreateFile 返回的句柄不属于类型 FILE_TYPE_DISK。  
+对 NTCreateFile 的调用返回的句柄不是 FILE_TYPE_DISK 类型。  
   
  <paramref name="options" /> 包含不支持的值。</exception>
         <exception cref="T:System.IO.FileNotFoundException">无法找到该文件。</exception>
@@ -132,6 +140,10 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -191,6 +203,9 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
@@ -206,7 +221,7 @@
         <param name="offset"><paramref name="buffer" /> 中的字节偏移量，从该偏移量开始写入从流中读取的数据。</param>
         <param name="count">最多读取的字节数。</param>
         <param name="callback">可选的异步回调，在完成读取时调用。</param>
-        <param name="state">一个用户提供的对象，它将此特定的异步读取请求与其他请求区别开来</param>
+        <param name="state">一个用户提供的对象，该对象将此特定的异步读取请求与其他请求区分开来。</param>
         <summary>开始异步读操作。</summary>
         <returns>表示异步读取的 <see cref="T:System.IAsyncResult" />（可能仍处于挂起状态）。</returns>
         <remarks>
@@ -217,7 +232,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">不支持在流上读取数据。</exception>
+        <exception cref="T:System.NotSupportedException">流不支持数据读取。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -233,6 +248,9 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -277,6 +295,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -299,6 +321,10 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -323,8 +349,11 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -332,7 +361,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取指示当前流是否可以超时的值。</summary>
+        <summary>获取一个值，该值指示当前流是否能超时。</summary>
         <value>如果当前流可以超时，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -349,6 +378,10 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -372,6 +405,9 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -398,6 +434,9 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -407,9 +446,9 @@
       <Docs>
         <param name="asyncResult">对要完成的挂起异步请求的引用。</param>
         <summary>等待挂起的异步读取完成。</summary>
-        <returns>从流中读取的字节数，介于零 (0) 和所请求的字节数之间。 流仅在流结尾返回零 (0)，否则在至少有 1 个字节可用之前应一直进行阻止。</returns>
+        <returns>从流中读取的字节数，介于零 (0) 和所请求的字节数之间。 流仅在流的末尾返回零 (0)，否则应一直阻止到至少有 1 个字节可用为止。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.IAsyncResult" /> 对象并非来自相应的 <see langword="BeginRead" /> 方法。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.IAsyncResult" /> 对象并不来自于相应的 <see langword="BeginRead" /> 方法。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -426,6 +465,9 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -436,7 +478,7 @@
         <param name="asyncResult">对未完成的异步 I/O 请求的引用。</param>
         <summary>结束异步写操作。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.IAsyncResult" /> 对象并非来自相应的 <see langword="BeginWrite" /> 方法。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.IAsyncResult" /> 对象并不来自于相应的 <see langword="BeginWrite" /> 方法。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -452,6 +494,9 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -475,12 +520,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>清除此流的所有缓冲区并导致所有缓冲数据都写入基础设备中。</summary>
+        <summary>清除该流的所有缓冲区，并使所有缓冲的数据都写入基础设备。</summary>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
@@ -498,12 +547,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个指示当前流的长度的值（以字节为单位）。</summary>
-        <value>一个指示当前流的长度的 <see cref="T:System.Int64" />（以字节为单位）。</value>
+        <summary>获取一个值，该值指示当前流的长度（以字节为单位）。</summary>
+        <value>一个 <see cref="T:System.Int64" />，指示当前流的长度（以字节为单位）。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
@@ -521,12 +574,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>获取传递给构造函数的 <see cref="T:System.Data.SqlTypes.SqlFileStream" /> 的逻辑路径。</summary>
-        <value>一个指示 <see cref="T:System.Data.SqlTypes.SqlFileStream" /> 的名称的字符串值。</value>
+        <value>一个指示 <see cref="T:System.Data.SqlTypes.SqlFileStream" /> 名称的字符串值。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
@@ -543,6 +600,10 @@
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -567,6 +628,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -576,11 +641,11 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="buffer">字节数组。 此方法返回时，该缓冲区包含指定的字节数组，该数组的偏移量和（偏移量 + 计数 - 1）之间的值由从当前源中读取的字节替换。</param>
+        <param name="buffer">字节数组。 此方法返回时，缓冲区包含指定的字节数组，该数组的偏移量和 (偏移量 + 计数 – 1) 之间的值由从当前源中读取的字节替换。</param>
         <param name="offset">缓冲区中从零开始的字节偏移量，从此处开始存储从当前流中读取的数据。</param>
         <param name="count">要从当前流中最多读取的字节数。</param>
         <summary>从当前流读取字节序列，并将流中的位置向前移动读取的字节数。</summary>
-        <returns>读入缓冲区中的总字节数。 如果很多字节当前不可用，则总字节数可能小于请求的字节数；如果已到达流结尾，则为零 (0)。</returns>
+        <returns>读入缓冲区中的总字节数。 如果当前可用的字节数没有请求的字节数那么多，则总字节数可能小于请求的字节数，或者如果已到达流的末尾，则为零 (0)。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -589,7 +654,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">对象不支持数据读取。</exception>
+        <exception cref="T:System.NotSupportedException">该对象不支持读取数据。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -606,13 +671,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>从流中读取一个字节，并将流内的位置向前提升一个字节，或者如果已到达流结尾，则返回 -1。</summary>
-        <returns>强制转换为 <see cref="T:System.Int32" /> 的无符号字节，如果到达流的末尾，则为 -1。</returns>
+        <summary>从流中读取一个字节，并将流内的位置向前推进一个字节，或者如果已到达流的末尾，则返回 -1。</summary>
+        <returns>转换为 <see cref="T:System.Int32" /> 的无符号字节，或者如果到达流的末尾，则为 -1。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -621,7 +689,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">对象不支持数据读取。</exception>
+        <exception cref="T:System.NotSupportedException">该对象不支持读取数据。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -638,8 +706,11 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -647,8 +718,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值（以毫秒为单位），该值确定流在超时前将尝试读取的时间。</summary>
-        <value>一个值（以毫秒为单位），该值确定流在超时前将尝试读取的时间。</value>
+        <summary>获取或设置一个值（以毫秒为单位），该值确定流在超时前尝试读取多长时间。</summary>
+        <value>一个确定流在超时前尝试读取多长时间的值（以毫秒为单位）。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
@@ -666,6 +737,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
@@ -675,7 +750,7 @@
       </Parameters>
       <Docs>
         <param name="offset">相对于 <paramref name="origin" /> 参数的字节偏移量</param>
-        <param name="origin"><see cref="T:System.IO.SeekOrigin" /> 类型的值，指示用于获取新位置的参考点</param>
+        <param name="origin">一个 <see cref="T:System.IO.SeekOrigin" /> 类型的值，指示用于获取新位置的参考点</param>
         <summary>设置当前流中的位置。</summary>
         <returns>当前流中的新位置。</returns>
         <remarks>To be added.</remarks>
@@ -695,6 +770,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -712,7 +791,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">对象不支持数据读取。</exception>
+        <exception cref="T:System.NotSupportedException">该对象不支持读取数据。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -729,12 +808,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>获取或设置此 <see cref="T:System.Data.SqlTypes.SqlFileStream" /> 对象的事务上下文。</summary>
-        <value>传递到此 <see cref="T:System.Data.SqlTypes.SqlFileStream" /> 对象的构造函数的 <paramref name="transactionContext" /> 数组。</value>
+        <value>传递给此 <see cref="T:System.Data.SqlTypes.SqlFileStream" /> 对象的构造函数的 <paramref name="transactionContext" /> 数组。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
@@ -752,6 +835,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -764,7 +851,7 @@
         <param name="buffer">字节数组。 此方法将 <paramref name="count" /> 个字节从 <paramref name="buffer" /> 复制到当前流。</param>
         <param name="offset"><paramref name="buffer" /> 中的从零开始的字节偏移量，从此处开始将字节复制到当前流。</param>
         <param name="count">要写入当前流的字节数。</param>
-        <summary>将字节序列写入当前流，并按写入的字节数向前调整流的当前位置。</summary>
+        <summary>将字节序列写入当前流，并将流的当前位置向前移动写入的字节数。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -773,7 +860,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">对象不支持数据写入。</exception>
+        <exception cref="T:System.NotSupportedException">该对象不支持写入数据。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -790,6 +877,9 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -797,8 +887,8 @@
         <Parameter Name="value" Type="System.Byte" />
       </Parameters>
       <Docs>
-        <param name="value">要写入流中的字节。</param>
-        <summary>将一个字节写入流内的当前位置，并将流内的位置向前提升一个字节。</summary>
+        <param name="value">要写入流的字节。</param>
+        <summary>将一个字节写入流内的当前位置，并将流内的位置向前推进一个字节。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -807,7 +897,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">对象不支持数据写入。</exception>
+        <exception cref="T:System.NotSupportedException">该对象不支持写入数据。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
     </Member>
@@ -824,8 +914,11 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -833,8 +926,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值（以毫秒为单位），该值确定流在超时前将尝试写入多长时间。</summary>
-        <value>一个确定流在超时前将尝试写入多长时间的值（以毫秒为单位）。</value>
+        <summary>获取或设置一个值（以毫秒为单位），该值确定流在超时前尝试写入多长时间。</summary>
+        <value>一个确定流在超时前尝试写入多长时间的值（以毫秒为单位）。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/bd8b845c-0f09-4295-b466-97ef106eefa8">SQL Server 2008 中的 FILESTREAM 数据 (ADO.NET)</related>
       </Docs>
