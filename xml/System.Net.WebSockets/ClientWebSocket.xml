@@ -1,5 +1,5 @@
 <Type Name="ClientWebSocket" FullName="System.Net.WebSockets.ClientWebSocket">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bcfca48d993c6e1eab9462ea7d2a5e48a8763304" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53503708" /></Metadata><TypeSignature Language="C#" Value="public class ClientWebSocket : System.Net.WebSockets.WebSocket, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="312db09f366f12d4c1261bbd0d2ef04366a718c2" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56359156" /></Metadata><TypeSignature Language="C#" Value="public class ClientWebSocket : System.Net.WebSockets.WebSocket, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientWebSocket extends System.Net.WebSockets.WebSocket implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.WebSockets.ClientWebSocket" />
   <TypeSignature Language="VB.NET" Value="Public Class ClientWebSocket&#xA;Inherits WebSocket&#xA;Implements IDisposable" />
@@ -144,7 +144,7 @@
         <param name="closeStatus">WebSocket 关闭状态。</param>
         <param name="statusDescription">关闭状态的说明。</param>
         <param name="cancellationToken">一个取消标记，用于传播应取消此操作的通知。</param>
-        <summary>关闭作为异步操作的 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例。</summary>
+        <summary>关闭 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例以作为异步操作。</summary>
         <returns>表示异步操作的任务对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -195,7 +195,7 @@
         <param name="closeStatus">WebSocket 关闭状态。</param>
         <param name="statusDescription">关闭状态的说明。</param>
         <param name="cancellationToken">一个取消标记，用于传播应取消此操作的通知。</param>
-        <summary>关闭作为异步操作的 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例的输出。</summary>
+        <summary>关闭 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 的输出以作为异步操作。</summary>
         <returns>表示异步操作的任务对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -234,7 +234,7 @@
         <ReturnType>System.Nullable&lt;System.Net.WebSockets.WebSocketCloseStatus&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例上启动关闭握手的原因。</summary>
+        <summary>获取指示在 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例上启动关闭握手的原因。</summary>
         <value>启动关闭握手的原因。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -266,8 +266,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取对关闭 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例的原因的描述。</summary>
-        <value>对关闭 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例的原因的描述。</value>
+        <summary>获取对 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例关闭的原因的说明。</summary>
+        <value>对 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例关闭的原因的说明。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -307,7 +307,7 @@
       </Parameters>
       <Docs>
         <param name="uri">要连接到的 WebSocket 服务器的 URI。</param>
-        <param name="cancellationToken">用于传播应取消操作的通知的取消标记。</param>
+        <param name="cancellationToken">可用于传播应取消操作的通知的取消标记。</param>
         <summary>连接到 WebSocket 服务器以作为异步操作。</summary>
         <returns>表示异步操作的任务对象。</returns>
         <remarks>
@@ -421,7 +421,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="buffer">要接收响应的缓冲区。</param>
+        <param name="buffer">要接受响应的缓冲区。</param>
         <param name="cancellationToken">一个取消标记，用于传播应取消此操作的通知。</param>
         <summary>将 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 上的数据作为异步操作进行接收。</summary>
         <returns>表示异步操作的任务对象。</returns>
@@ -435,6 +435,38 @@
   
  ]]></format>
         </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask&lt;System.Net.WebSockets.ValueWebSocketReceiveResult&gt; ReceiveAsync (Memory&lt;byte&gt; buffer, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask`1&lt;valuetype System.Net.WebSockets.ValueWebSocketReceiveResult&gt; ReceiveAsync(valuetype System.Memory`1&lt;unsigned int8&gt; buffer, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebSockets.ClientWebSocket.ReceiveAsync(System.Memory{System.Byte},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::ValueTask&lt;System::Net::WebSockets::ValueWebSocketReceiveResult&gt; ReceiveAsync(Memory&lt;System::Byte&gt; buffer, System::Threading::CancellationToken cancellationToken);" />
+      <MemberSignature Language="F#" Value="override this.ReceiveAsync : Memory&lt;byte&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask&lt;System.Net.WebSockets.ValueWebSocketReceiveResult&gt;" Usage="clientWebSocket.ReceiveAsync (buffer, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebSockets.Client</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask&lt;System.Net.WebSockets.ValueWebSocketReceiveResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Memory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="SendAsync">
@@ -485,6 +517,42 @@
   
  ]]></format>
         </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask SendAsync (ReadOnlyMemory&lt;byte&gt; buffer, System.Net.WebSockets.WebSocketMessageType messageType, bool endOfMessage, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask SendAsync(valuetype System.ReadOnlyMemory`1&lt;unsigned int8&gt; buffer, valuetype System.Net.WebSockets.WebSocketMessageType messageType, bool endOfMessage, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebSockets.ClientWebSocket.SendAsync(System.ReadOnlyMemory{System.Byte},System.Net.WebSockets.WebSocketMessageType,System.Boolean,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::ValueTask SendAsync(ReadOnlyMemory&lt;System::Byte&gt; buffer, System::Net::WebSockets::WebSocketMessageType messageType, bool endOfMessage, System::Threading::CancellationToken cancellationToken);" />
+      <MemberSignature Language="F#" Value="override this.SendAsync : ReadOnlyMemory&lt;byte&gt; * System.Net.WebSockets.WebSocketMessageType * bool * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask" Usage="clientWebSocket.SendAsync (buffer, messageType, endOfMessage, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebSockets.Client</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ReadOnlyMemory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="messageType" Type="System.Net.WebSockets.WebSocketMessageType" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="endOfMessage" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="3" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="messageType">To be added.</param>
+        <param name="endOfMessage">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="State">
@@ -547,7 +615,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取 <see cref="T:System.Net.WebSockets.ClientWebSocket" /> 实例支持的 WebSocket 子协议。</summary>
-        <value>支持的 WebSocket 子协议。</value>
+        <value>受支持的 WebSocket 子协议。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

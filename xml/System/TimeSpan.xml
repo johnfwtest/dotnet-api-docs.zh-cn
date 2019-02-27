@@ -1,5 +1,5 @@
 <Type Name="TimeSpan" FullName="System.TimeSpan">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="385e5f59052a1470195cab8868859824a15c54da" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55319013" /></Metadata><TypeSignature Language="C#" Value="public struct TimeSpan : IComparable, IComparable&lt;TimeSpan&gt;, IEquatable&lt;TimeSpan&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2e15ed612b6c1d448cc747efe28bbead7f4ca7cd" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56359377" /></Metadata><TypeSignature Language="C#" Value="public struct TimeSpan : IComparable, IComparable&lt;TimeSpan&gt;, IEquatable&lt;TimeSpan&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit TimeSpan extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;valuetype System.TimeSpan&gt;, class System.IEquatable`1&lt;valuetype System.TimeSpan&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.TimeSpan" />
   <TypeSignature Language="VB.NET" Value="Public Structure TimeSpan&#xA;Implements IComparable, IComparable(Of TimeSpan), IEquatable(Of TimeSpan), IFormattable" />
@@ -48,6 +48,9 @@
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
       <AttributeName>System.Serializable</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -270,7 +273,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">参数指定一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的 <see cref="T:System.TimeSpan" /> 值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">该参数指定一个小于 <see cref="T:System.TimeSpan" /> 或大于 <see cref="F:System.TimeSpan.MinValue" /> 的 <see cref="F:System.TimeSpan.MaxValue" /> 值。</exception>
         <altmember cref="T:System.Int64" />
       </Docs>
     </Member>
@@ -331,7 +334,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">参数指定一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的 <see cref="T:System.TimeSpan" /> 值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">该参数指定一个小于 <see cref="T:System.TimeSpan" /> 或大于 <see cref="F:System.TimeSpan.MinValue" /> 的 <see cref="F:System.TimeSpan.MaxValue" /> 值。</exception>
         <altmember cref="T:System.Int64" />
       </Docs>
     </Member>
@@ -376,7 +379,7 @@
         <param name="minutes">分钟数。</param>
         <param name="seconds">秒数。</param>
         <param name="milliseconds">毫秒数。</param>
-        <summary>将 <see cref="T:System.TimeSpan" /> 结构的新实例初始化为指定的天数、小时数、分钟数、秒数和毫秒数。</summary>
+        <summary>将新的 <see cref="T:System.TimeSpan" /> 结构初始化为指定的天数、小时数、分钟数、秒数和毫秒数。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -394,7 +397,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">参数指定一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的 <see cref="T:System.TimeSpan" /> 值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">该参数指定一个小于 <see cref="T:System.TimeSpan" /> 或大于 <see cref="F:System.TimeSpan.MinValue" /> 的 <see cref="F:System.TimeSpan.MaxValue" /> 值。</exception>
         <altmember cref="T:System.Int64" />
       </Docs>
     </Member>
@@ -1587,7 +1590,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前 <see cref="T:System.TimeSpan" /> 结构所表示的时间间隔的小时数部分。</summary>
-        <value>当前 <see cref="T:System.TimeSpan" /> 结构的小时数部分。 返回值的范围为 -23 到 23。</value>
+        <value>当前 <see cref="T:System.TimeSpan" /> 结构的小时分量。 返回值的范围为 -23 到 23。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1702,7 +1705,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前 <see cref="T:System.TimeSpan" /> 结构所表示的时间间隔的毫秒数部分。</summary>
-        <value>当前 <see cref="T:System.TimeSpan" /> 结构的毫秒数部分。 返回值的范围为 -999 到 999。</value>
+        <value>当前 <see cref="T:System.TimeSpan" /> 结构的毫秒分量。 返回值的范围为 -999 到 999。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1763,7 +1766,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前 <see cref="T:System.TimeSpan" /> 结构所表示的时间间隔的分钟数部分。</summary>
-        <value>当前 <see cref="T:System.TimeSpan" /> 结构的分钟数部分。 返回值的范围为 -59 到 59。</value>
+        <value>当前 <see cref="T:System.TimeSpan" /> 结构的分钟分量。 返回值的范围为 -59 到 59。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1910,7 +1913,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个新的 <see cref="T:System.TimeSpan" /> 对象，它的值为这个实例的相反值。</summary>
+        <summary>返回其值为此实例的相反值的新 <see cref="T:System.TimeSpan" /> 对象。</summary>
         <returns>一个新对象，它与此实例的数值相同但符号相反。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1924,7 +1927,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">不能通过 <see cref="T:System.TimeSpan" /> 表示此实例的相反值；即：此实例的值为 <see cref="F:System.TimeSpan.MinValue" />。</exception>
+        <exception cref="T:System.OverflowException">此实例的求反值不能用 <see cref="T:System.TimeSpan" /> 表示，即此实例的值为 <see cref="F:System.TimeSpan.MinValue" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="op_Addition">
@@ -2579,7 +2582,7 @@
       </Parameters>
       <Docs>
         <param name="t">要求反的时间间隔。</param>
-        <summary>返回一个 <see cref="T:System.TimeSpan" />，它的值为这个指定实例的相反值。</summary>
+        <summary>返回其值为指定实例的相反值的 <see cref="T:System.TimeSpan" />。</summary>
         <returns>与此实例的数值相同，但符号相反的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[此运算符的等效方法是 <xref:System.TimeSpan.Negate?displayProperty=nameWithType>  
@@ -2593,7 +2596,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.OverflowException">不能通过 <see cref="T:System.TimeSpan" /> 表示此实例的相反值；即：此实例的值为 <see cref="F:System.TimeSpan.MinValue" />。</exception>
+        <exception cref="T:System.OverflowException">此实例的求反值不能用 <see cref="T:System.TimeSpan" /> 表示，即此实例的值为 <see cref="F:System.TimeSpan.MinValue" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="op_UnaryPlus">
@@ -2632,7 +2635,7 @@
       </Parameters>
       <Docs>
         <param name="t">要返回的时间间隔。</param>
-        <summary>返回指定的 <see cref="T:System.TimeSpan" /> 的实例。</summary>
+        <summary>返回指定的 <see cref="T:System.TimeSpan" /> 实例。</summary>
         <returns><paramref name="t" /> 所指定的时间间隔。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2745,11 +2748,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="s" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="s" /> 的格式无效。</exception>
+        <exception cref="T:System.FormatException"><paramref name="s" /> 具有无效的格式。</exception>
         <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的数字。  
   
 - 或 - 
-天、小时、分钟和秒成分中至少有一个超出了其有效范围。</exception>
+天、小时、分钟或秒中至少有一个分量超出其有效范围。</exception>
       </Docs>
     </Member>
     <Member MemberName="Parse">
@@ -2877,11 +2880,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="input" /> 的格式无效。</exception>
+        <exception cref="T:System.FormatException"><paramref name="input" /> 具有无效的格式。</exception>
         <exception cref="T:System.OverflowException"><paramref name="input" /> 表示一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的数字。  
   
 - 或 - 
-<paramref name="input" /> 中天数、小时、分钟和秒数四个成分中至少一个超出了其有效范围。</exception>
+<paramref name="input" /> 中的天、小时、分钟或秒中至少有一个分量超出其有效范围。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ParseExact">
@@ -2970,11 +2973,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="input" /> 的格式无效。</exception>
+        <exception cref="T:System.FormatException"><paramref name="input" /> 具有无效的格式。</exception>
         <exception cref="T:System.OverflowException"><paramref name="input" /> 表示一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的数字。  
   
 - 或 - 
-<paramref name="input" /> 中天数、小时、分钟和秒数四个成分中至少一个超出了其有效范围。</exception>
+<paramref name="input" /> 中的天、小时、分钟或秒中至少有一个分量超出其有效范围。</exception>
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">标准 TimeSpan 格式字符串</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">自定义的 TimeSpan 格式字符串</related>
       </Docs>
@@ -3053,11 +3056,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="input" /> 的格式无效。</exception>
+        <exception cref="T:System.FormatException"><paramref name="input" /> 具有无效的格式。</exception>
         <exception cref="T:System.OverflowException"><paramref name="input" /> 表示一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的数字。  
   
 - 或 - 
-<paramref name="input" /> 中天数、小时、分钟和秒数四个成分中至少一个超出了其有效范围。</exception>
+<paramref name="input" /> 中的天、小时、分钟或秒中至少有一个分量超出其有效范围。</exception>
         <altmember cref="M:System.TimeSpan.TryParseExact(System.String,System.String[],System.IFormatProvider,System.TimeSpan@)" />
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">标准 TimeSpan 格式字符串</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">自定义的 TimeSpan 格式字符串</related>
@@ -3210,13 +3213,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.TimeSpanStyles" /> 值。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="styles" />是无效的 <see cref="T:System.Globalization.TimeSpanStyles" /> 值。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="input" /> 的格式无效。</exception>
+        <exception cref="T:System.FormatException"><paramref name="input" /> 具有无效的格式。</exception>
         <exception cref="T:System.OverflowException"><paramref name="input" /> 表示一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的数字。  
   
 - 或 - 
-<paramref name="input" /> 中天数、小时、分钟和秒数四个成分中至少一个超出了其有效范围。</exception>
+<paramref name="input" /> 中的天、小时、分钟或秒中至少有一个分量超出其有效范围。</exception>
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">标准 TimeSpan 格式字符串</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">自定义的 TimeSpan 格式字符串</related>
       </Docs>
@@ -3298,13 +3301,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.TimeSpanStyles" /> 值。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="styles" />是无效的 <see cref="T:System.Globalization.TimeSpanStyles" /> 值。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="input" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="input" /> 的格式无效。</exception>
+        <exception cref="T:System.FormatException"><paramref name="input" /> 具有无效的格式。</exception>
         <exception cref="T:System.OverflowException"><paramref name="input" /> 表示一个小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" /> 的数字。  
   
 - 或 - 
-<paramref name="input" /> 中天数、小时、分钟和秒数四个成分中至少一个超出了其有效范围。</exception>
+<paramref name="input" /> 中的天、小时、分钟或秒中至少有一个分量超出其有效范围。</exception>
         <related type="Article" href="~/docs/standard/base-types/standard-timespan-format-strings.md">标准 TimeSpan 格式字符串</related>
         <related type="Article" href="~/docs/standard/base-types/custom-timespan-format-strings.md">自定义的 TimeSpan 格式字符串</related>
       </Docs>
@@ -3342,7 +3345,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取当前 <see cref="T:System.TimeSpan" /> 结构所表示的时间间隔的秒数部分。</summary>
-        <value>当前 <see cref="T:System.TimeSpan" /> 结构的秒数部分。 返回值的范围为 -59 到 59。</value>
+        <value>当前 <see cref="T:System.TimeSpan" /> 结构的秒分量。 返回值的范围为 -59 到 59。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3406,7 +3409,7 @@
       </Parameters>
       <Docs>
         <param name="ts">要减去的时间间隔。</param>
-        <summary>返回一个新的 <see cref="T:System.TimeSpan" /> 对象，其值为指定的 <see cref="T:System.TimeSpan" /> 对象与此实例的值之差。</summary>
+        <summary>返回一个新的 <see cref="T:System.TimeSpan" /> 对象，其值为指定 <see cref="T:System.TimeSpan" /> 对象与此实例的值之差。</summary>
         <returns>一个新的时间间隔，其值为此实例的值减去 <paramref name="ts" /> 的值所得的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4008,7 +4011,7 @@
         <param name="format">标准或自定义的 <see cref="T:System.TimeSpan" /> 格式字符串。</param>
         <param name="formatProvider">一个提供区域性特定的格式设置信息的对象。</param>
         <summary>使用指定的格式和区域性特定的格式设置信息，将当前 <see cref="T:System.TimeSpan" /> 对象的值转换为其等效字符串表示形式。</summary>
-        <returns>当前 <see cref="T:System.TimeSpan" /> 值的字符串表示形式，由 <paramref name="format" /> 和 <paramref name="formatProvider" /> 指定。</returns>
+        <returns>当前 <see cref="T:System.TimeSpan" /> 值的字符串表示形式，格式由 <paramref name="format" /> 和 <paramref name="formatProvider" /> 指定。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4470,7 +4473,7 @@
         <param name="s">一个字符串，用于指定进行转换的时间间隔。</param>
         <param name="result">此方法返回时，包含表示由 <paramref name="s" /> 指定的时间间隔的对象；或者如果转换失败，则包含 <see cref="F:System.TimeSpan.Zero" />。 此参数未经初始化即被传递。</param>
         <summary>将时间间隔的字符串表示形式转换为其等效的 <see cref="T:System.TimeSpan" />，并返回一个指示转换是否成功的值。</summary>
-        <returns>如果 <see langword="true" /> 成功转换，则为 <paramref name="s" />；否则为 <see langword="false" />。 如果 <paramref name="s" /> 参数为 <see langword="null" /> 或 <see cref="F:System.String.Empty" />，格式无效，表示的时间间隔小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" />，或者天、小时、分钟或秒分量中至少有一个超出其有效范围，则此运算返回 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 成功转换，则为 <paramref name="s" />；否则为 <see langword="false" />。 如果 <paramref name="s" /> 参数为 <see langword="false" /> 或 <see cref="F:System.String.Empty" />，格式无效，表示的时间间隔小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" />，或者天、小时、分钟或秒分量中至少有一个超出其有效范围，则此运算返回 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4590,7 +4593,7 @@
         <param name="formatProvider">一个提供区域性特定的格式设置信息的对象。</param>
         <param name="result">此方法返回时，包含表示由 <paramref name="input" /> 指定的时间间隔的对象；或者如果转换失败，则包含 <see cref="F:System.TimeSpan.Zero" />。 此参数未经初始化即被传递。</param>
         <summary>使用指定的区域性特定格式设置信息，将时间间隔的字符串表示形式转换为其等效的 <see cref="T:System.TimeSpan" />，并返回一个指示转换是否成功的值。</summary>
-        <returns>如果 <see langword="true" /> 成功转换，则为 <paramref name="input" />；否则为 <see langword="false" />。 如果 <paramref name="input" /> 参数为 <see langword="null" /> 或 <see cref="F:System.String.Empty" />，格式无效，表示的时间间隔小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" />，或者天、小时、分钟或秒分量中至少有一个超出其有效范围，则此运算返回 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 成功转换，则为 <paramref name="input" />；否则为 <see langword="false" />。 如果 <paramref name="input" /> 参数为 <see langword="false" /> 或 <see cref="F:System.String.Empty" />，格式无效，表示的时间间隔小于 <see cref="F:System.TimeSpan.MinValue" /> 或大于 <see cref="F:System.TimeSpan.MaxValue" />，或者天、小时、分钟或秒分量中至少有一个超出其有效范围，则此运算返回 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

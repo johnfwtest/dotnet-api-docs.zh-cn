@@ -1,5 +1,5 @@
 <Type Name="MemberInfo" FullName="System.Reflection.MemberInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1751df7ce9a7c8386304ca156cc8870e1767c110" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53231815" /></Metadata><TypeSignature Language="C#" Value="public abstract class MemberInfo : System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._MemberInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3268d7a7e53e5018ec0f3b7b6cf793c2a3f9b79e" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56354010" /></Metadata><TypeSignature Language="C#" Value="public abstract class MemberInfo : System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._MemberInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit MemberInfo extends System.Object implements class System.Reflection.ICustomAttributeProvider, class System.Runtime.InteropServices._MemberInfo" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.MemberInfo" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class MemberInfo&#xA;Implements _MemberInfo, ICustomAttributeProvider" />
@@ -53,7 +53,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>获取有关成员属性的信息并提供对成员元数据的访问权限。</summary>
+    <summary>获取有关成员属性的信息并提供对成员元数据的访问。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -561,6 +561,36 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="IsCollectible">
+      <MemberSignature Language="C#" Value="public virtual bool IsCollectible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollectible" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.IsCollectible" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsCollectible As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsCollectible { bool get(); };" />
+      <MemberSignature Language="F#" Value="member this.IsCollectible : bool" Usage="System.Reflection.MemberInfo.IsCollectible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="IsDefined">
       <MemberSignature Language="C#" Value="public abstract bool IsDefined (Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
@@ -725,7 +755,7 @@
  使用此属性获取的令牌可以传递到非托管反射 API。 有关详细信息，请参阅[非托管反射 API](https://msdn.microsoft.com/library/0c5bb9de-0cf6-438d-ba47-134e6c775fb8)。  
   
 > [!NOTE]
->  使用非托管的反射 API 需要熟悉的公共语言基础结构 (CLI) 文档，尤其是"第二部分：元数据定义和语义"和"分区 III:CIL 指令集"。 可联机获取该文档；请参阅 MSDN 上的 [ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)和 Ecma International 网站上的[标准 ECMA-335 - 公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552)。  
+>  使用非托管的反射 API 需要熟悉的公共语言基础结构 (CLI) 文档，尤其是"第二部分：Metadata Definition and Semantics”（第 2 部分：元数据定义和语义）和“Partition III:CIL Instruction Set”（第 3 部分：CIL 指令集）。 可联机获取该文档；请参阅 MSDN 上的 [ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)和 Ecma International 网站上的[标准 ECMA-335 - 公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552)。  
   
  ]]></format>
         </remarks>
@@ -968,7 +998,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取用于获取 <see langword="MemberInfo" /> 的此实例的类对象。</summary>
-        <value><see langword="Type" /> 对象，通过它获取了此 <see langword="MemberInfo" /> 对象。</value>
+        <value><see langword="Type" /> 对象，通过它获取了该 <see langword="MemberInfo" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1329,12 +1359,12 @@
       <Docs>
         <param name="dispIdMember">标识成员。</param>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
-        <param name="lcid">要在其中解释参数的区域设置上下文。</param>
+        <param name="lcid">要在其中解释自变量的区域设置上下文。</param>
         <param name="wFlags">描述调用的上下文的标志。</param>
-        <param name="pDispParams">指向一个结构的指针，该结构包含一个自变量数组、一个命名自变量的 DISPID 自变量数组和数组中元素数的计数。</param>
+        <param name="pDispParams">指向一个结构的指针，该结构包含一个参数数组、一个命名参数的 DISPID 参数数组和数组中元素数的计数。</param>
         <param name="pVarResult">指向要存储结果的位置的指针。</param>
         <param name="pExcepInfo">指向一个包含异常信息的结构的指针。</param>
-        <param name="puArgErr">第一个出错自变量的索引。</param>
+        <param name="puArgErr">第一个出错参数的索引。</param>
         <summary>提供对某一对象公开的属性和方法的访问。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

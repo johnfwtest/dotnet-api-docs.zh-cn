@@ -1,5 +1,5 @@
 <Type Name="XmlNodeType" FullName="System.Xml.XmlNodeType">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="beb49da4e5041683aa68e9c41480c99fdd1e4848" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="37481766" /></Metadata><TypeSignature Language="C#" Value="public enum XmlNodeType" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b05b4d833b750ad3465979433432a1ac25d30904" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56372578" /></Metadata><TypeSignature Language="C#" Value="public enum XmlNodeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlNodeType extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlNodeType" />
   <TypeSignature Language="VB.NET" Value="Public Enum XmlNodeType" />
@@ -29,7 +29,36 @@
   </Base>
   <Docs>
     <summary>指定节点的类型。</summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+下表提供有关 XML 节点，以及其父节点和子节点的其他信息。
+
+| 字段 | 描述 | 可以具有子节点： | 可以是子节点： |
+|---|---|---|---|
+|`Attribute`| |`EntityReference`， `Text`|无。 它不被视为一个子节点的`Element`。|
+|`CDATA`| CDATA 节用于转义，否则会识别为标记的文本块。|无。|`DocumentFragment`、 `EntityReference`和 `Element`|
+|`Comment`| | 无。 |`Document`, `DocumentFragment`, `EntityReference`|
+|`Document`| |`XmlDeclaration``Element` （最多一个）， `ProcessingInstruction`， `Comment`， `DocumentType`|无|
+|`DocumentFragment`|将节点或子树与文档关联而无需实际包含在文档中。|`Element`, `ProcessingInstruction`, `Comment`, `Text`, `CDATA`, `EntityReference`|无。 
+|`DocumentType`| |`Notation`， `Entity`|无|
+|`Element`| |`Element`, `Text`, `Comment`, `ProcessingInstruction`, `CDATA`, `EntityReference`| `Document`, `DocumentFragment`, `EntityReference`, `Element`|
+|`EndElement`|返回当<xref:System.Xml.XmlReader>到达元素末尾。| | |   
+|`EndEntity`| | | |
+|`Entity`| |子节点表示展开的实体 (例如，`Text`和`EntityReference`节点) |`DocumentType`|
+|`EntityReference`| |`Element`, `ProcessingInstruction`, `Comment`, `Text`, `CDATA`, `EntityReference` |`Attribute`, `DocumentFragment`, `Element`, `EntityReference` |
+|`None`| | | |
+|`Notation`| | 无 | `DocumentType`| 
+|`ProcessingInstruction`| | 无 | `Document`, `DocumentFragment`, `Element`, `EntityReference`|
+|`SignificantWhitespace`| | | |
+|`Text`| | 无 | `Attribute`, `DocumentFragment`, `Element`, `EntityReference` |
+|`Whitespace`| | | |
+|`XmlDeclaration`| 必须文档中的第一个节点。 它可以具有提供版本和编码信息的属性。 |无|`Document`|
+
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="Attribute">
@@ -65,14 +94,6 @@
       <MemberValue>2</MemberValue>
       <Docs>
         <summary>特性（例如，<c>id='123'</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `Attribute`节点可以具有以下子节点类型：`Text`和`EntityReference`。 `Attribute`节点不显示为任何其他节点类型的子节点。 它不被视为一个子节点的`Element`。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CDATA">
@@ -108,14 +129,6 @@
       <MemberValue>4</MemberValue>
       <Docs>
         <summary>CDATA 部分（例如，<c>&lt;![CDATA[my escaped text]]&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- CDATA 节用于转义，否则会识别为标记的文本块。 一个`CDATA`节点不能具有任何子节点。 它可以显示为的子`DocumentFragment`， `EntityReference`，和`Element`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Comment">
@@ -151,14 +164,6 @@
       <MemberValue>8</MemberValue>
       <Docs>
         <summary>注释（例如，<c>&lt;!-- my comment --&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 一个`Comment`节点不能具有任何子节点。 它可以显示为的子`Document`， `DocumentFragment`， `Element`，和`EntityReference`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Document">
@@ -194,14 +199,6 @@
       <MemberValue>9</MemberValue>
       <Docs>
         <summary>作为文档树的根的文档对象提供对整个 XML 文档的访问。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 一个`Document`节点可以具有以下子节点类型： `XmlDeclaration`， `Element` （的其中一个最大）， `ProcessingInstruction`， `Comment`，并`DocumentType`。 它不能显示为任何节点类型的子级。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DocumentFragment">
@@ -237,14 +234,6 @@
       <MemberValue>11</MemberValue>
       <Docs>
         <summary>文档片段。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `DocumentFragment`节点将关联节点或子树与文档而无需实际包含在文档中。 一个`DocumentFragment`节点可以具有以下子节点类型： `Element`， `ProcessingInstruction`， `Comment`， `Text`， `CDATA`，和`EntityReference`。 它不能显示为任何节点类型的子级。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DocumentType">
@@ -280,14 +269,6 @@
       <MemberValue>10</MemberValue>
       <Docs>
         <summary>由以下标记指示的文档类型声明（例如，<c>&lt;!DOCTYPE...&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 一个`DocumentType`节点可以具有以下子节点类型：`Notation`和`Entity`。 它可以显示为子级的`Document`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Element">
@@ -323,14 +304,6 @@
       <MemberValue>1</MemberValue>
       <Docs>
         <summary>元素（例如，<c>&lt;item&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `Element`节点可以具有以下子节点类型： `Element`， `Text`， `Comment`， `ProcessingInstruction`， `CDATA`，和`EntityReference`。 它可以是子级`Document`， `DocumentFragment`， `EntityReference`，和`Element`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EndElement">
@@ -366,14 +339,6 @@
       <MemberValue>15</MemberValue>
       <Docs>
         <summary>末尾元素标记（例如，<c>&lt;/item&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `EndElement` 后，将返回节点<xref:System.Xml.XmlReader>到达元素末尾。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EndEntity">
@@ -444,14 +409,6 @@
       <MemberValue>6</MemberValue>
       <Docs>
         <summary>实体声明（例如，<c>&lt;!ENTITY...&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `Entity`节点可以具有表示展开的实体的子节点 (例如，`Text`和`EntityReference`节点)。 它可以显示为子级的`DocumentType`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EntityReference">
@@ -487,14 +444,6 @@
       <MemberValue>5</MemberValue>
       <Docs>
         <summary>实体引用（例如，<c>&amp;num;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- `EntityReference`节点可以具有以下子节点类型： `Element`， `ProcessingInstruction`， `Comment`， `Text`， `CDATA`，和`EntityReference`。 它可以显示为的子`Attribute`， `DocumentFragment`， `Element`，和`EntityReference`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="None">
@@ -565,14 +514,6 @@
       <MemberValue>12</MemberValue>
       <Docs>
         <summary>文档类型声明中的表示法（例如，<c>&lt;!NOTATION...&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 一个`Notation`节点不能具有任何子节点。 它可以显示为子级的`DocumentType`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ProcessingInstruction">
@@ -608,14 +549,6 @@
       <MemberValue>7</MemberValue>
       <Docs>
         <summary>处理指令（例如，<c>&lt;?pi test?&gt;</c>）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 一个`ProcessingInstruction`节点不能具有任何子节点。 它可以显示为的子`Document`， `DocumentFragment`， `Element`，和`EntityReference`节点。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SignificantWhitespace">

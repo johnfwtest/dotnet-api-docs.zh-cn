@@ -1,5 +1,5 @@
 <Type Name="ZipFileExtensions" FullName="System.IO.Compression.ZipFileExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9285978d825ff678174a1eb4ca40180d43b7e492" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53511092" /></Metadata><TypeSignature Language="C#" Value="public static class ZipFileExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8abaed8a637cccd9f7024c0bc3e754f2fa64763e" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56346988" /></Metadata><TypeSignature Language="C#" Value="public static class ZipFileExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ZipFileExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.Compression.ZipFileExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module ZipFileExtensions" />
@@ -7,6 +7,7 @@
   <TypeSignature Language="F#" Value="type ZipFileExtensions = class" />
   <AssemblyInfo>
     <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.0.3.0</AssemblyVersion>
     <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -25,7 +26,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-2.0;netcore-2.2;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netstandard-2.0;netcore-2.2;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;dotnet-uwp-10.0;netcore-3.0">
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.3;netstandard-1.4;netstandard-1.6">
@@ -93,6 +94,7 @@
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -116,7 +118,7 @@
       </Parameters>
       <Docs>
         <param name="destination">要添加该文件的 zip 存档。</param>
-        <param name="sourceFileName">待存档的文件的路径。 可以指定相对或绝对路径。 相对路径是指相对于当前工作目录的路径。</param>
+        <param name="sourceFileName">待存档的文件的路径。 可以指定相对或绝对路径。 相对路径被解释为相对于当前工作目录。</param>
         <param name="entryName">要在 zip 存档中生成的输入的名称。</param>
         <summary>通过压缩并将其添加到邮编存档的存档文件。</summary>
         <returns>zip 存档中新项的包装。</returns>
@@ -137,7 +139,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="sourceFileName" /> 为 <see cref="F:System.String.Empty" />，仅包含空格，或者包含至少一个无效字符。  
+        <exception cref="T:System.ArgumentException"><paramref name="sourceFileName" /> 为 <see cref="F:System.String.Empty" />，仅包含空白，或包含至少一个无效字符。  
   
 - 或 - 
  <paramref name="entryName" /> 为 <see cref="F:System.String.Empty" />。</exception>
@@ -150,7 +152,7 @@
 - 或 - 
 调用方没有访问 <paramref name="sourceFileName" /> 指定的文件的权限。</exception>
         <exception cref="T:System.IO.FileNotFoundException">未找到 <paramref name="sourceFileName" /> 指定的文件。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="sourceFileName" /> 参数格式无效。  
+        <exception cref="T:System.NotSupportedException"><paramref name="sourceFileName" /> 参数的格式无效。  
   
 - 或 - 
 zip 存档不支持写入。</exception>
@@ -166,6 +168,7 @@ zip 存档不支持写入。</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -190,7 +193,7 @@ zip 存档不支持写入。</exception>
       </Parameters>
       <Docs>
         <param name="destination">要添加该文件的 zip 存档。</param>
-        <param name="sourceFileName">待存档的文件的路径。 可以指定相对或绝对路径。 相对路径是指相对于当前工作目录的路径。</param>
+        <param name="sourceFileName">待存档的文件的路径。 可以指定相对或绝对路径。 相对路径被解释为相对于当前工作目录。</param>
         <param name="entryName">要在 zip 存档中生成的输入的名称。</param>
         <param name="compressionLevel">指示创建项时是否强调速度或压缩有效性的枚举值之一。</param>
         <summary>通过使用指定压缩级别压缩并将其添加到邮编存档的存档文件。</summary>
@@ -211,7 +214,7 @@ zip 存档不支持写入。</exception>
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="sourceFileName" /> 为 <see cref="F:System.String.Empty" />，仅包含空格，或者包含至少一个无效字符。  
+        <exception cref="T:System.ArgumentException"><paramref name="sourceFileName" /> 为 <see cref="F:System.String.Empty" />，仅包含空白，或包含至少一个无效字符。  
   
 - 或 - 
  <paramref name="entryName" /> 为 <see cref="F:System.String.Empty" />。</exception>
@@ -224,7 +227,7 @@ zip 存档不支持写入。</exception>
 - 或 - 
 调用方没有访问 <paramref name="sourceFileName" /> 指定的文件的权限。</exception>
         <exception cref="T:System.IO.FileNotFoundException">未找到 <paramref name="sourceFileName" /> 指定的文件。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="sourceFileName" /> 参数格式无效。  
+        <exception cref="T:System.NotSupportedException"><paramref name="sourceFileName" /> 参数的格式无效。  
   
 - 或 - 
 zip 存档不支持写入。</exception>
@@ -241,6 +244,7 @@ zip 存档不支持写入。</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -262,9 +266,9 @@ zip 存档不支持写入。</exception>
         <Parameter Name="destinationDirectoryName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="source">从中提取文件的 zip 存档。</param>
-        <param name="destinationDirectoryName">要在其中放置解压缩的文件的目录路径。 可以指定相对或绝对路径。 相对路径是指相对于当前工作目录的路径。</param>
-        <summary>将 zip 存档中的所有文件都解压缩到文件系统的一个目录下。</summary>
+        <param name="source">从 zip 归档解压文件。</param>
+        <param name="destinationDirectoryName">到放置解压缩文件的目录的路径。 可以指定相对或绝对路径。 相对路径被解释为相对于当前工作目录。</param>
+        <summary>将 zip 存档中的所有文件都解压到文件系统的一目录下。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -281,25 +285,25 @@ zip 存档不支持写入。</exception>
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="destinationDirectoryName" /> 为 <see cref="F:System.String.Empty" />，仅包含空格，或者包含至少一个无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="destinationDirectoryName" /> 为 <see cref="F:System.String.Empty" />，仅包含空白，或包含至少一个无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="destinationDirectoryName" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.IO.PathTooLongException">指定路径的长度超出系统定义的最大长度。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定路径超过了系统定义的最大长度。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效（例如，它位于未映射的驱动器上）。</exception>
         <exception cref="T:System.IO.IOException"><paramref name="destinationDirectoryName" /> 指定的目录已存在。  
   
 - 或 - 
-存档中的一个条目名是 <see cref="F:System.String.Empty" />，仅包含空格，或者包含至少一个无效字符。  
+一个在存档中的输入名称是 <see cref="F:System.String.Empty" />，仅包含空白或包含至少一个无效字符。  
   
 - 或 - 
-从存档中解压缩一个条目将在 <paramref name="destinationDirectoryName" /> 指定的目录之外创建一个文件。 （例如，如果条目名中包含父目录访问器，则可能发生这种情况。） 
+从存档中提取条目将生成在 <paramref name="destinationDirectoryName" /> 指定的目录之外的一个文件。 （例如，如果该输入名称包括父目录访问器，则这可能发生。） 
 - 或 - 
-存档中的两个或多个条目名相同。</exception>
-        <exception cref="T:System.UnauthorizedAccessException">调用方没有写入目标目录所需的权限。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="destinationDirectoryName" /> 包含无效的格式。</exception>
-        <exception cref="T:System.IO.InvalidDataException">存档条目无法找到或已损坏。  
+存档中具有相同名称的两个或多个项。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">调用方不具有所需权限以便写入到目标目录。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="destinationDirectoryName" /> 包含无效格式。</exception>
+        <exception cref="T:System.IO.InvalidDataException">未能找到归档项或已损坏。  
   
 - 或 - 
-使用了一种不支持的压缩方法压缩存档条目。</exception>
+通过一种不支持的压缩方法，对一个存档条目进行压缩。</exception>
       </Docs>
     </Member>
     <Member MemberName="ExtractToDirectory">
@@ -357,6 +361,7 @@ zip 存档不支持写入。</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -378,8 +383,8 @@ zip 存档不支持写入。</exception>
         <Parameter Name="destinationFileName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="source">要从其中解压缩文件的 zip 存档条目。</param>
-        <param name="destinationFileName">从条目内容创建的文件的路径。 可以指定相对或绝对路径。 相对路径是指相对于当前工作目录的路径。</param>
+        <param name="source">从 zip 归档项解压文件。</param>
+        <param name="destinationFileName">从输入的内容生成的文件的路径。 可以指定相对或绝对路径。 相对路径被解释为相对于当前工作目录。</param>
         <summary>将 zip 存档中的条目解压到文件下。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -414,20 +419,20 @@ zip 存档不支持写入。</exception>
 出现 I/O 错误。  
   
 - 或 - 
-该条目当前处于打开状态，可以写入。  
+该项当前为编写开放。  
   
 - 或 - 
-该条目已从存档中删除。</exception>
+已从存档中删除的项。</exception>
         <exception cref="T:System.UnauthorizedAccessException">调用方没有创建新文件所需的权限。</exception>
         <exception cref="T:System.IO.InvalidDataException">该输入从存档中缺失，或损坏且无法读取。  
   
 - 或 - 
-已经通过使用一种不受支持的压缩方法压缩该条目。</exception>
-        <exception cref="T:System.ObjectDisposedException">已释放该条目所属的 zip 存档。</exception>
+该输入已经通过使用一种不被支持的压缩方法压缩。</exception>
+        <exception cref="T:System.ObjectDisposedException">已释放属于 zip 归档项。</exception>
         <exception cref="T:System.NotSupportedException"><paramref name="destinationFileName" /> 的格式无效。  
   
 - 或 - 
-该条目的 zip 存档是在 <see cref="F:System.IO.Compression.ZipArchiveMode.Create" /> 模式中打开的，不允许检索条目。</exception>
+该 zip 归档项在 <see cref="F:System.IO.Compression.ZipArchiveMode.Create" /> 模式中打开的，不允许项检索。</exception>
       </Docs>
     </Member>
     <Member MemberName="ExtractToFile">
@@ -440,6 +445,7 @@ zip 存档不支持写入。</exception>
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
         <AssemblyVersion>4.0.4.0</AssemblyVersion>
@@ -462,10 +468,10 @@ zip 存档不支持写入。</exception>
         <Parameter Name="overwrite" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="source">要从其中解压缩文件的 zip 存档条目。</param>
-        <param name="destinationFileName">从条目内容创建的文件的路径。 可以指定相对或绝对路径。 相对路径是指相对于当前工作目录的路径。</param>
-        <param name="overwrite">如果覆盖与目标文件同名的现有文件，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>将 zip 存档中的条目解压缩到文件下，并可选择覆盖具有相同名称的现有文件。</summary>
+        <param name="source">从 zip 归档项解压文件。</param>
+        <param name="destinationFileName">从输入的内容生成的文件的路径。 可以指定相对或绝对路径。 相对路径被解释为相对于当前工作目录。</param>
+        <param name="overwrite">如果覆盖带与目标文件同名的名称的现有文件，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <summary>将 zip 存档中的条目解压到文件下，并可选择覆盖具有相同名称的现存文件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -497,20 +503,20 @@ zip 存档不支持写入。</exception>
 出现 I/O 错误。  
   
 - 或 - 
-该条目当前处于打开状态，可以写入。  
+该项当前为编写开放。  
   
 - 或 - 
-该条目已从存档中删除。</exception>
+已从存档中删除的项。</exception>
         <exception cref="T:System.UnauthorizedAccessException">调用方没有创建新文件所需的权限。</exception>
-        <exception cref="T:System.IO.InvalidDataException">存档中缺少该条目，或者该条目已损坏且无法读取。  
+        <exception cref="T:System.IO.InvalidDataException">该输入从存档中缺失或损坏且无法读取。  
   
 - 或 - 
-已经通过使用一种不受支持的压缩方法压缩该条目。</exception>
-        <exception cref="T:System.ObjectDisposedException">已释放该条目所属的 zip 存档。</exception>
+该输入已经通过使用一种不被支持的压缩方法压缩。</exception>
+        <exception cref="T:System.ObjectDisposedException">已释放属于 zip 归档项。</exception>
         <exception cref="T:System.NotSupportedException"><paramref name="destinationFileName" /> 的格式无效。  
   
 - 或 - 
-该条目的 zip 存档是在 <see cref="F:System.IO.Compression.ZipArchiveMode.Create" /> 模式中打开的，不允许检索条目。</exception>
+该 zip 归档项在 <see cref="F:System.IO.Compression.ZipArchiveMode.Create" /> 模式中打开的，不允许项检索。</exception>
       </Docs>
     </Member>
   </Members>
