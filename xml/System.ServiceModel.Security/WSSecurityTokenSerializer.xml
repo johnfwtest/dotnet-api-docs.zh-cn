@@ -1,5 +1,5 @@
 <Type Name="WSSecurityTokenSerializer" FullName="System.ServiceModel.Security.WSSecurityTokenSerializer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ba8b472652c953ba854cad2fb39895ebbedd4d33" /><Meta Name="ms.sourcegitcommit" Value="22744e2f9d07a51900a968efffd9e390117d64a1" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/03/2019" /><Meta Name="ms.locfileid" Value="55674120" /></Metadata><TypeSignature Language="C#" Value="public class WSSecurityTokenSerializer : System.IdentityModel.Selectors.SecurityTokenSerializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="73e2c688d550bd8462f7d23f8345a0f86d15eb0f" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56773033" /></Metadata><TypeSignature Language="C#" Value="public class WSSecurityTokenSerializer : System.IdentityModel.Selectors.SecurityTokenSerializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSSecurityTokenSerializer extends System.IdentityModel.Selectors.SecurityTokenSerializer" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.WSSecurityTokenSerializer" />
   <TypeSignature Language="VB.NET" Value="Public Class WSSecurityTokenSerializer&#xA;Inherits SecurityTokenSerializer" />
@@ -191,7 +191,7 @@
         <param name="emitBspRequiredAttributes">用于 <see cref="P:System.ServiceModel.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes" /> 属性的值。</param>
         <param name="samlSerializer">用于序列化和反序列化 SAML 令牌的扩展点。</param>
         <param name="securityStateEncoder">用于编码和解码安全状态的编码器，安全状态可作为 Cookie 附加为安全上下文令牌。</param>
-        <param name="knownTypes">类型集合。 必须声明这些已知类型，才能将自定义声明作为安全上下文令牌 Cookie 的一部分包含在内。</param>
+        <param name="knownTypes">类型的集合。 必须声明这些已知类型，才能将自定义声明作为安全上下文令牌 Cookie 的一部分包含在内。</param>
         <summary>初始化 <see cref="T:System.ServiceModel.Security.WSSecurityTokenSerializer" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="securityVersion" /> 为 <see langword="null" />。</exception>
@@ -332,7 +332,7 @@
       </Parameters>
       <Docs>
         <param name="reader">XmlReader。</param>
-        <summary>获取一个值，该值指示密钥标识符子句核心是否可以使用指定的读取器读取。</summary>
+        <summary>获取一个值，该值指示是否可以使用指定的读取器读取密钥标识符子句核心。</summary>
         <returns>如果密钥标识符子句核心可以使用指定的读取器读取，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -489,7 +489,7 @@
       </Parameters>
       <Docs>
         <param name="element">安全令牌。</param>
-        <param name="tokenReferenceStyle"><see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle" />。</param>
+        <param name="tokenReferenceStyle"><see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle" /></param>
         <summary>从以 XML 表示的令牌创建密钥标识符子句。</summary>
         <returns>创建的安全密钥标识符。</returns>
         <remarks>To be added.</remarks>
@@ -540,7 +540,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否发出 BSP 所需的属性。</summary>
+        <summary>获取一个值，该值指示是否发出 BSP 所需的特性。</summary>
         <value>如果要发出 BSP 所需的属性，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -784,7 +784,7 @@
       </Parameters>
       <Docs>
         <param name="element">安全令牌。</param>
-        <param name="tokenReferenceStyle"><see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle" />。</param>
+        <param name="tokenReferenceStyle"><see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle" /></param>
         <param name="securityKeyIdentifierClause">包含安全密钥标识符令牌的元素的子单元。</param>
         <summary>尝试从以 XML 表示的令牌创建密钥标识符子句。</summary>
         <returns>如果创建了密钥标识符子句，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
@@ -855,12 +855,12 @@
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSSecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityToken)" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub WriteTokenCore (writer As XmlWriter, inToken As SecurityToken)" FrameworkAlternate="netframework-3.0;netframework-3.5" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void WriteTokenCore(System::Xml::XmlWriter ^ writer, System::IdentityModel::Tokens::SecurityToken ^ inToken);" FrameworkAlternate="netframework-3.0;netframework-3.5" />
-      <MemberSignature Language="F#" Value="override this.WriteTokenCore : System.Xml.XmlWriter * System.IdentityModel.Tokens.SecurityToken -&gt; unit" Usage="wSSecurityTokenSerializer.WriteTokenCore (writer, inToken)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="override this.WriteTokenCore : System.Xml.XmlWriter * System.IdentityModel.Tokens.SecurityToken -&gt; unit" Usage="wSSecurityTokenSerializer.WriteTokenCore (writer, inToken)" FrameworkAlternate="netframework-4.0" />
       <MemberSignature Language="C#" Value="protected override void WriteTokenCore (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityToken token);" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WriteTokenCore(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityToken token) cil managed" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="VB.NET" Value="Protected Overrides Sub WriteTokenCore (writer As XmlWriter, token As SecurityToken)" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void WriteTokenCore(System::Xml::XmlWriter ^ writer, System::IdentityModel::Tokens::SecurityToken ^ token);" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
-      <MemberSignature Language="F#" Value="override this.WriteTokenCore : System.Xml.XmlWriter * System.IdentityModel.Tokens.SecurityToken -&gt; unit" Usage="wSSecurityTokenSerializer.WriteTokenCore (writer, token)" FrameworkAlternate="netframework-4.0" />
+      <MemberSignature Language="F#" Value="override this.WriteTokenCore : System.Xml.XmlWriter * System.IdentityModel.Tokens.SecurityToken -&gt; unit" Usage="wSSecurityTokenSerializer.WriteTokenCore (writer, token)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
