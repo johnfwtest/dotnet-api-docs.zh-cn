@@ -1,5 +1,5 @@
 <Type Name="KeyContainerPermission" FullName="System.Security.Permissions.KeyContainerPermission">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b1d2a38cd20e621cf62de5a76dae23f14c028efa" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52376265" /></Metadata><TypeSignature Language="C#" Value="public sealed class KeyContainerPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e5b6fcfd1c8054b150525646ee43d84055fdd06e" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56769692" /></Metadata><TypeSignature Language="C#" Value="public sealed class KeyContainerPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit KeyContainerPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Security.Permissions.KeyContainerPermission" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class KeyContainerPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
@@ -15,6 +15,7 @@
     <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
@@ -33,7 +34,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>控制访问密钥容器的权限。 此类不能被继承。</summary>
+    <summary>控制访问密钥容器的能力。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -74,13 +75,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="flags" Type="System.Security.Permissions.KeyContainerPermissionFlags" />
       </Parameters>
       <Docs>
         <param name="flags"><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值的按位组合。</param>
-        <summary>使用指定的访问权限初始化 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 类的新实例。</summary>
+        <summary>用指定的访问权限初始化 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -93,7 +95,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="flags" /> 不是有效的 <see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值组合。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="flags" /> 不是 <see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值的有效组合。</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -114,13 +116,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
       </Parameters>
       <Docs>
         <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 值之一。</param>
-        <summary>使用受限制或不受限制的权限初始化 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 类的新实例。</summary>
+        <summary>用受限制或无限制的权限初始化 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -150,6 +153,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="flags" Type="System.Security.Permissions.KeyContainerPermissionFlags" />
@@ -157,8 +161,8 @@
       </Parameters>
       <Docs>
         <param name="flags"><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值的按位组合。</param>
-        <param name="accessList">标识特定密钥容器访问权限的 <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> 对象数组。</param>
-        <summary>使用指定的全局访问权限和特定密钥容器访问权限初始化 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 类的新实例。</summary>
+        <param name="accessList"><see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> 对象数组，标识特定的密钥容器访问权限。</param>
+        <summary>用指定的全局访问和特定的密钥容器访问权限来初始化 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -171,7 +175,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="flags" /> 不是有效的 <see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值组合。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="flags" /> 不是 <see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值的有效组合。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="accessList" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -193,13 +197,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Permissions.KeyContainerPermissionAccessEntryCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与当前权限相关联的 <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> 对象的集合。</summary>
-        <value><see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection" />，它包含此 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 的 <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> 对象。</value>
+        <summary>获取与当前权限关联的 <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> 对象的集合。</summary>
+        <value><see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection" />，包含了此 <see cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry" /> 的 <see cref="T:System.Security.Permissions.KeyContainerPermission" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -228,6 +233,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -264,12 +270,13 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Permissions.KeyContainerPermissionFlags</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取适用于与权限相关联的所有密钥容器的密钥容器权限标志。</summary>
+        <summary>获取密钥容器权限标志，该标志适用于所有与权限关联的密钥容器。</summary>
         <value><see cref="T:System.Security.Permissions.KeyContainerPermissionFlags" /> 值的按位组合。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -298,6 +305,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -306,7 +314,7 @@
         <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
       </Parameters>
       <Docs>
-        <param name="securityElement">一个 <see cref="T:System.Security.SecurityElement" />，其中包含用于重新构造权限的 XML 编码。</param>
+        <param name="securityElement"><see cref="T:System.Security.SecurityElement" />，包含用于重新构造权限的 XML 编码。</param>
         <summary>从 XML 编码重新构造具有指定状态的权限。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -317,9 +325,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="securityElement" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="securityElement" /> 不是有效的权限元素。  
+        <exception cref="T:System.ArgumentException"><paramref name="securityElement" /> 不是一个有效的权限元素。  
   
-或 
+- 或 - 
 不支持 <paramref name="securityElement" /> 的版本号。</exception>
       </Docs>
     </Member>
@@ -341,6 +349,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -350,8 +359,8 @@
       </Parameters>
       <Docs>
         <param name="target">要与当前权限相交的权限。 它必须与当前权限属于同一类型。</param>
-        <summary>创建并返回一个权限，该权限是当前权限与指定权限的交集。</summary>
-        <returns>表示当前权限和指定权限的交集的一个新权限。 如果交集为空，则此新权限为 <see langword="null" />。</returns>
+        <summary>创建并返回一个权限，该权限是当前权限和指定权限的交集。</summary>
+        <returns>一个新权限，它表示当前权限与指定权限的交集。 如果交集为空，则此新权限为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -360,7 +369,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="target" /> 不是 <see langword="null" />，并且未指定同一类型的权限为当前权限。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="target" /> 不是 <see langword="null" />，并且未指定与当前权限属于同一类型的权限。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsSubsetOf">
@@ -381,6 +390,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -389,7 +399,7 @@
         <Parameter Name="target" Type="System.Security.IPermission" />
       </Parameters>
       <Docs>
-        <param name="target">将要测试子集关系的权限。 此权限必须与当前权限属于同一类型。</param>
+        <param name="target">要测试子集关系的权限。 此权限必须与当前权限属于同一类型。</param>
         <summary>确定当前权限是否为指定权限的子集。</summary>
         <returns>如果当前权限是指定权限的子集，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -400,7 +410,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="target" /> 不是 <see langword="null" />，并且未指定同一类型的权限为当前权限。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="target" /> 不是 <see langword="null" />，并且未指定与当前权限属于同一类型的权限。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsUnrestricted">
@@ -424,13 +434,14 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>确定当前权限是否不受限制。</summary>
+        <summary>确定当前权限是否无限制。</summary>
         <returns>如果当前权限不受限制，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -460,6 +471,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.SecurityElement</ReturnType>
@@ -467,7 +479,7 @@
       <Parameters />
       <Docs>
         <summary>创建权限及其当前状态的 XML 编码。</summary>
-        <returns>包含权限及其状态信息的 XML 编码的 <see cref="T:System.Security.SecurityElement" />。</returns>
+        <returns><see cref="T:System.Security.SecurityElement" />，包含权限的 XML 编码（包括状态信息）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -496,6 +508,7 @@
         <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -515,7 +528,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="target" /> 不是 <see langword="null" />，并且未指定同一类型的权限为当前权限。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="target" /> 不是 <see langword="null" />，并且未指定与当前权限属于同一类型的权限。</exception>
       </Docs>
     </Member>
   </Members>
