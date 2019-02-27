@@ -1,5 +1,5 @@
 <Type Name="XmlSchemaValidator" FullName="System.Xml.Schema.XmlSchemaValidator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f90f4c6eacc5df4cfaee94363abf2a3ea95c7dd1" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52734386" /></Metadata><TypeSignature Language="C#" Value="public sealed class XmlSchemaValidator" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="70d8beb00c92e32ef70a21c4de8b8bc1db676d0b" /><Meta Name="ms.sourcegitcommit" Value="3f21796619d6e69ad383c958cc013ce44c0678de" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/11/2019" /><Meta Name="ms.locfileid" Value="56056538" /></Metadata><TypeSignature Language="C#" Value="public sealed class XmlSchemaValidator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaValidator extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaValidator" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class XmlSchemaValidator" />
@@ -32,18 +32,17 @@
 ## Remarks  
   
 > [!IMPORTANT]
-> -   不要使用来自未知或不受信任的源或位置的架构。 执行此操作将影响你的代码的安全性。  
-> -   XML 架构 （包括内联架构） 是本质上是容易受到拒绝服务攻击;不接受不受信任的方案中。  
-> -   架构验证错误消息和异常可能会公开的内容模型的架构文件的 URI 路径的敏感信息。 请注意不公开此信息向不受信任调用方。  
+> - 不要使用来自未知或不受信任的源或位置的架构。 执行此操作将影响你的代码的安全性。
+> - XML 架构 （包括内联架构） 是本质上是容易受到拒绝服务攻击;不接受不受信任的方案中。
+> - 架构验证错误消息和异常可能会公开的内容模型的架构文件的 URI 路径的敏感信息。 请注意不公开此信息向不受信任调用方。
   
- <xref:System.Xml.Schema.XmlSchemaValidator> 类提供了一种高效、高性能的机制，通过基于推送的方式针对 XML 架构验证 XML 数据。 例如，使用 <xref:System.Xml.Schema.XmlSchemaValidator> 类可以就地验证 XML 信息集，而不必将其序列化为 XML 文档，然后使用验证 XML 读取器重新分析该文档。 <xref:System.Xml.Schema.XmlSchemaValidator>类还可用于生成验证引擎通过自定义 XML 数据源或作为一种方法来生成验证 XML 写入器。  
+ 
+  <xref:System.Xml.Schema.XmlSchemaValidator> 类提供了一种高效、高性能的机制，通过基于推送的方式针对 XML 架构验证 XML 数据。 例如，使用 <xref:System.Xml.Schema.XmlSchemaValidator> 类可以就地验证 XML 信息集，而不必将其序列化为 XML 文档，然后使用验证 XML 读取器重新分析该文档。 <xref:System.Xml.Schema.XmlSchemaValidator>类还可用于生成验证引擎通过自定义 XML 数据源或作为一种方法来生成验证 XML 写入器。  
   
  有关详细信息<xref:System.Xml.Schema.XmlSchemaValidator>类，请参阅[XmlSchemaValidator 基于推送的验证](~/docs/standard/data/xml/xmlschemavalidator-push-based-validation.md)主题。  
   
 > [!IMPORTANT]
->  <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>并<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation>验证标志<xref:System.Xml.Schema.XmlSchemaValidator>对象不是设置为默认值。 此外，<xref:System.Xml.Schema.XmlSchemaValidator.XmlResolver%2A>的属性<xref:System.Xml.Schema.XmlSchemaValidator>对象是`null`默认情况下。 因此，包含外部引用中的架构，导入或重新定义元素则不解析默认情况下。  
-  
-   
+> <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>并<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation>验证标志<xref:System.Xml.Schema.XmlSchemaValidator>对象不是设置为默认值。 此外，<xref:System.Xml.Schema.XmlSchemaValidator.XmlResolver%2A>的属性<xref:System.Xml.Schema.XmlSchemaValidator>对象是`null`默认情况下。 因此，包含外部引用中的架构，导入或重新定义元素则不解析默认情况下。   
   
 ## Examples  
  下面的示例验证`contosoBooks.xml`针对文件`contosoBooks.xsd`架构。 该示例使用 <xref:System.Xml.Serialization.XmlSerializer> 类反序列化 `contosoBooks.xml` 文件，并将节点的值传递给 <xref:System.Xml.Schema.XmlSchemaValidator> 类的方法。  
@@ -170,7 +169,8 @@
   
 -   <xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A>方法可用于模拟遇到内联 XML 架构验证 XML 文档中的效果。  
   
--   <xref:System.Xml.Schema.XmlSchema> 参数的目标命名空间无法与 <xref:System.Xml.Schema.XmlSchemaValidator> 对象已遇到的任何元素或属性的目标命名空间匹配。  
+-   
+  <xref:System.Xml.Schema.XmlSchema> 参数的目标命名空间无法与 <xref:System.Xml.Schema.XmlSchemaValidator> 对象已遇到的任何元素或属性的目标命名空间匹配。  
   
 -   如果<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>未设置验证选项，<xref:System.Xml.Schema.XmlSchemaValidator.AddSchema%2A>方法不执行任何操作。  
   
@@ -305,11 +305,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法可以返回的有效粒子是 <xref:System.Xml.Schema.XmlSchemaElement> 和 <xref:System.Xml.Schema.XmlSchemaAny> 类的实例。  
+ 
+  <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法可以返回的有效粒子是 <xref:System.Xml.Schema.XmlSchemaElement> 和 <xref:System.Xml.Schema.XmlSchemaAny> 类的实例。  
   
  如果内容模型的复合器是 `xs:sequence`，则只返回序列中的下一个粒子。 如果内容模型的复合器是 `xs:all` 或 `xs:choice`，则返回当前元素上下文中可能出现的所有有效粒子。  
   
- 例如，在下面的 XML 架构定义语言 (XSD) 架构和 XML 文档中，在验证 `book` 元素之后，`book` 元素是当前的元素上下文。 <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法返回一个数组，包含表示 <xref:System.Xml.Schema.XmlSchemaElement> 元素的单个 `title` 对象。 如果验证上下文是 `title` 元素，<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法将返回一个空数组。 如果 <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法在验证了 `title` 元素之后但是在验证 `description` 元素之前调用，将返回一个数组，包含表示 <xref:System.Xml.Schema.XmlSchemaElement> 元素的单个 `description` 对象。 如果 <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法在验证了 `description` 元素之后调用，将返回一个数组，包含表示通配符的单个 <xref:System.Xml.Schema.XmlSchemaAny> 对象。  
+ 例如，在下面的 XML 架构定义语言 (XSD) 架构和 XML 文档中，在验证 `book` 元素之后，`book` 元素是当前的元素上下文。 
+  <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法返回一个数组，包含表示 <xref:System.Xml.Schema.XmlSchemaElement> 元素的单个 `title` 对象。 如果验证上下文是 `title` 元素，<xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法将返回一个空数组。 如果 <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法在验证了 `title` 元素之后但是在验证 `description` 元素之前调用，将返回一个数组，包含表示 <xref:System.Xml.Schema.XmlSchemaElement> 元素的单个 `description` 对象。 如果 <xref:System.Xml.Schema.XmlSchemaValidator.GetExpectedParticles%2A> 方法在验证了 `description` 元素之后调用，将返回一个数组，包含表示通配符的单个 <xref:System.Xml.Schema.XmlSchemaAny> 对象。  
   
 ```vb  
 Dim reader As XmlReader =  XmlReader.Create("input.xml")   
@@ -487,7 +489,8 @@ validator.ValidateEndElement(null);
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A>方法验证当前元素具有的所有属性后，必须调用<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>方法。 <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> 方法应用于确定要插入正在验证的 XML 文档的默认属性。  
+ <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A>方法验证当前元素具有的所有属性后，必须调用<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>方法。 
+  <xref:System.Xml.Schema.XmlSchemaValidator.GetUnspecifiedDefaultAttributes%2A> 方法应用于确定要插入正在验证的 XML 文档的默认属性。  
   
  ]]></format>
         </remarks>
@@ -738,7 +741,7 @@ validator.ValidateEndElement(null);
       </Parameters>
       <Docs>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性在成功跳过当前元素内容时设置。 此参数可以为 <see langword="null" />。</param>
-        <summary>跳过当前元素内容的验证，准备 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象以验证父元素上下文中的内容。</summary>
+        <summary>跳过当前元素内容的验证并准备 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象以验证父元素的上下文中的内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1298,7 +1301,7 @@ validator.ValidateEndElement(null);
       </Parameters>
       <Docs>
         <param name="schemaInfo">一个 <see cref="T:System.Xml.Schema.XmlSchemaInfo" /> 对象，其属性是在成功验证元素上下文中存在所有必需特性之后设置的。 此参数可以为 <see langword="null" />。</param>
-        <summary>验证元素上下文中是否存在所有必需的特性，准备 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象以验证元素的子内容。</summary>
+        <summary>验证元素上下文中所有必需的属性是否已存在，并且 <see cref="T:System.Xml.Schema.XmlSchemaValidator" /> 对象是否已准备好验证元素的子内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1342,7 +1345,7 @@ validator.ValidateEndElement(null);
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>验证当前元素上下文中是否允许文本，如果当前元素具有简单内容，则累积文本以进行验证。</summary>
+        <summary>验证当前元素上下文中是否允许包含文本，并累积文本，以验证当前元素是否包含简单内容。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ValidateText">
