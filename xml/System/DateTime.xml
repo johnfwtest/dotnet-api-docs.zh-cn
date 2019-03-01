@@ -1,5 +1,5 @@
 <Type Name="DateTime" FullName="System.DateTime">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cfc864fd7116d42445e94e36d2974eea274edd4b" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53522903" /></Metadata><TypeSignature Language="C#" Value="public struct DateTime : IComparable, IComparable&lt;DateTime&gt;, IConvertible, IEquatable&lt;DateTime&gt;, IFormattable, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="71df2e8e77dd5fca0a3be5a21f750169e0d5a26b" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56356331" /></Metadata><TypeSignature Language="C#" Value="public struct DateTime : IComparable, IComparable&lt;DateTime&gt;, IConvertible, IEquatable&lt;DateTime&gt;, IFormattable, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DateTime extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;valuetype System.DateTime&gt;, class System.IConvertible, class System.IEquatable`1&lt;valuetype System.DateTime&gt;, class System.IFormattable, class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.DateTime" />
   <TypeSignature Language="VB.NET" Value="Public Structure DateTime&#xA;Implements IComparable, IComparable(Of DateTime), IConvertible, IEquatable(Of DateTime), IFormattable, ISerializable" />
@@ -49,7 +49,7 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netcore-2.1;netcore-2.2">
+    <Attribute FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0">
       <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
@@ -119,7 +119,7 @@
 - [日期时间解决方法](#datetime-resolution)
 - [日期时间值和日历](#datetime-values-and-calendars)
 - [保存日期时间值](#persisting-datetime-values)
-- [DateTime vs。时间跨度](#datetime-vs-timespan)
+- [DateTime vs。TimeSpan](#datetime-vs-timespan)
 - [比较相等性的公差范围内](#comparing-for-equality-within-tolerance)
 - [COM 互操作注意事项](#com-interop-considerations)
    
@@ -291,21 +291,36 @@
 
 .NET Framework 类库包括多个日历类，所有这些派生自<xref:System.Globalization.Calendar>类。  它们是：  
   
--   <xref:System.Globalization.ChineseLunisolarCalendar> 类。  
--   <xref:System.Globalization.EastAsianLunisolarCalendar> 类。  
--   <xref:System.Globalization.GregorianCalendar> 类。  
--   <xref:System.Globalization.HebrewCalendar> 类。  
--   <xref:System.Globalization.HijriCalendar> 类。  
--   <xref:System.Globalization.JapaneseCalendar> 类。  
--   <xref:System.Globalization.JapaneseLunisolarCalendar> 类。  
--   <xref:System.Globalization.JulianCalendar> 类。  
--   <xref:System.Globalization.KoreanCalendar> 类。  
--   <xref:System.Globalization.KoreanLunisolarCalendar> 类。  
--   <xref:System.Globalization.PersianCalendar> 类。  
--   <xref:System.Globalization.TaiwanCalendar> 类。  
--   <xref:System.Globalization.TaiwanLunisolarCalendar> 类。  
--   <xref:System.Globalization.ThaiBuddhistCalendar> 类。  
--   <xref:System.Globalization.UmAlQuraCalendar> 类。  
+-   
+  <xref:System.Globalization.ChineseLunisolarCalendar> 类。  
+-   
+  <xref:System.Globalization.EastAsianLunisolarCalendar> 类。  
+-   
+  <xref:System.Globalization.GregorianCalendar> 类。  
+-   
+  <xref:System.Globalization.HebrewCalendar> 类。  
+-   
+  <xref:System.Globalization.HijriCalendar> 类。  
+-   
+  <xref:System.Globalization.JapaneseCalendar> 类。  
+-   
+  <xref:System.Globalization.JapaneseLunisolarCalendar> 类。  
+-   
+  <xref:System.Globalization.JulianCalendar> 类。  
+-   
+  <xref:System.Globalization.KoreanCalendar> 类。  
+-   
+  <xref:System.Globalization.KoreanLunisolarCalendar> 类。  
+-   
+  <xref:System.Globalization.PersianCalendar> 类。  
+-   
+  <xref:System.Globalization.TaiwanCalendar> 类。  
+-   
+  <xref:System.Globalization.TaiwanLunisolarCalendar> 类。  
+-   
+  <xref:System.Globalization.ThaiBuddhistCalendar> 类。  
+-   
+  <xref:System.Globalization.UmAlQuraCalendar> 类。  
 
 [!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
 
@@ -658,7 +673,7 @@
 - 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。</exception>
       </Docs>
     </Member>
@@ -722,7 +737,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="calendar" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 不在 <paramref name="calendar" /> 支持的范围内。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
 - 或 - 
@@ -800,13 +815,13 @@
 - 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 - 或 - 
@@ -881,13 +896,13 @@
 - 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
 - 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 - 或 - 
@@ -961,15 +976,15 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="calendar" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 不在 <paramref name="calendar" /> 支持的范围内。  
   
-或 
+- 或 - 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23 
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 - 或 - 
@@ -1052,7 +1067,7 @@
 - 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
 - 或 - 
@@ -1136,16 +1151,16 @@
 - 或 - 
  <paramref name="month" /> 小于 1 或大于 12。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
 - 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
-或 
+- 或 - 
  <paramref name="second" /> 小于 0 或大于 59。  
   
 - 或 - 
@@ -1229,10 +1244,10 @@
 - 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
-或 
+- 或 - 
  <paramref name="hour" /> 小于 0 或大于 23。  
   
-或 
+- 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  
   
 - 或 - 
@@ -1316,7 +1331,7 @@
 - 或 - 
  <paramref name="month" /> 小于 1 或大于 <paramref name="calendar" /> 中的月数。  
   
-或 
+- 或 - 
  <paramref name="day" /> 小于 1 或大于 <paramref name="month" /> 中的天数。  
   
 - 或 - 
@@ -1715,7 +1730,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">生成的 <see cref="T:System.DateTime" /> 小于 <see cref="F:System.DateTime.MinValue" /> 或大于 <see cref="F:System.DateTime.MaxValue" />。  
   
-或 
+- 或 - 
  <paramref name="months" /> 小于 -120,000 或大于 120,000。</exception>
       </Docs>
     </Member>
@@ -2784,7 +2799,7 @@
   
 例如，从标准时间到夏时制的转换发生在美国在 2010 年 3 月 14 日凌晨 2:00，此时时间前进一小时，上午 3 点到太平洋时区 此小时间隔为无效的时间，即，不存在该时区的时间间隔。 下面的示例演示时的时间内此范围转换为长整型值通过<see cref="M:System.DateTime.ToFileTime" />方法，然后通过还原<see cref="M:System.DateTime.FromFileTime(System.Int64)" />方法中，原始值调整为有效的时间。 您可以确定是否特定日期和时间值也可能受到修改将其传递到<see cref="M:System.TimeZoneInfo.IsInvalidTime(System.DateTime)" />方法，该示例作为演示。  
   
-[！ 代码 csharp[System.DateTime.FromFileTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.fromfiletime/cs/fromfiletime1.cs#1)] [！ 代码 vb[System.DateTime.FromFileTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.fromfiletime/vb/fromfiletime1.vb#1)]</para></block>
+[!code-csharp[System.DateTime.FromFileTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.fromfiletime/cs/fromfiletime1.cs#1)] [!code-vb[System.DateTime.FromFileTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.fromfiletime/vb/fromfiletime1.vb#1)]</para></block>
         <altmember cref="M:System.DateTime.ToUniversalTime" />
         <altmember cref="M:System.TimeZone.GetUtcOffset(System.DateTime)" />
       </Docs>
@@ -4690,8 +4705,8 @@ juillet 2009
 
 -   一个字符串，包含时区信息且符合 ISO 8601。 在以下示例中，第一个字符串指定协调世界时 (UTC) 和第二个指定的时间是 7 小时的时区中早于 UTC:  
   
-    "2008年-11-01T19:35:00.0000000Z"   
-    "2008年-11-01T19:35:00.0000000-07:00"  
+    "2008-11-01T19:35:00.0000000Z"   
+    "2008-11-01T19:35:00.0000000-07:00"  
   
 -   一个字符串，包含格林威治标准时间指示符和符合 RFC 1123 时间格式;例如：  
   
@@ -4699,7 +4714,7 @@ juillet 2009
   
 -   一个字符串，包含日期和时间以及时区偏移量信息;例如：  
   
-     "2009-03-01 05:42:00-5:00"  
+     "03/01/2009 05:42:00 -5:00"  
 
 下面的示例通过使用这种情况下是 EN-US 区域性的当前区域性的格式设置约定分析中每个这些格式的字符串：
 
@@ -5044,7 +5059,7 @@ juillet 2009
 |-----|-----|-----|  
 |`s` 不包含时区信息。|无。|<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>|
 |`s` 包含时区信息。|为在本地时区内时间|<xref:System.DateTimeKind.Local?displayProperty=nameWithType>|
-|`s` 包含时区信息和样式包括<xref:System.Globalization.DateTimeStyles.AdjustToUniversal?displayProperty=nameWithType>标志。|为协调世界的时 (UTC)|<xref:System.DateTimeKind.Utc?displayProperty=nameWithType>|
+|`s` 包含时区信息和样式包括<xref:System.Globalization.DateTimeStyles.AdjustToUniversal?displayProperty=nameWithType>标志。 |为协调通用时 (UTC) |<xref:System.DateTimeKind.Utc?displayProperty=nameWithType>|
 |`s` 包含 Z 或格林威治标准时间的时区指示符，并`styles`包括<xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType>。|无。|<xref:System.DateTimeKind.Utc>| 
 
 ## <a name="example"></a>示例
@@ -5171,7 +5186,7 @@ juillet 2009
  <paramref name="s" /> 不包含与 <paramref name="format" /> 中指定的模式相对应的日期和时间。  
   
 - 或 - 
-<paramref name="s" /> 中的小时组件和 AM/PM 指示符不一致。</exception>
+<paramref name="s" /> 中的小时组成部分和 AM/PM 指示符不一致。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.ParseExact" />方法会抛出<see cref="T:System.FormatException" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
         <altmember cref="Overload:System.DateTime.TryParseExact" />
         <altmember cref="T:System.Globalization.CultureInfo" />
@@ -5469,7 +5484,7 @@ juillet 2009
 - 或 - 
  <paramref name="s" /> 不包含与 <paramref name="formats" /> 中任意元素相对应的日期和时间。  
   
-或 
+- 或 - 
 <paramref name="s" /> 中的小时组成部分和 AM/PM 指示符不一致。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合。 例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.ParseExact" />方法会抛出<see cref="T:System.FormatException" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
@@ -6851,7 +6866,7 @@ juillet 2009
   
 例如，从标准时间到夏时制的转换发生在美国在 2010 年 3 月 14 日凌晨 2:00，此时时间前进一小时，上午 3 点到太平洋时区 此小时间隔为无效的时间，即，不存在该时区的时间间隔。 下面的示例演示时的时间内此范围转换为长整型值通过<see cref="M:System.DateTime.ToFileTime" />方法，然后通过还原<see cref="M:System.DateTime.FromFileTime(System.Int64)" />方法中，原始值调整为有效的时间。 您可以确定是否特定日期和时间值也可能受到修改将其传递到<see cref="M:System.TimeZoneInfo.IsInvalidTime(System.DateTime)" />方法，该示例作为演示。  
   
-[！ 代码 csharp[System.DateTime.FromFileTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.fromfiletime/cs/fromfiletime1.cs#1)] [！ 代码 vb[System.DateTime.FromFileTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.fromfiletime/vb/fromfiletime1.vb#1)]</para></block>
+[!code-csharp[System.DateTime.FromFileTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.fromfiletime/cs/fromfiletime1.cs#1)] [!code-vb[System.DateTime.FromFileTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.fromfiletime/vb/fromfiletime1.vb#1)]</para></block>
         <altmember cref="M:System.DateTime.ToFileTimeUtc" />
         <altmember cref="T:System.Int64" />
         <altmember cref="M:System.DateTime.ToUniversalTime" />
@@ -6988,7 +7003,7 @@ juillet 2009
   
 例如，从标准时间到夏时制的转换发生在美国在 2010 年 3 月 14 日凌晨 2:00，此时时间前进一小时，上午 3 点到太平洋时区 此小时间隔为无效的时间，即，不存在该时区的时间间隔。 下面的示例演示时的时间内此范围转换为 UTC<see cref="M:System.DateTime.ToUniversalTime" />方法，然后通过还原<see cref="M:System.DateTime.ToLocalTime" />方法中，原始值调整为有效的时间。 您可以确定是否特定日期和时间值也可能受到修改将其传递到<see cref="M:System.TimeZoneInfo.IsInvalidTime(System.DateTime)" />方法，该示例作为演示。  
   
-[！ 代码 csharp[System.DateTime.ToLocalTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tolocaltime/cs/tolocaltime1.cs#1)] [！ 代码 vb[System.DateTime.ToLocalTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tolocaltime/vb/tolocaltime1.vb#1)]</para></block>
+[!code-csharp[System.DateTime.ToLocalTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tolocaltime/cs/tolocaltime1.cs#1)] [!code-vb[System.DateTime.ToLocalTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tolocaltime/vb/tolocaltime1.vb#1)]</para></block>
         <altmember cref="T:System.TimeZone" />
         <altmember cref="M:System.TimeZone.GetUtcOffset(System.DateTime)" />
         <altmember cref="M:System.TimeZone.GetDaylightChanges(System.Int32)" />
@@ -7379,7 +7394,7 @@ juillet 2009
         <exception cref="T:System.ArgumentOutOfRangeException">此日期和时间超出了当前区域性所用日历支持的日期范围。</exception>
         <block subset="none" type="usage"><para><see cref="M:System.DateTime.ToString" />方法返回的日期和时间的字符串表示形式中使用当前区域性的日历。 如果当前的值<see cref="T:System.DateTime" />实例是早于<see cref="P:System.Globalization.Calendar.MinSupportedDateTime" />或更高版本比<see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" />，该方法将引发<see cref="T:System.ArgumentOutOfRangeException" />。 下面的示例进行了这方面的演示。 它会尝试设置的范围之外的日期格式<see cref="T:System.Globalization.HijriCalendar" />类时的当前区域性为阿拉伯语 （叙利亚）。  
   
-[！ 代码 csharp[System.DateTime.ToString.ArgumentOutOfRangeException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception2.cs#2)] [！ 代码 vb[System.DateTime.ToString.ArgumentOutOfRangeException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception2.vb#2)]</para></block>
+[!code-csharp[System.DateTime.ToString.ArgumentOutOfRangeException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception2.cs#2)] [!code-vb[System.DateTime.ToString.ArgumentOutOfRangeException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception2.vb#2)]</para></block>
         <altmember cref="T:System.Globalization.DateTimeFormatInfo" />
         <altmember cref="T:System.Globalization.CultureInfo" />
       </Docs>
@@ -7462,7 +7477,7 @@ juillet 2009
         <exception cref="T:System.ArgumentOutOfRangeException">日期和时间超出了 <paramref name="provider" /> 所用日历支持的日期范围。</exception>
         <block subset="none" type="usage"><para><see cref="M:System.DateTime.ToString(System.IFormatProvider)" />方法返回的日期和时间的字符串表示形式中使用代表的区域性的日历<paramref name="provider" />参数。 由定义其日历<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />属性。 如果当前的值<see cref="T:System.DateTime" />实例是早于<see cref="P:System.Globalization.Calendar.MinSupportedDateTime" />或更高版本比<see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" />，该方法将引发<see cref="T:System.ArgumentOutOfRangeException" />。 下面的示例进行了这方面的演示。 它会尝试设置的范围之外的日期格式<see cref="T:System.Globalization.JapaneseCalendar" />类。  
   
-[！ 代码 csharp[System.DateTime.ToString.ArgumentOutOfRangeException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception1.cs#1)] [！ 代码 vb[System.DateTime.ToString.ArgumentOutOfRangeException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception1.vb#1)]</para></block>
+[!code-csharp[System.DateTime.ToString.ArgumentOutOfRangeException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception1.cs#1)] [!code-vb[System.DateTime.ToString.ArgumentOutOfRangeException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception1.vb#1)]</para></block>
         <altmember cref="T:System.Globalization.DateTimeFormatInfo" />
         <altmember cref="T:System.Globalization.CultureInfo" />
       </Docs>
@@ -7550,7 +7565,7 @@ juillet 2009
         <exception cref="T:System.ArgumentOutOfRangeException">此日期和时间超出了当前区域性所用日历支持的日期范围。</exception>
         <block subset="none" type="usage"><para><see cref="M:System.DateTime.ToString(System.String)" />方法返回的日期和时间的字符串表示形式中使用当前区域性的日历。 如果当前的值<see cref="T:System.DateTime" />实例是早于<see cref="P:System.Globalization.Calendar.MinSupportedDateTime" />或更高版本比<see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" />，该方法将引发<see cref="T:System.ArgumentOutOfRangeException" />。 下面的示例进行了这方面的演示。 它会尝试设置的范围之外的日期格式<see cref="T:System.Globalization.HebrewCalendar" />类时的当前区域性是希伯来语 （以色列）。  
   
-[！ 代码 csharp[System.DateTime.ToString.ArgumentOutOfRangeException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception3.cs#3)] [！ 代码 vb[System.DateTime.ToString.ArgumentOutOfRangeException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception3.vb#3)]</para></block>
+[!code-csharp[System.DateTime.ToString.ArgumentOutOfRangeException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception3.cs#3)] [!code-vb[System.DateTime.ToString.ArgumentOutOfRangeException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception3.vb#3)]</para></block>
         <altmember cref="T:System.Globalization.DateTimeFormatInfo" />
         <altmember cref="T:System.Globalization.CultureInfo" />
         <related type="Article" href="~/docs/standard/base-types/formatting-types.md">设置 .NET 中类型的格式</related>
@@ -7645,7 +7660,7 @@ juillet 2009
         <exception cref="T:System.ArgumentOutOfRangeException">日期和时间超出了 <paramref name="provider" /> 所用日历支持的日期范围。</exception>
         <block subset="none" type="usage"><para><see cref="M:System.DateTime.ToString(System.String,System.IFormatProvider)" />方法返回的日期和时间的字符串表示形式中使用的日历<paramref name="provider" />参数。 由定义其日历<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />属性。 如果当前的值<see cref="T:System.DateTime" />实例是早于<see cref="P:System.Globalization.Calendar.MinSupportedDateTime" />或更高版本比<see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" />，该方法将引发<see cref="T:System.ArgumentOutOfRangeException" />。 下面的示例进行了这方面的演示。 它会尝试设置的范围之外的日期格式<see cref="T:System.Globalization.UmAlQuraCalendar" />类。  
   
-[！ 代码 csharp[System.DateTime.ToString.ArgumentOutOfRangeException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception4.cs#4)] [！ 代码 vb[System.DateTime.ToString.ArgumentOutOfRangeException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception4.vb#4)]</para></block>
+[!code-csharp[System.DateTime.ToString.ArgumentOutOfRangeException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/cs/datetime.tostring.argumentoutofrangeexception4.cs#4)] [!code-vb[System.DateTime.ToString.ArgumentOutOfRangeException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.tostring.argumentoutofrangeexception/vb/datetime.tostring.argumentoutofrangeexception4.vb#4)]</para></block>
         <altmember cref="T:System.Globalization.DateTimeFormatInfo" />
         <altmember cref="T:System.Globalization.CultureInfo" />
         <related type="Article" href="~/docs/standard/base-types/formatting-types.md">设置 .NET 中类型的格式</related>
@@ -7733,7 +7748,7 @@ juillet 2009
   
 下面的示例说明了之间的差异<see cref="M:System.DateTime.ToUniversalTime" />并<see cref="M:System.TimeZoneInfo.ConvertTimeToUtc(System.DateTime,System.TimeZoneInfo)" />上的方法[!INCLUDE[winxp](~/includes/winxp-md.md)]位于美国。 第一个的两个方法调用适用于 2006 年的日期的当前时区调整规则 （这在 2007 年开始生效）。 当前的调整规则提供了在 3 月; 的第二个星期日为夏时制转换上一个规则，这实际上是在 2006 年，提供为夏时制年 4 月的第一个星期日发生转换。 仅在第三个方法调用准确地执行此历史日期和时间的转换。  
   
-[！ 代码 csharp[System.DateTime.ToUniversalTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.touniversaltime/cs/touniversaltime.cs#1)] [！ 代码 vb[System.DateTime.ToUniversalTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.touniversaltime/vb/touniversaltime.vb#1)]</para></block>
+[!code-csharp[System.DateTime.ToUniversalTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.datetime.touniversaltime/cs/touniversaltime.cs#1)] [!code-vb[System.DateTime.ToUniversalTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.datetime.touniversaltime/vb/touniversaltime.vb#1)]</para></block>
         <altmember cref="M:System.DateTime.ToLocalTime" />
       </Docs>
     </Member>
@@ -8262,7 +8277,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="styles" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合（例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />）。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.TryParseExact" />方法将返回<see langword="false" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
         <altmember cref="Overload:System.DateTime.ParseExact" />
@@ -8369,7 +8384,7 @@ juillet 2009
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="styles" /> 不是有效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="styles" /> 包含无效的 <see cref="T:System.Globalization.DateTimeStyles" /> 值组合（例如，<see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> 和 <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" />）。</exception>
         <block subset="none" type="usage"><para>在中[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]，则<see cref="Overload:System.DateTime.TryParseExact" />方法将返回<see langword="false" />如果要分析的字符串包含的小时组件和 AM/PM 指示符不在协议中的。 在[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]和早期版本中，AM/PM 指示符将被忽略。</para></block>
         <altmember cref="Overload:System.DateTime.ParseExact" />

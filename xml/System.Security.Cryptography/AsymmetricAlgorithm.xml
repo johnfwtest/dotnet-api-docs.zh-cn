@@ -1,5 +1,5 @@
 <Type Name="AsymmetricAlgorithm" FullName="System.Security.Cryptography.AsymmetricAlgorithm">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7290ec8dbcdc839a72641601a687a3702c28064d" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52602498" /></Metadata><TypeSignature Language="C#" Value="public abstract class AsymmetricAlgorithm : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c9f98399baf9a17e04842a9be59d2ea06bff7e4d" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56354905" /></Metadata><TypeSignature Language="C#" Value="public abstract class AsymmetricAlgorithm : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AsymmetricAlgorithm extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.AsymmetricAlgorithm" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AsymmetricAlgorithm&#xA;Implements IDisposable" />
@@ -41,7 +41,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 非对称加密算法，也称为公共密钥算法，需要发送方和接收方维护的相关密钥对： 一个私钥和公钥。 这两个键是唯一的实体。 公钥可以可供任何人;此密钥用于编码发送给接收方的数据。 私钥必须保留为私有的接收方;此密钥用于解码的消息编码使用接收方的公钥。 <xref:System.Security.Cryptography.RSACryptoServiceProvider>类是公共密钥算法的实现。 有关公钥加密算法的深入讨论，请参阅中的"公共密钥加密"一节[加密服务](~/docs/standard/security/cryptographic-services.md)。 有关如何使用强名称工具 (Sn.exe) 创建密钥对的信息，请参阅[如何： 创建公钥 / 私钥对](~/docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)。  
+ 非对称加密算法，也称为公共密钥算法，需要发送方和接收方维护的相关密钥对： 一个私钥和公钥。 这两个键是唯一的实体。 公钥可以可供任何人;此密钥用于编码发送给接收方的数据。 私钥必须保留为私有的接收方;此密钥用于解码的消息编码使用接收方的公钥。 <xref:System.Security.Cryptography.RSACryptoServiceProvider>类是公共密钥算法的实现。 有关公钥加密算法的深入讨论，请参阅中的"公共密钥加密"一节[加密服务](~/docs/standard/security/cryptographic-services.md)。 有关如何使用强名称工具 (Sn.exe) 创建密钥对的信息，请参阅[如何：创建公钥/私钥对](~/docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)。  
   
  公钥系统可用于构成数字签名。 使用数字签名以帮助保护数据的完整性。 例如，若要使用的公钥系统以数字方式签署一条消息，发件人首先将哈希函数应用于该消息以创建消息摘要。 发送方然后使用发件人的私钥来创建发件人的个人签名加密消息摘要。 在收到消息和签名，接收方解密签名，使用发件人的公钥进行恢复的消息摘要，并使用发件人使用的同一个哈希算法对消息进行哈希处理。 如果接收方计算消息摘要与匹配从发送方接收的消息摘要，接收方可以假定该消息在传输过程中未被更改。 请注意，任何人都可以验证签名，因为发件人的公钥是常见的知识。 此方法不会保留该邮件; 的秘密性对于要保密的消息，它还必须加密。  
   
@@ -391,7 +391,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
+        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
         <summary>释放 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> 类使用的非托管资源，并可以选择释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -408,6 +408,126 @@
   
 有关详细信息<see langword="Dispose" />并<see langword="Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)。</para></block>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportEncryptedPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual byte[] ExportEncryptedPkcs8PrivateKey (ReadOnlySpan&lt;byte&gt; passwordBytes, System.Security.Cryptography.PbeParameters pbeParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] ExportEncryptedPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; passwordBytes, class System.Security.Cryptography.PbeParameters pbeParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ExportEncryptedPkcs8PrivateKey(System.ReadOnlySpan{System.Byte},System.Security.Cryptography.PbeParameters)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual cli::array &lt;System::Byte&gt; ^ ExportEncryptedPkcs8PrivateKey(ReadOnlySpan&lt;System::Byte&gt; passwordBytes, System::Security::Cryptography::PbeParameters ^ pbeParameters);" />
+      <MemberSignature Language="F#" Value="abstract member ExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; * System.Security.Cryptography.PbeParameters -&gt; byte[]&#xA;override this.ExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; * System.Security.Cryptography.PbeParameters -&gt; byte[]" Usage="asymmetricAlgorithm.ExportEncryptedPkcs8PrivateKey (passwordBytes, pbeParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="passwordBytes" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="pbeParameters" Type="System.Security.Cryptography.PbeParameters" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="passwordBytes">To be added.</param>
+        <param name="pbeParameters">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportEncryptedPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual byte[] ExportEncryptedPkcs8PrivateKey (ReadOnlySpan&lt;char&gt; password, System.Security.Cryptography.PbeParameters pbeParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] ExportEncryptedPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;char&gt; password, class System.Security.Cryptography.PbeParameters pbeParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ExportEncryptedPkcs8PrivateKey(System.ReadOnlySpan{System.Char},System.Security.Cryptography.PbeParameters)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual cli::array &lt;System::Byte&gt; ^ ExportEncryptedPkcs8PrivateKey(ReadOnlySpan&lt;char&gt; password, System::Security::Cryptography::PbeParameters ^ pbeParameters);" />
+      <MemberSignature Language="F#" Value="abstract member ExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;char&gt; * System.Security.Cryptography.PbeParameters -&gt; byte[]&#xA;override this.ExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;char&gt; * System.Security.Cryptography.PbeParameters -&gt; byte[]" Usage="asymmetricAlgorithm.ExportEncryptedPkcs8PrivateKey (password, pbeParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="password" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="pbeParameters" Type="System.Security.Cryptography.PbeParameters" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="password">To be added.</param>
+        <param name="pbeParameters">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual byte[] ExportPkcs8PrivateKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] ExportPkcs8PrivateKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ExportPkcs8PrivateKey" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExportPkcs8PrivateKey () As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual cli::array &lt;System::Byte&gt; ^ ExportPkcs8PrivateKey();" />
+      <MemberSignature Language="F#" Value="abstract member ExportPkcs8PrivateKey : unit -&gt; byte[]&#xA;override this.ExportPkcs8PrivateKey : unit -&gt; byte[]" Usage="asymmetricAlgorithm.ExportPkcs8PrivateKey " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportSubjectPublicKeyInfo">
+      <MemberSignature Language="C#" Value="public virtual byte[] ExportSubjectPublicKeyInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] ExportSubjectPublicKeyInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ExportSubjectPublicKeyInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ExportSubjectPublicKeyInfo () As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual cli::array &lt;System::Byte&gt; ^ ExportSubjectPublicKeyInfo();" />
+      <MemberSignature Language="F#" Value="abstract member ExportSubjectPublicKeyInfo : unit -&gt; byte[]&#xA;override this.ExportSubjectPublicKeyInfo : unit -&gt; byte[]" Usage="asymmetricAlgorithm.ExportSubjectPublicKeyInfo " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromXmlString">
@@ -456,6 +576,138 @@
  ]]></format>
         </remarks>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportEncryptedPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual void ImportEncryptedPkcs8PrivateKey (ReadOnlySpan&lt;byte&gt; passwordBytes, ReadOnlySpan&lt;byte&gt; source, out int bytesRead);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportEncryptedPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; passwordBytes, valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] int32&amp; bytesRead) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ImportEncryptedPkcs8PrivateKey(System.ReadOnlySpan{System.Byte},System.ReadOnlySpan{System.Byte},System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ImportEncryptedPkcs8PrivateKey (passwordBytes As ReadOnlySpan(Of Byte), source As ReadOnlySpan(Of Byte), ByRef bytesRead As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ImportEncryptedPkcs8PrivateKey(ReadOnlySpan&lt;System::Byte&gt; passwordBytes, ReadOnlySpan&lt;System::Byte&gt; source, [Runtime::InteropServices::Out] int % bytesRead);" />
+      <MemberSignature Language="F#" Value="abstract member ImportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; * ReadOnlySpan&lt;byte&gt; *  -&gt; unit&#xA;override this.ImportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; * ReadOnlySpan&lt;byte&gt; *  -&gt; unit" Usage="asymmetricAlgorithm.ImportEncryptedPkcs8PrivateKey (passwordBytes, source, bytesRead)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="passwordBytes" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesRead" Type="System.Int32" RefType="out" Index="2" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="passwordBytes">To be added.</param>
+        <param name="source">To be added.</param>
+        <param name="bytesRead">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportEncryptedPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual void ImportEncryptedPkcs8PrivateKey (ReadOnlySpan&lt;char&gt; password, ReadOnlySpan&lt;byte&gt; source, out int bytesRead);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportEncryptedPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;char&gt; password, valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] int32&amp; bytesRead) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ImportEncryptedPkcs8PrivateKey(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Byte},System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ImportEncryptedPkcs8PrivateKey (password As ReadOnlySpan(Of Char), source As ReadOnlySpan(Of Byte), ByRef bytesRead As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ImportEncryptedPkcs8PrivateKey(ReadOnlySpan&lt;char&gt; password, ReadOnlySpan&lt;System::Byte&gt; source, [Runtime::InteropServices::Out] int % bytesRead);" />
+      <MemberSignature Language="F#" Value="abstract member ImportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;char&gt; * ReadOnlySpan&lt;byte&gt; *  -&gt; unit&#xA;override this.ImportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;char&gt; * ReadOnlySpan&lt;byte&gt; *  -&gt; unit" Usage="asymmetricAlgorithm.ImportEncryptedPkcs8PrivateKey (password, source, bytesRead)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="password" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesRead" Type="System.Int32" RefType="out" Index="2" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="password">To be added.</param>
+        <param name="source">To be added.</param>
+        <param name="bytesRead">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual void ImportPkcs8PrivateKey (ReadOnlySpan&lt;byte&gt; source, out int bytesRead);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] int32&amp; bytesRead) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ImportPkcs8PrivateKey(System.ReadOnlySpan{System.Byte},System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ImportPkcs8PrivateKey (source As ReadOnlySpan(Of Byte), ByRef bytesRead As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ImportPkcs8PrivateKey(ReadOnlySpan&lt;System::Byte&gt; source, [Runtime::InteropServices::Out] int % bytesRead);" />
+      <MemberSignature Language="F#" Value="abstract member ImportPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; *  -&gt; unit&#xA;override this.ImportPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; *  -&gt; unit" Usage="asymmetricAlgorithm.ImportPkcs8PrivateKey (source, bytesRead)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesRead" Type="System.Int32" RefType="out" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="source">To be added.</param>
+        <param name="bytesRead">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportSubjectPublicKeyInfo">
+      <MemberSignature Language="C#" Value="public virtual void ImportSubjectPublicKeyInfo (ReadOnlySpan&lt;byte&gt; source, out int bytesRead);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportSubjectPublicKeyInfo(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] int32&amp; bytesRead) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ImportSubjectPublicKeyInfo(System.ReadOnlySpan{System.Byte},System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ImportSubjectPublicKeyInfo (source As ReadOnlySpan(Of Byte), ByRef bytesRead As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ImportSubjectPublicKeyInfo(ReadOnlySpan&lt;System::Byte&gt; source, [Runtime::InteropServices::Out] int % bytesRead);" />
+      <MemberSignature Language="F#" Value="abstract member ImportSubjectPublicKeyInfo : ReadOnlySpan&lt;byte&gt; *  -&gt; unit&#xA;override this.ImportSubjectPublicKeyInfo : ReadOnlySpan&lt;byte&gt; *  -&gt; unit" Usage="asymmetricAlgorithm.ImportSubjectPublicKeyInfo (source, bytesRead)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesRead" Type="System.Int32" RefType="out" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="source">To be added.</param>
+        <param name="bytesRead">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="KeyExchangeAlgorithm">
@@ -763,7 +1015,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IDisposable.Dispose" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IDisposable.Dispose" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -823,6 +1075,144 @@
  ]]></format>
         </remarks>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
+      </Docs>
+    </Member>
+    <Member MemberName="TryExportEncryptedPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual bool TryExportEncryptedPkcs8PrivateKey (ReadOnlySpan&lt;byte&gt; passwordBytes, System.Security.Cryptography.PbeParameters pbeParameters, Span&lt;byte&gt; destination, out int bytesWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryExportEncryptedPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; passwordBytes, class System.Security.Cryptography.PbeParameters pbeParameters, valuetype System.Span`1&lt;unsigned int8&gt; destination, [out] int32&amp; bytesWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.TryExportEncryptedPkcs8PrivateKey(System.ReadOnlySpan{System.Byte},System.Security.Cryptography.PbeParameters,System.Span{System.Byte},System.Int32@)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool TryExportEncryptedPkcs8PrivateKey(ReadOnlySpan&lt;System::Byte&gt; passwordBytes, System::Security::Cryptography::PbeParameters ^ pbeParameters, Span&lt;System::Byte&gt; destination, [Runtime::InteropServices::Out] int % bytesWritten);" />
+      <MemberSignature Language="F#" Value="abstract member TryExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; * System.Security.Cryptography.PbeParameters * Span&lt;byte&gt; *  -&gt; bool&#xA;override this.TryExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;byte&gt; * System.Security.Cryptography.PbeParameters * Span&lt;byte&gt; *  -&gt; bool" Usage="asymmetricAlgorithm.TryExportEncryptedPkcs8PrivateKey (passwordBytes, pbeParameters, destination, bytesWritten)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="passwordBytes" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="pbeParameters" Type="System.Security.Cryptography.PbeParameters" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesWritten" Type="System.Int32" RefType="out" Index="3" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="passwordBytes">To be added.</param>
+        <param name="pbeParameters">To be added.</param>
+        <param name="destination">To be added.</param>
+        <param name="bytesWritten">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryExportEncryptedPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual bool TryExportEncryptedPkcs8PrivateKey (ReadOnlySpan&lt;char&gt; password, System.Security.Cryptography.PbeParameters pbeParameters, Span&lt;byte&gt; destination, out int bytesWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryExportEncryptedPkcs8PrivateKey(valuetype System.ReadOnlySpan`1&lt;char&gt; password, class System.Security.Cryptography.PbeParameters pbeParameters, valuetype System.Span`1&lt;unsigned int8&gt; destination, [out] int32&amp; bytesWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.TryExportEncryptedPkcs8PrivateKey(System.ReadOnlySpan{System.Char},System.Security.Cryptography.PbeParameters,System.Span{System.Byte},System.Int32@)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool TryExportEncryptedPkcs8PrivateKey(ReadOnlySpan&lt;char&gt; password, System::Security::Cryptography::PbeParameters ^ pbeParameters, Span&lt;System::Byte&gt; destination, [Runtime::InteropServices::Out] int % bytesWritten);" />
+      <MemberSignature Language="F#" Value="abstract member TryExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;char&gt; * System.Security.Cryptography.PbeParameters * Span&lt;byte&gt; *  -&gt; bool&#xA;override this.TryExportEncryptedPkcs8PrivateKey : ReadOnlySpan&lt;char&gt; * System.Security.Cryptography.PbeParameters * Span&lt;byte&gt; *  -&gt; bool" Usage="asymmetricAlgorithm.TryExportEncryptedPkcs8PrivateKey (password, pbeParameters, destination, bytesWritten)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="password" Type="System.ReadOnlySpan&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="pbeParameters" Type="System.Security.Cryptography.PbeParameters" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesWritten" Type="System.Int32" RefType="out" Index="3" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="password">To be added.</param>
+        <param name="pbeParameters">To be added.</param>
+        <param name="destination">To be added.</param>
+        <param name="bytesWritten">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryExportPkcs8PrivateKey">
+      <MemberSignature Language="C#" Value="public virtual bool TryExportPkcs8PrivateKey (Span&lt;byte&gt; destination, out int bytesWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryExportPkcs8PrivateKey(valuetype System.Span`1&lt;unsigned int8&gt; destination, [out] int32&amp; bytesWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.TryExportPkcs8PrivateKey(System.Span{System.Byte},System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function TryExportPkcs8PrivateKey (destination As Span(Of Byte), ByRef bytesWritten As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool TryExportPkcs8PrivateKey(Span&lt;System::Byte&gt; destination, [Runtime::InteropServices::Out] int % bytesWritten);" />
+      <MemberSignature Language="F#" Value="abstract member TryExportPkcs8PrivateKey : Span&lt;byte&gt; *  -&gt; bool&#xA;override this.TryExportPkcs8PrivateKey : Span&lt;byte&gt; *  -&gt; bool" Usage="asymmetricAlgorithm.TryExportPkcs8PrivateKey (destination, bytesWritten)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesWritten" Type="System.Int32" RefType="out" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="destination">To be added.</param>
+        <param name="bytesWritten">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryExportSubjectPublicKeyInfo">
+      <MemberSignature Language="C#" Value="public virtual bool TryExportSubjectPublicKeyInfo (Span&lt;byte&gt; destination, out int bytesWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryExportSubjectPublicKeyInfo(valuetype System.Span`1&lt;unsigned int8&gt; destination, [out] int32&amp; bytesWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.TryExportSubjectPublicKeyInfo(System.Span{System.Byte},System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function TryExportSubjectPublicKeyInfo (destination As Span(Of Byte), ByRef bytesWritten As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool TryExportSubjectPublicKeyInfo(Span&lt;System::Byte&gt; destination, [Runtime::InteropServices::Out] int % bytesWritten);" />
+      <MemberSignature Language="F#" Value="abstract member TryExportSubjectPublicKeyInfo : Span&lt;byte&gt; *  -&gt; bool&#xA;override this.TryExportSubjectPublicKeyInfo : Span&lt;byte&gt; *  -&gt; bool" Usage="asymmetricAlgorithm.TryExportSubjectPublicKeyInfo (destination, bytesWritten)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="bytesWritten" Type="System.Int32" RefType="out" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="destination">To be added.</param>
+        <param name="bytesWritten">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
   </Members>

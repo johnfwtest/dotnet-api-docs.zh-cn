@@ -1,5 +1,5 @@
 <Type Name="Expression" FullName="System.Linq.Expressions.Expression">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="63712aa0713deb1bc38ec9d5759ba061d0a7b814" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55358467" /></Metadata><TypeSignature Language="C#" Value="public abstract class Expression" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4eb4fa9a23f0bfc7fe7ab1a5830e3b650a30eb61" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56407982" /></Metadata><TypeSignature Language="C#" Value="public abstract class Expression" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Expression extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.Expression" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Expression" />
@@ -112,7 +112,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("use a different constructor that does not take ExpressionType. Then override NodeType and Type properties to provide the values that would be specified to this constructor.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -2944,7 +2944,7 @@
       <Docs>
         <param name="method"><see cref="T:System.Reflection.MethodInfo" /> 表示 <see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）方法，以将 <see cref="P:System.Linq.Expressions.MethodCallExpression.Method" /> 属性设置为与其相等。</param>
         <param name="arguments">用于填充 <see cref="T:System.Linq.Expressions.Expression" /> 集合的 <see cref="P:System.Linq.Expressions.MethodCallExpression.Arguments" /> 对象的数组。</param>
-        <summary>创建一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，它表示调用有自变量的 <see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）方法。</summary>
+        <summary>创建一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，它表示调用有参数的 <see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）方法。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.Call" />，并且其 <see cref="P:System.Linq.Expressions.MethodCallExpression.Method" /> 和 <see cref="P:System.Linq.Expressions.MethodCallExpression.Arguments" /> 属性设置为指定值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3203,7 +3203,7 @@
         <param name="method">表示目标方法的 <see cref="T:System.Reflection.MethodInfo" />。</param>
         <param name="arg0">用于表示第一个参数的 <see cref="T:System.Linq.Expressions.Expression" />。</param>
         <param name="arg1">用于表示第二个参数的 <see cref="T:System.Linq.Expressions.Expression" />。</param>
-        <summary>创建一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，它表示对采用两个自变量的方法的调用。</summary>
+        <summary>创建一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，它表示对采用两个参数的方法的调用。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.Call" />，并且其 <see cref="P:System.Linq.Expressions.MethodCallExpression.Object" /> 和 <see cref="P:System.Linq.Expressions.MethodCallExpression.Method" /> 属性设置为指定值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3262,7 +3262,7 @@
       <Docs>
         <param name="instance">将搜索 <see cref="T:System.Linq.Expressions.Expression" /> 的 <see cref="P:System.Linq.Expressions.Expression.Type" /> 属性值，查看其是否有特定方法。</param>
         <param name="methodName">方法的名称。</param>
-        <param name="typeArguments">指定泛型方法的类型参数的 <see cref="T:System.Type" /> 对象的数组。 当 methodName 指定非泛型方法时，此自变量应为 null。</param>
+        <param name="typeArguments">指定泛型方法的类型参数的 <see cref="T:System.Type" /> 对象的数组。 当 methodName 指定非泛型方法时，此参数应为 null。</param>
         <param name="arguments"><see cref="T:System.Linq.Expressions.Expression" /> 对象的数组，表示方法的参数。</param>
         <summary>通过调用合适的工厂方法，创建一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，它表示方法调用。</summary>
         <returns><see cref="T:System.Linq.Expressions.MethodCallExpression" /> 的 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.Call" />，<see cref="P:System.Linq.Expressions.MethodCallExpression.Object" /> 属性等于 <paramref name="instance" />，<see cref="P:System.Linq.Expressions.MethodCallExpression.Method" /> 设置为表示指定实例方法的 <see cref="T:System.Reflection.MethodInfo" /> 且 <see cref="P:System.Linq.Expressions.MethodCallExpression.Arguments" /> 设置为指定参数。</returns>
@@ -3369,10 +3369,10 @@
       <Docs>
         <param name="type">包含指定的 <see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）方法的类型。</param>
         <param name="methodName">方法的名称。</param>
-        <param name="typeArguments">指定泛型方法的类型参数的 <see cref="T:System.Type" /> 对象的数组。 当 methodName 指定非泛型方法时，此自变量应为 null。</param>
-        <param name="arguments"><see cref="T:System.Linq.Expressions.Expression" /> 对象的数组，表示方法的自变量。</param>
+        <param name="typeArguments">指定泛型方法的类型参数的 <see cref="T:System.Type" /> 对象的数组。 当 methodName 指定非泛型方法时，此参数应为 null。</param>
+        <param name="arguments"><see cref="T:System.Linq.Expressions.Expression" /> 对象的数组，表示方法的参数。</param>
         <summary>通过调用合适的工厂方法，创建一个 <see cref="T:System.Linq.Expressions.MethodCallExpression" />，它表示对 <see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）方法的调用。</summary>
-        <returns><see cref="T:System.Linq.Expressions.MethodCallExpression" /> 的 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.Call" />，<see cref="P:System.Linq.Expressions.MethodCallExpression.Method" /> 属性设置为表示指定的 <see cref="T:System.Reflection.MethodInfo" />（在 Visual Basic 中为 <see langword="static" />）方法的 <see langword="Shared" />，并且 <see cref="P:System.Linq.Expressions.MethodCallExpression.Arguments" /> 属性设置为指定自变量。</returns>
+        <returns><see cref="T:System.Linq.Expressions.MethodCallExpression" /> 的 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.Call" />，<see cref="P:System.Linq.Expressions.MethodCallExpression.Method" /> 属性设置为表示指定的 <see cref="T:System.Reflection.MethodInfo" />（在 Visual Basic 中为 <see langword="static" />）方法的 <see langword="Shared" />，并且 <see cref="P:System.Linq.Expressions.MethodCallExpression.Arguments" /> 属性设置为指定参数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4922,7 +4922,7 @@
         <Parameter Name="right" Type="System.Linq.Expressions.Expression" />
       </Parameters>
       <Docs>
-        <param name="left">作为 <see cref="T:System.Linq.Expressions.Expression" /> 属性设置目标的 <see cref="P:System.Linq.Expressions.BinaryExpression.Left" />。</param>
+        <param name="left">要将 <see cref="T:System.Linq.Expressions.Expression" /> 属性设置为与其相等的 <see cref="P:System.Linq.Expressions.BinaryExpression.Left" />。</param>
         <param name="right">要将 <see cref="T:System.Linq.Expressions.Expression" /> 属性设置为与其相等的 <see cref="P:System.Linq.Expressions.BinaryExpression.Right" />。</param>
         <summary>创建一个表示算术除法运算的 <see cref="T:System.Linq.Expressions.BinaryExpression" />。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.BinaryExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.Divide" />，并且其 <see cref="P:System.Linq.Expressions.BinaryExpression.Left" /> 和 <see cref="P:System.Linq.Expressions.BinaryExpression.Right" /> 属性设置为指定值。</returns>
@@ -5290,7 +5290,7 @@
       <Docs>
         <param name="binder">动态操作的运行时联编程序。</param>
         <param name="returnType">动态表达式的结果类型。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
         <remarks>
@@ -5389,7 +5389,7 @@
       <Docs>
         <param name="binder">动态操作的运行时联编程序。</param>
         <param name="returnType">动态表达式的结果类型。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <param name="arg1">动态操作的第二个自变量。</param>
         <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
@@ -5438,9 +5438,9 @@
       <Docs>
         <param name="binder">动态操作的运行时联编程序。</param>
         <param name="returnType">动态表达式的结果类型。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <param name="arg1">动态操作的第二个自变量。</param>
-        <param name="arg2">动态操作的第三个自变量。</param>
+        <param name="arg2">动态操作的第三个参数。</param>
         <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
         <remarks>
@@ -5489,10 +5489,10 @@
       <Docs>
         <param name="binder">动态操作的运行时联编程序。</param>
         <param name="returnType">动态表达式的结果类型。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <param name="arg1">动态操作的第二个自变量。</param>
-        <param name="arg2">动态操作的第三个自变量。</param>
-        <param name="arg3">动态操作的第四个参数。</param>
+        <param name="arg2">动态操作的第三个参数。</param>
+        <param name="arg3">动态操作的第四个自变量。</param>
         <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
         <remarks>
@@ -5634,7 +5634,7 @@
       <Docs>
         <param name="addMethod">要将 <see cref="T:System.Reflection.MethodInfo" /> 属性设置为与其相等的 <see cref="P:System.Linq.Expressions.ElementInit.AddMethod" />。</param>
         <param name="arguments">要将 <see cref="T:System.Linq.Expressions.Expression" /> 属性设置为与其相等的 <see cref="P:System.Linq.Expressions.ElementInit.Arguments" /> 对象的数组。</param>
-        <summary>在给定值数组作为第二个自变量的情况下，创建一个 <see cref="T:System.Linq.Expressions.ElementInit" />。</summary>
+        <summary>在给定值数组作为第二个参数的情况下，创建一个 <see cref="T:System.Linq.Expressions.ElementInit" />。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.ElementInit" />，其 <see cref="P:System.Linq.Expressions.ElementInit.AddMethod" /> 和 <see cref="P:System.Linq.Expressions.ElementInit.Arguments" /> 属性设置为指定值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7377,7 +7377,7 @@ arguments 包含的元素数量与 addMethod 所表示的方法的参数数量�
       <Docs>
         <param name="expression">一个 <see cref="T:System.Linq.Expressions.Expression" />，它表示要应用的委托或 lambda 表达式。</param>
         <param name="arguments">一个包含 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 对象的 <see cref="T:System.Linq.Expressions.Expression" />，这些对象表示要对其应用委托或 lambda 表达式的自变量。</param>
-        <summary>创建一个 <see cref="T:System.Linq.Expressions.InvocationExpression" />，它将委托或 lambda 表达式应用于一个自变量表达式列表。</summary>
+        <summary>创建一个 <see cref="T:System.Linq.Expressions.InvocationExpression" />，它将委托或 Lambda 表达式应用于一个自变量表达式列表。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.InvocationExpression" />，它对提供的自变量应用指定的委托或 lambda 表达式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7449,7 +7449,7 @@ arguments 包含的元素数量与 addMethod 所表示的方法的参数数量�
       <Docs>
         <param name="expression">一个 <see cref="T:System.Linq.Expressions.Expression" />，它表示要应用的委托或 lambda 表达式。</param>
         <param name="arguments"><see cref="T:System.Linq.Expressions.Expression" /> 对象的数组，这些对象表示要对其应用委托或 lambda 表达式的自变量。</param>
-        <summary>创建一个 <see cref="T:System.Linq.Expressions.InvocationExpression" />，它将委托或 lambda 表达式应用于一个自变量表达式列表。</summary>
+        <summary>创建一个 <see cref="T:System.Linq.Expressions.InvocationExpression" />，它将委托或 Lambda 表达式应用于一个自变量表达式列表。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.InvocationExpression" />，它对提供的自变量应用指定的委托或 lambda 表达式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -10851,9 +10851,9 @@ arguments 包含的元素数量与 addMethod 所表示的方法的参数数量�
       <Docs>
         <param name="delegateType"><see cref="T:System.Runtime.CompilerServices.CallSite" /> 使用的委托的类型。</param>
         <param name="binder">动态操作的运行时联编程序。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <param name="arg1">动态操作的第二个自变量。</param>
-        <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 和两个自变量绑定的动态操作。</summary>
+        <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 和两个参数绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.DelegateType" />、<see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -10893,9 +10893,9 @@ arguments 包含的元素数量与 addMethod 所表示的方法的参数数量�
       <Docs>
         <param name="delegateType"><see cref="T:System.Runtime.CompilerServices.CallSite" /> 使用的委托的类型。</param>
         <param name="binder">动态操作的运行时联编程序。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <param name="arg1">动态操作的第二个自变量。</param>
-        <param name="arg2">动态操作的第三个自变量。</param>
+        <param name="arg2">动态操作的第三个参数。</param>
         <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 和三个自变量绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.DelegateType" />、<see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
         <remarks>To be added.</remarks>
@@ -10937,10 +10937,10 @@ arguments 包含的元素数量与 addMethod 所表示的方法的参数数量�
       <Docs>
         <param name="delegateType"><see cref="T:System.Runtime.CompilerServices.CallSite" /> 使用的委托的类型。</param>
         <param name="binder">动态操作的运行时联编程序。</param>
-        <param name="arg0">动态操作的第一个参数。</param>
+        <param name="arg0">动态操作的第一个自变量。</param>
         <param name="arg1">动态操作的第二个自变量。</param>
-        <param name="arg2">动态操作的第三个自变量。</param>
-        <param name="arg3">动态操作的第四个参数。</param>
+        <param name="arg2">动态操作的第三个参数。</param>
+        <param name="arg3">动态操作的第四个自变量。</param>
         <summary>创建一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，它表示由提供的 <see cref="T:System.Runtime.CompilerServices.CallSiteBinder" /> 和四个自变量绑定的动态操作。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.DynamicExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 等于 <see cref="F:System.Linq.Expressions.ExpressionType.Dynamic" />，并且其 <see cref="P:System.Linq.Expressions.DynamicExpression.DelegateType" />、<see cref="P:System.Linq.Expressions.DynamicExpression.Binder" /> 和 <see cref="P:System.Linq.Expressions.DynamicExpression.Arguments" /> 均设置为指定的值。</returns>
         <remarks>To be added.</remarks>
@@ -12951,7 +12951,7 @@ arguments 包含的元素数量与 addMethod 所表示的方法的参数数量�
       </Parameters>
       <Docs>
         <param name="constructor">要将 <see cref="T:System.Reflection.ConstructorInfo" /> 属性设置为与其相等的 <see cref="P:System.Linq.Expressions.NewExpression.Constructor" />。</param>
-        <summary>创建一个表示调用不带自变量的指定构造函数的 <see cref="T:System.Linq.Expressions.NewExpression" />。</summary>
+        <summary>创建一个表示调用不带参数的指定构造函数的 <see cref="T:System.Linq.Expressions.NewExpression" />。</summary>
         <returns>一个 <see cref="T:System.Linq.Expressions.NewExpression" />，其 <see cref="P:System.Linq.Expressions.Expression.NodeType" /> 属性等于 <see cref="F:System.Linq.Expressions.ExpressionType.New" />，并且其 <see cref="P:System.Linq.Expressions.NewExpression.Constructor" /> 属性设置为指定值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

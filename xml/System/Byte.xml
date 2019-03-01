@@ -1,5 +1,5 @@
 <Type Name="Byte" FullName="System.Byte">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="627d7105ed6fc7da90b68ae41fea50e6f8214cfd" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52342905" /></Metadata><TypeSignature Language="C#" Value="public struct Byte : IComparable, IComparable&lt;byte&gt;, IConvertible, IEquatable&lt;byte&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="88d30fd73fa03f9ebf1b2ec1e9ae06e0119e995f" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56394394" /></Metadata><TypeSignature Language="C#" Value="public struct Byte : IComparable, IComparable&lt;byte&gt;, IConvertible, IEquatable&lt;byte&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit unsigned int8 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;unsigned int8&gt;, class System.IConvertible, class System.IEquatable`1&lt;unsigned int8&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Byte" />
   <TypeSignature Language="VB.NET" Value="Public Structure Byte&#xA;Implements IComparable, IComparable(Of Byte), IConvertible, IEquatable(Of Byte), IFormattable" />
@@ -51,6 +51,9 @@
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
       <AttributeName>System.Serializable</AttributeName>
+    </Attribute>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -271,7 +274,7 @@
  </description></item><item><term> 大于零 
  </term><description> 此实例大于 <paramref name="value" />。  
   
-或 
+- 或 - 
  <paramref name="value" /> 为 <see langword="null" />。  
   
  </description></item></list></returns>
@@ -670,7 +673,7 @@
 ## Remarks  
  `s`参数包含多个窗体：  
   
- [ws][登录] 数字 [ws]  
+ [ws][sign]digits[ws]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -757,7 +760,7 @@
   
  或者，如果`style`包括<xref:System.Globalization.NumberStyles.AllowHexSpecifier>:  
   
- [ws] hexdigits [ws]  
+ [ws]hexdigits[ws]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -809,11 +812,11 @@
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
         <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Byte.MinValue" /> 或大于 <see cref="F:System.Byte.MaxValue" /> 的数字。  
   
-或 
+- 或 - 
  <paramref name="s" /> 包含非零的小数位。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 不是 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 和 <see cref="F:System.Globalization.NumberStyles.HexNumber" /> 值的组合。</exception>
         <altmember cref="M:System.Byte.ToString" />
         <altmember cref="Overload:System.Byte.TryParse" />
@@ -871,7 +874,7 @@
 ## Remarks  
  `s`参数包含多个窗体：  
   
- [ws][登录] 数字 [ws]  
+ [ws][sign]digits[ws]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -995,7 +998,7 @@
   
  或者，如果`style`参数包含<xref:System.Globalization.NumberStyles.AllowHexSpecifier>:  
   
- [ws] hexdigits [ws]  
+ [ws]hexdigits[ws]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -1047,11 +1050,11 @@
         <exception cref="T:System.FormatException"><paramref name="s" /> 的格式不正确。</exception>
         <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Byte.MinValue" /> 或大于 <see cref="F:System.Byte.MaxValue" /> 的数字。  
   
-或 
+- 或 - 
  <paramref name="s" /> 包含非零的小数位。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 不是 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 和 <see cref="F:System.Globalization.NumberStyles.HexNumber" /> 值的组合。</exception>
         <altmember cref="M:System.Byte.ToString" />
         <altmember cref="F:System.Byte.MaxValue" />
@@ -1165,7 +1168,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />。</summary>
         <returns>如果当前实例的值不为零，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1213,7 +1216,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，未更改。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1261,7 +1264,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToChar(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToChar(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Char" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1351,7 +1354,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Decimal" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1399,7 +1402,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Double" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1447,7 +1450,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Int16" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1495,7 +1498,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Int32" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1543,7 +1546,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Int64" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1596,7 +1599,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.SByte" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1644,7 +1647,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Single" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1693,7 +1696,7 @@
       <Docs>
         <param name="type">此 <see cref="T:System.Byte" /> 值要转换为的类型。</param>
         <param name="provider">一个 <see cref="T:System.IFormatProvider" /> 实现，提供有关返回值格式的信息。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <paramref name="type" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1748,7 +1751,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.UInt16" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1801,7 +1804,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.UInt32" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1854,7 +1857,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.UInt64" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2343,7 +2346,7 @@
   
  `s`参数被解释使用<xref:System.Globalization.NumberStyles.Integer>样式。 除了字节值的十进制数字，允许仅前导空格和尾随空格以及前导符号。 (如果符号不存在，它必须是正号或该方法将引发<xref:System.OverflowException>。)若要显式定义的样式元素以及可出现在特定于区域性的格式设置信息`s`，使用<xref:System.Byte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>方法。  
   
- `s`使用中的格式设置信息分析参数<xref:System.Globalization.NumberFormatInfo>为当前区域性的对象。 有关详细信息，请参阅<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>。  
+ `s`使用中的格式设置信息分析参数<xref:System.Globalization.NumberFormatInfo>为当前区域性的对象。 有关详情，请参阅<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>。  
   
  此重载<xref:System.Byte.TryParse%28System.String%2CSystem.Byte%40%29?displayProperty=nameWithType>方法中的所有数字都解释`s`为十进制数字的参数。 若要分析的十六进制数字的字符串表示形式，请调用<xref:System.Byte.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Byte%40%29?displayProperty=nameWithType>重载。  
   
@@ -2455,7 +2458,7 @@
   
  或者，如果`style`参数包含<xref:System.Globalization.NumberStyles.AllowHexSpecifier>:  
   
- [ws] hexdigits [ws]  
+ [ws]hexdigits[ws]  
   
  在方括号 （[和]） 是可选元素。 下表对每个元素进行了描述。  
   
@@ -2505,7 +2508,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 不是 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 和 <see cref="F:System.Globalization.NumberStyles.HexNumber" /> 值的组合。</exception>
         <altmember cref="M:System.Byte.ToString" />
         <altmember cref="F:System.Byte.MaxValue" />

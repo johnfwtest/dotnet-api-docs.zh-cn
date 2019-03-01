@@ -1,5 +1,5 @@
 <Type Name="TextWriter" FullName="System.IO.TextWriter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f4275d06aa49d7dfc32f6067f773ab411f2194f2" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52609765" /></Metadata><TypeSignature Language="C#" Value="public abstract class TextWriter : MarshalByRefObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="95cd9ea1a032e945317c22d26942e3cee9be026e" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56360795" /></Metadata><TypeSignature Language="C#" Value="public abstract class TextWriter : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit TextWriter extends System.MarshalByRefObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.IO.TextWriter" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class TextWriter&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable" />
@@ -400,7 +400,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
+        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
         <summary>释放由 <see cref="T:System.IO.TextWriter" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -419,6 +419,37 @@
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
         <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Threading::Tasks::ValueTask DisposeAsync();" />
+      <MemberSignature Language="F#" Value="abstract member DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask&#xA;override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="textWriter.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Encoding">
@@ -616,7 +647,7 @@
 ## Remarks  
  值<xref:System.IO.TextWriter.FormatProvider%2A>属性指定在调用时使用特定于区域性的格式设置<xref:System.IO.TextWriter.Write%2A>和<xref:System.IO.TextWriter.WriteLine%2A>方法。 如果您不想要提供的格式提供程序，可以通过使用创建实例<xref:System.IO.TextWriter.%23ctor>构造函数中，这会设置<xref:System.IO.TextWriter.FormatProvider%2A>属性设置为`null`。 当<xref:System.IO.TextWriter.FormatProvider%2A>属性包含`null`，当前线程的区域性用于格式设置。  
   
- 创建文件和文本写入文件的示例，请参阅[如何： 将文本写入到文件](~/docs/standard/io/how-to-write-text-to-a-file.md)。 从文件读取文本的示例，请参阅[如何： 从文件读取文本](~/docs/standard/io/how-to-read-text-from-a-file.md)。 读取和写入二进制文件的示例，请参阅[如何： 读取和写入到新创建的数据文件](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)。  
+ 创建文件和文本写入文件的示例，请参阅[如何：向文件写入文本](~/docs/standard/io/how-to-write-text-to-a-file.md)。 从文件读取文本的示例，请参阅[如何：从文件读取文本](~/docs/standard/io/how-to-read-text-from-a-file.md)。 读取和写入二进制文件的示例，请参阅[如何：对新创建的数据文件读取和写入](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)。  
   
  通用 I/O 任务的列表，请参阅[通用 I/O 任务](~/docs/standard/io/common-i-o-tasks.md)。  
   
@@ -829,7 +860,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IDisposable.Dispose" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IDisposable.Dispose" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1477,6 +1508,39 @@
       </Docs>
     </Member>
     <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (System.Text.StringBuilder value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(class System.Text.StringBuilder value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Text.StringBuilder)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Write (value As StringBuilder)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Write(System::Text::StringBuilder ^ value);" />
+      <MemberSignature Language="F#" Value="abstract member Write : System.Text.StringBuilder -&gt; unit&#xA;override this.Write : System.Text.StringBuilder -&gt; unit" Usage="textWriter.Write value" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Text.StringBuilder" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public virtual void Write (uint value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int32 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.UInt32)" />
@@ -1507,7 +1571,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1571,7 +1635,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1664,15 +1728,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有单个对象在其参数中列出，值*索引*必须始终为 0。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -1689,7 +1753,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0 （0）、或大于或等于要设置格式的对象数 (用于该方法重载，为一)。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -1766,15 +1830,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有一个数组，其参数中列出，值*索引*必须始终为数组的长度小于。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -1791,7 +1855,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于或等于 <paramref name="arg" /> 数组的长度。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -1930,15 +1994,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有两个对象在其参数中列出，值*索引*必须始终为 0 或 1。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -1955,7 +2019,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0 （0） 或大于或等于要设置格式的对象数 (用于该方法重载，为二)。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -2029,15 +2093,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有三个对象在其参数中列出，值*索引*必须始终为 0、 1 或 2。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -2054,7 +2118,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0 （0）、或大于或等于要设置格式的对象数 (用于该方法重载，为三)。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -2267,6 +2331,40 @@
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteAsync (System.Text.StringBuilder value, System.Threading.CancellationToken cancellationToken = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteAsync(class System.Text.StringBuilder value, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteAsync(System.Text.StringBuilder,System.Threading.CancellationToken)" />
+      <MemberSignature Language="F#" Value="abstract member WriteAsync : System.Text.StringBuilder * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.WriteAsync : System.Text.StringBuilder * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="textWriter.WriteAsync (value, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Text.StringBuilder" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
         <param name="cancellationToken">To be added.</param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
@@ -3048,6 +3146,39 @@
       </Docs>
     </Member>
     <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (System.Text.StringBuilder value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(class System.Text.StringBuilder value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Text.StringBuilder)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub WriteLine (value As StringBuilder)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void WriteLine(System::Text::StringBuilder ^ value);" />
+      <MemberSignature Language="F#" Value="abstract member WriteLine : System.Text.StringBuilder -&gt; unit&#xA;override this.WriteLine : System.Text.StringBuilder -&gt; unit" Usage="textWriter.WriteLine value" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Text.StringBuilder" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
       <MemberSignature Language="C#" Value="public virtual void WriteLine (uint value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(unsigned int32 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.UInt32)" />
@@ -3078,7 +3209,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -3144,7 +3275,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -3239,15 +3370,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有单个对象在其参数中列出，值*索引*必须始终为 0。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -3266,7 +3397,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0 （0）、或大于或等于要设置格式的对象数 (用于该方法重载，为一)。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -3343,15 +3474,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有一个数组，其参数中列出，值*索引*必须始终为数组的长度小于。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -3370,7 +3501,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于或等于 <paramref name="arg" /> 数组的长度。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -3511,15 +3642,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有两个对象在其参数中列出，值*索引*必须始终为 0 或 1。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -3538,7 +3669,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0 （0）、或大于或等于要设置格式的对象数 (用于该方法重载，为二)。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -3612,15 +3743,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。 有关复合格式设置功能，包括格式项的语法的详细信息请参阅[复合格式设置](~/docs/standard/base-types/composite-formatting.md)。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |索引|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 因为此重载具有三个对象在其参数中列出，值*索引*必须始终为 0、 1 或 2。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|支持要设置格式的对象的一个标准或自定义格式字符串。 可能的值*formatString*支持的对象的值相同`ToString(string format)`方法。 如果*formatString*未指定，并要进行格式化的对象实现<xref:System.IFormattable>接口，`null`作为值传递`format`参数用作<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>格式字符串。|  
   
  前导空格和尾随大括号字符，"{"和"}"，所需。 若要指定中的单个大括号字符`format`、 指定两个前导或尾随大括号字符; 即，"{{"或"}}"。  
   
@@ -3639,7 +3770,7 @@
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 不是有效的复合格式字符串。  
   
-或 
+- 或 - 
 格式项的索引小于 0 （0）、或大于或等于要设置格式的对象数 (用于该方法重载，为三)。</exception>
         <altmember cref="T:System.IO.StreamWriter" />
         <altmember cref="T:System.IO.StringWriter" />
@@ -3916,6 +4047,40 @@
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteLineAsync (System.Text.StringBuilder value, System.Threading.CancellationToken cancellationToken = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteLineAsync(class System.Text.StringBuilder value, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLineAsync(System.Text.StringBuilder,System.Threading.CancellationToken)" />
+      <MemberSignature Language="F#" Value="abstract member WriteLineAsync : System.Text.StringBuilder * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task&#xA;override this.WriteLineAsync : System.Text.StringBuilder * System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="textWriter.WriteLineAsync (value, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Text.StringBuilder" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
         <param name="cancellationToken">To be added.</param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
