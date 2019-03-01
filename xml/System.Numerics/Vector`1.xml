@@ -1,5 +1,5 @@
 <Type Name="Vector&lt;T&gt;" FullName="System.Numerics.Vector&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a91c7b4d7dc9e0ebf5e33569f8e93460e86368fc" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52219950" /></Metadata><TypeSignature Language="C#" Value="public struct Vector&lt;T&gt; : IEquatable&lt;System.Numerics.Vector&lt;T&gt;&gt;, IFormattable where T : struct" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dcc4281f664e28ee090bae43331f08f750d0a78f" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56762945" /></Metadata><TypeSignature Language="C#" Value="public struct Vector&lt;T&gt; : IEquatable&lt;System.Numerics.Vector&lt;T&gt;&gt;, IFormattable where T : struct" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Vector`1&lt;struct .ctor (class System.ValueType) T&gt; extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Numerics.Vector`1&lt;!T&gt;&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Numerics.Vector`1" />
   <TypeSignature Language="VB.NET" Value="Public Structure Vector(Of T)&#xA;Implements IEquatable(Of Vector(Of T)), IFormattable" />
@@ -9,6 +9,7 @@
     <AssemblyName>System.Numerics.Vectors</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.2.0</AssemblyVersion>
     <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -39,29 +40,30 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <typeparam name="T"><span data-ttu-id="a6daf-101">向量类型。</span><span class="sxs-lookup"><span data-stu-id="a6daf-101">The vector type.</span></span> <span data-ttu-id="a6daf-102"><c>T</c>可以是任何基元数值类型。</span><span class="sxs-lookup"><span data-stu-id="a6daf-102"><c>T</c> can be any primitive numeric type.</span></span></typeparam>
-    <summary><span data-ttu-id="a6daf-103">表示指定数值类型（适用于并行算法的低级别优化）的单个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-103">Represents a single vector of a specified numeric type that is suitable for low-level optimization of parallel algorithms.</span></span></summary>
+    <typeparam name="T"><span data-ttu-id="302fe-101">向量类型。</span><span class="sxs-lookup"><span data-stu-id="302fe-101">The vector type.</span></span> <span data-ttu-id="302fe-102"><c>T</c>可以是任何基元数值类型。</span><span class="sxs-lookup"><span data-stu-id="302fe-102"><c>T</c> can be any primitive numeric type.</span></span></typeparam>
+    <summary><span data-ttu-id="302fe-103">表示指定数值类型（适用于并行算法的低级别优化）的单个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-103">Represents a single vector of a specified numeric type that is suitable for low-level optimization of parallel algorithms.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-104"><xref:System.Numerics.Vector%601> 是不可变的结构，它表示指定的数值类型的单个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-104"><xref:System.Numerics.Vector%601> is an immutable structure that represents a single vector of a specified numeric type.</span></span> <span data-ttu-id="a6daf-105">计数<xref:System.Numerics.Vector%601>实例固定的但其上限是 CPU 寄存器依赖。</span><span class="sxs-lookup"><span data-stu-id="a6daf-105">The count of a <xref:System.Numerics.Vector%601> instance is fixed, but its upper limit is CPU-register dependent.</span></span> <span data-ttu-id="a6daf-106">它旨在用作对大型算法构建基块。</span><span class="sxs-lookup"><span data-stu-id="a6daf-106">It is intended to be used as a building block for vectorizing large algorithms.</span></span>  
+ <span data-ttu-id="302fe-104"><xref:System.Numerics.Vector%601> 是不可变的结构，它表示指定的数值类型的单个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-104"><xref:System.Numerics.Vector%601> is an immutable structure that represents a single vector of a specified numeric type.</span></span> <span data-ttu-id="302fe-105">计数<xref:System.Numerics.Vector%601>实例固定的但其上限是 CPU 寄存器依赖。</span><span class="sxs-lookup"><span data-stu-id="302fe-105">The count of a <xref:System.Numerics.Vector%601> instance is fixed, but its upper limit is CPU-register dependent.</span></span> <span data-ttu-id="302fe-106">它旨在用作对大型算法构建基块。</span><span class="sxs-lookup"><span data-stu-id="302fe-106">It is intended to be used as a building block for vectorizing large algorithms.</span></span>  
   
- <span data-ttu-id="a6daf-107"><xref:System.Numerics.Vector%601>结构来执行硬件加速提供支持。</span><span class="sxs-lookup"><span data-stu-id="a6daf-107">The <xref:System.Numerics.Vector%601> structure provides support for hardware acceleration.</span></span>  
+ <span data-ttu-id="302fe-107"><xref:System.Numerics.Vector%601>结构来执行硬件加速提供支持。</span><span class="sxs-lookup"><span data-stu-id="302fe-107">The <xref:System.Numerics.Vector%601> structure provides support for hardware acceleration.</span></span>  
  
- <span data-ttu-id="a6daf-108">下表显示了哪种基元数值数据类型和操作组合更快地执行使用的内部函数指令：</span><span class="sxs-lookup"><span data-stu-id="a6daf-108">The following table shows which primitive numeric data type and operation combination uses intrinsic instructions for faster executions:</span></span>
-| | `+` | `-` | `*` | `/` |
+ <span data-ttu-id="302fe-108">下表显示了哪种基元数值数据类型和操作组合更快地执行使用的内部函数指令：</span><span class="sxs-lookup"><span data-stu-id="302fe-108">The following table shows which primitive numeric data type and operation combination uses intrinsic instructions for faster executions:</span></span>
+ 
+| <span data-ttu-id="302fe-109">基元类型</span><span class="sxs-lookup"><span data-stu-id="302fe-109">Primitive type</span></span> | `+` | `-` | `*` | `/` |
 | --- | :---: | :---: | :---: | :---: |
-|`sbyte` | <span data-ttu-id="a6daf-109">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-109">Yes</span></span> | <span data-ttu-id="a6daf-110">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-110">Yes</span></span> | <span data-ttu-id="a6daf-111">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-111">No</span></span> | <span data-ttu-id="a6daf-112">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-112">No</span></span> |
-|`byte` | <span data-ttu-id="a6daf-113">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-113">Yes</span></span> | <span data-ttu-id="a6daf-114">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-114">Yes</span></span> | <span data-ttu-id="a6daf-115">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-115">No</span></span> | <span data-ttu-id="a6daf-116">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-116">No</span></span> |
-|`short` | <span data-ttu-id="a6daf-117">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-117">Yes</span></span> | <span data-ttu-id="a6daf-118">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-118">Yes</span></span> | <span data-ttu-id="a6daf-119">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-119">Yes</span></span> | <span data-ttu-id="a6daf-120">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-120">No</span></span> |
-|`ushort` | <span data-ttu-id="a6daf-121">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-121">Yes</span></span> | <span data-ttu-id="a6daf-122">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-122">Yes</span></span> | <span data-ttu-id="a6daf-123">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-123">No</span></span> | <span data-ttu-id="a6daf-124">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-124">No</span></span> |
-| `int` | <span data-ttu-id="a6daf-125">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-125">Yes</span></span> | <span data-ttu-id="a6daf-126">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-126">Yes</span></span> | <span data-ttu-id="a6daf-127">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-127">Yes</span></span> | <span data-ttu-id="a6daf-128">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-128">No</span></span> |
-| `uint` | <span data-ttu-id="a6daf-129">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-129">Yes</span></span> | <span data-ttu-id="a6daf-130">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-130">Yes</span></span> | <span data-ttu-id="a6daf-131">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-131">No</span></span> | <span data-ttu-id="a6daf-132">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-132">No</span></span> |
-| `long` | <span data-ttu-id="a6daf-133">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-133">Yes</span></span> | <span data-ttu-id="a6daf-134">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-134">Yes</span></span> | <span data-ttu-id="a6daf-135">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-135">No</span></span> | <span data-ttu-id="a6daf-136">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-136">No</span></span> |
-| `ulong` | <span data-ttu-id="a6daf-137">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-137">Yes</span></span> | <span data-ttu-id="a6daf-138">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-138">Yes</span></span> | <span data-ttu-id="a6daf-139">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-139">No</span></span> | <span data-ttu-id="a6daf-140">否</span><span class="sxs-lookup"><span data-stu-id="a6daf-140">No</span></span> |
-| `float` | <span data-ttu-id="a6daf-141">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-141">Yes</span></span> | <span data-ttu-id="a6daf-142">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-142">Yes</span></span> | <span data-ttu-id="a6daf-143">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-143">Yes</span></span> | <span data-ttu-id="a6daf-144">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-144">Yes</span></span> |
-| `double` | <span data-ttu-id="a6daf-145">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-145">Yes</span></span> | <span data-ttu-id="a6daf-146">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-146">Yes</span></span> | <span data-ttu-id="a6daf-147">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-147">Yes</span></span> | <span data-ttu-id="a6daf-148">是</span><span class="sxs-lookup"><span data-stu-id="a6daf-148">Yes</span></span> |
+|`sbyte` | <span data-ttu-id="302fe-110">是</span><span class="sxs-lookup"><span data-stu-id="302fe-110">Yes</span></span> | <span data-ttu-id="302fe-111">是</span><span class="sxs-lookup"><span data-stu-id="302fe-111">Yes</span></span> | <span data-ttu-id="302fe-112">No</span><span class="sxs-lookup"><span data-stu-id="302fe-112">No</span></span> | <span data-ttu-id="302fe-113">No</span><span class="sxs-lookup"><span data-stu-id="302fe-113">No</span></span> |
+|`byte` | <span data-ttu-id="302fe-114">是</span><span class="sxs-lookup"><span data-stu-id="302fe-114">Yes</span></span> | <span data-ttu-id="302fe-115">是</span><span class="sxs-lookup"><span data-stu-id="302fe-115">Yes</span></span> | <span data-ttu-id="302fe-116">No</span><span class="sxs-lookup"><span data-stu-id="302fe-116">No</span></span> | <span data-ttu-id="302fe-117">No</span><span class="sxs-lookup"><span data-stu-id="302fe-117">No</span></span> |
+|`short` | <span data-ttu-id="302fe-118">是</span><span class="sxs-lookup"><span data-stu-id="302fe-118">Yes</span></span> | <span data-ttu-id="302fe-119">是</span><span class="sxs-lookup"><span data-stu-id="302fe-119">Yes</span></span> | <span data-ttu-id="302fe-120">是</span><span class="sxs-lookup"><span data-stu-id="302fe-120">Yes</span></span> | <span data-ttu-id="302fe-121">No</span><span class="sxs-lookup"><span data-stu-id="302fe-121">No</span></span> |
+|`ushort` | <span data-ttu-id="302fe-122">是</span><span class="sxs-lookup"><span data-stu-id="302fe-122">Yes</span></span> | <span data-ttu-id="302fe-123">是</span><span class="sxs-lookup"><span data-stu-id="302fe-123">Yes</span></span> | <span data-ttu-id="302fe-124">No</span><span class="sxs-lookup"><span data-stu-id="302fe-124">No</span></span> | <span data-ttu-id="302fe-125">No</span><span class="sxs-lookup"><span data-stu-id="302fe-125">No</span></span> |
+| `int` | <span data-ttu-id="302fe-126">是</span><span class="sxs-lookup"><span data-stu-id="302fe-126">Yes</span></span> | <span data-ttu-id="302fe-127">是</span><span class="sxs-lookup"><span data-stu-id="302fe-127">Yes</span></span> | <span data-ttu-id="302fe-128">是</span><span class="sxs-lookup"><span data-stu-id="302fe-128">Yes</span></span> | <span data-ttu-id="302fe-129">No</span><span class="sxs-lookup"><span data-stu-id="302fe-129">No</span></span> |
+| `uint` | <span data-ttu-id="302fe-130">是</span><span class="sxs-lookup"><span data-stu-id="302fe-130">Yes</span></span> | <span data-ttu-id="302fe-131">是</span><span class="sxs-lookup"><span data-stu-id="302fe-131">Yes</span></span> | <span data-ttu-id="302fe-132">No</span><span class="sxs-lookup"><span data-stu-id="302fe-132">No</span></span> | <span data-ttu-id="302fe-133">No</span><span class="sxs-lookup"><span data-stu-id="302fe-133">No</span></span> |
+| `long` | <span data-ttu-id="302fe-134">是</span><span class="sxs-lookup"><span data-stu-id="302fe-134">Yes</span></span> | <span data-ttu-id="302fe-135">是</span><span class="sxs-lookup"><span data-stu-id="302fe-135">Yes</span></span> | <span data-ttu-id="302fe-136">No</span><span class="sxs-lookup"><span data-stu-id="302fe-136">No</span></span> | <span data-ttu-id="302fe-137">No</span><span class="sxs-lookup"><span data-stu-id="302fe-137">No</span></span> |
+| `ulong` | <span data-ttu-id="302fe-138">是</span><span class="sxs-lookup"><span data-stu-id="302fe-138">Yes</span></span> | <span data-ttu-id="302fe-139">是</span><span class="sxs-lookup"><span data-stu-id="302fe-139">Yes</span></span> | <span data-ttu-id="302fe-140">No</span><span class="sxs-lookup"><span data-stu-id="302fe-140">No</span></span> | <span data-ttu-id="302fe-141">No</span><span class="sxs-lookup"><span data-stu-id="302fe-141">No</span></span> |
+| `float` | <span data-ttu-id="302fe-142">是</span><span class="sxs-lookup"><span data-stu-id="302fe-142">Yes</span></span> | <span data-ttu-id="302fe-143">是</span><span class="sxs-lookup"><span data-stu-id="302fe-143">Yes</span></span> | <span data-ttu-id="302fe-144">是</span><span class="sxs-lookup"><span data-stu-id="302fe-144">Yes</span></span> | <span data-ttu-id="302fe-145">是</span><span class="sxs-lookup"><span data-stu-id="302fe-145">Yes</span></span> |
+| `double` | <span data-ttu-id="302fe-146">是</span><span class="sxs-lookup"><span data-stu-id="302fe-146">Yes</span></span> | <span data-ttu-id="302fe-147">是</span><span class="sxs-lookup"><span data-stu-id="302fe-147">Yes</span></span> | <span data-ttu-id="302fe-148">是</span><span class="sxs-lookup"><span data-stu-id="302fe-148">Yes</span></span> | <span data-ttu-id="302fe-149">是</span><span class="sxs-lookup"><span data-stu-id="302fe-149">Yes</span></span> |
 
  ]]></format>
     </remarks>
@@ -101,6 +103,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -114,13 +117,13 @@
         <Parameter Name="value" Type="T" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-149">定义向量中的组件类型的数值类型。</span><span class="sxs-lookup"><span data-stu-id="a6daf-149">The numeric type that defines the type of the components in the vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-150">创建其组件为指定类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-150">Creates a vector whose components are of a specified type.</span></span></summary>
+        <param name="value"><span data-ttu-id="302fe-150">定义向量中的组件类型的数值类型。</span><span class="sxs-lookup"><span data-stu-id="302fe-150">The numeric type that defines the type of the components in the vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-151">创建其组件为指定类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-151">Creates a vector whose components are of a specified type.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-151">`value` 可以是任何基元数值类型 (即，数字类型，该类型<xref:System.Type.IsPrimitive%2A?displayProperty=nameWithType>属性返回`true`。</span><span class="sxs-lookup"><span data-stu-id="a6daf-151">`value` can be any primitive numeric type (that is, a numeric type whose <xref:System.Type.IsPrimitive%2A?displayProperty=nameWithType> property returns `true`.</span></span>  
+ <span data-ttu-id="302fe-152">`value` 可以是任何基元数值类型 (即，数字类型，该类型<xref:System.Type.IsPrimitive%2A?displayProperty=nameWithType>属性返回`true`。</span><span class="sxs-lookup"><span data-stu-id="302fe-152">`value` can be any primitive numeric type (that is, a numeric type whose <xref:System.Type.IsPrimitive%2A?displayProperty=nameWithType> property returns `true`.</span></span>  
   
  ]]></format>
         </remarks>
@@ -138,6 +141,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -151,17 +155,17 @@
         <Parameter Name="values" Type="T[]" />
       </Parameters>
       <Docs>
-        <param name="values"><span data-ttu-id="a6daf-152">数值数组。</span><span class="sxs-lookup"><span data-stu-id="a6daf-152">A numeric array.</span></span></param>
-        <summary><span data-ttu-id="a6daf-153">从指定数组创建一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-153">Creates a vector from a specified array.</span></span></summary>
+        <param name="values"><span data-ttu-id="302fe-153">数值数组。</span><span class="sxs-lookup"><span data-stu-id="302fe-153">A numeric array.</span></span></param>
+        <summary><span data-ttu-id="302fe-154">从指定数组创建一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-154">Creates a vector from a specified array.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-154">`values` 必须至少包含<xref:System.Numerics.Vector%601.Count%2A>元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-154">`values` must contain at least <xref:System.Numerics.Vector%601.Count%2A> elements.</span></span>  
+ <span data-ttu-id="302fe-155">`values` 必须至少包含<xref:System.Numerics.Vector%601.Count%2A>元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-155">`values` must contain at least <xref:System.Numerics.Vector%601.Count%2A> elements.</span></span>  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="a6daf-155"><paramref name="values" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-155"><paramref name="values" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="302fe-156"><paramref name="values" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-156"><paramref name="values" /> is <see langword="null" />.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -176,6 +180,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -190,22 +195,22 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="values"><span data-ttu-id="a6daf-156">数值数组。</span><span class="sxs-lookup"><span data-stu-id="a6daf-156">A numeric array.</span></span></param>
-        <param name="index"><span data-ttu-id="a6daf-157">从其创建向量的起始索引位置。</span><span class="sxs-lookup"><span data-stu-id="a6daf-157">The starting index position from which to create the vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-158">于指定索引位置开始，从指定数组创建一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-158">Creates a vector from a specified array starting at a specified index position.</span></span></summary>
+        <param name="values"><span data-ttu-id="302fe-157">数值数组。</span><span class="sxs-lookup"><span data-stu-id="302fe-157">A numeric array.</span></span></param>
+        <param name="index"><span data-ttu-id="302fe-158">从其创建向量的起始索引位置。</span><span class="sxs-lookup"><span data-stu-id="302fe-158">The starting index position from which to create the vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-159">于指定索引位置开始，从指定数组创建一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-159">Creates a vector from a specified array starting at a specified index position.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-159">该数组必须至少包含<xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType>中的指定索引的元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-159">The array must contain at least <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> elements from the specified index.</span></span>  
+ <span data-ttu-id="302fe-160">该数组必须至少包含<xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType>中的指定索引的元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-160">The array must contain at least <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> elements from the specified index.</span></span>  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="a6daf-160"><paramref name="values" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-160"><paramref name="values" /> is <see langword="null" />.</span></span></exception>
-        <exception cref="T:System.IndexOutOfRangeException"><span data-ttu-id="a6daf-161"><paramref name="index" /> 小于零。</span><span class="sxs-lookup"><span data-stu-id="a6daf-161"><paramref name="index" /> is less than zero.</span></span>  
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="302fe-161"><paramref name="values" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-161"><paramref name="values" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.IndexOutOfRangeException"><span data-ttu-id="302fe-162"><paramref name="index" /> 小于零。</span><span class="sxs-lookup"><span data-stu-id="302fe-162"><paramref name="index" /> is less than zero.</span></span>  
   
-<span data-ttu-id="a6daf-162">或</span><span class="sxs-lookup"><span data-stu-id="a6daf-162">-or-</span></span> 
-<span data-ttu-id="a6daf-163"><paramref name="values" /> 的长度减去 <paramref name="index" /> 小于 <see cref="P:System.Numerics.Vector`1.Count" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-163">The length of <paramref name="values" /> minus <paramref name="index" /> is less than <see cref="P:System.Numerics.Vector`1.Count" />.</span></span></exception>
+<span data-ttu-id="302fe-163">- 或 -</span><span class="sxs-lookup"><span data-stu-id="302fe-163">-or-</span></span> 
+<span data-ttu-id="302fe-164"><paramref name="values" /> 的长度减去 <paramref name="index" /> 小于 <see cref="P:System.Numerics.Vector`1.Count" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-164">The length of <paramref name="values" /> minus <paramref name="index" /> is less than <see cref="P:System.Numerics.Vector`1.Count" />.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
@@ -220,6 +225,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -236,18 +242,18 @@
         <Parameter Name="destination" Type="T[]" />
       </Parameters>
       <Docs>
-        <param name="destination"><span data-ttu-id="a6daf-164">要接收矢量值的副本的数组。</span><span class="sxs-lookup"><span data-stu-id="a6daf-164">The array to receive a copy of the vector values.</span></span></param>
-        <summary><span data-ttu-id="a6daf-165">将向量实例复制到指定的目标数组。</span><span class="sxs-lookup"><span data-stu-id="a6daf-165">Copies the vector instance to a specified destination array.</span></span></summary>
+        <param name="destination"><span data-ttu-id="302fe-165">要接收矢量值的副本的数组。</span><span class="sxs-lookup"><span data-stu-id="302fe-165">The array to receive a copy of the vector values.</span></span></param>
+        <summary><span data-ttu-id="302fe-166">将向量实例复制到指定的目标数组。</span><span class="sxs-lookup"><span data-stu-id="302fe-166">Copies the vector instance to a specified destination array.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-166">位于索引 0 处开始复制操作`destination`。</span><span class="sxs-lookup"><span data-stu-id="a6daf-166">The copy operation begins at index 0 of `destination`.</span></span> <span data-ttu-id="a6daf-167">目标数组必须至少具有<xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType>元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-167">The destination array must have at least <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> elements.</span></span>  
+ <span data-ttu-id="302fe-167">位于索引 0 处开始复制操作`destination`。</span><span class="sxs-lookup"><span data-stu-id="302fe-167">The copy operation begins at index 0 of `destination`.</span></span> <span data-ttu-id="302fe-168">目标数组必须至少具有<xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType>元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-168">The destination array must have at least <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> elements.</span></span>  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="a6daf-168"><paramref name="destination" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-168"><paramref name="destination" /> is <see langword="null" />.</span></span></exception>
-        <exception cref="T:System.ArgumentException"><span data-ttu-id="a6daf-169">当前向量中的元素数目大于 <paramref name="destination" /> 数组中的可用元素数目。</span><span class="sxs-lookup"><span data-stu-id="a6daf-169">The number of elements in the current vector is greater than the number of elements available in the <paramref name="destination" /> array.</span></span></exception>
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="302fe-169"><paramref name="destination" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-169"><paramref name="destination" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.ArgumentException"><span data-ttu-id="302fe-170">当前向量中的元素数目大于 <paramref name="destination" /> 数组中的可用元素数目。</span><span class="sxs-lookup"><span data-stu-id="302fe-170">The number of elements in the current vector is greater than the number of elements available in the <paramref name="destination" /> array.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
@@ -262,6 +268,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -279,20 +286,20 @@
         <Parameter Name="startIndex" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="destination"><span data-ttu-id="a6daf-170">要接收矢量值的副本的数组。</span><span class="sxs-lookup"><span data-stu-id="a6daf-170">The array to receive a copy of the vector values.</span></span></param>
-        <param name="startIndex"><span data-ttu-id="a6daf-171">在 <paramref name="destination" /> 中的起始索引，要于此处开始复制操作。</span><span class="sxs-lookup"><span data-stu-id="a6daf-171">The starting index in <paramref name="destination" /> at which to begin the copy operation.</span></span></param>
-        <summary><span data-ttu-id="a6daf-172">从指定索引位置开始，将向量实例复制到指定的目标数组中。</span><span class="sxs-lookup"><span data-stu-id="a6daf-172">Copies the vector instance to a specified destination array starting at a specified index position.</span></span></summary>
+        <param name="destination"><span data-ttu-id="302fe-171">要接收矢量值的副本的数组。</span><span class="sxs-lookup"><span data-stu-id="302fe-171">The array to receive a copy of the vector values.</span></span></param>
+        <param name="startIndex"><span data-ttu-id="302fe-172">在 <paramref name="destination" /> 中的起始索引，要于此处开始复制操作。</span><span class="sxs-lookup"><span data-stu-id="302fe-172">The starting index in <paramref name="destination" /> at which to begin the copy operation.</span></span></param>
+        <summary><span data-ttu-id="302fe-173">从指定索引位置开始，将向量实例复制到指定的目标数组中。</span><span class="sxs-lookup"><span data-stu-id="302fe-173">Copies the vector instance to a specified destination array starting at a specified index position.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-173">索引处开始复制操作`startIndex`的`destination`。</span><span class="sxs-lookup"><span data-stu-id="a6daf-173">The copy operation begins at index `startIndex` of `destination`.</span></span> <span data-ttu-id="a6daf-174">目标数组必须至少具有`startIndex`  +  <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType>元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-174">The destination array must have at least `startIndex` + <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> elements.</span></span>  
+ <span data-ttu-id="302fe-174">索引处开始复制操作`startIndex`的`destination`。</span><span class="sxs-lookup"><span data-stu-id="302fe-174">The copy operation begins at index `startIndex` of `destination`.</span></span> <span data-ttu-id="302fe-175">目标数组必须至少具有`startIndex`  +  <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType>元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-175">The destination array must have at least `startIndex` + <xref:System.Numerics.Vector%601.Count%2A?displayProperty=nameWithType> elements.</span></span>  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="a6daf-175"><paramref name="destination" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-175"><paramref name="destination" /> is <see langword="null" />.</span></span></exception>
-        <exception cref="T:System.ArgumentException"><span data-ttu-id="a6daf-176">当前实例中的元素数目大于从 <paramref name="startIndex" /> 到 <paramref name="destination" /> 数组末尾之间的可用元素数目。</span><span class="sxs-lookup"><span data-stu-id="a6daf-176">The number of elements in the current instance is greater than the number of elements available from <paramref name="startIndex" /> to the end of the <paramref name="destination" /> array.</span></span></exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><span data-ttu-id="a6daf-177"><paramref name="index" /> 小于零或大于 <paramref name="destination" /> 中的最后一个索引。</span><span class="sxs-lookup"><span data-stu-id="a6daf-177"><paramref name="index" /> is less than zero or greater than the last index in <paramref name="destination" />.</span></span></exception>
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="302fe-176"><paramref name="destination" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-176"><paramref name="destination" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.ArgumentException"><span data-ttu-id="302fe-177">当前实例中的元素数目大于从 <paramref name="startIndex" /> 到 <paramref name="destination" /> 数组末尾之间的可用元素数目。</span><span class="sxs-lookup"><span data-stu-id="302fe-177">The number of elements in the current instance is greater than the number of elements available from <paramref name="startIndex" /> to the end of the <paramref name="destination" /> array.</span></span></exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><span data-ttu-id="302fe-178"><paramref name="index" /> 小于零或大于 <paramref name="destination" /> 中的最后一个索引。</span><span class="sxs-lookup"><span data-stu-id="302fe-178"><paramref name="index" /> is less than zero or greater than the last index in <paramref name="destination" />.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -307,6 +314,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -320,10 +328,10 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="a6daf-178">返回存储在向量中的元素数量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-178">Returns the number of elements stored in the vector.</span></span></summary>
-        <value><span data-ttu-id="a6daf-179">存储在向量中的元素数量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-179">The number of elements stored in the vector.</span></span></value>
+        <summary><span data-ttu-id="302fe-179">返回存储在向量中的元素数量。</span><span class="sxs-lookup"><span data-stu-id="302fe-179">Returns the number of elements stored in the vector.</span></span></summary>
+        <value><span data-ttu-id="302fe-180">存储在向量中的元素数量。</span><span class="sxs-lookup"><span data-stu-id="302fe-180">The number of elements stored in the vector.</span></span></value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.NotSupportedException"><span data-ttu-id="a6daf-180">不支持通过反射访问属性 getter。</span><span class="sxs-lookup"><span data-stu-id="a6daf-180">Access to the property getter via reflection is not supported.</span></span></exception>
+        <exception cref="T:System.NotSupportedException"><span data-ttu-id="302fe-181">不支持通过反射访问属性 getter。</span><span class="sxs-lookup"><span data-stu-id="302fe-181">Access to the property getter via reflection is not supported.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -341,6 +349,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -357,14 +366,14 @@
         <Parameter Name="other" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="other"><span data-ttu-id="a6daf-181">要与此实例进行比较的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-181">The vector to compare with this instance.</span></span></param>
-        <summary><span data-ttu-id="a6daf-182">返回一个值，该值指示此实例是否与指定的向量相等。</span><span class="sxs-lookup"><span data-stu-id="a6daf-182">Returns a value that indicates whether this instance is equal to a specified vector.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-183">如果当前实例与 <paramref name="other" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-183"><see langword="true" /> if the current instance and <paramref name="other" /> are equal; otherwise, <see langword="false" />.</span></span></returns>
+        <param name="other"><span data-ttu-id="302fe-182">要与此实例进行比较的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-182">The vector to compare with this instance.</span></span></param>
+        <summary><span data-ttu-id="302fe-183">返回一个值，该值指示此实例是否与指定的向量相等。</span><span class="sxs-lookup"><span data-stu-id="302fe-183">Returns a value that indicates whether this instance is equal to a specified vector.</span></span></summary>
+        <returns><span data-ttu-id="302fe-184">如果当前实例与 <paramref name="other" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-184"><see langword="true" /> if the current instance and <paramref name="other" /> are equal; otherwise, <see langword="false" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-184">两个向量相等，如果它们是相同类型的具有相同数目的值，并且当前实例中的每个值等于中的相应值`other`。</span><span class="sxs-lookup"><span data-stu-id="a6daf-184">Two vectors are equal if they are of the same type, have the same number of values, and each value in the current instance is equal to the corresponding value in `other`.</span></span>  
+ <span data-ttu-id="302fe-185">两个向量相等，如果它们是相同类型的具有相同数目的值，并且当前实例中的每个值等于中的相应值`other`。</span><span class="sxs-lookup"><span data-stu-id="302fe-185">Two vectors are equal if they are of the same type, have the same number of values, and each value in the current instance is equal to the corresponding value in `other`.</span></span>  
   
  ]]></format>
         </remarks>
@@ -382,6 +391,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -398,14 +408,14 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj"><span data-ttu-id="a6daf-185">与该实例进行比较的对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-185">The object to compare with this instance.</span></span></param>
-        <summary><span data-ttu-id="a6daf-186">返回一个值，该值指示此实例是否与指定的对象相等。</span><span class="sxs-lookup"><span data-stu-id="a6daf-186">Returns a value that indicates whether this instance is equal to a specified object.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-187">如果当前实例与 <paramref name="obj" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-187"><see langword="true" /> if the current instance and <paramref name="obj" /> are equal; otherwise, <see langword="false" />.</span></span> <span data-ttu-id="a6daf-188">如果 <paramref name="obj" /> 为 null，或者如果 <paramref name="obj" /> 是与当前实例类型不同的向量，则该方法将返回 <see langword="false" /></span><span class="sxs-lookup"><span data-stu-id="a6daf-188">The method returns <see langword="false" /> if <paramref name="obj" /> is null, or if <paramref name="obj" /> is a vector of a different type than the current instance.</span></span></returns>
+        <param name="obj"><span data-ttu-id="302fe-186">与该实例进行比较的对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-186">The object to compare with this instance.</span></span></param>
+        <summary><span data-ttu-id="302fe-187">返回一个值，该值指示此实例是否与指定的对象相等。</span><span class="sxs-lookup"><span data-stu-id="302fe-187">Returns a value that indicates whether this instance is equal to a specified object.</span></span></summary>
+        <returns><span data-ttu-id="302fe-188">如果当前实例与 <paramref name="obj" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-188"><see langword="true" /> if the current instance and <paramref name="obj" /> are equal; otherwise, <see langword="false" />.</span></span> <span data-ttu-id="302fe-189">如果 <paramref name="obj" /> 为 null，或者如果 <paramref name="obj" /> 是与当前实例类型不同的向量，则该方法将返回 <see langword="false" /></span><span class="sxs-lookup"><span data-stu-id="302fe-189">The method returns <see langword="false" /> if <paramref name="obj" /> is null, or if <paramref name="obj" /> is a vector of a different type than the current instance.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-189">两个向量相等，如果它们是相同类型的具有相同数目的值，并且当前实例中的每个值等于中的相应值`other`。</span><span class="sxs-lookup"><span data-stu-id="a6daf-189">Two vectors are equal if they are of the same type, have the same number of values, and each value in the current instance is equal to the corresponding value in `other`.</span></span>  
+ <span data-ttu-id="302fe-190">两个向量相等，如果它们是相同类型的具有相同数目的值，并且当前实例中的每个值等于中的相应值`other`。</span><span class="sxs-lookup"><span data-stu-id="302fe-190">Two vectors are equal if they are of the same type, have the same number of values, and each value in the current instance is equal to the corresponding value in `other`.</span></span>  
   
  ]]></format>
         </remarks>
@@ -423,6 +433,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -437,8 +448,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="a6daf-190">返回此实例的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="a6daf-190">Returns the hash code for this instance.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-191">哈希代码。</span><span class="sxs-lookup"><span data-stu-id="a6daf-191">The hash code.</span></span></returns>
+        <summary><span data-ttu-id="302fe-191">返回此实例的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="302fe-191">Returns the hash code for this instance.</span></span></summary>
+        <returns><span data-ttu-id="302fe-192">哈希代码。</span><span class="sxs-lookup"><span data-stu-id="302fe-192">The hash code.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -454,6 +465,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -470,14 +482,14 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index"><span data-ttu-id="a6daf-192">要返回的元素的索引。</span><span class="sxs-lookup"><span data-stu-id="a6daf-192">The index of the element to return.</span></span></param>
-        <summary><span data-ttu-id="a6daf-193">获取指定索引处的元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-193">Gets the element at a specified index.</span></span></summary>
-        <value><span data-ttu-id="a6daf-194">索引 <paramref name="index" /> 处的元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-194">The element at index <paramref name="index" />.</span></span></value>
+        <param name="index"><span data-ttu-id="302fe-193">要返回的元素的索引。</span><span class="sxs-lookup"><span data-stu-id="302fe-193">The index of the element to return.</span></span></param>
+        <summary><span data-ttu-id="302fe-194">获取指定索引处的元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-194">Gets the element at a specified index.</span></span></summary>
+        <value><span data-ttu-id="302fe-195">索引 <paramref name="index" /> 处的元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-195">The element at index <paramref name="index" />.</span></span></value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException"><span data-ttu-id="a6daf-195"><paramref name="index" /> 小于零。</span><span class="sxs-lookup"><span data-stu-id="a6daf-195"><paramref name="index" /> is less than zero.</span></span>  
+        <exception cref="T:System.IndexOutOfRangeException"><span data-ttu-id="302fe-196"><paramref name="index" /> 小于零。</span><span class="sxs-lookup"><span data-stu-id="302fe-196"><paramref name="index" /> is less than zero.</span></span>  
   
-<span data-ttu-id="a6daf-196">或</span><span class="sxs-lookup"><span data-stu-id="a6daf-196">-or-</span></span> 
- <span data-ttu-id="a6daf-197"><paramref name="index" /> 大于或等于 <see cref="P:System.Numerics.Vector`1.Count" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-197"><paramref name="index" /> is greater than or equal to <see cref="P:System.Numerics.Vector`1.Count" />.</span></span></exception>
+<span data-ttu-id="302fe-197">- 或 -</span><span class="sxs-lookup"><span data-stu-id="302fe-197">-or-</span></span> 
+ <span data-ttu-id="302fe-198"><paramref name="index" /> 大于或等于 <see cref="P:System.Numerics.Vector`1.Count" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-198"><paramref name="index" /> is greater than or equal to <see cref="P:System.Numerics.Vector`1.Count" />.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="One">
@@ -492,6 +504,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -505,8 +518,8 @@
         <ReturnType>System.Numerics.Vector&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="a6daf-198">返回一个包含所有 1 的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-198">Returns a vector containing all ones.</span></span></summary>
-        <value><span data-ttu-id="a6daf-199">一个包含所有 1 的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-199">A vector containing all ones.</span></span></value>
+        <summary><span data-ttu-id="302fe-199">返回一个包含所有 1 的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-199">Returns a vector containing all ones.</span></span></summary>
+        <value><span data-ttu-id="302fe-200">一个包含所有 1 的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-200">A vector containing all ones.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -522,6 +535,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -539,15 +553,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-200">要相加的第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-200">The first vector to add.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-201">要相加的第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-201">The second vector to add.</span></span></param>
-        <summary><span data-ttu-id="a6daf-202">将两个向量相加。</span><span class="sxs-lookup"><span data-stu-id="a6daf-202">Adds two vectors together.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-203">总和向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-203">The summed vector.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-201">要相加的第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-201">The first vector to add.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-202">要相加的第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-202">The second vector to add.</span></span></param>
+        <summary><span data-ttu-id="302fe-203">将两个向量相加。</span><span class="sxs-lookup"><span data-stu-id="302fe-203">Adds two vectors together.</span></span></summary>
+        <returns><span data-ttu-id="302fe-204">总和向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-204">The summed vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-204"><xref:System.Numerics.Vector%601.op_Addition%2A>方法定义的加法运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-204">The <xref:System.Numerics.Vector%601.op_Addition%2A> method defines the addition operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-205"><xref:System.Numerics.Vector%601.op_Addition%2A>方法定义的加法运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-205">The <xref:System.Numerics.Vector%601.op_Addition%2A> method defines the addition operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -565,6 +579,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -582,15 +597,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-205">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-205">The first vector.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-206">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-206">The second vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-207">通过在两个向量中的每个元素上执行按位 <see langword="And" /> 运算，返回一个新向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-207">Returns a new vector by performing a bitwise <see langword="And" /> operation on each of the elements in two vectors.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-208">从 <paramref name="left" /> 和 <paramref name="right" /> 的按位 <see langword="And" /> 得到的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-208">The vector that results from the bitwise <see langword="And" /> of <paramref name="left" /> and <paramref name="right" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-206">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-206">The first vector.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-207">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-207">The second vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-208">通过在两个向量中的每个元素上执行按位 <see langword="And" /> 运算，返回一个新向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-208">Returns a new vector by performing a bitwise <see langword="And" /> operation on each of the elements in two vectors.</span></span></summary>
+        <returns><span data-ttu-id="302fe-209">从 <paramref name="left" /> 和 <paramref name="right" /> 的按位 <see langword="And" /> 得到的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-209">The vector that results from the bitwise <see langword="And" /> of <paramref name="left" /> and <paramref name="right" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-209"><xref:System.Numerics.Vector%601.op_BitwiseAnd%2A>方法定义的按位`And`操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-209">The <xref:System.Numerics.Vector%601.op_BitwiseAnd%2A> method defines the bitwise `And` operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-210"><xref:System.Numerics.Vector%601.op_BitwiseAnd%2A>方法定义的按位`And`操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-210">The <xref:System.Numerics.Vector%601.op_BitwiseAnd%2A> method defines the bitwise `And` operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -608,6 +623,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -625,15 +641,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-210">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-210">The first vector.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-211">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-211">The second vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-212">通过在两个向量中的每个元素上执行按位 <see langword="Or" /> 运算，返回一个新向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-212">Returns a new vector by performing a bitwise <see langword="Or" /> operation on each of the elements in two vectors.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-213">从 <paramref name="left" /> 和 <paramref name="right" /> 中的元素的按位 <see langword="Or" /> 运算得到的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-213">The vector that results from the bitwise <see langword="Or" /> of the elements in <paramref name="left" /> and <paramref name="right" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-211">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-211">The first vector.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-212">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-212">The second vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-213">通过在两个向量中的每个元素上执行按位 <see langword="Or" /> 运算，返回一个新向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-213">Returns a new vector by performing a bitwise <see langword="Or" /> operation on each of the elements in two vectors.</span></span></summary>
+        <returns><span data-ttu-id="302fe-214">从 <paramref name="left" /> 和 <paramref name="right" /> 中的元素的按位 <see langword="Or" /> 运算得到的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-214">The vector that results from the bitwise <see langword="Or" /> of the elements in <paramref name="left" /> and <paramref name="right" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-214"><xref:System.Numerics.Vector%601.op_BitwiseOr%2A>方法定义的按位`Or`操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-214">The <xref:System.Numerics.Vector%601.op_BitwiseOr%2A> method defines the bitwise `Or` operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-215"><xref:System.Numerics.Vector%601.op_BitwiseOr%2A>方法定义的按位`Or`操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-215">The <xref:System.Numerics.Vector%601.op_BitwiseOr%2A> method defines the bitwise `Or` operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -651,6 +667,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -668,15 +685,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-215">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-215">The first vector.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-216">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-216">The second vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-217">将第一个向量除以第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-217">Divides the first vector by the second.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-218">将 <paramref name="left" /> 除以 <paramref name="right" /> 得到的结果向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-218">The vector that results from dividing <paramref name="left" /> by <paramref name="right" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-216">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-216">The first vector.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-217">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-217">The second vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-218">将第一个向量除以第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-218">Divides the first vector by the second.</span></span></summary>
+        <returns><span data-ttu-id="302fe-219">将 <paramref name="left" /> 除以 <paramref name="right" /> 得到的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-219">The vector that results from dividing <paramref name="left" /> by <paramref name="right" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-219"><xref:System.Numerics.Vector%601.op_Division%2A>方法定义的除法运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-219">The <xref:System.Numerics.Vector%601.op_Division%2A> method defines the division operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-220"><xref:System.Numerics.Vector%601.op_Division%2A>方法定义的除法运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-220">The <xref:System.Numerics.Vector%601.op_Division%2A> method defines the division operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -694,6 +711,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -711,15 +729,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-220">要比较的第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-220">The first vector to compare.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-221">要比较的第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-221">The second vector to compare.</span></span></param>
-        <summary><span data-ttu-id="a6daf-222">返回一个值，该值指示两个指定向量中的每对元素是否相等。</span><span class="sxs-lookup"><span data-stu-id="a6daf-222">Returns a value that indicates whether each pair of elements in two specified vectors are equal.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-223">如果 <paramref name="left" /> 和 <paramref name="right" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-223"><see langword="true" /> if <paramref name="left" /> and <paramref name="right" /> are equal; otherwise, <see langword="false" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-221">要比较的第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-221">The first vector to compare.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-222">要比较的第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-222">The second vector to compare.</span></span></param>
+        <summary><span data-ttu-id="302fe-223">返回一个值，该值指示两个指定向量中的每对元素是否相等。</span><span class="sxs-lookup"><span data-stu-id="302fe-223">Returns a value that indicates whether each pair of elements in two specified vectors are equal.</span></span></summary>
+        <returns><span data-ttu-id="302fe-224">如果 <paramref name="left" /> 和 <paramref name="right" /> 相等，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-224"><see langword="true" /> if <paramref name="left" /> and <paramref name="right" /> are equal; otherwise, <see langword="false" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-224">两个向量是否相等，如果它们是相同类型的、 具有相同数目的值，并且在每个值`left`等同于中的相应值`right`。</span><span class="sxs-lookup"><span data-stu-id="a6daf-224">Two vectors are equal if they are of the same type, have the same number of values, and each value in `left` is equal to the corresponding value in `right`.</span></span>  
+ <span data-ttu-id="302fe-225">两个向量是否相等，如果它们是相同类型的、 具有相同数目的值，并且在每个值`left`等同于中的相应值`right`。</span><span class="sxs-lookup"><span data-stu-id="302fe-225">Two vectors are equal if they are of the same type, have the same number of values, and each value in `left` is equal to the corresponding value in `right`.</span></span>  
   
  ]]></format>
         </remarks>
@@ -737,6 +755,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -754,15 +773,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-225">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-225">The first vector.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-226">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-226">The second vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-227">通过在两个向量中的每个元素上执行按位 <see langword="XOr" /> 运算，返回一个新向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-227">Returns a new vector by performing a bitwise <see langword="XOr" /> operation on each of the elements in two vectors.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-228">从 <paramref name="left" /> 和 <paramref name="right" /> 中的元素的按位 <see langword="XOr" /> 运算得到的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-228">The vector that results from the bitwise <see langword="XOr" /> of the elements in <paramref name="left" /> and <paramref name="right" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-226">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-226">The first vector.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-227">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-227">The second vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-228">通过在两个向量中的每个元素上执行按位 <see langword="XOr" /> 运算，返回一个新向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-228">Returns a new vector by performing a bitwise <see langword="XOr" /> operation on each of the elements in two vectors.</span></span></summary>
+        <returns><span data-ttu-id="302fe-229">从 <paramref name="left" /> 和 <paramref name="right" /> 中的元素的按位 <see langword="XOr" /> 运算得到的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-229">The vector that results from the bitwise <see langword="XOr" /> of the elements in <paramref name="left" /> and <paramref name="right" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-229"><xref:System.Numerics.Vector%601.op_ExclusiveOr%2A>方法定义的按位`XOr`操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-229">The <xref:System.Numerics.Vector%601.op_ExclusiveOr%2A> method defines the bitwise `XOr` operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-230"><xref:System.Numerics.Vector%601.op_ExclusiveOr%2A>方法定义的按位`XOr`操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-230">The <xref:System.Numerics.Vector%601.op_ExclusiveOr%2A> method defines the bitwise `XOr` operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -780,6 +799,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -796,14 +816,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-230">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-230">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-231">将指定向量的位重新解释为 <see cref="T:System.Byte" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-231">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Byte" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-232">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-232">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-231">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-231">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-232">将指定向量的位重新解释为 <see cref="T:System.Byte" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-232">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Byte" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-233">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-233">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-233"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-233">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-234"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-234">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -821,6 +841,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -837,14 +858,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-234">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-234">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-235">将指定向量的位重新解释为 <see cref="T:System.Double" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-235">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Double" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-236">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-236">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-235">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-235">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-236">将指定向量的位重新解释为 <see cref="T:System.Double" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-236">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Double" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-237">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-237">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-237"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-237">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-238"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-238">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -862,6 +883,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -878,14 +900,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-238">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-238">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-239">将指定向量的位重新解释为 <see cref="T:System.Int16" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-239">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Int16" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-240">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-240">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-239">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-239">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-240">将指定向量的位重新解释为 <see cref="T:System.Int16" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-240">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Int16" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-241">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-241">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-241"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-241">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-242"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-242">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -903,6 +925,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -919,14 +942,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-242">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-242">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-243">将指定向量的位重新解释为 <see cref="T:System.Int32" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-243">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Int32" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-244">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-244">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-243">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-243">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-244">将指定向量的位重新解释为 <see cref="T:System.Int32" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-244">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Int32" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-245">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-245">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-245"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-245">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-246"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-246">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -944,6 +967,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -960,14 +984,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-246">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-246">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-247">将指定向量的位重新解释为 <see cref="T:System.Int64" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-247">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Int64" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-248">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-248">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-247">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-247">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-248">将指定向量的位重新解释为 <see cref="T:System.Int64" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-248">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Int64" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-249">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-249">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-249"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-249">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-250"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-250">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -985,6 +1009,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -995,7 +1020,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1006,14 +1031,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-250">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-250">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-251">将指定向量的位重新解释为 <see cref="T:System.SByte" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-251">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.SByte" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-252">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-252">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-251">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-251">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-252">将指定向量的位重新解释为 <see cref="T:System.SByte" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-252">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.SByte" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-253">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-253">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-253"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-253">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-254"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-254">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -1031,6 +1056,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1047,14 +1073,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-254">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-254">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-255">将指定向量的位重新解释为 <see cref="T:System.Single" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-255">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Single" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-256">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-256">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-255">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-255">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-256">将指定向量的位重新解释为 <see cref="T:System.Single" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-256">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.Single" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-257">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-257">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-257"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-257">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-258"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-258">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -1072,6 +1098,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1082,7 +1109,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1093,14 +1120,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-258">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-258">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-259">将指定向量的位重新解释为 <see cref="T:System.UInt16" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-259">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.UInt16" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-260">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-260">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-259">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-259">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-260">将指定向量的位重新解释为 <see cref="T:System.UInt16" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-260">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.UInt16" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-261">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-261">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-261"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-261">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-262"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-262">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -1118,6 +1145,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1128,7 +1156,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1139,14 +1167,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-262">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-262">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-263">将指定向量的位重新解释为 <see cref="T:System.UInt32" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-263">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.UInt32" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-264">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-264">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-263">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-263">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-264">将指定向量的位重新解释为 <see cref="T:System.UInt32" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-264">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.UInt32" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-265">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-265">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-265"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-265">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-266"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-266">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -1164,6 +1192,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1174,7 +1203,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1185,14 +1214,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-266">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-266">The vector to reinterpret.</span></span></param>
-        <summary><span data-ttu-id="a6daf-267">将指定向量的位重新解释为 <see cref="T:System.UInt64" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-267">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.UInt64" />.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-268">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-268">The reinterpreted vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-267">要重新解释的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-267">The vector to reinterpret.</span></span></param>
+        <summary><span data-ttu-id="302fe-268">将指定向量的位重新解释为 <see cref="T:System.UInt64" /> 类型的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-268">Reinterprets the bits of the specified vector into a vector of type <see cref="T:System.UInt64" />.</span></span></summary>
+        <returns><span data-ttu-id="302fe-269">重新解释后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-269">The reinterpreted vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-269"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="a6daf-269">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
+ <span data-ttu-id="302fe-270"><xref:System.Numerics.Vector%601.op_Explicit%2A>运算符可定义收缩转换; 它需要强制转换运算符 （在 C# 中) 或转换方法 （在 Visual Basic 中)。</span><span class="sxs-lookup"><span data-stu-id="302fe-270">The <xref:System.Numerics.Vector%601.op_Explicit%2A> operator defines a narrowing conversion; it requires a casting operator (in C#) or a conversion method (in Visual Basic).</span></span>  
   
  ]]></format>
         </remarks>
@@ -1210,6 +1239,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1227,10 +1257,10 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-270">要比较的第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-270">The first vector to compare.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-271">要比较的第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-271">The second vector to compare.</span></span></param>
-        <summary><span data-ttu-id="a6daf-272">返回一个值，该值指示指定向量中的任意元素对是否相等。</span><span class="sxs-lookup"><span data-stu-id="a6daf-272">Returns a value that indicates whether any single pair of elements in the specified vectors is equal.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-273">如果左侧和右侧的任意元素对相等，则为 <see langword="true" />。</span><span class="sxs-lookup"><span data-stu-id="a6daf-273"><see langword="true" /> if any element pairs in left and right are equal.</span></span> <span data-ttu-id="a6daf-274">如果没有元素对相等，则为 <see langword="false" /></span><span class="sxs-lookup"><span data-stu-id="a6daf-274"><see langword="false" /> if no element pairs are equal.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-271">要比较的第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-271">The first vector to compare.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-272">要比较的第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-272">The second vector to compare.</span></span></param>
+        <summary><span data-ttu-id="302fe-273">返回一个值，该值指示指定向量中的任意元素对是否相等。</span><span class="sxs-lookup"><span data-stu-id="302fe-273">Returns a value that indicates whether any single pair of elements in the specified vectors is equal.</span></span></summary>
+        <returns><span data-ttu-id="302fe-274">如果左侧和右侧的任意元素对相等，则为 <see langword="true" />。</span><span class="sxs-lookup"><span data-stu-id="302fe-274"><see langword="true" /> if any element pairs in left and right are equal.</span></span> <span data-ttu-id="302fe-275">如果没有元素对相等，则为 <see langword="false" /></span><span class="sxs-lookup"><span data-stu-id="302fe-275"><see langword="false" /> if no element pairs are equal.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1246,6 +1276,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1263,15 +1294,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-275">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-275">The first vector.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-276">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-276">The second vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-277">返回一个新向量，其值是两个指定向量中的每对元素的乘积。</span><span class="sxs-lookup"><span data-stu-id="a6daf-277">Returns a new vector whose values are the product of each pair of elements in two specified vectors.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-278">元素方面的乘积向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-278">The element-wise product vector.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-276">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-276">The first vector.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-277">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-277">The second vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-278">返回一个新向量，其值是两个指定向量中的每对元素的乘积。</span><span class="sxs-lookup"><span data-stu-id="302fe-278">Returns a new vector whose values are the product of each pair of elements in two specified vectors.</span></span></summary>
+        <returns><span data-ttu-id="302fe-279">元素方面的乘积向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-279">The element-wise product vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-279"><xref:System.Numerics.Vector%601.op_Multiply%2A>方法定义的乘法操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-279">The <xref:System.Numerics.Vector%601.op_Multiply%2A> method defines the multiplication operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-280"><xref:System.Numerics.Vector%601.op_Multiply%2A>方法定义的乘法操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-280">The <xref:System.Numerics.Vector%601.op_Multiply%2A> method defines the multiplication operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1289,6 +1320,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1306,15 +1338,15 @@
         <Parameter Name="factor" Type="T" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-280">源向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-280">The source vector.</span></span></param>
-        <param name="factor"><span data-ttu-id="a6daf-281">标量值。</span><span class="sxs-lookup"><span data-stu-id="a6daf-281">A scalar value.</span></span></param>
-        <summary><span data-ttu-id="a6daf-282">将向量乘以指定标量值。</span><span class="sxs-lookup"><span data-stu-id="a6daf-282">Multiplies a vector by a specified scalar value.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-283">缩放后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-283">The scaled vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-281">源向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-281">The source vector.</span></span></param>
+        <param name="factor"><span data-ttu-id="302fe-282">标量值。</span><span class="sxs-lookup"><span data-stu-id="302fe-282">A scalar value.</span></span></param>
+        <summary><span data-ttu-id="302fe-283">将向量乘以指定标量值。</span><span class="sxs-lookup"><span data-stu-id="302fe-283">Multiplies a vector by a specified scalar value.</span></span></summary>
+        <returns><span data-ttu-id="302fe-284">缩放后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-284">The scaled vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-284"><xref:System.Numerics.Vector%601.op_Multiply%2A>方法定义的乘法操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-284">The <xref:System.Numerics.Vector%601.op_Multiply%2A> method defines the multiplication operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-285"><xref:System.Numerics.Vector%601.op_Multiply%2A>方法定义的乘法操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-285">The <xref:System.Numerics.Vector%601.op_Multiply%2A> method defines the multiplication operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1332,6 +1364,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1349,15 +1382,15 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="factor"><span data-ttu-id="a6daf-285">标量值。</span><span class="sxs-lookup"><span data-stu-id="a6daf-285">The scalar value.</span></span></param>
-        <param name="value"><span data-ttu-id="a6daf-286">源向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-286">The source vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-287">将向量乘以指定标量值。</span><span class="sxs-lookup"><span data-stu-id="a6daf-287">Multiplies a vector by a specified scalar value.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-288">缩放后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-288">The scaled vector.</span></span></returns>
+        <param name="factor"><span data-ttu-id="302fe-286">标量值。</span><span class="sxs-lookup"><span data-stu-id="302fe-286">The scalar value.</span></span></param>
+        <param name="value"><span data-ttu-id="302fe-287">源向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-287">The source vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-288">将向量乘以指定标量值。</span><span class="sxs-lookup"><span data-stu-id="302fe-288">Multiplies a vector by a specified scalar value.</span></span></summary>
+        <returns><span data-ttu-id="302fe-289">缩放后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-289">The scaled vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-289"><xref:System.Numerics.Vector%601.op_Multiply%2A>方法定义的乘法操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-289">The <xref:System.Numerics.Vector%601.op_Multiply%2A> method defines the multiplication operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-290"><xref:System.Numerics.Vector%601.op_Multiply%2A>方法定义的乘法操作<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-290">The <xref:System.Numerics.Vector%601.op_Multiply%2A> method defines the multiplication operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1375,6 +1408,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1391,9 +1425,9 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-290">源向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-290">The source vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-291">返回一个新向量，其元素是通过取用指定向量的元素的二进制反码来获取的。</span><span class="sxs-lookup"><span data-stu-id="a6daf-291">Returns a new vector whose elements are obtained by taking the one's complement of a specified vector's elements.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-292">二进制反码向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-292">The one's complement vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-291">源向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-291">The source vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-292">返回一个新向量，其元素是通过取用指定向量的元素的二进制反码来获取的。</span><span class="sxs-lookup"><span data-stu-id="302fe-292">Returns a new vector whose elements are obtained by taking the one's complement of a specified vector's elements.</span></span></summary>
+        <returns><span data-ttu-id="302fe-293">二进制反码向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-293">The one's complement vector.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1409,6 +1443,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1426,15 +1461,15 @@
         <Parameter Name="right" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="a6daf-293">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-293">The first vector.</span></span></param>
-        <param name="right"><span data-ttu-id="a6daf-294">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-294">The second vector.</span></span></param>
-        <summary><span data-ttu-id="a6daf-295">从第一个向量中减去第二个向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-295">Subtracts the second vector from the first.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-296">从 <paramref name="left" /> 中减去 <paramref name="right" /> 得到的结果向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-296">The vector that results from subtracting <paramref name="right" /> from <paramref name="left" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="302fe-294">第一个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-294">The first vector.</span></span></param>
+        <param name="right"><span data-ttu-id="302fe-295">第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-295">The second vector.</span></span></param>
+        <summary><span data-ttu-id="302fe-296">从第一个向量中减去第二个向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-296">Subtracts the second vector from the first.</span></span></summary>
+        <returns><span data-ttu-id="302fe-297">从 <paramref name="left" /> 中减去 <paramref name="right" /> 得到的结果向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-297">The vector that results from subtracting <paramref name="right" /> from <paramref name="left" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-297"><xref:System.Numerics.Vector%601.op_Subtraction%2A>方法定义为该减法运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-297">The <xref:System.Numerics.Vector%601.op_Subtraction%2A> method defines the subtraction operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-298"><xref:System.Numerics.Vector%601.op_Subtraction%2A>方法定义为该减法运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-298">The <xref:System.Numerics.Vector%601.op_Subtraction%2A> method defines the subtraction operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1452,6 +1487,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1468,14 +1504,14 @@
         <Parameter Name="value" Type="System.Numerics.Vector&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="a6daf-298">要求反的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-298">The vector to negate.</span></span></param>
-        <summary><span data-ttu-id="a6daf-299">对给定向量求反。</span><span class="sxs-lookup"><span data-stu-id="a6daf-299">Negates a given vector.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-300">求反后的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-300">The negated vector.</span></span></returns>
+        <param name="value"><span data-ttu-id="302fe-299">要求反的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-299">The vector to negate.</span></span></param>
+        <summary><span data-ttu-id="302fe-300">对给定向量求反。</span><span class="sxs-lookup"><span data-stu-id="302fe-300">Negates a given vector.</span></span></summary>
+        <returns><span data-ttu-id="302fe-301">求反后的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-301">The negated vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-301"><xref:System.Numerics.Vector%601.op_UnaryNegation%2A>方法定义的一元求反运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="a6daf-301">The <xref:System.Numerics.Vector%601.op_UnaryNegation%2A> method defines the unary negation operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
+ <span data-ttu-id="302fe-302"><xref:System.Numerics.Vector%601.op_UnaryNegation%2A>方法定义的一元求反运算<xref:System.Numerics.Vector%601>对象。</span><span class="sxs-lookup"><span data-stu-id="302fe-302">The <xref:System.Numerics.Vector%601.op_UnaryNegation%2A> method defines the unary negation operation for <xref:System.Numerics.Vector%601> objects.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1493,6 +1529,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1507,13 +1544,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="a6daf-302">通过使用默认格式设置，返回此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="a6daf-302">Returns the string representation of this vector using default formatting.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-303">此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="a6daf-303">The string representation of this vector.</span></span></returns>
+        <summary><span data-ttu-id="302fe-303">通过使用默认格式设置，返回此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="302fe-303">Returns the string representation of this vector using default formatting.</span></span></summary>
+        <returns><span data-ttu-id="302fe-304">此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="302fe-304">The string representation of this vector.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-304">此方法返回在其中每个元素的向量格式使用"G"（常规） 格式字符串和当前线程区域性的格式设置约定的字符串。</span><span class="sxs-lookup"><span data-stu-id="a6daf-304">This method returns a string in which each element of the vector is formatted using the "G" (general) format string and the formatting conventions of the current thread culture.</span></span> <span data-ttu-id="a6daf-305">当前区域性的<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType>属性跟一个空格用于分隔每个元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-305">The current culture's <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType> property followed by a space is used to separate each element.</span></span>  
+ <span data-ttu-id="302fe-305">此方法返回在其中每个元素的向量格式使用"G"（常规） 格式字符串和当前线程区域性的格式设置约定的字符串。</span><span class="sxs-lookup"><span data-stu-id="302fe-305">This method returns a string in which each element of the vector is formatted using the "G" (general) format string and the formatting conventions of the current thread culture.</span></span> <span data-ttu-id="302fe-306">当前区域性的<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType>属性跟一个空格用于分隔每个元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-306">The current culture's <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType> property followed by a space is used to separate each element.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1531,6 +1568,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1547,14 +1585,14 @@
         <Parameter Name="format" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="format"><span data-ttu-id="a6daf-306">一个  或  定义各个元素的格式的。</span><span class="sxs-lookup"><span data-stu-id="a6daf-306">A  or  that defines the format of individual elements.</span></span></param>
-        <summary><span data-ttu-id="a6daf-307">通过使用指定格式字符串设置各个元素的格式，来返回此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="a6daf-307">Returns the string representation of this vector using the specified format string to format individual elements.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-308">当前实例的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="a6daf-308">The string representation of the current instance.</span></span></returns>
+        <param name="format"><span data-ttu-id="302fe-307">一个  或  定义各个元素的格式的。</span><span class="sxs-lookup"><span data-stu-id="302fe-307">A  or  that defines the format of individual elements.</span></span></param>
+        <summary><span data-ttu-id="302fe-308">通过使用指定格式字符串设置各个元素的格式，来返回此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="302fe-308">Returns the string representation of this vector using the specified format string to format individual elements.</span></span></summary>
+        <returns><span data-ttu-id="302fe-309">当前实例的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="302fe-309">The string representation of the current instance.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-309">此方法返回在其中使用设置向量的每个元素的字符串`format`和当前区域性的格式设置约定。</span><span class="sxs-lookup"><span data-stu-id="a6daf-309">This method returns a string in which each element of the vector is formatted using `format` and the current culture's formatting conventions.</span></span> <span data-ttu-id="a6daf-310">当前区域性的<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType>属性跟一个空格用于分隔每个元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-310">The current culture's <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType> property followed by a space is used to separate each element.</span></span>  
+ <span data-ttu-id="302fe-310">此方法返回在其中使用设置向量的每个元素的字符串`format`和当前区域性的格式设置约定。</span><span class="sxs-lookup"><span data-stu-id="302fe-310">This method returns a string in which each element of the vector is formatted using `format` and the current culture's formatting conventions.</span></span> <span data-ttu-id="302fe-311">当前区域性的<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType>属性跟一个空格用于分隔每个元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-311">The current culture's <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType> property followed by a space is used to separate each element.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1575,6 +1613,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1592,15 +1631,15 @@
         <Parameter Name="formatProvider" Type="System.IFormatProvider" />
       </Parameters>
       <Docs>
-        <param name="format"><span data-ttu-id="a6daf-311">一个  或  定义各个元素的格式的。</span><span class="sxs-lookup"><span data-stu-id="a6daf-311">A  or  that defines the format of individual elements.</span></span></param>
-        <param name="formatProvider"><span data-ttu-id="a6daf-312">一个提供特定于区域性的格式设置信息的格式提供程序。</span><span class="sxs-lookup"><span data-stu-id="a6daf-312">A format provider that supplies culture-specific formatting information.</span></span></param>
-        <summary><span data-ttu-id="a6daf-313">通过使用指定格式字符串设置各个元素的格式并使用指定格式提供程序定义特定于区域性的格式设置，来返回此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="a6daf-313">Returns the string representation of this vector using the specified format string to format individual elements and the specified format provider to define culture-specific formatting.</span></span></summary>
-        <returns><span data-ttu-id="a6daf-314">当前实例的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="a6daf-314">The string representation of the current instance.</span></span></returns>
+        <param name="format"><span data-ttu-id="302fe-312">一个  或  定义各个元素的格式的。</span><span class="sxs-lookup"><span data-stu-id="302fe-312">A  or  that defines the format of individual elements.</span></span></param>
+        <param name="formatProvider"><span data-ttu-id="302fe-313">一个提供特定于区域性的格式设置信息的格式提供程序。</span><span class="sxs-lookup"><span data-stu-id="302fe-313">A format provider that supplies culture-specific formatting information.</span></span></param>
+        <summary><span data-ttu-id="302fe-314">通过使用指定格式字符串设置各个元素的格式并使用指定格式提供程序定义特定于区域性的格式设置，来返回此向量的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="302fe-314">Returns the string representation of this vector using the specified format string to format individual elements and the specified format provider to define culture-specific formatting.</span></span></summary>
+        <returns><span data-ttu-id="302fe-315">当前实例的字符串表示形式。</span><span class="sxs-lookup"><span data-stu-id="302fe-315">The string representation of the current instance.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="a6daf-315">此方法返回在其中使用设置向量的每个元素的字符串`format`并`formatProvider`，和格式提供程序的<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType>属性跟一个空格用于分隔每个元素。</span><span class="sxs-lookup"><span data-stu-id="a6daf-315">This method returns a string in which each element of the vector is formatted using `format` and `formatProvider`, and the format provider's <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType> property followed by a space is used to separate each element.</span></span>  
+ <span data-ttu-id="302fe-316">此方法返回在其中使用设置向量的每个元素的字符串`format`并`formatProvider`，和格式提供程序的<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType>属性跟一个空格用于分隔每个元素。</span><span class="sxs-lookup"><span data-stu-id="302fe-316">This method returns a string in which each element of the vector is formatted using `format` and `formatProvider`, and the format provider's <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A?displayProperty=nameWithType> property followed by a space is used to separate each element.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1618,6 +1657,7 @@
         <AssemblyName>System.Numerics.Vectors</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.2.0</AssemblyVersion>
         <AssemblyVersion>4.1.3.0</AssemblyVersion>
@@ -1631,8 +1671,8 @@
         <ReturnType>System.Numerics.Vector&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="a6daf-316">返回一个包含所有 0 的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-316">Returns a vector containing all zeroes.</span></span></summary>
-        <value><span data-ttu-id="a6daf-317">一个包含所有 0 的向量。</span><span class="sxs-lookup"><span data-stu-id="a6daf-317">A vector containing all zeroes.</span></span></value>
+        <summary><span data-ttu-id="302fe-317">返回一个包含所有 0 的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-317">Returns a vector containing all zeroes.</span></span></summary>
+        <value><span data-ttu-id="302fe-318">一个包含所有 0 的向量。</span><span class="sxs-lookup"><span data-stu-id="302fe-318">A vector containing all zeroes.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
