@@ -1,5 +1,5 @@
 <Type Name="Single" FullName="System.Single">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="51a91450fc3d21c7156ea132b7b40d17c834af7b" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53395872" /></Metadata><TypeSignature Language="C#" Value="public struct Single : IComparable, IComparable&lt;float&gt;, IConvertible, IEquatable&lt;float&gt;, IFormattable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a521e293e72337b734033ff9548b1c06255dcd64" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56391729" /></Metadata><TypeSignature Language="C#" Value="public struct Single : IComparable, IComparable&lt;float&gt;, IConvertible, IEquatable&lt;float&gt;, IFormattable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit float32 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;float32&gt;, class System.IConvertible, class System.IEquatable`1&lt;float32&gt;, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Single" />
   <TypeSignature Language="VB.NET" Value="Public Structure Single&#xA;Implements IComparable, IComparable(Of Single), IConvertible, IEquatable(Of Single), IFormattable" />
@@ -52,6 +52,9 @@
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0">
       <AttributeName>System.Serializable</AttributeName>
     </Attribute>
+    <Attribute FrameworkAlternate="netcore-3.0">
+      <AttributeName>System.Runtime.CompilerServices.IsReadOnly</AttributeName>
+    </Attribute>
   </Attributes>
   <Docs>
     <summary>表示一个单精度浮点数。</summary>
@@ -79,7 +82,7 @@
 ## <a name="floating-point-representation-and-precision"></a>浮点表示形式和精度  
  <xref:System.Single>数据类型将单精度浮点值存储在 32 位的二进制格式下, 表中所示：  
   
-|部件|位|  
+|部件|Bits|  
 |----------|----------|  
 |有效位数或尾数|0-22|  
 |指数|23-30|  
@@ -193,10 +196,10 @@
 |<xref:System.Byte>|Widening|No|  
 |<xref:System.Decimal>|Widening<br /><br /> 请注意 C# 要求强制转换运算符。|可以。 <xref:System.Decimal> 支持 29 十进制数字的精度;<xref:System.Single>支持 9。|  
 |<xref:System.Double>|收缩;超出范围值转换为<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>或<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>。|可以。 <xref:System.Double> 支持 17 十进制数字的精度;<xref:System.Single>支持 9。|  
-|<xref:System.Int16>|Widening|否|  
+|<xref:System.Int16>|Widening|No|  
 |<xref:System.Int32>|Widening|可以。 <xref:System.Int32> 支持 10 个十进制数字的精度;<xref:System.Single>支持 9。|  
 |<xref:System.Int64>|Widening|可以。 <xref:System.Int64> 支持 19 个十进制数字的精度;<xref:System.Single>支持 9。|  
-|<xref:System.SByte>|Widening|否|  
+|<xref:System.SByte>|Widening|No|  
 |<xref:System.UInt16>|Widening|No|  
 |<xref:System.UInt32>|Widening|可以。 <xref:System.UInt32> 支持 10 个十进制数字的精度;<xref:System.Single>支持 9。|  
 |<xref:System.UInt64>|Widening|可以。 <xref:System.Int64> 支持 20 个十进制数字的精度;<xref:System.Single>支持 9。|  
@@ -343,7 +346,7 @@
  </description></item><item><term> 大于零 
  </term><description> 此实例大于 <paramref name="value" />。  
   
-或 
+- 或 - 
 此实例是数字而 <paramref name="value" /> 不是数字 (<see cref="F:System.Single.NaN" />)。  
   
 - 或 - 
@@ -439,7 +442,7 @@
  </description></item><item><term> 大于零 
  </term><description> 此实例大于 <paramref name="value" />。  
   
-或 
+- 或 - 
 此实例是数字而 <paramref name="value" /> 不是数字 (<see cref="F:System.Single.NaN" />)。  
   
  </description></item></list></returns>
@@ -629,7 +632,7 @@
         </remarks>
         <block subset="none" type="usage"><para>编译器重载解析行为的两个明显的差异可能会考虑<see cref="M:System.Single.Equals(System.Object)" />方法重载。 如果之间的隐式转换<paramref name="obj" />自变量和一个<see cref="T:System.Single" />定义和自变量类型不是<see cref="T:System.Object" />，编译器可能会执行隐式转换和调用<see cref="M:System.Single.Equals(System.Single)" />方法。 否则，调用方法<see cref="M:System.Single.Equals(System.Object)" />方法，它始终返回<see langword="false" />如果其<paramref name="obj" />参数不是<see cref="T:System.Single" />值。 下面的示例说明了两个方法重载之间的行为差异。 在除所有基元数值类型的情况下<see cref="T:System.Double" />在 Visual Basic 和除<see cref="T:System.Decimal" />并<see cref="T:System.Double" />在 C# 中，第一次比较返回<see langword="true" />因为编译器会自动执行扩大转换和调用<see cref="M:System.Single.Equals(System.Single)" />方法，而第二个比较返回<see langword="false" />因为编译器将调用<see cref="M:System.Single.Equals(System.Object)" />方法。  
   
-[！ 代码 csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [！ 代码 vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para></block>
+[!code-csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [!code-vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para></block>
         <altmember cref="M:System.Single.CompareTo(System.Object)" />
       </Docs>
     </Member>
@@ -713,7 +716,7 @@
         </remarks>
         <block subset="none" type="usage"><para>编译器重载解析行为的两个明显的差异可能会考虑<see cref="M:System.Single.Equals(System.Object)" />方法重载。 如果之间的隐式转换<paramref name="obj" />自变量和一个<see cref="T:System.Single" />定义和自变量类型不是<see cref="T:System.Object" />，编译器可能会执行隐式转换和调用<see cref="M:System.Single.Equals(System.Single)" />方法。 否则，调用方法<see cref="M:System.Single.Equals(System.Object)" />方法，它始终返回<see langword="false" />如果其<paramref name="obj" />参数不是<see cref="T:System.Single" />值。 下面的示例说明了两个方法重载之间的行为差异。 在除所有基元数值类型的情况下<see cref="T:System.Double" />在 Visual Basic 和除<see cref="T:System.Decimal" />并<see cref="T:System.Double" />在 C# 中，第一次比较返回<see langword="true" />因为编译器会自动执行扩大转换和调用<see cref="M:System.Single.Equals(System.Single)" />方法，而第二个比较返回<see langword="false" />因为编译器将调用<see cref="M:System.Single.Equals(System.Object)" />方法。  
   
-[！ 代码 csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [！ 代码 vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para></block>
+[!code-csharp[System.Single.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.single.equals/cs/equalsoverl.cs#2)] [!code-vb[System.Single.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.single.equals/vb/equalsoverl.vb#2)]</para></block>
         <altmember cref="M:System.Single.Equals(System.Object)" />
         <altmember cref="Overload:System.Single.CompareTo" />
       </Docs>
@@ -1781,7 +1784,7 @@
 ## Remarks  
  `s`参数可以包含当前区域性<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>， <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>， <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>，或格式的字符串：  
   
- [*ws*] [*登录*] [*整型数字*[*，*]]*整型数字*[*。*[*小数位数*]] [e [*登录*]*指数数字*] [*ws*]  
+ [*ws*][*sign*] [*integral-digits*[*,*]]*integral-digits*[*.*[*fractional-digits*]][e[*sign*]*exponential-digits*][*ws*]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -1789,12 +1792,12 @@
 |-------------|-----------------|  
 |*ws*|一系列的空白字符。|  
 |*sign*|负号符号或正号符号。 有效的符号字符由<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A?displayProperty=nameWithType>和<xref:System.Globalization.NumberFormatInfo.PositiveSign%2A?displayProperty=nameWithType>当前区域性的属性。 可以使用前导符号。|  
-|*整型数字*|一系列的位范围从 0 到 9 的指定数目的整数部分。 运行的*整型数字*组分隔符符号可以对其进行分区。 例如，在某些区域性中逗号 （，） 作为千位分隔符。 *整型数字*元素可以是当字符串包含*小数位数*元素。|  
+|*integral-digits*|一系列的位范围从 0 到 9 的指定数目的整数部分。 运行的*整型数字*组分隔符符号可以对其进行分区。 例如，在某些区域性中逗号 （，） 作为千位分隔符。 *整型数字*元素可以是当字符串包含*小数位数*元素。|  
 |*，*|特定于区域性的千位分隔符号。|  
 |*.*|特定于区域性的小数点符号。|  
 |*fractional-digits*|一系列的位范围从 0 到 9 的指定数字的小数部分。|  
 |E|"E"或者"E"字符，指示指数 （科学型） 表示法表示值。|  
-|*指数数字*|一系列的范围从 0 到 9 的指定指数的位数。|  
+|*exponential-digits*|一系列的范围从 0 到 9 的指定指数的位数。|  
   
  `s`参数被解释使用的组合<xref:System.Globalization.NumberStyles.Float?displayProperty=nameWithType>和<xref:System.Globalization.NumberStyles.AllowThousands?displayProperty=nameWithType>标志。 这意味着该空白和千位分隔符允许但不是货币符号。 若要显式定义的元素 (如货币符号，千位分隔符和空格)，可能会包含`s`，使用<xref:System.Single.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>方法重载。  
   
@@ -1873,7 +1876,7 @@
   
  `s`参数可以包含当前区域性<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>， <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>， <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>。 具体取决于值`style`，它还可以采用以下形式：  
   
- [*ws*] [*$*] [*登录*] [*整型数字*[*，*]]*整型数字*[*。*[*小数位数*]] [E [*登录*]*指数数字*] [*ws*]  
+ [*ws*][*$*][*sign*][*integral-digits*[*,*]]*integral-digits*[*.*[*fractional-digits*]][E[*sign*]*exponential-digits*][*ws*]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -1886,7 +1889,7 @@
  *sign*  
  负号符号 （-） 或正号符号 （+）。 符号可以显示在开头`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowLeadingSign?displayProperty=nameWithType>标志，它可以出现在末尾`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowTrailingSign?displayProperty=nameWithType>标志。 可以在使用括号`s`指示负值`style`包括<xref:System.Globalization.NumberStyles.AllowParentheses?displayProperty=nameWithType>标志。  
   
- *整型数字*  
+ *integral-digits*  
  一系列的位范围从 0 到 9 的指定数目的整数部分。 *整型数字*元素可以是当字符串包含*小数位数*元素。  
   
  ,  
@@ -1901,7 +1904,7 @@
  E  
  "E"或者"E"字符，指示指数 （科学型） 表示法表示值。 `value`参数可以表示指数表示法的数字，如果`style`包括<xref:System.Globalization.NumberStyles.AllowExponent?displayProperty=nameWithType>标志。  
   
- *指数数字*  
+ *exponential-digits*  
  一系列的范围从 0 到 9 的指定指数的位数。  
   
 > [!NOTE]
@@ -1949,7 +1952,7 @@
         <exception cref="T:System.OverflowException"><paramref name="s" /> 表示一个小于 <see cref="F:System.Single.MinValue" /> 或大于 <see cref="F:System.Single.MaxValue" /> 的数字。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 包括 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 值。</exception>
         <altmember cref="M:System.Single.ToString" />
         <altmember cref="Overload:System.Single.TryParse" />
@@ -2012,11 +2015,11 @@
 |-------------|-----------------|  
 |*ws*|一系列空白字符。|  
 |*sign*|负号符号 （-） 或正号符号 （+）。|  
-|*整型数字*|一系列的位范围从 0 到 9 的指定数目的整数部分。 运行的*整型数字*组分隔符符号可以对其进行分区。 例如，在某些区域性中逗号 （，） 作为千位分隔符。 *整型数字*元素可以是当字符串包含*小数位数*元素。|  
+|*integral-digits*|一系列的位范围从 0 到 9 的指定数目的整数部分。 运行的*整型数字*组分隔符符号可以对其进行分区。 例如，在某些区域性中逗号 （，） 作为千位分隔符。 *整型数字*元素可以是当字符串包含*小数位数*元素。|  
 |.|特定于区域性的小数点符号。|  
 |*fractional-digits*|一系列的位范围从 0 到 9 的指定数字的小数部分。|  
 |E|"E"或者"E"字符，指示指数 （科学型） 表示法表示值。|  
-|*指数数字*|一系列的范围从 0 到 9 的指定指数的位数。|  
+|*exponential-digits*|一系列的范围从 0 到 9 的指定指数的位数。|  
   
  有关数值格式的详细信息，请参阅[格式设置类型](~/docs/standard/base-types/formatting-types.md)主题。  
   
@@ -2140,7 +2143,7 @@
   
  `s`参数可以包含<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>， <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>，或<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>为指定的区域性`provider`。 具体取决于值`style`，它还可以采用以下形式：  
   
- [*ws*] [*$*] [*登录*] [*整型数字*，]*整型数字*[。 [*小数位数*]][E [*符号*]*指数数字*] [*ws*]  
+ [*ws*] [*$*] [*sign*][*integral-digits*,]*integral-digits*[.[*fractional-digits*]][E[*sign*]*exponential-digits*][*ws*]  
   
  括在方括号 （[和]） 是可选的元素。 下表对每个元素进行了描述。  
   
@@ -2149,12 +2152,12 @@
 |*ws*|一系列空白字符。 空白可以出现在开头`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType>标志，它可以出现在末尾`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType>标志。|  
 |$|特定于区域性的货币符号。 在字符串中的位置由<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType>和<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>当前区域性的属性。 当前区域性的货币符号可以出现在`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowCurrencySymbol?displayProperty=nameWithType>标志。|  
 |*sign*|负号符号 （-） 或正号符号 （+）。 符号可以显示在开头`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowLeadingSign?displayProperty=nameWithType>标志，它可以出现在末尾`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowTrailingSign?displayProperty=nameWithType>标志。 可以在使用括号`s`指示负值`style`包括<xref:System.Globalization.NumberStyles.AllowParentheses?displayProperty=nameWithType>标志。|  
-|*整型数字*|一系列的位范围从 0 到 9 的指定数目的整数部分。 *整型数字*元素可以是当字符串包含*小数位数*元素。|  
+|*integral-digits*|一系列的位范围从 0 到 9 的指定数目的整数部分。 *整型数字*元素可以是当字符串包含*小数位数*元素。|  
 |,|特定于区域性的组分隔符。 当前区域性的组分隔符符号可以出现在`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowThousands?displayProperty=nameWithType>标志|  
 |.|特定于区域性的小数点符号。 当前区域性的小数点符号可以出现在`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowDecimalPoint?displayProperty=nameWithType>标志。|  
 |*fractional-digits*|一系列的位范围从 0 到 9 的指定数字的小数部分。 在中出现的小数位`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowDecimalPoint?displayProperty=nameWithType>标志。|  
 |E|"E"或者"E"字符，指示指数 （科学型） 表示法表示值。 `s`参数可以表示指数表示法的数字，如果`style`包括<xref:System.Globalization.NumberStyles.AllowExponent?displayProperty=nameWithType>标志。|  
-|*指数数字*|一系列的范围从 0 到 9 的指定指数的位数。|  
+|*exponential-digits*|一系列的范围从 0 到 9 的指定指数的位数。|  
   
 > [!NOTE]
 > 中的任何终止 NUL (U + 0000) 字符`s`在分析操作，而不考虑的值，将忽略`style`参数。
@@ -2422,7 +2425,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Byte" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2554,7 +2557,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Decimal" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2698,7 +2701,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.Int32" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2799,7 +2802,7 @@
       </Parameters>
       <Docs>
         <param name="provider">忽略此参数。</param>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />。</summary>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />。</summary>
         <returns>当前实例的值，已转换为 <see cref="T:System.SByte" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3141,11 +3144,11 @@
 |元素|描述|  
 |-------------|-----------------|  
 |*sign*|负号或正号符号。|  
-|*整型数字*|一系列的位指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
+|*integral-digits*|一系列的位指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
 |'.'|特定于区域性的小数点符号。|  
 |*fractional-digits*|一系列的位指定数字的小数部分。|  
 |e|小写字符 e，该值指示指数 （科学型） 表示法。|  
-|*指数数字*|一系列的位指定一个指数。|  
+|*exponential-digits*|一系列的位指定一个指数。|  
   
  返回值的一些示例包括"100"、"-123456789"、"123.45 e + 6"、"500"、"3.1416"、"600"、"-0.123"和"-Infinity"。  
   
@@ -3243,11 +3246,11 @@
 |元素|描述|  
 |-------------|-----------------|  
 |Sign|负号或正号符号。|  
-|整型数字|一系列的位指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
+|integral-digits|一系列的位指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
 |'.'|特定于区域性的小数点符号。|  
-|小数位数|一系列的位指定数字的小数部分。|  
+|fractional-digits|一系列的位指定数字的小数部分。|  
 |e|小写字符 e，该值指示指数 （科学型） 表示法。|  
-|指数数字|一系列的位指定一个指数。|  
+|exponential-digits|一系列的位指定一个指数。|  
   
  返回值的一些示例包括"100"、"-123456789"、"123.45 e + 6"、"500"、"3.1416"、"600"、"-0.123"和"-Infinity"。  
   
@@ -3598,12 +3601,12 @@
 |-------------|-----------------|  
 |*ws*|一系列空白字符。|  
 |*sign*|负号或正号符号。|  
-|*整型数字*|一系列数字字符范围从 0 到 9 的指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
+|*integral-digits*|一系列数字字符范围从 0 到 9 的指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
 |*，*|特定于区域性的组分隔符符号。|  
 |*.*|特定于区域性的小数点符号。|  
 |*fractional-digits*|一系列数字字符范围从 0 到 9 的指定数字的小数部分。|  
 |*E*|一个大写或小写字符 e，用于指示指数 （科学型） 表示法。|  
-|*指数数字*|一系列数字字符范围从 0 到 9，指定一个指数。|  
+|*exponential-digits*|一系列数字字符范围从 0 到 9，指定一个指数。|  
   
  `s`参数被解释使用的组合<xref:System.Globalization.NumberStyles.Float?displayProperty=nameWithType>和<xref:System.Globalization.NumberStyles.AllowThousands?displayProperty=nameWithType>标志。 这意味着该空白和千位分隔符允许但不是货币符号。 若要显式定义的元素 (如货币符号，千位分隔符和空格)，可能会包含`s`，使用<xref:System.Single.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Single%40%29>方法重载。  
   
@@ -3727,7 +3730,7 @@
   
  `s`参数可以包含<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>， <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>，<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>由指定的区域性`provider`。 此外，具体取决于值`style`，则`s`参数可能包含以下元素：  
   
- [ws][$][登录][整型数字，] 整型数字 [.fractional-数字] [e [登录] 指数的位数] [ws]  
+ [ws] [$] [sign][integral-digits,]integral-digits[.fractional-digits][e[sign]exponential-digits][ws]  
   
  方括号 ([ and ]) 中的元素是可选的。 下表对每个元素进行了描述。  
   
@@ -3736,12 +3739,12 @@
 |*ws*|可选的空白区域。 空白可以出现在开头`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType>标志。 它可以显示在末尾`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType>标志。|  
 |*$*|特定于区域性的货币符号。 在字符串中的位置由<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType>或<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>的属性<xref:System.Globalization.NumberFormatInfo>返回的对象<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>方法`provider`参数。 货币符号可以出现在`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowCurrencySymbol?displayProperty=nameWithType>标志。|  
 |*sign*|一个可选符号后。 符号可以显示在开头`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowLeadingSign?displayProperty=nameWithType>标志，它可以出现在末尾`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowTrailingSign?displayProperty=nameWithType>标志。 可以在使用括号`s`指示负值`style`包括<xref:System.Globalization.NumberStyles.AllowParentheses?displayProperty=nameWithType>标志。|  
-|*整型数字*|一系列的位范围从 0 到 9 的指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
+|*integral-digits*|一系列的位范围从 0 到 9 的指定数目的整数部分。 整型数字可以是不存在如果小数位数。|  
 |*，*|特定于区域性的千位分隔符号。 当前区域性的千位分隔符符号可以出现在`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowThousands?displayProperty=nameWithType>标志。|  
 |*.*|特定于区域性的小数点符号。 当前区域性的小数点符号可以出现在`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowDecimalPoint?displayProperty=nameWithType>标志。|  
 |*fractional-digits*|一系列的位范围从 0 到 9 的指定数字的小数部分。 在中出现的小数位`s`如果`style`包括<xref:System.Globalization.NumberStyles.AllowDecimalPoint?displayProperty=nameWithType>标志。|  
 |*e*|E 或 E 字符，指示`s`可以表示的数字使用指数记数法。 `s`参数可以表示指数表示法的数字，如果样式包含<xref:System.Globalization.NumberStyles.AllowExponent?displayProperty=nameWithType>标志。|  
-|*指数数字*|一系列的范围从 0 到 9 的指定指数的位数。|  
+|*exponential-digits*|一系列的范围从 0 到 9 的指定指数的位数。|  
   
 > [!NOTE]
 > 中的任何终止 NUL (U + 0000) 字符`s`在分析操作，而不考虑的值，将忽略`style`参数。
@@ -3789,7 +3792,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="style" /> 不是 <see cref="T:System.Globalization.NumberStyles" /> 值。  
   
-或 
+- 或 - 
  <paramref name="style" /> 是 <see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" /> 值。</exception>
         <altmember cref="M:System.Single.Parse(System.String)" />
         <altmember cref="M:System.Single.ToString" />

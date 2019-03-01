@@ -1,5 +1,5 @@
 <Type Name="Stream" FullName="System.IO.Stream">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="acd18bbd5f06183691857c78b562fcde828c9385" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52591787" /></Metadata><TypeSignature Language="C#" Value="public abstract class Stream : MarshalByRefObject, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0fb40af96c0c29647a13d4d090745e6f87d9fbdb" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56392485" /></Metadata><TypeSignature Language="C#" Value="public abstract class Stream : MarshalByRefObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Stream extends System.MarshalByRefObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.IO.Stream" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Stream&#xA;Inherits MarshalByRefObject&#xA;Implements IDisposable" />
@@ -72,7 +72,7 @@
   
  从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，则<xref:System.IO.Stream>类包括异步方法来简化异步操作。 异步方法包含`Async`中其名称，如<xref:System.IO.Stream.ReadAsync%2A>， <xref:System.IO.Stream.WriteAsync%2A>， <xref:System.IO.Stream.CopyToAsync%2A>，和<xref:System.IO.Stream.FlushAsync%2A>。 这些方法，可执行占用大量资源的 I/O 操作而不会阻止主线程。 在 [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] 应用或 [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] 应用中一个耗时的流操作可能阻塞 UI 线程并让您的应用看起来好像不工作时，这种性能的考虑就显得尤为重要了。 结合使用异步方法`async`和`await`Visual Basic 和 C# 中的关键字。  
   
- 在中使用时[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]应用程序中，<xref:System.IO.Stream>包括两个扩展方法：<xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A>和<xref:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream%2A>。 这些方法将转换<xref:System.IO.Stream>向流中的对象[!INCLUDE[wrt](~/includes/wrt-md.md)]。 此外可以将转换中的流[!INCLUDE[wrt](~/includes/wrt-md.md)]到<xref:System.IO.Stream>通过使用对象<xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A>和<xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite%2A>方法。 有关详细信息，请参阅[如何： 转换.NET Framework 流和 Windows 运行时流之间](~/docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
+ 在中使用时[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]应用程序中，<xref:System.IO.Stream>包括两个扩展方法：<xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A>和<xref:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream%2A>。 这些方法将转换<xref:System.IO.Stream>向流中的对象[!INCLUDE[wrt](~/includes/wrt-md.md)]。 此外可以将转换中的流[!INCLUDE[wrt](~/includes/wrt-md.md)]到<xref:System.IO.Stream>通过使用对象<xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A>和<xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite%2A>方法。 有关详细信息，请参阅[如何：在 .NET Framework 流和 Windows 运行时流之间进行转换](~/docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
   
  某些流实现执行本地缓冲的基础数据以提高性能。 对于此类流，你可以使用<xref:System.IO.Stream.Flush%2A>或<xref:System.IO.Stream.FlushAsync%2A>方法以清除所有内部缓冲区并确保所有数据，已都写入到基础数据源或存储库。  
   
@@ -635,7 +635,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException">当前流不支持读取。  
   
-或 
+- 或 - 
  <paramref name="destination" /> 不支持写入。</exception>
         <exception cref="T:System.ObjectDisposedException">在调用 <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" /> 方法前当前流或 <paramref name="destination" /> 已关闭。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
@@ -692,7 +692,7 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="bufferSize" /> 为负数或零。</exception>
         <exception cref="T:System.NotSupportedException">当前流不支持读取。  
   
-或 
+- 或 - 
  <paramref name="destination" /> 不支持写入。</exception>
         <exception cref="T:System.ObjectDisposedException">在调用 <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" /> 方法前当前流或 <paramref name="destination" /> 已关闭。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
@@ -967,7 +967,7 @@
         <AssemblyName>System.IO</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("CreateWaitHandle will be removed eventually.  Please use "new ManualResetEvent(false)" instead.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1093,7 +1093,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
+        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
         <summary>释放由 <see cref="T:System.IO.Stream" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1112,6 +1112,37 @@
  <see cref="M:System.ComponentModel.Component.Dispose" /> 可以由其他对象多次调用。 重写 <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> 时，请注意不要引用在以前调用 <see cref="M:System.ComponentModel.Component.Dispose" /> 时已释放的对象。 有关如何实现详细信息<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
 有关详细信息<see cref="M:System.ComponentModel.Component.Dispose" />并<see cref="M:System.Object.Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)。</para></block>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Threading::Tasks::ValueTask DisposeAsync();" />
+      <MemberSignature Language="F#" Value="abstract member DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask&#xA;override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="stream.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EndRead">
@@ -1168,7 +1199,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException">处于挂起状态的读取操作的句柄不可用。  
   
-或 
+- 或 - 
 挂起操作不支持读取。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="asyncResult" /> 不是源自当前流的 <see cref="M:System.IO.Stream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 方法。</exception>
         <exception cref="T:System.IO.IOException">流已关闭或出现了内部错误。</exception>
@@ -1229,7 +1260,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException">处于挂起状态的写入操作的句柄不可用。  
   
-或 
+- 或 - 
 挂起操作不支持写入。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="asyncResult" /> 不是源自当前流的 <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 方法。</exception>
         <exception cref="T:System.IO.IOException">流已关闭或出现了内部错误。</exception>
@@ -1529,7 +1560,7 @@
         <AssemblyName>System.IO</AssemblyName>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;netcore-3.0">
           <AttributeName>System.Obsolete("Do not call or override this method.")</AttributeName>
         </Attribute>
       </Attributes>
@@ -1795,7 +1826,7 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="buffer">数据写入的缓冲区。</param>
+        <param name="buffer">要写入数据的缓冲区。</param>
         <param name="offset"><paramref name="buffer" /> 中的字节偏移量，从该偏移量开始写入从流中读取的数据。</param>
         <param name="count">最多读取的字节数。</param>
         <summary>从当前流异步读取字节序列，并将流中的位置提升读取的字节数。</summary>
@@ -1868,7 +1899,7 @@
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
       </Parameters>
       <Docs>
-        <param name="buffer">数据写入的缓冲区。</param>
+        <param name="buffer">要写入数据的缓冲区。</param>
         <param name="offset"><paramref name="buffer" /> 中的字节偏移量，从该偏移量开始写入从流中读取的数据。</param>
         <param name="count">最多读取的字节数。</param>
         <param name="cancellationToken">要监视取消请求的标记。 默认值为 <see cref="P:System.Threading.CancellationToken.None" />。</param>
@@ -2471,7 +2502,7 @@
         <param name="offset"><paramref name="buffer" /> 中的从零开始的字节偏移量，从此处开始将字节复制到该流。</param>
         <param name="count">最多写入的字节数。</param>
         <param name="cancellationToken">要监视取消请求的标记。 默认值为 <see cref="P:System.Threading.CancellationToken.None" />。</param>
-        <summary>将字节的序列异步写入当前流，将该流中的当前位置提升写入的字节数，并监视取消请求。</summary>
+        <summary>将字节的序列异步写入当前流，将该流中的当前位置向前移动写入的字节数，并监视取消请求。</summary>
         <returns>表示异步写入操作的任务。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
