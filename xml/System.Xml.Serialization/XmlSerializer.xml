@@ -1,5 +1,5 @@
 <Type Name="XmlSerializer" FullName="System.Xml.Serialization.XmlSerializer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="19274092e793295eed7f82bd7b220285eba96b91" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52255232" /></Metadata><TypeSignature Language="C#" Value="public class XmlSerializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6a2ea93b2b0d7328e1c0c8ecdfd1495ed5988573" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996884" /></Metadata><TypeSignature Language="C#" Value="public class XmlSerializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSerializer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializer" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlSerializer" />
@@ -30,7 +30,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>在对象和 XML 文档之间进行序列化和反序列化操作。 <see cref="T:System.Xml.Serialization.XmlSerializer" /> 使您得以控制如何将对象编码到 XML 中。</summary>
+    <summary>将对象序列化到 XML 文档中和从 XML 文档中反序列化对象。 <see cref="T:System.Xml.Serialization.XmlSerializer" /> 使您得以控制如何将对象编码到 XML 中。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -130,7 +130,7 @@ public class OptionalOrder
 ```  
   
 ## <a name="overriding-default-serialization"></a>重写默认序列化  
- 你也可以通过创建一个适当的属性，并将其添加到的实例替代的序列化的对象和其字段和属性的任何一组<xref:System.Xml.Serialization.XmlAttributes>类。 重写以这种方式序列化有两个用途： 首先，您可以控制和增强的 DLL 中找到的对象的序列化，即使到源，则不能访问第二，您可以创建一组可序列化类，但序列化多个方法中的对象。 有关更多详细信息，请参阅<xref:System.Xml.Serialization.XmlAttributeOverrides>类和[如何： 控制序列化的派生类](https://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84)。  
+ 你也可以通过创建一个适当的属性，并将其添加到的实例替代的序列化的对象和其字段和属性的任何一组<xref:System.Xml.Serialization.XmlAttributes>类。 重写以这种方式序列化有两个用途： 首先，您可以控制和增强的 DLL 中找到的对象的序列化，即使到源，则不能访问第二，您可以创建一组可序列化类，但序列化多个方法中的对象。 有关更多详细信息，请参阅<xref:System.Xml.Serialization.XmlAttributeOverrides>类和[如何：控制派生类的序列化](https://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84)。  
   
  若要序列化对象，调用<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>方法。 若要反序列化对象，调用<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>方法。  
   
@@ -208,7 +208,7 @@ End If
 -   数组 <xref:System.Collections.Generic.List%601>  
   
 ## <a name="serialization-of-enumerations-of-unsigned-long"></a>无符号长整型的枚举的序列化  
- <xref:System.Xml.Serialization.XmlSerializer>不能实例化进行序列化一个枚举，如果满足以下条件： 枚举是无符号长整型 (`ulong` C# 中) 和枚举包含的值大于任何成员9,223,372,036,854,775,807。 例如，以下无法序列化。  
+ <xref:System.Xml.Serialization.XmlSerializer>不能实例化进行序列化一个枚举，如果满足以下条件：枚举是无符号长整型 (`ulong`在C#) 和该枚举包含的值大于 9,223,372,036,854,775,807 具有任何成员。 例如，以下无法序列化。  
   
 ```  
 public enum LargeNumbers: ulong  
@@ -244,7 +244,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
     <related type="Article" href="~/docs/standard/serialization/examples-of-xml-serialization.md">XML 序列化示例</related>
     <related type="Article" href="~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md">XML Schema Definition Tool (Xsd.exe)</related>
     <related type="Article" href="https://msdn.microsoft.com/library/caa92596-9e15-4d91-acbe-56911ef47a84">如何：控制派生类的序列化</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/90fda55c-7730-41e9-bc4b-6423a4b920af">&lt;dateTimeSerialization&gt;元素</related>
+    <related type="Article" href="https://msdn.microsoft.com/library/90fda55c-7730-41e9-bc4b-6423a4b920af">&lt;dateTimeSerialization&gt;Element</related>
     <related type="Article" href="https://msdn.microsoft.com/library/d129d10c-3eb7-45d9-8098-5fa853825e47">&lt;xmlSerializer&gt; 元素</related>
   </Docs>
   <Members>
@@ -923,7 +923,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
       <Parameters />
       <Docs>
         <summary>返回一个对象，该对象用于读取要进行序列化的 XML 文档。</summary>
-        <returns>一个用于读取 XML 文档的 <see cref="T:System.Xml.Serialization.XmlSerializationReader" />。</returns>
+        <returns>用于读取 XML 文档的 <see cref="T:System.Xml.Serialization.XmlSerializationReader" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">当未在子类中重写该方法时，为访问该方法进行的任何尝试。</exception>
       </Docs>
@@ -1468,7 +1468,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <param name="mappings">将一种类型映射到另一种类型的 <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> 的数组。</param>
         <summary>返回从 <see cref="T:System.Xml.Serialization.XmlSerializer" /> 对象的数组创建的 <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> 对象的数组。</summary>
         <returns>一个 <see cref="T:System.Xml.Serialization.XmlSerializer" /> 对象数组。</returns>
-        <remarks>To be added.</remarks>
+        <remarks>建议为缓存返回的序列化时重复的调用此方法的调用方。</remarks>
       </Docs>
     </Member>
     <Member MemberName="FromMappings">
@@ -1595,7 +1595,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Xml.Serialization.XmlSerializer.FromTypes%2A>方法，可有效地创建一个数组<xref:System.Xml.Serialization.XmlSerializer>对象的处理的数组<xref:System.Type>对象。  
+ <xref:System.Xml.Serialization.XmlSerializer.FromTypes%2A>方法，可有效地创建一个数组<xref:System.Xml.Serialization.XmlSerializer>对象的处理的数组<xref:System.Type>对象。 但是，建议为缓存返回的序列化程序时重复的调用此方法的调用方。
   
    
   
@@ -1665,7 +1665,7 @@ xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));
         <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
       </Parameters>
       <Docs>
-        <param name="types">类型集合。</param>
+        <param name="types">类型的集合。</param>
         <param name="mappings">一个 <see cref="T:System.Xml.Serialization.XmlMapping" /> 对象的集合，用于将一个类型转换为另一个类型。</param>
         <summary>使用指定映射返回一个程序集，该程序集包含的自定义序列化程序用于序列化或反序列化指定的一个或多个类型。</summary>
         <returns>一个 <see cref="T:System.Reflection.Assembly" /> 对象，包含提供的类型和映射的序列化程序。</returns>

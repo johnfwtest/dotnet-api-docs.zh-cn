@@ -1,5 +1,5 @@
 <Type Name="Socket" FullName="System.Net.Sockets.Socket">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="347e126095ce070da54b007a6da17f519d123b6f" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56374127" /></Metadata><TypeSignature Language="C#" Value="public class Socket : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ce25962a3d16cf94d34ab5c5cc12799b5ed1eec4" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996936" /></Metadata><TypeSignature Language="C#" Value="public class Socket : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Socket extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.Socket" />
   <TypeSignature Language="VB.NET" Value="Public Class Socket&#xA;Implements IDisposable" />
@@ -239,7 +239,7 @@
  `addressFamily`参数指定的寻址方案<xref:System.Net.Sockets.Socket>类使用，`socketType`参数指定的类型<xref:System.Net.Sockets.Socket>类，并且`protocolType`参数指定使用的协议<xref:System.Net.Sockets.Socket>。 三个参数不是独立的。 有些地址族限制可以使用哪些协议，使用它们，并经常<xref:System.Net.Sockets.Socket>类型是隐式的协议。 如果地址族的组合<xref:System.Net.Sockets.Socket>类型和协议类型无效<xref:System.Net.Sockets.Socket>，此构造函数引发<xref:System.Net.Sockets.SocketException>。  
   
 > [!NOTE]
->  如果此构造函数将引发<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果此构造函数将引发<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -305,7 +305,7 @@
   
  在阻止模式下，<xref:System.Net.Sockets.Socket.Accept%2A>阻止，直到传入的连接尝试排入队列。 连接被接受后，原始<xref:System.Net.Sockets.Socket>继续队列传入的连接请求直到您关闭它。  
   
- 如果调用此方法使用非阻塞<xref:System.Net.Sockets.Socket>，并请求排队，没有连接<xref:System.Net.Sockets.Socket.Accept%2A>引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果调用此方法使用非阻塞<xref:System.Net.Sockets.Socket>，并请求排队，没有连接<xref:System.Net.Sockets.Socket.Accept%2A>引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  然后再调用<xref:System.Net.Sockets.Socket.Accept%2A>方法，必须首先调用<xref:System.Net.Sockets.Socket.Listen%2A>方法来侦听并对传入连接请求进行排队。  
@@ -518,7 +518,7 @@
 ## Remarks  
  如果使用非阻塞<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Available%2A>是好的方法，以确定是否将数据排队以进行读取，然后才能调用<xref:System.Net.Sockets.Socket.Receive%2A>。 可用的数据是在读取的网络缓冲区中对排队的总数据量。 如果无数据排队网络缓冲区中<xref:System.Net.Sockets.Socket.Available%2A>返回 0。  
   
- 如果远程主机关闭，或关闭的连接<xref:System.Net.Sockets.Socket.Available%2A>可能会引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果远程主机关闭，或关闭的连接<xref:System.Net.Sockets.Socket.Available%2A>可能会引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -714,7 +714,7 @@
 >  您可以调用使用<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>属性所返回的<xref:System.Net.Sockets.Socket>对象来标识远程主机的网络地址和端口号。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -815,7 +815,7 @@
 >  可以使用<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>属性所返回的<xref:System.Net.Sockets.Socket>对象来标识远程主机的网络地址和端口号。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -924,7 +924,7 @@
  若要取消挂起调用<xref:System.Net.Sockets.Socket.BeginConnect%2A>方法，关闭<xref:System.Net.Sockets.Socket>。 当<xref:System.Net.Sockets.Socket.Close%2A>回调的异步操作正在进行中时，调用方法，提供给<xref:System.Net.Sockets.Socket.BeginConnect%2A>调用方法。  随后调用<xref:System.Net.Sockets.Socket.EndConnect%2A>方法将引发<xref:System.ObjectDisposedException>以指示已取消该操作。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  如果以前已断开此套接字，然后<xref:System.Net.Sockets.Socket.BeginConnect%2A>必须在操作完成之前不会退出的线程上调用。 这是基础提供程序的限制。  
@@ -1021,7 +1021,7 @@
  有关使用异步编程模型的详细信息，请参阅[异步调用同步方法](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  如果以前已断开此套接字，然后<xref:System.Net.Sockets.Socket.BeginConnect%2A>必须在操作完成之前不会退出的线程上调用。 这是基础提供程序的限制。 此外<xref:System.Net.EndPoint>，它是使用必须不同。  
@@ -1122,7 +1122,7 @@
  有关使用异步编程模型的详细信息，请参阅[Calling Synchronous Methods Asynchronously](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  如果以前已断开此套接字，然后<xref:System.Net.Sockets.Socket.BeginConnect%2A>必须在操作完成之前不会退出的线程上调用。 这是基础提供程序的限制。 此外<xref:System.Net.EndPoint>，它是使用必须不同。  
@@ -1223,7 +1223,7 @@
  有关使用异步编程模型的详细信息，请参阅[异步调用同步方法](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  如果以前已断开此套接字，然后<xref:System.Net.Sockets.Socket.BeginConnect%2A>必须在操作完成之前不会退出的线程上调用。 这是基础提供程序的限制。 此外<xref:System.Net.EndPoint>，它是使用必须不同。  
@@ -1310,7 +1310,7 @@
  <xref:System.Net.Sockets.Socket.BeginDisconnect%2A>方法使用一个单独的线程来调用指定的回调方法。 <xref:System.Net.Sockets.Socket.EndDisconnect%2A>方法进行阻止，直到挂起的断开连接已完成。 有关编写回调方法的其他信息，请参阅[委托作为回调方法进行封送](~/docs/framework/interop/marshaling-a-delegate-as-a-callback-method.md)。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -1399,7 +1399,7 @@
  有关使用异步编程模型的详细信息，请参阅[Calling Synchronous Methods Asynchronously](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -1488,7 +1488,7 @@
  有关使用异步编程模型的详细信息，请参阅[Calling Synchronous Methods Asynchronously](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -1581,7 +1581,7 @@
  有关使用异步编程模型的详细信息，请参阅[Calling Synchronous Methods Asynchronously](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -1704,7 +1704,7 @@
  有关使用异步编程模型的详细信息，请参阅[Calling Synchronous Methods Asynchronously](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -1822,7 +1822,7 @@
  若要取消挂起<xref:System.Net.Sockets.Socket.BeginReceiveFrom%2A>，调用<xref:System.Net.Sockets.Socket.Close%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -1933,7 +1933,7 @@
  此方法将数据读入`buffer`参数，并捕获的远程主机终结点从其发送数据，以及有关接收的数据包的信息。 有关如何检索此终结点的信息，请参阅<xref:System.Net.Sockets.Socket.EndReceiveFrom%2A>。 此方法是最有用，如果你想要以异步方式从未知的主机或多个主机接收无连接的数据报。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -2028,7 +2028,7 @@
  如果指定<xref:System.Net.Sockets.SocketFlags.DontRoute>标记为`socketflags`参数，不会将路由发送的数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -2122,7 +2122,7 @@
  如果指定<xref:System.Net.Sockets.SocketFlags.DontRoute>标记为`socketflags`参数，不会将路由发送的数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -2215,7 +2215,7 @@
  如果指定<xref:System.Net.Sockets.SocketFlags.DontRoute>标记为`socketflags`参数，不会将路由发送的数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -2322,7 +2322,7 @@
  如果指定<xref:System.Net.Sockets.SocketFlags.DontRoute>标记为`socketflags`参数，不会将路由发送的数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -2427,7 +2427,7 @@
 ## Remarks  
  此重载将该文件发送`fileName`到连接的套接字。 如果`fileName`是在本地目录中，它可能会标识只是该文件的名称; 否则，必须指定完整路径和文件的名称。 通配符 ("...\\\myfile.txt") 和 UNC 共享名 ("\\\\\\\shared directory\\\myfile.txt") 支持。 如果未找到文件，该异常<xref:System.IO.FileNotFoundException>引发。  
   
- 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅 MSDN 库中的 Windows 套接字文档。  
+ 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅[Windows 套接字](/windows/desktop/WinSock/)文档。  
   
  <xref:System.Net.Sockets.Socket.BeginSendFile%2A>方法启动异步发送操作中建立的远程主机<xref:System.Net.Sockets.Socket.Connect%2A>，<xref:System.Net.Sockets.Socket.BeginConnect%2A>， <xref:System.Net.Sockets.Socket.Accept%2A>，或<xref:System.Net.Sockets.Socket.BeginAccept%2A>方法。 <xref:System.Net.Sockets.Socket.BeginSendFile%2A> 如果不首先调用将引发异常<xref:System.Net.Sockets.Socket.Accept%2A>， <xref:System.Net.Sockets.Socket.BeginAccept%2A>， <xref:System.Net.Sockets.Socket.Connect%2A>，或<xref:System.Net.Sockets.Socket.BeginConnect%2A>。 调用<xref:System.Net.Sockets.Socket.BeginSendFile%2A>方法使您能够发送单独的执行线程中的文件。  
   
@@ -2438,7 +2438,7 @@
  适用于面向连接的协议，尽管<xref:System.Net.Sockets.Socket.BeginSendFile%2A>无连接协议，也适用，前提是先调用<xref:System.Net.Sockets.Socket.Connect%2A>或<xref:System.Net.Sockets.Socket.BeginConnect%2A>方法以建立默认远程主机。 使用无连接协议时，您必须确保文件的大小不超过基础服务提供程序的最大数据包大小。 如果是这样，不发送数据报并<xref:System.Net.Sockets.Socket.BeginSendFile%2A>引发<xref:System.Net.Sockets.SocketException>异常。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -2516,7 +2516,7 @@
   
  `flags`参数提供了关于文件传输的其他信息的窗口套接字服务提供程序。 有关如何使用此参数的详细信息，请参阅<xref:System.Net.Sockets.TransmitFileOptions>。  
   
- 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅 MSDN 库中的 Windows 套接字文档。  
+ 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅[Windows 套接字](/windows/desktop/WinSock/)文档。  
   
  <xref:System.Net.Sockets.Socket.BeginSendFile%2A>方法启动异步发送操作中建立的远程主机<xref:System.Net.Sockets.Socket.Connect%2A>， <xref:System.Net.Sockets.Socket.BeginConnect%2A>， <xref:System.Net.Sockets.Socket.Accept%2A>，或<xref:System.Net.Sockets.Socket.BeginAccept%2A>方法。 <xref:System.Net.Sockets.Socket.BeginSendFile%2A> 如果不首先调用将引发异常<xref:System.Net.Sockets.Socket.Accept%2A>， <xref:System.Net.Sockets.Socket.BeginAccept%2A>， <xref:System.Net.Sockets.Socket.Connect%2A>，或<xref:System.Net.Sockets.Socket.BeginConnect%2A>。 调用<xref:System.Net.Sockets.Socket.BeginSendFile%2A>方法使你能够发送单独的执行线程中的文件。  
   
@@ -2527,7 +2527,7 @@
  适用于面向连接的协议，尽管<xref:System.Net.Sockets.Socket.BeginSendFile%2A>无连接协议，也适用，前提是先调用<xref:System.Net.Sockets.Socket.Connect%2A>或<xref:System.Net.Sockets.Socket.BeginConnect%2A>方法以建立默认远程主机。 使用无连接协议时，您还必须确保文件的大小不超过基础服务提供程序的最大数据包大小。 如果是这样，不发送数据报并<xref:System.Net.Sockets.Socket.BeginSendFile%2A>引发<xref:System.Net.Sockets.SocketException>异常。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -2629,7 +2629,7 @@
  如果指定<xref:System.Net.Sockets.SocketFlags.DontRoute>标记为`socketflags`参数，不会将路由发送的数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -2731,7 +2731,7 @@
 >  必须调用<xref:System.Net.Sockets.Socket.Bind%2A>方法，如果你想要接收无连接的数据报使用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>调用时<xref:System.Net.Sockets.Socket.Bind%2A>方法，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>调用时<xref:System.Net.Sockets.Socket.Bind%2A>方法，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -2807,7 +2807,7 @@
  如果您是在阻止模式下，并且进行方法调用这不会立即完成，你的应用程序将请求的操作完成之前阻止执行。 如果要继续执行，即使请求的操作未完成，更改执行<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`。 <xref:System.Net.Sockets.Socket.Blocking%2A>属性不起对异步方法。 如果是发送和接收数据以异步方式并且想要阻止执行，使用<xref:System.Threading.ManualResetEvent>类。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -3061,9 +3061,9 @@
 ## Remarks  
  如果使用面向连接的协议 TCP，如<xref:System.Net.Sockets.Socket.Connect%2A>方法以同步方式建立网络连接之间<xref:System.Net.Sockets.Socket.LocalEndPoint%2A>和指定的远程终结点。 如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.Connect%2A>建立默认远程主机。 调用后<xref:System.Net.Sockets.Socket.Connect%2A>，可以将数据发送到远程设备与<xref:System.Net.Sockets.Socket.Send%2A>方法，或从使用的远程设备接收数据<xref:System.Net.Sockets.Socket.Receive%2A>方法。  
   
- 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>，将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>，将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
- <xref:System.Net.Sockets.Socket.Connect%2A>方法将阻止，除非专门设置了相应<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
+ <xref:System.Net.Sockets.Socket.Connect%2A>方法将阻止，除非专门设置了相应<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
   
 > [!NOTE]
 >  如果使用的是面向连接的协议和未调用<xref:System.Net.Sockets.Socket.Bind%2A>之前调用<xref:System.Net.Sockets.Socket.Connect%2A>，基础服务提供程序将分配的本地网络地址和端口号。 如果使用的是无连接协议，服务提供程序将不会分配本地网络地址和端口号，直到完成发送或接收操作。 如果你想要更改默认远程主机，则调用<xref:System.Net.Sockets.Socket.Connect%2A>再次使用所需终结点。  
@@ -3145,9 +3145,9 @@
 ## Remarks  
  如果使用面向连接的协议 TCP，如<xref:System.Net.Sockets.Socket.Connect%2A>方法以同步方式建立网络连接之间<xref:System.Net.Sockets.Socket.LocalEndPoint%2A>和指定的远程终结点。 如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.Connect%2A>建立默认远程主机。 调用后<xref:System.Net.Sockets.Socket.Connect%2A>可以将数据发送到远程设备与<xref:System.Net.Sockets.Socket.Send%2A>方法，或从使用的远程设备接收数据<xref:System.Net.Sockets.Socket.Receive%2A>方法。  
   
- 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
- <xref:System.Net.Sockets.Socket.Connect%2A> 方法将阻止，除非专门设置了<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
+ <xref:System.Net.Sockets.Socket.Connect%2A> 方法将阻止，除非专门设置了<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
   
 > [!NOTE]
 >  如果使用的是面向连接的协议和未调用<xref:System.Net.Sockets.Socket.Bind%2A>之前调用<xref:System.Net.Sockets.Socket.Connect%2A>，基础服务提供程序将分配的本地网络地址和端口号。 如果使用的是无连接协议，服务提供程序将不会分配本地网络地址和端口号，直到完成发送或接收操作。 如果你想要更改默认远程主机，则调用<xref:System.Net.Sockets.Socket.Connect%2A>再次使用所需终结点。  
@@ -3221,9 +3221,9 @@
 ## Remarks  
  此方法通常用于调用后立即<xref:System.Net.Dns.GetHostAddresses%2A>，这可以为单个主机返回多个 IP 地址。 如果使用面向连接的协议 TCP，如<xref:System.Net.Sockets.Socket.Connect%2A>方法以同步方式建立网络连接之间<xref:System.Net.Sockets.Socket.LocalEndPoint%2A>和指定的远程终结点。 如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.Connect%2A>建立默认远程主机。 调用后<xref:System.Net.Sockets.Socket.Connect%2A>可以将数据发送到远程设备与<xref:System.Net.Sockets.Socket.Send%2A>方法，或从使用的远程设备接收数据<xref:System.Net.Sockets.Socket.Receive%2A>方法。  
   
- 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
- <xref:System.Net.Sockets.Socket.Connect%2A> 方法将阻止，除非专门设置了<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
+ <xref:System.Net.Sockets.Socket.Connect%2A> 方法将阻止，除非专门设置了<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
   
 > [!NOTE]
 >  如果使用的是面向连接的协议和未调用<xref:System.Net.Sockets.Socket.Bind%2A>之前调用<xref:System.Net.Sockets.Socket.Connect%2A>，基础服务提供程序将分配的本地网络地址和端口号。 如果使用的是无连接协议，服务提供程序将不会分配本地网络地址和端口号，直到完成发送或接收操作。 如果你想要更改默认远程主机，则调用<xref:System.Net.Sockets.Socket.Connect%2A>再次使用所需终结点。  
@@ -3297,9 +3297,9 @@
 ## Remarks  
  如果使用面向连接的协议 TCP，如<xref:System.Net.Sockets.Socket.Connect%2A>方法以同步方式建立网络连接之间<xref:System.Net.Sockets.Socket.LocalEndPoint%2A>和指定的远程主机。 如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.Connect%2A>建立默认远程主机。 调用后<xref:System.Net.Sockets.Socket.Connect%2A>可以将数据发送到远程设备与<xref:System.Net.Sockets.Socket.Send%2A>方法，或从使用的远程设备接收数据<xref:System.Net.Sockets.Socket.Receive%2A>方法。  
   
- 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果使用如 UDP 是无连接协议，不需要调用<xref:System.Net.Sockets.Socket.Connect%2A>之前发送和接收数据。 可以使用<xref:System.Net.Sockets.Socket.SendTo%2A>和<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>能够与远程主机同步通信。 如果调用<xref:System.Net.Sockets.Socket.Connect%2A>将丢弃来自指定的默认值以外的地址的任何数据报。 如果你想要将默认远程主机到广播地址，必须先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设置为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>，或<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
- <xref:System.Net.Sockets.Socket.Connect%2A> 方法将阻止，除非专门设置了<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
+ <xref:System.Net.Sockets.Socket.Connect%2A> 方法将阻止，除非专门设置了<xref:System.Net.Sockets.Socket.Blocking%2A>属性设置为`false`之前调用<xref:System.Net.Sockets.Socket.Connect%2A>。 如果要使用面向连接的协议 TCP，并且确实禁用阻塞等<xref:System.Net.Sockets.Socket.Connect%2A>将引发<xref:System.Net.Sockets.SocketException>因为它需要时间来建立连接。 无连接协议将引发异常，因为它们只需建立默认远程主机。 可以使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。 如果 WSAEWOULDBLOCK 返回的错误，已通过面向连接的发起远程主机连接<xref:System.Net.Sockets.Socket>，但未尚未成功完成。 使用<xref:System.Net.Sockets.Socket.Poll%2A>方法来确定何时<xref:System.Net.Sockets.Socket>完成连接。  
   
  如果启用了 IPv6 和<xref:System.Net.Sockets.Socket.Connect%28System.String%2CSystem.Int32%29>调用方法来连接到的主机，解析为 IPv6 和 IPv4 地址、 IPv6 地址将与连接尝试之前的 IPv4 地址的第一个。 这可能会延迟的时间来建立连接，如果主机未侦听 IPv6 地址。  
   
@@ -3411,7 +3411,7 @@
  <xref:System.Net.Sockets.Socket.ConnectAsync%2A>方法会抛出<xref:System.NotSupportedException>如果的地址族<xref:System.Net.Sockets.Socket>和<xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>不是同一地址系列。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>调用此方法时，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>调用此方法时，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
  ]]></format>
         </remarks>
@@ -3503,7 +3503,7 @@
  <xref:System.Net.Sockets.Socket.ConnectAsync%2A>方法会抛出<xref:System.NotSupportedException>如果的地址族<xref:System.Net.Sockets.Socket>和<xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>不是同一地址系列。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>调用此方法时，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>调用此方法时，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
  ]]></format>
         </remarks>
@@ -3620,7 +3620,7 @@
  如果您需要调用<xref:System.Net.Sockets.Socket.Disconnect%2A>没有首先调用<xref:System.Net.Sockets.Socket.Shutdown%2A>，可以设置<xref:System.Net.Sockets.SocketOptionName.DontLinger><xref:System.Net.Sockets.Socket>选项设为`false`而指定的非零的超时间隔，以确保排队等待发送传出的传输的数据。 <xref:System.Net.Sockets.Socket.Disconnect%2A> 然后阻止，直到发送数据或直到指定的超时时间已到。 如果您设置<xref:System.Net.Sockets.SocketOptionName.DontLinger>到`false`并指定为零的超时间隔、<xref:System.Net.Sockets.Socket.Close%2A>释放连接，并会自动放弃传出队列的数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -3746,8 +3746,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在完成使用 `Dispose` 后，应调用 <xref:System.Net.Sockets.Socket>。 
-  `Dispose` 方法使 <xref:System.Net.Sockets.Socket> 处于不可用状态。 在调用`Dispose`，必须释放对所有引用<xref:System.Net.Sockets.Socket>这样垃圾回收器才能收回内存的<xref:System.Net.Sockets.Socket>占用。  
+ 在完成使用 `Dispose` 后，应调用 <xref:System.Net.Sockets.Socket>。 `Dispose` 方法使 <xref:System.Net.Sockets.Socket> 处于不可用状态。 在调用`Dispose`，必须释放对所有引用<xref:System.Net.Sockets.Socket>这样垃圾回收器才能收回内存的<xref:System.Net.Sockets.Socket>占用。  
   
  有关详细信息，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
@@ -3794,7 +3793,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">如果为 <see langword="true" />，则释放托管资源和非托管资源；如果为 <see langword="false" />，则仅释放非托管资源。</param>
+        <param name="disposing">如果释放托管资源和非托管资源，则为 <see langword="true" />；如果仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.Net.Sockets.Socket" /> 使用的非托管资源，并可根据需要释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4078,7 +4077,7 @@
  <xref:System.Net.Sockets.Socket.EndAccept%2A>方法进行阻止，直到挂起的连接，传入的连接队列中。 <xref:System.Net.Sockets.Socket.EndAccept%2A>方法接受传入连接，并返回一个新<xref:System.Net.Sockets.Socket>可用来将数据发送到和从远程主机接收数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -4155,7 +4154,7 @@
  <xref:System.Net.Sockets.Socket.EndAccept%2A>方法进行阻止，直到挂起的连接，传入的连接队列中。 <xref:System.Net.Sockets.Socket.EndAccept%2A>方法接受传入连接，并返回一个新<xref:System.Net.Sockets.Socket>可用来将数据发送到和从远程主机接收数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -4233,7 +4232,7 @@
  <xref:System.Net.Sockets.Socket.EndAccept%2A>方法进行阻止，直到挂起的连接，传入的连接队列中。 <xref:System.Net.Sockets.Socket.EndAccept%2A>方法接受传入连接，并返回一个新<xref:System.Net.Sockets.Socket>可用来将数据发送到和从远程主机接收数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -4309,7 +4308,7 @@
  在回调方法中，调用<xref:System.IAsyncResult.AsyncState%2A>方法<xref:System.IAsyncResult>参数来获取<xref:System.Net.Sockets.Socket>上可由连接尝试。 获取后<xref:System.Net.Sockets.Socket>，可以调用<xref:System.Net.Sockets.Socket.EndConnect%2A>方法才能成功完成连接尝试。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -4377,7 +4376,7 @@
  <xref:System.Net.Sockets.Socket.EndDisconnect%2A> 完成对调用<xref:System.Net.Sockets.Socket.BeginDisconnect%2A>。 <xref:System.Net.Sockets.Socket.EndDisconnect%2A>方法进行阻止，直到完成断开连接。 有关异步操作的信息，请参阅 MSDN library 中的异步编程的概述主题。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -4471,7 +4470,7 @@
  若要取消挂起<xref:System.Net.Sockets.Socket.BeginReceive%2A>，调用<xref:System.Net.Sockets.Socket.Close%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -4555,7 +4554,7 @@
  若要获取所接收的数据，请调用<xref:System.IAsyncResult.AsyncState%2A>方法的<xref:System.IAsyncResult>，然后提取生成的状态对象中包含的缓冲区。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -4637,7 +4636,7 @@
  <xref:System.Net.Sockets.Socket.EndReceiveFrom%2A>方法将阻塞，直到有可用数据。 如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.EndReceiveFrom%2A>将读取传入的网络缓冲区中有可用的第一个排队数据报。 如果使用面向连接的协议<xref:System.Net.Sockets.Socket.EndReceiveFrom%2A>方法将读取的数据，可在指定的字节数目可高达`size`参数的<xref:System.Net.Sockets.Socket.BeginReceiveFrom%2A>方法。 如果远程主机关闭<xref:System.Net.Sockets.Socket>与连接<xref:System.Net.Sockets.Socket.Shutdown%2A>收到了方法，并且所有可用数据，<xref:System.Net.Sockets.Socket.EndReceiveFrom%2A>方法将立即完成并返回零字节。 若要获取所接收的数据，请调用<xref:System.IAsyncResult.AsyncState%2A>方法的<xref:System.IAsyncResult>对象，并提取生成的状态对象中包含的缓冲区。 若要标识原始主机，提取<xref:System.Net.EndPoint>将其转换为<xref:System.Net.IPEndPoint>。 使用<xref:System.Net.IPEndPoint.Address%2A?displayProperty=nameWithType>方法来获取 IP 地址和<xref:System.Net.IPEndPoint.Port%2A?displayProperty=nameWithType>方法来获取端口号。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -4797,7 +4796,7 @@
  则您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.BeginSend%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -4884,7 +4883,7 @@
  则您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.BeginSend%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  由给定线程启动的所有 i/o 操作被取消时该线程退出。 如果在线程退出该操作完成之前，挂起的异步操作可能会失败。  
@@ -4957,7 +4956,7 @@
  如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.EndSendFile%2A>阻止，直到发送数据报。 如果使用面向连接的协议<xref:System.Net.Sockets.Socket.EndSendFile%2A>阻止，直到发送整个文件。 则您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.BeginSendFile%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5036,7 +5035,7 @@
  如果您使用的是无连接协议，<xref:System.Net.Sockets.Socket.EndSendTo%2A>会阻塞，直到发送数据报。 如果使用面向连接的协议<xref:System.Net.Sockets.Socket.EndSendTo%2A>会阻塞，直到发送请求的字节数。 则您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.BeginSendTo%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5257,7 +5256,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <xref:System.Net.Sockets.Socket> 选项将确定当前的行为<xref:System.Net.Sockets.Socket>。 使用此重载来获取<xref:System.Net.Sockets.SocketOptionName.Linger>， <xref:System.Net.Sockets.SocketOptionName.AddMembership>，并<xref:System.Net.Sockets.SocketOptionName.DropMembership><xref:System.Net.Sockets.Socket>选项。 有关<xref:System.Net.Sockets.SocketOptionName.Linger>选项，请使用<xref:System.Net.Sockets.Socket>为`optionLevel`参数。 有关<xref:System.Net.Sockets.SocketOptionName.AddMembership>并<xref:System.Net.Sockets.SocketOptionName.DropMembership>，使用<xref:System.Net.Sockets.SocketOptionLevel.IP>。 如果你想要设置任何上面列出的选项的值，请使用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5330,7 +5329,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
 ## Remarks  
  <xref:System.Net.Sockets.Socket> 选项将确定当前的行为<xref:System.Net.Sockets.Socket>。 此方法成功完成后，通过将指定的数组`optionValue`参数包含指定的值<xref:System.Net.Sockets.Socket>选项。  
   
- 时的长度`optionValue`数组是比存储指定的值所需的字节数小<xref:System.Net.Sockets.Socket>选项，<xref:System.Net.Sockets.Socket.GetSocketOption%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。 对于任何由布尔值或整数表示的套接字使用此重载。  
+ 时的长度`optionValue`数组是比存储指定的值所需的字节数小<xref:System.Net.Sockets.Socket>选项，<xref:System.Net.Sockets.Socket.GetSocketOption%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。 对于任何由布尔值或整数表示的套接字使用此重载。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5405,7 +5404,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  `optionLength`参数设置返回的字节数组的最大大小。 如果该选项的值需要较少的字节，该数组将包含仅的字节数。 如果该选项的值需要更多字节<xref:System.Net.Sockets.Socket.GetSocketOption%2A>将引发<xref:System.Net.Sockets.SocketException>。 对于任何由布尔值或整数表示的套接字使用此重载。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5523,10 +5522,10 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Net.Sockets.Socket.IOControl%2A>方法提供对操作系统的低级别访问权限<xref:System.Net.Sockets.Socket>基础的当前实例<xref:System.Net.Sockets.Socket>类。 有关详细信息，请参阅 MSDN 库中的 WSAIoctl 文档。  
+ <xref:System.Net.Sockets.Socket.IOControl%2A>方法提供对操作系统的低级别访问权限<xref:System.Net.Sockets.Socket>基础的当前实例<xref:System.Net.Sockets.Socket>类。 有关详细信息，请参阅[WSAIoctl](/windows/desktop/api/winsock2/nf-winsock2-wsaioctl)文档。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5592,10 +5591,10 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法提供对操作系统的低级别访问权限<xref:System.Net.Sockets.Socket>基础的当前实例<xref:System.Net.Sockets.Socket>类。 有关详细信息，请参阅 MSDN 库中的 WSAIoctl 文档。  
+ 此方法提供对操作系统的低级别访问权限<xref:System.Net.Sockets.Socket>基础的当前实例<xref:System.Net.Sockets.Socket>类。 有关详细信息，请参阅[WSAIoctl](/windows/desktop/api/winsock2/nf-winsock2-wsaioctl)文档。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -5787,7 +5786,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
 ## Remarks  
  <xref:System.Net.Sockets.Socket.Listen%2A> 会导致一个面向连接的<xref:System.Net.Sockets.Socket>来侦听传入的连接尝试。 `backlog`参数指定可排队等待接受的传入连接的数量。 若要确定最大可以指定的连接数，请检索<xref:System.Net.Sockets.SocketOptionName.MaxConnections>值。 <xref:System.Net.Sockets.Socket.Listen%2A> 不会阻止。  
   
- 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。 使用<xref:System.Net.Sockets.Socket.Accept%2A>或<xref:System.Net.Sockets.Socket.BeginAccept%2A>以接受来自队列的连接。  
+ 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。 使用<xref:System.Net.Sockets.Socket.Accept%2A>或<xref:System.Net.Sockets.Socket.BeginAccept%2A>以接受来自队列的连接。  
   
 > [!NOTE]
 >  必须调用<xref:System.Net.Sockets.Socket.Bind%2A>方法之前调用<xref:System.Net.Sockets.Socket.Listen%2A>，或<xref:System.Net.Sockets.Socket.Listen%2A>将引发<xref:System.Net.Sockets.SocketException>。  
@@ -5860,7 +5859,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <xref:System.Net.Sockets.Socket.LocalEndPoint%2A>进行调用后，属性通常设置<xref:System.Net.Sockets.Socket.Bind%2A>方法。 如果你允许系统将套接字的本地 IP 地址和端口号分配<xref:System.Net.Sockets.Socket.LocalEndPoint%2A>属性将设置后第一次 I/O 操作。 对于面向连接的协议，第一次 I/O 操作将是调用<xref:System.Net.Sockets.Socket.Connect%2A>或<xref:System.Net.Sockets.Socket.Accept%2A>方法。 对于无连接协议，第一次 I/O 操作将是任何发送或接收调用。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -6153,7 +6152,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <xref:System.Net.Sockets.Socket.Poll%2A>方法将检查的状态<xref:System.Net.Sockets.Socket>。 指定<xref:System.Net.Sockets.SelectMode.SelectRead?displayProperty=nameWithType>有关`selectMode`参数，以确定如果<xref:System.Net.Sockets.Socket>是可读。 指定<xref:System.Net.Sockets.SelectMode.SelectWrite?displayProperty=nameWithType>来确定如果<xref:System.Net.Sockets.Socket>是可写。 使用<xref:System.Net.Sockets.SelectMode.SelectError?displayProperty=nameWithType>检测错误条件。 <xref:System.Net.Sockets.Socket.Poll%2A> 将阻止执行，直到指定的时间段，以测量`microseconds`，结束。 设置`microSeconds`参数为负的整数，如果你想要无限期地等待响应。 如果你想要检查的多个套接字的状态，您可能更倾向于使用<xref:System.Net.Sockets.Socket.Select%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  此方法无法检测到某些类型的连接问题，例如断开的网络电缆，或远程主机意外关闭。 您必须尝试发送或接收数据，以检测这些类型的错误。  
@@ -6303,7 +6302,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffer`参数，`buffer`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -6390,7 +6389,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffers`参数，`buffers`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
  **请注意**此成员时应用程序中启用网络跟踪输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
   
@@ -6492,7 +6491,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffer`参数，`buffer`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -6580,7 +6579,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffers`参数，`buffers`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -6708,7 +6707,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffer`参数，`buffer`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -6799,7 +6798,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffers`参数，`buffers`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -6916,7 +6915,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffer`参数，`buffer`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -7019,7 +7018,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果您使用的是无连接<xref:System.Net.Sockets.Socket>，<xref:System.Net.Sockets.Socket.Receive%2A>会从在指定的目标地址中读取第一个排队数据报<xref:System.Net.Sockets.Socket.Connect%2A>方法。 如果你收到的数据报大于的大小`buffer`参数，`buffer`进行填充与该消息的第一部分，过多的数据都将丢失和<xref:System.Net.Sockets.SocketException>引发。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -7263,7 +7262,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  使用面向连接的套接字<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将读取的数据，可最大的大小`buffer`。 如果远程主机关闭<xref:System.Net.Sockets.Socket>与连接<xref:System.Net.Sockets.Socket.Shutdown%2A>收到了方法，并且所有可用数据，<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>方法将立即完成并返回零字节。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  <xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>必须与匹配<xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.SendTo%2A>。  
@@ -7358,7 +7357,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  使用面向连接的套接字<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将读取的数据，可最大的大小`buffer`。 如果远程主机关闭<xref:System.Net.Sockets.Socket>与连接<xref:System.Net.Sockets.Socket.Shutdown%2A>收到了方法，并且所有可用数据，<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>方法将立即完成并返回零字节。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  <xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>必须与匹配<xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.SendTo%2A>。  
@@ -7458,7 +7457,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  使用面向连接的套接字<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将读取的数据，可最多指定的字节数`size`参数。 如果远程主机关闭<xref:System.Net.Sockets.Socket>与连接<xref:System.Net.Sockets.Socket.Shutdown%2A>收到了方法，并且所有可用数据，<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>方法将立即完成并返回零字节。  
   
 > [!NOTE]
->  然后再调用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>，则必须显式将绑定<xref:System.Net.Sockets.Socket>到本地终结点使用<xref:System.Net.Sockets.Socket.Bind%2A>方法。 如果不，这样做<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  然后再调用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>，则必须显式将绑定<xref:System.Net.Sockets.Socket>到本地终结点使用<xref:System.Net.Sockets.Socket.Bind%2A>方法。 如果不，这样做<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  <xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>必须与匹配<xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.SendTo%2A>。  
@@ -7563,7 +7562,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  使用面向连接的套接字<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将读取的数据，可最多指定的字节量`size`参数。 如果远程主机关闭<xref:System.Net.Sockets.Socket>与连接<xref:System.Net.Sockets.Socket.Shutdown%2A>收到了方法，并且所有可用数据，<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>方法将立即完成并返回零字节。  
   
 > [!NOTE]
->  然后再调用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>，则必须显式将绑定<xref:System.Net.Sockets.Socket>到本地终结点使用<xref:System.Net.Sockets.Socket.Bind%2A>方法。 如果不，这样做<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  然后再调用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>，则必须显式将绑定<xref:System.Net.Sockets.Socket>到本地终结点使用<xref:System.Net.Sockets.Socket.Bind%2A>方法。 如果不，这样做<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  <xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.ReceiveFrom%2A>必须与匹配<xref:System.Net.Sockets.AddressFamily>的<xref:System.Net.EndPoint>中使用<xref:System.Net.Sockets.Socket.SendTo%2A>。  
@@ -7991,7 +7990,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
 ## Remarks  
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>属性获取<xref:System.Net.EndPoint>，其中包含到的远程 IP 地址和端口号<xref:System.Net.Sockets.Socket>连接。 如果使用的是无连接协议<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>包含的默认远程 IP 地址和端口号与<xref:System.Net.Sockets.Socket>将通信。 您必须将此对象转换<xref:System.Net.EndPoint>到<xref:System.Net.IPEndPoint>之前检索的任何信息。 然后，可以调用<xref:System.Net.IPEndPoint.Address%2A?displayProperty=nameWithType>方法来检索远程<xref:System.Net.IPAddress>，和<xref:System.Net.IPEndPoint.Port%2A?displayProperty=nameWithType>方法来检索远程端口号。  
   
- <xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>会在调用后设置<xref:System.Net.Sockets.Socket.Accept%2A>或<xref:System.Net.Sockets.Socket.Connect%2A>。 如果你尝试访问更早版本，此属性<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ <xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>会在调用后设置<xref:System.Net.Sockets.Socket.Accept%2A>或<xref:System.Net.Sockets.Socket.Connect%2A>。 如果你尝试访问更早版本，此属性<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -8108,7 +8107,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
 >  此方法无法检测到某些类型的连接问题，例如断开的网络电缆，或远程主机意外关闭。 您必须尝试发送或接收数据，以检测这些类型的错误。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   
@@ -8197,7 +8196,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到所有缓冲区中的字节都将发送，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的字节数小于缓冲区中。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序将字节发送缓冲区中。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8282,7 +8281,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到所有缓冲区中的字节都将发送，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的字节数小于缓冲区中。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序将字节发送缓冲区中。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8387,7 +8386,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到所有缓冲区中的字节都将发送，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的字节数小于缓冲区中。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序发送请求的字节数。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  您必须确保在缓冲区的大小不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.Send%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  您必须确保在缓冲区的大小不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.Send%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8466,7 +8465,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到所有缓冲区中的字节都将发送，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在非阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的字节数小于缓冲区中。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序将字节发送缓冲区中。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8579,7 +8578,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到发送请求的字节数，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的请求的字节数小于。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序发送请求的字节数。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  您必须确保大小不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.Send%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  您必须确保大小不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.Send%2A>将引发<xref:System.Net.Sockets.SocketException>。 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8669,7 +8668,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到所有缓冲区中的字节都将发送，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在非阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的字节数小于缓冲区中。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序将字节发送缓冲区中。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8783,7 +8782,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到发送请求的字节数，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的请求的字节数小于。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序发送请求的字节数。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -8885,7 +8884,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.Send%2A>会阻塞，直到发送请求的字节数，除非使用设置超时<xref:System.Net.Sockets.Socket.SendTimeout%2A?displayProperty=nameWithType>。 如果超过超时值，<xref:System.Net.Sockets.Socket.Send%2A>调用将引发<xref:System.Net.Sockets.SocketException>。 在阻止模式下，<xref:System.Net.Sockets.Socket.Send%2A>可能成功完成，即使它发送的请求的字节数小于。 它是应用程序负责跟踪发送的字节数并重试操作，直到应用程序发送请求的字节数。 此外，还有您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.Send%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  发送的成功完成并不表示数据已成功传递。 如果任何缓冲区空间以容纳要传输的数据在传输系统中不不可用，除非套接字置于阻止模式下，将阻止发送。  
@@ -9116,7 +9115,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
 ## Remarks  
  此重载将该文件发送`fileName`到连接的套接字。 `flags`参数默认为<xref:System.Net.Sockets.TransmitFileOptions.UseDefaultWorkerThread>(0)，并`preBuffer`并`postBuffer`参数默认为`null`。 如果`fileName`是在本地目录中，它可能会标识只是该文件的名称; 否则，必须指定完整路径和文件的名称。 通配符 ("...\\\myfile.txt") 和 UNC 共享名 ("\\\\\\\shared directory\\\myfile.txt") 支持。 如果未找到文件，该异常<xref:System.IO.FileNotFoundException>引发。  
   
- 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅 MSDN 库中的 Windows 套接字文档。  
+ 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅[Windows 套接字](/windows/desktop/WinSock/)文档。  
   
  <xref:System.Net.Sockets.Socket.SendFile%2A> 以同步方式将文件发送到远程主机中指定<xref:System.Net.Sockets.Socket.Connect%2A>或<xref:System.Net.Sockets.Socket.Accept%2A>方法。 <xref:System.Net.Sockets.Socket.SendFile%2A> 可以使用面向连接的两个和无连接协议。  
   
@@ -9125,7 +9124,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.SendFile%2A>阻止，直到该文件发送。 在阻止模式下，<xref:System.Net.Sockets.Socket.SendFile%2A>发送整个文件之前，可能会成功完成。 则您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.SendFile%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -9196,7 +9195,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
   
  `flags`参数提供了关于文件传输的其他信息的窗口套接字服务提供程序。 有关如何使用此参数的详细信息，请参阅<xref:System.Net.Sockets.TransmitFileOptions>。  
   
- 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅 MSDN 库中的 Windows 套接字文档。  
+ 此方法使用`TransmitFile`Windows Sockets 2 API 中找到函数。 有关详细信息`TransmitFile`函数和它的标志，请参阅[Windows 套接字](/windows/desktop/WinSock/)文档。  
   
  <xref:System.Net.Sockets.Socket.SendFile%2A> 以同步方式将文件发送到远程主机中指定<xref:System.Net.Sockets.Socket.Connect%2A>或<xref:System.Net.Sockets.Socket.Accept%2A>方法。 <xref:System.Net.Sockets.Socket.SendFile%2A> 可以使用面向连接的两个和无连接协议。  
   
@@ -9205,7 +9204,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果使用面向连接的协议<xref:System.Net.Sockets.Socket.SendFile%2A>阻止，直到发送整个文件。 在阻止模式下，<xref:System.Net.Sockets.Socket.SendFile%2A>发送整个文件之前，可能会成功完成。 则您发送的数据将立即显示在网络不能保证。 若要增加网络效率，基础系统可能会延迟传输，直到收集了大量传出数据。 成功完成<xref:System.Net.Sockets.Socket.SendFile%2A>方法意味着的基础系统已为你的数据的网络发送的缓冲区的空间。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -9294,7 +9293,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
   
  调用方可能会设置<xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType>属性设置为在调用之前所需的任何用户状态对象<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A>方法，以便可在回调方法中检索信息。 如果回调需要比单个对象的详细信息，可以创建一个小类来保存作为成员的其他所需的状态信息。  
   
- 此方法使用 Windows Sockets 2 API 中找到的 TransmitPackets 函数。 有关 TransmitPackets 函数和它的标志的详细信息，请参阅 MSDN 库中的 Windows 套接字文档。  
+ 此方法使用 Windows Sockets 2 API 中找到的 TransmitPackets 函数。 有关 TransmitPackets 函数和它的标志的详细信息，请参阅[Windows 套接字](/windows/desktop/WinSock/)文档。  
   
  适用于面向连接的协议，尽管<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A>方法也适用于无连接协议，前提是先调用<xref:System.Net.Sockets.Socket.BeginConnect%2A>， <xref:System.Net.Sockets.Socket.Connect%2A>，或<xref:System.Net.Sockets.Socket.ConnectAsync%2A>方法以建立默认远程主机。 使用无连接协议时，您还必须确保文件的大小不超过基础服务提供程序的最大数据包大小。 如果是这样，不发送数据报并<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A>引发<xref:System.Net.Sockets.SocketException>异常。  
   
@@ -9437,7 +9436,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果在阻止模式下，使用无连接协议<xref:System.Net.Sockets.Socket.SendTo%2A>会阻塞，直到发送数据报。 如果你想要将数据发送到的广播地址，则必须首先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>。 您还必须确保发送的字节数不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.SendTo%2A>将引发<xref:System.Net.Sockets.SocketException>。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -9523,7 +9522,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果在阻止模式下，使用无连接协议<xref:System.Net.Sockets.Socket.SendTo%2A>会阻塞，直到发送数据报。 如果你想要将数据发送到的广播地址，则必须首先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>。 您还必须确保发送的字节数不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.SendTo%2A>将引发<xref:System.Net.Sockets.SocketException>。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -9616,7 +9615,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果在阻止模式下，使用无连接协议<xref:System.Net.Sockets.Socket.SendTo%2A>会阻塞，直到发送数据报。 如果你想要将数据发送到的广播地址，则必须首先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>。 您还必须确保发送的字节数不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.SendTo%2A>将引发<xref:System.Net.Sockets.SocketException>。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -9707,7 +9706,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  如果在阻止模式下，使用无连接协议<xref:System.Net.Sockets.Socket.SendTo%2A>会阻塞，直到发送数据报。 如果你想要将数据发送到的广播地址，则必须首先调用<xref:System.Net.Sockets.Socket.SetSocketOption%2A>方法，设置套接字选项设为<xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>。 您还必须确保大小不超过基础服务提供程序的最大数据包大小。 如果是这样，将不发送数据报并<xref:System.Net.Sockets.Socket.SendTo%2A>将引发<xref:System.Net.Sockets.SocketException>。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -9997,7 +9996,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  有关这些选项的详细信息，请参阅<xref:System.Net.Sockets.SocketOptionName>枚举。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>异常，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   
@@ -10061,7 +10060,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <xref:System.Net.Sockets.Socket> 选项将确定当前的行为<xref:System.Net.Sockets.Socket>。 使用此重载来设置那些<xref:System.Net.Sockets.Socket>需要为选项值的字节数组的选项。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -10198,7 +10197,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  有关这些选项的详细信息，请参阅<xref:System.Net.Sockets.SocketOptionName>枚举。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -10269,7 +10268,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  <xref:System.Net.Sockets.Socket> 选项将确定当前的行为<xref:System.Net.Sockets.Socket>。 使用此重载来设置<xref:System.Net.Sockets.SocketOptionName.Linger>， <xref:System.Net.Sockets.SocketOptionName.AddMembership>，并<xref:System.Net.Sockets.SocketOptionName.DropMembership><xref:System.Net.Sockets.Socket>选项。 有关<xref:System.Net.Sockets.SocketOptionName.Linger>选项，请使用<xref:System.Net.Sockets.Socket>为`optionLevel`参数。 有关<xref:System.Net.Sockets.SocketOptionName.AddMembership>并<xref:System.Net.Sockets.SocketOptionName.DropMembership>，使用<xref:System.Net.Sockets.SocketOptionLevel.IP>。 如果你想要获取任何上面列出的选项的当前值，请使用<xref:System.Net.Sockets.Socket.GetSocketOption%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   
@@ -10357,7 +10356,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
  设置`how`到<xref:System.Net.Sockets.SocketShutdown.Both>同时禁用发送和接收上文所述。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>调用时<xref:System.Net.Sockets.Socket.Shutdown%2A>方法，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>调用时<xref:System.Net.Sockets.Socket.Shutdown%2A>方法，请使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -10637,7 +10636,7 @@ GetHashCode 方法返回此实例的哈希代码。 此值可以用作哈希表�
   
  如果尚未建立成功的连接使用套接字，传输控制协议 (TCP) 套接字上设置此属性是通过 TCP/IP 堆栈忽略。  
   
- 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅 Windows 套接字版本 2 API 错误代码文档在 MSDN 库中的有关错误的详细说明。  
+ 如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>属性来获取特定错误代码。 获取此代码后，请参阅[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   

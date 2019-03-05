@@ -1,5 +1,5 @@
 <Type Name="UTF32Encoding" FullName="System.Text.UTF32Encoding">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2cf5a0fa6636863125895352d5bac1a10875a461" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56349198" /></Metadata><TypeSignature Language="C#" Value="public sealed class UTF32Encoding : System.Text.Encoding" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7ae96393fd09f8b22375994ff149849eeaefe009" /><Meta Name="ms.sourcegitcommit" Value="acde217947fa4e012449e7dea2d0f4ca44225462" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/01/2019" /><Meta Name="ms.locfileid" Value="57203855" /></Metadata><TypeSignature Language="C#" Value="public sealed class UTF32Encoding : System.Text.Encoding" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UTF32Encoding extends System.Text.Encoding" />
   <TypeSignature Language="DocId" Value="T:System.Text.UTF32Encoding" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class UTF32Encoding&#xA;Inherits Encoding" />
@@ -59,8 +59,9 @@
  （可选）<xref:System.Text.UTF32Encoding>对象提供字节顺序标记 (BOM)，这是一个可以将作为前缀的编码过程中所产生的字节序列的字节数组。 如果该前导码包含字节顺序标记 (BOM)，它可帮助确定的字节顺序转换格式或字节数组的 UTF 的解码器。  
   
  如果<xref:System.Text.UTF32Encoding>实例配置为提供 BOM，可以通过调用检索<xref:System.Text.UTF32Encoding.GetPreamble%2A>方法; 否则，该方法返回空数组。 请注意，即使<xref:System.Text.UTF32Encoding>BOM 支持的配置对象时，必须包含 BOM 将编码的字节流作为相应; 开头的编码方法<xref:System.Text.UTF32Encoding>类执行未自动执行此操作。  
-  
- 若要启用错误检测并使类实例更加安全，您应实例化<xref:System.Text.UTF32Encoding>对象通过调用<xref:System.Text.UTF32Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。 使用错误检测，检测到无效的字符或字节序列的方法将引发<xref:System.ArgumentException>异常。 如果没有错误检测，不会引发异常，并通常忽略无效的序列。  
+
+> [!CAUTION]  
+> 若要启用错误检测并使类实例更加安全，您应实例化<xref:System.Text.UTF32Encoding>对象通过调用<xref:System.Text.UTF32Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。 使用错误检测，检测到无效的字符或字节序列的方法将引发<xref:System.ArgumentException>异常。 如果没有错误检测，不会引发异常，并通常忽略无效的序列。  
   
  可以实例化<xref:System.Text.UTF32Encoding>中通过多种方式，具体取决于是否要向其提供字节顺序标记 (BOM)、 是否需要 big endian 或 little-endian 编码，以及你是否想要启用的错误检测的对象。 下表列出<xref:System.Text.UTF32Encoding>构造函数和<xref:System.Text.Encoding>返回的属性<xref:System.Text.UnicodeEncoding>对象。  
   
@@ -151,7 +152,7 @@
 ## Remarks  
  此构造函数创建一个实例，它使用 little-endian 字节顺序、 提供 Unicode 字节顺序标记，并检测到无效的编码时不引发异常。  
   
-> [!NOTE]
+> [!CAUTION]
 >  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UTF32Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidCharacters`参数`true`。  
   
    
@@ -205,10 +206,8 @@
 ## Remarks  
  此构造函数创建一个实例，它不会引发异常时检测到无效的编码。  
   
-> [!NOTE]
+> [!CAUTION]
 >  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UTF32Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidCharacters`参数`true`。  
-  
-   
   
 ## Examples  
  以下示例检索和显示的字节顺序标记的不同<xref:System.Text.UTF32Encoding>实例。  
@@ -262,10 +261,8 @@
 ## Remarks  
  如果`throwOnInvalidCharacters`是`true`，检测到无效的字节序列的方法将引发<xref:System.ArgumentException?displayProperty=nameWithType>。 否则为该方法不会引发异常，并忽略无效的序列。  
   
-> [!NOTE]
->  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UTF32Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidCharacters`参数`true`。  
-  
-   
+> [!CAUTION]
+>  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UTF32Encoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidCharacters`参数`true`。
   
 ## Examples  
  下面的示例演示的行为<xref:System.Text.UTF32Encoding>，同时启用的错误检测和不带。  
@@ -639,7 +636,7 @@
   
  数据转换，如从流中读取的数据可能仅在连续的块中可用。 在这种情况下，或如果数据量很大，因此需要划分为较小的块，该应用程序使用<xref:System.Text.Decoder>或<xref:System.Text.Encoder>提供<xref:System.Text.UTF32Encoding.GetDecoder%2A>方法或<xref:System.Text.UTF32Encoding.GetEncoder%2A>方法，分别。  
   
-> [!NOTE]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入前导头 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UTF32Encoding.GetBytes%2A>方法不预置码编码字节的序列的开头。  
   
  ]]></format>
@@ -719,10 +716,8 @@
   
  数据转换，如从流中读取的数据可能仅在连续的块中可用。 在这种情况下，或如果数据量很大，因此需要划分为较小的块，该应用程序使用<xref:System.Text.Decoder>或<xref:System.Text.Encoder>提供<xref:System.Text.UTF32Encoding.GetDecoder%2A>方法或<xref:System.Text.UTF32Encoding.GetEncoder%2A>方法，分别。  
   
-> [!NOTE]
->  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入前导头 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UTF32Encoding.GetBytes%2A>方法不预置码编码字节的序列的开头。  
-  
-   
+> [!IMPORTANT]
+>  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入前导头 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UTF32Encoding.GetBytes%2A>方法不预置码编码字节的序列的开头。
   
 ## Examples  
  下面的示例确定所需的字符数组中的三个字符进行编码的字节数，然后对字符进行编码并显示所产生的字节。  
@@ -813,10 +808,8 @@
   
  数据转换，如从流中读取的数据可能仅在连续的块中可用。 在这种情况下，或如果数据量很大，因此需要划分为较小的块，该应用程序使用<xref:System.Text.Decoder>或<xref:System.Text.Encoder>提供<xref:System.Text.UTF32Encoding.GetDecoder%2A>方法或<xref:System.Text.UTF32Encoding.GetEncoder%2A>方法，分别。  
   
-> [!NOTE]
->  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入前导头 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UTF32Encoding.GetBytes%2A>方法不预置码编码字节的序列的开头。  
-  
-   
+> [!IMPORTANT]
+>  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入前导头 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UTF32Encoding.GetBytes%2A>方法不预置码编码字节的序列的开头。
   
 ## Examples  
  下面的示例确定一个字符串进行编码所需的字节数，然后对字符串进行编码并显示所产生的字节。  
@@ -1390,8 +1383,6 @@
 > [!NOTE]
 >  `GetMaxByteCount(N)` 不一定是相同的值`N* GetMaxByteCount(1)`。  
   
-   
-  
 ## Examples  
  下面的示例确定一个字符串进行编码所需的字节数，然后对字符串进行编码并显示所产生的字节。  
   
@@ -1461,8 +1452,6 @@
   
 > [!NOTE]
 >  `GetMaxCharCount(N)` 不一定是相同的值`N* GetMaxCharCount(1)`。  
-  
-   
   
 ## Examples  
  下面的示例将字符串编码为一个字节，数组，然后字节解码为一个字符的数组。  
@@ -1543,10 +1532,8 @@
   
  有关字节顺序和字节顺序标记的详细信息，请参阅 Unicode Standard [Unicode 主页](https://go.microsoft.com/fwlink/?LinkId=37123)。  
   
-> [!CAUTION]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节，应前缀编码后带前导码的字节。 请注意，<xref:System.Text.UTF32Encoding.GetBytes%2A>方法不预置到编码字节的序列 BOM; 提供相应的字节流的开始处 BOM 是开发人员的责任。  
-  
-   
   
 ## Examples  
  下面的代码示例检索并显示的字节顺序标记的不同<xref:System.Text.UTF32Encoding>实例。  

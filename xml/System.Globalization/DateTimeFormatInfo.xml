@@ -1,5 +1,5 @@
 <Type Name="DateTimeFormatInfo" FullName="System.Globalization.DateTimeFormatInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2f7444dcbcb4fe45b5c5328da64aa39961c484f9" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53291400" /></Metadata><TypeSignature Language="C#" Value="public sealed class DateTimeFormatInfo : ICloneable, IFormatProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d21fa3d74ca6652e4110de578798d3b1552c4eee" /><Meta Name="ms.sourcegitcommit" Value="4bf27e77c1047a3bba61371cdc36ac5540ad07dd" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/02/2019" /><Meta Name="ms.locfileid" Value="57252069" /></Metadata><TypeSignature Language="C#" Value="public sealed class DateTimeFormatInfo : ICloneable, IFormatProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DateTimeFormatInfo extends System.Object implements class System.ICloneable, class System.IFormatProvider" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.DateTimeFormatInfo" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DateTimeFormatInfo&#xA;Implements ICloneable, IFormatProvider" />
@@ -81,7 +81,7 @@
   
 -   [格式设置日期和时间](#Formatting_dates_times)  
   
--   [格式字符串和 DateTimeFormatInfo 属性](#properties)  
+-   [格式字符串和 DateTimeFormatInfo 属性](#format-strings-and-datetimeformatinfo-properties)  
   
 -   [修改 DateTimeFormatInfo 属性](#Modifying)  
   
@@ -219,7 +219,6 @@
  [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/formatprovider1.cs#9)]
  [!code-vb[System.Globalization.DateTimeFormatInfo.Class#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/formatprovider1.vb#9)]  
   
-<a name="properties"></a>   
 ## <a name="format-strings-and-datetimeformatinfo-properties"></a>格式字符串和 DateTimeFormatInfo 属性  
  <xref:System.Globalization.DateTimeFormatInfo>对象在格式设置日期和时间值的操作包括三种类型的属性的使用：  
   
@@ -263,7 +262,7 @@
   
 1.  创建的读/写副本<xref:System.Globalization.DateTimeFormatInfo>对象想要修改其格式设置约定。 (请参阅[DateTimeFormatInfo 对象进行实例化](#instantiating)部分。)  
   
-2.  修改属性或用于生成所需的结果字符串的属性。 (有关如何格式设置方法使用<xref:System.Globalization.DateTimeFormatInfo>属性以定义结果字符串，请参阅上一节[格式字符串和 DateTimeFormatInfo 属性](#properties)。)  
+2.  修改属性或用于生成所需的结果字符串的属性。 (有关如何格式设置方法使用<xref:System.Globalization.DateTimeFormatInfo>属性以定义结果字符串，请参阅上一节[格式字符串和 DateTimeFormatInfo 属性](#format-strings-and-datetimeformatinfo-properties)。)  
   
 3.  使用自定义<xref:System.Globalization.DateTimeFormatInfo>对象创建为<xref:System.IFormatProvider>对格式设置方法的调用中的参数。  
   
@@ -664,8 +663,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置表示处于“上午”（中午前）的各小时的字符串指示符。</summary>
-        <value>表示属于上午的各小时的字符串指示符。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值为"AM"。</value>
+        <summary>获取或设置表示处于"上午"（中午前）的各小时的字符串指示项。</summary>
+        <value>表示属于上午的各小时的字符串指示项。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值为"AM"。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -789,8 +788,8 @@
         <ReturnType>System.Globalization.CalendarWeekRule</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指定使用哪个规则确定该年的第一个日历周。</summary>
-        <value>确定该年的第一个日历周的值。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值是 <see cref="F:System.Globalization.CalendarWeekRule.FirstDay" />。</value>
+        <summary>获取或设置一个值，该值指定使用哪一规则确定该年的第一个日历周。</summary>
+        <value>一个值，该值确定该年的第一个日历周。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值是 <see cref="F:System.Globalization.CalendarWeekRule.FirstDay" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1010,7 +1009,7 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一维字符串数组，它包含该周中各天的特定于区域性的完整名称。</summary>
+        <summary>获取或设置包含该周中各天的特定于区域性的完整名称的一维字符串数组。</summary>
         <value>一个一维字符串数组，它包含周中各天的特定于区域性的完整名称。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 数组包含"Sunday"、"Monday"、"Tuesday"、"Wednesday"、"Thursday"、"Friday"和"Saturday"。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1070,7 +1069,7 @@
         <ReturnType>System.DayOfWeek</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一周的第一天。</summary>
+        <summary>获取或设置该周的第一天。</summary>
         <value>表示一周的第一天的枚举值。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值是 <see cref="F:System.DayOfWeek.Sunday" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1261,7 +1260,7 @@
         <summary>返回包含指定纪元的缩写名称的字符串（如果缩写名称存在）。</summary>
         <returns>包含指定纪元的缩写名称的字符串（如果缩写名称存在）。  
   
-或 
+- 或 - 
 包含纪元的完整名称的字符串（如果缩写名称不存在）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1396,7 +1395,7 @@
       <Parameters />
       <Docs>
         <summary>返回可用于对日期和时间值进行格式设置的所有标准模式。</summary>
-        <returns>一个数组，包含可以用于对日期和时间值进行格式设置的标准模式。</returns>
+        <returns>一个数组，包含可以对日期和时间值进行格式化的标准模式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1470,8 +1469,8 @@
       </Parameters>
       <Docs>
         <param name="format">标准格式字符串。</param>
-        <summary>返回可在其中使用指定标准格式字符串对日期和时间值进行格式设置的所有模式。</summary>
-        <returns>一个数组，它包含可在其中使用指定格式字符串对日期和时间值进行格式设置的标准模式。</returns>
+        <summary>返回可使用指定标准格式字符串对日期和时间值进行格式设置的所有模式。</summary>
+        <returns>一个数组，它包含可使用指定格式字符串对日期和时间值进行格式设置的标准模式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1799,7 +1798,7 @@
         <param name="provider">获取 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象的 <see cref="T:System.IFormatProvider" />。  
   
 - 或 - 
- 要获取 <see cref="P:System.Globalization.DateTimeFormatInfo.CurrentInfo" /> 的 <see langword="null" />。</param>
+ 为 <see langword="null" />，以获取 <see cref="P:System.Globalization.DateTimeFormatInfo.CurrentInfo" />。</param>
         <summary>返回与指定 <see cref="T:System.IFormatProvider" /> 关联的 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象。</summary>
         <returns>与 <see cref="T:System.IFormatProvider" /> 关联的 <see cref="T:System.Globalization.DateTimeFormatInfo" /> 对象。</returns>
         <remarks>
@@ -2218,8 +2217,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置月份和日期值的自定义格式字符串。</summary>
-        <value>月份和日期值的自定义格式字符串。</value>
+        <summary>为月和日值获取或设置自定义格式字符串。</summary>
+        <value>可排序的月份和日期值的自定义格式字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2461,8 +2460,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置表示处于“下午”（中午后）的各小时的字符串指示符。</summary>
-        <value>表示处于“下午”（中午后）的各小时的字符串指示符。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值为"PM"。</value>
+        <summary>获取或设置表示处于"下午"（中午后）的各小时的字符串指示项。</summary>
+        <value>表示处于"下午"（中午后）的各小时的字符串指示项。 <see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" /> 的默认值为"PM"。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2703,7 +2702,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置短日期值的自定义格式字符串。</summary>
+        <summary>为短日期值获取或设置自定义格式字符串。</summary>
         <value>短日期值的自定义格式字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2830,7 +2829,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置短时间值的自定义格式字符串。</summary>
+        <summary>为短时间值获取或设置自定义格式字符串。</summary>
         <value>短时间值的自定义格式字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3111,8 +3110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置年份和月份值的自定义格式字符串。</summary>
-        <value>年份和月份值的自定义格式字符串。</value>
+        <summary>为年和月值获取或设置自定义格式字符串。</summary>
+        <value>可排序的年份和月份值的自定义格式字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

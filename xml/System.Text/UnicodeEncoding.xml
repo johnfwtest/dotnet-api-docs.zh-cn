@@ -1,5 +1,5 @@
 <Type Name="UnicodeEncoding" FullName="System.Text.UnicodeEncoding">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5ed90575e89d76488c1d85d59e815c01936bfcbb" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56399906" /></Metadata><TypeSignature Language="C#" Value="public class UnicodeEncoding : System.Text.Encoding" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c5152f5851a9e970bfc20ad229b9b8de36e53e42" /><Meta Name="ms.sourcegitcommit" Value="acde217947fa4e012449e7dea2d0f4ca44225462" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/01/2019" /><Meta Name="ms.locfileid" Value="57203868" /></Metadata><TypeSignature Language="C#" Value="public class UnicodeEncoding : System.Text.Encoding" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit UnicodeEncoding extends System.Text.Encoding" />
   <TypeSignature Language="DocId" Value="T:System.Text.UnicodeEncoding" />
   <TypeSignature Language="VB.NET" Value="Public Class UnicodeEncoding&#xA;Inherits Encoding" />
@@ -64,8 +64,9 @@
  （可选）<xref:System.Text.UnicodeEncoding>对象提供字节顺序标记 (BOM)，这是一个可以将作为前缀的编码过程中所产生的字节序列的字节数组。 如果该前导码包含字节顺序标记 (BOM)，它可帮助确定的字节顺序转换格式或 UTF 的解码器。  
   
  如果<xref:System.Text.UnicodeEncoding>实例配置为提供 BOM，可以通过调用检索<xref:System.Text.UnicodeEncoding.GetPreamble%2A>方法; 否则，该方法返回空数组。 请注意，即使<xref:System.Text.UnicodeEncoding>BOM 支持的配置对象时，必须包含 BOM 将编码的字节流作为相应; 开头的编码方法<xref:System.Text.UnicodeEncoding>类执行未自动执行此操作。  
-  
- 若要启用错误检测并使类实例更加安全，您应实例化<xref:System.Text.UnicodeEncoding>对象通过调用<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。 使用错误检测，检测到无效的字符或字节序列的方法将引发<xref:System.ArgumentException>。 如果没有错误检测，不会引发异常，并通常忽略无效的序列。  
+
+> [!CAUTION]
+> 若要启用错误检测并使类实例更加安全，您应实例化<xref:System.Text.UnicodeEncoding>对象通过调用<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。 使用错误检测，检测到无效的字符或字节序列的方法将引发<xref:System.ArgumentException>。 如果没有错误检测，不会引发异常，并通常忽略无效的序列。  
   
  可以实例化<xref:System.Text.UnicodeEncoding>中通过多种方式，具体取决于是否要向其提供字节顺序标记 (BOM)、 是否需要 big endian 或 little-endian 编码，以及你是否想要启用的错误检测的对象。 下表列出<xref:System.Text.UnicodeEncoding>构造函数和<xref:System.Text.Encoding>返回的属性<xref:System.Text.UnicodeEncoding>对象。  
   
@@ -156,10 +157,8 @@
 ## Remarks  
  此构造函数创建一个实例，它使用 little-endian 字节顺序、 提供 Unicode 字节顺序标记，并检测到无效的编码时不引发异常。  
   
-> [!NOTE]
->  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。  
-  
-   
+> [!CAUTION]
+>  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。
   
 ## Examples  
  下面的示例演示如何创建一个新<xref:System.Text.UnicodeEncoding>实例，并显示编码的名称。  
@@ -212,7 +211,7 @@
 ## Remarks  
  此构造函数创建一个实例，它不会引发异常时检测到无效的编码。  
   
-> [!NOTE]
+> [!CAUTION]
 >  出于安全原因，应启用错误检测，通过调用<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29>构造函数，并设置其`throwOnInvalidBytes`参数`true`。  
   
  `byteOrderMark`参数控制的操作<xref:System.Text.UnicodeEncoding.GetPreamble%2A>方法。 如果`true`，该方法返回包含 utf-16 格式的 Unicode 字节顺序标记 (BOM) 的字节数组。  如果`false`，它将返回一个零长度的字节数组。 但是，将设置`byteOrderMark`到`true`不会导致<xref:System.Text.UnicodeEncoding.GetBytes%2A>方法以前缀开头的字节数组，BOM 也不会导致不<xref:System.Text.UnicodeEncoding.GetByteCount%2A>方法以包括中的 BOM 中的字节数的字节数。  
@@ -274,10 +273,8 @@
   
  如果`throwOnInvalidBytes`参数是`true`，检测到无效的字节序列的方法将引发<xref:System.ArgumentException?displayProperty=nameWithType>。 否则为该方法不会引发异常，并忽略无效的序列。  
   
-> [!NOTE]
->  出于安全原因，建议您的应用程序使用此构造函数创建的实例<xref:System.Text.UnicodeEncoding>类，并通过设置启用错误检测`throwOnInvalidBytes`到`true`。  
-  
-   
+> [!CAUTION]
+>  出于安全原因，您应使用此构造函数创建的实例<xref:System.Text.UnicodeEncoding>类，并通过设置启用错误检测`throwOnInvalidBytes`到`true`。  
   
 ## Examples  
  下面的示例演示的行为<xref:System.Text.UnicodeEncoding>，同时启用的错误检测和不带。  
@@ -465,7 +462,7 @@
   
  使用错误检测的无效的序列将导致此方法会引发<xref:System.ArgumentException>。 如果没有错误检测，将忽略无效的序列，并不会引发异常。  
   
-> [!NOTE]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入该前导码 (如一系列字节写入到文件开头) 是开发人员的责任，并在该前导码的字节数不会反映在返回的值<xref:System.Text.UnicodeEncoding.GetByteCount%28System.String%29>方法。  
   
    
@@ -542,7 +539,7 @@
   
  使用错误检测的无效的序列将导致此方法会引发<xref:System.ArgumentException>。 如果没有错误检测，将忽略无效的序列，并不会引发异常。  
   
-> [!NOTE]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入该前导码 (如一系列字节写入到文件开头) 是开发人员的责任，并在该前导码的字节数不会反映在返回的值<xref:System.Text.UTF8Encoding.GetByteCount%2A>方法。  
   
  ]]></format>
@@ -744,7 +741,7 @@
   
  数据转换，如从流中读取的数据可能仅在连续的块中可用。 在这种情况下，或者如果数据量很大，因此需要划分为较小的块，该应用程序应使用<xref:System.Text.Decoder>或<xref:System.Text.Encoder>对象提供<xref:System.Text.UnicodeEncoding.GetDecoder%2A>或<xref:System.Text.UnicodeEncoding.GetEncoder%2A>方法，分别。  
   
-> [!NOTE]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入该前导码 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UnicodeEncoding.GetBytes%2A>方法不预置码编码字节的序列的开头。  
   
  ]]></format>
@@ -826,7 +823,7 @@
   
  数据转换，如从流中读取的数据可能仅在连续的块中可用。 在这种情况下，或者如果数据量很大，因此需要划分为较小的块，该应用程序应使用<xref:System.Text.Decoder>或<xref:System.Text.Encoder>提供<xref:System.Text.UnicodeEncoding.GetDecoder%2A>方法或<xref:System.Text.UnicodeEncoding.GetEncoder%2A>方法，分别。  
   
-> [!NOTE]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入该前导码 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UnicodeEncoding.GetBytes%2A>方法不预置码编码字节的序列的开头。  
   
    
@@ -922,7 +919,7 @@
   
  数据转换，如从流中读取的数据可能仅在连续的块中可用。 在这种情况下，或者如果数据量很大，因此需要划分为较小的块，该应用程序应使用<xref:System.Text.Decoder>或<xref:System.Text.Encoder>提供<xref:System.Text.UnicodeEncoding.GetDecoder%2A>方法或<xref:System.Text.UnicodeEncoding.GetEncoder%2A>方法，分别。  
   
-> [!NOTE]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节在保存为文件或流时，可以添加前缀带前导码编码字节的流。 在字节流的开头插入该前导码 (如一系列字节写入到文件开头) 是开发人员的责任。 <xref:System.Text.UnicodeEncoding.GetBytes%2A>方法不预置码编码字节的序列的开头。  
   
    
@@ -1674,7 +1671,7 @@
   
  有一些缺点使用 BOM。 例如，了解如何限制使用 BOM 的数据库字段很难。 文件串联可以也是个问题，例如，在此类合并的文件时不必要的字符可能出现的中间数据的方式。 但是，尽管有几个缺点下, 强烈建议使用一个 BOM。  
   
-> [!CAUTION]
+> [!IMPORTANT]
 >  若要确保正确解码已编码的字节，应前缀带前导码编码字节的流的开始位置。 请注意，<xref:System.Text.UnicodeEncoding.GetBytes%2A>方法不预置到编码字节的序列 BOM; 提供相应的字节流的开始处 BOM 是开发人员的责任。  
   
    
