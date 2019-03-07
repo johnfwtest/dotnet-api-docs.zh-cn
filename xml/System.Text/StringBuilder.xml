@@ -1,5 +1,5 @@
 <Type Name="StringBuilder" FullName="System.Text.StringBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d75769fba72ba4165ce31fa609759964ea3d8189" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52607106" /></Metadata><TypeSignature Language="C#" Value="public sealed class StringBuilder : System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="905a28b9ee32b80f984c1ada1ff1303e14f7b4d2" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56352578" /></Metadata><TypeSignature Language="C#" Value="public sealed class StringBuilder : System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit StringBuilder extends System.Object implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Text.StringBuilder" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class StringBuilder&#xA;Implements ISerializable" />
@@ -146,7 +146,7 @@
 |<xref:System.Text.StringBuilder.%23ctor%28System.Int32%2CSystem.Int32%29>|<xref:System.String.Empty?displayProperty=nameWithType>|通过定义`capacity`参数|通过定义`maxCapacity`参数|  
 |<xref:System.Text.StringBuilder.%23ctor%28System.String%29>|通过定义`value`参数|16 或`value`。 <xref:System.String.Length%2A>更多|<xref:System.Int32.MaxValue?displayProperty=nameWithType>|  
 |<xref:System.Text.StringBuilder.%23ctor%28System.String%2CSystem.Int32%29>|通过定义`value`参数|定义由`capacity`参数或`value`。 <xref:System.String.Length%2A>两者中较大。|<xref:System.Int32.MaxValue?displayProperty=nameWithType>|  
-|<xref:System.Text.StringBuilder.%23ctor%28System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>|通过定义`value`。 <xref:System.String.Substring%2A>(`startIndex`, `length`)|定义由`capacity`参数或`value`。 <xref:System.String.Length%2A>两者中较大。|通过定义`maxCapacity`参数|  
+|<xref:System.Text.StringBuilder.%23ctor%28System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>|由 `value` 定义。 <xref:System.String.Substring%2A>(`startIndex`, `length`)|定义由`capacity`参数或`value`。 <xref:System.String.Length%2A>两者中较大。|通过定义`maxCapacity`参数|  
   
  下面的示例使用三个构造函数重载来实例化<xref:System.Text.StringBuilder>对象。  
   
@@ -656,7 +656,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="capacity" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 加 <paramref name="length" /> 不是 <paramref name="value" /> 中的位置。</exception>
         <altmember cref="P:System.Text.StringBuilder.Capacity" />
       </Docs>
@@ -1270,6 +1270,37 @@
       </Docs>
     </Member>
     <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.Text.StringBuilder Append (ReadOnlyMemory&lt;char&gt; value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Text.StringBuilder Append(valuetype System.ReadOnlyMemory`1&lt;char&gt; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.StringBuilder.Append(System.ReadOnlyMemory{System.Char})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Append (value As ReadOnlyMemory(Of Char)) As StringBuilder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Text::StringBuilder ^ Append(ReadOnlyMemory&lt;char&gt; value);" />
+      <MemberSignature Language="F#" Value="member this.Append : ReadOnlyMemory&lt;char&gt; -&gt; System.Text.StringBuilder" Usage="stringBuilder.Append value" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.StringBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.ReadOnlyMemory&lt;System.Char&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
       <MemberSignature Language="C#" Value="public System.Text.StringBuilder Append (ReadOnlySpan&lt;char&gt; value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Text.StringBuilder Append(valuetype System.ReadOnlySpan`1&lt;char&gt; value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.StringBuilder.Append(System.ReadOnlySpan{System.Char})" />
@@ -1329,7 +1360,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1544,7 +1575,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1607,7 +1638,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1670,7 +1701,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1764,7 +1795,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="repeatCount" /> 小于零。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <exception cref="T:System.OutOfMemoryException">内存不足。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -1795,10 +1826,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.0;dotnet-uwp-10.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1829,7 +1860,7 @@
         <altCompliant cref="M:System.Text.StringBuilder.Append(System.Char[],System.Int32,System.Int32)" />
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="valueCount" /> 小于零。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <exception cref="T:System.NullReferenceException"><paramref name="value" /> 为 null 指针。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -1900,13 +1931,13 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />，且 <paramref name="startIndex" /> 和 <paramref name="charCount" /> 不为零。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="charCount" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> + <paramref name="charCount" /> 大于 <paramref name="value" /> 的长度。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
         <altmember cref="T:System.Char" />
@@ -1977,13 +2008,13 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />，且 <paramref name="startIndex" /> 和 <paramref name="count" /> 不为零。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> + <paramref name="count" /> 大于 <paramref name="value" /> 的长度。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
         <altmember cref="T:System.String" />
@@ -2083,8 +2114,8 @@
       </Parameters>
       <Docs>
         <param name="format">复合格式字符串。</param>
-        <param name="arg0">要设置其格式的对象。</param>
-        <summary>向此实例追加通过处理复合格式字符串（包含零个或更多格式项）而返回的字符串。 每个格式项都替换为一个自变量的字符串表示形式。</summary>
+        <param name="arg0">要设置格式的对象。</param>
+        <summary>向此实例追加通过处理复合格式字符串（包含零个或更多格式项）而返回的字符串。 每个格式项都替换为一个参数的字符串表示形式。</summary>
         <returns>对追加了 <paramref name="format" /> 的此实例的引用。 <paramref name="format" /> 中的每个格式项都替换为 <paramref name="arg0" /> 的字符串表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2096,15 +2127,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2127,7 +2158,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于或等于 1。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2198,15 +2229,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2229,7 +2260,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 或 <paramref name="args" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于或等于 <paramref name="args" /> 数组的长度。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2292,15 +2323,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 在这种情况下，由于<xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%29>方法具有一个参数在参数列表中，值*索引*必须始终为 0。 如果不是，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2332,7 +2363,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于等于一 (1)。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2411,15 +2442,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2457,7 +2488,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于或等于 <paramref name="args" /> 数组的长度。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2523,15 +2554,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2554,7 +2585,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零），或者大于等于 2。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2619,15 +2650,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2649,7 +2680,7 @@
    
   
 ## Examples  
- 下面的示例使用<xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%2CSystem.Object%29>方法来显示时间和温度数据存储在一个泛型<xref:System.Collections.Generic.Dictionary%602>对象。 请注意格式字符串具有三个格式项，尽管仅向要格式化的对象。 这是因为在使用两个格式项列表 （日期和时间值） 中的第一个对象： 第一个格式项显示时，第二个显示的日期。  
+ 下面的示例使用<xref:System.Text.StringBuilder.AppendFormat%28System.IFormatProvider%2CSystem.String%2CSystem.Object%2CSystem.Object%29>方法来显示时间和温度数据存储在一个泛型<xref:System.Collections.Generic.Dictionary%602>对象。 请注意格式字符串具有三个格式项，尽管仅向要格式化的对象。 这是因为在使用两个格式项列表 （日期和时间值） 中的第一个对象：第一个格式项的显示时，第二个显示的日期。  
   
  [!code-csharp[System.Text.StringBuilder.AppendFormat#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.stringbuilder.appendformat/cs/appendformat2.cs#3)]
  [!code-vb[System.Text.StringBuilder.AppendFormat#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.stringbuilder.appendformat/vb/appendformat2.vb#3)]  
@@ -2659,7 +2690,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零）或者大于或等于 2。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 中，在.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和容量的<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2727,15 +2758,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2758,7 +2789,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零）或者大于或等于 3。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -2825,15 +2856,15 @@
   
  格式项的语法如下所示：  
   
- {*索引*[，*长度*] [:*formatString*]}  
+ {*index*[,*length*][:*formatString*]}  
   
  括号中的元素是可选的。 下表对每个元素进行了描述。  
   
 |元素|描述|  
 |-------------|-----------------|  
 |*index*|参数列表中要进行格式化的对象的从零开始位置。 如果指定的对象*索引*是`null`，格式项都替换为<xref:System.String.Empty?displayProperty=nameWithType>。 如果在没有参数*索引*位置，<xref:System.FormatException>引发。|  
-|*长度*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
-|:*格式字符串*|由参数支持标准或自定义格式字符串。|  
+|,*length*|最小参数的字符串表示形式中的字符数。 如果为正数，该参数为右对齐;如果为负数，它是左对齐。|  
+|:*formatString*|由参数支持标准或自定义格式字符串。|  
   
 > [!NOTE]
 >  有关使用日期和时间值的标准和自定义格式字符串，请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。 对于标准和自定义格式字符串与数值一起使用，请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。 用于枚举的标准格式字符串，请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。  
@@ -2865,7 +2896,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
-或 
+- 或 - 
 格式项的索引小于 0（零）或者大于或等于 3。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">扩展的字符串的长度将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <block subset="none" type="usage"><para>在.NET Core 和.NET Framework 4.0 和更高版本中，当您实例化<see cref="T:System.Text.StringBuilder" />对象通过调用<see cref="M:System.Text.StringBuilder.#ctor(System.Int32,System.Int32)" />构造函数的长度和的容量<see cref="T:System.Text.StringBuilder" />实例可以增长到的值超过其<see cref="P:System.Text.StringBuilder.MaxCapacity" />属性。 发生这种情况尤其是当您调用<see cref="M:System.Text.StringBuilder.Append(System.String)" />和<see cref="System.Text.StringBuilder.AppendFormat(System.String,System.Object)" />追加小型字符串的方法。</para></block>
@@ -3310,7 +3341,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">为集运算指定的值小于此实例的当前长度。  
   
-或 
+- 或 - 
 为集运算指定的值大于最大容量。</exception>
       </Docs>
     </Member>
@@ -3533,11 +3564,11 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="sourceIndex" />、<paramref name="destinationIndex" /> 或 <paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="sourceIndex" /> 大于此实例的长度。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="sourceIndex" /> + <paramref name="count" /> 大于此实例的长度。  
   
-或 
+- 或 - 
  <paramref name="destinationIndex" /> + <paramref name="count" /> 大于 <paramref name="destination" /> 的长度。</exception>
       </Docs>
     </Member>
@@ -3598,7 +3629,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="capacity" /> 小于零。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
       </Docs>
     </Member>
@@ -3627,10 +3658,18 @@
         <Parameter Name="span" Type="System.ReadOnlySpan&lt;System.Char&gt;" />
       </Parameters>
       <Docs>
-        <param name="span">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="span">与当前实例进行比较的字符范围。</param>
+        <summary>返回一个值，该值指示此实例中的字符是否等于指定的只读字符范围中的字符。</summary>
+        <returns>如果此实例中的字符与 <paramref name="span" /> 相同，为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks
+
+`Equals`方法执行序号比较来确定是否在当前实例中的字符和`span`是否相等。
+
+         ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -3673,7 +3712,13 @@
         <returns>如果此实例和 <paramref name="sb" /> 具有相等的字符串、<see cref="P:System.Text.StringBuilder.Capacity" /> 和 <see cref="P:System.Text.StringBuilder.MaxCapacity" /> 值，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
-  
+
+## Remarks
+
+**.NET framework 和.NET Core 2.2 和以前的版本：** 当前实例和`sb`相等，如果它们具有相等的字符串<xref:System.Text.StringBuilder.Capacity>，和<xref:System.Text.StringBuilder.MaxCapacity>值。 `Equals`方法使用序号比较来确定字符串是否相等。
+
+**.NET core 3.0 及更高版本：** 当前实例和`sb`相等，如果字符串同时分配到<xref:System.Text.StringBuilder>对象是否相同。  若要确定相等性，`Equals`方法使用序号比较。 <xref:System.Text.StringBuilder.Capacity>和<xref:System.Text.StringBuilder.MaxCapacity>比较中不使用属性值。
+
 ## Examples  
  下面的代码使用<xref:System.Text.StringBuilder.Equals%2A>方法，用于检查两个<xref:System.Text.StringBuilder>对象是否相等。 较小的更改都会对每个对象，并将结果显示到控制台后，将重复调用该方法。  
   
@@ -3683,6 +3728,34 @@
   
  ]]></format>
         </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChunks">
+      <MemberSignature Language="C#" Value="public System.Text.StringBuilder.ChunkEnumerator GetChunks ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Text.StringBuilder/ChunkEnumerator GetChunks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.StringBuilder.GetChunks" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChunks () As StringBuilder.ChunkEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Text::StringBuilder::ChunkEnumerator GetChunks();" />
+      <MemberSignature Language="F#" Value="member this.GetChunks : unit -&gt; System.Text.StringBuilder.ChunkEnumerator" Usage="stringBuilder.GetChunks " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.StringBuilder+ChunkEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <MemberGroup MemberName="Insert">
@@ -3888,7 +3961,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零或大于此实例的长度。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <altmember cref="T:System.Char" />
       </Docs>
@@ -3954,7 +4027,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零或大于此实例的长度。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
       </Docs>
     </Member>
@@ -4400,7 +4473,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -4568,7 +4641,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零或大于此实例的当前长度。  
   
-或 
+- 或 - 
 此 <see cref="T:System.Text.StringBuilder" /> 对象的当前长度加上 <paramref name="value" /> 的长度超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <altmember cref="T:System.String" />
       </Docs>
@@ -4602,7 +4675,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -4670,7 +4743,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -4738,7 +4811,7 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2">
+        <Attribute FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netframework-4.8;netcore-2.2;dotnet-uwp-10.0;netcore-3.0">
           <AttributeName>System.CLSCompliant(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -4845,7 +4918,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零或大于此实例的当前长度。  
   
-或 
+- 或 - 
  <paramref name="count" /> 小于零。</exception>
         <exception cref="T:System.OutOfMemoryException">此 <see cref="T:System.Text.StringBuilder" /> 对象的当前长度加上 <paramref name="value" /> 的长度乘以 <paramref name="count" />，超过了 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <altmember cref="T:System.String" />
@@ -4920,13 +4993,13 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />，且 <paramref name="startIndex" /> 和 <paramref name="charCount" /> 不为零。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />、<paramref name="startIndex" /> 或 <paramref name="charCount" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="index" /> 大于此实例的长度。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 加 <paramref name="charCount" /> 不是 <paramref name="value" /> 中的位置。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
       </Docs>
     </Member>
@@ -5321,7 +5394,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> + <paramref name="count" /> 大于此实例的值的长度。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 或 <paramref name="count" /> 小于零。</exception>
       </Docs>
     </Member>
@@ -5395,10 +5468,10 @@
         <exception cref="T:System.ArgumentException"><paramref name="oldValue" /> 的长度为零。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 或 <paramref name="count" /> 小于零。  
   
-或 
+- 或 - 
  <paramref name="startIndex" /> 加 <paramref name="count" /> 指示一个不在此实例内的字符位置。  
   
-或 
+- 或 - 
 增大此实例的值将超过 <see cref="P:System.Text.StringBuilder.MaxCapacity" />。</exception>
         <altmember cref="M:System.Text.StringBuilder.Remove(System.Int32,System.Int32)" />
       </Docs>
@@ -5585,7 +5658,7 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 或 <paramref name="length" /> 小于零。  
   
-或 
+- 或 - 
 <paramref name="startIndex" /> 和 <paramref name="length" /> 之和大于当前实例的长度。</exception>
       </Docs>
     </Member>

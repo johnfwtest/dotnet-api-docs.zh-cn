@@ -1,5 +1,5 @@
 <Type Name="AccessibleObject" FullName="System.Windows.Forms.AccessibleObject">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d614cb29b1a4ed263a25065187365155e87a0be2" /><Meta Name="ms.sourcegitcommit" Value="9cee676b7864fa9dcb91319dcf5c339f3a724fbf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/07/2019" /><Meta Name="ms.locfileid" Value="55829440" /></Metadata><TypeSignature Language="C#" Value="public class AccessibleObject : System.Runtime.InteropServices.StandardOleMarshalObject, Accessibility.IAccessible, System.Reflection.IReflect" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c26903f3b92e6cfbe70e73ce4a1a45a8dcda4337" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56362919" /></Metadata><TypeSignature Language="C#" Value="public class AccessibleObject : System.Runtime.InteropServices.StandardOleMarshalObject, Accessibility.IAccessible, System.Reflection.IReflect" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessibleObject extends System.Runtime.InteropServices.StandardOleMarshalObject implements class Accessibility.IAccessible, class System.Reflection.IReflect" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleObject" />
   <TypeSignature Language="VB.NET" Value="Public Class AccessibleObject&#xA;Inherits StandardOleMarshalObject&#xA;Implements IAccessible, IReflect" />
@@ -24,7 +24,7 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute>
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
   </Attributes>
@@ -693,7 +693,7 @@
       <Docs>
         <param name="childID">要为其获取角色信息的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
         <summary>检索描述指定对象的角色的信息。</summary>
-        <returns>提供有关指定辅助性对象的角色信息的 TAn 对象。</returns>
+        <returns>提供有关指定辅助性对象的角色信息的对象。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -781,7 +781,7 @@
       <Docs>
         <param name="childID">要向其分配新名称的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
         <param name="newName">分配给 <paramref name="childID" /> 的新名称。</param>
-        <summary>将新名称分配给指定的辅助性对象。</summary>
+        <summary>将新的可访问名称分配给指定的元素。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -811,7 +811,7 @@
       <Docs>
         <param name="childID">要向其分配新值的辅助性对象的 ID 号。 该参数为 0，则选择该对象；或者，如果该参数为子级 ID，则选择该对象的一个子对象。</param>
         <param name="newValue">分配给指定辅助性对象的新值。</param>
-        <summary>将新值分配给指定的辅助性对象。</summary>
+        <summary>将新的值分配给指定的元素。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1539,6 +1539,27 @@
         <altmember cref="P:System.Windows.Forms.AccessibleObject.Value" />
       </Docs>
     </Member>
+    <Member MemberName="RuntimeIDFirstItem">
+      <MemberSignature Language="C#" Value="protected const int RuntimeIDFirstItem = 42;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal int32 RuntimeIDFirstItem = (42)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleObject.RuntimeIDFirstItem" />
+      <MemberSignature Language="VB.NET" Value="Protected Const RuntimeIDFirstItem As Integer  = 42" />
+      <MemberSignature Language="C++ CLI" Value="protected: int RuntimeIDFirstItem = 42;" />
+      <MemberSignature Language="F#" Value="val mutable RuntimeIDFirstItem : int" Usage="System.Windows.Forms.AccessibleObject.RuntimeIDFirstItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>42</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Select">
       <MemberSignature Language="C#" Value="public virtual void Select (System.Windows.Forms.AccessibleSelection flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Select(valuetype System.Windows.Forms.AccessibleSelection flags) cil managed" />
@@ -2220,7 +2241,7 @@
   
  有效`objid`值。  
   
-|对象|“值”|描述|  
+|对象|值|描述|  
 |------------|-----------|-----------------|  
 |发出警报|0xFFFFFFF6|是指与窗口或应用程序关联的消息。|  
 |插入符号|0xFFFFFFF8|指的是文本插入栏 （脱字号），在窗口中。|  

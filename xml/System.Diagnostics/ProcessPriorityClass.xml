@@ -1,5 +1,5 @@
 <Type Name="ProcessPriorityClass" FullName="System.Diagnostics.ProcessPriorityClass">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c550ba2386325b49bebce829271e33be88b0822b" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="37767129" /></Metadata><TypeSignature Language="C#" Value="public enum ProcessPriorityClass" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3f80c73f5949d7e7cd8d3711f2bbd3b44c565662" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56388362" /></Metadata><TypeSignature Language="C#" Value="public enum ProcessPriorityClass" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProcessPriorityClass extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.ProcessPriorityClass" />
   <TypeSignature Language="VB.NET" Value="Public Enum ProcessPriorityClass" />
@@ -70,7 +70,7 @@
       </ReturnValue>
       <MemberValue>32768</MemberValue>
       <Docs>
-        <summary>指定进程的优先级在 <see langword="Normal" /> 之上，但在 <see cref="F:System.Diagnostics.ProcessPriorityClass.High" /> 之下。</summary>
+        <summary>指定进程的优先级高于 <see langword="Normal" /> 但低于 <see langword="High" />。</summary>
       </Docs>
     </Member>
     <Member MemberName="BelowNormal">
@@ -136,17 +136,7 @@
       </ReturnValue>
       <MemberValue>128</MemberValue>
       <Docs>
-        <summary>指定进程执行必须立即执行的时间关键任务，如 <see langword="Task List" /> 对话框，不管操作系统的负荷如何，用户调用该对话框后均必须迅速响应。 该进程的线程优先于普通或空闲优先级类进程的线程。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!CAUTION]
->  使用指定时格外小心`High`进程的优先级类，因为高优先级类应用程序可以使用几乎所有可用的处理器时间。  
-  
- ]]></format>
-        </remarks>
+        <summary>指定进程执行必须立即执行的时间关键任务，如 <see langword="Task List" /> 对话框，不管操作系统的负荷如何，用户调用该对话框后均必须迅速响应。 该进程的线程优先于普通或空闲优先级类进程的线程。 <br />为进程的优先级类指定 <see langword="High" /> 这一个优先级时需谨慎，因为高优先级类应用程序几乎可以使用所有可用的处理器时间。</summary>
       </Docs>
     </Member>
     <Member MemberName="Idle">
@@ -179,17 +169,7 @@
       </ReturnValue>
       <MemberValue>64</MemberValue>
       <Docs>
-        <summary>指定此进程的线程只能在系统空闲时运行，如屏幕保护程序。 更高优先级类中运行的任何进程的线程都优先于此进程的线程。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!NOTE]
->  空闲优先级类是由子进程继承。  
-  
- ]]></format>
-        </remarks>
+        <summary>指定此进程的线程只能在系统空闲时运行，如屏幕保护程序。 更高优先级类中运行的任何进程的线程都优先于此进程的线程。 此优先级类由子进程继承。</summary>
       </Docs>
     </Member>
     <Member MemberName="Normal">
@@ -255,17 +235,7 @@
       </ReturnValue>
       <MemberValue>256</MemberValue>
       <Docs>
-        <summary>指定进程拥有可能的最高优先级。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!CAUTION]
->  与进程的线程`RealTime`优先级的线程优先于所有其他进程，包括执行重要任务的操作系统进程。 因此，`RealTime`优先级执行的多个非常简短的时间间隔可能会导致磁盘缓存不刷新，或导致鼠标无响应的进程。  
-  
- ]]></format>
-        </remarks>
+        <summary>指定进程拥有可能的最高优先级。 <br />具有 <see langword="RealTime" /> 优先级的进程的线程抢占所有其他进程的线程，包括执行重要任务的操作系统进程。 因此，执行时间并不太短的 <see langword="RealTime" /> 优先级进程可能导致磁盘高速缓存不刷新或鼠标无响应。</summary>
       </Docs>
     </Member>
   </Members>

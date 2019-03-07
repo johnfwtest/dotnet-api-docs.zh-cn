@@ -1,5 +1,5 @@
 <Type Name="EntityHandling" FullName="System.Xml.EntityHandling">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="df49364ac34c090e1aa5639bc3efc33552ddf412" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="37730156" /></Metadata><TypeSignature Language="C#" Value="public enum EntityHandling" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f8f44e1445e9410e90e8277d11db9b940235c034" /><Meta Name="ms.sourcegitcommit" Value="8b055c38cf00061b6c0b988ea5d824c2b4291a15" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/15/2019" /><Meta Name="ms.locfileid" Value="56306459" /></Metadata><TypeSignature Language="C#" Value="public enum EntityHandling" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EntityHandling extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Xml.EntityHandling" />
   <TypeSignature Language="VB.NET" Value="Public Enum EntityHandling" />
@@ -59,17 +59,11 @@
       </ReturnValue>
       <MemberValue>2</MemberValue>
       <Docs>
-        <summary>展开字符实体，并将常规实体作为 <see cref="F:System.Xml.XmlNodeType.EntityReference" /> 节点返回。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <summary>展开字符实体，并将常规实体作为 <see cref="F:System.Xml.XmlNodeType.EntityReference" /> 节点返回。 
+        
+必须调用 <see cref="Overload:System.Xml.XmlReader.ResolveEntity" /> 以查看常规实体扩展到的内容。 这样仅在第一次使用实体时扩展实体，就能优化实体的处理。  
   
-## Remarks  
- 必须调用<xref:System.Xml.XmlReader.ResolveEntity%2A>若要查看常规实体扩展到。 这使您可以优化处理通过仅展开第一次使用该实体的实体。  
-  
- 如果设置为 ExpandCharEntities，读取器调用到<xref:System.Xml.XmlReader.GetAttribute%2A>方法展开所有实体 （常规和字符实体）。  
-  
- ]]></format>
-        </remarks>
+设置为 <see langword="ExpandCharEntities" /> 时，对 <see cref="Overload:System.Xml.XmlReader.GetAttribute" /> 方法的读取器调用扩展所有实体（常规实体和字符实体）。</summary>
       </Docs>
     </Member>
     <Member MemberName="ExpandEntities">
@@ -101,15 +95,9 @@
       </ReturnValue>
       <MemberValue>1</MemberValue>
       <Docs>
-        <summary>展开所有实体并返回展开的节点。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- <xref:System.Xml.XmlNodeType.EntityReference> 不会返回节点。 实体文本来代替实体引用扩展。  
-  
- ]]></format>
-        </remarks>
+        <summary>展开所有实体并返回展开的节点。
+        
+不返回 <see cref="T:System.Xml.XmlNodeType.EntityReference" /> 节点。 扩展实体文本而不是实体引用。</summary>
       </Docs>
     </Member>
   </Members>

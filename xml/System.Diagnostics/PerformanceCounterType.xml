@@ -1,5 +1,5 @@
 <Type Name="PerformanceCounterType" FullName="System.Diagnostics.PerformanceCounterType">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="795e77f42b86e69226603d9859d95cdbc9616196" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53226841" /></Metadata><TypeSignature Language="C#" Value="public enum PerformanceCounterType" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="31188917af63ca23d0aa794354eb56773ccd7b8b" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56780300" /></Metadata><TypeSignature Language="C#" Value="public enum PerformanceCounterType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PerformanceCounterType extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounterType" />
   <TypeSignature Language="VB.NET" Value="Public Enum PerformanceCounterType" />
@@ -14,6 +14,7 @@
   <AssemblyInfo>
     <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Enum</BaseTypeName>
@@ -28,23 +29,29 @@
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- 某些计数器类型表示的原始数据，而另一些则表示基于一个或多个计数器样本的计算的值。 以下类别分类可用计数器的类型。  
+## Remarks
+
+某些计数器类型表示的原始数据，而另一些则表示基于一个或多个计数器样本的计算的值。 以下类别分类可用计数器的类型。  
   
--   平均值： 随着时间的推移测量值，并显示最后两个度量值的平均值。 与每个平均计数器关联是基本计数器，它跟踪所涉及的样本数。  
+- **平均**:随着时间的推移测量值，并显示最后两个度量值的平均值。 与每个平均计数器关联是基本计数器，它跟踪所涉及的样本数。  
   
--   区别： 减去上次测量值从上一个和显示的差，如果它为正;如果为负数，它们将显示零。  
+- **差异**:减去上次测量值与前一并显示的差异，如果它为正;如果为负数，它将显示零。  
   
--   即时： 显示最新的度量。  
+- **即时**:显示最新的度量。  
   
--   百分比： 百分比形式显示计算出的值。  
+- **百分比**:显示为百分比的计算的值。  
   
--   速率： 随着时间的推移示例增加的事件计数，并划分时间才会显示活动的费率在更改中的计数值。  
+- **速率**:随着时间的推移示例增加的事件计数，并更改的时间，以显示活动的速率变化中的计数值。  
   
- 采样的性能计数器数据时在使用表示平均值的计数器类型，可以使原始数据值供你使用有意义。 例如，原始数据计数器`NumberOfItems64`可以公开的是相当随机示例示例数据。 用于计数器返回的值的平均计算公式为 (X 0 + X 1 +...+ X n) /n，其中每个 X i 都是原始计数器样本。  
+采样的性能计数器数据时在使用表示平均值的计数器类型，可以使原始数据值供你使用有意义。 例如，原始数据计数器`NumberOfItems64`可以公开的是相当随机示例示例数据。 用于计数器返回的值的平均计算公式为 (X 0 + X 1 +...+ X n) /n，其中每个 X i 都是原始计数器样本。  
   
- 速率计数器是类似于平均计数器，但随着资源用于速率增加的情况下更有用。 快速计算平均值的公式是 ((X n X 0) / (n-T 0)) / 频率，其中每个 X i 是一个计数器样本，每个 T i 是获取相应的样本的时间。 结果是每秒的平均使用率。  
-  
+速率计数器是类似于平均计数器，但随着资源用于速率增加的情况下更有用。 快速计算平均值的公式是 ((X n X 0) / (n-T 0)) / 频率，其中每个 X i 是一个计数器样本，每个 T i 是获取相应的样本的时间。 结果是每秒的平均使用率。  
+
+*Multitimer 计数器*从多个组件 （如处理器或磁盘） 的实例中收集数据。 
+ 
+*反向计数器*测量组件处于非活动状态的时间，并从该测量值推导活动时间。  
+ 
+   
 > [!NOTE]
 >  除非另行说明，否则时间基数为秒。  
   
@@ -57,8 +64,56 @@
 |`RawBase`|`RawFraction`|  
 |`SampleBase`|`SampleFraction`|  
   
-   
+以下是一些表示计算所得的值的计数器使用的公式：
+
+- `AverageCount64`：(N1-N0) /(B1-B0)，其中 N 1 和 N 0 是性能计数器读数，B1 和 B0 是及其相应`AverageBase`值。 因此，分子表示在采样间隔期间处理的项数的数字，分母表示在采样间隔期间完成的操作数目。   
   
+- `AverageTimer32`: ((N1-N0) /F) /(B1-B0)，其中 N1 和 N0 是性能计数器读数，B1，B0 是及其相应`AverageBase`值和 F 是每秒的刻度数。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。 因此，分子表示的计时周期计数在最后一个采样间隔期间的数字、 F 表示的刻度，频率，分母表示最后一个采样间隔期间完成的操作数目。
+
+- `CounterDelta32`：N1-N0，其中 N1 和 N0 是性能计数器读数。 
+
+- `CounterDelta64`：N1-N0，其中 N1 和 N0 是性能计数器读数。  
+
+- `CounterMultiTimer`: ((N1-N0) / (D1-D0)) x 100 / B，其中 N1 和 N0 是性能计数器读数、 D1 和 D0 是系统性能计时器的滴答相应的时间读数和变量 B 表示受监视的组件的基本计数 （使用 ty 的基本计数器pe `CounterMultiBase`)。 因此，分子表示在采样间隔期间监视的组件处于活动状态，和分母表示取样时间间隔的总已用时间的部分。  
+
+- `CounterMultiTimer100Ns`: ((N1-N0) / (D1-D0)) x 100 / B，其中 N1 和 N0 是性能计数器的读数，D1 和 D0 是以 100 毫微秒为单位，相应的时间读数和变量 B 表示受监视的组件的基本计数 (使用基类型的计数器的`CounterMultiBase`</c0>). 因此，分子表示在采样间隔期间监视的组件处于活动状态，和分母表示取样时间间隔的总已用时间的部分。
+
+- `CounterMultiTimer100NsInverse`：(B-((N1-N0) / (D1-D0))) x 100，分母表示的采样间隔的总运行时间分子表示在间隔期间的时间时受监视的组件处于非活动状态，并且 B 表示受监视的组件数使用类型的基本计数器`CounterMultiBase`。  
+
+- `CounterMultiTimerInverse`：(B-((N1-N0) / (D1-D0))) x 100，分母表示的采样间隔的总运行时间分子表示在间隔期间的时间时受监视的组件处于非活动状态，并且 B 表示受监视的组件数使用类型的基本计数器`CounterMultiBase`。
+
+- `CounterTimer`：(N1-N0) / (D1-D0)，其中 N1 值，N0 将性能计数器读数，D1 和 D0 是从相应的时间读数。 因此，分子表示在采样间隔期间监视的组件处于活动状态，和分母表示取样时间间隔的总已用时间的部分。  
+
+- `CounterTimerInverse`：(1-((N1-N0) / (D1-D0))) x 100，其中分子表示的时间间隔期间监视的组件处于非活动状态，分母表示取样时间间隔的总运行时间。  
+
+- `CountPerTimeInterval32`：(N1-N0) / (D1-D0)，其中分子表示队列中的项的数目，分母表示的时间的最后一个采样间隔期间运行。
+
+- `CountPerTimeInterval64`：(N1-N0) / (D1-D0)，其中分子表示队列中的项的数量，分母表示的时间在采样间隔期间的运行。
+
+- `ElapsedTime`：(D0-N0) / F，其中 D0 表示当前时间，N0 表示对象的启动的时间，并且 F 表示一秒内经过的时间单位数。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。  
+  
+- `NumberOfItems32`：无。 不显示平均值，但它收集时显示的原始数据。 
+
+- `NumberOfItems64`：无。 不显示平均值，但它收集时显示的原始数据。
+
+- `NumberOfItemsHEX32`：无。 不显示平均值，但它收集时显示的原始数据。  
+
+- `NumberOfItemsHEX64`：无。 不显示平均值，但它收集时显示的原始数据  
+ 
+- `RateOfCountsPerSecond32`：(N1-N0) / ((D1-D0) / F)，其中 N1 和 N0 是性能计数器的读数，D1 和 D0 是相应的时间读数，而 F 表示每秒的刻度数。 因此，分子表示最后一个采样间隔，分母表示计时周期数的运行时间最后一个采样间隔期间执行的操作的数量，而 F 则是滴答频率。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。  
+
+- `RateOfCountsPerSecond64`：(N1-N0) / ((D1-D0) / F)，其中 N1 和 N0 是性能计数器的读数，D1 和 D0 是相应的时间读数，而 F 表示每秒的刻度数。 因此，分子表示最后一个采样间隔，分母表示计时周期数的运行时间最后一个采样间隔期间执行的操作的数量，而 F 则是滴答频率。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。  
+
+- `RawFraction`：(N0 / D0) x 100，其中 D0 表示内已测量的特性 (使用基类型的计数器的`RawBase`) 和 N0 表示该特性的一个组件。
+
+- `SampleCounter`：(N1-N0) / ((D1-D0) / F)，其中，分子 (N) 表示完成的操作数目、 分母 (D) 表示所花费的时间的系统性能计时器的滴答为单位，F 表示一秒内经过的计时周期数。 F 因式分解为方程式，以便可以以秒为单位显示结果。
+
+- `SampleFraction`: ((N1-N0) / (D1-D0)) x 100，其中分子在最后一个采样间隔期间表示成功的操作的数量，分母表示 （的测量的类型） 的所有操作的数量在采样间隔期间完成的更改，使用类型的计数器`SampleBase`。
+
+- `Timer100Ns`：(N1-N0) / (D1-D0) x 100，其中分子表示在此期间监视的组件处于活动状态，在采样间隔中的部分，分母表示取样时间间隔的总运行时间。
+
+- `Timer100NsInverse`：(1-((N1-N0) / (D1-D0))) x 100，其中分子表示的时间间隔期间监视的组件处于非活动状态，分母表示取样时间间隔的总运行时间。  
+
 ## Examples  
  下面的示例演示了几个中的计数器类型<xref:System.Diagnostics.PerformanceCounterType>枚举。  
   
@@ -137,6 +192,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -163,23 +219,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>1073874176</MemberValue>
       <Docs>
-        <summary>平均计数器，它显示一次操作中平均处理的项数。 这种类型的计数器显示已处理的项与已完成的操作数的比率。 计算该比率的方法是将上一个时间间隔内处理的项数与上一个时间间隔内完成的操作数进行比较</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / (B 1-B 0)，其中 N 1 和 N 0 是性能计数器的读数，而 B 1 和 B 0 是及其相应`AverageBase`值。 因此，分子表示在采样间隔期间处理的项数的数字，分母表示在采样间隔期间完成的操作数目。  
-  
- 此类型的计数器包括 PhysicalDisk\ avg.磁盘字节数/传输。  
-  
- ]]></format>
-        </remarks>
+        <summary>平均计数器，它显示一次操作中平均处理的项数。 这种类型的计数器显示已处理的项与已完成的操作数的比率。 计算该比率的方法是将上一个时间间隔内处理的项数与上一个时间间隔内完成的操作数进行比较 此类型的计数器包括 PhysicalDisk\ Avg.Disk Bytes/Transfer。</summary>
       </Docs>
     </Member>
     <Member MemberName="AverageTimer32">
@@ -199,23 +246,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>805438464</MemberValue>
       <Docs>
-        <summary>平均计数器，它测量完成某个进程或操作平均所花费的时间。 这种类型的计数器显示采样时间间隔的总运行时间与该时间内完成的进程或操作数的比率。 此计数器类型用系统时钟的滴答来测量时间</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式: ((N 1-N 0) /F) / (B 1-B 0) B 1 和 B 0 N 1 和 N 0 的性能计数器的读数，是其对应`AverageBase`值和 F 是每秒的刻度数。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。 因此，分子表示的计时周期计数在最后一个采样间隔期间的数字、 F 表示的刻度，频率，分母表示最后一个采样间隔期间完成的操作数目。  
-  
- 此类型的计数器包括 PhysicalDisk\ avg.Disk sec/Transfer。  
-  
- ]]></format>
-        </remarks>
+        <summary>平均计数器，它测量完成某个进程或操作平均所花费的时间。 这种类型的计数器显示采样时间间隔的总运行时间与该时间内完成的进程或操作数的比率。 此计数器类型用系统时钟的滴答来测量时间 此类型的计数器包括 PhysicalDisk\ Avg.Disk sec/Transfer。</summary>
       </Docs>
     </Member>
     <Member MemberName="CounterDelta32">
@@ -235,6 +273,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -242,14 +281,6 @@
       <MemberValue>4195328</MemberValue>
       <Docs>
         <summary>差异计数器，它显示在最近的两个采用间隔内已测量特性的更改。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：N 1-N 0，其中 N 1 和 N 0 是性能计数器的读数。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CounterDelta64">
@@ -269,6 +300,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -276,14 +308,6 @@
       <MemberValue>4195584</MemberValue>
       <Docs>
         <summary>差异计数器，它显示在最近的两个采用间隔内已测量特性的更改。 它与 <see langword="CounterDelta32" /> 计数器类型相同，但它使用更大的字段来容纳较大的值。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：N 1-N 0，其中 N 1 和 N 0 是性能计数器的读数。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CounterMultiBase">
@@ -303,6 +327,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -329,23 +354,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>574686464</MemberValue>
       <Docs>
-        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 由于分子记录的是同时操作的组件的活动时间，因此最终的百分比可以超过 100%。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此计数器是多项计时器。 多项计时器从组件（如处理器或磁盘）的多个实例中收集数据。 此计数器类型与 `CounterMultiTimer100Ns` 的不同之处在于：它以系统性能计时器的滴答为单位（而不是以 100 毫微秒为单位）来测量时间  
-  
- 公式: ((N 1-N 0) / (D 1-D 0)) x 100 / B，其中 N 1 和 N 0 是性能计数器的读数、 D 1 和 D 0 是系统性能计时器的滴答相应的时间读数和变量 B 表示受监视的组件的基本计数 （使用 bas类型的 e 计数器`CounterMultiBase`)。 因此，分子表示在采样间隔期间监视的组件处于活动状态，和分母表示取样时间间隔的总已用时间的部分。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 由于分子记录的是同时操作的组件的活动时间，因此最终的百分比可以超过 100%。 此计数器类型与 <see langword="CounterMultiTimer100Ns" /> 的不同之处在于：它以系统性能计时器的滴答为单位（而不是以 100 毫微秒为单位）来测量时间 此计数器的类型是多项计时器。</summary>
       </Docs>
     </Member>
     <Member MemberName="CounterMultiTimer100Ns">
@@ -365,23 +381,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>575735040</MemberValue>
       <Docs>
-        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 它以 100 毫微秒 (ns) 为单位来测量时间。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此计数器的类型是多项计时器。 多项计时器旨在监视组件（如处理器或磁盘）的多个实例。  
-  
- 公式: ((N 1-N 0) / (D 1-D 0)) x 100 / B，其中 N 1 和 N 0 是性能计数器的读数、 D 1 和 D 0 是以 100 毫微秒为单位，相应的时间读数和变量 B 表示受监视的组件的基本计数 （使用基类型的计数器 `CounterMultiBase`). 因此，分子表示在采样间隔期间监视的组件处于活动状态，和分母表示取样时间间隔的总已用时间的部分。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 它以 100 毫微秒 (ns) 为单位来测量时间。 此计数器的类型是多项计时器。</summary>
       </Docs>
     </Member>
     <Member MemberName="CounterMultiTimer100NsInverse">
@@ -401,23 +408,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>592512256</MemberValue>
       <Docs>
-        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 这种类型的计数器以 100 毫微秒 (ns) 为单位来测量时间。 它们推导活动时间的方法是测量组件处于非活动状态的时间，然后从受监视的对象数乘以 100% 中减去该结果。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此计数器类型为一个反向多项计时器。 多项计时器旨在监视组件（如处理器或磁盘）的多个实例。 反向计数器测量组件处于非活动状态的时间和非活动时间的测量值推导出活动时间  
-  
- 公式：(B-((N 1-N 0) / (D 1-D 0))) x 100，分母表示的采样间隔的总运行时间分子表示在间隔期间的时间时受监视的组件处于非活动状态，并且 B 表示受监视的组件数使用类型的基本计数器`CounterMultiBase`。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 这种类型的计数器以 100 毫微秒 (ns) 为单位来测量时间。 它们推导活动时间的方法是测量组件处于非活动状态的时间，然后从受监视的对象数乘以 100% 中减去该结果。 此计数器类型为一个反向多项计时器。</summary>
       </Docs>
     </Member>
     <Member MemberName="CounterMultiTimerInverse">
@@ -437,25 +435,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>591463680</MemberValue>
       <Docs>
-        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 它推导活动时间的方法是测量组件处于非活动状态的时间，然后从受监视的对象乘以 100% 中减去该结果。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 此计数器类型为一个反向多项计时器。 多项计时器监视组件（如处理器或磁盘）多个实例。 反向计数器测量组件处于非活动状态的时间，并从该测量值推导其处于活动状态的时间。  
-  
- 此计数器与 `CounterMultiTimer100NsInverse` 的不同之处在于：它是以系统性能计时器的滴答为单位（而不是以 100 毫微秒为单位）来测量时间  
-  
- 公式：(B-((N 1-N 0) / (D 1-D 0))) x 100，分母表示的采样间隔的总运行时间分子表示在间隔期间的时间时受监视的组件处于非活动状态，并且 B 表示受监视的组件数使用类型的基本计数器`CounterMultiBase`。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它以采用间隔总时间百分比的形式显示一个或多个组件的活动时间。 它推导活动时间的方法是测量组件处于非活动状态的时间，然后从受监视的对象乘以 100% 中减去该结果。 此计数器类型为一个反向多项计时器。 它与 `CounterMultiTimer100NsInverse` 的不同之处在于：它是以系统性能计时器的滴答为单位（而不是以 100 毫微秒为单位）来测量时间。</summary>
       </Docs>
     </Member>
     <Member MemberName="CounterTimer">
@@ -475,6 +462,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -482,14 +470,6 @@
       <MemberValue>541132032</MemberValue>
       <Docs>
         <summary>百分比计数器，它以总采用时间的百分比形式显示组件处于活动状态的平均时间。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / (D 1-D 0)，其中 N 1 和 N 0 是性能计数器读数，D 1 和 D 0 是从相应的时间读数。 因此，分子表示在采样间隔期间监视的组件处于活动状态，和分母表示取样时间间隔的总已用时间的部分。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CounterTimerInverse">
@@ -509,23 +489,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>557909248</MemberValue>
       <Docs>
-        <summary>百分比计数器，它显示在采用时间间隔内观测到的活动时间的平均百分比。 计算这些计数器值的方法是监视服务处于非活动状态的时间百分比，然后从 100% 中减去该值。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 这是反向计数器类型。 反向计数器度量值的时间组件处于非活动，并从该测量值推导活动时间。 此计数器类型等同于`CounterTimer100NsInv`不同之处在于它测量系统性能计时器的滴答为单位，而不是以 100 纳秒为单位的时间。  
-  
- 公式：(1-((N 1-N 0) / (D 1-D 0))) x 100，其中分子表示的时间间隔期间监视的组件处于非活动状态，分母表示取样时间间隔的总运行时间。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它显示在采用时间间隔内观测到的活动时间的平均百分比。 计算这些计数器值的方法是监视服务处于非活动状态的时间百分比，然后从 100% 中减去该值。 这是反向计数器类型。 它与 `CounterTimer100NsInv` 相同，但它是以系统性能计时器的滴答为单位（而不是以 100 毫微秒为单位）来测量时间。</summary>
       </Docs>
     </Member>
     <Member MemberName="CountPerTimeInterval32">
@@ -545,6 +516,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -552,14 +524,6 @@
       <MemberValue>4523008</MemberValue>
       <Docs>
         <summary>平均计数器，旨在监视一段时间内资源队列的平均长度。 它显示在最近两个采用时间间隔内观测到的队列长度分别除以间隔时间后的差值。 此类型的计数器通常用于跟踪排队或等候的项数。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / (D 1-D 0)，其中分子表示队列中项的数量，分母表示的时间的最后一个采样间隔期间运行。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CountPerTimeInterval64">
@@ -579,6 +543,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -586,14 +551,6 @@
       <MemberValue>4523264</MemberValue>
       <Docs>
         <summary>平均值计数器，它监视一段时间内资源队列的平均长度。 这种类型的计数器显示在最近两个采用间隔内观测到的队列长度分别除以间隔时间后的差值。 此计数器类型与 <see langword="CountPerTimeInterval32" /> 相同，但它使用更大的字段来容纳较大的值。 此类型的计数器通常用于跟踪排队或等候的大量项。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / (D 1-D 0)，其中分子表示队列中的项的数量，分母表示的时间在采样间隔期间的运行。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ElapsedTime">
@@ -613,23 +570,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>807666944</MemberValue>
       <Docs>
-        <summary>差异计时器，它显示组件或进程的开始时间与该值的计算时间之间的总时间。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(D 0-N 0) / F，其中 D 0 表示当前时间，N 0 表示该对象的启动的时间，并且 F 表示一秒内经过的时间单位数。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。  
-  
- 此类型的计数器包括系统系统运行时间。  
-  
- ]]></format>
-        </remarks>
+        <summary>差异计时器，它显示组件或进程的开始时间与该值的计算时间之间的总时间。 此类型的计数器包括 System\ System Up Time。</summary>
       </Docs>
     </Member>
     <Member MemberName="NumberOfItems32">
@@ -649,23 +597,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>65536</MemberValue>
       <Docs>
-        <summary>即时计数器，它显示最近观测到的值。 例如，用于维护项或操作的简单计数。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：无。 不显示平均值，但它收集时显示的原始数据。  
-  
- 此类型的计数器包括 Memory\Available 字节。  
-  
- ]]></format>
-        </remarks>
+        <summary>即时计数器，它显示最近观测到的值。 例如，用于维护项或操作的简单计数。 此类型的计数器包括 Memory\Available Bytes。</summary>
       </Docs>
     </Member>
     <Member MemberName="NumberOfItems64">
@@ -685,6 +624,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -692,14 +632,6 @@
       <MemberValue>65792</MemberValue>
       <Docs>
         <summary>即时计数器，它显示最近观测到的值。 例如，用于维护大量的项或操作的简单计数。 它与 <see langword="NumberOfItems32" /> 相同，但它使用更大的字段来容纳较大的值。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：无。 不显示平均值，但它收集时显示的原始数据。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="NumberOfItemsHEX32">
@@ -719,6 +651,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -726,14 +659,6 @@
       <MemberValue>0</MemberValue>
       <Docs>
         <summary>即时计数器，它以十六进制形式显示最近观测到的值。 例如，用于维护项或操作的简单计数。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：无。 不显示平均值，但它收集时显示的原始数据。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="NumberOfItemsHEX64">
@@ -753,6 +678,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -760,14 +686,6 @@
       <MemberValue>256</MemberValue>
       <Docs>
         <summary>即时计数器，它显示最近观测到的值。 例如，用于维护大量的项或操作的简单计数。 它与 <see langword="NumberOfItemsHEX32" /> 相同，但它使用更大的字段来容纳较大的值。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：无。 不显示平均值，但它收集时显示的原始数据  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="RateOfCountsPerSecond32">
@@ -787,23 +705,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>272696320</MemberValue>
       <Docs>
-        <summary>差异计数器，它显示在采用间隔的每一秒内完成的操作的平均数目。 这种类型的计数器用系统时钟的滴答 (Tick) 来测量时间</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / ((D 1-D 0) / F)，其中 N 1 和 N 0 是性能计数器的读数，D 1 和 D 0 是相应的时间读数，而 F 表示每秒的刻度数。 因此，分子表示最后一个采样间隔，分母表示计时周期数的运行时间最后一个采样间隔期间执行的操作的数量，而 F 则是滴答频率。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。  
-  
- 此类型的计数器包括系统文件读取操作数/秒。  
-  
- ]]></format>
-        </remarks>
+        <summary>差异计数器，它显示在采用间隔的每一秒内完成的操作的平均数目。 这种类型的计数器用系统时钟的滴答 (Tick) 来测量时间 此类型的计数器包括 System\ File Read Operations/sec。</summary>
       </Docs>
     </Member>
     <Member MemberName="RateOfCountsPerSecond64">
@@ -823,23 +732,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>272696576</MemberValue>
       <Docs>
-        <summary>差异计数器，它显示在采用间隔的每一秒内完成的操作的平均数目。 这种类型的计数器用系统时钟的滴答 (Tick) 来测量时间 此计数器类型与 <see langword="RateOfCountsPerSecond32" /> 类型相同，但它使用更大的字段来容纳较大的值，以跟踪每秒内的大量项数或操作数（如字节传输速率）。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / ((D 1-D 0) / F)，其中 N 1 和 N 0 是性能计数器的读数，D 1 和 D 0 是相应的时间读数，而 F 表示每秒的刻度数。 因此，分子表示最后一个采样间隔，分母表示计时周期数的运行时间最后一个采样间隔期间执行的操作的数量，而 F 则是滴答频率。 F 的值因式分解为方程式，以便可以以秒为单位显示结果。  
-  
- 此类型的计数器包括系统文件读取字节数/秒。  
-  
- ]]></format>
-        </remarks>
+        <summary>差异计数器，它显示在采用间隔的每一秒内完成的操作的平均数目。 这种类型的计数器用系统时钟的滴答 (Tick) 来测量时间 此计数器类型与 <see langword="RateOfCountsPerSecond32" /> 类型相同，但它使用更大的字段来容纳较大的值，以跟踪每秒内的大量项数或操作数（如字节传输速率）。 此类型的计数器包括 System\ File Read Bytes/sec。</summary>
       </Docs>
     </Member>
     <Member MemberName="RawBase">
@@ -859,6 +759,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -885,23 +786,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>537003008</MemberValue>
       <Docs>
-        <summary>即时百分比计数器，它以百分比的形式显示子集与其父集的比率。 例如，它将磁盘上使用的字节数与该磁盘上的总字节数进行比较。 这种类型的计数器只显示当前百分比，而不显示一段时间的平均值。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 0 / D 0) x 100，其中 D 0 表示已测量的特性 (使用基类型的计数器的`RawBase`) 和 N 0 表示该特性的一个组件。  
-  
- 此类型的计数器包括分页文件\\%使用高峰。  
-  
- ]]></format>
-        </remarks>
+        <summary>即时百分比计数器，它以百分比的形式显示子集与其父集的比率。 例如，它将磁盘上使用的字节数与该磁盘上的总字节数进行比较。 这种类型的计数器只显示当前百分比，而不显示一段时间的平均值。 此类型的计数器包括 Paging File\\% Usage Peak。</summary>
       </Docs>
     </Member>
     <Member MemberName="SampleBase">
@@ -921,6 +813,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -947,6 +840,7 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
@@ -954,14 +848,6 @@
       <MemberValue>4260864</MemberValue>
       <Docs>
         <summary>平均计数器，它显示一秒内完成的平均操作数。 当这种类型的计数器对数据进行采用时，每个采用中断返回一或零。 该计数器数据是采用的个数。 它以系统性能计时器的滴答为单位来测量时间。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / ((D 1-D 0) / F)，其中，分子 (N) 表示完成的操作数目、 分母 (D) 表示所花费的时间的系统性能计时器的滴答为单位，F 表示一秒内经过的计时周期数。 F 因式分解为方程式，以便可以以秒为单位显示结果。  
-  
- ]]></format>
-        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SampleFraction">
@@ -981,23 +867,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>549585920</MemberValue>
       <Docs>
-        <summary>百分比计数器，它显示最近两个采用时间间隔内的命中与所有操作的平均比率。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式: ((N 1-N 0) / (D 1-D 0)) x 100，其中分子表示成功的操作的数量在最后一个采样间隔期间，分母表示 （的测量的类型） 的所有操作的数量在此示例过程中完成的更改时间间隔，使用类型的计数器`SampleBase`。  
-  
- 此类型的计数器包括 Cache\Pin 读取命中 %。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它显示最近两个采用时间间隔内的命中与所有操作的平均比率。 此类型的计数器包括 Cache\Pin Read Hits %。</summary>
       </Docs>
     </Member>
     <Member MemberName="Timer100Ns">
@@ -1017,23 +894,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>542180608</MemberValue>
       <Docs>
-        <summary>百分比计数器，它以采用时间间隔的总运行时间的百分比形式显示组件的活动时间。 它以 100 毫微秒 (ns) 为单位来测量时间。 这种类型的计数器旨在一次测量一个组件的活动</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 公式：(N 1-N 0) / (D 1-D 0) x 100，其中分子表示在此期间监视的组件处于活动状态，在采样间隔中的部分，分母表示取样时间间隔的总运行时间。  
-  
- 此类型的计数器包括 Processor\ %User Time。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它以采用时间间隔的总运行时间的百分比形式显示组件的活动时间。 它以 100 毫微秒 (ns) 为单位来测量时间。 这种类型的计数器旨在一次测量一个组件的活动 此类型的计数器包括 Processor\ % User Time。</summary>
       </Docs>
     </Member>
     <Member MemberName="Timer100NsInverse">
@@ -1053,25 +921,14 @@
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
       </ReturnValue>
       <MemberValue>558957824</MemberValue>
       <Docs>
-        <summary>百分比计数器，它显示采用时间间隔内观测到的活动时间的平均百分比。</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- 这是反向计数器。 此类型的计数器通过度量该服务处于非活动状态的时间然后减去从 100%的活动时间的百分比计算处于活动状态时间。  
-  
- 公式：(1-((N 1-N 0) / (D 1-D 0))) x 100，其中分子表示的时间间隔期间监视的组件处于非活动状态，分母表示取样时间间隔的总运行时间。  
-  
- 此类型的计数器包括 Processor\ %Processor Time。  
-  
- ]]></format>
-        </remarks>
+        <summary>百分比计数器，它显示采用时间间隔内观测到的活动时间的平均百分比。 这是反向计数器。 此类型的计数器包括 Processor\ % Processor Time。</summary>
       </Docs>
     </Member>
   </Members>
