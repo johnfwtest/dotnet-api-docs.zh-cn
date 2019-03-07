@@ -1,5 +1,5 @@
 <Type Name="TcpClient" FullName="System.Net.Sockets.TcpClient">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6c4ef2337a11e9eaacb653f83b646a604476f21e" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55367411" /></Metadata><TypeSignature Language="C#" Value="public class TcpClient : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3f522b75d1f24f730339ccccb66549177444e9c4" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996845" /></Metadata><TypeSignature Language="C#" Value="public class TcpClient : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TcpClient extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.TcpClient" />
   <TypeSignature Language="VB.NET" Value="Public Class TcpClient&#xA;Implements IDisposable" />
@@ -162,7 +162,7 @@
         <Parameter Name="localEP" Type="System.Net.IPEndPoint" />
       </Parameters>
       <Docs>
-        <param name="localEP">要将 TCP <see cref="T:System.Net.Sockets.Socket" /> 绑定到的 <see cref="T:System.Net.IPEndPoint" />。</param>
+        <param name="localEP">要将 TCP <see cref="T:System.Net.IPEndPoint" /> 绑定到的 <see cref="T:System.Net.Sockets.Socket" />。</param>
         <summary>初始化 <see cref="T:System.Net.Sockets.TcpClient" /> 类的新实例，并将其绑定到指定的本地终结点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -397,7 +397,7 @@
 ## Remarks  
 `Available`属性是一种方法来确定是否将数据排队以进行读取。 如果数据不可用，则调用<xref:System.Net.Sockets.NetworkStream.Read%2A>来获取的数据。 可用的数据是在读取的网络缓冲区中对排队的总数据量。 如果无数据排队网络缓冲区中`Available`返回 0。  
   
- 如果远程主机关闭，或关闭的连接`Available`可能会引发<xref:System.Net.Sockets.SocketException>。 如果你收到`SocketException`，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考位于 MSDN library 中的 Windows 套接字版本 2 API 错误代码文档[ http://msdn.microsoft.com/library ](https://msdn.microsoft.com/library)有关错误的详细说明。  
+ 如果远程主机关闭，或关闭的连接`Available`可能会引发<xref:System.Net.Sockets.SocketException>。 如果你收到`SocketException`，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   
@@ -839,7 +839,7 @@
         <Parameter Name="port" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="address">你打算连接到的主机的 <see cref="T:System.Net.IPAddress" />。</param>
+        <param name="address">您打算连接到的主机的 <see cref="T:System.Net.IPAddress" />。</param>
         <param name="port">要连接到的端口号。</param>
         <summary>使用指定的 IP 地址和端口号将客户端连接到 TCP 主机。</summary>
         <remarks>
@@ -913,7 +913,7 @@
  此方法通常用于调用后立即<xref:System.Net.Dns.BeginGetHostAddresses%2A>方法，它可以为单个主机返回多个 IP 地址。 调用`Connect`方法来同步远程主机连接到的数组指定的主机<xref:System.Net.IPAddress>元素和端口号。 `Connect`方法会阻塞，直到连接成功或失败。 以远程主机连接后，使用<xref:System.Net.Sockets.TcpClient.GetStream%2A>方法来获取基础<xref:System.Net.Sockets.NetworkStream>。 使用此`NetworkStream`发送和接收数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考位于 MSDN library 中的 Windows 套接字版本 2 API 错误代码文档[ http://msdn.microsoft.com/library ](https://msdn.microsoft.com/library)有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -1046,7 +1046,7 @@
         <Parameter Name="port" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="address">你打算连接到的主机的 <see cref="T:System.Net.IPAddress" />。</param>
+        <param name="address">您打算连接到的主机的 <see cref="T:System.Net.IPAddress" />。</param>
         <param name="port">要连接到的端口号。</param>
         <summary>使用指定的 IP 地址和端口号将客户端连接到远程 TCP 主机以作为异步操作。</summary>
         <returns>表示异步操作的任务对象。</returns>
@@ -1117,7 +1117,7 @@
  此方法通常用于调用后立即<xref:System.Net.Dns.BeginGetHostAddresses%2A>方法，它可以为单个主机返回多个 IP 地址。 调用此方法以建立与指定的数组的主机的同步远程主机连接<xref:System.Net.IPAddress>元素和作为异步操作的端口号。 以远程主机连接后，使用<xref:System.Net.Sockets.TcpClient.GetStream%2A>方法来获取基础<xref:System.Net.Sockets.NetworkStream>。 使用此`NetworkStream`发送和接收数据。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考位于 MSDN library 中的 Windows 套接字版本 2 API 错误代码文档[ http://msdn.microsoft.com/library ](https://msdn.microsoft.com/library)有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
 > [!NOTE]
 >  当你在应用程序中启用网络跟踪后，此成员将输出跟踪信息。 有关详细信息，请参阅[在.NET Framework 中进行网络跟踪](~/docs/framework/network-programming/network-tracing.md)。  
@@ -1222,7 +1222,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示 <see cref="T:System.Net.Sockets.TcpClient" /> 的基础 <see cref="T:System.Net.Sockets.Socket" /> 是否已连接到远程主机。</summary>
+        <summary>获取一个值，该值指示 <see cref="T:System.Net.Sockets.Socket" /> 的基础 <see cref="T:System.Net.Sockets.TcpClient" /> 是否已连接到远程主机。</summary>
         <value>如果 <see cref="P:System.Net.Sockets.TcpClient.Client" /> 套接字与截止到最近的操作时的远程资源连接，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1362,7 +1362,7 @@
         <Parameter Name="asyncResult" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="asyncResult">调用 <see cref="Overload:System.Net.Sockets.TcpClient.BeginConnect" /> 后返回的 <see cref="T:System.IAsyncResult" /> 对象。</param>
+        <param name="asyncResult">调用 <see cref="T:System.IAsyncResult" /> 后返回的 <see cref="Overload:System.Net.Sockets.TcpClient.BeginConnect" /> 对象。</param>
         <summary>结束挂起的异步连接尝试。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1371,7 +1371,7 @@
  此方法将阻塞，直到操作完成。 若要以同步方式执行此操作，请使用<xref:System.Net.Sockets.TcpClient.Connect%2A>方法。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考位于 MSDN library 中的 Windows 套接字版本 2 API 错误代码文档[ http://msdn.microsoft.com/library ](https://msdn.microsoft.com/library)有关错误的详细说明。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定的错误代码。 获取此代码后，可以参考[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   

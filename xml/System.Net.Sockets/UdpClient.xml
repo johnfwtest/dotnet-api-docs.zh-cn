@@ -1,5 +1,5 @@
 <Type Name="UdpClient" FullName="System.Net.Sockets.UdpClient">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8cae07e31b7c763b373e87ca83e003b9ec04006e" /><Meta Name="ms.sourcegitcommit" Value="9e3550fb2088d4faf2043f0acb29da4555519937" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/12/2018" /><Meta Name="ms.locfileid" Value="53291465" /></Metadata><TypeSignature Language="C#" Value="public class UdpClient : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d3f45f1968909575e4dd69c36f9a2ebbc1011a4c" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996871" /></Metadata><TypeSignature Language="C#" Value="public class UdpClient : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UdpClient extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.UdpClient" />
   <TypeSignature Language="VB.NET" Value="Public Class UdpClient&#xA;Implements IDisposable" />
@@ -566,7 +566,7 @@
  如果远程主机关闭，或关闭的连接<xref:System.Net.Sockets.UdpClient.Available%2A>属性，则会引发<xref:System.Net.Sockets.SocketException>。  
   
 > [!NOTE]
->  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>若要获取特定错误代码，并在 MSDN 库中的 Windows 套接字版本 2 API 错误代码文档，请参阅[ http://msdn.microsoft.com/library ](https://msdn.microsoft.com/library)/ 有关的详细说明出现错误。  
+>  如果你收到<xref:System.Net.Sockets.SocketException>，使用<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>为要获取特定的错误代码和参考[Windows 套接字版本 2 API 错误代码](/windows/desktop/winsock/windows-sockets-error-codes-2)有关错误的详细说明的文档。  
   
    
   
@@ -1254,7 +1254,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
+        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
         <summary>释放由 <see cref="T:System.Net.Sockets.UdpClient" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1534,7 +1534,7 @@
         <Parameter Name="remoteEP" Type="System.Net.IPEndPoint" RefType="ref" />
       </Parameters>
       <Docs>
-        <param name="asyncResult">调用 <see cref="M:System.Net.Sockets.UdpClient.BeginReceive(System.AsyncCallback,System.Object)" /> 后返回的 <see cref="T:System.IAsyncResult" /> 对象。</param>
+        <param name="asyncResult">调用 <see cref="T:System.IAsyncResult" /> 后返回的 <see cref="M:System.Net.Sockets.UdpClient.BeginReceive(System.AsyncCallback,System.Object)" /> 对象。</param>
         <param name="remoteEP">指定的远程终结点。</param>
         <summary>结束挂起的异步接收。</summary>
         <returns>如果成功，则返回包含数据报数据的字节数组。</returns>
@@ -1593,7 +1593,7 @@
         <Parameter Name="asyncResult" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="asyncResult">调用 <see cref="Overload:System.Net.Sockets.UdpClient.BeginSend" /> 后返回的 <see cref="T:System.IAsyncResult" /> 对象。</param>
+        <param name="asyncResult">调用 <see cref="T:System.IAsyncResult" /> 后返回的 <see cref="Overload:System.Net.Sockets.UdpClient.BeginSend" /> 对象。</param>
         <summary>结束挂起的异步发送。</summary>
         <returns>如果成功，则返回已发送到 <see cref="T:System.Net.Sockets.UdpClient" /> 的字节数。</returns>
         <remarks>
@@ -2317,9 +2317,9 @@
       <Docs>
         <param name="dgram">一个 <see cref="T:System.Byte" /> 类型的数组，它指定你打算以字节数组形式发送的 UDP 数据报。</param>
         <param name="bytes">数据报中的字节数。</param>
-        <param name="hostname">要向其发送数据报的远程主机的名称。</param>
-        <param name="port">要与之通信的远程端口号。</param>
-        <summary>将 UDP 数据报发送到指定远程主机上的指定端口。</summary>
+        <param name="hostname">要将数据报发送到的远程主机的名称。</param>
+        <param name="port">要与其进行通信的远程端口号。</param>
+        <summary>将 UDP 数据报发送到指定的远程主机上的指定端口。</summary>
         <returns>已发送的字节数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2503,8 +2503,8 @@
       <Docs>
         <param name="datagram">一个 <see cref="T:System.Byte" /> 类型的数组，它指定你打算以字节数组形式发送的 UDP 数据报。</param>
         <param name="bytes">数据报中的字节数。</param>
-        <param name="hostname">要向其发送数据报的远程主机的名称。</param>
-        <param name="port">要与之通信的远程端口号。</param>
+        <param name="hostname">要将数据报发送到的远程主机的名称。</param>
+        <param name="port">要与其进行通信的远程端口号。</param>
         <summary>将 UDP 数据报异步发送到远程主机。</summary>
         <returns>返回 <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
         <remarks>
