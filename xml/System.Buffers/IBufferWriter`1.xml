@@ -1,5 +1,5 @@
 <Type Name="IBufferWriter&lt;T&gt;" FullName="System.Buffers.IBufferWriter&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cd890b9a02855189dbf57af223fa03cb5209e33a" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56387443" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="674f0a0d53c9622f7a10d3a2b32626681056eef4" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996715" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBufferWriter`1&lt;T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.IBufferWriter`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBufferWriter(Of T)" />
@@ -17,7 +17,7 @@
   <Interfaces />
   <Docs>
     <typeparam name="T">中的项的类型<see cref="T:System.Buffers.IBufferWriter`1" />。</typeparam>
-    <summary>表示 <typeparamref name="T" /> 接收器。</summary>
+    <summary>表示可以向其中写入 <typeparamref name="T" /> 数据的输出接收器。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -43,8 +43,8 @@
       </Parameters>
       <Docs>
         <param name="count">写入 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" /> 的数据项数量。</param>
-        <summary>通知 <see cref="T:System.Buffers.IBufferWriter`1" />，<paramref name="count" /> 数据项已写入 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" />。</summary>
-        <remarks>To be added.</remarks>
+        <summary>通知 <see cref="T:System.Buffers.IBufferWriter`1" />，已向输出 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" /> 写入 <paramref name="count" /> 数据项。</summary>
+        <remarks>你必须在调用预付款以继续编写更多的数据; 后请求新的缓冲区无法写入以前获取的缓冲区。</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetMemory">
@@ -67,10 +67,21 @@
         <Parameter Name="sizeHint" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="sizeHint">请求的 <see cref="T:System.Memory`1" /> 的大小。 如果为 0，则请求当前可用的内存。</param>
-        <summary>如果可能，请求大小至少为 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />。</summary>
-        <returns>如果可用，为大小是 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />否则为具有最大可用内存的 <see cref="T:System.Memory`1" />。 如果 <paramref name="sizeHint" /> 为 0，则返回当前可用的内存。</returns>
-        <remarks>To be added.</remarks>
+        <param name="sizeHint">返回的 <see cref="T:System.Memory`1" /> 的长度下限。 如果为 0，返回非空缓冲区。</param>
+        <summary>返回要向其中写入数据的 <see cref="T:System.Memory`1" />，且大小至少是 <paramref name="sizeHint" /> 指定的请求大小。</summary>
+        <returns>大小至少是 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />。 如果 <paramref name="sizeHint" /> 是 0，返回非空缓冲区。</returns>
+        <remarks>  
+          <format type="text/markdown"><![CDATA[  
+
+没有连续调用将返回同一缓冲区或相同大小的缓冲区能保证。
+
+这必须永远不会返回<xref:System.Span%601.Empty?displayProperty=nameWithType>，但它可以引发如果请求的缓冲区大小不可用。
+
+你必须请求新的缓冲区之后调用`Advance`继续编写更多的数据; 不能写入以前获取的缓冲区。
+
+         ]]></format>
+         </remarks>
+         <exception cref="T:System.OutOfMemoryException">请求的缓冲区大小不可用。</exception>        
       </Docs>
     </Member>
     <Member MemberName="GetSpan">
@@ -93,10 +104,19 @@
         <Parameter Name="sizeHint" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="sizeHint">请求的内存范围的大小。 如果为 0，则请求当前可用的内存。</param>
-        <summary>若可能，则请求的范围大小至少为 <paramref name="sizeHint" /> 。</summary>
-        <returns>如果可用，则范围大小为 <paramref name="sizeHint" />；否则内存范围为最大的可用内存。 如果 <paramref name="sizeHint" /> 为 0，则返回当前可用的内存。</returns>
-        <remarks>To be added.</remarks>
+        <param name="sizeHint">返回的 <see cref="T:System.Span`1" /> 的长度下限。 如果为 0，返回非空缓冲区。</param>
+        <summary>返回要向其中写入数据的 <see cref="T:System.Span`1" />，且大小至少是 <paramref name="sizeHint" /> 指定的请求大小。</summary>
+        <returns>大小至少是 <paramref name="sizeHint" /> 的 <see cref="T:System.Span`1" />。 如果 <paramref name="sizeHint" /> 是 0，返回非空缓冲区。</returns>
+        <remarks>  
+          <format type="text/markdown"><![CDATA[
+  
+没有连续调用将返回同一缓冲区或相同大小的缓冲区能保证。
+
+此方法必须永远不会返回<xref:System.Span%601.Empty?displayProperty=nameWithType>，但它可以引发如果请求的缓冲区大小不可用。
+
+你必须请求新的缓冲区之后调用`Advance`继续编写更多的数据; 不能写入以前获取的缓冲区。
+         ]]></format>
+         </remarks>
       </Docs>
     </Member>
   </Members>
