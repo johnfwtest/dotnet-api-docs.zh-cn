@@ -1,5 +1,5 @@
 <Type Name="IBufferWriter&lt;T&gt;" FullName="System.Buffers.IBufferWriter&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cd890b9a02855189dbf57af223fa03cb5209e33a" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56387443" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="674f0a0d53c9622f7a10d3a2b32626681056eef4" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996715" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBufferWriter`1&lt;T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.IBufferWriter`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBufferWriter(Of T)" />
@@ -16,8 +16,8 @@
   </TypeParameters>
   <Interfaces />
   <Docs>
-    <typeparam name="T"><span data-ttu-id="cc964-101">中的项的类型<see cref="T:System.Buffers.IBufferWriter`1" />。</span><span class="sxs-lookup"><span data-stu-id="cc964-101">The type of the items in the <see cref="T:System.Buffers.IBufferWriter`1" />.</span></span></typeparam>
-    <summary><span data-ttu-id="cc964-102">表示 <typeparamref name="T" /> 接收器。</span><span class="sxs-lookup"><span data-stu-id="cc964-102">Represents a <typeparamref name="T" /> sink.</span></span></summary>
+    <typeparam name="T"><span data-ttu-id="4990b-101">中的项的类型<see cref="T:System.Buffers.IBufferWriter`1" />。</span><span class="sxs-lookup"><span data-stu-id="4990b-101">The type of the items in the <see cref="T:System.Buffers.IBufferWriter`1" />.</span></span></typeparam>
+    <summary><span data-ttu-id="4990b-102">表示可以向其中写入 <typeparamref name="T" /> 数据的输出接收器。</span><span class="sxs-lookup"><span data-stu-id="4990b-102">Represents an output sink into which <typeparamref name="T" /> data can be written.</span></span></summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -42,9 +42,9 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="count"><span data-ttu-id="cc964-103">写入 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" /> 的数据项数量。</span><span class="sxs-lookup"><span data-stu-id="cc964-103">The number of data items written to the <see cref="T:System.Span`1" /> or <see cref="T:System.Memory`1" />.</span></span></param>
-        <summary><span data-ttu-id="cc964-104">通知 <see cref="T:System.Buffers.IBufferWriter`1" />，<paramref name="count" /> 数据项已写入 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" />。</span><span class="sxs-lookup"><span data-stu-id="cc964-104">Notifies the <see cref="T:System.Buffers.IBufferWriter`1" /> that <paramref name="count" /> data items were written to the <see cref="T:System.Span`1" /> or <see cref="T:System.Memory`1" />.</span></span></summary>
-        <remarks>To be added.</remarks>
+        <param name="count"><span data-ttu-id="4990b-103">写入 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" /> 的数据项数量。</span><span class="sxs-lookup"><span data-stu-id="4990b-103">The number of data items written to the <see cref="T:System.Span`1" /> or <see cref="T:System.Memory`1" />.</span></span></param>
+        <summary><span data-ttu-id="4990b-104">通知 <see cref="T:System.Buffers.IBufferWriter`1" />，已向输出 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" /> 写入 <paramref name="count" /> 数据项。</span><span class="sxs-lookup"><span data-stu-id="4990b-104">Notifies the <see cref="T:System.Buffers.IBufferWriter`1" /> that <paramref name="count" /> data items were written to the output <see cref="T:System.Span`1" /> or <see cref="T:System.Memory`1" />.</span></span></summary>
+        <remarks><span data-ttu-id="4990b-105">你必须在调用预付款以继续编写更多的数据; 后请求新的缓冲区无法写入以前获取的缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-105">You must request a new buffer after calling Advance to continue writing more data; you cannot write to a previously acquired buffer.</span></span></remarks>
       </Docs>
     </Member>
     <Member MemberName="GetMemory">
@@ -67,10 +67,21 @@
         <Parameter Name="sizeHint" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="sizeHint"><span data-ttu-id="cc964-105">请求的 <see cref="T:System.Memory`1" /> 的大小。</span><span class="sxs-lookup"><span data-stu-id="cc964-105">The size of the <see cref="T:System.Memory`1" /> requested.</span></span> <span data-ttu-id="cc964-106">如果为 0，则请求当前可用的内存。</span><span class="sxs-lookup"><span data-stu-id="cc964-106">If 0, requests currently available memory.</span></span></param>
-        <summary><span data-ttu-id="cc964-107">如果可能，请求大小至少为 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />。</span><span class="sxs-lookup"><span data-stu-id="cc964-107">Requests a <see cref="T:System.Memory`1" /> that is at least <paramref name="sizeHint" /> in size if possible.</span></span></summary>
-        <returns><span data-ttu-id="cc964-108">如果可用，为大小是 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />否则为具有最大可用内存的 <see cref="T:System.Memory`1" />。</span><span class="sxs-lookup"><span data-stu-id="cc964-108">A <see cref="T:System.Memory`1" /> of size <paramref name="sizeHint" />, if it's available; otherwise, a <see cref="T:System.Memory`1" /> with the maximum available memory.</span></span> <span data-ttu-id="cc964-109">如果 <paramref name="sizeHint" /> 为 0，则返回当前可用的内存。</span><span class="sxs-lookup"><span data-stu-id="cc964-109">If <paramref name="sizeHint" /> is 0, returns currently available memory.</span></span></returns>
-        <remarks>To be added.</remarks>
+        <param name="sizeHint"><span data-ttu-id="4990b-106">返回的 <see cref="T:System.Memory`1" /> 的长度下限。</span><span class="sxs-lookup"><span data-stu-id="4990b-106">The minimum length of the returned <see cref="T:System.Memory`1" />.</span></span> <span data-ttu-id="4990b-107">如果为 0，返回非空缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-107">If 0, a non-empty buffer is returned.</span></span></param>
+        <summary><span data-ttu-id="4990b-108">返回要向其中写入数据的 <see cref="T:System.Memory`1" />，且大小至少是 <paramref name="sizeHint" /> 指定的请求大小。</span><span class="sxs-lookup"><span data-stu-id="4990b-108">Returns a <see cref="T:System.Memory`1" /> to write to that is at least the requested size (specified by <paramref name="sizeHint" />).</span></span></summary>
+        <returns><span data-ttu-id="4990b-109">大小至少是 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />。</span><span class="sxs-lookup"><span data-stu-id="4990b-109">A <see cref="T:System.Memory`1" /> of at least the size <paramref name="sizeHint" />.</span></span> <span data-ttu-id="4990b-110">如果 <paramref name="sizeHint" /> 是 0，返回非空缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-110">If <paramref name="sizeHint" /> is 0, returns a non-empty buffer.</span></span></returns>
+        <remarks>  
+          <format type="text/markdown"><![CDATA[  
+
+<span data-ttu-id="4990b-111">没有连续调用将返回同一缓冲区或相同大小的缓冲区能保证。</span><span class="sxs-lookup"><span data-stu-id="4990b-111">There is no guarantee that successive calls will return the same buffer or the same-sized buffer.</span></span>
+
+<span data-ttu-id="4990b-112">这必须永远不会返回<xref:System.Span%601.Empty?displayProperty=nameWithType>，但它可以引发如果请求的缓冲区大小不可用。</span><span class="sxs-lookup"><span data-stu-id="4990b-112">This must never return <xref:System.Span%601.Empty?displayProperty=nameWithType>, but it can throw if the requested buffer size is not available.</span></span>
+
+<span data-ttu-id="4990b-113">你必须请求新的缓冲区之后调用`Advance`继续编写更多的数据; 不能写入以前获取的缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-113">You must request a new buffer after calling `Advance` to continue writing more data; you cannot write to a previously acquired buffer.</span></span>
+
+         ]]></format>
+         </remarks>
+         <exception cref="T:System.OutOfMemoryException"><span data-ttu-id="4990b-114">请求的缓冲区大小不可用。</span><span class="sxs-lookup"><span data-stu-id="4990b-114">The requested buffer size is not available.</span></span></exception>        
       </Docs>
     </Member>
     <Member MemberName="GetSpan">
@@ -93,10 +104,19 @@
         <Parameter Name="sizeHint" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="sizeHint"><span data-ttu-id="cc964-110">请求的内存范围的大小。</span><span class="sxs-lookup"><span data-stu-id="cc964-110">The size of the memory span requested.</span></span> <span data-ttu-id="cc964-111">如果为 0，则请求当前可用的内存。</span><span class="sxs-lookup"><span data-stu-id="cc964-111">If 0, requests currently available memory.</span></span></param>
-        <summary><span data-ttu-id="cc964-112">若可能，则请求的范围大小至少为 <paramref name="sizeHint" /> 。</span><span class="sxs-lookup"><span data-stu-id="cc964-112">Requests a span that is at least <paramref name="sizeHint" /> in size if possible.</span></span></summary>
-        <returns><span data-ttu-id="cc964-113">如果可用，则范围大小为 <paramref name="sizeHint" />；否则内存范围为最大的可用内存。</span><span class="sxs-lookup"><span data-stu-id="cc964-113">A span of size <paramref name="sizeHint" />, if it's available; otherwise, a memory span with the maximum available memory.</span></span> <span data-ttu-id="cc964-114">如果 <paramref name="sizeHint" /> 为 0，则返回当前可用的内存。</span><span class="sxs-lookup"><span data-stu-id="cc964-114">If <paramref name="sizeHint" /> is 0, returns currently available memory.</span></span></returns>
-        <remarks>To be added.</remarks>
+        <param name="sizeHint"><span data-ttu-id="4990b-115">返回的 <see cref="T:System.Span`1" /> 的长度下限。</span><span class="sxs-lookup"><span data-stu-id="4990b-115">The minimum length of the returned <see cref="T:System.Span`1" />.</span></span> <span data-ttu-id="4990b-116">如果为 0，返回非空缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-116">If 0, a non-empty buffer is returned.</span></span></param>
+        <summary><span data-ttu-id="4990b-117">返回要向其中写入数据的 <see cref="T:System.Span`1" />，且大小至少是 <paramref name="sizeHint" /> 指定的请求大小。</span><span class="sxs-lookup"><span data-stu-id="4990b-117">Returns a <see cref="T:System.Span`1" /> to write to that is at least the requested size (specified by <paramref name="sizeHint" />).</span></span></summary>
+        <returns><span data-ttu-id="4990b-118">大小至少是 <paramref name="sizeHint" /> 的 <see cref="T:System.Span`1" />。</span><span class="sxs-lookup"><span data-stu-id="4990b-118">A <see cref="T:System.Span`1" /> of at least the size <paramref name="sizeHint" />.</span></span> <span data-ttu-id="4990b-119">如果 <paramref name="sizeHint" /> 是 0，返回非空缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-119">If <paramref name="sizeHint" /> is 0, returns a non-empty buffer.</span></span></returns>
+        <remarks>  
+          <format type="text/markdown"><![CDATA[
+  
+<span data-ttu-id="4990b-120">没有连续调用将返回同一缓冲区或相同大小的缓冲区能保证。</span><span class="sxs-lookup"><span data-stu-id="4990b-120">There is no guarantee that successive calls will return the same buffer or the same-sized buffer.</span></span>
+
+<span data-ttu-id="4990b-121">此方法必须永远不会返回<xref:System.Span%601.Empty?displayProperty=nameWithType>，但它可以引发如果请求的缓冲区大小不可用。</span><span class="sxs-lookup"><span data-stu-id="4990b-121">This method must never return <xref:System.Span%601.Empty?displayProperty=nameWithType>, but it can throw if the requested buffer size is not available.</span></span>
+
+<span data-ttu-id="4990b-122">你必须请求新的缓冲区之后调用`Advance`继续编写更多的数据; 不能写入以前获取的缓冲区。</span><span class="sxs-lookup"><span data-stu-id="4990b-122">You must request a new buffer after calling `Advance` to continue writing more data; you cannot write to a previously acquired buffer.</span></span>
+         ]]></format>
+         </remarks>
       </Docs>
     </Member>
   </Members>
