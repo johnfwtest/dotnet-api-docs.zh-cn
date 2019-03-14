@@ -1,5 +1,5 @@
 <Type Name="BrotliStream" FullName="System.IO.Compression.BrotliStream">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="41cf7982f1ea6ea0717945a9ae5c2d9266b71816" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="36562062" /></Metadata><TypeSignature Language="C#" Value="public sealed class BrotliStream : System.IO.Stream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="356c7773b5d1750d20a77a0f5dc5033b172ec941" /><Meta Name="ms.sourcegitcommit" Value="c58096d6814a25766abaf19020c7831e5c59ffc9" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/08/2019" /><Meta Name="ms.locfileid" Value="57665904" /></Metadata><TypeSignature Language="C#" Value="public sealed class BrotliStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BrotliStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.IO.Compression.BrotliStream" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class BrotliStream&#xA;Inherits Stream" />
@@ -14,7 +14,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>To be added.</summary>
+    <summary>使用 Brotli 数据格式规范提供用于压缩和解压缩流的方法和属性。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -34,9 +34,9 @@
         <Parameter Name="compressionLevel" Type="System.IO.Compression.CompressionLevel" />
       </Parameters>
       <Docs>
-        <param name="stream">To be added.</param>
-        <param name="compressionLevel">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="stream">要压缩的流。</param>
+        <param name="compressionLevel">压缩流时，指示是否要强调速度或压缩效率的枚举值之一。</param>
+        <summary>用指定的流和压缩级别初始化 <see cref="T:System.IO.Compression.BrotliStream" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -56,9 +56,9 @@
         <Parameter Name="mode" Type="System.IO.Compression.CompressionMode" />
       </Parameters>
       <Docs>
-        <param name="stream">To be added.</param>
-        <param name="mode">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="stream">要压缩的流。</param>
+        <param name="mode">指示是要压缩还是解压缩流的枚举值之一。</param>
+        <summary>用指定的流和压缩模式初始化 <see cref="T:System.IO.Compression.BrotliStream" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,10 +79,10 @@
         <Parameter Name="leaveOpen" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="stream">To be added.</param>
-        <param name="compressionLevel">To be added.</param>
-        <param name="leaveOpen">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="stream">要压缩的流。</param>
+        <param name="compressionLevel">压缩流时，指示是否要强调速度或压缩效率的枚举值之一。</param>
+        <param name="leaveOpen">如果在释放 <see cref="T:System.IO.Compression.BrotliStream" /> 对象之后打开流，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <summary>使用指定的流和压缩级别，初始化 <see cref="T:System.IO.Compression.BrotliStream" /> 类的新实例，有选择性的打开流。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -103,10 +103,10 @@
         <Parameter Name="leaveOpen" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="stream">To be added.</param>
-        <param name="mode">To be added.</param>
+        <param name="stream">要压缩的流。</param>
+        <param name="mode">指示是要压缩还是解压缩流的枚举值之一。</param>
         <param name="leaveOpen">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>使用指定的流和压缩模式，初始化 <see cref="T:System.IO.Compression.BrotliStream" /> 类的新实例，有选择性的打开流。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +126,10 @@
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取对基础流的引用。</summary>
+        <value>表示基础流的流对象。</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">基础流已关闭。</exception>
       </Docs>
     </Member>
     <Member MemberName="BeginRead">
@@ -153,14 +154,19 @@
         <Parameter Name="asyncState" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="buffer">To be added.</param>
-        <param name="offset">To be added.</param>
-        <param name="count">To be added.</param>
-        <param name="asyncCallback">To be added.</param>
-        <param name="asyncState">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="buffer">要从中读取数据的缓冲区。</param>
+        <param name="offset"><paramref name="array" /> 中的字节偏移量，从该偏移量开始读取流中的数据。</param>
+        <param name="count">要读取的最大字节数。</param>
+        <param name="asyncCallback">可选的异步回调，在完成读取操作时调用。</param>
+        <param name="asyncState">一个用户提供的对象，它将该特定的异步读取请求与其他请求区别开来。</param>
+        <summary>开始异步读操作。 （请考虑改用 <see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" /> 方法。）</summary>
+        <returns>表示异步读取操作（可能仍处于挂起状态）的对象。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.IOException">尝试异步读取超过了流的结尾，或者发生了磁盘错误。</exception>
+        <exception cref="T:System.ArgumentException">一个或多个自变量无效。</exception>
+        <exception cref="T:System.ObjectDisposedException">在流关闭后调用方法。</exception>
+        <exception cref="T:System.NotSupportedException">当前 <see cref="T:System.IO.Compression.BrotliStream" /> 实现不支持读取操作。</exception>
+        <exception cref="T:System.InvalidOperationException">无法完成此调用。</exception>
       </Docs>
     </Member>
     <Member MemberName="BeginWrite">
@@ -185,14 +191,19 @@
         <Parameter Name="asyncState" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="buffer">To be added.</param>
-        <param name="offset">To be added.</param>
-        <param name="count">To be added.</param>
-        <param name="asyncCallback">To be added.</param>
-        <param name="asyncState">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="buffer">要向其中写入数据的缓冲区。</param>
+        <param name="offset"><paramref name="array" /> 中的字节偏移量，从该偏移量开始写入从流中读取的数据。</param>
+        <param name="count">最多写入的字节数。</param>
+        <param name="asyncCallback">可选的异步回调，在完成写入操作时调用。</param>
+        <param name="asyncState">一个用户提供的对象，它将该特定的异步写入请求与其他请求区别开来。</param>
+        <summary>开始异步写操作。 （请考虑改用 <see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" /> 方法。）</summary>
+        <returns>表示异步写入操作（可能仍处于挂起状态）的对象。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.IOException">尝试异步写入超过流的结尾的方法或发生错误的磁盘。</exception>
+        <exception cref="T:System.ArgumentException">一个或多个自变量无效。</exception>
+        <exception cref="T:System.ObjectDisposedException">在流关闭后调用方法。</exception>
+        <exception cref="T:System.NotSupportedException">当前 <see cref="T:System.IO.Compression.BrotliStream" /> 实现不支持写入操作。</exception>
+        <exception cref="T:System.InvalidOperationException">由于流已关闭，因此无法执行写入操作。</exception>
       </Docs>
     </Member>
     <Member MemberName="CanRead">
@@ -211,8 +222,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取一个值，该值指示流是否支持在解压缩文件的过程中读取文件。</summary>
+        <value>如果 <see cref="T:System.IO.Compression.CompressionMode" /> 值为 <see langword="Decompress," /> 而且基础流未关闭并支持读取，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -232,8 +243,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取一个值，该值指示流是否支持查找。</summary>
+        <value>在所有情况下均为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -253,8 +264,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取一个值，该值指示流是否支持写入。</summary>
+        <value>如果 <see cref="T:System.IO.Compression.CompressionMode" /> 值为 <see langword="Compress" /> 而且基础流未关闭并支持写入，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -277,8 +288,30 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">To be added.</param>
+        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <summary>释放由 <see cref="T:System.IO.Compression.BrotliStream" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask DisposeAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask DisposeAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.BrotliStream.DisposeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function DisposeAsync () As ValueTask" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::ValueTask DisposeAsync();" />
+      <MemberSignature Language="F#" Value="override this.DisposeAsync : unit -&gt; System.Threading.Tasks.ValueTask" Usage="brotliStream.DisposeAsync " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.Brotli</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
         <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -301,10 +334,13 @@
         <Parameter Name="asyncResult" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="asyncResult">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="asyncResult">对要完成的挂起异步请求的引用。</param>
+        <summary>等待挂起的异步读取完成。 （请考虑改用 <see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" /> 方法。）</summary>
+        <returns>从流中读取的字节数，介于 0（零）和你请求的字节数之间。 <see cref="T:System.IO.Compression.BrotliStream" /> 仅在流的末尾返回零 (0)；否则将一直阻塞，只到至少有一个字节可用。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="asyncResult" /> 不是源自当前流的 <see cref="M:System.IO.Compression.BrotliStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> 方法。</exception>
+        <exception cref="T:System.InvalidOperationException">由于流已关闭，因此无法执行结束操作。</exception>
       </Docs>
     </Member>
     <Member MemberName="EndWrite">
@@ -326,9 +362,10 @@
         <Parameter Name="asyncResult" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="asyncResult">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="asyncResult">表示异步调用的对象。</param>
+        <summary>处理异步写入操作的结束。 （请考虑改用 <see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" /> 方法。）</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基础流已关闭或 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Flush">
@@ -348,7 +385,31 @@
       </ReturnValue>
       <Parameters />
       <Docs>
+        <summary>此方法的当前实现没有任何功能。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.BrotliStream.FlushAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ FlushAsync(System::Threading::CancellationToken cancellationToken);" />
+      <MemberSignature Language="F#" Value="override this.FlushAsync : System.Threading.CancellationToken -&gt; System.Threading.Tasks.Task" Usage="brotliStream.FlushAsync cancellationToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.Brotli</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">To be added.</param>
         <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -368,9 +429,10 @@
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>此属性不受支持，并且总是引发 <see cref="T:System.NotSupportedException" />。</summary>
+        <value>一个长值。</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">此流中不支持此属性。</exception>
       </Docs>
     </Member>
     <Member MemberName="Position">
@@ -389,8 +451,34 @@
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
+        <summary>此属性不受支持，并且总是引发 <see cref="T:System.NotSupportedException" />。</summary>
+        <value>一个长值。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">此流中不支持此属性。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (Span&lt;byte&gt; buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(valuetype System.Span`1&lt;unsigned int8&gt; buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.BrotliStream.Read(System.Span{System.Byte})" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read (buffer As Span(Of Byte)) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Read(Span&lt;System::Byte&gt; buffer);" />
+      <MemberSignature Language="F#" Value="override this.Read : Span&lt;byte&gt; -&gt; int" Usage="brotliStream.Read buffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.Brotli</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
         <summary>To be added.</summary>
-        <value>To be added.</value>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -415,9 +503,40 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
+        <param name="buffer">用于存储解压缩字节的数组。</param>
+        <param name="offset"><paramref name="buffer" /> 中的字节偏移量，将在此处放置读取的字节。</param>
+        <param name="count">最多要读取的解压缩字节数。</param>
+        <summary>将若干解压缩的字节读入指定的字节数组。</summary>
+        <returns>解压缩到字节数组中的字节数。 如果已到达流的末尾，则返回 0 或已读取的字节数。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">创建对象时，<see cref="T:System.IO.Compression.CompressionMode" /> 值为 <see langword="Compress" />，或者此流上已存在活动的异步操作。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 或 <paramref name="count" /> 小于零。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="buffer" /> 长度减去索引起始点小于 <paramref name="count" />。</exception>
+        <exception cref="T:System.IO.InvalidDataException">数据的格式无效。</exception>
+        <exception cref="T:System.ObjectDisposedException">基础流为 NULL 或已关闭。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask&lt;int&gt; ReadAsync (Memory&lt;byte&gt; buffer, System.Threading.CancellationToken cancellationToken = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask`1&lt;int32&gt; ReadAsync(valuetype System.Memory`1&lt;unsigned int8&gt; buffer, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.BrotliStream.ReadAsync(System.Memory{System.Byte},System.Threading.CancellationToken)" />
+      <MemberSignature Language="F#" Value="override this.ReadAsync : Memory&lt;byte&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask&lt;int&gt;" Usage="brotliStream.ReadAsync (buffer, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.Brotli</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Memory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
         <param name="buffer">To be added.</param>
-        <param name="offset">To be added.</param>
-        <param name="count">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
@@ -473,11 +592,12 @@
         <Parameter Name="origin" Type="System.IO.SeekOrigin" />
       </Parameters>
       <Docs>
-        <param name="offset">To be added.</param>
-        <param name="origin">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="offset">流中的位置。</param>
+        <param name="origin"><see cref="T:System.IO.SeekOrigin" /> 值之一。</param>
+        <summary>此属性不受支持，并且总是引发 <see cref="T:System.NotSupportedException" />。</summary>
+        <returns>一个长值。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">此流中不支持此属性。</exception>
       </Docs>
     </Member>
     <Member MemberName="SetLength">
@@ -499,7 +619,31 @@
         <Parameter Name="value" Type="System.Int64" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
+        <param name="value">流的长度。</param>
+        <summary>此属性不受支持，并且总是引发 <see cref="T:System.NotSupportedException" />。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (ReadOnlySpan&lt;byte&gt; buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.BrotliStream.Write(System.ReadOnlySpan{System.Byte})" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (buffer As ReadOnlySpan(Of Byte))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(ReadOnlySpan&lt;System::Byte&gt; buffer);" />
+      <MemberSignature Language="F#" Value="override this.Write : ReadOnlySpan&lt;byte&gt; -&gt; unit" Usage="brotliStream.Write buffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.Brotli</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -525,10 +669,36 @@
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
+        <param name="buffer">包含要压缩的数据的缓冲区。</param>
+        <param name="offset"><paramref name="array" /> 中的字节偏移量，将在此处读取字节。</param>
+        <param name="count">最多写入的字节数。</param>
+        <summary>从指定的字节数组中将压缩的字节写入基础流。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">由于流已关闭，因此无法执行写入操作。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.ValueTask WriteAsync (ReadOnlyMemory&lt;byte&gt; buffer, System.Threading.CancellationToken cancellationToken = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Threading.Tasks.ValueTask WriteAsync(valuetype System.ReadOnlyMemory`1&lt;unsigned int8&gt; buffer, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.BrotliStream.WriteAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)" />
+      <MemberSignature Language="F#" Value="override this.WriteAsync : ReadOnlyMemory&lt;byte&gt; * System.Threading.CancellationToken -&gt; System.Threading.Tasks.ValueTask" Usage="brotliStream.WriteAsync (buffer, cancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.Brotli</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.ValueTask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ReadOnlyMemory&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
         <param name="buffer">To be added.</param>
-        <param name="offset">To be added.</param>
-        <param name="count">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
         <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
