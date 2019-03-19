@@ -1,5 +1,5 @@
 <Type Name="CommandLineBuilder" FullName="Microsoft.Build.Utilities.CommandLineBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a603b956f755b3371675eb89333aa6cb85bff1fc" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39980634" /></Metadata><TypeSignature Language="C#" Value="public class CommandLineBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cbb70e6f5389d7a194b7b91a813a4e3223466e7a" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57951131" /></Metadata><TypeSignature Language="C#" Value="public class CommandLineBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommandLineBuilder extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.CommandLineBuilder" />
   <TypeSignature Language="VB.NET" Value="Public Class CommandLineBuilder" />
@@ -97,7 +97,7 @@
         <AssemblyVersion>3.5.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="quoteHyphensOnCommandLine" Type="System.Boolean" />
+        <Parameter Name="quoteHyphensOnCommandLine" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="quoteHyphensOnCommandLine">如果为 true，连字符应该用引号括起来。</param>
@@ -152,7 +152,7 @@
         <Parameter Name="fileItem" Type="Microsoft.Build.Framework.ITaskItem" />
       </Parameters>
       <Docs>
-        <param name="fileItem">要追加到命令行的任务项规范。 如果为 <see langword="null" />，则此方法不起作用。</param>
+        <param name="fileItem">要追加到命令行后面的任务项规范。 如果为 <see langword="null" />，则此方法不起作用。</param>
         <summary>在命令行的后面追加指定的 <see cref="T:Microsoft.Build.Framework.ITaskItem" /> 对象的文件名。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -393,8 +393,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Text.StringBuilder" />
-        <Parameter Name="unquotedTextToAppend" Type="System.String" />
+        <Parameter Name="buffer" Type="System.Text.StringBuilder" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="unquotedTextToAppend" Type="System.String" Index="1" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="buffer">要追加到的缓冲区。</param>
@@ -428,7 +428,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将空间添加到指定字符串，前提是该字符串为非空。</summary>
+        <summary>向指定的字符串（在非空的情况下）添加一个空格。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1037,8 +1037,8 @@
         <Parameter Name="parameter" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="parameter">要检查是否存在需要使用引号的字符的字符串。</param>
-        <summary>确定指定的字符串参数是否应用引号括起来，因为它包含空格。</summary>
+        <param name="parameter">一个字符串，将检查其中是否有需要加上引号的字符。</param>
+        <summary>确定当指定的字符串参数包含空白时，是否应在该字符串参数的两侧加上引号。</summary>
         <returns>如果应在开关参数的两侧加上引号，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1089,7 +1089,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>以字符串形式返回命令行。</summary>
+        <summary>返回字符串形式的命令行。</summary>
         <returns>一个表示命令行的 <see cref="T:System.String" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1131,9 +1131,9 @@
         <Parameter Name="parameter" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="switchName">表示错误消息的开关名称的字符串。</param>
+        <param name="switchName">一个字符串，表示错误消息的开关名称。</param>
         <param name="parameter">一个字符串，表示用于扫描双引号的开关参数。</param>
-        <summary>如果命令行参数包含双引号 (") 字符，则返回错误。 因为在命令行参数中双引号是非法字符，此方法可帮助防止参数注入攻击。</summary>
+        <summary>如果命令行参数包含双引号 (") 字符，则会返回错误。 由于双引号在命令行参数中是非法字符，因而此方法有助于防止参数注入攻击。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

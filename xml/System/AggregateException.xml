@@ -1,5 +1,5 @@
 <Type Name="AggregateException" FullName="System.AggregateException">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9dc8d013519ec62dfc21ad32a54110aacaed3f1f" /><Meta Name="ms.sourcegitcommit" Value="d8bd5d494445ce3fcad1321267cb87548d23a45b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/15/2018" /><Meta Name="ms.locfileid" Value="53449601" /></Metadata><TypeSignature Language="C#" Value="public class AggregateException : Exception" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b7afa3b780e3c82824afcb69915f5841baa6f855" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57925430" /></Metadata><TypeSignature Language="C#" Value="public class AggregateException : Exception" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit AggregateException extends System.Exception" />
   <TypeSignature Language="DocId" Value="T:System.AggregateException" />
   <TypeSignature Language="VB.NET" Value="Public Class AggregateException&#xA;Inherits Exception" />
@@ -40,7 +40,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>表示在应用程序执行过程中发生的一个或多个错误。</summary>
+    <summary>表示在应用程序执行期间发生的一个或多个错误。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -185,7 +185,7 @@
       <Parameters>
         <Parameter Name="innerExceptions" Type="System.Exception[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -238,7 +238,7 @@
 ## Remarks  
  下表显示 <xref:System.AggregateException> 的实例的初始属性值。  
   
-|Property|值|  
+|Property|“值”|  
 |--------------|-----------|  
 |<xref:System.Exception.InnerException%2A>|`null`。|  
 |<xref:System.Exception.Message%2A>|`message` 中指定的错误消息字符串。|  
@@ -279,8 +279,8 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">承载序列化对象数据的对象。</param>
@@ -295,7 +295,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="info" /> 参数为 null。</exception>
-        <exception cref="T:System.Runtime.Serialization.SerializationException">无法正确反序列化异常。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">异常未能正确进行反序列化。</exception>
         <related type="Article" href="~/docs/standard/serialization/xml-and-soap-serialization.md">XML 和 SOAP 序列化</related>
       </Docs>
     </Member>
@@ -424,7 +424,7 @@
         <Parameter Name="message" Type="System.String" />
         <Parameter Name="innerExceptions" Type="System.Exception[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -471,8 +471,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将 <see cref="T:System.AggregateException" /> 实例平展到一个新实例。</summary>
-        <returns>一个新的平展后的 <see cref="T:System.AggregateException" />。</returns>
+        <summary>将 <see cref="T:System.AggregateException" /> 实例平展入单个新实例。</summary>
+        <returns>一个新的平展 <see cref="T:System.AggregateException" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -571,8 +571,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">承载序列化对象数据的对象。</param>

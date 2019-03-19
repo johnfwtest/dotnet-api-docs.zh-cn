@@ -1,5 +1,5 @@
 <Type Name="ObjectQuery&lt;T&gt;" FullName="System.Data.Objects.ObjectQuery&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8527b392b7347bbac99bcbc2e1d96eef4687848b" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53490578" /></Metadata><TypeSignature Language="C#" Value="public class ObjectQuery&lt;T&gt; : System.Data.Objects.ObjectQuery, System.Collections.Generic.IEnumerable&lt;T&gt;, System.ComponentModel.IListSource, System.Linq.IOrderedQueryable&lt;T&gt;, System.Linq.IQueryable&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="020d5a22af28a5020c9db9d5510fae6719d86487" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57919281" /></Metadata><TypeSignature Language="C#" Value="public class ObjectQuery&lt;T&gt; : System.Data.Objects.ObjectQuery, System.Collections.Generic.IEnumerable&lt;T&gt;, System.ComponentModel.IListSource, System.Linq.IOrderedQueryable&lt;T&gt;, System.Linq.IQueryable&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectQuery`1&lt;T&gt; extends System.Data.Objects.ObjectQuery implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable, class System.ComponentModel.IListSource, class System.Linq.IOrderedQueryable, class System.Linq.IOrderedQueryable`1&lt;!T&gt;, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectQuery`1" />
   <TypeSignature Language="VB.NET" Value="Public Class ObjectQuery(Of T)&#xA;Inherits ObjectQuery&#xA;Implements IEnumerable(Of T), IListSource, IOrderedQueryable(Of T), IQueryable(Of T)" />
@@ -114,8 +114,8 @@
       </Parameters>
       <Docs>
         <param name="commandText">[!INCLUDE[esql](~/includes/esql-md.md)] 查询。</param>
-        <param name="context">对其执行查询的 <see cref="T:System.Data.Objects.ObjectContext" />。</param>
-        <summary>以指定的 <see cref="T:System.Data.Objects.ObjectQuery`1" /> 命令为初始查询来创建新的 [!INCLUDE[esql](~/includes/esql-md.md)] 实例。</summary>
+        <param name="context">要对其执行查询的 <see cref="T:System.Data.Objects.ObjectContext" />。</param>
+        <summary>使用指定的 [!INCLUDE[esql](~/includes/esql-md.md)] 命令作为初始查询来创建新的 <see cref="T:System.Data.Objects.ObjectQuery`1" /> 实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -154,9 +154,9 @@
       </Parameters>
       <Docs>
         <param name="commandText">[!INCLUDE[esql](~/includes/esql-md.md)] 查询。</param>
-        <param name="context">对其执行查询的 <see cref="T:System.Data.Objects.ObjectContext" />。</param>
-        <param name="mergeOption">指定此查询所检索的实体应如何与以前对同一 <see cref="T:System.Data.Objects.ObjectContext" /> 的查询所返回的实体合并。</param>
-        <summary>使用指定的 <see cref="T:System.Data.Objects.ObjectQuery`1" /> 命令（作为初始查询）和指定的合并选项创建新的 [!INCLUDE[esql](~/includes/esql-md.md)] 实例。</summary>
+        <param name="context">要对其执行查询的 <see cref="T:System.Data.Objects.ObjectContext" />。</param>
+        <param name="mergeOption">指定如何将通过此查询检索到的实体与以前对同一 <see cref="T:System.Data.Objects.ObjectContext" /> 的查询所返回的实体合并。</param>
+        <summary>使用指定的 [!INCLUDE[esql](~/includes/esql-md.md)] 命令（作为初始查询）和指定的合并选项来创建新的 <see cref="T:System.Data.Objects.ObjectQuery`1" /> 实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -282,7 +282,7 @@
         <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
       </Parameters>
       <Docs>
-        <param name="mergeOption">要在执行查询时使用的 <see cref="T:System.Data.Objects.MergeOption" />。 默认值为 <see cref="F:System.Data.Objects.MergeOption.AppendOnly" />。</param>
+        <param name="mergeOption">执行查询时要使用的 <see cref="T:System.Data.Objects.MergeOption" />。 默认值为 <see cref="F:System.Data.Objects.MergeOption.AppendOnly" />。</param>
         <summary>使用指定的合并选项执行对象查询。</summary>
         <returns>一个 <see cref="T:System.Data.Objects.ObjectResult`1" />，它包含查询返回的实体对象的集合。</returns>
         <remarks>
@@ -325,7 +325,7 @@
         <Parameter Name="projection" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -387,7 +387,7 @@
         <Parameter Name="path" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="path">要在查询结果中返回的相关对象的列表（以点分隔）。</param>
+        <param name="path">要在查询结果中返回的相关对象列表（以点号分隔）。</param>
         <summary>指定要包括在查询结果中的相关对象。</summary>
         <returns>一个新的 <see cref="T:System.Data.Objects.ObjectQuery`1" />，它具有定义的查询路径。</returns>
         <remarks>
@@ -488,7 +488,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置此对象查询的名称。</summary>
-        <value>一个<see langword="string" />是此名称的值<see cref="T:System.Data.Objects.ObjectQuery`1" />。</value>
+        <value>一个 <see langword="string" /> 值，表示此 <see cref="T:System.Data.Objects.ObjectQuery`1" /> 的名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -509,7 +509,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">在集上指定的值无效。</exception>
+        <exception cref="T:System.ArgumentException">在设置时指定的值无效。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/ef/querying-a-conceptual-model.md">以对象形式查询数据（实体框架）</related>
       </Docs>
     </Member>
@@ -572,7 +572,7 @@
         <Parameter Name="keys" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -626,7 +626,7 @@
         <Parameter Name="projection" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -643,7 +643,7 @@
 ## Remarks  
  <xref:System.Data.Objects.ObjectQuery%601.Select%2A> 应用指定的映射`projection`参数。 <xref:System.Data.Objects.ObjectQuery%601> 方法返回的 <xref:System.Data.Objects.ObjectQuery%601.Select%2A> 始终为行类型 <xref:System.Data.Common.DbDataRecord>。 使用 <xref:System.Data.Objects.ObjectQuery`1.SelectValue*> 方法可返回简单类型、实体类型或复杂类型的值。 有关详细信息，请参阅[LINQ to Entities](~/docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)。  
   
- 当投影中包括导航属性时，查询结果包括嵌套的 <xref:System.Data.Common.DbDataRecord> 对象的集合。 有关更多信息，请参见[如何：使用导航属性导航关系](https://msdn.microsoft.com/library/b1d71c7d-16a7-4b46-96ac-690176bd5057)。  
+ 当投影中包括导航属性时，查询结果包括嵌套的 <xref:System.Data.Common.DbDataRecord> 对象的集合。 有关详细信息，请参阅[如何：使用导航属性导航关系](https://msdn.microsoft.com/library/b1d71c7d-16a7-4b46-96ac-690176bd5057)。  
   
    
   
@@ -686,7 +686,7 @@
         <Parameter Name="projection" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -745,7 +745,7 @@
         <Parameter Name="count" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -834,7 +834,7 @@
         <Parameter Name="count" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1017,7 +1017,7 @@ ObjectQuery <DiscontinuedProduct>.Union(ObjectQuery<Product>)
         <Parameter Name="predicate" Type="System.String" />
         <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="netframework-3.5">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>

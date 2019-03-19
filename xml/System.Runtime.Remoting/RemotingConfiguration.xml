@@ -1,5 +1,5 @@
 <Type Name="RemotingConfiguration" FullName="System.Runtime.Remoting.RemotingConfiguration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="65e829cb39450dacf934ceb5bca7b58bbb4074bc" /><Meta Name="ms.sourcegitcommit" Value="800d45fb80a298c4bde743e8a40af69755fc850f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/24/2019" /><Meta Name="ms.locfileid" Value="54895975" /></Metadata><TypeSignature Language="C#" Value="public static class RemotingConfiguration" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="deefaf2f933b29d49c7852bb64c8ddc63ff5ec85" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57915810" /></Metadata><TypeSignature Language="C#" Value="public static class RemotingConfiguration" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit RemotingConfiguration extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.RemotingConfiguration" />
   <TypeSignature Language="VB.NET" Value="Public Class RemotingConfiguration" />
@@ -203,8 +203,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filename" Type="System.String" />
-        <Parameter Name="ensureSecurity" Type="System.Boolean" />
+        <Parameter Name="filename" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ensureSecurity" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="filename">远程处理配置文件的名称。 可以为 <see langword="null" />。</param>
@@ -250,7 +250,7 @@
       </Parameters>
       <Docs>
         <param name="isLocalRequest"><see langword="true" /> 用于指定本地调用方，<see langword="false" /> 用于指定远程调用方。</param>
-        <summary>指示此应用程序域中的服务器信道是向本地或远程调用方返回经过筛选的异常信息，还是返回完整的异常信息。</summary>
+        <summary>指示该应用程序域中的服务器信道是将筛选过的异常信息返回给本地调用方或远程调用方，还是将完整的异常信息返回给本地调用方或远程调用方。</summary>
         <returns>如果只将筛选过的异常信息返回给本地调用方或远程调用方（具体返回给哪些调用方由 <paramref name="isLocalRequest" /> 参数指定），则为 <see langword="true" />；如果返回完整的异常信息，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -262,15 +262,15 @@
   
  下表显示三个服务器通道指定的调用方收到的异常信息和他们收到哪种类型的信息的属性值。  
   
-|值|描述|  
+|“值”|描述|  
 |-----------|-----------------|  
-|`off`|所有调用方均收到完整的异常信息。|  
-|`on`|所有调用方均收到筛选后的异常信息。|  
-|`remoteOnly`|本地调用方收到完整的异常信息，远程调用方收到筛选后的异常信息。|  
+|`off`|所有调用方均接收完整的异常信息。|  
+|`on`|所有调用方均接收筛选过的异常信息。|  
+|`remoteOnly`|本地调用方接收完整的异常信息，而远程调用方则接收筛选过的异常信息。|  
   
  下表显示的交互`isLocalRequest`参数和服务器信道属性。  
   
-|值|isLocalRequest|返回值|描述|  
+|“值”|isLocalRequest|返回值|描述|  
 |-----------|--------------------|------------------|-----------------|  
 |`on`|`true`|`true`|本地调用方均收到筛选后的异常信息。|  
 |`on`|`false`|`true`|远程调用方均收到筛选后的异常信息。|  
@@ -1240,7 +1240,7 @@
       <Docs>
         <param name="type">对象 <see cref="T:System.Type" />。</param>
         <param name="objectUri">对象 URI。</param>
-        <param name="mode">正在被注册的已知对象类型的激活方式。 （请参阅<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />。）</param>
+        <param name="mode">正在被注册的已知对象类型的激活方式。 （参见 <see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />。）</param>
         <summary>通过使用给定的参数初始化 <see cref="T:System.Type" /> 的新实例，将服务端上的对象 <see cref="T:System.Runtime.Remoting.WellKnownServiceTypeEntry" /> 注册为已知类型。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

@@ -1,5 +1,5 @@
 <Type Name="XNode" FullName="System.Xml.Linq.XNode">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b28966286bc00bb4e231cc113c0f9fadbbd9cd5c" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52608517" /></Metadata><TypeSignature Language="C#" Value="public abstract class XNode : System.Xml.Linq.XObject" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b0004b2c1efb3a5b321bf8700fb2c1538178e7f3" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57953068" /></Metadata><TypeSignature Language="C#" Value="public abstract class XNode : System.Xml.Linq.XObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XNode extends System.Xml.Linq.XObject" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XNode" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XNode&#xA;Inherits XObject" />
@@ -286,7 +286,7 @@ Console.WriteLine(xmlTree)
       <Parameters>
         <Parameter Name="content" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -607,7 +607,7 @@ Console.WriteLine(xmlTree)
       <Parameters>
         <Parameter Name="content" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -1227,12 +1227,12 @@ Console.WriteLine(newTree)
         <ReturnType>System.Xml.XmlReader</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="readerOptions" Type="System.Xml.Linq.ReaderOptions" />
+        <Parameter Name="readerOptions" Type="System.Xml.Linq.ReaderOptions" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="readerOptions">指定是否省略重复的命名空间的 <see cref="T:System.Xml.Linq.ReaderOptions" /> 对象。</param>
         <summary>使用 <paramref name="readerOptions" /> 参数指定的选项创建 <see cref="T:System.Xml.XmlReader" />。</summary>
-        <returns>一个 <see cref="T:System.Xml.XmlReader" /> 对象。</returns>
+        <returns><see cref="T:System.Xml.XmlReader" /> 对象。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2617,11 +2617,11 @@ NodeType: Element   Child1
   
  将传递给此方法的读取器可能会引发异常。 <xref:System.Xml.Linq.XNode.ReadFrom%2A> 不会捕获所有由读取器; 引发的异常未经处理的异常向上冒泡到调用的代码<xref:System.Xml.Linq.XNode.ReadFrom%2A>。 具体而言，你的代码应准备好处理<xref:System.Xml.XmlException>。  
   
- 有关如何流式处理更复杂的文档的示例，请参阅[如何： 处理可访问标头信息的 Stream XML 片段](https://msdn.microsoft.com/library/01311522-9d03-4977-8641-2932c6f56092)。  
+ 有关如何流式处理更复杂的文档的示例，请参阅[如何：Stream 处理可访问标头信息的 XML 片段](https://msdn.microsoft.com/library/01311522-9d03-4977-8641-2932c6f56092)。  
   
  某些标准查询运算符（如 <xref:System.Linq.Enumerable.OrderBy%2A>）可以循环访问其源、收集所有数据、对数据排序，最后生成序列中的第一项。 如果使用生成的第一项之前具体化源的查询运算符，则不会保持小内存需求量。  
   
- 有关使用的示例[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]若要保持小内存需求量的同时转换极大 XML 文档，请参阅[如何： 执行流式处理转换的大型 XML 文档](https://msdn.microsoft.com/library/0759e428-6e59-4d80-a506-365d3a6a2b73)。  
+ 有关使用的示例[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]若要保持小内存需求量的同时转换极大 XML 文档，请参阅[如何：执行大型 XML 文档的流式转换](https://msdn.microsoft.com/library/0759e428-6e59-4d80-a506-365d3a6a2b73)。  
   
 ## Examples
 
@@ -2670,8 +2670,8 @@ ccc
         <ReturnType>System.Threading.Tasks.Task&lt;System.Xml.Linq.XNode&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reader" Type="System.Xml.XmlReader" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="reader">To be added.</param>
@@ -2781,7 +2781,7 @@ Console.WriteLine(xmlTree)
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将此节点替换为指定的内容。</summary>
+        <summary>使用指定的内容替换此节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2877,7 +2877,7 @@ Console.WriteLine(xmlTree)
       </Parameters>
       <Docs>
         <param name="content">替换此节点时所用的内容。</param>
-        <summary>将此节点替换为指定的内容。</summary>
+        <summary>使用指定的内容替换此节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2978,7 +2978,7 @@ Console.WriteLine(xmlTree)
       <Parameters>
         <Parameter Name="content" Type="System.Object[]">
           <Attributes>
-            <Attribute>
+            <Attribute FrameworkAlternate="dotnet-uwp-10.0">
               <AttributeName>System.ParamArray</AttributeName>
             </Attribute>
           </Attributes>
@@ -2986,7 +2986,7 @@ Console.WriteLine(xmlTree)
       </Parameters>
       <Docs>
         <param name="content">新内容的参数列表。</param>
-        <summary>将此节点替换为指定的内容。</summary>
+        <summary>使用指定的内容替换此节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3268,7 +3268,7 @@ Console.WriteLine(root.ToString(SaveOptions.None))
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法可用于编写执行非常大的文档的流式转换代码。 有关详细信息，请参阅[如何： 执行流式处理转换的大型 XML 文档](https://msdn.microsoft.com/library/0759e428-6e59-4d80-a506-365d3a6a2b73)。  
+ 此方法可用于编写执行非常大的文档的流式转换代码。 有关详细信息，请参阅[如何：执行大型 XML 文档的流式转换](https://msdn.microsoft.com/library/0759e428-6e59-4d80-a506-365d3a6a2b73)。  
   
    
   
@@ -3358,8 +3358,8 @@ Console.WriteLine(sb.ToString())
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="writer">To be added.</param>
