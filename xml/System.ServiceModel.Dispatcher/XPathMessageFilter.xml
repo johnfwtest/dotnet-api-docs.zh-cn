@@ -1,5 +1,5 @@
 <Type Name="XPathMessageFilter" FullName="System.ServiceModel.Dispatcher.XPathMessageFilter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2aa3f904ce41b4c4abe9ba39b43daad1eb794c29" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55352804" /></Metadata><TypeSignature Language="C#" Value="public class XPathMessageFilter : System.ServiceModel.Dispatcher.MessageFilter, System.Xml.Serialization.IXmlSerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a6da480d389e504feea33f81f22c6e7412bad4b1" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57940094" /></Metadata><TypeSignature Language="C#" Value="public class XPathMessageFilter : System.ServiceModel.Dispatcher.MessageFilter, System.Xml.Serialization.IXmlSerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XPathMessageFilter extends System.ServiceModel.Dispatcher.MessageFilter implements class System.Xml.Serialization.IXmlSerializable" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />
   <TypeSignature Language="VB.NET" Value="Public Class XPathMessageFilter&#xA;Inherits MessageFilter&#xA;Implements IXmlSerializable" />
@@ -35,7 +35,8 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> 使用 XPath 表达式来确定 XML 文档是否包含特定元素、属性、文本或其他 XML 语法构造。 通常，应用程序在终结点使用 <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> 来查询 SOAP 消息的内容，然后基于该查询的结果采取适当的操作。 例如，排队过程可以使用 XPath 查询来检查已知标头的优先级元素，以决定是否将消息移动到队列的靠前位置。  
+ 
+  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> 使用 XPath 表达式来确定 XML 文档是否包含特定元素、属性、文本或其他 XML 语法构造。 通常，应用程序在终结点使用 <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> 来查询 SOAP 消息的内容，然后基于该查询的结果采取适当的操作。 例如，排队过程可以使用 XPath 查询来检查已知标头的优先级元素，以决定是否将消息移动到队列的靠前位置。  
   
  XML Path 语言 (XPath) 提供一种可用于寻找 XML 文档部件的语言。 XPath 中的主要语法构件是表达式，此表达式可定义如何遍历 XML 文档的逻辑结构以及如何寻找或标识 XPath 数据类型。 具体地说，XPath 实现评估针对 XML 文档结构地表达式，生成四种基本的 XPath 数据类型之一：字符串、数字、布尔值和节点集合。 XPath 实现还支持将 XPath 数据类型转换为字符串、数字、或布尔数据类型的功能。 如果某一方法要求这三个数据类型之一，则表达式评估的结果会被隐式转换。 注意：这三个数据类型不能转换为节点集类型。 XML Path 语言是完全中所述[W3C XML Path Language 1.0 规范](https://go.microsoft.com/fwlink/?LinkId=96179)。  
   
@@ -162,7 +163,7 @@
       </Parameters>
       <Docs>
         <param name="xpath">XPath 1.0 表达式。</param>
-        <param name="namespaces">一个可解析 <see cref="T:System.Xml.XmlNamespaceManager" /> 中任何命名空间前缀的 <paramref name="xpath" />。</param>
+        <param name="namespaces">一个可解析 <paramref name="xpath" /> 中任何命名空间前缀的 <see cref="T:System.Xml.XmlNamespaceManager" />。</param>
         <summary>使用指定的 XPath 表达式和命名空间管理器初始化 <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> 类的一个新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -196,7 +197,7 @@
       </Parameters>
       <Docs>
         <param name="reader">用于读取流式 XPath 表达式的 <see cref="T:System.Xml.XmlReader" />。</param>
-        <param name="namespaces">一个可解析来自 <see cref="T:System.Xml.XmlNamespaceManager" /> 的 XPath 表达式中的任何命名空间前缀的 <paramref name="reader" />。 它也可以是可定义自定义函数或变量的 <see cref="T:System.Xml.Xsl.XsltContext" />。</param>
+        <param name="namespaces">一个可解析来自 <paramref name="reader" /> 的 XPath 表达式中的任何命名空间前缀的 <see cref="T:System.Xml.XmlNamespaceManager" />。 它也可以是可定义自定义函数或变量的 <see cref="T:System.Xml.Xsl.XsltContext" />。</param>
         <summary>通过使用指定的 XML 读取器读取流式 XPath 以及使用指定的命名空间管理器来初始化 <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> 类的一个新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -224,10 +225,12 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; XPathMessageFilter(System::String ^ xpath, System::Xml::Xsl::XsltContext ^ context);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public XPathMessageFilter (string xpath, System.Xml.Xsl.XsltContext namespaces);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xpath, class System.Xml.Xsl.XsltContext namespaces) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.String,System.Xml.Xsl.XsltContext)" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.String,System.Xml.Xsl.XsltContext)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (xpath As String, namespaces As XsltContext)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; XPathMessageFilter(System::String ^ xpath, System::Xml::Xsl::XsltContext ^ namespaces);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="new System.ServiceModel.Dispatcher.XPathMessageFilter : string * System.Xml.Xsl.XsltContext -&gt; System.ServiceModel.Dispatcher.XPathMessageFilter" Usage="new System.ServiceModel.Dispatcher.XPathMessageFilter (xpath, namespaces)" />
+      <MemberSignature Language="F#" Value="new System.ServiceModel.Dispatcher.XPathMessageFilter : string * System.Xml.Xsl.XsltContext -&gt; System.ServiceModel.Dispatcher.XPathMessageFilter" Usage="new System.ServiceModel.Dispatcher.XPathMessageFilter (xpath, context)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.String,System.Xml.Xsl.XsltContext)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="new System.ServiceModel.Dispatcher.XPathMessageFilter : string * System.Xml.Xsl.XsltContext -&gt; System.ServiceModel.Dispatcher.XPathMessageFilter" Usage="new System.ServiceModel.Dispatcher.XPathMessageFilter (xpath, namespaces)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -236,13 +239,13 @@
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="xpath" Type="System.String" Index="0" />
-        <Parameter Name="context" Type="System.Xml.Xsl.XsltContext" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="context" Type="System.Xml.Xsl.XsltContext" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="namespaces" Type="System.Xml.Xsl.XsltContext" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="xpath">筛选器的 XPath 1.0 表达式。</param>
-        <param name="context">一个可解析 <see cref="T:System.Xml.Xsl.XsltContext" /> 中任何命名空间前缀、自定义函数或变量的 <paramref name="xpath" />。</param>
-        <param name="namespaces">一个可解析 <see cref="T:System.Xml.Xsl.XsltContext" /> 中任何命名空间前缀、自定义函数或变量的 <paramref name="xpath" />。</param>
+        <param name="context">一个可解析 <paramref name="xpath" /> 中任何命名空间前缀、自定义函数或变量的 <see cref="T:System.Xml.Xsl.XsltContext" />。</param>
+        <param name="namespaces">一个可解析 <paramref name="xpath" /> 中任何命名空间前缀、自定义函数或变量的 <see cref="T:System.Xml.Xsl.XsltContext" />。</param>
         <summary>使用指定的 XPath 表达式和 <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> 初始化 <see cref="T:System.Xml.Xsl.XsltContext" /> 类的一个新实例。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -254,10 +257,12 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; XPathMessageFilter(System::Xml::XmlReader ^ reader, System::Xml::Xsl::XsltContext ^ context);" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
       <MemberSignature Language="C#" Value="public XPathMessageFilter (System.Xml.XmlReader reader, System.Xml.Xsl.XsltContext namespaces);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader, class System.Xml.Xsl.XsltContext namespaces) cil managed" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.Xml.XmlReader,System.Xml.Xsl.XsltContext)" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.Xml.XmlReader,System.Xml.Xsl.XsltContext)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="VB.NET" Value="Public Sub New (reader As XmlReader, namespaces As XsltContext)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; XPathMessageFilter(System::Xml::XmlReader ^ reader, System::Xml::Xsl::XsltContext ^ namespaces);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="new System.ServiceModel.Dispatcher.XPathMessageFilter : System.Xml.XmlReader * System.Xml.Xsl.XsltContext -&gt; System.ServiceModel.Dispatcher.XPathMessageFilter" Usage="new System.ServiceModel.Dispatcher.XPathMessageFilter (reader, namespaces)" />
+      <MemberSignature Language="F#" Value="new System.ServiceModel.Dispatcher.XPathMessageFilter : System.Xml.XmlReader * System.Xml.Xsl.XsltContext -&gt; System.ServiceModel.Dispatcher.XPathMessageFilter" Usage="new System.ServiceModel.Dispatcher.XPathMessageFilter (reader, context)" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.Xml.XmlReader,System.Xml.Xsl.XsltContext)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="F#" Value="new System.ServiceModel.Dispatcher.XPathMessageFilter : System.Xml.XmlReader * System.Xml.Xsl.XsltContext -&gt; System.ServiceModel.Dispatcher.XPathMessageFilter" Usage="new System.ServiceModel.Dispatcher.XPathMessageFilter (reader, namespaces)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -266,13 +271,13 @@
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="reader" Type="System.Xml.XmlReader" Index="0" />
-        <Parameter Name="context" Type="System.Xml.Xsl.XsltContext" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.8" />
+        <Parameter Name="context" Type="System.Xml.Xsl.XsltContext" Index="1" FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
         <Parameter Name="namespaces" Type="System.Xml.Xsl.XsltContext" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="reader">用于读取流式 XPath 表达式的 <see cref="T:System.Xml.XmlReader" />。</param>
-        <param name="context">一个可解析来自 <see cref="T:System.Xml.Xsl.XsltContext" /> 的 XPath 表达式中的任何命名空间前缀、函数和变量的 <paramref name="reader" />。</param>
-        <param name="namespaces">一个可解析来自 <see cref="T:System.Xml.Xsl.XsltContext" /> 的 XPath 表达式中的任何命名空间前缀、函数和变量的 <paramref name="reader" />。</param>
+        <param name="context">一个可解析来自 <paramref name="reader" /> 的 XPath 表达式中的任何命名空间前缀、函数和变量的 <see cref="T:System.Xml.Xsl.XsltContext" />。</param>
+        <param name="namespaces">一个可解析来自 <paramref name="reader" /> 的 XPath 表达式中的任何命名空间前缀、函数和变量的 <see cref="T:System.Xml.Xsl.XsltContext" />。</param>
         <summary>通过使用指定的 XML 读取器读取流式 XPath 以及使用 <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> 解析命名空间、自定义函数和变量来初始化 <see cref="T:System.Xml.Xsl.XsltContext" /> 类的一个新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -435,7 +440,7 @@
       <Docs>
         <param name="navigator">提供要进行测试的数据的 <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />。</param>
         <summary>确定由指定的优化 XPath 导航器提供的 XML 文档是否满足 XPath 筛选器的查询条件。</summary>
-        <returns>如果 <see langword="true" /> 中的数据满足筛选条件，则为 <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" /> 中的数据满足筛选条件，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

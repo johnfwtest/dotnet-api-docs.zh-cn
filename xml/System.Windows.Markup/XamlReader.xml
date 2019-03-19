@@ -1,5 +1,5 @@
 <Type Name="XamlReader" FullName="System.Windows.Markup.XamlReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="eb09b92c85f6899f8f0386e85d5fda59b541d871" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39361136" /></Metadata><TypeSignature Language="C#" Value="public class XamlReader" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b22c826a543d05a1a2fac984e24ff64c3bfb8c40" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57939405" /></Metadata><TypeSignature Language="C#" Value="public class XamlReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlReader extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlReader" />
   <TypeSignature Language="VB.NET" Value="Public Class XamlReader" />
@@ -26,13 +26,13 @@
   
  <xref:System.Windows.Markup.XamlReader> 支持以下主要方案：  
   
--   **克隆对象工厂**： 如果没有其他机制，引用类型通常不能包含在 WPF 对象树中的多个位置中。 (提供对共享的支持或重复使用在 WPF 中的其他机制的示例包括基于的对象<xref:System.Windows.Freezable>，或如支持通常可共享的对象<xref:System.Windows.Media.Brush>中的项作为引用的<xref:System.Windows.ResourceDictionary>。)一种方法要克隆的对象已存在于对象树是序列化对象使用<xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>。 然后，使用序列化的字符串作为输入调用<xref:System.Windows.Markup.XamlReader.Load%2A>，并将流或<xref:System.Xml.XmlReader>作为中介。  
+-   **克隆对象工厂**:如果没有其他机制，引用类型通常不能包含在 WPF 对象树中的多个位置中。 (提供对共享的支持或重复使用在 WPF 中的其他机制的示例包括基于的对象<xref:System.Windows.Freezable>，或如支持通常可共享的对象<xref:System.Windows.Media.Brush>中的项作为引用的<xref:System.Windows.ResourceDictionary>。)一种方法要克隆的对象已存在于对象树是序列化对象使用<xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>。 然后，使用序列化的字符串作为输入调用<xref:System.Windows.Markup.XamlReader.Load%2A>，并将流或<xref:System.Xml.XmlReader>作为中介。  
   
--   **构造对象基于中实时信息**： 通常有其他方法来使用后期绑定或用户提供的输入来更改现有对象的状态。 例如可以使用相同的值来设置多个属性，或使用数据绑定。 如果有其中甚至要创建的对象类型或时，才可确定在运行时与用户交互的解决方案，然后创建此类对象通过构建为一个字符串，但<xref:System.Windows.Markup.XamlReader.Load%2A>输入通常是有用的技术。  
+-   **构造对象基于中实时信息**:通常，还有其他方法来使用后期绑定或用户提供的输入来更改现有对象的状态。 例如可以使用相同的值来设置多个属性，或使用数据绑定。 如果有其中甚至要创建的对象类型或时，才可确定在运行时与用户交互的解决方案，然后创建此类对象通过构建为一个字符串，但<xref:System.Windows.Markup.XamlReader.Load%2A>输入通常是有用的技术。  
   
 -   **使用现有资源技术**:<xref:System.IO.Stream>类型通常在中使用其他框架或技术用于跨应用程序边界传输数据或对象或类似的情况。 然后，可以使用<xref:System.IO.Stream>技术来存储或获取最终用来创建你的应用程序的一部分的对象的 XAML 格式的数据。  
   
--   **固定文档：** 你的应用程序可能会加载包含在 WPF 应用程序对象树和 UI 中的本地或下载的 XPS 文档。  
+-   **固定的文档：** 你的应用程序可能会加载包含在 WPF 应用程序对象树和 UI 中的本地或下载的 XPS 文档。  
   
 > [!NOTE]
 >  有时，此文档介绍了对象关系图，而不是对象树。 严格的父-子关系不始终存在运行的时 WPF 应用程序，在运行的时对象关系中，因此对象关系图是更广泛适用的术语。 但是，因为 WPF 还包括两个不同的树概念化 Api (<xref:System.Windows.LogicalTreeHelper>， <xref:System.Windows.Media.VisualTreeHelper>) 树来比喻仍充分地应用到 WPF 中的大多数实际情况下。 从 XAML 语言角度来看，对象图但通常最好考虑创建对象的方式从 XAML，由于 XAML 语言本身不一定是指定将关系的详细信息的帮助器类方法到再次树状结构。  
@@ -202,10 +202,10 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reader" Type="System.Xaml.XamlReader" />
+        <Parameter Name="reader" Type="System.Xaml.XamlReader" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="reader"><see cref="T:System.Xaml.XamlReader" /> 对象。 应使用输入 XAML 初始化此对象。</param>
+        <param name="reader">一个 <see cref="T:System.Xaml.XamlReader" /> 对象。 应使用输入 XAML 初始化此对象。</param>
         <summary>通过所提供的 <see cref="T:System.Xaml.XamlReader" /> 读取 XAML 输入，并返回作为相应对象树根的对象。</summary>
         <returns>已创建的对象树的根对象。</returns>
         <remarks>
@@ -284,7 +284,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="parserContext" /> 为 <see langword="null" />。</exception>
         <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>

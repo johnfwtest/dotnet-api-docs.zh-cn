@@ -1,5 +1,5 @@
 <Type Name="DSACryptoServiceProvider" FullName="System.Security.Cryptography.DSACryptoServiceProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b30de4b1fb9d353262d6226fe045d11b467fb789" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52601419" /></Metadata><TypeSignature Language="C#" Value="public sealed class DSACryptoServiceProvider : System.Security.Cryptography.DSA, System.Security.Cryptography.ICspAsymmetricAlgorithm" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="426c8e49e3f261f5eaf3b5618cab5b282ec0e7e5" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57963767" /></Metadata><TypeSignature Language="C#" Value="public sealed class DSACryptoServiceProvider : System.Security.Cryptography.DSA, System.Security.Cryptography.ICspAsymmetricAlgorithm" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DSACryptoServiceProvider extends System.Security.Cryptography.DSA implements class System.Security.Cryptography.ICspAsymmetricAlgorithm" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.DSACryptoServiceProvider" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DSACryptoServiceProvider&#xA;Inherits DSA&#xA;Implements ICspAsymmetricAlgorithm" />
@@ -205,8 +205,8 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.Security.Cryptography.CryptographicException">无法获取 CSP。  
   
-或 
-无法创建密钥。</exception>
+- 或 - 
+不能创建密钥。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dwKeySize" /> 超出范围。</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">表示调用非托管的代码的能力。 关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
@@ -387,10 +387,10 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="includePrivateParameters" Type="System.Boolean" />
+        <Parameter Name="includePrivateParameters" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="includePrivateParameters">若包括私钥，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="includePrivateParameters">要包括私钥，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>导出包含与 <see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" /> 对象关联的密钥信息的 Blob。</summary>
         <returns>一个字节数组，包含与 <see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" /> 对象关联的密钥信息。</returns>
         <remarks>
@@ -445,7 +445,7 @@
         <summary>导出 <see cref="T:System.Security.Cryptography.DSAParameters" />。</summary>
         <returns><see cref="T:System.Security.Cryptography.DSA" /> 的参数。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Security.Cryptography.CryptographicException">密钥无法导出。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">不能导出该密钥。</exception>
         <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">若要导出密钥的权限。 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。 关联的枚举： <see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Export" /></permission>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
@@ -503,8 +503,8 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="data" Type="System.IO.Stream" />
-        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+        <Parameter Name="data" Type="System.IO.Stream" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="data">To be added.</param>
@@ -538,10 +538,10 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="data" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="count" Type="System.Int32" />
-        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+        <Parameter Name="data" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="data">To be added.</param>
@@ -591,7 +591,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="keyBlob" Type="System.Byte[]" />
+        <Parameter Name="keyBlob" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="keyBlob">一个表示 DSA 密钥 Blob 的字节数组。</param>
@@ -649,8 +649,8 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。  
   
-或 
-<paramref name="parameters" /> 参数具有丢失字段。</exception>
+- 或 - 
+<paramref name="parameters" /> 参数具有缺少的字段。</exception>
         <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">若要导入密钥的权限。 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。 关联的枚举： <see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Import" /></permission>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
@@ -812,8 +812,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否应在加密服务提供程序 (CSP) 中保留此密钥。</summary>
-        <value>如果应在 CSP 中保留此密钥，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示密钥是否应保留在加密服务提供程序 (CSP) 中。</summary>
+        <value>如果密钥应保留在 CSP 中，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -824,7 +824,7 @@
         </remarks>
         <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntry">若要删除某一项的权限。 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。 关联的枚举： <see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Delete" />  
   
-或 
+- 或 - 
 若要创建密钥的权限。 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。 关联的枚举： <see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Create" /></permission>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
@@ -864,8 +864,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示 <see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" /> 对象是否仅包含公钥。</summary>
-        <value>如果 <see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" /> 对象仅包含公钥，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示 <see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" /> 对象是否仅包含一个公钥。</summary>
+        <value>如果 <see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" /> 对象仅包含一个公钥，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1117,8 +1117,8 @@
       </Parameters>
       <Docs>
         <param name="rgbHash">待签名数据的哈希值。</param>
-        <param name="str">用于创建数据哈希值的哈希算法的名称。</param>
-        <summary>计算指定的哈希值的签名，方法是将其与私钥一起加密。</summary>
+        <param name="str">用于创建数据的哈希值的哈希算法名称。</param>
+        <summary>通过用私钥对其进行加密来计算指定哈希值的签名。</summary>
         <returns>指定哈希值的 <see cref="T:System.Security.Cryptography.DSA" /> 签名。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1133,8 +1133,8 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="rgbHash" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。  
   
-或 
-不存在私钥。</exception>
+- 或 - 
+没有私钥。</exception>
         <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">若要使用密钥给文件签名的权限。 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。 关联的枚举： <see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Sign" /></permission>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
@@ -1167,8 +1167,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否应在计算机的密钥存储而不是用户配置文件存储中保留密钥。</summary>
-        <value>如果应在计算机密钥存储中保留密钥，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示密钥是否应保留在计算机的密钥存储中（而不是保留在用户配置文件存储中）。</summary>
+        <value>如果密钥应保留在计算机的密钥存储中，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1283,7 +1283,7 @@
       </Parameters>
       <Docs>
         <param name="rgbHash">待签名数据的哈希值。</param>
-        <param name="str">用于创建数据哈希值的哈希算法的名称。</param>
+        <param name="str">用于创建数据的哈希值的哈希算法名称。</param>
         <param name="rgbSignature">要验证的签名数据。</param>
         <summary>通过将指定的签名数据与为指定哈希值计算的签名进行比较来验证指定的签名数据。</summary>
         <returns>如果签名验证为有效，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
@@ -1299,12 +1299,12 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="rgbHash" /> 参数为 <see langword="null" />。  
   
-或 
+- 或 - 
 <paramref name="rgbSignature" /> 参数为 <see langword="null" />。</exception>
         <exception cref="T:System.Security.Cryptography.CryptographicException">无法获取加密服务提供程序 (CSP)。  
   
-或 
-无法验证签名。</exception>
+- 或 - 
+不能验证签名。</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
     </Member>

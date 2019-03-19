@@ -1,5 +1,5 @@
 <Type Name="DesignerSerializationManager" FullName="System.ComponentModel.Design.Serialization.DesignerSerializationManager">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="14688dd6cc92d5f40d50bf3a1da2f440b7d321eb" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53484039" /></Metadata><TypeSignature Language="C#" Value="public class DesignerSerializationManager : IServiceProvider, System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c1135a7ba5c032d6e04b80321f469ae2b78b18dd" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57923870" /></Metadata><TypeSignature Language="C#" Value="public class DesignerSerializationManager : IServiceProvider, System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerSerializationManager extends System.Object implements class System.ComponentModel.Design.Serialization.IDesignerSerializationManager, class System.IServiceProvider" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.DesignerSerializationManager" />
   <TypeSignature Language="VB.NET" Value="Public Class DesignerSerializationManager&#xA;Implements IDesignerSerializationManager, IServiceProvider" />
@@ -29,7 +29,8 @@
 ## Remarks  
  <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>接口旨在作为一个独立于格式的接口控制序列化的对象。 它实质上是对序列化程序，实际执行反序列化提供上下文和服务。 <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> 通过跟踪对象，可帮助在反序列化过程中。 这是在技术上与类似<xref:System.ComponentModel.Design.IDesignerHost>接口： 设计器实际上还提供用户界面 (UI) 和<xref:System.ComponentModel.Design.IDesignerHost>允许不同的设计器用于配合在一起。  
   
- <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> 类实现 <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>。 这为了提供类似于运行时序列化程序等的反序列化的泛型形式<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>。  
+ 
+  <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> 类实现 <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>。 这为了提供类似于运行时序列化程序等的反序列化的泛型形式<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>。  
   
  <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager>类可实现三个目标：  
   
@@ -187,7 +188,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置该序列化管理器的容器。</summary>
-        <value><see cref="T:System.ComponentModel.IContainer" />序列化管理器将向其添加组件。</value>
+        <value>序列化管理器将向其添加组件的 <see cref="T:System.ComponentModel.IContainer" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -296,7 +297,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取在序列化或反序列化期间发生的错误的列表。</summary>
-        <value>在序列化或反序列化期间发生错误的列表。</value>
+        <value>在序列化或反序列化期间发生的错误的列表。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -324,7 +325,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="typeName">要获取的类型的名称。</param>
@@ -398,7 +399,7 @@
       </Parameters>
       <Docs>
         <param name="serviceType">要检索的服务类型。</param>
-        <summary>获取请求的服务。</summary>
+        <summary>获取所请求的服务。</summary>
         <returns>所请求的服务，或者在无法解析服务的情况下为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -581,7 +582,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，指示 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 方法是否应该检查容器中是否存在给定名称。</summary>
-        <value><see langword="true" /> 如果<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />将传递给定的组件名称;<see langword="false" />如果<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />将检查是否存在给定名称的容器中。 默认值为 <see langword="true" />。</value>
+        <value>如果 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 将传递给定组件名称，则为 <see langword="true" />。如果 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 将检查容器中是否存在给定名称，则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -620,7 +621,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取应该用于为序列化管理器的 <see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" /> 属性提供属性的对象。</summary>
-        <value>应该用于向序列化管理器提供属性的对象<see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" />属性。</value>
+        <value>应该用于为序列化管理器的 <see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" /> 属性提供属性的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -656,7 +657,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 是否始终创建类型的新实例。</summary>
-        <value><see langword="true" /> 如果<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />将返回现有实例，则<see langword="false" />如果<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />将创建一种类型的新实例。 默认值为 <see langword="false" />。</value>
+        <value>如果 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 将返回现有实例，则为 <see langword="true" />。如果 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 将创建类型的新实例，则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -771,7 +772,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取该序列化会话的上下文堆栈。</summary>
-        <value>一个<see cref="T:System.ComponentModel.Design.Serialization.ContextStack" />用于存储数据。</value>
+        <value>存储数据的 <see cref="T:System.ComponentModel.Design.Serialization.ContextStack" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -840,7 +841,7 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">要检索的对象的名称。</param>
+        <param name="name">要检索的对象名。</param>
         <summary>检索具有指定名称的创建对象的实例。</summary>
         <returns>具有给定名称的对象的实例，如果按该名称无法找到任何对象则为 <see langword="null" />。</returns>
         <remarks>To be added.</remarks>
@@ -976,7 +977,7 @@
       </ReturnValue>
       <Docs>
         <summary>实现 <see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" /> 属性。</summary>
-        <value>一个<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />包含要进行序列化的属性。</value>
+        <value>包含要进行序列化的属性的 <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1198,12 +1199,12 @@
         <returns><paramref name="serviceType" /> 类型的服务对象。  
   
 - 或 - 
- 如果没有类型为 <paramref name="serviceType" /> 的服务对象，则为 <see langword="null" />。</returns>
+ 如果没有 <paramref name="serviceType" /> 类型的服务对象，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式接口成员的实现。 它只能在 <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> 实例被强制转换为 <xref:System.IServiceProvider> 接口时使用。  
+ 此成员是显式的接口成员实现。 它只能在 <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> 实例强制转换为 <xref:System.IServiceProvider> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1232,7 +1233,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 方法是否验证匹配的名称表示同一类型。</summary>
-        <value><see langword="true" /> 如果<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />验证类型; 否则为<see langword="false" />如果不是。 默认值为 <see langword="true" />。</value>
+        <value>如果 <see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> 验证类型，则为 <see langword="true" />；否则，如果不验证类型，则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

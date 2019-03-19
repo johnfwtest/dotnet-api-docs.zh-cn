@@ -1,5 +1,5 @@
 <Type Name="OracleLob" FullName="System.Data.OracleClient.OracleLob">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9b2639e239210ebe728a40503f974e5c84411b76" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52740618" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleLob : System.IO.Stream, ICloneable, System.Data.SqlTypes.INullable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="1e3fa0d1d1bce58bddabb9c68dbe61e2b76fb7d1" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57933308" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleLob : System.IO.Stream, ICloneable, System.Data.SqlTypes.INullable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleLob extends System.IO.Stream implements class System.Data.SqlTypes.INullable, class System.ICloneable, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleLob" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OracleLob&#xA;Inherits Stream&#xA;Implements ICloneable, INullable" />
@@ -184,7 +184,7 @@ connection.Close
 ## Remarks  
  此时将打开`LOB`中<xref:System.Data.OracleClient.OracleLobOpenMode.ReadOnly>模式; 因此，`LOB`只能读取，不会写入，到相应的调用直到<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>。 若要执行批处理写入`LOB`，调用<xref:System.Data.OracleClient.OracleLob.BeginBatch%2A>与<xref:System.Data.OracleClient.OracleLobOpenMode.ReadWrite>。  
   
- 调用<xref:System.Data.OracleClient.OracleLob.BeginBatch%2A>不止一次在同一事务中的当前引发 Oracle"ORA 22293: LOB 已在同一事务中打开"错误。 此外，如果您获得`LOB`使用另一个<xref:System.Data.OracleClient.OracleDataReader>，且不会调用原始调用方具有<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>生成方法，同样的错误。 因此，您必须调用<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>方法完成后使用<xref:System.Data.OracleClient.OracleLob>。  
+ 调用<xref:System.Data.OracleClient.OracleLob.BeginBatch%2A>不止一次在同一事务中的当前引发 Oracle"ORA 22293:LOB 已在同一事务中打开"时出错。 此外，如果您获得`LOB`使用另一个<xref:System.Data.OracleClient.OracleDataReader>，且不会调用原始调用方具有<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>生成方法，同样的错误。 因此，您必须调用<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>方法完成后使用<xref:System.Data.OracleClient.OracleLob>。  
   
  ]]></format>
         </remarks>
@@ -222,7 +222,7 @@ connection.Close
 ## Remarks  
  要写入到`LOB`，必须在检索`LOB`using FOR UPDATE 子句中的 SQL SELECT 语句，并且您必须有启动的本地事务。  
   
- 调用<xref:System.Data.OracleClient.OracleLob.BeginBatch%2A>不止一次在同一事务中的当前引发 Oracle"ORA 22293: LOB 已在同一事务中打开"错误。 此外，如果您获得`LOB`使用另一个<xref:System.Data.OracleClient.OracleDataReader>，且不会调用原始调用方具有<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>生成方法，同样的错误。 因此，您必须调用<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>方法完成后使用<xref:System.Data.OracleClient.OracleLob>。  
+ 调用<xref:System.Data.OracleClient.OracleLob.BeginBatch%2A>不止一次在同一事务中的当前引发 Oracle"ORA 22293:LOB 已在同一事务中打开"时出错。 此外，如果您获得`LOB`使用另一个<xref:System.Data.OracleClient.OracleDataReader>，且不会调用原始调用方具有<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>生成方法，同样的错误。 因此，您必须调用<xref:System.Data.OracleClient.OracleLob.EndBatch%2A>方法完成后使用<xref:System.Data.OracleClient.OracleLob>。  
   
  ]]></format>
         </remarks>
@@ -522,10 +522,10 @@ connection.Close
         <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 参数中指定的 <see cref="T:System.Data.OracleClient.OracleLob" /> 为 null。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="destinationOffset" /> 参数中指定的值小于零，或大于 4 GB。  
   
-或 
+- 或 - 
 <paramref name="destinationOffset" /> 参数中为 <see langword="CLOB" /> 或 <see langword="NCLOB" /> 数据类型指定的值不是偶数。  
   
-或 
+- 或 - 
 必须将 <see langword="CLOB" /> 和 <see langword="NCLOB" /> 数据类型指定为偶数字节数。</exception>
         <exception cref="T:System.InvalidOperationException">该操作未处在事务中，<see cref="T:System.Data.OracleClient.OracleLob" /> 对象为 null，或者连接已关闭。</exception>
         <exception cref="T:System.Data.OracleClient.OracleException">发生了 Oracle 错误。</exception>
@@ -581,7 +581,7 @@ connection.Close
         <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 参数中指定的 <see cref="T:System.Data.OracleClient.OracleLob" /> 为 null。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="amount" />、<paramref name="sourceOffset" /> 或 <paramref name="destinationOffset" /> 参数中指定的值小于零，或大于 4 GB。  
   
-或 
+- 或 - 
 在 <paramref name="amount" />、<paramref name="sourceOffset" /> 或 <paramref name="destinationOffset" /> 参数中为 <see langword="CLOB" /> 或 <see langword="NCLOB" /> 数据类型指定的值不是偶数。</exception>
         <exception cref="T:System.InvalidOperationException">该操作未处在事务中，<see cref="T:System.Data.OracleClient.OracleLob" /> 对象为 null，或者连接已关闭。</exception>
         <exception cref="T:System.Data.OracleClient.OracleException">发生了 Oracle 错误。</exception>
@@ -628,7 +628,7 @@ connection.Close
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="disposing" Type="System.Boolean" />
+        <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="disposing">To be added.</param>
@@ -1151,10 +1151,10 @@ If(myLob == OracleLob.Null)
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为空引用（在 Visual Basic 中为 <see langword="Nothing" />）。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 或 <paramref name="count" /> 参数中的值为非正。  
   
-或 
+- 或 - 
 offset 参数与 count 参数之和大于 buffer 的长度。  
   
-或 
+- 或 - 
 <paramref name="amount" /> 或 <paramref name="offset" /> 参数中指定的值小于零，或大于 4 GB。</exception>
         <exception cref="T:System.InvalidOperationException">该操作未处在事务中，<see cref="T:System.Data.OracleClient.OracleLob" /> 对象为 null，或者连接已关闭。</exception>
         <exception cref="T:System.ObjectDisposedException">对象已关闭或已释放。</exception>
@@ -1230,7 +1230,7 @@ offset 参数与 count 参数之和大于 buffer 的长度。
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 尝试增加的长度<xref:System.Data.OracleClient.OracleLob>流失败，并返回"消息： ORA 22926： 指定剪裁长度大于当前 LOB 值的长度"Oracle 服务器。  
+ 尝试增加的长度<xref:System.Data.OracleClient.OracleLob>流失败，并返回"消息：ORA 22926： 指定剪裁长度大于当前 LOB 值的长度"Oracle 服务器。  
   
  流必须支持写入和查找有关<xref:System.Data.OracleClient.OracleLob.SetLength%2A>函数。  
   
@@ -1245,7 +1245,7 @@ offset 参数与 count 参数之和大于 buffer 的长度。
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" /> 参数中为 <see langword="CLOB" /> 或 <see langword="NCLOB" /> 数据类型指定的值不是偶数。  
   
-或 
+- 或 - 
 <paramref name="value" /> 参数中指定的值小于零，或大于 4 GB。</exception>
         <exception cref="T:System.InvalidOperationException">该操作未处在事务中，<see cref="T:System.Data.OracleClient.OracleLob" /> 对象为 null，或者连接已关闭。</exception>
         <exception cref="T:System.ObjectDisposedException">对象已关闭或已释放。</exception>
@@ -1380,13 +1380,13 @@ public static void WriteLobExample(OracleCommand command)
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 参数为 null 引用（在 Visual Basic 中为 <see langword="Nothing" />）。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 或 <paramref name="count" /> 参数中的值为非正。  
   
-或 
+- 或 - 
 <paramref name="offset" /> 参数与 <paramref name="count" /> 参数之和大于 <paramref name="buffer" /> 的长度。  
   
-或 
+- 或 - 
 <paramref name="count" /> 或 <paramref name="offset" /> 参数中指定的值小于零，或大于 4 GB。  
   
-或 
+- 或 - 
 必须将 <see langword="CLOB" /> 和 <see langword="NCLOB" /> 数据类型指定为偶数字节数。</exception>
         <exception cref="T:System.InvalidOperationException">该操作未处在事务中，<see cref="T:System.Data.OracleClient.OracleLob" /> 对象为 null，或者连接已关闭。</exception>
         <exception cref="T:System.ObjectDisposedException">对象已关闭或已释放。</exception>
@@ -1410,7 +1410,7 @@ public static void WriteLobExample(OracleCommand command)
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Byte" />
+        <Parameter Name="value" Type="System.Byte" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="value">要写入流中的字节。</param>
