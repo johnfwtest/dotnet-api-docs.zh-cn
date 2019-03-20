@@ -1,5 +1,5 @@
 <Type Name="MembershipProvider" FullName="System.Web.Security.MembershipProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="18878f90a6575564e77d15cbbca57d9e65b4d5ab" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53510286" /></Metadata><TypeSignature Language="C#" Value="public abstract class MembershipProvider : System.Configuration.Provider.ProviderBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f75107478bf4eb1cf6163a416cb98763c639b542" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57959399" /></Metadata><TypeSignature Language="C#" Value="public abstract class MembershipProvider : System.Configuration.Provider.ProviderBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MembershipProvider extends System.Configuration.Provider.ProviderBase" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.MembershipProvider" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class MembershipProvider&#xA;Inherits ProviderBase" />
@@ -147,9 +147,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="oldPassword" Type="System.String" />
-        <Parameter Name="newPassword" Type="System.String" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="oldPassword" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="newPassword" Type="System.String" Index="2" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="username">要为其更新密码的用户。</param>
@@ -194,10 +194,10 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="password" Type="System.String" />
-        <Parameter Name="newPasswordQuestion" Type="System.String" />
-        <Parameter Name="newPasswordAnswer" Type="System.String" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="password" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="newPasswordQuestion" Type="System.String" Index="2" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="newPasswordAnswer" Type="System.String" Index="3" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="username">要为其更改密码提示问题和答案的用户。</param>
@@ -245,26 +245,26 @@
         <ReturnType>System.Web.Security.MembershipUser</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="password" Type="System.String" />
-        <Parameter Name="email" Type="System.String" />
-        <Parameter Name="passwordQuestion" Type="System.String" />
-        <Parameter Name="passwordAnswer" Type="System.String" />
-        <Parameter Name="isApproved" Type="System.Boolean" />
-        <Parameter Name="providerUserKey" Type="System.Object" />
-        <Parameter Name="status" Type="System.Web.Security.MembershipCreateStatus" RefType="out" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="password" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="email" Type="System.String" Index="2" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="passwordQuestion" Type="System.String" Index="3" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="passwordAnswer" Type="System.String" Index="4" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="isApproved" Type="System.Boolean" Index="5" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="providerUserKey" Type="System.Object" Index="6" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="status" Type="System.Web.Security.MembershipCreateStatus" RefType="out" Index="7" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="username">新用户的用户名。</param>
         <param name="password">新用户的密码。</param>
         <param name="email">新用户的电子邮件地址。</param>
         <param name="passwordQuestion">新用户的密码提示问题。</param>
-        <param name="passwordAnswer">新用户的密码提示回答。</param>
-        <param name="isApproved">是否批准对新的用户进行验证。</param>
-        <param name="providerUserKey">用户的成员资格数据源中的唯一标识符。</param>
-        <param name="status">一个 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值，该值表示是否已成功创建用户。</param>
+        <param name="passwordAnswer">新用户的密码提示问题答案。</param>
+        <param name="isApproved">是否允许验证新用户。</param>
+        <param name="providerUserKey">成员资格数据源中该用户的唯一标识符。</param>
+        <param name="status">一个 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值，指示是否已成功创建用户。</param>
         <summary>将新的成员资格用户添加到数据源。</summary>
-        <returns>一个 <see cref="T:System.Web.Security.MembershipUser" /> 对象，该对象使用新创建的用户的信息进行填充。</returns>
+        <returns>一个用新创建的用户的信息填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -304,12 +304,12 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="encodedPassword" Type="System.Byte[]" />
+        <Parameter Name="encodedPassword" Type="System.Byte[]" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="encodedPassword">包含要进行解密的加密密码的字节数组。</param>
-        <summary>对加密的密码进行解密。</summary>
-        <returns>包含加密密码的字节数组。</returns>
+        <param name="encodedPassword">一个字节数组，包含要解密的加密密码。</param>
+        <summary>解密已加密的密码。</summary>
+        <returns>包含已解密密码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -323,7 +323,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 <see langword="AutoGenerate" />。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 属性或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 <see langword="AutoGenerate" />。</exception>
         <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序以 [!INCLUDE[net_client_v40_long](~/includes/net-client-v40-long-md.md)] 为目标，则会发生这种情况。 若要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的完整版本。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582">实现成员资格提供程序</related>
         <related type="Article" href="https://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980(v=vs.100)">ASP.NET 成员资格简介</related>
@@ -349,14 +349,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="deleteAllRelatedData" Type="System.Boolean" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="deleteAllRelatedData" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="username">要删除的用户的名称。</param>
-        <param name="deleteAllRelatedData">如果要从数据库中删除与用户相关的数据，则为 <see langword="true" />；如果要在数据库中保留与用户相关的数据，则为 <see langword="false" />。</param>
-        <summary>从成员资格数据源中删除用户。</summary>
-        <returns>若已成功删除此用户，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="deleteAllRelatedData">如果为 <see langword="true" />，则从数据库中删除与该用户相关的数据；如果为 <see langword="false" />，则将与该用户相关的数据保留在数据库。</param>
+        <summary>从成员资格数据源删除一个用户。</summary>
+        <returns>如果用户被成功删除，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -394,7 +394,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>指示成员资格提供程序是否被配置为允许用户重置其密码。</summary>
+        <summary>指示成员资格提供程序是否配置为允许用户重置其密码。</summary>
         <value>如果成员资格提供程序支持密码重置，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -434,7 +434,7 @@
       </ReturnValue>
       <Docs>
         <summary>指示成员资格提供程序是否配置为允许用户检索其密码。</summary>
-        <value>如果成员资格提供程序配置为支持密码检索，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果成员资格提供程序配置为支持密码检索，则为 <see langword="true" />，否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -496,7 +496,7 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="password" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.Byte[]" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="password">包含要加密的密码的字节数组。</param>
@@ -515,7 +515,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 <see langword="AutoGenerate" />。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 属性或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 <see langword="AutoGenerate" />。</exception>
         <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序以 [!INCLUDE[net_client_v40_long](~/includes/net-client-v40-long-md.md)] 为目标，则会发生这种情况。 若要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的完整版本。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582">实现成员资格提供程序</related>
         <related type="Article" href="https://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980(v=vs.100)">ASP.NET 成员资格简介</related>
@@ -540,8 +540,8 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="password" Type="System.Byte[]" />
-        <Parameter Name="legacyPasswordCompatibilityMode" Type="System.Web.Configuration.MembershipPasswordCompatibilityMode" />
+        <Parameter Name="password" Type="System.Byte[]" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="legacyPasswordCompatibilityMode" Type="System.Web.Configuration.MembershipPasswordCompatibilityMode" Index="1" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="password">包含要加密的密码的字节数组。</param>
@@ -549,7 +549,7 @@
         <summary>使用指定的密码兼容性模式对指定密码进行加密。</summary>
         <returns>包含已加密的密码的字节数组。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 <see langword="AutoGenerate" />。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">将 <see cref="P:System.Web.Configuration.MachineKeySection.ValidationKey" /> 属性或 <see cref="P:System.Web.Configuration.MachineKeySection.DecryptionKey" /> 属性设置为 <see langword="AutoGenerate" />。</exception>
         <exception cref="T:System.PlatformNotSupportedException">此方法不可用。 如果应用程序以 [!INCLUDE[net_client_v40_long](~/includes/net-client-v40-long-md.md)] 为目标，则会发生这种情况。 若要避免此异常，请重写该方法，或将应用程序更改为面向 .NET Framework 的完整版本。</exception>
       </Docs>
     </Member>
@@ -573,10 +573,10 @@
         <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="emailToMatch" Type="System.String" />
-        <Parameter Name="pageIndex" Type="System.Int32" />
-        <Parameter Name="pageSize" Type="System.Int32" />
-        <Parameter Name="totalRecords" Type="System.Int32" RefType="out" />
+        <Parameter Name="emailToMatch" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="pageIndex" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="pageSize" Type="System.Int32" Index="2" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="totalRecords" Type="System.Int32" RefType="out" Index="3" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="emailToMatch">要搜索的电子邮件地址。</param>
@@ -624,17 +624,17 @@
         <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="usernameToMatch" Type="System.String" />
-        <Parameter Name="pageIndex" Type="System.Int32" />
-        <Parameter Name="pageSize" Type="System.Int32" />
-        <Parameter Name="totalRecords" Type="System.Int32" RefType="out" />
+        <Parameter Name="usernameToMatch" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="pageIndex" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="pageSize" Type="System.Int32" Index="2" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="totalRecords" Type="System.Int32" RefType="out" Index="3" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="usernameToMatch">要搜索的用户名。</param>
         <param name="pageIndex">要返回的结果页的索引。 <paramref name="pageIndex" /> 从零开始。</param>
         <param name="pageSize">要返回的结果页的大小。</param>
         <param name="totalRecords">匹配用户的总数。</param>
-        <summary>获取成员资格用户的集合，其中用户名包含要匹配的指定用户名。</summary>
+        <summary>获取一个成员资格用户的集合，其中的用户名包含要匹配的指定用户名。</summary>
         <returns>包含一页 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 对象的 <see cref="T:System.Web.Security.MembershipUserCollection" /> 集合，这些对象从 <paramref name="pageIndex" /> 指定的页开始。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -675,15 +675,15 @@
         <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="pageIndex" Type="System.Int32" />
-        <Parameter Name="pageSize" Type="System.Int32" />
-        <Parameter Name="totalRecords" Type="System.Int32" RefType="out" />
+        <Parameter Name="pageIndex" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="pageSize" Type="System.Int32" Index="1" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="totalRecords" Type="System.Int32" RefType="out" Index="2" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="pageIndex">要返回的结果页的索引。 <paramref name="pageIndex" /> 从零开始。</param>
         <param name="pageSize">要返回的结果页的大小。</param>
         <param name="totalRecords">匹配用户的总数。</param>
-        <summary>获取数据页中数据源的所有用户的集合。</summary>
+        <summary>获取数据源中的所有用户的集合，并显示在数据页中。</summary>
         <returns>包含一页 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 对象的 <see cref="T:System.Web.Security.MembershipUserCollection" /> 集合，这些对象从 <paramref name="pageIndex" /> 指定的页开始。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -725,8 +725,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取当前正在访问应用程序的用户数。</summary>
-        <returns>当前正在访问应用程序的用户数。</returns>
+        <summary>获取当前访问该应用程序的用户数。</summary>
+        <returns>当前访问该应用程序的用户数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -764,11 +764,11 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="answer" Type="System.String" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="answer" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="username">要为其检索密码的用户。</param>
+        <param name="username">为其检索密码的用户。</param>
         <param name="answer">用户的密码提示问题答案。</param>
         <summary>从数据源获取指定用户名所对应的密码。</summary>
         <returns>指定用户名所对应的密码。</returns>
@@ -826,14 +826,14 @@
         <ReturnType>System.Web.Security.MembershipUser</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="providerUserKey" Type="System.Object" />
-        <Parameter Name="userIsOnline" Type="System.Boolean" />
+        <Parameter Name="providerUserKey" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="providerUserKey">要获取其信息的成员资格用户的唯一标识符。</param>
-        <param name="userIsOnline">如果更新用户的上一次活动日期/时间戳，则为 <see langword="true" />；如果返回用户信息而未更新用户的上一次活动日期/时间戳，则为 <see langword="false" />。</param>
-        <summary>根据成员资格用户的唯一标识符从数据源中获取用户信息。 提供一个选项用于更新用户的上一次活动日期/时间戳。</summary>
-        <returns>使用来自数据源的指定用户信息进行填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
+        <param name="userIsOnline">如果为 <see langword="true" />，则更新用户最近一次活动的日期/时间戳；如果为 <see langword="false" />，则返回用户信息，但不更新用户最近一次活动的日期/时间戳。</param>
+        <summary>根据成员资格用户的唯一标识符从数据源获取用户信息。 提供一个更新用户最近一次活动的日期/时间戳的选项。</summary>
+        <returns>用数据源中指定用户的信息填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -871,14 +871,14 @@
         <ReturnType>System.Web.Security.MembershipUser</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="userIsOnline" Type="System.Boolean" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="username">要为其获取信息的用户的名称。</param>
-        <param name="userIsOnline">如果更新用户的上一次活动日期/时间戳，则为 <see langword="true" />；如果返回用户信息而未更新用户的上一次活动日期/时间戳，则为 <see langword="false" />。</param>
-        <summary>从数据源为用户获取信息。 提供一个选项用于更新用户的上一次活动日期/时间戳。</summary>
-        <returns>使用来自数据源的指定用户信息进行填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
+        <param name="username">要获取其信息的用户名。</param>
+        <param name="userIsOnline">如果为 <see langword="true" />，则更新用户最近一次活动的日期/时间戳；如果为 <see langword="false" />，则返回用户信息，但不更新用户最近一次活动的日期/时间戳。</param>
+        <summary>从数据源获取用户的信息。 提供一个更新用户最近一次活动的日期/时间戳的选项。</summary>
+        <returns>用数据源中指定用户的信息填充的 <see cref="T:System.Web.Security.MembershipUser" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -916,12 +916,12 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="email" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="email">要搜索的电子邮件地址。</param>
         <summary>获取与指定电子邮件地址关联的用户名。</summary>
-        <returns>与指定电子邮件地址关联的用户名。 如果不找到任何匹配项，则返回 <see langword="null" />。</returns>
+        <returns>与指定电子邮件地址关联的用户名。 如果未找到匹配项，则返回 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -963,8 +963,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在锁定成员资格用户之前允许的无效密码或密码答案尝试次数。</summary>
-        <value>锁定成员资格用户之前允许的无效密码或密码答案尝试次数。</value>
+        <summary>获取锁定成员资格用户前允许的无效密码或无效密码提示问题答案尝试次数。</summary>
+        <value>锁定成员资格用户之前允许的无效密码或无效密码提示问题答案尝试次数。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1070,8 +1070,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取密码所需的最小长度。</summary>
-        <value>密码所需的最小长度。</value>
+        <summary>获取密码所要求的最小长度。</summary>
+        <value>密码所要求的最小长度。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1125,10 +1125,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="e" Type="System.Web.Security.ValidatePasswordEventArgs" />
+        <Parameter Name="e" Type="System.Web.Security.ValidatePasswordEventArgs" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="e">要传递给 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件处理程序的 <see cref="T:System.Web.Security.ValidatePasswordEventArgs" />。</param>
+        <param name="e">传递给 <see cref="T:System.Web.Security.ValidatePasswordEventArgs" /> 事件处理程序的 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" />。</param>
         <summary>如果定义了事件处理程序，则引发 <see cref="E:System.Web.Security.MembershipProvider.ValidatingPassword" /> 事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1396,13 +1396,13 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="answer" Type="System.String" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="answer" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="username">要为其重置密码的用户。</param>
+        <param name="username">为其重置密码的用户。</param>
         <param name="answer">指定的用户的密码提示问题答案。</param>
-        <summary>将用户密码重置为自动生成的新密码。</summary>
+        <summary>将用户密码重置为一个自动生成的新密码。</summary>
         <returns>指定的用户的新密码。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1450,12 +1450,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="userName">要清除其锁定状态的成员资格用户。</param>
-        <summary>清除锁定，以便验证成员资格用户。</summary>
-        <returns>如果成功解除成员资格用户的锁定，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>清除锁定，以便可以验证该成员资格用户。</summary>
+        <returns>如果成功取消成员资格用户的锁定，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1493,7 +1493,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="user" Type="System.Web.Security.MembershipUser" />
+        <Parameter Name="user" Type="System.Web.Security.MembershipUser" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="user">一个 <see cref="T:System.Web.Security.MembershipUser" /> 对象，表示要更新的用户及其更新信息。</param>
@@ -1535,8 +1535,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="username" Type="System.String" />
-        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="username" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="password" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="username">要验证的用户的名称。</param>
@@ -1582,7 +1582,7 @@
         <ReturnType>System.Web.Security.MembershipValidatePasswordEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在创建了用户、更改了密码或重置了密码时发生。</summary>
+        <summary>在创建用户、更改密码或重置密码时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
