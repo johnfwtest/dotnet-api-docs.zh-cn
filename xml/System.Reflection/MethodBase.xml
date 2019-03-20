@@ -1,5 +1,5 @@
 <Type Name="MethodBase" FullName="System.Reflection.MethodBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fec97ffc49df15f75e0a6d63b400a473181fc09d" /><Meta Name="ms.sourcegitcommit" Value="0e1f030650a307c745ee84ed547ef858acaea587" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/29/2018" /><Meta Name="ms.locfileid" Value="52602095" /></Metadata><TypeSignature Language="C#" Value="public abstract class MethodBase : System.Reflection.MemberInfo, System.Runtime.InteropServices._MethodBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ecd2f74956892406bf8baa3f481d29611cf68570" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57933555" /></Metadata><TypeSignature Language="C#" Value="public abstract class MethodBase : System.Reflection.MemberInfo, System.Runtime.InteropServices._MethodBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit MethodBase extends System.Reflection.MemberInfo implements class System.Runtime.InteropServices._MethodBase" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.MethodBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class MethodBase&#xA;Inherits MemberInfo&#xA;Implements _MethodBase" />
@@ -161,7 +161,7 @@
   
  PrivateScope  
   
- 族和程序集  
+ FamANDAssem  
   
  系列  
   
@@ -309,7 +309,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">与此实例进行比较的对象，或为 <see langword="null" />。</param>
@@ -420,7 +420,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回 <see cref="T:System.Type" /> 对象的数组，这些对象表示泛型方法的类型自变量或泛型方法定义的类型参数。</summary>
+        <summary>返回 <see cref="T:System.Type" /> 对象的数组，这些对象表示泛型方法的类型实参或泛型方法定义的类型形参。</summary>
         <returns><see cref="T:System.Type" /> 对象的数组，这些对象表示泛型方法的类型变量或泛型方法定义的类型参数。 如果当前方法不是泛型方法，则返回空数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -661,8 +661,8 @@
         <ReturnType>System.Reflection.MethodBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="handle" Type="System.RuntimeMethodHandle" />
-        <Parameter Name="declaringType" Type="System.RuntimeTypeHandle" />
+        <Parameter Name="handle" Type="System.RuntimeMethodHandle" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="declaringType" Type="System.RuntimeTypeHandle" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="handle">构造函数或方法的内部元数据表示形式的句柄。</param>
@@ -932,15 +932,15 @@
   
  <paramref name="obj" /> 参数为 <see langword="null" />，且此方法不是静态方法。  
   
-或 
+- 或 - 
 该方法不由 <paramref name="obj" /> 的类声明或继承。  
   
-或 
+- 或 - 
 调用静态构造函数，<paramref name="obj" /> 既不是 <see langword="null" />，也不是声明构造函数的类的实例。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="parameters" /> 数组的元素与此实例反映的方法或构造函数的签名不匹配。</exception>
         <exception cref="T:System.Reflection.TargetInvocationException">调用的方法或构造函数引发异常。  
   
-或 
+- 或 - 
 当前实例是包含无法验证的代码的 <see cref="T:System.Reflection.Emit.DynamicMethod" />。 请参阅“验证”部分中的 <see cref="T:System.Reflection.Emit.DynamicMethod" /> 注释。</exception>
         <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="parameters" /> 数组的参数数量不正确。</exception>
         <exception cref="T:System.MethodAccessException"><block subset="none" type="note">
@@ -992,16 +992,16 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
-        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
-        <Parameter Name="binder" Type="System.Reflection.Binder" />
-        <Parameter Name="parameters" Type="System.Object[]" />
-        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="parameters" Type="System.Object[]" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="obj">在其上调用方法或构造函数的对象。 如果方法是静态的，则忽略此参数。 如果构造函数是静态的，则此参数必须是 <see langword="null" /> 或定义构造函数的类的实例。</param>
         <param name="invokeAttr">位屏蔽，它是 <see cref="T:System.Reflection.BindingFlags" /> 的 0 个或多个位标志的组合。 如果 <paramref name="binder" /> 为 <see langword="null" />，则此参数赋值为 <see cref="F:System.Reflection.BindingFlags.Default" />；因此，传入的任何值都被忽略。</param>
-        <param name="binder">一个对象，它启用绑定、对自变量类型的强制、对成员的调用，以及通过反射对 <see langword="MemberInfo" /> 对象的检索。 如果 <paramref name="binder" /> 为 <see langword="null" />，则使用默认联编程序。</param>
+        <param name="binder">一个对象，它启用绑定、对参数类型的强制、对成员的调用，以及通过反射对 <see langword="MemberInfo" /> 对象的检索。 如果 <paramref name="binder" /> 为 <see langword="null" />，则使用默认联编程序。</param>
         <param name="parameters">调用方法或构造函数的参数列表。 此对象数组在数量、顺序和类型方面与要调用的方法或构造函数的参数相同。 如果没有参数，则此应为 <see langword="null" />。  
   
 如果此实例表示的方法或构造函数采用 ByRef 参数，那么使用此函数调用该方法或构造函数时，对于该参数不需要特殊的特性。 此数组中未使用值显式初始化的任何对象都将包含该对象类型的默认值。 对于引用类型元素，此值为 <see langword="null" />。 对于值类型元素，此值为 0、0.0 或 <see langword="false" />，具体取决于特定的元素类型。</param>
@@ -1051,10 +1051,10 @@
         </remarks>
         <exception cref="T:System.Reflection.TargetException"><paramref name="obj" /> 参数为 <see langword="null" />，且此方法不是静态方法。  
   
-或 
+- 或 - 
 该方法不由 <paramref name="obj" /> 的类声明或继承。  
   
-或 
+- 或 - 
 调用静态构造函数，<paramref name="obj" /> 既不是 <see langword="null" />，也不是声明构造函数的类的实例。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="parameters" /> 参数的类型与此实例所反射的方法或构造函数的签名不匹配。</exception>
         <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="parameters" /> 数组的参数数量不正确。</exception>
@@ -2230,7 +2230,7 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       </ReturnValue>
       <Docs>
         <summary>获取方法的内部元数据表示形式的句柄。</summary>
-        <value><see cref="T:System.RuntimeMethodHandle" /> 对象。</value>
+        <value>一个 <see cref="T:System.RuntimeMethodHandle" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2314,8 +2314,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Reflection.MethodBase" />
-        <Parameter Name="right" Type="System.Reflection.MethodBase" />
+        <Parameter Name="left" Type="System.Reflection.MethodBase" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Reflection.MethodBase" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">要比较的第一个对象。</param>
@@ -2354,8 +2354,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Reflection.MethodBase" />
-        <Parameter Name="right" Type="System.Reflection.MethodBase" />
+        <Parameter Name="left" Type="System.Reflection.MethodBase" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Reflection.MethodBase" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">要比较的第一个对象。</param>
@@ -2395,11 +2395,11 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="riid" Type="System.Guid" RefType="ref" />
-        <Parameter Name="rgszNames" Type="System.IntPtr" />
-        <Parameter Name="cNames" Type="System.UInt32" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="rgDispId" Type="System.IntPtr" />
+        <Parameter Name="riid" Type="System.Guid" RefType="ref" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cNames" Type="System.UInt32" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
@@ -2449,8 +2449,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="M:System.Runtime.InteropServices._MethodBase.GetType" />。</summary>
-        <returns>有关此成员的说明，请参阅 <see cref="M:System.Runtime.InteropServices._MethodBase.GetType" />。</returns>
+        <summary>有关此成员的说明，请参见 <see cref="M:System.Runtime.InteropServices._MethodBase.GetType" />。</summary>
+        <returns>有关此成员的说明，请参见 <see cref="M:System.Runtime.InteropServices._MethodBase.GetType" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2491,9 +2491,9 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="iTInfo" Type="System.UInt32" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+        <Parameter Name="iTInfo" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="iTInfo">要返回的类型信息。</param>
@@ -2541,7 +2541,7 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="pcTInfo" Type="System.UInt32" RefType="out" />
+        <Parameter Name="pcTInfo" Type="System.UInt32" RefType="out" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="pcTInfo">指向一个位置，该位置接收对象提供的类型信息接口的数量。</param>
@@ -2587,24 +2587,24 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="dispIdMember" Type="System.UInt32" />
-        <Parameter Name="riid" Type="System.Guid" RefType="ref" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="wFlags" Type="System.Int16" />
-        <Parameter Name="pDispParams" Type="System.IntPtr" />
-        <Parameter Name="pVarResult" Type="System.IntPtr" />
-        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
-        <Parameter Name="puArgErr" Type="System.IntPtr" />
+        <Parameter Name="dispIdMember" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="riid" Type="System.Guid" RefType="ref" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="wFlags" Type="System.Int16" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" Index="6" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" Index="7" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="dispIdMember">标识成员。</param>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
-        <param name="lcid">要在其中解释参数的区域设置上下文。</param>
+        <param name="lcid">要在其中解释自变量的区域设置上下文。</param>
         <param name="wFlags">描述调用的上下文的标志。</param>
-        <param name="pDispParams">指向一个结构的指针，该结构包含一个自变量数组、一个命名自变量的 DISPID 自变量数组和数组中元素数的计数。</param>
+        <param name="pDispParams">指向一个结构的指针，该结构包含一个参数数组、一个命名参数的 DISPID 参数数组和数组中元素数的计数。</param>
         <param name="pVarResult">指向要存储结果的位置的指针。</param>
         <param name="pExcepInfo">指向一个包含异常信息的结构的指针。</param>
-        <param name="puArgErr">第一个出错自变量的索引。</param>
+        <param name="puArgErr">第一个出错参数的索引。</param>
         <summary>提供对某一对象公开的属性和方法的访问。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2647,8 +2647,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAbstract" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAbstract" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAbstract" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAbstract" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2689,8 +2689,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAssembly" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAssembly" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAssembly" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsAssembly" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2731,8 +2731,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsConstructor" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsConstructor" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsConstructor" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsConstructor" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2773,8 +2773,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamily" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamily" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamily" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamily" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2815,8 +2815,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2857,8 +2857,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2899,8 +2899,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFinal" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFinal" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFinal" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsFinal" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2941,8 +2941,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsHideBySig" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsHideBySig" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsHideBySig" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsHideBySig" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2983,8 +2983,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPrivate" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPrivate" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPrivate" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPrivate" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3025,8 +3025,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPublic" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPublic" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPublic" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsPublic" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3067,8 +3067,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsSpecialName" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsSpecialName" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsSpecialName" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsSpecialName" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3109,8 +3109,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsStatic" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsStatic" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsStatic" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsStatic" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3151,8 +3151,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsVirtual" />。</summary>
-        <value>有关此成员的说明，请参阅 <see cref="P:System.Runtime.InteropServices._MethodBase.IsVirtual" />。</value>
+        <summary>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsVirtual" />。</summary>
+        <value>有关此成员的说明，请参见 <see cref="P:System.Runtime.InteropServices._MethodBase.IsVirtual" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

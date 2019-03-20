@@ -1,5 +1,5 @@
 <Type Name="ScriptManager" FullName="System.Web.UI.ScriptManager">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a8ea56d54afc9f623a14493240aa369a28166afe" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55360833" /></Metadata><TypeSignature Language="C#" Value="public class ScriptManager : System.Web.UI.Control, System.Web.UI.IPostBackDataHandler, System.Web.UI.IPostBackEventHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ae997d3bdb19b9c463dc6854265ec7399b60179b" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57920115" /></Metadata><TypeSignature Language="C#" Value="public class ScriptManager : System.Web.UI.Control, System.Web.UI.IPostBackDataHandler, System.Web.UI.IPostBackEventHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ScriptManager extends System.Web.UI.Control implements class System.Web.UI.IPostBackDataHandler, class System.Web.UI.IPostBackEventHandler" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.ScriptManager" />
   <TypeSignature Language="VB.NET" Value="Public Class ScriptManager&#xA;Inherits Control&#xA;Implements IPostBackDataHandler, IPostBackEventHandler" />
@@ -48,7 +48,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>为 Web 和应用程序服务管理 ASP.NET Ajax 脚本库和脚本文件、局部页面呈现以及客户端代理类生成。</summary>
+    <summary>为 Web 和应用程序服务管理 ASP.NET Ajax 脚本库和脚本文件、部分页面呈现以及客户端代理类生成。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -151,8 +151,8 @@
 |方法|定义|  
 |------------|----------------|  
 |<xref:System.Web.UI.ScriptManager.RegisterAsyncPostBackControl%2A>|将控件注册为异步回发的触发器。|  
-|<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>|在局部页面呈现期间将自定义数据发送到多个控件。|  
-|<xref:System.Web.UI.ScriptManager.RegisterDispose%2A>|注册控件内部的释放脚本<xref:System.Web.UI.UpdatePanel>控件。 在更新或删除 <xref:System.Web.UI.UpdatePanel> 控件时会执行脚本。 Dispose 方法用于对客户端组件是 Microsoft Ajax 库的一部分，且必须在不再使用某个组件时释放资源。|  
+|<xref:System.Web.UI.ScriptManager.RegisterDataItem%2A>|在部分页面呈现期间将自定义数据发送到控件。|  
+|<xref:System.Web.UI.ScriptManager.RegisterDispose%2A>|注册控件内部的释放脚本<xref:System.Web.UI.UpdatePanel>控件。 在更新或删除 <xref:System.Web.UI.UpdatePanel> 控件时会执行该脚本。 Dispose 方法用于对客户端组件是 Microsoft Ajax 库的一部分，且必须在不再使用某个组件时释放资源。|  
 |<xref:System.Web.UI.ScriptManager.RegisterPostBackControl%2A>|将控件注册为完全回发的触发器。 此方法用于内部控件<xref:System.Web.UI.UpdatePanel>将执行异步回发的控件。|  
   
 <a name="web_service_references"></a>   
@@ -464,8 +464,8 @@
         <ReturnType>System.Reflection.Assembly</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取页上组件所使用的 Ajax framework 程序集。</summary>
-        <value>Ajax framework 程序集。</value>
+        <summary>获取页上的组件所使用的 Ajax framework 程序集。</summary>
+        <value>Ajax 框架程序集。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -686,8 +686,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取引发异步回发的控件的唯一 ID。</summary>
-        <value>如果控件具有 ID，则为它的唯一 ID；否则，为空字符串 ("")。</value>
+        <summary>获取导致此异步回发的控件的唯一 ID。</summary>
+        <value>如果控件具有 ID，则为该控件的唯一 ID；否则，为空字符串 ("")。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -944,7 +944,7 @@
       </ReturnValue>
       <Docs>
         <summary>确定当前页是否从 CDN（内容分发网络）路径加载客户端脚本引用。</summary>
-        <value>如果从 CDN 路径加载客户端脚本引用，则为 <see langword="true" />，否则为 <see langword="false" />。</value>
+        <value>若果从 CDN 路径加载客户端脚本引用，则为 <see langword="true" />，否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -980,7 +980,7 @@
       </ReturnValue>
       <Docs>
         <summary>在无法访问 CDN（内容分发网络）的情况下启动脚本本地副本加载。</summary>
-        <value>如果启用了回退 CDN 值，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value>如果启用回退 CDN 值，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1013,7 +1013,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示网页是否支持历史时间点管理。</summary>
-        <value>如果网页支持将历史时间点添加到浏览器的历史记录堆栈中，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value>如果网页支持在浏览器的历史记录堆栈中添加历史时间点，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1056,7 +1056,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示能否从客户端脚本调用 ASP.NET 页中公共静态页方法。</summary>
-        <value>如果可以从客户端脚本将 ASP.NET 页上的静态页方法作为 Web 方法调用，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果可以作为 Web 方法从客户端脚本调用 ASP.NET 页上的静态页方法，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1097,8 +1097,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个可部分呈现页面的值，该操作转而使你可以使用 <see cref="T:System.Web.UI.UpdatePanel" /> 控件来单独更新页面区域。</summary>
-        <value>如果启用了部分呈现且禁止了整页更新，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取或设置一个可部分呈现页面的值，以便使用 <see cref="T:System.Web.UI.UpdatePanel" /> 控件来单独更新页面区域。</summary>
+        <value>如果启用了部分呈现且完全页面更新被禁止，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1142,7 +1142,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示 <see cref="T:System.Web.UI.ScriptManager" /> 控件是否呈现支持分析和格式化区域性特定的信息的脚本。</summary>
+        <summary>获取或设置一个值，该值指示 <see cref="T:System.Web.UI.ScriptManager" /> 控件是否呈现支持分析区域性特定的信息并设置其格式的脚本。</summary>
         <value>如果可以显示区域性特定的信息，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1187,7 +1187,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示 <see cref="T:System.Web.UI.ScriptManager" /> 控件是否呈现脚本文件的本地化版本。</summary>
-        <value>如果将呈现本地化脚本文件，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <value>如果呈现本地化脚本文件，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1267,8 +1267,8 @@
       </Parameters>
       <Docs>
         <param name="page">要从中检索 <see cref="T:System.Web.UI.ScriptManager" /> 的页实例。</param>
-        <summary>获取给定 <see cref="T:System.Web.UI.Page" /> 对象的 <see cref="T:System.Web.UI.ScriptManager" /> 实例。</summary>
-        <returns>选定 <see cref="T:System.Web.UI.Page" /> 对象的当前 <see cref="T:System.Web.UI.ScriptManager" /> 实例；如果未定义实例，则为 <see langword="null" />。</returns>
+        <summary>获取给定 <see cref="T:System.Web.UI.ScriptManager" /> 对象的 <see cref="T:System.Web.UI.Page" /> 实例。</summary>
+        <returns>选定 <see cref="T:System.Web.UI.ScriptManager" /> 对象的当前 <see cref="T:System.Web.UI.Page" /> 实例；如果没有定义实例，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1556,8 +1556,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，它指示是否将呈现客户端脚本库的调试版本。</summary>
-        <value>如果要在调试模式下执行当前请求，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个指示是否呈现客户端脚本库的调试版本的值。</summary>
+        <value>如果在调试模式下执行当前请求，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1609,8 +1609,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否要在部分呈现模式下执行当前回发。</summary>
-        <value>如果要在部分呈现模式下执行当前回发，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个指示是否在部分呈现模式下执行当前回发的值。</summary>
+        <value>如果在部分呈现模式下执行当前回发，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1684,9 +1684,9 @@
       </Parameters>
       <Docs>
         <param name="postDataKey">控件的主要标识符。</param>
-        <param name="postCollection">所有传入的后期数据的集合。</param>
-        <summary>读取从浏览器发送到服务器的表单数据，并确定异步回发的源。</summary>
-        <returns>如果 <see cref="T:System.Web.UI.ScriptManager" /> 控件的状态已因回发而更改，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="postCollection">所有传入的发布数据的集合。</param>
+        <summary>读取从浏览器发送到服务器的窗体数据，并确定异步回发的来源。</summary>
+        <returns>如果 <see cref="T:System.Web.UI.ScriptManager" /> 控件的状态已因为回发而更改，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1729,7 +1729,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是在加载页 UI 的标记之前还是在之后加载脚本。</summary>
+        <summary>获取或设置一个值，该值指示是在加载页面 UI 的标记之前还是在之后加载脚本。</summary>
         <value>如果在加载 UI 标记前加载脚本，则为 <see langword="true" />；如果在加载 UI 标记后加载脚本，则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1802,7 +1802,7 @@
         <Parameter Name="e" Type="System.Web.UI.AsyncPostBackErrorEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">错误事件数据。</param>
+        <param name="e">该错误事件数据。</param>
         <summary>引发 <see cref="E:System.Web.UI.ScriptManager.AsyncPostBackError" /> 事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1933,7 +1933,7 @@
       </Parameters>
       <Docs>
         <param name="e">一个表示当前脚本的对象。</param>
-        <summary>为 <see cref="T:System.Web.UI.ScriptManager" /> 控件托管的每个脚本引用引发 <see cref="E:System.Web.UI.ScriptManager.ResolveScriptReference" /> 事件。</summary>
+        <summary>为 <see cref="E:System.Web.UI.ScriptManager.ResolveScriptReference" /> 控件所管理的每个脚本引用引发 <see cref="T:System.Web.UI.ScriptManager" /> 事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2033,8 +2033,8 @@
         <Parameter Name="eventArgument" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="eventArgument">表示网页历史记录状态的键/值对的字符串。</param>
-        <summary>处理由 <see cref="T:System.Web.UI.ScriptManager" /> 控件引发的回发事件，并加载网页的历史记录状态。</summary>
+        <param name="eventArgument">表示网页的历史记录状态的键/值对的字符串。</param>
+        <summary>通过 <see cref="T:System.Web.UI.ScriptManager" /> 控件引发的处理回发事件，并加载网页的历史记录状态。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2077,7 +2077,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个 ECMAScript (JavaScript) 数组声明以与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件一起使用，并将此数组添加到页面中。</summary>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个 ECMAScript (JavaScript) 数组声明，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件一起使用，并将该数组添加到页面中。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterArrayDeclaration">
@@ -2104,10 +2104,10 @@
         <Parameter Name="arrayValue" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册数组的控件。</param>
+        <param name="control">正在注册该数组的控件。</param>
         <param name="arrayName">要注册的数组的名称。</param>
-        <param name="arrayValue">要注册的一个或多个数组值。</param>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个 ECMAScript (JavaScript) 数组声明以与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件一起使用，并将此数组添加到页面中。</summary>
+        <param name="arrayValue">要注册的数组值。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个 ECMAScript (JavaScript) 数组声明，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件一起使用，并将该数组添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2151,8 +2151,8 @@
       <Docs>
         <param name="page">正在注册该数组的页对象。</param>
         <param name="arrayName">要注册的数组的名称。</param>
-        <param name="arrayValue">要注册的一个或多个数组值。</param>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个 ECMAScript (JavaScript) 数组声明以与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件一起使用，并将此数组添加到页面中。</summary>
+        <param name="arrayValue">要注册的数组值。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个 ECMAScript (JavaScript) 数组声明，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件一起使用，并将该数组添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2233,7 +2233,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本块以与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将该此脚本块添加到页面中。</summary>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本块，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将该脚本块添加到页面中。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterClientScriptBlock">
@@ -2262,12 +2262,12 @@
         <Parameter Name="addScriptTags" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册客户端脚本块的控件。</param>
-        <param name="type">客户端脚本块的类型。 通常使用 <see langword="typeof" /> 运算符 (C#) 或 <see langword="GetType" /> 运算符 (Visual Basic) 来指定此参数，以检索正在注册此脚本的控件的类型。</param>
-        <param name="key">脚本块的唯一标识符。</param>
+        <param name="control">正在注册该客户端脚本块的控件。</param>
+        <param name="type">该客户端脚本块的类型。 通常使用 <see langword="typeof" /> 运算符 (C#) 或 <see langword="GetType" /> 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本块的唯一标识符。</param>
         <param name="script">脚本。</param>
-        <param name="addScriptTags">如果要用 <see langword="&lt;script&gt;" /> 和 <see langword="&lt;/script&gt;" /> 标记括起脚本块，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本块以与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将该此脚本块添加到页面中。</summary>
+        <param name="addScriptTags">如果用 <see langword="true" /> 和 <see langword="&lt;script&gt;" /> 标记括起该脚本块，则为 <see langword="&lt;/script&gt;" />；否则为 <see langword="false" />。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本块，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将该脚本块添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2321,12 +2321,12 @@
         <Parameter Name="addScriptTags" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册客户端脚本块的页对象。</param>
-        <param name="type">客户端脚本块的类型。 通常使用 <see langword="typeof" /> 运算符 (C#) 或 <see langword="GetType" /> 运算符 (Visual Basic) 来指定此参数，以检索正在注册此脚本的控件的类型。</param>
-        <param name="key">脚本块的唯一标识符。</param>
+        <param name="page">正在注册该客户端脚本块的页对象。</param>
+        <param name="type">该客户端脚本块的类型。 通常使用 <see langword="typeof" /> 运算符 (C#) 或 <see langword="GetType" /> 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本块的唯一标识符。</param>
         <param name="script">要注册的脚本。</param>
-        <param name="addScriptTags">如果要用 <see langword="&lt;script&gt;" /> 和 <see langword="&lt;/script&gt;" /> 标记括起脚本块，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本块以与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将该此脚本块添加到页面中。</summary>
+        <param name="addScriptTags">如果用 <see langword="true" /> 和 <see langword="&lt;script&gt;" /> 标记括起该脚本块，则为 <see langword="&lt;/script&gt;" />；否则为 <see langword="false" />。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本块，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将该脚本块添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2378,10 +2378,10 @@
         <Parameter Name="url" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册客户端脚本文件的控件。</param>
-        <param name="type">客户端脚本文件的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="key">脚本文件的唯一标识符。</param>
-        <param name="url">脚本文件的 URL。</param>
+        <param name="control">正在注册该客户端脚本文件的控件。</param>
+        <param name="type">该客户端脚本文件的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本文件的唯一标识符。</param>
+        <param name="url">该脚本文件的 URL。</param>
         <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个客户端脚本文件，以便和 <see cref="T:System.Web.UI.UpdatePanel" /> 控件中的某个控件一起使用，然后将脚本文件引用添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2440,10 +2440,10 @@
         <Parameter Name="url" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册客户端脚本文件的页对象。</param>
-        <param name="type">客户端脚本文件的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="key">脚本文件的唯一标识符。</param>
-        <param name="url">脚本文件的 URL。</param>
+        <param name="page">正在注册该客户端脚本文件的页对象。</param>
+        <param name="type">该客户端脚本文件的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本文件的唯一标识符。</param>
+        <param name="url">该脚本文件的 URL。</param>
         <summary>每次发生异步回发时都向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册客户端脚本，然后将一个脚本文件引用添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2472,7 +2472,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与局部页面呈现的控件一起使用。</summary>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与部分页面呈现的控件一起使用。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterClientScriptResource">
@@ -2499,10 +2499,10 @@
         <Parameter Name="resourceName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册脚本的控件。</param>
-        <param name="type">客户端脚本的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="resourceName">资源的标识符。</param>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与局部页面呈现的控件一起使用。</summary>
+        <param name="control">正在注册该脚本的控件。</param>
+        <param name="type">该客户端脚本的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="resourceName">该资源的标识符。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与部分页面呈现的控件一起使用。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2547,9 +2547,9 @@
         <Parameter Name="resourceName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册脚本的页对象。</param>
-        <param name="type">客户端脚本的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="resourceName">资源的标识符。</param>
+        <param name="page">正在注册该脚本的页对象。</param>
+        <param name="type">该客户端脚本的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="resourceName">该资源的标识符。</param>
         <summary>每次发生回发时都向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本文件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2575,7 +2575,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在局部页面呈现期间将自定义数据发送到多个控件。</summary>
+        <summary>在部分页面呈现期间将自定义数据发送到控件。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterDataItem">
@@ -2603,9 +2603,9 @@
         <Parameter Name="dataItem" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">正在接收数据的控件。</param>
-        <param name="dataItem">发送到控件的数据。</param>
-        <summary>在局部页面呈现期间将自定义数据发送到某个控件。</summary>
+        <param name="control">正在接收该数据的控件。</param>
+        <param name="dataItem">发送到该控件的数据。</param>
+        <summary>在部分页面呈现期间将自定义数据发送到某个控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2656,10 +2656,10 @@
         <Parameter Name="isJsonSerialized" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="control">正在接收数据的页控件。</param>
-        <param name="dataItem">发送到控件的数据。</param>
-        <param name="isJsonSerialized">如果要将 <paramref name="dataItem" /> 序列化为 JSON，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>在局部页面呈现期间，将自定义数据发送到某个控件，并指示数据是否为 JavaScript 对象表示法 (JSON) 格式。</summary>
+        <param name="control">正在接收该数据的页面。</param>
+        <param name="dataItem">发送到该控件的数据。</param>
+        <param name="isJsonSerialized">如果 <paramref name="dataItem" /> 序列化为 JSON，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <summary>在部分页面呈现期间，将自定义数据发送到某个控件，并指指数据是否为 JavaScript 对象表示法 (JSON) 格式。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2714,9 +2714,9 @@
         <Parameter Name="disposeScript" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">使用 <see langword="dispose" /> 脚本的控件。</param>
+        <param name="control">使用该 <see langword="dispose" /> 脚本的控件。</param>
         <param name="disposeScript"><see langword="dispose" /> 脚本。</param>
-        <summary>为 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件注册一个 <see langword="dispose" /> 脚本。 在更新或删除 <see cref="T:System.Web.UI.UpdatePanel" /> 控件时会执行脚本。</summary>
+        <summary>为 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的某个控件注册一个 <see langword="dispose" /> 脚本。 在更新或删除 <see cref="T:System.Web.UI.UpdatePanel" /> 控件时会执行该脚本。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2768,8 +2768,8 @@
         <Parameter Name="encode" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册 expando 特性的控件。</param>
-        <param name="controlId">页中包含自定义特性的控件。</param>
+        <param name="control">正在注册该 expando 特性的控件。</param>
+        <param name="controlId">页中包含该自定义特性的控件。</param>
         <param name="attributeName">要注册的自定义特性的名称。</param>
         <param name="attributeValue">自定义特性的值。</param>
         <param name="encode">如果要编码正在注册的自定义特性，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
@@ -2840,7 +2840,7 @@
       <Docs>
         <typeparam name="TExtenderControl">实现 <see cref="T:System.Web.UI.IExtenderControl" /> 接口的控件。</typeparam>
         <param name="extenderControl">要注册的扩展程序控件。</param>
-        <param name="targetControl">扩展程序控件扩展的脚本控件。</param>
+        <param name="targetControl">该扩展程序控件扩展的脚本控件。</param>
         <summary>向当前 <see cref="T:System.Web.UI.ScriptManager" /> 实例注册扩展程序控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2891,10 +2891,10 @@
         <Parameter Name="hiddenFieldInitialValue" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册隐藏字段的控件。</param>
+        <param name="control">正在注册该隐藏字段的控件。</param>
         <param name="hiddenFieldName">要注册的隐藏字段的名称。</param>
         <param name="hiddenFieldInitialValue">隐藏字段的初始值。</param>
-        <summary>针对 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的控件，向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册隐藏字段。</summary>
+        <summary>针对 <see cref="T:System.Web.UI.ScriptManager" /> 控件内的控件，向 <see cref="T:System.Web.UI.UpdatePanel" /> 控件注册隐藏字段。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2936,7 +2936,7 @@
         <Parameter Name="hiddenFieldInitialValue" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册隐藏字段的页对象。</param>
+        <param name="page">正在注册该隐藏字段的页对象。</param>
         <param name="hiddenFieldName">要注册的隐藏字段的名称。</param>
         <param name="hiddenFieldInitialValue">隐藏字段的初始值。</param>
         <summary>在每次异步回发期间向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册隐藏字段。</summary>
@@ -2963,7 +2963,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>按资源名称向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与局部页面呈现的控件一起使用。</summary>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本（按资源名称），以便和正在参与部分页面呈现的控件一起使用。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterNamedClientScriptResource">
@@ -2981,13 +2981,13 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="control" Type="System.Web.UI.Control" />
-        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="control" Type="System.Web.UI.Control" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="resourceName" Type="System.String" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册脚本的控件。</param>
-        <param name="resourceName">资源的标识符。</param>
-        <summary>按资源名称向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与局部页面呈现的控件一起使用。</summary>
+        <param name="control">正在注册该脚本的控件。</param>
+        <param name="resourceName">该资源的标识符。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本（按资源名称），以便和正在参与部分页面呈现的控件一起使用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -3006,13 +3006,13 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="page" Type="System.Web.UI.Page" />
-        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="page" Type="System.Web.UI.Page" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="resourceName" Type="System.String" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册脚本的页对象。</param>
-        <param name="resourceName">资源的标识符。</param>
-        <summary>按资源名称向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本，以便和正在参与局部页面呈现的控件一起使用。</summary>
+        <param name="page">正在注册该脚本的页对象。</param>
+        <param name="resourceName">该资源的标识符。</param>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册嵌入程序集中的客户端脚本（按资源名称），以便和正在参与部分页面呈现的控件一起使用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -3022,7 +3022,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>注册在提交表单时执行的 ECMAScript (JavaScript) 代码。</summary>
+        <summary>注册在提交窗体时执行的 ECMAScript (JavaScript) 代码。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterOnSubmitStatement">
@@ -3050,11 +3050,11 @@
         <Parameter Name="script" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册 <see langword="onsubmit" /> 语句的控件。</param>
-        <param name="type">客户端脚本语句的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="key">脚本语句的唯一标识符。</param>
+        <param name="control">正在注册该 <see langword="onsubmit" /> 语句的控件。</param>
+        <param name="type">该客户端脚本语句的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本语句的唯一标识符。</param>
         <param name="script">要注册的脚本。</param>
-        <summary>针对与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件一起使用的控件，向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册提交表单时执行的 ECMAScript (JavaScript) 代码。</summary>
+        <summary>针对与 <see cref="T:System.Web.UI.ScriptManager" /> 控件一起使用的控件，向 <see cref="T:System.Web.UI.UpdatePanel" /> 控件注册将在提交窗体时执行的 ECMAScript (JavaScript) 代码。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3101,11 +3101,11 @@
         <Parameter Name="script" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册 <see langword="onsubmit" /> 语句的页对象。</param>
-        <param name="type">客户端脚本语句的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="key">脚本语句的唯一标识符。</param>
+        <param name="page">正在注册该 <see langword="onsubmit" /> 语句的页对象。</param>
+        <param name="type">该客户端脚本语句的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本语句的唯一标识符。</param>
         <param name="script">要注册的脚本。</param>
-        <summary>针对与 <see cref="T:System.Web.UI.UpdatePanel" /> 控件一起使用的控件，向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册提交表单时执行的 ECMAScript (JavaScript) 代码。</summary>
+        <summary>针对与 <see cref="T:System.Web.UI.ScriptManager" /> 控件一起使用的控件，向 <see cref="T:System.Web.UI.UpdatePanel" /> 控件注册将在提交窗体时执行的 ECMAScript (JavaScript) 代码。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3152,7 +3152,7 @@
       </Parameters>
       <Docs>
         <param name="control">要为回发注册的控件。</param>
-        <summary>将控件注册为回发的触发器。 此方法用于配置 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内的回发控件，若未配置，此控件将执行异步回发。</summary>
+        <summary>将控件注册为回发的触发器。 该方法用于配置 <see cref="T:System.Web.UI.UpdatePanel" /> 控件内以其他方式执行异步回发的回发控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3304,7 +3304,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个启动脚本块并将此脚本块添加到页面中。</summary>
+        <summary>向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个启动脚本块并将该脚本块添加到页面中。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="RegisterStartupScript">
@@ -3333,12 +3333,12 @@
         <Parameter Name="addScriptTags" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="control">正在注册客户端脚本块的控件。</param>
-        <param name="type">客户端脚本块的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="key">脚本块的唯一标识符。</param>
+        <param name="control">正在注册该客户端脚本块的控件。</param>
+        <param name="type">该客户端脚本块的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本块的唯一标识符。</param>
         <param name="script">要注册的脚本。</param>
-        <param name="addScriptTags">如果用 <see langword="&lt;script&gt;" /> 和 <see langword="&lt;/script&gt;" /> 标记括起此脚本块，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>使用 <see cref="T:System.Web.UI.ScriptManager" /> 控件为 <see cref="T:System.Web.UI.UpdatePanel" /> 中的某个控件注册一个启动脚本块，并将此脚本块添加到页面中。</summary>
+        <param name="addScriptTags">如果用 <see langword="true" /> 和 <see langword="&lt;script&gt;" /> 标记括起该脚本块，则为 <see langword="&lt;/script&gt;" />；否则为 <see langword="false" />。</param>
+        <summary>使用 <see cref="T:System.Web.UI.UpdatePanel" /> 控件为 <see cref="T:System.Web.UI.ScriptManager" /> 中的某个控件注册一个启动脚本块，并将该脚本块添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3384,12 +3384,12 @@
         <Parameter Name="addScriptTags" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="page">正在注册客户端脚本块的页对象。</param>
-        <param name="type">客户端脚本块的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定此参数，以检索正在注册脚本的控件的类型。</param>
-        <param name="key">脚本块的唯一标识符。</param>
+        <param name="page">正在注册该客户端脚本块的页对象。</param>
+        <param name="type">该客户端脚本块的类型。 通常使用 typeof 运算符 (C#) 或 GetType 运算符 (Visual Basic) 来指定该参数，以检索正在注册该脚本的控件的类型。</param>
+        <param name="key">该脚本块的唯一标识符。</param>
         <param name="script">要注册的脚本。</param>
-        <param name="addScriptTags">如果用 <see langword="&lt;script&gt;" /> 和 <see langword="&lt;/script&gt;" /> 标记括起此脚本块，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>为每个异步回发向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个启动脚本块，并将此脚本块添加到页面中。</summary>
+        <param name="addScriptTags">如果用 <see langword="true" /> 和 <see langword="&lt;script&gt;" /> 标记括起该脚本块，则为 <see langword="&lt;/script&gt;" />；否则为 <see langword="false" />。</param>
+        <summary>为每个异步回发向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册一个启动脚本块，并将该脚本块添加到页面中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3424,7 +3424,7 @@
       </Parameters>
       <Docs>
         <param name="writer">一个接收要写入页面的控件内容的对象。</param>
-        <summary>使用指定的 <see cref="T:System.Web.UI.HtmlTextWriter" /> 对象将 <see cref="T:System.Web.UI.ScriptManager" /> 控件的内容呈现给浏览器。</summary>
+        <summary>使用指定的 <see cref="T:System.Web.UI.ScriptManager" /> 对象将 <see cref="T:System.Web.UI.HtmlTextWriter" /> 控件的内容呈现给浏览器。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3485,7 +3485,7 @@
         <ReturnType>System.EventHandler&lt;System.Web.UI.ScriptReferenceEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在向 <see cref="T:System.Web.UI.ScriptManager" /> 控件注册 <see cref="P:System.Web.UI.ScriptManager.Scripts" /> 集合的成员时发生。</summary>
+        <summary>在向 <see cref="P:System.Web.UI.ScriptManager.Scripts" /> 控件注册 <see cref="T:System.Web.UI.ScriptManager" /> 集合的成员时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3578,7 +3578,7 @@
         <ReturnType>System.Web.UI.ScriptMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指定是呈现客户端脚本库的调试版本还是发布版本。</summary>
+        <summary>获取或设置一个值，以指定是呈现客户端脚本库的调试版本还是发布版本。</summary>
         <value>指示当前模式的枚举值。 默认值为 <see cref="F:System.Web.UI.ScriptMode.Auto" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3637,8 +3637,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置位置的根路径，该位置用来生成指向 ASP.NET Ajax 和自定义脚本文件的路径。</summary>
-        <value>存储脚本文件的位置。 默认值为解释为相对路径的空字符串 ("")。</value>
+        <summary>获取或设置位置的根路径，该位置用来建立指向 ASP.NET AJAX 和自定义脚本文件的路径。</summary>
+        <value>存储脚本文件的位置。 默认值为空字符串 ("")，表示相对路径。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3751,8 +3751,8 @@ ScriptManager.ScriptResourceMapping.AddDefinition("jquery", Nothing, myScriptRes
         <ReturnType>System.Web.UI.ScriptReferenceCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个包含 <see cref="T:System.Web.UI.ScriptReference" /> 对象（每个对象表示一个呈现给客户端的脚本文件）的 <see cref="T:System.Web.UI.ScriptReferenceCollection" /> 对象。</summary>
-        <value><see cref="T:System.Web.UI.ScriptManager" /> 实例的 <see cref="T:System.Web.UI.ScriptReferenceCollection" /> 对象。</value>
+        <summary>获取一个包含 <see cref="T:System.Web.UI.ScriptReferenceCollection" /> 对象（每个对象代表一个呈现给客户端的脚本文件）的 <see cref="T:System.Web.UI.ScriptReference" /> 对象。</summary>
+        <value><see cref="T:System.Web.UI.ScriptReferenceCollection" /> 实例的 <see cref="T:System.Web.UI.ScriptManager" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3816,7 +3816,7 @@ ScriptManager.ScriptResourceMapping.AddDefinition("jquery", Nothing, myScriptRes
         <ReturnType>System.Web.UI.ServiceReferenceCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个 <see cref="T:System.Web.UI.ServiceReferenceCollection" /> 对象，该对象包含 ASP.NET 在客户端上针对 Ajax 功能公开的每个 Web 服务的 <see cref="T:System.Web.UI.ServiceReference" /> 对象。</summary>
+        <summary>获取一个 <see cref="T:System.Web.UI.ServiceReferenceCollection" /> 对象，该对象包含 ASP.NET 在客户端上针对 Ajax 功能而公开的每个 Web 服务的 <see cref="T:System.Web.UI.ServiceReference" /> 对象。</summary>
         <value>当前 <see cref="T:System.Web.UI.ScriptManager" /> 实例的 <see cref="T:System.Web.UI.ServiceReferenceCollection" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3947,8 +3947,8 @@ ScriptManager.ScriptResourceMapping.AddDefinition("jquery", Nothing, myScriptRes
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个指示客户端是否支持局部页面呈现的值。</summary>
-        <value>如果客户端支持局部页面呈现，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取一个指示客户端是否支持部分页面呈现的值。</summary>
+        <value>如果客户端支持部分页面呈现，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4005,10 +4005,10 @@ ScriptManager.ScriptResourceMapping.AddDefinition("jquery", Nothing, myScriptRes
         <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
       </Parameters>
       <Docs>
-        <param name="postDataKey">控件的密钥标识符。</param>
-        <param name="postCollection">所有传入的后期数据的集合。</param>
+        <param name="postDataKey">该控件的密钥标识符。</param>
+        <param name="postCollection">所有传入的发布数据的集合。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Web.UI.IPostBackDataHandler.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />。</summary>
-        <returns>如果 <see cref="T:System.Web.UI.ScriptManager" /> 控件的状态已因回发而更改，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see cref="T:System.Web.UI.ScriptManager" /> 控件的状态已因为回发而更改，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4086,8 +4086,8 @@ ScriptManager.ScriptResourceMapping.AddDefinition("jquery", Nothing, myScriptRes
         <Parameter Name="eventArgument" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="eventArgument">表示网页历史记录状态的键/值对的字符串。</param>
-        <summary>启用 <see cref="T:System.Web.UI.ScriptManager" /> 控件以处理回发事件，并加载网页的历史记录状态。</summary>
+        <param name="eventArgument">表示网页的历史记录状态的键/值对的字符串。</param>
+        <summary>使 <see cref="T:System.Web.UI.ScriptManager" /> 控件可以处理回发事件并加载网页的历史记录状态。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -4535,7 +4535,7 @@ ScriptManager.ScriptResourceMapping.AddDefinition("jquery", Nothing, myScriptRes
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>重写从 <see cref="T:System.Web.UI.Control" /> 基类继承的 <see cref="P:System.Web.UI.Control.Visible" /> 属性以防止设置此值。</summary>
+        <summary>重写从 <see cref="P:System.Web.UI.Control.Visible" /> 基类继承的 <see cref="T:System.Web.UI.Control" /> 特性以防止设置该值。</summary>
         <value>在所有情况下均为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

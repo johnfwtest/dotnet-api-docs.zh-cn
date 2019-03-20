@@ -1,5 +1,5 @@
 <Type Name="IComponentConnector" FullName="System.Windows.Markup.IComponentConnector">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c483a3ed14ba335ba3804ec518820fbaf9779bf5" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48714054" /></Metadata><TypeSignature Language="C#" Value="public interface IComponentConnector" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="395e3f59debe7cfe65d0ae5bbe460b477e4d613b" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57939522" /></Metadata><TypeSignature Language="C#" Value="public interface IComponentConnector" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentConnector" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.IComponentConnector" />
   <TypeSignature Language="VB.NET" Value="Public Interface IComponentConnector" />
@@ -20,7 +20,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>为命名 XAML 元素提供标记编译和工具支持，以及将事件处理程序附加到这些元素。</summary>
+    <summary>为命名的 XAML 元素以及将事件处理程序附加到这些元素提供标记编译和工具支持。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -29,7 +29,7 @@
   
  实现<xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A>框架提供的基础结构的一部分是广泛的可观察量或使用 XAML 的技术与应用程序和编程模型相结合。 例如，每当您查看生成的类在 WPF 页和应用程序中的 XAML 根元素时，您将看到<xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A>的输出中定义。 该方法还存在于编译的程序集，在 WPF 应用程序模型在 XAML 分析时加载的 XAML UI 内容的发挥了作用。 有关详细信息的 WPF 集成`InitializeComponent`概念，请参阅[应用程序管理概述](~/docs/framework/wpf/app-development/application-management-overview.md)或[的代码隐藏和 XAML 在 WPF 中的](~/docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)。  
   
- 在以前版本的.NET Framework 中，此接口存在于 WindowsBase 的特定于 WPF 程序集。 在中[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，<xref:System.Windows.Markup.IComponentConnector>位于 System.Xaml 程序集中。 . 有关详细信息，请参阅[类型从 WPF 迁移到 System.Xaml](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)。  
+ 在以前版本的.NET Framework 中，此接口存在于 WindowsBase 的特定于 WPF 程序集。 在中[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]，<xref:System.Windows.Markup.IComponentConnector>位于 System.Xaml 程序集中。 . 有关详细信息，请参阅 [Types Migrated from WPF to System.Xaml](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)。  
   
 > [!TIP]
 >  未能解析<xref:System.Windows.Markup.IComponentConnector>尝试生成过程通常是，你未更新你的 WPF 项目正确的指示器。 具体而言，该项目未引用的项目面向的 System.Xaml 程序集[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]。 尝试运行`devenv /upgrade`选项对于项目，或调整项目程序集引用，以便 System.Xaml 是引用列表中。  
@@ -58,8 +58,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="connectionId" Type="System.Int32" />
-        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="connectionId" Type="System.Int32" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="target" Type="System.Object" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="connectionId">用于区分调用的标识符标记。</param>
@@ -96,7 +96,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>加载组件的已编译页面。</summary>
+        <summary>加载组件的已编译的页。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

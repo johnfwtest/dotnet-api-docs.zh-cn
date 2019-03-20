@@ -1,5 +1,5 @@
 <Type Name="RegionInfo" FullName="System.Globalization.RegionInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bc95f63abe9f2a81a042116c7a0b9d455cb88811" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53223313" /></Metadata><TypeSignature Language="C#" Value="public class RegionInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2bc23ecd164cdc7ffae99772032eb1c1ef58e8d4" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57953874" /></Metadata><TypeSignature Language="C#" Value="public class RegionInfo" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable beforefieldinit RegionInfo extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.RegionInfo" />
   <TypeSignature Language="VB.NET" Value="Public Class RegionInfo" />
@@ -39,7 +39,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>包含国家/地区的相关信息。</summary>
+    <summary>包含有关国家/地区的信息。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -65,12 +65,12 @@
   
 -   当维护的详细信息是重要的。 返回的值<xref:System.Globalization.RegionInfo>成员可以不同，具体取决于是否<xref:System.Globalization.RegionInfo>对象实例化使用的区域性名称或区域名称。 例如，下表列出了差异返回值时<xref:System.Globalization.RegionInfo>通过使用"美国"区域中，"EN-US"区域性和"es-美国"区域性实例化对象。  
   
-    |成员|"我们"|"EN-US"|"es-美国"|  
+    |成员|"我们"|"EN-US"|"es-US"|  
     |------------|----------|--------------|--------------|  
     |<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>|美元|美元|Dólar de EE。UU。|  
-    |<xref:System.Globalization.RegionInfo.Name%2A>|US|en-US|es 美国|  
+    |<xref:System.Globalization.RegionInfo.Name%2A>|US|en-US|es-US|  
     |<xref:System.Globalization.RegionInfo.NativeName%2A>|美国|美国|Estados Unidos|  
-    |<xref:System.Globalization.RegionInfo.ToString%2A>|US|en-US|es 美国|  
+    |<xref:System.Globalization.RegionInfo.ToString%2A>|US|en-US|es-US|  
   
    
   
@@ -129,7 +129,7 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="culture" Type="System.Int32" />
+        <Parameter Name="culture" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="culture">区域性标识符。</param>
@@ -197,10 +197,10 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">包含 ISO 3166 中为国家/地区定义的由两个字母组成的代码的字符串。  
+        <param name="name">一个字符串，它包含 ISO 3166 中为国家/地区定义的由两个字母组成的代码。  
   
 - 或 - 
-包含特定区域性、自定义区域性或仅适用于 Windows 的区域性的区域性名称的字符串。 如果区域性名称未采用 RFC 4646 格式，应用程序应指定整个区域性名称，而不是仅指定国家/地区。</param>
+包含特定区域、自定义区域或仅 Windows 区域的区域名称的字符串。 如果区域性名称未采用 RFC 4646 格式，应用程序应指定整个区域性名称，而不是仅指定国家/地区。</param>
         <summary>基于按名称指定的国家/地区或特定区域性初始化 <see cref="T:System.Globalization.RegionInfo" /> 类的一个新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -875,7 +875,7 @@
 |委内瑞拉玻利瓦尔共和国|委内瑞拉玻利瓦|VEF|  
 |玻利维亚|玻利瓦|BOB|  
 |巴西|Real|BRL|  
-|文莱|文莱元|边界|  
+|文莱|Brunei Dollar|边界|  
 |保加利亚|保加利亚列弗|BGN|  
 |加拿大|加拿大元|加拿大元|  
 |加勒比海|美元|美元|  
@@ -884,14 +884,14 @@
 |哥斯达黎加|哥斯达黎加克朗|CRC|  
 |克罗地亚|克罗地亚库纳|HRK|  
 |捷克共和国|捷克语克朗|CZK|  
-|丹麦|丹麦克朗|丹麦克朗|  
-|多米尼加共和国|多米尼加比索|并行度|  
+|丹麦|丹麦克朗|DKK|  
+|多米尼加共和国|多米尼加比索|DOP|  
 |厄瓜多尔|美元|美元|  
 |埃及|埃及镑|EGP|  
 |萨尔瓦多|美国美元|美元|  
 |爱沙尼亚|爱沙尼亚克朗|EEK|  
 |埃塞俄比亚|埃塞俄比亚比尔|ETB|  
-|法罗群岛|丹麦克朗|丹麦克朗|  
+|法罗群岛|丹麦克朗|DKK|  
 |芬兰|欧元|欧元|  
 |法国|欧元|欧元|  
 |格鲁吉亚|拉里|GEL|  
@@ -901,7 +901,7 @@
 |洪都拉斯|洪都拉斯伦皮拉|HNL|  
 |香港特別行政区|港币|港币|  
 |匈牙利|匈牙利福林|HUF|  
-|冰岛|冰岛克朗|磁盘|  
+|冰岛|冰岛克朗|ISK|  
 |印度|印度卢比|INR|  
 |印度尼西亚|印度尼西亚卢比|IDR|  
 |伊朗|伊朗里亚尔|IRR|  
@@ -915,16 +915,16 @@
 |约旦|约旦第纳尔|JOD|  
 |哈萨克斯坦|腾格|KZT|  
 |肯尼亚|肯尼亚先令|KES|  
-|韩国|韩元|韩元|  
+|韩国|韩元|KRW|  
 |科威特|科威特第纳尔|KWD|  
-|吉尔吉斯斯坦|som|公斤之间|  
+|吉尔吉斯斯坦|som|KGS|  
 |拉托维亚|拉脱维亚拉特|LVL|  
 |黎巴嫩|黎巴嫩磅|LBP|  
 |利比亚|利比亚第纳尔|LYD|  
-|列支敦士登|瑞士法郎|瑞士法郎|  
+|列支敦士登|瑞士法郎|CHF|  
 |立陶宛|立陶宛立特|LTL|  
 |卢森堡|欧元|欧元|  
-|澳门特别行政区|澳门元|拖地|  
+|澳门特别行政区|Macao Pataca|拖地|  
 |马其顿 （前南斯拉夫马其顿共和国）|马其顿代纳尔|MKD|  
 |马来西亚|马来西亚林吉特|MYR|  
 |马尔代夫|拉菲亚|MVR|  
@@ -932,10 +932,10 @@
 |蒙古|图格里克|MNT|  
 |摩洛哥|摩洛哥迪拉姆|MAD|  
 |荷兰|欧元|欧元|  
-|新西兰|新西兰元|新西兰元|  
+|新西兰|新西兰元|NZD|  
 |尼加拉瓜|尼加拉瓜 Cordoba Oro|NIO|  
 |挪威|挪威克朗|挪威克朗|  
-|阿曼|阿曼里亚尔|OMR|  
+|阿曼|Omani Rial|OMR|  
 |巴拿马|巴拿马巴波亚|PAB|  
 |巴拉圭|巴拉圭瓜拉尼语|PYG|  
 |中华人民共和国|中国人民币|元|  
@@ -948,17 +948,17 @@
 |卡塔尔|卡塔尔里亚尔|QAR|  
 |罗马尼亚|罗马尼亚列伊|RON|  
 |俄罗斯|俄罗斯卢布|但难题|  
-|沙特阿拉伯|沙特里亚尔|特别行政区|  
+|沙特阿拉伯|沙特里亚尔|SAR|  
 |塞尔维亚|塞尔维亚第纳尔|RSD|  
 |新加坡|新加坡元|SGD|  
 |斯洛伐克|欧元|欧元|  
 |斯洛文尼亚|欧元|欧元|  
-|南非|南非兰特|南非兰特|  
+|南非|南非兰特|ZAR|  
 |西班牙|欧元|欧元|  
-|瑞典|瑞典克朗|瑞典克朗|  
-|瑞士|瑞士法郎|瑞士法郎|  
+|瑞典|瑞典克朗|SEK|  
+|瑞士|瑞士法郎|CHF|  
 |叙利亚|叙利亚镑|SYP|  
-|中国台湾|新台币|台币|  
+|中国台湾|新台币|TWD|  
 |泰国|泰国铢|THB|  
 |特立尼达和多巴哥|特立尼达美元|TTD|  
 |突尼斯|突尼斯第纳尔|TND|  
@@ -1023,7 +1023,7 @@
         <summary>获取当前 <see cref="T:System.Globalization.RegionInfo" /> 对象的名称或 ISO 3166 双字母国家/地区代码。</summary>
         <value><see cref="M:System.Globalization.RegionInfo.#ctor(System.String)" /> 构造函数的 <paramref name="name" /> 参数指定的值。 返回值为大写。  
   
-或 
+- 或 - 
 ISO 3166 中为 <see cref="M:System.Globalization.RegionInfo.#ctor(System.Int32)" /> 构造函数的 <paramref name="culture" /> 参数指定的国家/地区定义的双字母代码。 返回值为大写。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

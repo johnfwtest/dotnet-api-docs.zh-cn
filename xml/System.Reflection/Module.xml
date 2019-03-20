@@ -1,5 +1,5 @@
 <Type Name="Module" FullName="System.Reflection.Module">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7e44325ef5b3af5671d9bd28885d3d54eef547d6" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52384414" /></Metadata><TypeSignature Language="C#" Value="public abstract class Module : System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._Module, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="33c678eb82d4fd9aad7d69652a0872c2b2251dcc" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57917630" /></Metadata><TypeSignature Language="C#" Value="public abstract class Module : System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._Module, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract serializable beforefieldinit Module extends System.Object implements class System.Reflection.ICustomAttributeProvider, class System.Runtime.InteropServices._Module, class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.Module" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Module&#xA;Implements _Module, ICustomAttributeProvider, ISerializable" />
@@ -56,7 +56,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>对模块执行反射。</summary>
+    <summary>在模块上执行反射。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -152,7 +152,7 @@
       </ReturnValue>
       <Docs>
         <summary>为此 <see cref="T:System.Reflection.Module" /> 实例获取适当的 <see cref="T:System.Reflection.Assembly" />。</summary>
-        <value>一个 <see langword="Assembly" /> 对象。</value>
+        <value><see langword="Assembly" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -237,7 +237,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="o" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="o">与该实例进行比较的对象。</param>
@@ -384,8 +384,8 @@
         <ReturnType>System.Type[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filter" Type="System.Reflection.TypeFilter" />
-        <Parameter Name="filterCriteria" Type="System.Object" />
+        <Parameter Name="filter" Type="System.Reflection.TypeFilter" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="filterCriteria" Type="System.Object" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="filter">用于筛选类的委托。</param>
@@ -461,7 +461,7 @@
 ## Remarks  
  若要获取不带路径名称，请使用<xref:System.Reflection.Module.Name%2A>。  
   
- 此模块的程序集已从字节数组加载然后`FullyQualifiedName`将为该模块：\<未知 >。  
+ 如果已从字节数组加载此模块的程序集则`FullyQualifiedName`将为该模块：\<未知 >。  
   
 > [!NOTE]
 >  模块名称的大小写与平台相关。  
@@ -525,10 +525,10 @@
         <ReturnType>System.Object[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="inherit">对于该类型的对象，将忽略此自变量。</param>
+        <param name="inherit">对于该类型的对象，将忽略此参数。</param>
         <summary>返回所有自定义属性。</summary>
         <returns>包含所有自定义属性的 <see langword="Object" /> 类型的数组。</returns>
         <remarks>
@@ -579,12 +579,12 @@
         <ReturnType>System.Object[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="attributeType" Type="System.Type" />
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="attributeType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="attributeType">要获取的特性的类型。</param>
-        <param name="inherit">对于该类型的对象，将忽略此自变量。</param>
+        <param name="inherit">对于该类型的对象，将忽略此参数。</param>
         <summary>获取指定类型的自定义属性。</summary>
         <returns><see langword="Object" /> 类型的数组，包含指定类型的所有自定义属性。</returns>
         <remarks>
@@ -686,7 +686,7 @@
         <ReturnType>System.Reflection.FieldInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">字段名。</param>
@@ -728,8 +728,8 @@
         <ReturnType>System.Reflection.FieldInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">字段名。</param>
@@ -824,7 +824,7 @@
         <ReturnType>System.Reflection.FieldInfo[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="bindingFlags">用于限制搜索的 <see cref="T:System.Reflection.BindingFlags" /> 值的按位组合。</param>
@@ -920,7 +920,7 @@
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">方法名。</param>
@@ -962,8 +962,8 @@
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="types" Type="System.Type[]" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">方法名。</param>
@@ -1004,12 +1004,12 @@
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
-        <Parameter Name="binder" Type="System.Reflection.Binder" />
-        <Parameter Name="callConvention" Type="System.Reflection.CallingConventions" />
-        <Parameter Name="types" Type="System.Type[]" />
-        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="callConvention" Type="System.Reflection.CallingConventions" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="types" Type="System.Type[]" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" Index="5" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">方法名。</param>
@@ -1057,12 +1057,12 @@
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="name" Type="System.String" />
-        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
-        <Parameter Name="binder" Type="System.Reflection.Binder" />
-        <Parameter Name="callConvention" Type="System.Reflection.CallingConventions" />
-        <Parameter Name="types" Type="System.Type[]" />
-        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="callConvention" Type="System.Reflection.CallingConventions" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="types" Type="System.Type[]" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" Index="5" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="name">方法名。</param>
@@ -1157,7 +1157,7 @@
         <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="bindingFlags">用于限制搜索的 <see cref="T:System.Reflection.BindingFlags" /> 值的按位组合。</param>
@@ -1205,8 +1205,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="info">序列化或反序列化对象所需的信息和数据。</param>
@@ -1247,8 +1247,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="peKind" Type="System.Reflection.PortableExecutableKinds" RefType="out" />
-        <Parameter Name="machine" Type="System.Reflection.ImageFileMachine" RefType="out" />
+        <Parameter Name="peKind" Type="System.Reflection.PortableExecutableKinds" RefType="out" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="machine" Type="System.Reflection.ImageFileMachine" RefType="out" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="peKind">当此方法返回时，为 <see cref="T:System.Reflection.PortableExecutableKinds" /> 值的组合，用于指示模块中代码的性质。</param>
@@ -1337,7 +1337,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="className" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="className">要查找的类型的名称。 名称必须用命名空间加以完全限定。</param>
@@ -1370,11 +1370,11 @@
         <exception cref="T:System.IO.FileNotFoundException"><paramref name="className" /> 所需的从属程序集无法找到。</exception>
         <exception cref="T:System.IO.FileLoadException"><paramref name="className" /> 所需的从属程序集已找到，但无法加载。  
   
-或 
+- 或 - 
 当前程序集被加载到仅反射上下文中，并且 <paramref name="className" /> 所需的从属程序集未预先加载。</exception>
         <exception cref="T:System.BadImageFormatException"><paramref name="className" /> 需要一个从属程序集，但该文件不是有效的程序集。  
   
-或 
+- 或 - 
  <paramref name="className" /> 需要一个从属程序集，该程序集已针对比当前加载的版本更高的运行时版本进行了编译。</exception>
       </Docs>
     </Member>
@@ -1415,8 +1415,8 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="className" Type="System.String" />
-        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="className" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="className">要查找的类型的名称。 名称必须用命名空间加以完全限定。</param>
@@ -1450,11 +1450,11 @@
         <exception cref="T:System.IO.FileNotFoundException"><paramref name="className" /> 所需的从属程序集无法找到。</exception>
         <exception cref="T:System.IO.FileLoadException"><paramref name="className" /> 所需的从属程序集已找到，但无法加载。  
   
-或 
+- 或 - 
 当前程序集被加载到仅反射上下文中，并且 <paramref name="className" /> 所需的从属程序集未预先加载。</exception>
         <exception cref="T:System.BadImageFormatException"><paramref name="className" /> 需要一个从属程序集，但该文件不是有效的程序集。  
   
-或 
+- 或 - 
  <paramref name="className" /> 需要一个从属程序集，该程序集已针对比当前加载的版本更高的运行时版本进行了编译。</exception>
       </Docs>
     </Member>
@@ -1496,9 +1496,9 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="className" Type="System.String" />
-        <Parameter Name="throwOnError" Type="System.Boolean" />
-        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="className" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="throwOnError" Type="System.Boolean" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="className">要查找的类型的名称。 名称必须用命名空间加以完全限定。</param>
@@ -1535,11 +1535,11 @@
         <exception cref="T:System.IO.FileNotFoundException"><paramref name="className" /> 所需的从属程序集无法找到。</exception>
         <exception cref="T:System.IO.FileLoadException"><paramref name="className" /> 所需的从属程序集已找到，但无法加载。  
   
-或 
+- 或 - 
 当前程序集被加载到仅反射上下文中，并且 <paramref name="className" /> 所需的从属程序集未预先加载。</exception>
         <exception cref="T:System.BadImageFormatException"><paramref name="className" /> 需要一个从属程序集，但该文件不是有效的程序集。  
   
-或 
+- 或 - 
  <paramref name="className" /> 需要一个从属程序集，该程序集已针对比当前加载的版本更高的运行时版本进行了编译。</exception>
       </Docs>
     </Member>
@@ -1631,12 +1631,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="attributeType" Type="System.Type" />
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="attributeType" Type="System.Type" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="attributeType">要测试的自定义属性的类型。</param>
-        <param name="inherit">对于该类型的对象，将忽略此自变量。</param>
+        <param name="inherit">对于该类型的对象，将忽略此参数。</param>
         <summary>返回一个值，该值指示是否已将指定的特性类型应用于此模块。</summary>
         <returns>如果一个或多个 <paramref name="attributeType" /> 实例已应用于此模块，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -1741,7 +1741,7 @@
 ## Remarks  
   
 > [!NOTE]
->  元数据标头的详细信息，请参阅公共语言基础结构 (CLI) 文档中的"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  元数据标头的详细信息，请参阅"第二部分：元数据定义和语义"公共语言基础结构 (CLI) 文档中。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  ]]></format>
         </remarks>
@@ -1786,7 +1786,7 @@
  使用此属性获取的令牌可以传递到非托管反射 API。 有关详细信息，请参阅[非托管反射 API](https://msdn.microsoft.com/library/0c5bb9de-0cf6-438d-ba47-134e6c775fb8)。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  ]]></format>
         </remarks>
@@ -1867,7 +1867,7 @@
  在非托管元数据中返回的 GUID<xref:System.Reflection.Module.ModuleVersionId%2A>属性被称为`mvid`，并存储在 GUID 堆。  
   
 > [!NOTE]
->  有关元数据的详细信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据的详细信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  ]]></format>
         </remarks>
@@ -1915,7 +1915,7 @@
 ## Remarks  
  `Name` 是一个依赖于平台的字符串。  
   
- 此模块的程序集已从字节数组加载然后`FullyQualifiedName`将为该模块：\<未知 >。  
+ 如果已从字节数组加载此模块的程序集则`FullyQualifiedName`将为该模块：\<未知 >。  
   
  若要获取的名称和路径，请使用<xref:System.Reflection.Module.FullyQualifiedName%2A>。  
   
@@ -1961,8 +1961,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Reflection.Module" />
-        <Parameter Name="right" Type="System.Reflection.Module" />
+        <Parameter Name="left" Type="System.Reflection.Module" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Reflection.Module" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">要比较的第一个对象。</param>
@@ -2001,8 +2001,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="left" Type="System.Reflection.Module" />
-        <Parameter Name="right" Type="System.Reflection.Module" />
+        <Parameter Name="left" Type="System.Reflection.Module" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="right" Type="System.Reflection.Module" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="left">要比较的第一个对象。</param>
@@ -2052,7 +2052,7 @@
         <ReturnType>System.Reflection.FieldInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的一个字段。</param>
@@ -2065,7 +2065,7 @@
  若要解决的元数据令牌标识的字段的父级`TypeSpec`具有包含元素类型的签名`ELEMENT_TYPE_VAR`或`ELEMENT_TYPE_MVAR`，使用<xref:System.Reflection.Module.ResolveField%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法重载，它允许您提供必要的上下文。 也就是说，来解析依赖于泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数的字段的元数据令牌，必须使用允许您提供这些类型参数的重载。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  有关演示令牌的解决方法的代码使用泛型上下文 （即，泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数） 请参阅<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法。  
   
@@ -2073,7 +2073,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的字段的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 标识一个字段，该字段的父级 <see langword="TypeSpec" /> 具有一个包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数）的签名。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2108,9 +2108,9 @@
         <ReturnType>System.Reflection.FieldInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
-        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
-        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的一个字段。</param>
@@ -2125,7 +2125,7 @@
  使用<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>的类型上方法的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 使用<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>方法在方法上的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 始终是安全即使在不需要提供这些参数。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  有关演示令牌的解决方法的代码使用泛型上下文 （即，泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数） 请参阅<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法。  
   
@@ -2133,7 +2133,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的字段的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 标识一个字段，该字段的父级 <see langword="TypeSpec" /> 具有一个包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数）的签名，并且没有为 <paramref name="genericTypeArguments" /> 和（或）<paramref name="genericMethodArguments" /> 提供必要的泛型类型参数。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2178,7 +2178,7 @@
         <ReturnType>System.Reflection.MemberInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的类型或成员。</param>
@@ -2191,7 +2191,7 @@
  若要解决的元数据标记`MethodSpec`或`TypeSpec`其签名包含元素类型`ELEMENT_TYPE_VAR`或`ELEMENT_TYPE_MVAR`，使用<xref:System.Reflection.Module.ResolveMember%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法重载，它允许您提供必要的上下文。 也就是说，取决于泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数的成员来解析元数据令牌，必须使用允许您提供这些类型参数的重载。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  有关演示令牌的解决方法的代码使用泛型上下文 （即，泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数） 请参阅<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法。  
   
@@ -2199,10 +2199,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的类型或成员的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 是一个 <see langword="MethodSpec" /> 或 <see langword="TypeSpec" />，其签名包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数）。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 标识一个属性或事件。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2237,9 +2237,9 @@
         <ReturnType>System.Reflection.MemberInfo</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
-        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
-        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的类型或成员。</param>
@@ -2254,7 +2254,7 @@
  使用<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>的类型上方法的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 使用<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>方法在方法上的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 始终是安全即使在不需要提供这些参数。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  有关演示令牌的解决方法的代码使用泛型上下文 （即，泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数） 请参阅<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法。  
   
@@ -2262,10 +2262,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的类型或成员的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 是一个 <see langword="MethodSpec" /> 或 <see langword="TypeSpec" />，其签名包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数），并且没有为 <paramref name="genericTypeArguments" /> 和（或）<paramref name="genericMethodArguments" /> 提供必要的泛型类型参数。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 标识一个属性或事件。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2310,7 +2310,7 @@
         <ReturnType>System.Reflection.MethodBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的方法或构造函数。</param>
@@ -2323,7 +2323,7 @@
  若要解决的元数据标记`MethodSpec`其签名包含元素类型`ELEMENT_TYPE_VAR`或`ELEMENT_TYPE_MVAR`，使用<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法重载，它允许您提供必要的上下文。 也就是说，来解析依赖于泛型类型的泛型类型参数的方法和/或在其中嵌入令牌的泛型方法的元数据标记，必须使用允许您提供这些类型参数的重载。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
    
   
@@ -2332,17 +2332,17 @@
   
  代码示例定义两个泛型类型`G1<Tg1>`并`G2<Tg2>`(`G1(Of Tg1)`和`G2(Of Tg2)`在 Visual Basic 中)，其中每个泛型方法。 `G1<Tg1>` 此外具有使用类型参数的非泛型方法`Tg1`其参数。 泛型方法`GM2<Tgm2>`类型中`G2<Tg2>`包含多个方法调用：  
   
--   案例 1： 泛型方法`GM1<Tgm1>`使用的类型参数的调用`G2<Tg2>`和`GM2<Tgm2>`作为类型参数。 换而言之，所调用的方法的参数类型将取决于用于构造封闭式泛型类型中的类型定义的类型`G2<Tg2>`。  
+-   案例 1:泛型方法`GM1<Tgm1>`使用的类型参数的调用`G2<Tg2>`和`GM2<Tgm2>`作为类型参数。 换而言之，所调用的方法的参数类型将取决于用于构造封闭式泛型类型中的类型定义的类型`G2<Tg2>`。  
   
--   案例 2： 非泛型方法`M1`调用。 此方法的参数使用定义类型的类型参数`G1<Tg1>`，封闭类型的类型参数将在这种情况下替换该`G2<Tg2>`。  
+-   案例 2:非泛型方法`M1`调用。 此方法的参数使用定义类型的类型参数`G1<Tg1>`，封闭类型的类型参数将在这种情况下替换该`G2<Tg2>`。  
   
--   案例 3： 泛型方法`GM1<Tgm1>`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法调用不依赖于封闭类型或方法的类型参数。  
+-   案例 3:泛型方法`GM1<Tgm1>`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法调用不依赖于封闭类型或方法的类型参数。  
   
--   情形 4： 非泛型方法`M1`的`Example`调用类。 此方法调用不依赖于封闭类型或方法的类型参数。  
+-   情形 4:非泛型方法`M1`的`Example`调用类。 此方法调用不依赖于封闭类型或方法的类型参数。  
   
  此外，该示例定义非泛型`Example`类。 此类有一个方法`M`，该方法调用到一个泛型方法：  
   
--   情况 5： 泛型方法`GM1`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法上下文包含没有封闭泛型类型或泛型方法。  
+-   情况 5:泛型方法`GM1`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法上下文包含没有封闭泛型类型或泛型方法。  
   
  对于每种情况下，该示例首先构造<xref:System.Reflection.MethodInfo>，表示调用的方法，并在随后解析令牌使用<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法重载，使用<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>并<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>方法来获取其值`genericTypeArguments`和`genericMethodArguments`参数。 此种方式适用于所有情况下，，因为这些方法返回<xref:System.Type.EmptyTypes?displayProperty=nameWithType>为非泛型上下文。 该示例比较了已解析<xref:System.Reflection.MethodInfo>与构造<xref:System.Reflection.MethodInfo>。  
   
@@ -2357,7 +2357,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的方法或构造函数的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 是一个 <see langword="MethodSpec" />，其签名包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数）。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2392,9 +2392,9 @@
         <ReturnType>System.Reflection.MethodBase</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
-        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
-        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的方法或构造函数。</param>
@@ -2409,7 +2409,7 @@
  使用<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>的类型上方法的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 使用<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>方法在方法上的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericMethodArguments`。 始终是安全即使在不需要提供这些参数。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
    
   
@@ -2418,17 +2418,17 @@
   
  代码示例定义两个泛型类型`G1<Tg1>`和`G2<Tg2>`，其中每个泛型方法。 `G1<Tg1>` 此外具有使用类型参数的非泛型方法`Tg1`其参数。 泛型方法`GM2<Tgm2>`类型中`G2<Tg2>`包含多个方法调用：  
   
--   案例 1： 泛型方法`GM1<Tgm1>`使用的类型参数的调用`G2<Tg2>`和`GM2<Tgm2>`作为类型参数。 换而言之，所调用的方法的参数类型将取决于用于构造封闭式泛型类型中的类型定义的类型`G2<Tg2>`。  
+-   案例 1:泛型方法`GM1<Tgm1>`使用的类型参数的调用`G2<Tg2>`和`GM2<Tgm2>`作为类型参数。 换而言之，所调用的方法的参数类型将取决于用于构造封闭式泛型类型中的类型定义的类型`G2<Tg2>`。  
   
--   案例 2： 非泛型方法`M1`调用。 此方法的参数使用定义类型的类型参数`G1<Tg1>`，封闭类型的类型参数将在这种情况下替换该`G2<Tg2>`。  
+-   案例 2:非泛型方法`M1`调用。 此方法的参数使用定义类型的类型参数`G1<Tg1>`，封闭类型的类型参数将在这种情况下替换该`G2<Tg2>`。  
   
--   案例 3： 泛型方法`GM1<Tgm1>`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法调用不依赖于封闭类型或方法的类型参数。  
+-   案例 3:泛型方法`GM1<Tgm1>`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法调用不依赖于封闭类型或方法的类型参数。  
   
--   情形 4： 非泛型方法`M1`的`Example`调用类。 此方法调用不依赖于封闭类型或方法的类型参数。  
+-   情形 4:非泛型方法`M1`的`Example`调用类。 此方法调用不依赖于封闭类型或方法的类型参数。  
   
  此外，该示例定义非泛型`Example`类。 此类有一个方法`M`，该方法调用到一个泛型方法。  
   
--   情况 5： 泛型方法`GM1<Tgm1>`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法上下文包含没有封闭泛型类型或泛型方法。  
+-   情况 5:泛型方法`GM1<Tgm1>`调用时，指定<xref:System.Int32>和<xref:System.Object>对于泛型类型和泛型方法的类型参数分别。 此方法上下文包含没有封闭泛型类型或泛型方法。  
   
  对于每种情况下，该示例首先构造<xref:System.Reflection.MethodInfo>，表示调用的方法，并在随后解析令牌使用<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法重载，使用<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>并<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>方法来获取其值`genericTypeArguments`和`genericMethodArguments`参数。 此种方式适用于所有情况下，，因为这些方法返回<xref:System.Type.EmptyTypes?displayProperty=nameWithType>为非泛型上下文。 该示例比较了已解析<xref:System.Reflection.MethodInfo>与构造<xref:System.Reflection.MethodInfo>。  
   
@@ -2443,7 +2443,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的方法或构造函数的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 是一个 <see langword="MethodSpec" />，其签名包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数），并且没有为 <paramref name="genericTypeArguments" /> 和（或）<paramref name="genericMethodArguments" /> 提供必要的泛型类型参数。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2478,7 +2478,7 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的一个签名。</param>
@@ -2490,7 +2490,7 @@
 ## Remarks  
   
 > [!NOTE]
->  有关元数据标记和签名的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据标记和签名的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  ]]></format>
         </remarks>
@@ -2528,7 +2528,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块的字符串堆中的一个字符串。</param>
@@ -2540,7 +2540,7 @@
 ## Remarks  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  ]]></format>
         </remarks>
@@ -2588,7 +2588,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的一个类型。</param>
@@ -2601,13 +2601,13 @@
  若要解决的元数据标记`TypeSpec`其签名包含`ELEMENT_TYPE_VAR`或`ELEMENT_TYPE_MVAR`，使用<xref:System.Reflection.Module.ResolveType%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法重载，它允许您提供必要的上下文。 也就是说，来解析依赖于泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数的类型的元数据令牌，必须使用允许您提供这些类型参数的重载。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的类型的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 是一个 <see langword="TypeSpec" />，其签名包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数）。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2642,9 +2642,9 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="metadataToken" Type="System.Int32" />
-        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
-        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+        <Parameter Name="metadataToken" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="metadataToken">一个元数据令牌，用于标识模块中的一个类型。</param>
@@ -2659,7 +2659,7 @@
  使用<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>的类型上方法的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 使用<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>方法在方法上的`metadataToken`在范围内，若要获取的泛型类型参数的数组`genericTypeArguments`。 始终是安全即使在不需要提供这些参数。  
   
 > [!NOTE]
->  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"分区 II:: 元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
+>  有关元数据令牌的信息可在公共语言基础结构 (CLI) 文档中，尤其是"第二部分：元数据定义和语义"。 联机; 提供了的文档请参阅[ECMA C# 和公共语言基础结构标准](https://go.microsoft.com/fwlink/?LinkID=99212)MSDN 上和[标准 ECMA-335-公共语言基础结构 (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) ECMA 网站上。  
   
  有关演示令牌的解决方法的代码使用泛型上下文 （即，泛型类型和/或在其中嵌入令牌的泛型方法的泛型类型参数） 请参阅<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>方法。  
   
@@ -2667,7 +2667,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="metadataToken" /> 不是当前模块范围内的类型的令牌。  
   
-或 
+- 或 - 
  <paramref name="metadataToken" /> 是一个 <see langword="TypeSpec" />，其签名包含元素类型 <see langword="var" />（泛型类型的类型参数）或 <see langword="mvar" />（泛型方法的类型参数），并且没有为 <paramref name="genericTypeArguments" /> 和（或）<paramref name="genericMethodArguments" /> 提供必要的泛型类型参数。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="metadataToken" /> 不是当前模块范围内的有效令牌。</exception>
       </Docs>
@@ -2752,7 +2752,7 @@
         <ReturnType>System.Object[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
         <param name="inherit">To be added.</param>
@@ -2788,8 +2788,8 @@
         <ReturnType>System.Object[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="attributeType" Type="System.Type" />
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="attributeType" Type="System.Type" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.5;netstandard-1.6" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
         <param name="attributeType">To be added.</param>
@@ -2826,8 +2826,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="attributeType" Type="System.Type" />
-        <Parameter Name="inherit" Type="System.Boolean" />
+        <Parameter Name="attributeType" Type="System.Type" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.5;netstandard-1.6" />
+        <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netstandard-1.5;netstandard-1.6" />
       </Parameters>
       <Docs>
         <param name="attributeType">To be added.</param>
@@ -2866,11 +2866,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="riid" Type="System.Guid" RefType="ref" />
-        <Parameter Name="rgszNames" Type="System.IntPtr" />
-        <Parameter Name="cNames" Type="System.UInt32" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="rgDispId" Type="System.IntPtr" />
+        <Parameter Name="riid" Type="System.Guid" RefType="ref" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="cNames" Type="System.UInt32" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
@@ -2919,9 +2919,9 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="iTInfo" Type="System.UInt32" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+        <Parameter Name="iTInfo" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="iTInfo">要返回的类型信息。</param>
@@ -2968,7 +2968,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="pcTInfo" Type="System.UInt32" RefType="out" />
+        <Parameter Name="pcTInfo" Type="System.UInt32" RefType="out" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="pcTInfo">指向一个位置，该位置接收对象提供的类型信息接口的数量。</param>
@@ -3013,24 +3013,24 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="dispIdMember" Type="System.UInt32" />
-        <Parameter Name="riid" Type="System.Guid" RefType="ref" />
-        <Parameter Name="lcid" Type="System.UInt32" />
-        <Parameter Name="wFlags" Type="System.Int16" />
-        <Parameter Name="pDispParams" Type="System.IntPtr" />
-        <Parameter Name="pVarResult" Type="System.IntPtr" />
-        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
-        <Parameter Name="puArgErr" Type="System.IntPtr" />
+        <Parameter Name="dispIdMember" Type="System.UInt32" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="riid" Type="System.Guid" RefType="ref" Index="1" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="lcid" Type="System.UInt32" Index="2" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="wFlags" Type="System.Int16" Index="3" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" Index="4" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" Index="5" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" Index="6" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" Index="7" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="dispIdMember">标识成员。</param>
         <param name="riid">留待将来使用。 必须为 IID_NULL。</param>
-        <param name="lcid">要在其中解释参数的区域设置上下文。</param>
+        <param name="lcid">要在其中解释自变量的区域设置上下文。</param>
         <param name="wFlags">描述调用的上下文的标志。</param>
-        <param name="pDispParams">指向一个结构的指针，该结构包含一个参数数组、一个命名参数的 DispID 参数数组和数组中元素数的计数。</param>
+        <param name="pDispParams">指向一个结构的指针，该结构包含一个参数数组、一个命名参数的 DISPID 参数数组和数组中元素数的计数。</param>
         <param name="pVarResult">指向要存储结果的位置的指针。</param>
         <param name="pExcepInfo">指向一个包含异常信息的结构的指针。</param>
-        <param name="puArgErr">第一个出错自变量的索引。</param>
+        <param name="puArgErr">第一个出错参数的索引。</param>
         <summary>提供对某一对象公开的属性和方法的访问。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

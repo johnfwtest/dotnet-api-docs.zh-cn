@@ -1,5 +1,5 @@
 <Type Name="ProjectFileConverter" FullName="Microsoft.Build.Conversion.ProjectFileConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f3ef7d9ccdcd6f712ecd03504b72863f25277df6" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55405917" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5eb70dcffdc45612dfa0a7ec02f8947447b6b798" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57941992" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProjectFileConverter extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Conversion.ProjectFileConverter" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ProjectFileConverter" />
@@ -68,8 +68,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否因为项目文件已处于最新格式而跳过了上次尝试的转换。</summary>
-        <value>如果因为项目文件已处于最新格式而跳过了上次尝试的转换，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否因为项目文件已经为最新格式而跳过最后一次转换尝试。</summary>
+        <value>如果因为项目文件已经为最新格式而跳过最后一次转换尝试，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,7 +204,7 @@
       </Parameters>
       <Docs>
         <param name="msbuildBinPath">MSBuild.exe 的完全限定路径。</param>
-        <summary>这是入口点方法，用于执行项目文件的格式转换。 如果此方法已存在，它将覆盖“newProjectFile”，因此此方法的调用方应向用户确认这是否是他真正要做的。</summary>
+        <summary>这是入口点方法，可用于执行项目文件格式转换。 如果此方法已存在，它将覆盖“newProjectFile”，因此此方法的调用方应向用户确认这是否是他真正要做的。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -319,8 +319,8 @@
       </Parameters>
       <Docs>
         <param name="engine">要在其中创建新项目的 <see cref="T:Microsoft.Build.BuildEngine.Engine" />。</param>
-        <param name="projectLoadSettings">一个 <see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" /> 标志，用于确定项目是否在加载时忽略不存在的 .target 文件。</param>
-        <summary>这是入口点方法，用于执行项目文件的格式转换。 此方法将仅在内存中创建新的 MSBuild 项目对象，而不尝试将其写入到磁盘。</summary>
+        <param name="projectLoadSettings">一个 <see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" /> 标志，该标志确定加载时项目是否忽略不存在的 .target 文件。</param>
+        <summary>这是入口点方法，可用于执行项目文件格式转换。 此方法只是在内存中创建一个新的 MSBuild 项目对象，而不会尝试将该对象写入磁盘。</summary>
         <returns>转换后的 <see cref="T:Microsoft.Build.BuildEngine.Project" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -341,7 +341,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="actuallyMakeChanges" Type="System.Boolean" />
+        <Parameter Name="actuallyMakeChanges" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="actuallyMakeChanges">如果为 true，则进行更改，否则不进行任何更改，但返回是否要进行更改</param>
@@ -380,8 +380,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示被转换的项目文件是否为 .user 文件。</summary>
-        <value>如果被转换的项目文件是 .user 文件则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示正在转换的项目文件是否为 .user 文件。</summary>
+        <value>如果正在转换的项目文件为 .user 文件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -413,8 +413,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置新项目文件名。</summary>
-        <value>表示新的项目文件名称的字符串。</value>
+        <summary>获取或设置新的项目文件名。</summary>
+        <value>一个表示新项目文件名的字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -453,8 +453,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置旧项目文件名。</summary>
-        <value>旧项目文件名。</value>
+        <summary>获取或设置旧的项目文件名。</summary>
+        <value>旧的项目文件名。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -490,8 +490,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置包含所转换项目的解决方案文件的名称。</summary>
-        <value>包含所转换项目的解决方案文件的名称。</value>
+        <summary>获取或设置包含正在转换的项目的解决方案文件的名称。</summary>
+        <value>包含正在转换的项目的解决方案文件的名称。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

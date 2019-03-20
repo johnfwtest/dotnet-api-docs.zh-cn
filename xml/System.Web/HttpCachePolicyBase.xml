@@ -1,5 +1,5 @@
 <Type Name="HttpCachePolicyBase" FullName="System.Web.HttpCachePolicyBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fb8738e4bea85ad2d984449e68d2e48f06520857" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48655695" /></Metadata><TypeSignature Language="C#" Value="public abstract class HttpCachePolicyBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c4028b1190700f7e57fc15e588e47b032ea7a8fb" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57940627" /></Metadata><TypeSignature Language="C#" Value="public abstract class HttpCachePolicyBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpCachePolicyBase extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpCachePolicyBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HttpCachePolicyBase" />
@@ -23,7 +23,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>用作某些类的基类，这些类包含的方法可用于设置特定于缓存的 HTTP 标头以及用于控制 ASP.NET 页输出缓存。</summary>
+    <summary>作为某些类的基类，这些类用于设置特定于缓存的 HTTP 头和控制 ASP.NET 页面输出缓存。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -82,12 +82,12 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="handler" Type="System.Web.HttpCacheValidateHandler" />
-        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="handler" Type="System.Web.HttpCacheValidateHandler" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="data" Type="System.Object" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="handler">将处理请求的对象。</param>
-        <param name="data">传递给 <see cref="M:System.Web.HttpCachePolicyWrapper.AddValidationCallback(System.Web.HttpCacheValidateHandler,System.Object)" /> 委托的由用户提供的数据。</param>
+        <param name="handler">将要处理该请求的对象。</param>
+        <param name="data">传递到 <see cref="M:System.Web.HttpCachePolicyWrapper.AddValidationCallback(System.Web.HttpCacheValidateHandler,System.Object)" /> 委托的用户提供的数据。</param>
         <summary>在派生类中重写时，为当前响应注册验证回调。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -113,11 +113,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="extension" Type="System.String" />
+        <Parameter Name="extension" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="extension">要追加到 <see langword="Cache-Control" /> 标头的文本。</param>
-        <summary>在派生类中重写时，将指定的文本追加到 <see langword="Cache-Control" /> HTTP 标头。</summary>
+        <summary>当在派生类中重写时，将指定的文本追加到 <see langword="Cache-Control" /> HTTP 头。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
       </Docs>
@@ -142,10 +142,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="allow" Type="System.Boolean" />
+        <Parameter Name="allow" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="allow">如果为 <see langword="true" />，则指示客户端浏览器在浏览器历史记录缓存中存储响应；否则为 <see langword="false" />。</param>
+        <param name="allow">若要知道客户端浏览器在浏览器历史记录缓存中存储响应，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>在派生类中重写时，使响应在浏览器历史记录缓存中可用，而不考虑服务器上进行的 <see cref="T:System.Web.HttpCacheability" /> 设置。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -180,10 +180,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cacheability" Type="System.Web.HttpCacheability" />
+        <Parameter Name="cacheability" Type="System.Web.HttpCacheability" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="cacheability">要将标头设置为的 <see cref="T:System.Web.HttpCacheability" /> 枚举值。</param>
+        <param name="cacheability">要将标头设置为的 <see cref="T:System.Web.HttpCacheability" /> 枚举。</param>
         <summary>在派生类中重写时，将 <see langword="Cache-Control" /> 标头设置为指定的 <see cref="T:System.Web.HttpCacheability" /> 值。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -209,11 +209,11 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cacheability" Type="System.Web.HttpCacheability" />
-        <Parameter Name="field" Type="System.String" />
+        <Parameter Name="cacheability" Type="System.Web.HttpCacheability" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="field" Type="System.String" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="cacheability">要将标头设置为的 <see cref="T:System.Web.HttpCacheability" /> 枚举值。</param>
+        <param name="cacheability">要将标头设置为的 <see cref="T:System.Web.HttpCacheability" /> 枚举。</param>
         <param name="field">要添加到标头的缓存控制扩展名。</param>
         <summary>在派生类中重写时，将 <see langword="Cache-Control" /> 标头设置为指定的 <see cref="T:System.Web.HttpCacheability" /> 值，并将扩展名追加到指令。</summary>
         <remarks>To be added.</remarks>
@@ -240,10 +240,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="etag" Type="System.String" />
+        <Parameter Name="etag" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="etag">将用于 <see langword="ETag" /> 标头的文本。</param>
+        <param name="etag">要用于 <see langword="ETag" /> 标头的文本。</param>
         <summary>在派生类中重写时，将 <see langword="ETag" /> HTTP 标头设置为指定的字符串。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -295,7 +295,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="date" Type="System.DateTime" />
+        <Parameter Name="date" Type="System.DateTime" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="date">绝对过期时间。</param>
@@ -324,10 +324,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="date" Type="System.DateTime" />
+        <Parameter Name="date" Type="System.DateTime" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="date">要将 <see langword="Last-Modified" /> 标头设置为的日期-时间值。</param>
+        <param name="date">要将 <see langword="Last-Modified" /> 标头设置为的日期时间值。</param>
         <summary>在派生类中重写时，将 <see langword="Last-Modified" /> HTTP 标头设置为指定的日期和时间。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -379,10 +379,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="delta" Type="System.TimeSpan" />
+        <Parameter Name="delta" Type="System.TimeSpan" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="delta">要将 <see langword="Cache-Control: max-age" /> 标头设置为的时间跨度。</param>
+        <param name="delta">要将 <see langword="Cache-Control: max-age" /> 标头设置到的时间跨度。</param>
         <summary>在派生类中重写时，将 <see langword="Cache-Control: max-age" /> HTTP 标头设置为指定的时间跨度。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -486,7 +486,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="omit" Type="System.Boolean" />
+        <Parameter Name="omit" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="omit">如果为 <see langword="true" />，则指示 <see cref="T:System.Web.HttpCachePolicy" /> 对象不为其 <see cref="P:System.Web.HttpCachePolicy.VaryByHeaders" /> 属性使用 * 值；否则为 <see langword="false" />。</param>
@@ -515,10 +515,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="delta" Type="System.TimeSpan" />
+        <Parameter Name="delta" Type="System.TimeSpan" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="delta">要将 <see langword="Cache-Control: s-maxage" /> 标头设置为的时间跨度。</param>
+        <param name="delta">要将 <see langword="Cache-Control: s-maxage" /> 标头设置到的时间跨度。</param>
         <summary>在派生类中重写时，将 <see langword="Cache-Control: s-maxage" /> HTTP 标头设置为指定的时间跨度。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -544,10 +544,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="revalidation" Type="System.Web.HttpCacheRevalidation" />
+        <Parameter Name="revalidation" Type="System.Web.HttpCacheRevalidation" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="revalidation">将 <see langword="Cache-Control" /> 标头设置为的 <see cref="T:System.Web.HttpCacheRevalidation" /> 枚举值。</param>
+        <param name="revalidation">要将 <see langword="Cache-Control" /> 标头设置为的 <see cref="T:System.Web.HttpCacheRevalidation" /> 枚举值。</param>
         <summary>在派生类中重写时，基于指定的枚举值将 <see langword="Cache-Control" /> HTTP 标头设置为 <see langword="must-revalidate" /> 或 <see langword="proxy-revalidate" /> 指令。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -573,7 +573,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="slide" Type="System.Boolean" />
+        <Parameter Name="slide" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="slide">如果为 <see langword="true" />，则设置为可调缓存过期，如果为 <see langword="false" />，则设置为绝对缓存过期。</param>
@@ -602,10 +602,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="validUntilExpires" Type="System.Boolean" />
+        <Parameter Name="validUntilExpires" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="validUntilExpires">如果为 <see langword="true" />，则指定 ASP.NET 应忽略使缓存无效的 <see langword="Cache-Control" /> 标头；否则为 <see langword="false" />。</param>
+        <param name="validUntilExpires">若要指定 ASP.NET 应忽略 <see langword="Cache-Control" /> 失效标头，则为 <see langword="true" />否则为 <see langword="false" />。</param>
         <summary>在派生类中重写时，指定 ASP.NET 缓存是否应忽略客户端发送的使缓存无效的 HTTP <see langword="Cache-Control" /> 标头。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>
@@ -631,10 +631,10 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="custom" Type="System.String" />
+        <Parameter Name="custom" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="custom">文本字符串，将用它来区别缓存的输出。</param>
+        <param name="custom">用于改变已缓存的输出的文本字符串。</param>
         <summary>在派生类中重写时，指定用于区别缓存的输出响应的文本字符串。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotImplementedException">总是。</exception>

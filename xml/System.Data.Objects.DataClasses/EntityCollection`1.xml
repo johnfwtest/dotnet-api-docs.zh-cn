@@ -1,5 +1,5 @@
 <Type Name="EntityCollection&lt;TEntity&gt;" FullName="System.Data.Objects.DataClasses.EntityCollection&lt;TEntity&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="641e01f0be72c413f70f32f9dee7fea9353ebd90" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55341164" /></Metadata><TypeSignature Language="C#" Value="public sealed class EntityCollection&lt;TEntity&gt; : System.Data.Objects.DataClasses.RelatedEnd, System.Collections.Generic.ICollection&lt;TEntity&gt;, System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.ComponentModel.IListSource where TEntity : class" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="34f656f81d55560f0391c78df0dc981258e58612" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57960179" /></Metadata><TypeSignature Language="C#" Value="public sealed class EntityCollection&lt;TEntity&gt; : System.Data.Objects.DataClasses.RelatedEnd, System.Collections.Generic.ICollection&lt;TEntity&gt;, System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.ComponentModel.IListSource where TEntity : class" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EntityCollection`1&lt;class TEntity&gt; extends System.Data.Objects.DataClasses.RelatedEnd implements class System.Collections.Generic.ICollection`1&lt;!TEntity&gt;, class System.Collections.Generic.IEnumerable`1&lt;!TEntity&gt;, class System.Collections.IEnumerable, class System.ComponentModel.IListSource" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EntityCollection`1" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EntityCollection(Of TEntity)&#xA;Inherits RelatedEnd&#xA;Implements ICollection(Of TEntity), IEnumerable(Of TEntity), IListSource" />
@@ -171,7 +171,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>定义对象上下文中两个附加对象之间的关系。</summary>
+        <summary>定义两个附加对象在对象上下文中的关系。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Attach">
@@ -194,8 +194,8 @@
         <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" />
       </Parameters>
       <Docs>
-        <param name="entities">对象上下文中与源对象相关的对象集合。</param>
-        <summary>定义对象上下文中对象和相关对象集合之间的关系。</summary>
+        <param name="entities">对象上下文中与源对象相关的对象的集合。</param>
+        <summary>定义对象和相关对象集合在对象上下文中的关系。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -236,7 +236,7 @@
       </Parameters>
       <Docs>
         <param name="entity">附加的对象。</param>
-        <summary>定义对象上下文中两个附加对象之间的关系。</summary>
+        <summary>定义两个附加对象在对象上下文中的关系。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -335,7 +335,7 @@
       <Docs>
         <param name="entity">要在 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 中定位的对象。</param>
         <summary>确定特定对象是否存在于集合中。</summary>
-        <returns>如果在 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 中找到对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果在 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 中找到该对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -496,7 +496,7 @@
       <Parameters />
       <Docs>
         <summary>返回一个枚举器，用于循环访问集合中的对象。</summary>
-        <returns>一个 <see cref="T:System.Collections.IEnumerator" />，循环访问 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 缓存的值集。</returns>
+        <returns>一个 <see cref="T:System.Collections.IEnumerator" />，它对由 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 缓存的值集进行循环访问。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -544,7 +544,7 @@
         <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
       </Parameters>
       <Docs>
-        <param name="mergeOption">指定此集合中的对象应如何与从以前针对相同 <see cref="T:System.Data.Objects.ObjectContext" /> 的查询中返回的对象合并。</param>
+        <param name="mergeOption">指定应如何合并此集合中的对象和针对同一 <see cref="T:System.Data.Objects.ObjectContext" /> 的早期查询中可能已返回的对象。</param>
         <summary>使用指定的合并选项将相关对象加载到集合中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -609,7 +609,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="context">流上下文。</param>
@@ -644,7 +644,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="context">流上下文。</param>
@@ -676,7 +676,7 @@
       </Parameters>
       <Docs>
         <param name="entity">要从集合中移除的对象。</param>
-        <summary>从集合移除对象，并标记要删除的关系。</summary>
+        <summary>从集合中移除对象，将关系标记为待删除。</summary>
         <returns>如果成功移除了该项，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -726,7 +726,7 @@
       <Parameters />
       <Docs>
         <summary>返回一个枚举器，用于循环访问 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 缓存的值集。</summary>
-        <returns>一个 <see cref="T:System.Collections.IEnumerator" />，循环访问 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 缓存的值集。</returns>
+        <returns>一个 <see cref="T:System.Collections.IEnumerator" />，它对由 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 缓存的值集进行循环访问。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -782,7 +782,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回 <see cref="T:System.Collections.IList" /> 形式的集合用于数据绑定。</summary>
+        <summary>以 <see cref="T:System.Collections.IList" /> 形式返回一个集合，用于数据绑定。</summary>
         <returns>实体对象的 <see cref="T:System.Collections.IList" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
