@@ -1,5 +1,5 @@
 <Type Name="StringInfo" FullName="System.Globalization.StringInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a10f563d3d5764e93b96ed757b23df02d6387e0a" /><Meta Name="ms.sourcegitcommit" Value="1654a92bac785a221098172d9cacd405ceaac9b7" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/01/2018" /><Meta Name="ms.locfileid" Value="52736419" /></Metadata><TypeSignature Language="C#" Value="public class StringInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="759635c05d17150142011cb2308cfa17a1623ab5" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57963702" /></Metadata><TypeSignature Language="C#" Value="public class StringInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StringInfo extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.StringInfo" />
   <TypeSignature Language="VB.NET" Value="Public Class StringInfo" />
@@ -39,7 +39,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>提供功能将字符串拆分为文本元素并循环访问这些文本元素。</summary>
+    <summary>提供将字符串拆分为文本元素和循环访问这些文本元素的功能。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -65,7 +65,7 @@
   
 - `strCombining`，它是一个阿拉伯语字符串，包含三个文本元素和多个 <xref:System.Char> 对象。 第一个文本元素是后跟 ARABIC HAMZA BELOW (U+-655) 和 ARABIC KASRA (U+0650) 的基字符 ARABIC LETTER ALEF (U+-627)。 第二个文本元素是后跟 ARABIC FATHA (U+-64E) 的 ARABIC LETTER HEH (U+0647)。 第三个文本元素是后跟 ARABIC DAMMATAN (U+064C) 的 ARABIC LETTTER BEH (U+0628)。  
   
-- `strSurrogates`，它是一个包含三个代理项对的字符串：辅助多语言平面中的 GREEK ACROPHONIC FIVE TALENTS (U+10148)、增补表意字符平面中的 U+20026 以及私有使用区中的 U+F1001。 每个字符的 UTF-16 编码是一个代理项对，其中依次包含一个高代理项和一个低代理项。  
+- `strSurrogates`它是一个包含三个代理项对的字符串：GREEK ACROPHONIC FIVE TALENTS (U + 10148) 补充的多语言平面 U + 20026 从增补表意字符平面和 U + F1001 从专用的用户区域。 每个字符的 UTF-16 编码是一个代理项对，其中依次包含一个高代理项和一个低代理项。  
   
 每个字符串依次通过 <xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A> 方法和 <xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A> 方法分析一次。 两个方法都可正确分析两个字符串中的文本元素并显示分析操作的结果。  
   
@@ -168,7 +168,7 @@
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">用于初始化此 <see cref="T:System.Globalization.StringInfo" /> 对象的字符串。</param>
@@ -221,12 +221,12 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="value">一个对象。</param>
         <summary>指示当前 <see cref="T:System.Globalization.StringInfo" /> 对象是否与指定的对象相等。</summary>
-        <returns>如果 <paramref name="value" /> 参数是 <see cref="T:System.Globalization.StringInfo" /> 对象并且其 <see cref="P:System.Globalization.StringInfo.String" /> 属性等同于此 <see cref="P:System.Globalization.StringInfo.String" /> 对象的 <see cref="T:System.Globalization.StringInfo" /> 属性，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="value" /> 参数是 <see cref="T:System.Globalization.StringInfo" /> 对象并且其 <see cref="P:System.Globalization.StringInfo.String" /> 属性等同于此 <see cref="T:System.Globalization.StringInfo" /> 对象的 <see cref="P:System.Globalization.StringInfo.String" /> 属性，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="Overload:System.String.Equals" />
       </Docs>
@@ -270,7 +270,7 @@
       <Parameters />
       <Docs>
         <summary>计算当前 <see cref="T:System.Globalization.StringInfo" /> 对象的值的哈希代码。</summary>
-        <returns>基于此 <see cref="T:System.Globalization.StringInfo" /> 对象的字符串值的 32 位有符号整数哈希代码。</returns>
+        <returns>基于此 <see cref="T:System.Globalization.StringInfo" /> 对象的字符串值的 32 位带符号整数哈希代码。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -328,7 +328,7 @@
         <Parameter Name="str" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="str">要从其获取文本元素的字符串。</param>
+        <param name="str">要从中获取文本元素的字符串。</param>
         <summary>获取指定字符串中的第一个文本元素。</summary>
         <returns>包含指定字符串中的第一个文本元素的字符串。</returns>
         <remarks>
@@ -389,7 +389,7 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="str">要从其获取文本元素的字符串。</param>
+        <param name="str">要从中获取文本元素的字符串。</param>
         <param name="index">文本元素开始位置的从零开始的索引。</param>
         <summary>获取指定字符串中指定索引处的文本元素。</summary>
         <returns>包含指定字符串中指定索引处的文本元素的字符串。</returns>
@@ -417,7 +417,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回一个循环访问字符串的文本元素的枚举数。</summary>
+        <summary>返回一个循环访问字符串的文本元素的枚举器。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetTextElementEnumerator">
@@ -591,8 +591,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前 <see cref="T:System.Globalization.StringInfo" /> 对象中的文本元素的数目。</summary>
-        <value>此 <see cref="T:System.Globalization.StringInfo" /> 对象中的基本字符、代理项对和组合字符序列的数目。</value>
+        <summary>获取当前 <see cref="T:System.Globalization.StringInfo" /> 对象中的文本元素数量。</summary>
+        <value>此 <see cref="T:System.Globalization.StringInfo" /> 对象中基本字符、代理项对和组合字符序列的数量。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -639,7 +639,7 @@
       <Docs>
         <param name="str">要搜索的字符串。</param>
         <summary>返回指定字符串中每个基字符、高代理项或控制字符的索引。</summary>
-        <returns>一个整数数组，它包含指定字符串中每个基字符、高代理项或控制字符的索引（从零开始）。</returns>
+        <returns>一个整数数组，它包含指定字符串中每个基字符、高代理项或控制字符的从零开始的索引。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -764,10 +764,10 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="startingTextElement" Type="System.Int32" />
+        <Parameter Name="startingTextElement" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="startingTextElement">此 <see cref="T:System.Globalization.StringInfo" /> 对象中文本元素的零始索引。</param>
+        <param name="startingTextElement">此 <see cref="T:System.Globalization.StringInfo" /> 对象中文本元素的从零开始的索引。</param>
         <summary>从当前的 <see cref="T:System.Globalization.StringInfo" /> 对象检索文本元素的子字符串（从指定的文本元素开始，一直到最后一个文本元素）。</summary>
         <returns>此 <see cref="T:System.Globalization.StringInfo" /> 对象中的文本元素的子字符串（从 <paramref name="startingTextElement" /> 参数指定的文本元素索引开始，一直到此对象中的最后一个文本元素）。</returns>
         <remarks>
@@ -814,14 +814,14 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="startingTextElement" Type="System.Int32" />
-        <Parameter Name="lengthInTextElements" Type="System.Int32" />
+        <Parameter Name="startingTextElement" Type="System.Int32" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="lengthInTextElements" Type="System.Int32" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="startingTextElement">此 <see cref="T:System.Globalization.StringInfo" /> 对象中文本元素的从零开始的索引。</param>
         <param name="lengthInTextElements">要检索的文本元素的数目。</param>
         <summary>从当前的 <see cref="T:System.Globalization.StringInfo" /> 对象中检索文本元素的子字符串（从指定文本元素开始，一直到指定数目的文本元素）。</summary>
-        <returns>此 <see cref="T:System.Globalization.StringInfo" /> 对象中的文本元素的子字符串。 子字符串包含个数由 <paramref name="lengthInTextElements" /> 参数指定的文本元素，并从 <paramref name="startingTextElement" /> 参数指定的文本元素索引开始。</returns>
+        <returns>此 <see cref="T:System.Globalization.StringInfo" /> 对象中的文本元素的子字符串。 子字符串包含由 <paramref name="lengthInTextElements" /> 参数指定的文本元素数量，并从 <paramref name="startingTextElement" /> 参数指定的文本元素索引开始。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="RouteBase" FullName="System.Web.Routing.RouteBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a1e6e7f36e59924591b090b7926fa06fc408d83b" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51914651" /></Metadata><TypeSignature Language="C#" Value="public abstract class RouteBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c7badd9065738a118da4845a7660f91a4a5f93f3" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57924364" /></Metadata><TypeSignature Language="C#" Value="public abstract class RouteBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RouteBase extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Routing.RouteBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class RouteBase" />
@@ -82,12 +82,12 @@
         <ReturnType>System.Web.Routing.RouteData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="httpContext">一个对象，该对象封装有关 HTTP 请求的信息。</param>
-        <summary>在派生类中重写时，返回关于请求的路由信息。</summary>
-        <returns>一个对象，如果路由与当前请求匹配，则该对象包含路由定义的值；如果路由与该请求不匹配，则为 <see langword="null" />。</returns>
+        <param name="httpContext">一个对象，封装有关 HTTP 请求的信息。</param>
+        <summary>当在派生类中重写时，会返回有关请求的路由信息。</summary>
+        <returns>一个对象，包含路由定义的值（如果该路由与当前请求匹配）或 <see langword="null" />（如果该路由与请求不匹配）。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/892441af-8f1d-483e-ab5f-b82c23576f5a">ASP.NET 路由</related>
       </Docs>
@@ -111,14 +111,14 @@
         <ReturnType>System.Web.Routing.VirtualPathData</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
-        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" Index="0" FrameworkAlternate="netframework-4.8" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" Index="1" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="requestContext">一个对象，封装有关所请求的路由的信息。</param>
-        <param name="values">一个包含路由的参数的对象。</param>
-        <summary>在派生类中重写时，检查路由是否与指定的值匹配，如果匹配，则生成 URL，并检索有关该路由的信息。</summary>
-        <returns>如果路由与 <paramref name="values" /> 匹配，则为包含生成的 URL 和有关路由的信息的对象；如果不匹配，则为 <see langword="null" />。</returns>
+        <param name="values">一个包含路由参数的对象。</param>
+        <summary>当在派生类中重写时，会检查路由是否与指定值匹配，如果匹配，则生成一个 URL，然后检索有关该路由的信息。</summary>
+        <returns>一个对象（包含生成的 URL 和有关路由的信息）或 <see langword="null" />（如果路由与 <paramref name="values" /> 不匹配）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -149,8 +149,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，它指示 ASP.NET 路由是否应处理与现有文件匹配的 URL。</summary>
-        <value>如果 ASP.NET 路由处理所有请求（即使与现有文件匹配的请求），则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示 ASP.NET 路由操作是否应处理与现有文件匹配的 URL。</summary>
+        <value>如果 ASP.NET 路由操作处理所有请求（甚至包括与现有文件匹配的请求），则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

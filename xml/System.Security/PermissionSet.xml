@@ -1,5 +1,5 @@
 <Type Name="PermissionSet" FullName="System.Security.PermissionSet">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e1b5104a2d1f92358f836502a4aa12bde6a4f35a" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56759100" /></Metadata><TypeSignature Language="C#" Value="public class PermissionSet : System.Collections.ICollection, System.Runtime.Serialization.IDeserializationCallback, System.Security.ISecurityEncodable, System.Security.IStackWalk" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3f320951e177899d3535bf0b802381b14180a9a6" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57918387" /></Metadata><TypeSignature Language="C#" Value="public class PermissionSet : System.Collections.ICollection, System.Runtime.Serialization.IDeserializationCallback, System.Security.ISecurityEncodable, System.Security.IStackWalk" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PermissionSet extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Runtime.Serialization.IDeserializationCallback, class System.Security.ISecurityEncodable, class System.Security.IStackWalk" />
   <TypeSignature Language="DocId" Value="T:System.Security.PermissionSet" />
   <TypeSignature Language="VB.NET" Value="Public Class PermissionSet&#xA;Implements ICollection, IDeserializationCallback, ISecurityEncodable, IStackWalk" />
@@ -50,7 +50,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>表示可以包含许多不同类型权限的集合。</summary>
+    <summary>表示可以包含许多不同类型的权限的集合。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -109,7 +109,7 @@
         <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
       </Parameters>
       <Docs>
-        <param name="state">枚举值之一，指定权限集对资源的访问。</param>
+        <param name="state">指定资源访问权限集的其中一个枚举值。</param>
         <summary>使用指定的 <see cref="T:System.Security.PermissionSet" /> 初始化 <see cref="T:System.Security.Permissions.PermissionState" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -161,7 +161,7 @@
         <Parameter Name="permSet" Type="System.Security.PermissionSet" />
       </Parameters>
       <Docs>
-        <param name="permSet">要从中获取新 <see cref="T:System.Security.PermissionSet" /> 的值的集合；或者，若要创建空的 <see cref="T:System.Security.PermissionSet" />，则为 <see langword="null" />。</param>
+        <param name="permSet">若为权限集，则从中获取新 <see cref="T:System.Security.PermissionSet" /> 的值；若为 <see langword="null" />，则创建空的 <see cref="T:System.Security.PermissionSet" />。</param>
         <summary>使用从 <paramref name="permSet" /> 参数获取的初始值初始化 <see cref="T:System.Security.PermissionSet" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -365,8 +365,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取一个值，该值指示 <see cref="T:System.Security.PermissionSet" /> 是否包含不是从 <see cref="T:System.Security.CodeAccessPermission" /> 派生的权限。</summary>
-        <returns>如果 <see cref="T:System.Security.PermissionSet" /> 包含不是从 <see cref="T:System.Security.CodeAccessPermission" /> 派生的权限，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>获取一个值，它指示 <see cref="T:System.Security.PermissionSet" /> 是否包含不派生自 <see cref="T:System.Security.CodeAccessPermission" /> 的权限。</summary>
+        <returns>如果 <see cref="T:System.Security.PermissionSet" /> 包含不派生自 <see cref="T:System.Security.CodeAccessPermission" /> 的权限，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -625,7 +625,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>如果尚未向调用堆栈中的所有较高位置调用方授予由当前实例指定的权限，则在运行时强制引发 <see cref="T:System.Security.SecurityException" />。</summary>
+        <summary>如果未对调用堆栈中所有较高级的调用方授予当前实例所指定的权限，则在运行时强制 <see cref="T:System.Security.SecurityException" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -693,7 +693,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>导致任何经过调用代码以请求某个权限且该权限与当前 <see cref="M:System.Security.PermissionSet.Demand" /> 中所包含的类型的权限有交集的 <see cref="T:System.Security.PermissionSet" /> 失败。</summary>
+        <summary>导致通过与当前 <see cref="T:System.Security.PermissionSet" /> 中所含类型的权限具有交集的权限的调用代码的任何 <see cref="M:System.Security.PermissionSet.Demand" /> 失败。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -706,7 +706,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Security.SecurityException">以前对 <see cref="M:System.Security.PermissionSet.Deny" /> 的调用已经限制了当前堆栈帧的权限。</exception>
+        <exception cref="T:System.Security.SecurityException">对 <see cref="M:System.Security.PermissionSet.Deny" /> 的前一次调用已经限制当前堆栈帧的权限。</exception>
       </Docs>
     </Member>
     <Member MemberName="Equals">
@@ -719,8 +719,8 @@
       <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Equals(System.Object)" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="override this.Equals : obj -&gt; bool" Usage="permissionSet.Equals o" FrameworkAlternate="netframework-1.1;dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="override this.Equals : obj -&gt; bool" Usage="permissionSet.Equals obj" FrameworkAlternate="netframework-2.0" />
+      <MemberSignature Language="F#" Value="override this.Equals : obj -&gt; bool" Usage="permissionSet.Equals o" FrameworkAlternate="netframework-1.1" />
+      <MemberSignature Language="F#" Value="override this.Equals : obj -&gt; bool" Usage="permissionSet.Equals obj" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Equals(System.Object)" FrameworkAlternate="netframework-2.0;netcore-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
@@ -754,7 +754,7 @@
         <param name="o">将与当前 <see cref="T:System.Security.PermissionSet" /> 进行比较的对象。</param>
         <param name="obj">To be added.</param>
         <summary>确定指定的 <see cref="T:System.Security.PermissionSet" /> 或 <see cref="T:System.Security.NamedPermissionSet" /> 对象是否等于当前的 <see cref="T:System.Security.PermissionSet" />。</summary>
-        <returns>如果指定的对象等于当前的 <see cref="T:System.Security.PermissionSet" /> 对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果指定的对象等于当前 <see langword="true" /> 对象，则为 <see cref="T:System.Security.PermissionSet" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -819,7 +819,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="et" /> 参数不是有效的权限元素。  
   
 - 或 - 
-<paramref name="et" /> 参数的版本号不受支持。</exception>
+不支持 <paramref name="et" /> 参数的版本号。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
@@ -854,8 +854,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回集合的权限的枚举数。</summary>
-        <returns>集合的权限的枚举数对象。</returns>
+        <summary>返回集的权限的枚举器。</summary>
+        <returns>集的权限的枚举器对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -902,8 +902,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回集合的权限的枚举数。</summary>
-        <returns>集合的权限的枚举数对象。</returns>
+        <summary>返回集的权限的枚举器。</summary>
+        <returns>集的权限的枚举器对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -991,8 +991,8 @@
       </Parameters>
       <Docs>
         <param name="permClass">所需权限对象的类型。</param>
-        <summary>获取指定类型的权限对象（如果它存在于集合中）</summary>
-        <returns>由包含在 <see cref="T:System.Security.PermissionSet" /> 中的 <paramref name="permClass" /> 参数指定的类型的权限对象的副本，或 <see langword="null" />（如果权限对象不存在）。</returns>
+        <summary>如果集中存在指定类型，则获取该类型的权限对象。</summary>
+        <returns>权限对象的副本，其类型由 <see cref="T:System.Security.PermissionSet" /> 中包含的 <paramref name="permClass" /> 参数指定；如果上述均不存在，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1033,8 +1033,8 @@
       </Parameters>
       <Docs>
         <param name="permClass">权限对象的类型。</param>
-        <summary>获取指定类型的权限对象（如果它存在于集合中）</summary>
-        <returns>由包含在 <see cref="T:System.Security.PermissionSet" /> 中的 <paramref name="permClass" /> 参数指定的类型的权限对象的副本，或 <see langword="null" />（如果权限对象不存在）。</returns>
+        <summary>如果集中存在指定类型，则获取该类型的权限对象。</summary>
+        <returns>权限对象的副本，其类型由 <paramref name="permClass" /> 参数指定，且它包含在 <see cref="T:System.Security.PermissionSet" /> 中；如果上述均不存在，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1083,9 +1083,9 @@
         <Parameter Name="other" Type="System.Security.PermissionSet" />
       </Parameters>
       <Docs>
-        <param name="other">要与当前 <see cref="T:System.Security.PermissionSet" /> 相交的权限集。</param>
-        <summary>创建并返回一个权限集，该权限集是当前 <see cref="T:System.Security.PermissionSet" /> 和指定 <see cref="T:System.Security.PermissionSet" /> 的交集。</summary>
-        <returns>一个新权限集，表示当前 <see cref="T:System.Security.PermissionSet" /> 与指定目标的交集。 如果交集为空，则此对象为 <see langword="null" />。</returns>
+        <param name="other">与当前的 <see cref="T:System.Security.PermissionSet" /> 相交的权限集。</param>
+        <summary>创建并返回一个权限集，此权限集为当前的 <see cref="T:System.Security.PermissionSet" /> 和指定 <see cref="T:System.Security.PermissionSet" /> 的交集。</summary>
+        <returns>一个新权限集，它表示当前 <see cref="T:System.Security.PermissionSet" /> 与指定目标的交集。 如果交集为空，则此对象为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1142,7 +1142,7 @@
       <Parameters />
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Security.PermissionSet" /> 是否为空。</summary>
-        <returns>如果 <see cref="T:System.Security.PermissionSet" /> 为空，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 为空，则为 <see cref="T:System.Security.PermissionSet" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1238,7 +1238,7 @@
         <Parameter Name="target" Type="System.Security.PermissionSet" />
       </Parameters>
       <Docs>
-        <param name="target">要测试子集关系的权限集。 它必须是 <see cref="T:System.Security.PermissionSet" /> 或 <see cref="T:System.Security.NamedPermissionSet" />。</param>
+        <param name="target">将要测试子集关系的权限集。 它必须是 <see cref="T:System.Security.PermissionSet" /> 或 <see cref="T:System.Security.NamedPermissionSet" />。</param>
         <summary>确定当前 <see cref="T:System.Security.PermissionSet" /> 是否为指定 <see cref="T:System.Security.PermissionSet" /> 的子集。</summary>
         <returns>如果当前 <see cref="T:System.Security.PermissionSet" /> 是 <paramref name="target" /> 参数的子集，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -1291,7 +1291,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否保证该集合为线程安全的。</summary>
+        <summary>获取一个值，该值表示是否保证此集合是线程安全的。</summary>
         <value>总是为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1344,7 +1344,7 @@
       <Parameters />
       <Docs>
         <summary>确定 <see cref="T:System.Security.PermissionSet" /> 是否为 <see langword="Unrestricted" />。</summary>
-        <returns>如果 <see cref="T:System.Security.PermissionSet" /> 为 <see langword="true" />，则为 <see langword="Unrestricted" />；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see cref="T:System.Security.PermissionSet" /> 为 <see langword="Unrestricted" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1401,7 +1401,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>导致所有经过调用代码以请求不是当前 <see cref="M:System.Security.PermissionSet.Demand" /> 的子集的任何 <see cref="T:System.Security.PermissionSet" /> 的 <see cref="T:System.Security.PermissionSet" /> 失败。</summary>
+        <summary>导致所有经过调用代码以请求不是当前 <see cref="T:System.Security.PermissionSet" /> 的子集的任何 <see cref="T:System.Security.PermissionSet" /> 的 <see cref="M:System.Security.PermissionSet.Demand" /> 失败。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1445,9 +1445,9 @@
         <Parameter Name="permClass" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="permClass">要删除的权限的类型。</param>
-        <summary>从集合中移除某个类型的权限。</summary>
-        <returns>从集合中移除的权限。</returns>
+        <param name="permClass">要删除的权限类型。</param>
+        <summary>从集中删除某一类型的权限。</summary>
+        <returns>从集中删除了的权限。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1507,9 +1507,9 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
         <Parameter Name="permClass" Type="System.Type" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="permClass">要移除的权限的类型。</param>
-        <summary>从集合中移除某个类型的权限。</summary>
-        <returns>从集合中移除的权限。</returns>
+        <param name="permClass">要删除的权限类型。</param>
+        <summary>从集中删除某一类型的权限。</summary>
+        <returns>从集中删除了的权限。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1557,7 +1557,7 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>导致当前框架先前的所有 <see cref="M:System.Security.CodeAccessPermission.Assert" /> 都被移除，不再有效。</summary>
+        <summary>导致当前帧以前所有的 <see cref="M:System.Security.CodeAccessPermission.Assert" /> 被删除且不再有效。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1566,7 +1566,7 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">当前框架没有前一个 <see cref="M:System.Security.CodeAccessPermission.Assert" />。</exception>
+        <exception cref="T:System.InvalidOperationException">当前帧不再具有以前的 <see cref="M:System.Security.CodeAccessPermission.Assert" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="SetPermission">
@@ -1601,8 +1601,8 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
       </Parameters>
       <Docs>
         <param name="perm">要设置的权限。</param>
-        <summary>将权限设置到 <see cref="T:System.Security.PermissionSet" />，同时替换同一类型的所有现有权限。</summary>
-        <returns>集合权限。</returns>
+        <summary>将权限设置为 <see cref="T:System.Security.PermissionSet" />，替换同一类型的任何现有权限。</summary>
+        <returns>设置的权限。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1653,8 +1653,8 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
       </Parameters>
       <Docs>
         <param name="perm">要设置的权限。</param>
-        <summary>将权限设置到 <see cref="T:System.Security.PermissionSet" />，同时替换同一类型的所有现有权限。</summary>
-        <returns>集合权限。</returns>
+        <summary>将权限设置为 <see cref="T:System.Security.PermissionSet" />，替换同一类型的任何现有权限。</summary>
+        <returns>设置的权限。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1753,7 +1753,7 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
         <Parameter Name="sender" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="sender">开始回调的对象。 当前未实现该参数的功能。</param>
+        <param name="sender">启动回调的对象。 当前未实现该参数的功能。</param>
         <summary>在整个对象图形已经反序列化时运行。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1897,9 +1897,9 @@ myPermSet.RemovePermission(typeof(FileIOPermission));
         <Parameter Name="other" Type="System.Security.PermissionSet" />
       </Parameters>
       <Docs>
-        <param name="other">要与当前 <see cref="T:System.Security.PermissionSet" /> 构成并集的权限集。</param>
-        <summary>创建一个 <see cref="T:System.Security.PermissionSet" />，它是当前 <see cref="T:System.Security.PermissionSet" /> 和指定 <see cref="T:System.Security.PermissionSet" /> 的并集。</summary>
-        <returns>一个新权限集，表示当前 <see cref="T:System.Security.PermissionSet" /> 与指定 <see cref="T:System.Security.PermissionSet" /> 的并集。</returns>
+        <param name="other">与当前的 <see cref="T:System.Security.PermissionSet" /> 形成并集的权限集。</param>
+        <summary>创建 <see cref="T:System.Security.PermissionSet" />，它是当前的 <see cref="T:System.Security.PermissionSet" /> 和指定的 <see cref="T:System.Security.PermissionSet" /> 的并集。</summary>
+        <returns>一个新权限集，它表示当前 <see cref="T:System.Security.PermissionSet" /> 与指定 <see cref="T:System.Security.PermissionSet" /> 的并集。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

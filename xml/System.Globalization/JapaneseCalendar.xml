@@ -1,5 +1,5 @@
 <Type Name="JapaneseCalendar" FullName="System.Globalization.JapaneseCalendar">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="42bbea11167f93faf1341cd2dfcbe1ddcaab19cb" /><Meta Name="ms.sourcegitcommit" Value="3f21796619d6e69ad383c958cc013ce44c0678de" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/11/2019" /><Meta Name="ms.locfileid" Value="56047048" /></Metadata><TypeSignature Language="C#" Value="public class JapaneseCalendar : System.Globalization.Calendar" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="900207a0787a7b4e8fe5d19ff1f72abe690b936a" /><Meta Name="ms.sourcegitcommit" Value="b99ec7065534584bfab2aebde9f144bedabb075a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="58185280" /></Metadata><TypeSignature Language="C#" Value="public class JapaneseCalendar : System.Globalization.Calendar" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit JapaneseCalendar extends System.Globalization.Calendar" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.JapaneseCalendar" />
   <TypeSignature Language="VB.NET" Value="Public Class JapaneseCalendar&#xA;Inherits Calendar" />
@@ -49,7 +49,7 @@
 > [!NOTE]
 >  有关使用信息<xref:System.Globalization.JapaneseCalendar>类和其他日历.NET Framework 中的类，请参阅[使用日历](~/docs/standard/datetime/working-with-calendars.md)。  
   
- 日本历识别为每个皇帝 reign 一个纪元。 当前纪元是日本平成 12 时代，开始的公历 1989 年。 纪元名称通常显示年份。 例如，公历 2001 年为日语日历年平成 13。 请注意，第一年的某个时间段称为"元年。" 因此，公历 1989 年是日语日历平成元年。  
+ 日本历识别为每个皇帝 reign 一个纪元。 当前纪元是日本平成 12 时代，开始的公历 1989 年。 纪元名称通常显示年份。 例如，公历 2001 年为日语日历年平成 13。 请注意，第一年的某个时间段称为"元年。" 因此，公历 1989 年是日语日历平成元年。 默认情况下的格式设置操作指定的日期和时间格式字符串，例如"D"、"F"和"Y"，输出元年而不是"1"中的结果字符串。 
 
 [!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
 
@@ -87,9 +87,9 @@
   
  日期公元 2001 年 1 月 1 日 在公历中等同 Ichigatsu 日本历平成 13 年中的第一天。  
   
- 如果使用应用程序<xref:System.Globalization.JapaneseCalendar>类，<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>识别前面一年的纪元缩写。 缩写是单字符不区分大小写拉丁字母缩写或单字符日文汉字缩写。  
+ 如果<xref:System.Globalization.JapaneseCalendar>是日语区域性的当前日历<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>识别前面一年的纪元缩写。 缩写是单字符不区分大小写拉丁字母缩写或单字符日文汉字缩写。 xref:System.DateTime.Parse%2A?displayProperty=nameWithType > 还将"1"或元年 （元年） 识别为某个时间段的第一年。
   
- 每个<xref:System.Globalization.CultureInfo>对象支持一组的日历。 <xref:System.Globalization.CultureInfo.Calendar%2A>属性返回区域性的默认日历和<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>属性返回一个数组，包含所有支持的区域性的日历。 若要更改使用的日历<xref:System.Globalization.CultureInfo>，该应用程序应设置<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>的属性<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>到新<xref:System.Globalization.Calendar>。  
+ 每个<xref:System.Globalization.CultureInfo>对象支持一组的日历。 <xref:System.Globalization.CultureInfo.Calendar%2A>属性返回区域性的默认日历和<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>属性返回一个数组，包含所有支持的区域性的日历。 若要更改使用的日历<xref:System.Globalization.CultureInfo>，将<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>属性设置为一个新<xref:System.Globalization.Calendar>。
   
  ]]></format>
     </remarks>
@@ -173,7 +173,7 @@
         <Parameter Name="months" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="time"><see cref="T:System.DateTime" />，将向其添加月数。</param>
+        <param name="time">将向其添加月数的 <see cref="T:System.DateTime" />。</param>
         <param name="months">要添加的月数。</param>
         <summary>返回与指定 <see cref="T:System.DateTime" /> 相距指定月数的 <see cref="T:System.DateTime" />。</summary>
         <returns>将指定月数添加到指定的 <see cref="T:System.DateTime" /> 中时得到的 <see cref="T:System.DateTime" />。</returns>
@@ -255,7 +255,7 @@
         <Parameter Name="years" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="time"><see cref="T:System.DateTime" />，将向其添加年数。</param>
+        <param name="time">将向其添加年数的 <see cref="T:System.DateTime" />。</param>
         <param name="years">要添加的年数。</param>
         <summary>返回与指定 <see cref="T:System.DateTime" /> 相距指定年数的 <see cref="T:System.DateTime" />。</summary>
         <returns>将指定年数添加到指定的 <see cref="T:System.DateTime" /> 中时得到的 <see cref="T:System.DateTime" />。</returns>
@@ -883,8 +883,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="year" Type="System.Int32" />
-        <Parameter Name="era" Type="System.Int32" />
+        <Parameter Name="year" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="era" Type="System.Int32" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="year">年份。</param>
@@ -1066,9 +1066,9 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="time" Type="System.DateTime" />
-        <Parameter Name="rule" Type="System.Globalization.CalendarWeekRule" />
-        <Parameter Name="firstDayOfWeek" Type="System.DayOfWeek" />
+        <Parameter Name="time" Type="System.DateTime" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="rule" Type="System.Globalization.CalendarWeekRule" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="firstDayOfWeek" Type="System.DayOfWeek" Index="2" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="time">要读取的 <see cref="T:System.DateTime" />。</param>
@@ -1566,7 +1566,16 @@
   
 ## Remarks  
  <xref:System.Globalization.JapaneseCalendar.ToDateTime%2A>方法很有用，因为它可以将当前日历中的任何日期转换为公历日期。 公历日期，随后可用，例如，来比较不同日历中的日期或特定日历中创建等效的日期。  
-  
+
+因为<xref:System.Globalization.JapaneseCalendar>支持多个纪元基于统治的皇帝，应始终调用此方法，并显式指定纪元以避免意外的日期并清除代码的意图。 该示例演示如何实例化始终处于当前纪元的日期和一个属于指定的纪元。
+
+## Examples
+
+下面的示例实例化两个日期。 第一个始终是当前纪元中的第二个年份的第一天，而第二个标识 Taisho 纪元中的特定一天。 该示例的输出是与为当前纪元的平成纪元产生的。
+
+[!code-csharp[Specifying the era](~/samples/snippets/csharp/api/system.globalization/japanesecalendar/todatetime/program.cs)]
+[!code-vb[Specifying the era](~/samples/snippets/visualbasic/api/system.globalization/japanesecalendar/todatetime/Program.vb)]  
+
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="year" /> 超出了日历支持的范围。  
@@ -1578,7 +1587,7 @@
  <paramref name="day" /> 超出了日历支持的范围。  
   
 - 或 - 
- <paramref name="hour" /> 小于零或大于 23。  
+ <paramref name="hour" /> 小于 0 或大于 23。  
   
 - 或 - 
  <paramref name="minute" /> 小于 0 或大于 59。  

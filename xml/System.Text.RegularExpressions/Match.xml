@@ -1,5 +1,5 @@
 <Type Name="Match" FullName="System.Text.RegularExpressions.Match">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4abc11ca5402ca90244d72d4d3aa11f1c652657d" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52360455" /></Metadata><TypeSignature Language="C#" Value="public class Match : System.Text.RegularExpressions.Group" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5e4a59f52c1d9eac6f8bc05b37102224acdf6fbf" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57947907" /></Metadata><TypeSignature Language="C#" Value="public class Match : System.Text.RegularExpressions.Group" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Match extends System.Text.RegularExpressions.Group" />
   <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.Match" />
   <TypeSignature Language="VB.NET" Value="Public Class Match&#xA;Inherits Group" />
@@ -66,7 +66,7 @@
   
 |||  
 |-|-|  
-|控制台\\。编写|匹配字符串“Console.Write”。 请注意，"。"字符将被转义，以便将其解释为文字句点，而不是作为通配符，可匹配任何字符。|  
+|Console\\.Write|匹配字符串“Console.Write”。 请注意，"。"字符将被转义，以便将其解释为文字句点，而不是作为通配符，可匹配任何字符。|  
 |（行）？|匹配字符串“Line”的零个或一个匹配项。|  
   
  **示例 1**  
@@ -258,7 +258,7 @@
   
 下面的示例进行了这方面的演示。 正则表达式模式<c>*</c>搜索的零个或多个字母"a"字符串"abaabb"中。 如示例输出所示，搜索未找到六个匹配项。 第一个匹配尝试查找第一个"a"。 与完全其中第一个匹配结束，第一个 b; 之前在第二个匹配项开始它查找"a"的零个匹配项，并返回一个空字符串。 第三个匹配项不开始恰好第二个匹配结束的地方，因为返回空字符串的第二个匹配项。 相反，它从一个字符开始更高版本之后第一个"b"。 第三个匹配查找两个匹配项的"a"，并返回"aa"。 第四个匹配尝试结束的地方开始第三个匹配项之前第二个"b"，, 并返回一个空字符串。 第五个匹配尝试再次提升一个字符，以便它在第三个"b"之前开始，并返回一个空字符串。 第六个匹配项开始后的最后一个"b"，并再次返回一个空字符串。  
   
-[！ 代码 csharp[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/cs/nextmatch1.cs#1)] [！ 代码 vb[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/vb/nextmatch1.vb#1)]</para></block>
+[!code-csharp[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/cs/nextmatch1.cs#1)] [!code-vb[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/vb/nextmatch1.vb#1)]</para></block>
       </Docs>
     </Member>
     <Member MemberName="Result">
@@ -305,7 +305,7 @@
 ## Remarks  
  而<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>方法会在输入字符串中的所有匹配项替换为指定的替换模式中，<xref:System.Text.RegularExpressions.Match.Result%2A>方法会单个匹配项替换为指定的替换模式。 因为它对单个匹配项进行操作，还有可能对匹配的字符串执行处理，然后再调用<xref:System.Text.RegularExpressions.Match.Result%2A>方法。  
   
- `replacement`参数是标准的正则表达式替换模式。 它可以包含原义字符和正则表达式替换项。 有关更多信息，请参见 [Substitutions](~/docs/standard/base-types/substitutions-in-regular-expressions.md)。  
+ `replacement`参数是标准的正则表达式替换模式。 它可以包含原义字符和正则表达式替换项。 有关更多信息，请参见 [替代](~/docs/standard/base-types/substitutions-in-regular-expressions.md)。  
   
    
   
@@ -363,7 +363,7 @@
         <ReturnType>System.Text.RegularExpressions.Match</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="inner" Type="System.Text.RegularExpressions.Match" />
+        <Parameter Name="inner" Type="System.Text.RegularExpressions.Match" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="inner">与预期匹配等效的正则表达式匹配。</param>

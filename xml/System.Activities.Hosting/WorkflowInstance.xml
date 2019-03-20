@@ -1,5 +1,5 @@
 <Type Name="WorkflowInstance" FullName="System.Activities.Hosting.WorkflowInstance">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5da74134d1504a1f1f2b0e2b06202905984fcf07" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53227915" /></Metadata><TypeSignature Language="C#" Value="public abstract class WorkflowInstance" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d3f9599fb8a859242cf5b1b2a1ae36d9717ba339" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57936818" /></Metadata><TypeSignature Language="C#" Value="public abstract class WorkflowInstance" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract WorkflowInstance extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.WorkflowInstance" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WorkflowInstance" />
@@ -21,7 +21,7 @@
 ## Remarks  
  <xref:System.Activities.Hosting.WorkflowInstance> 采用单线程方式，并假定宿主同步所有对其的访问。 如果尝试同时调用多个 API，将导致引发 <xref:System.InvalidOperationException>。  
   
- <xref:System.Activities.Hosting.WorkflowInstance> 在内部有两种状态：“正在运行”和“已暂停”。 使运行时从已暂停状态转换为正在运行状态的唯一方法是调用 <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>。 所有操作（除“暂停”外）都只能在运行时处于“已暂停”状态时执行。 在以下情况中，运行时会自然而然地变为“已暂停”状态：  
+ 在内部，<xref:System.Activities.Hosting.WorkflowInstance>有两种状态：正在运行和暂停。 使运行时从已暂停状态转换为正在运行状态的唯一方法是调用 <xref:System.Activities.Hosting.WorkflowInstance.WorkflowInstanceControl.Run%2A>。 所有操作（除“暂停”外）都只能在运行时处于“已暂停”状态时执行。 在以下情况中，运行时会自然而然地变为“已暂停”状态：  
   
 -   运行时发生致命错误。 将通过 <xref:System.Activities.Hosting.WorkflowInstance.OnRequestAbort%2A> 向宿主发出信号（不会发出转换为“已暂停”的信号），然后通过 <xref:System.Activities.Hosting.WorkflowInstance.OnNotifyPaused%2A> 通知宿主。  
   
@@ -84,8 +84,8 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="workflowDefinition" Type="System.Activities.Activity" />
-        <Parameter Name="definitionIdentity" Type="System.Activities.WorkflowIdentity" />
+        <Parameter Name="workflowDefinition" Type="System.Activities.Activity" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="definitionIdentity" Type="System.Activities.WorkflowIdentity" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="workflowDefinition">对工作流加以定义的活动。</param>
@@ -110,9 +110,9 @@
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.TimeSpan" />
-        <Parameter Name="callback" Type="System.AsyncCallback" />
-        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="state" Type="System.Object" Index="2" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="timeout">时间段，在该时间段后将中止尝试。</param>
@@ -202,7 +202,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="result" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="result">异步跟踪操作的状态。</param>
@@ -226,7 +226,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="timeout" Type="System.TimeSpan" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="timeout">时间段，在该时间段后将中止尝试。</param>
@@ -250,8 +250,8 @@
         <ReturnType>System.Collections.Generic.IList&lt;System.Activities.DynamicUpdate.ActivityBlockingUpdate&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="deserializedRuntimeState" Type="System.Object" />
-        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" />
+        <Parameter Name="deserializedRuntimeState" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="deserializedRuntimeState">反序列化的运行时状态。</param>
@@ -428,9 +428,9 @@
         <Parameter Name="workflowExecutionProperties" Type="System.Collections.Generic.IList&lt;System.Activities.Handle&gt;" />
       </Parameters>
       <Docs>
-        <param name="workflowArgumentValues">工作流的输入参数，由自变量名进行键控。</param>
+        <param name="workflowArgumentValues">工作流的输入参数，由参数名进行键控。</param>
         <param name="workflowExecutionProperties">工作流执行属性的列表。</param>
-        <summary>由宿主调用，用于使用自变量值和执行属性初始化工作流实例。</summary>
+        <summary>由宿主调用，用于使用参数值和执行属性初始化工作流实例。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -450,8 +450,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="deserializedRuntimeState" Type="System.Object" />
-        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" />
+        <Parameter Name="deserializedRuntimeState" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" Index="1" FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="deserializedRuntimeState">用于执行工作流的运行时状态。</param>
@@ -763,7 +763,7 @@
         <Parameter Name="sourceInstanceId" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="exception">未经处理的异常。</param>
+        <param name="exception">未处理的异常。</param>
         <param name="source">引发异常的活动。</param>
         <param name="sourceInstanceId"><see cref="T:System.Activities.ActivityInstance" /> 的唯一标识符，表示引发异常的活动。</param>
         <summary>由工作流运行时调用，用于通知宿主工作流实例中发生了未经处理的异常。</summary>
