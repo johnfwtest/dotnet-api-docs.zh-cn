@@ -1,5 +1,5 @@
 <Type Name="Process" FullName="System.Diagnostics.Process">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6b1dc611089c85302c9d21de8cb2fc5281ea5b4d" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57937314" /></Metadata><TypeSignature Language="C#" Value="public class Process : System.ComponentModel.Component" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4b6bf6f299cf0346642cea501b760e0bcc0f3a76" /><Meta Name="ms.sourcegitcommit" Value="c181255cb311fdd498458b3f12418f773c97254a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/21/2019" /><Meta Name="ms.locfileid" Value="58320845" /></Metadata><TypeSignature Language="C#" Value="public class Process : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Process extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.Process" />
   <TypeSignature Language="VB.NET" Value="Public Class Process&#xA;Inherits Component" />
@@ -4281,44 +4281,22 @@ process.BeginOutputReadLine();
  与此相反，<xref:System.Diagnostics.Process.BeginErrorReadLine%2A>开始异步读取操作上<xref:System.Diagnostics.Process.StandardError%2A>流。 此方法启用流输出一个指定的事件处理程序，并立即返回给调用方，可以执行其他工作，而流输出定向到事件处理程序。  
   
  同步读取操作引入了读取从调用方之间的依赖关系<xref:System.Diagnostics.Process.StandardError%2A>流和子进程的写入该流。 这些依赖关系可能会导致死锁情况。 当调用方读取子进程的重定向流时，它所依赖的子。 调用方子写入流或关闭流之前等待读取操作。 子进程在编写时数据不足，无法填充其重定向的流，它是依赖于父。 子进程先等待下一个写入操作的父项从完整的流中读取或关闭流。 当调用方和子进程互相等待完成操作，并且都可以继续时，将产生死锁情况。 可以通过评估的调用方和子进程之间的依赖关系来避免死锁。  
-  
- 以下 C# 代码，例如，显示了如何从重定向流中读取并等待子进程退出。  
-  
-```csharp  
-// Start the child process.  
- Process p = new Process();  
- // Redirect the error stream of the child process.  
- p.StartInfo.UseShellExecute = false;  
- p.StartInfo.RedirectStandardError = true;  
- p.StartInfo.FileName = "Write500Lines.exe";  
- p.Start();  
- // Do not wait for the child process to exit before  
- // reading to the end of its redirected error stream.  
- // p.WaitForExit();  
- // Read the error stream first and then wait.  
- string error = p.StandardError.ReadToEnd();  
- p.WaitForExit();  
-```  
-  
- 代码示例调用，因此可避免死锁条件`p.StandardError.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
-  
- 从标准输出和标准错误流中读取的所有文本时出现类似问题。 以下 C# 代码，例如，执行这两个流的读取的操作。  
-  
-```csharp  
-// Do not perform a synchronous read to the end of both   
-// redirected streams.  
-// string output = p.StandardOutput.ReadToEnd();  
-// string error = p.StandardError.ReadToEnd();  
-// p.WaitForExit();  
-// Use asynchronous read operations on at least one of the streams.  
-p.BeginOutputReadLine();  
-string error = p.StandardError.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- 代码示例执行异步读取操作上，因此可避免死锁条件<xref:System.Diagnostics.Process.StandardOutput%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
-  
- 异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
+
+本节中的最后两个示例使用<xref:System.Diagnostics.Process.Start%2A>方法来启动名为可执行文件*Write500Lines.exe*。 下面的示例包含其源代码。
+
+[!code-csharp[Executable launched by Process.Start](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/write500lines.cs)]
+[!code-vb[Executable launched by Process.Start](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/write500lines.vb)]
+
+下面的示例演示如何从重定向的错误流中读取并等待子进程退出。 它通过调用避免死锁条件`p.StandardError.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。   
+
+[!code-csharp[Reading from the error stream](~/samples/snippets/csharp/api/system.diagnostics/process/standarderror/stderror-sync.cs)]
+[!code-vb[Reading from the error stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standarderror/stderror-sync.vb)]  
+
+从标准输出和标准错误流中读取的所有文本时出现类似问题。 以下示例执行两个流的读取的操作。 它可通过执行异步读取操作上避免死锁条件<xref:System.Diagnostics.Process.StandardError%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
+[!code-csharp[Reading from both streams](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-async.cs)]
+[!code-vb[Reading from both streams](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-async.vb)]  
+
+异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
   
 > [!NOTE]
 >  不能混合异步和同步读取的操作重定向流上。 一次的重定向的流<xref:System.Diagnostics.Process>打开在异步或同步模式下，所有进一步读取该流上的执行操作必须处于相同模式。 例如，不遵循<xref:System.Diagnostics.Process.BeginErrorReadLine%2A>通过调用<xref:System.IO.StreamReader.ReadLine%2A>上<xref:System.Diagnostics.Process.StandardError%2A>流，反之亦然。 但是，您可以读取在不同模式下的两个不同的流。 例如，可以调用<xref:System.Diagnostics.Process.BeginOutputReadLine%2A>，然后调用<xref:System.IO.StreamReader.ReadLine%2A>为<xref:System.Diagnostics.Process.StandardError%2A>流。  
@@ -4475,34 +4453,20 @@ p.WaitForExit();
  与此相反，<xref:System.Diagnostics.Process.BeginOutputReadLine%2A>开始异步读取操作上<xref:System.Diagnostics.Process.StandardOutput%2A>流。 此方法启用流输出一个指定的事件处理程序，并立即返回给调用方，可以执行其他工作，而流输出定向到事件处理程序。  
   
  同步读取操作引入了读取从调用方之间的依赖关系<xref:System.Diagnostics.Process.StandardOutput%2A>流和子进程的写入该流。 这些依赖关系可能会导致死锁情况。 当调用方读取子进程的重定向流时，它所依赖的子。 调用方子写入流或关闭流之前等待读取操作。 子进程在编写时数据不足，无法填充其重定向的流，它是依赖于父。 子进程先等待下一个写入操作的父项从完整的流中读取或关闭流。 当调用方和子进程互相等待完成操作，并且都可以继续时，将产生死锁情况。 可以通过评估的调用方和子进程之间的依赖关系来避免死锁。  
-  
- 以下 C# 代码，例如，显示了如何从重定向流中读取并等待子进程退出。  
-  
-```csharp  
-Process p = new Process();  
-p.StartInfo.UseShellExecute = false;  
-p.StartInfo.RedirectStandardOutput = true;  
-p.StartInfo.FileName = "Write500Lines.exe";  
-p.Start();  
-  
-// To avoid deadlocks, always read the output stream first and then wait.  
-string output = p.StandardOutput.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- 代码示例调用，因此可避免死锁条件`p.StandardOutput.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardOutput.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardOutput%2A>流。  
-  
- 从标准输出和标准错误流中读取的所有文本时出现类似问题。 以下 C# 代码，例如，执行这两个流的读取的操作。  
-  
-```csharp  
-// To avoid deadlocks, use asynchronous read operations on at least one of the streams.  
-// Do not perform a synchronous read to the end of both redirected streams.  
-p.BeginOutputReadLine();  
-string error = p.StandardError.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- 代码示例执行异步读取操作上，因此可避免死锁条件<xref:System.Diagnostics.Process.StandardOutput%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
+
+本节中的最后两个示例使用<xref:System.Diagnostics.Process.Start%2A>方法来启动名为可执行文件*Write500Lines.exe*。 下面的示例包含其源代码。
+
+[!code-csharp[Executable launched by Process.Start](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/write500lines.cs)]
+[!code-vb[Executable launched by Process.Start](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/write500lines.vb)]
+
+下面的示例演示如何从重定向流中读取并等待子进程退出。 该示例调用，因此可避免死锁条件`p.StandardOutput.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardOutput.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardOutput%2A>流。  
+
+[!code-csharp[Reading synchronously from a redirected output stream](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-sync.cs)]  
+[!code-vb[Reading synchronously from a redirected output stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-sync.vb)]  
+
+从标准输出和标准错误流中读取的所有文本时出现类似问题。 以下示例执行两个流的读取的操作。 它可通过执行异步读取操作上避免死锁条件<xref:System.Diagnostics.Process.StandardError%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。   
+[!code-csharp[Reading from a redirected output and error stream](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-async.cs)]  
+[!code-vb[Reading from a redirected output and error stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-async.vb)]    
   
  异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
   

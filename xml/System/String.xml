@@ -1,5 +1,5 @@
 <Type Name="String" FullName="System.String">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="db23f2db04db6d6720f79033432dc316007c5489" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57932918" /></Metadata><TypeSignature Language="C#" Value="public sealed class String : ICloneable, IComparable, IComparable&lt;string&gt;, IConvertible, IEquatable&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;char&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3713cc65ab6b1039fab831aadd6dab1cf1a1a289" /><Meta Name="ms.sourcegitcommit" Value="d2dc7b29150110865ef8f199ee7463d9568fc696" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/25/2019" /><Meta Name="ms.locfileid" Value="58414315" /></Metadata><TypeSignature Language="C#" Value="public sealed class String : ICloneable, IComparable, IComparable&lt;string&gt;, IConvertible, IEquatable&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;char&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit string extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;char&gt;, class System.Collections.IEnumerable, class System.ICloneable, class System.IComparable, class System.IComparable`1&lt;string&gt;, class System.IConvertible, class System.IEquatable`1&lt;string&gt;" />
   <TypeSignature Language="DocId" Value="T:System.String" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class String&#xA;Implements ICloneable, IComparable, IComparable(Of String), IConvertible, IEnumerable(Of Char), IEquatable(Of String)" />
@@ -68,6 +68,8 @@
   
  字符串是用于表示文本字符的序列集合。 一个<xref:System.String>对象是的有序集合<xref:System.Char?displayProperty=nameWithType>这些对象表示一个字符串;<xref:System.Char?displayProperty=nameWithType>对象对应于 utf-16 代码单元。 值<xref:System.String>对象为的有序集合的内容<xref:System.Char?displayProperty=nameWithType>对象和值是不可变 （即，它是只读的）。 字符串的不可变性的详细信息，请参阅[不变性和 StringBuilder 类](#Immutability)本主题后面的部分。 最大大小<xref:System.String>对象在内存中的为 2 GB 或大约 1 亿个字符。  
   
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note-some.md)]
+
  本节内容：  
   
  [实例化字符串对象](#Instantiation)   
@@ -88,31 +90,31 @@
 -   通过将分配一个字符串赋给<xref:System.String>变量。 这是用于创建一个字符串，最常使用的方法。 下面的示例使用分配来创建多个字符串。 请注意，在 C# 中，因为反斜杠 (\\) 是转义的字符，在字符串中的文本反斜杠必须进行转义或者整个字符串必须是@-quoted。  
   
      [!code-cpp[System.String.Class.Instantiate#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.class.instantiate/cpp/string.instantiate1.cpp#1)]
-     [!code-csharp[System.String.Class.Instantiate#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#1)]
+     [!code-csharp-interactive[System.String.Class.Instantiate#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#1)]
      [!code-vb[System.String.Class.Instantiate#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.class.instantiate/vb/instantiate1.vb#1)]  
   
 -   通过调用<xref:System.String>类构造函数。 下面的示例通过调用多个类构造函数实例化字符串。 请注意，一些构造函数包含指向字符数组或作为参数的有符号的字节数组的指针。 Visual Basic 不支持对这些构造函数的调用。 有关详细信息<xref:System.String>构造函数，请参阅<xref:System.String.%23ctor%2A>摘要的构造函数。  
   
      [!code-cpp[System.String.Class.Instantiate#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.class.instantiate/cpp/string.instantiate2.cpp#2)]
-     [!code-csharp[System.String.Class.Instantiate#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#2)]
+     [!code-csharp-interactive[System.String.Class.Instantiate#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#2)]
      [!code-vb[System.String.Class.Instantiate#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.class.instantiate/vb/instantiate1.vb#2)]  
   
 -   通过使用字符串串联运算符 (+ C# 中和 （& a) 或 + 在 Visual Basic 中) 中的任意组合创建单个字符串<xref:System.String>实例和字符串文本。 下面的示例演示如何使用字符串串联运算符。  
   
      [!code-cpp[System.String.Class.Instantiate#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.class.instantiate/cpp/string.instantiate3.cpp#3)]
-     [!code-csharp[System.String.Class.Instantiate#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#3)]
+     [!code-csharp-interactive[System.String.Class.Instantiate#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#3)]
      [!code-vb[System.String.Class.Instantiate#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.class.instantiate/vb/instantiate1.vb#3)]  
   
 -   通过检索属性或调用返回的字符串的方法。 下面的示例使用的方法<xref:System.String>类，以从更大的字符串中提取子字符串。  
   
      [!code-cpp[System.String.Class.Instantiate#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.class.instantiate/cpp/string.instantiate3.cpp#4)]
-     [!code-csharp[System.String.Class.Instantiate#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#4)]
+     [!code-csharp-interactive[System.String.Class.Instantiate#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#4)]
      [!code-vb[System.String.Class.Instantiate#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.class.instantiate/vb/instantiate1.vb#4)]  
   
 -   通过调用将的值或对象转换为其字符串表示形式的格式设置方法。 下面的示例使用[复合格式设置](~/docs/standard/base-types/composite-formatting.md)功能嵌入的两个对象的字符串表示形式转换为字符串。  
   
      [!code-cpp[System.String.Class.Instantiate#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.string.class.instantiate/cpp/string.instantiate3.cpp#5)]
-     [!code-csharp[System.String.Class.Instantiate#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#5)]
+     [!code-csharp-interactive[System.String.Class.Instantiate#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.class.instantiate/cs/program.cs#5)]
      [!code-vb[System.String.Class.Instantiate#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.class.instantiate/vb/instantiate1.vb#5)]  
   
 <a name="Characters"></a>   
@@ -133,7 +135,7 @@
 -   补充码位 （代理项对） 表示的 Unicode<xref:System.Char>对象，其码位是一个高代理项跟<xref:System.Char>对象，其码位是一个低代理项。 高代理项范围从 u+d800 到 U + DBFF 代码单元。 低代理项范围是从 U+DC00 到 U + DFFF 代码单元。 代理项对用于表示中 16 Unicode 辅助平面字符。 以下示例创建一个代理项字符并将其传递给<xref:System.Char.IsSurrogatePair%28System.Char%2CSystem.Char%29?displayProperty=nameWithType>方法以确定它是否是代理项对。  
   
      [!code-cpp[System.String.Class#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.String.Class/cpp/string.char2.cpp#3)]
-     [!code-csharp[System.String.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/surrogate1.cs#3)]
+     [!code-csharp-interactive[System.String.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/surrogate1.cs#3)]
      [!code-vb[System.String.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.Class/vb/surrogate1.vb#3)]  
   
 <a name="Unicode"></a>   
@@ -175,19 +177,19 @@
  <xref:System.String.Chars%2A>属性，可以访问单个<xref:System.Char>按其索引位置的字符串中的对象。 因为<xref:System.String.Chars%2A>属性为默认属性 （在 Visual Basic 中) 或索引器 （在 C# 中)，可以访问单个<xref:System.Char>使用如下所示的代码的字符串中的对象。 此代码将查找空格或标点字符在字符串以确定该字符串包含的单词数。  
   
  [!code-cpp[System.String.Class#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.String.Class/cpp/string.index1.cpp#4)]
- [!code-csharp[System.String.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/index1.cs#4)]
+ [!code-csharp-interactive[System.String.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/index1.cs#4)]
  [!code-vb[System.String.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.Class/vb/index1.vb#4)]  
   
  因为<xref:System.String>类实现<xref:System.Collections.IEnumerable>接口，您还可以循环<xref:System.Char>中使用的字符串对象`foreach`构造，如以下示例所示。  
   
  [!code-cpp[System.String.Class#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.String.Class/cpp/string.index2.cpp#5)]
- [!code-csharp[System.String.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/index2.cs#5)]
+ [!code-csharp-interactive[System.String.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/index2.cs#5)]
  [!code-vb[System.String.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.Class/vb/index2.vb#5)]  
   
  连续的索引值可能不对应于连续的 Unicode 字符，因为的 Unicode 字符可能是编码为多个<xref:System.Char>对象。 具体而言，一个字符串可能包含多字符的文本单位形成基字符后跟一个或多个组合字符或代理项对的。 若要使用而不是 Unicode 字符<xref:System.Char>对象，请使用<xref:System.Globalization.StringInfo?displayProperty=nameWithType>和<xref:System.Globalization.TextElementEnumerator>类。 下面的示例说明了处理的代码之间的差异<xref:System.Char>对象和使用 Unicode 字符的代码。 它将进行比较的字符数或每个单词的句子中的文本元素。 该字符串包含两个基字符组合字符后跟的序列。  
   
  [!code-cpp[System.String.Class#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.String.Class/cpp/string.index3.cpp#6)]
- [!code-csharp[System.String.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/index3.cs#6)]
+ [!code-csharp-interactive[System.String.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Class/cs/index3.cs#6)]
  [!code-vb[System.String.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.Class/vb/index3.vb#6)]  
   
  此示例适用于文本元素通过使用<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A?displayProperty=nameWithType>方法和<xref:System.Globalization.TextElementEnumerator>类来枚举字符串中的所有文本元素。 您还可以检索通过调用包含每个文本元素的起始索引的数组<xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A?displayProperty=nameWithType>方法。  
@@ -317,7 +319,7 @@
   
 <a name="comparison"></a>   
 ### <a name="string-comparison-and-sorting"></a>字符串比较和排序  
- 用于比较和排序字符串的约定因因区域性而异。 例如，排序顺序可能基于拼音或基于字符的可视表示形式。 在东亚语言中，按文字的笔画和部首对字符进行排序。 排序也取决于字母表使用的排序语言和区域性。 例如，丹麦语中有“Æ”字符，它在字母表中排在“Z”之后。 此外，比较可以区分大小写或不区分大小写，并且在某些情况下的大小写规则也因区域性而异。 序号比较，但是，使用时比较和排序字符串的字符串中的单个字符的 Unicode 码位。  
+ 用于比较和排序字符串的约定因因区域性而异。 例如，排序顺序可能基于拼音或基于字符的可视表示形式。 在东亚语言中，按文字的笔画和部首对字符进行排序。 排序也取决于字母表使用的排序语言和区域性。 例如，丹麦语中有"存储"字符，它在字母表中"Z"之后。 此外，比较可以区分大小写或不区分大小写，并且在某些情况下的大小写规则也因区域性而异。 序号比较，但是，使用时比较和排序字符串的字符串中的单个字符的 Unicode 码位。  
   
  排序规则用于确定与每个其他 Unicode 字符的字母顺序和如何两个字符串进行比较。 例如，<xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType>方法比较两个字符串基于<xref:System.StringComparison>参数。 如果参数值<xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>，该方法执行使用当前区域性的约定的语义比较，如果参数值<xref:System.StringComparison.Ordinal?displayProperty=nameWithType>，该方法执行序号比较。 因此，如以下示例所示，如果当前区域性为美国英语，在首次调用<xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType>方法 （使用区分区域性的比较） 将视为"a"小于"A"，但第二个调用同一方法 （使用序号比较） 将视为"a"大于"A"。  
   
@@ -1405,7 +1407,7 @@
 ## Remarks  
  <xref:System.String.Compare%2A> 方法的所有重载返回一个 32 位有符号整数，指示两个比较数之间的词法关系。  
   
-|“值”|条件|  
+|值|条件|  
 |-----------|---------------|  
 |小于零|第一个子字符串在排序顺序中位于第二个的子字符串。|  
 |零|子字符串在排序顺序中出现的位置相同或 `length` 为零。|  
@@ -1465,7 +1467,7 @@
         <summary>比较两个指定的 <see cref="T:System.String" /> 对象，并返回一个指示二者在排序顺序中的相对位置的整数。</summary>
         <returns>一个 32 位带符号整数，指示两个比较数之间的词法关系。  
   
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 条件 
  </description></listheader><item><term> 小于零 
  </term><description><paramref name="strA" /> 在排序顺序中位于 <paramref name="strB" /> 之前。  
@@ -1886,7 +1888,7 @@
         <param name="options">要在执行比较时使用的选项（如忽略大小写或符号）。</param>
         <summary>对两个指定的 <see cref="T:System.String" /> 对象进行比较，使用指定的比较选项和区域性特定的信息来影响比较，并返回一个整数，该整数指示这两个字符串在排序顺序中的关系。</summary>
         <returns>一个 32 位带符号整数，该整数指示 <paramref name="strA" /> 与 <paramref name="strB" /> 之间的词法关系，如下表所示 
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 条件 
  </description></listheader><item><term> 小于零 
  </term><description><paramref name="strA" /> 在排序顺序中位于 <paramref name="strB" /> 之前。  
@@ -2444,7 +2446,7 @@
         <summary>对两个指定 <see cref="T:System.String" /> 对象的子字符串进行比较，使用指定的比较选项和区域性特定的信息来影响比较，并返回一个整数，该整数指示这两个子字符串在排序顺序中的关系。</summary>
         <returns>一个整数，该整数用于指示两个子字符串之间的词法关系，如下表所示。  
   
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 条件 
  </description></listheader><item><term> 小于零 
  </term><description> <paramref name="strA" /> 中的子字符串在排序顺序中位于 <paramref name="strB" /> 中的子字符串之前。  
@@ -2651,7 +2653,7 @@
         <summary>通过计算每个子字符串中相应 <see cref="T:System.String" /> 对象的数值来比较两个指定的 <see cref="T:System.Char" /> 对象的子字符串。</summary>
         <returns>一个 32 位带符号整数，指示两个比较数之间的词法关系。  
   
- <list type="table"><listheader><term> “值” 
+ <list type="table"><listheader><term> 值 
  </term><description> 条件 
  </description></listheader><item><term> 小于零 
  </term><description> <paramref name="strA" /> 中的子字符串小于 <paramref name="strB" /> 中的子字符串。  

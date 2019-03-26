@@ -1,5 +1,5 @@
 <Type Name="Task" FullName="System.Threading.Tasks.Task">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="751c949d1ec3d43d0a9117c13ac51c866e72297f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57935544" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="61e799912ebc5301a0ff5ec7d38533305a13fde2" /><Meta Name="ms.sourcegitcommit" Value="d2dc7b29150110865ef8f199ee7463d9568fc696" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/25/2019" /><Meta Name="ms.locfileid" Value="58414276" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Task extends System.Object implements class System.IAsyncResult, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Task" />
   <TypeSignature Language="VB.NET" Value="Public Class Task&#xA;Implements IAsyncResult, IDisposable" />
@@ -198,7 +198,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 而不是最常见的方法调用此构造函数来实例化<xref:System.Threading.Tasks.Task>对象和启动任务是通过调用静态<xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType>或<xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29?displayProperty=nameWithType>方法。 此构造函数提供的唯一好处是它允许对象实例化，以从任务调用分隔。  
+ 此构造函数应仅用于高级方案中是必需的创建和启动的任务分隔。  
+  
+ 而不是最常见的方法调用此构造函数来实例化<xref:System.Threading.Tasks.Task>对象和启动任务是通过调用静态<xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType>或<xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29?displayProperty=nameWithType>方法。  
+  
+ 如果任何操作的任务需要的 API 的使用者只需内容以等待，以<xref:System.Threading.Tasks.TaskCompletionSource%601>应使用。  
   
    
   
@@ -2477,7 +2481,7 @@ Task t Status: RanToCompletion, Result: 42
 ## Remarks  
  此属性返回的默认实例<xref:System.Threading.Tasks.TaskFactory>类为通过调用无参数创建完全相同的<xref:System.Threading.Tasks.TaskFactory.%23ctor?displayProperty=nameWithType>构造函数。 它具有以下属性值：  
   
-|属性|值|  
+|Property|值|  
 |--------------|-----------|  
 |<xref:System.Threading.Tasks.TaskFactory.CancellationToken%2A?displayProperty=nameWithType>|<xref:System.Threading.CancellationToken.None%2A?displayProperty=nameWithType>|  
 |<xref:System.Threading.Tasks.TaskFactory.ContinuationOptions%2A?displayProperty=nameWithType>|<xref:System.Threading.Tasks.TaskContinuationOptions.None?displayProperty=nameWithType>|  
