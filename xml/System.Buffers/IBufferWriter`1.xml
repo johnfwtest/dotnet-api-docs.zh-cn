@@ -1,5 +1,5 @@
 <Type Name="IBufferWriter&lt;T&gt;" FullName="System.Buffers.IBufferWriter&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="674f0a0d53c9622f7a10d3a2b32626681056eef4" /><Meta Name="ms.sourcegitcommit" Value="9e7aa84070156026697d2898b5311e6c025a1e6a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/28/2019" /><Meta Name="ms.locfileid" Value="56996715" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="252b1dee3638a541d810d3dd33e85217543072a1" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58460524" /></Metadata><TypeSignature Language="C#" Value="public interface IBufferWriter&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBufferWriter`1&lt;T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.IBufferWriter`1" />
   <TypeSignature Language="VB.NET" Value="Public Interface IBufferWriter(Of T)" />
@@ -10,6 +10,9 @@
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T" />
@@ -35,11 +38,14 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="count">写入 <see cref="T:System.Span`1" /> 或 <see cref="T:System.Memory`1" /> 的数据项数量。</param>
@@ -60,17 +66,20 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Memory&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sizeHint" Type="System.Int32" />
+        <Parameter Name="sizeHint" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="sizeHint">返回的 <see cref="T:System.Memory`1" /> 的长度下限。 如果为 0，返回非空缓冲区。</param>
         <summary>返回要向其中写入数据的 <see cref="T:System.Memory`1" />，且大小至少是 <paramref name="sizeHint" /> 指定的请求大小。</summary>
         <returns>大小至少是 <paramref name="sizeHint" /> 的 <see cref="T:System.Memory`1" />。 如果 <paramref name="sizeHint" /> 是 0，返回非空缓冲区。</returns>
-        <remarks>  
+        <remarks>
           <format type="text/markdown"><![CDATA[  
 
 没有连续调用将返回同一缓冲区或相同大小的缓冲区能保证。
@@ -80,8 +89,8 @@
 你必须请求新的缓冲区之后调用`Advance`继续编写更多的数据; 不能写入以前获取的缓冲区。
 
          ]]></format>
-         </remarks>
-         <exception cref="T:System.OutOfMemoryException">请求的缓冲区大小不可用。</exception>        
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">请求的缓冲区大小不可用。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetSpan">
@@ -97,17 +106,20 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Span&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sizeHint" Type="System.Int32" />
+        <Parameter Name="sizeHint" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="sizeHint">返回的 <see cref="T:System.Span`1" /> 的长度下限。 如果为 0，返回非空缓冲区。</param>
         <summary>返回要向其中写入数据的 <see cref="T:System.Span`1" />，且大小至少是 <paramref name="sizeHint" /> 指定的请求大小。</summary>
         <returns>大小至少是 <paramref name="sizeHint" /> 的 <see cref="T:System.Span`1" />。 如果 <paramref name="sizeHint" /> 是 0，返回非空缓冲区。</returns>
-        <remarks>  
+        <remarks>
           <format type="text/markdown"><![CDATA[
   
 没有连续调用将返回同一缓冲区或相同大小的缓冲区能保证。
@@ -116,7 +128,7 @@
 
 你必须请求新的缓冲区之后调用`Advance`继续编写更多的数据; 不能写入以前获取的缓冲区。
          ]]></format>
-         </remarks>
+        </remarks>
       </Docs>
     </Member>
   </Members>
