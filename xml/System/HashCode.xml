@@ -1,5 +1,5 @@
 <Type Name="HashCode" FullName="System.HashCode">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="9bf3fa768e6865d60e15ea91922e14798c1258a5" /><Meta Name="ms.sourcegitcommit" Value="d2dc7b29150110865ef8f199ee7463d9568fc696" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/25/2019" /><Meta Name="ms.locfileid" Value="58414003" /></Metadata><TypeSignature Language="C#" Value="public struct HashCode" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b450dfac9e6c6057548d14bd2043f0f13c73a72c" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58452877" /></Metadata><TypeSignature Language="C#" Value="public struct HashCode" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit HashCode extends System.ValueType" />
   <TypeSignature Language="DocId" Value="T:System.HashCode" />
   <TypeSignature Language="VB.NET" Value="Public Structure HashCode" />
@@ -9,48 +9,51 @@
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.2.1.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ValueType</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary><span data-ttu-id="b93a8-101">将多个值的哈希代码合并为一个哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-101">Combines the hash code for multiple values into a single hash code.</span></span></summary>
+    <summary><span data-ttu-id="383fe-101">将多个值的哈希代码合并为一个哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-101">Combines the hash code for multiple values into a single hash code.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
-<span data-ttu-id="b93a8-102">可以使用<xref:System.HashCode>要合并成单个哈希代码的多个值 （例如，在结构或类上的字段）。</span><span class="sxs-lookup"><span data-stu-id="b93a8-102">You can use <xref:System.HashCode> to combine multiple values (for example, fields on a structure or class) into a single hash code.</span></span> <span data-ttu-id="b93a8-103">此结构在两种方式之一运行：</span><span class="sxs-lookup"><span data-stu-id="b93a8-103">This structure operates in one of two ways:</span></span>
+<span data-ttu-id="383fe-102">可以使用<xref:System.HashCode>要合并成单个哈希代码的多个值 （例如，在结构或类上的字段）。</span><span class="sxs-lookup"><span data-stu-id="383fe-102">You can use <xref:System.HashCode> to combine multiple values (for example, fields on a structure or class) into a single hash code.</span></span> <span data-ttu-id="383fe-103">此结构在两种方式之一运行：</span><span class="sxs-lookup"><span data-stu-id="383fe-103">This structure operates in one of two ways:</span></span>
 
- * <span data-ttu-id="b93a8-104">接受的一组最多八个值组合的静态方法。</span><span class="sxs-lookup"><span data-stu-id="b93a8-104">Static methods that accept a set of up to eight values to combine.</span></span>
- * <span data-ttu-id="b93a8-105">两个实例以流的形式，一次接受一个值进行操作的方法。</span><span class="sxs-lookup"><span data-stu-id="b93a8-105">Two instance methods that operate in a streaming fashion, accepting values one at a time.</span></span>
+ * <span data-ttu-id="383fe-104">接受的一组最多八个值组合的静态方法。</span><span class="sxs-lookup"><span data-stu-id="383fe-104">Static methods that accept a set of up to eight values to combine.</span></span>
+ * <span data-ttu-id="383fe-105">两个实例以流的形式，一次接受一个值进行操作的方法。</span><span class="sxs-lookup"><span data-stu-id="383fe-105">Two instance methods that operate in a streaming fashion, accepting values one at a time.</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="b93a8-106">它是最佳做法要考虑的哈希代码作为实现详细信息，如实现跨程序集版本可能会更改。</span><span class="sxs-lookup"><span data-stu-id="b93a8-106">It is best-practice to consider hash codes as an implementation detail, as the implementation may change across assembly versions.</span></span> <span data-ttu-id="b93a8-107">不存储生成的哈希代码<xref:System.HashCode>中序列化结构，例如，磁盘上。</span><span class="sxs-lookup"><span data-stu-id="b93a8-107">Do not store hash codes produced by <xref:System.HashCode> in serialized structures, for example, on-disk.</span></span> <span data-ttu-id="b93a8-108"><xref:System.HashCode> 使用静态初始化的随机种子来强制实施此最佳做法，这意味着，哈希代码才确定性的操作系统进程范围内。</span><span class="sxs-lookup"><span data-stu-id="b93a8-108"><xref:System.HashCode> uses a statically initialized random seed to enforce this best practice, meaning that the hash codes are only deterministic within the scope of an operating system process.</span></span>
+> <span data-ttu-id="383fe-106">它是最佳做法要考虑的哈希代码作为实现详细信息，如实现跨程序集版本可能会更改。</span><span class="sxs-lookup"><span data-stu-id="383fe-106">It is best-practice to consider hash codes as an implementation detail, as the implementation may change across assembly versions.</span></span> <span data-ttu-id="383fe-107">不存储生成的哈希代码<xref:System.HashCode>中序列化结构，例如，磁盘上。</span><span class="sxs-lookup"><span data-stu-id="383fe-107">Do not store hash codes produced by <xref:System.HashCode> in serialized structures, for example, on-disk.</span></span> <span data-ttu-id="383fe-108"><xref:System.HashCode> 使用静态初始化的随机种子来强制实施此最佳做法，这意味着，哈希代码才确定性的操作系统进程范围内。</span><span class="sxs-lookup"><span data-stu-id="383fe-108"><xref:System.HashCode> uses a statically initialized random seed to enforce this best practice, meaning that the hash codes are only deterministic within the scope of an operating system process.</span></span>
 
-### <a name="static-methods"></a><span data-ttu-id="b93a8-109">静态方法</span><span class="sxs-lookup"><span data-stu-id="b93a8-109">Static Methods</span></span>
+### <a name="static-methods"></a><span data-ttu-id="383fe-109">静态方法</span><span class="sxs-lookup"><span data-stu-id="383fe-109">Static Methods</span></span>
 
-<span data-ttu-id="b93a8-110">静态方法组合最多八个值的默认哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-110">The static methods combine the default hash codes of up to eight values.</span></span>
+<span data-ttu-id="383fe-110">静态方法组合最多八个值的默认哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-110">The static methods combine the default hash codes of up to eight values.</span></span>
  
  [!code-csharp[System.HashCode.Structure#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.hashcode.structure/cs/example1.cs#1)]
  [!code-vb[System.HashCode.Structure#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.hashcode.structure/vb/example1.vb#1)] 
 
-### <a name="instance-methods"></a><span data-ttu-id="b93a8-111">实例方法</span><span class="sxs-lookup"><span data-stu-id="b93a8-111">Instance Methods</span></span>
+### <a name="instance-methods"></a><span data-ttu-id="383fe-111">实例方法</span><span class="sxs-lookup"><span data-stu-id="383fe-111">Instance Methods</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="b93a8-112"><xref:System.HashCode.ToHashCode> 必须调用的每个实例中最多一次<xref:System.HashCode>。</span><span class="sxs-lookup"><span data-stu-id="b93a8-112"><xref:System.HashCode.ToHashCode> must be called at most once per instance of <xref:System.HashCode>.</span></span>
+> <span data-ttu-id="383fe-112"><xref:System.HashCode.ToHashCode> 必须调用的每个实例中最多一次<xref:System.HashCode>。</span><span class="sxs-lookup"><span data-stu-id="383fe-112"><xref:System.HashCode.ToHashCode> must be called at most once per instance of <xref:System.HashCode>.</span></span>
 
-<span data-ttu-id="b93a8-113">实例方法组合多个 8 个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-113">The instance methods combine the hash codes of more than eight values.</span></span>
+<span data-ttu-id="383fe-113">实例方法组合多个 8 个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-113">The instance methods combine the hash codes of more than eight values.</span></span>
  
  [!code-csharp[System.HashCode.Structure#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.hashcode.structure/cs/example2.cs#1)]
  [!code-vb[System.HashCode.Structure#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.hashcode.structure/vb/example2.vb#1)]
 
-<span data-ttu-id="b93a8-114">实例方法还将生成由特定的哈希代码结合起来<xref:System.Collections.Generic.IEqualityComparer%601>实现。</span><span class="sxs-lookup"><span data-stu-id="b93a8-114">The instance methods also combine the hash codes produced by a specific <xref:System.Collections.Generic.IEqualityComparer%601> implementation.</span></span>
+<span data-ttu-id="383fe-114">实例方法还将生成由特定的哈希代码结合起来<xref:System.Collections.Generic.IEqualityComparer%601>实现。</span><span class="sxs-lookup"><span data-stu-id="383fe-114">The instance methods also combine the hash codes produced by a specific <xref:System.Collections.Generic.IEqualityComparer%601> implementation.</span></span>
 
  [!code-csharp[System.HashCode.Structure#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.hashcode.structure/cs/example3.cs#1)]
  [!code-vb[System.HashCode.Structure#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.hashcode.structure/vb/example3.vb#1)]
 
-<span data-ttu-id="b93a8-115"><xref:System.HashCode>结构必须传递按引用到其他方法，因为它是值类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-115">The <xref:System.HashCode> structure must be passed by-reference to other methods, as it is a value type.</span></span>
+<span data-ttu-id="383fe-115"><xref:System.HashCode>结构必须传递按引用到其他方法，因为它是值类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-115">The <xref:System.HashCode> structure must be passed by-reference to other methods, as it is a value type.</span></span>
  
  [!code-csharp[System.HashCode.Structure#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.hashcode.structure/cs/example4.cs#1)]
  [!code-vb[System.HashCode.Structure#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.hashcode.structure/vb/example4.vb#1)]
@@ -71,6 +74,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -78,12 +84,12 @@
         <TypeParameter Name="T" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value" Type="T" />
+        <Parameter Name="value" Type="T" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T"><span data-ttu-id="b93a8-116">要将添加到哈希代码的值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-116">The type of the value to add to the hash code.</span></span></typeparam>
-        <param name="value"><span data-ttu-id="b93a8-117">要添加到哈希代码的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-117">The value to add to the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-118">将单个值添加到哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-118">Adds a single value to the hash code.</span></span></summary>
+        <typeparam name="T"><span data-ttu-id="383fe-116">要将添加到哈希代码的值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-116">The type of the value to add to the hash code.</span></span></typeparam>
+        <param name="value"><span data-ttu-id="383fe-117">要添加到哈希代码的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-117">The value to add to the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-118">将单个值添加到哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-118">Adds a single value to the hash code.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,6 +105,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -106,15 +115,15 @@
         <TypeParameter Name="T" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value" Type="T" />
-        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" />
+        <Parameter Name="value" Type="T" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" Index="1" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T"><span data-ttu-id="b93a8-119">要将添加到哈希代码的值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-119">The type of the value to add to the hash code.</span></span></typeparam>
-        <param name="value"><span data-ttu-id="b93a8-120">要添加到哈希代码的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-120">The value to add to the hash code.</span></span></param>
-        <param name="comparer"><span data-ttu-id="b93a8-121">使用 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 计算哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-121">The <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> to use to calculate the hash code.</span></span>
-<span data-ttu-id="b93a8-122">此值可以是空引用（Visual Basic 中无内容），它将使用 <typeparamref name="T" /> 的默认相等比较器。</span><span class="sxs-lookup"><span data-stu-id="b93a8-122">This value can be a null reference (Nothing in Visual Basic), which will use the default equality comparer for <typeparamref name="T" />.</span></span></param>
-        <summary><span data-ttu-id="b93a8-123">向哈希代码添加单个值，指定提供哈希代码函数的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-123">Adds a single value to the hash code, specifying the type that provides the hash code function.</span></span></summary>
+        <typeparam name="T"><span data-ttu-id="383fe-119">要将添加到哈希代码的值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-119">The type of the value to add to the hash code.</span></span></typeparam>
+        <param name="value"><span data-ttu-id="383fe-120">要添加到哈希代码的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-120">The value to add to the hash code.</span></span></param>
+        <param name="comparer"><span data-ttu-id="383fe-121">使用 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 计算哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-121">The <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> to use to calculate the hash code.</span></span>
+<span data-ttu-id="383fe-122">此值可以是空引用（Visual Basic 中无内容），它将使用 <typeparamref name="T" /> 的默认相等比较器。</span><span class="sxs-lookup"><span data-stu-id="383fe-122">This value can be a null reference (Nothing in Visual Basic), which will use the default equality comparer for <typeparamref name="T" />.</span></span></param>
+        <summary><span data-ttu-id="383fe-123">向哈希代码添加单个值，指定提供哈希代码函数的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-123">Adds a single value to the hash code, specifying the type that provides the hash code function.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -130,6 +139,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -137,14 +149,14 @@
         <TypeParameter Name="T1" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-124">要添加的哈希代码的值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-124">The type of the value to add the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-125">要添加到哈希代码的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-125">The value to add to the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-126">传播由指定值返回的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-126">Diffuses the hash code returned by the specified value.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-127">表示单个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-127">The hash code that represents the single value.</span></span></returns>
-        <remarks><span data-ttu-id="b93a8-128">一些数据结构假设哈希代码分散在很大变化。</span><span class="sxs-lookup"><span data-stu-id="b93a8-128">Some data structures assume that hash codes are diffused across a large range.</span></span> <span data-ttu-id="b93a8-129">此方法返回的值的哈希代码的质量有所改善，基础数据类型是简单，例如，一个整数值时很有用。</span><span class="sxs-lookup"><span data-stu-id="b93a8-129">This method improves the quality of the hash code returned by the value and is useful when the underlying data type is simple, for example, an integer value.</span></span></remarks>
+        <typeparam name="T1"><span data-ttu-id="383fe-124">要添加的哈希代码的值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-124">The type of the value to add the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-125">要添加到哈希代码的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-125">The value to add to the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-126">传播由指定值返回的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-126">Diffuses the hash code returned by the specified value.</span></span></summary>
+        <returns><span data-ttu-id="383fe-127">表示单个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-127">The hash code that represents the single value.</span></span></returns>
+        <remarks><span data-ttu-id="383fe-128">一些数据结构假设哈希代码分散在很大变化。</span><span class="sxs-lookup"><span data-stu-id="383fe-128">Some data structures assume that hash codes are diffused across a large range.</span></span> <span data-ttu-id="383fe-129">此方法返回的值的哈希代码的质量有所改善，基础数据类型是简单，例如，一个整数值时很有用。</span><span class="sxs-lookup"><span data-stu-id="383fe-129">This method improves the quality of the hash code returned by the value and is useful when the underlying data type is simple, for example, an integer value.</span></span></remarks>
       </Docs>
     </Member>
     <Member MemberName="Combine&lt;T1,T2&gt;">
@@ -159,6 +171,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -167,16 +182,16 @@
         <TypeParameter Name="T2" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-130">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-130">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-131">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-131">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-132">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-132">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-133">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-133">The second value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-134">将两个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-134">Combines two values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-135">表示两个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-135">The hash code that represents the two values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-130">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-130">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-131">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-131">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-132">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-132">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-133">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-133">The second value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-134">将两个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-134">Combines two values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-135">表示两个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-135">The hash code that represents the two values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -192,6 +207,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -201,19 +219,19 @@
         <TypeParameter Name="T3" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
-        <Parameter Name="value3" Type="T3" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value3" Type="T3" Index="2" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-136">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-136">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-137">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-137">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T3"><span data-ttu-id="b93a8-138">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-138">The type of the third value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-139">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-139">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-140">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-140">The second value to combine into the hash code.</span></span></param>
-        <param name="value3"><span data-ttu-id="b93a8-141">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-141">The third value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-142">将三个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-142">Combines three values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-143">表示三个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-143">The hash code that represents the three values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-136">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-136">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-137">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-137">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T3"><span data-ttu-id="383fe-138">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-138">The type of the third value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-139">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-139">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-140">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-140">The second value to combine into the hash code.</span></span></param>
+        <param name="value3"><span data-ttu-id="383fe-141">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-141">The third value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-142">将三个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-142">Combines three values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-143">表示三个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-143">The hash code that represents the three values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -229,6 +247,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -239,22 +260,22 @@
         <TypeParameter Name="T4" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
-        <Parameter Name="value3" Type="T3" />
-        <Parameter Name="value4" Type="T4" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value3" Type="T3" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value4" Type="T4" Index="3" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-144">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-144">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-145">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-145">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T3"><span data-ttu-id="b93a8-146">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-146">The type of the third value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T4"><span data-ttu-id="b93a8-147">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-147">The type of the fourth value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-148">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-148">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-149">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-149">The second value to combine into the hash code.</span></span></param>
-        <param name="value3"><span data-ttu-id="b93a8-150">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-150">The third value to combine into the hash code.</span></span></param>
-        <param name="value4"><span data-ttu-id="b93a8-151">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-151">The fourth value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-152">将四个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-152">Combines four values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-153">表示四个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-153">The hash code that represents the four values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-144">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-144">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-145">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-145">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T3"><span data-ttu-id="383fe-146">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-146">The type of the third value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T4"><span data-ttu-id="383fe-147">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-147">The type of the fourth value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-148">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-148">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-149">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-149">The second value to combine into the hash code.</span></span></param>
+        <param name="value3"><span data-ttu-id="383fe-150">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-150">The third value to combine into the hash code.</span></span></param>
+        <param name="value4"><span data-ttu-id="383fe-151">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-151">The fourth value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-152">将四个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-152">Combines four values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-153">表示四个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-153">The hash code that represents the four values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,6 +291,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -281,25 +305,25 @@
         <TypeParameter Name="T5" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
-        <Parameter Name="value3" Type="T3" />
-        <Parameter Name="value4" Type="T4" />
-        <Parameter Name="value5" Type="T5" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value3" Type="T3" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value4" Type="T4" Index="3" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value5" Type="T5" Index="4" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-154">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-154">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-155">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-155">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T3"><span data-ttu-id="b93a8-156">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-156">The type of the third value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T4"><span data-ttu-id="b93a8-157">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-157">The type of the fourth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T5"><span data-ttu-id="b93a8-158">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-158">The type of the fifth value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-159">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-159">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-160">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-160">The second value to combine into the hash code.</span></span></param>
-        <param name="value3"><span data-ttu-id="b93a8-161">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-161">The third value to combine into the hash code.</span></span></param>
-        <param name="value4"><span data-ttu-id="b93a8-162">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-162">The fourth value to combine into the hash code.</span></span></param>
-        <param name="value5"><span data-ttu-id="b93a8-163">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-163">The fifth value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-164">将五个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-164">Combines five values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-165">表示五个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-165">The hash code that represents the five values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-154">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-154">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-155">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-155">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T3"><span data-ttu-id="383fe-156">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-156">The type of the third value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T4"><span data-ttu-id="383fe-157">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-157">The type of the fourth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T5"><span data-ttu-id="383fe-158">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-158">The type of the fifth value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-159">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-159">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-160">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-160">The second value to combine into the hash code.</span></span></param>
+        <param name="value3"><span data-ttu-id="383fe-161">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-161">The third value to combine into the hash code.</span></span></param>
+        <param name="value4"><span data-ttu-id="383fe-162">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-162">The fourth value to combine into the hash code.</span></span></param>
+        <param name="value5"><span data-ttu-id="383fe-163">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-163">The fifth value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-164">将五个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-164">Combines five values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-165">表示五个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-165">The hash code that represents the five values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -315,6 +339,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -327,28 +354,28 @@
         <TypeParameter Name="T6" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
-        <Parameter Name="value3" Type="T3" />
-        <Parameter Name="value4" Type="T4" />
-        <Parameter Name="value5" Type="T5" />
-        <Parameter Name="value6" Type="T6" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value3" Type="T3" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value4" Type="T4" Index="3" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value5" Type="T5" Index="4" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value6" Type="T6" Index="5" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-166">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-166">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-167">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-167">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T3"><span data-ttu-id="b93a8-168">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-168">The type of the third value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T4"><span data-ttu-id="b93a8-169">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-169">The type of the fourth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T5"><span data-ttu-id="b93a8-170">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-170">The type of the fifth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T6"><span data-ttu-id="b93a8-171">要将合并到哈希代码的第六个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-171">The type of the sixth value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-172">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-172">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-173">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-173">The second value to combine into the hash code.</span></span></param>
-        <param name="value3"><span data-ttu-id="b93a8-174">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-174">The third value to combine into the hash code.</span></span></param>
-        <param name="value4"><span data-ttu-id="b93a8-175">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-175">The fourth value to combine into the hash code.</span></span></param>
-        <param name="value5"><span data-ttu-id="b93a8-176">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-176">The fifth value to combine into the hash code.</span></span></param>
-        <param name="value6"><span data-ttu-id="b93a8-177">第六个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-177">The sixth value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-178">将六个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-178">Combines six values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-179">表示六个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-179">The hash code that represents the six values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-166">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-166">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-167">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-167">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T3"><span data-ttu-id="383fe-168">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-168">The type of the third value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T4"><span data-ttu-id="383fe-169">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-169">The type of the fourth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T5"><span data-ttu-id="383fe-170">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-170">The type of the fifth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T6"><span data-ttu-id="383fe-171">要将合并到哈希代码的第六个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-171">The type of the sixth value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-172">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-172">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-173">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-173">The second value to combine into the hash code.</span></span></param>
+        <param name="value3"><span data-ttu-id="383fe-174">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-174">The third value to combine into the hash code.</span></span></param>
+        <param name="value4"><span data-ttu-id="383fe-175">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-175">The fourth value to combine into the hash code.</span></span></param>
+        <param name="value5"><span data-ttu-id="383fe-176">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-176">The fifth value to combine into the hash code.</span></span></param>
+        <param name="value6"><span data-ttu-id="383fe-177">第六个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-177">The sixth value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-178">将六个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-178">Combines six values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-179">表示六个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-179">The hash code that represents the six values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -364,6 +391,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -377,31 +407,31 @@
         <TypeParameter Name="T7" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
-        <Parameter Name="value3" Type="T3" />
-        <Parameter Name="value4" Type="T4" />
-        <Parameter Name="value5" Type="T5" />
-        <Parameter Name="value6" Type="T6" />
-        <Parameter Name="value7" Type="T7" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value3" Type="T3" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value4" Type="T4" Index="3" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value5" Type="T5" Index="4" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value6" Type="T6" Index="5" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value7" Type="T7" Index="6" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-180">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-180">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-181">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-181">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T3"><span data-ttu-id="b93a8-182">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-182">The type of the third value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T4"><span data-ttu-id="b93a8-183">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-183">The type of the fourth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T5"><span data-ttu-id="b93a8-184">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-184">The type of the fifth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T6"><span data-ttu-id="b93a8-185">要将合并到哈希代码的第六个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-185">The type of the sixth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T7"><span data-ttu-id="b93a8-186">要将合并到哈希代码的第七个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-186">The type of the seventh value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-187">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-187">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-188">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-188">The second value to combine into the hash code.</span></span></param>
-        <param name="value3"><span data-ttu-id="b93a8-189">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-189">The third value to combine into the hash code.</span></span></param>
-        <param name="value4"><span data-ttu-id="b93a8-190">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-190">The fourth value to combine into the hash code.</span></span></param>
-        <param name="value5"><span data-ttu-id="b93a8-191">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-191">The fifth value to combine into the hash code.</span></span></param>
-        <param name="value6"><span data-ttu-id="b93a8-192">第六个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-192">The sixth value to combine into the hash code.</span></span></param>
-        <param name="value7"><span data-ttu-id="b93a8-193">第七个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-193">The seventh value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-194">将七个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-194">Combines seven values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-195">表示七个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-195">The hash code that represents the seven values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-180">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-180">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-181">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-181">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T3"><span data-ttu-id="383fe-182">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-182">The type of the third value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T4"><span data-ttu-id="383fe-183">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-183">The type of the fourth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T5"><span data-ttu-id="383fe-184">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-184">The type of the fifth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T6"><span data-ttu-id="383fe-185">要将合并到哈希代码的第六个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-185">The type of the sixth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T7"><span data-ttu-id="383fe-186">要将合并到哈希代码的第七个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-186">The type of the seventh value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-187">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-187">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-188">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-188">The second value to combine into the hash code.</span></span></param>
+        <param name="value3"><span data-ttu-id="383fe-189">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-189">The third value to combine into the hash code.</span></span></param>
+        <param name="value4"><span data-ttu-id="383fe-190">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-190">The fourth value to combine into the hash code.</span></span></param>
+        <param name="value5"><span data-ttu-id="383fe-191">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-191">The fifth value to combine into the hash code.</span></span></param>
+        <param name="value6"><span data-ttu-id="383fe-192">第六个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-192">The sixth value to combine into the hash code.</span></span></param>
+        <param name="value7"><span data-ttu-id="383fe-193">第七个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-193">The seventh value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-194">将七个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-194">Combines seven values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-195">表示七个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-195">The hash code that represents the seven values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -417,6 +447,9 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -431,34 +464,34 @@
         <TypeParameter Name="T8" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="value1" Type="T1" />
-        <Parameter Name="value2" Type="T2" />
-        <Parameter Name="value3" Type="T3" />
-        <Parameter Name="value4" Type="T4" />
-        <Parameter Name="value5" Type="T5" />
-        <Parameter Name="value6" Type="T6" />
-        <Parameter Name="value7" Type="T7" />
-        <Parameter Name="value8" Type="T8" />
+        <Parameter Name="value1" Type="T1" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value2" Type="T2" Index="1" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value3" Type="T3" Index="2" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value4" Type="T4" Index="3" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value5" Type="T5" Index="4" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value6" Type="T6" Index="5" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value7" Type="T7" Index="6" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="value8" Type="T8" Index="7" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <typeparam name="T1"><span data-ttu-id="b93a8-196">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-196">The type of the first value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T2"><span data-ttu-id="b93a8-197">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-197">The type of the second value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T3"><span data-ttu-id="b93a8-198">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-198">The type of the third value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T4"><span data-ttu-id="b93a8-199">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-199">The type of the fourth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T5"><span data-ttu-id="b93a8-200">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-200">The type of the fifth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T6"><span data-ttu-id="b93a8-201">要将合并到哈希代码的第六个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-201">The type of the sixth value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T7"><span data-ttu-id="b93a8-202">要将合并到哈希代码的第七个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-202">The type of the seventh value to combine into the hash code.</span></span></typeparam>
-        <typeparam name="T8"><span data-ttu-id="b93a8-203">要将合并到哈希代码的第八个值的类型。</span><span class="sxs-lookup"><span data-stu-id="b93a8-203">The type of the eighth value to combine into the hash code.</span></span></typeparam>
-        <param name="value1"><span data-ttu-id="b93a8-204">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-204">The first value to combine into the hash code.</span></span></param>
-        <param name="value2"><span data-ttu-id="b93a8-205">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-205">The second value to combine into the hash code.</span></span></param>
-        <param name="value3"><span data-ttu-id="b93a8-206">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-206">The third value to combine into the hash code.</span></span></param>
-        <param name="value4"><span data-ttu-id="b93a8-207">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-207">The fourth value to combine into the hash code.</span></span></param>
-        <param name="value5"><span data-ttu-id="b93a8-208">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-208">The fifth value to combine into the hash code.</span></span></param>
-        <param name="value6"><span data-ttu-id="b93a8-209">第六个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-209">The sixth value to combine into the hash code.</span></span></param>
-        <param name="value7"><span data-ttu-id="b93a8-210">第七个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-210">The seventh value to combine into the hash code.</span></span></param>
-        <param name="value8"><span data-ttu-id="b93a8-211">第八个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="b93a8-211">The eighth value to combine into the hash code.</span></span></param>
-        <summary><span data-ttu-id="b93a8-212">将八个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="b93a8-212">Combines eight values into a hash code.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-213">表示八个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-213">The hash code that represents the eight values.</span></span></returns>
+        <typeparam name="T1"><span data-ttu-id="383fe-196">要将合并到哈希代码的第一个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-196">The type of the first value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T2"><span data-ttu-id="383fe-197">要将合并到哈希代码的第二个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-197">The type of the second value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T3"><span data-ttu-id="383fe-198">要将合并到哈希代码的第三个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-198">The type of the third value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T4"><span data-ttu-id="383fe-199">要将合并到哈希代码的第四个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-199">The type of the fourth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T5"><span data-ttu-id="383fe-200">要将合并到哈希代码的第五个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-200">The type of the fifth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T6"><span data-ttu-id="383fe-201">要将合并到哈希代码的第六个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-201">The type of the sixth value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T7"><span data-ttu-id="383fe-202">要将合并到哈希代码的第七个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-202">The type of the seventh value to combine into the hash code.</span></span></typeparam>
+        <typeparam name="T8"><span data-ttu-id="383fe-203">要将合并到哈希代码的第八个值的类型。</span><span class="sxs-lookup"><span data-stu-id="383fe-203">The type of the eighth value to combine into the hash code.</span></span></typeparam>
+        <param name="value1"><span data-ttu-id="383fe-204">第一个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-204">The first value to combine into the hash code.</span></span></param>
+        <param name="value2"><span data-ttu-id="383fe-205">第二个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-205">The second value to combine into the hash code.</span></span></param>
+        <param name="value3"><span data-ttu-id="383fe-206">第三个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-206">The third value to combine into the hash code.</span></span></param>
+        <param name="value4"><span data-ttu-id="383fe-207">第四个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-207">The fourth value to combine into the hash code.</span></span></param>
+        <param name="value5"><span data-ttu-id="383fe-208">第五个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-208">The fifth value to combine into the hash code.</span></span></param>
+        <param name="value6"><span data-ttu-id="383fe-209">第六个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-209">The sixth value to combine into the hash code.</span></span></param>
+        <param name="value7"><span data-ttu-id="383fe-210">第七个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-210">The seventh value to combine into the hash code.</span></span></param>
+        <param name="value8"><span data-ttu-id="383fe-211">第八个要合并到哈希代码中的值。</span><span class="sxs-lookup"><span data-stu-id="383fe-211">The eighth value to combine into the hash code.</span></span></param>
+        <summary><span data-ttu-id="383fe-212">将八个值合并到哈希代码中。</span><span class="sxs-lookup"><span data-stu-id="383fe-212">Combines eight values into a hash code.</span></span></summary>
+        <returns><span data-ttu-id="383fe-213">表示八个值的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-213">The hash code that represents the eight values.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -474,11 +507,14 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
-        <Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
           <AttributeName>System.Obsolete("HashCode is a mutable struct and should not be compared with other HashCodes.", true)</AttributeName>
         </Attribute>
       </Attributes>
@@ -486,14 +522,14 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="obj"><span data-ttu-id="b93a8-214">已忽略。</span><span class="sxs-lookup"><span data-stu-id="b93a8-214">Ignored.</span></span></param>
-        <summary><span data-ttu-id="b93a8-215">此方法不受支持，因此不应调用。</span><span class="sxs-lookup"><span data-stu-id="b93a8-215">This method is not supported and should not be called.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-216">此方法将始终引发 <see cref="T:System.NotSupportedException" />。</span><span class="sxs-lookup"><span data-stu-id="b93a8-216">This method will always throw a <see cref="T:System.NotSupportedException" />.</span></span></returns>
+        <param name="obj"><span data-ttu-id="383fe-214">已忽略。</span><span class="sxs-lookup"><span data-stu-id="383fe-214">Ignored.</span></span></param>
+        <summary><span data-ttu-id="383fe-215">此方法不受支持，因此不应调用。</span><span class="sxs-lookup"><span data-stu-id="383fe-215">This method is not supported and should not be called.</span></span></summary>
+        <returns><span data-ttu-id="383fe-216">此方法将始终引发 <see cref="T:System.NotSupportedException" />。</span><span class="sxs-lookup"><span data-stu-id="383fe-216">This method will always throw a <see cref="T:System.NotSupportedException" />.</span></span></returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.NotSupportedException"><span data-ttu-id="b93a8-217">始终在调用此方法时引发。</span><span class="sxs-lookup"><span data-stu-id="b93a8-217">Always thrown when this method is called.</span></span></exception>
+        <exception cref="T:System.NotSupportedException"><span data-ttu-id="383fe-217">始终在调用此方法时引发。</span><span class="sxs-lookup"><span data-stu-id="383fe-217">Always thrown when this method is called.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">
@@ -508,11 +544,14 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
-        <Attribute>
+        <Attribute FrameworkAlternate="netcore-3.0">
           <AttributeName>System.Obsolete("HashCode is a mutable struct and should not be compared with other HashCodes. Use ToHashCode to retrieve the computed hash code.", true)</AttributeName>
         </Attribute>
       </Attributes>
@@ -521,10 +560,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="b93a8-218">此方法不受支持，因此不应调用。</span><span class="sxs-lookup"><span data-stu-id="b93a8-218">This method is not supported and should not be called.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-219">此方法将始终引发 <see cref="T:System.NotSupportedException" />。</span><span class="sxs-lookup"><span data-stu-id="b93a8-219">This method will always throw a <see cref="T:System.NotSupportedException" />.</span></span></returns>
+        <summary><span data-ttu-id="383fe-218">此方法不受支持，因此不应调用。</span><span class="sxs-lookup"><span data-stu-id="383fe-218">This method is not supported and should not be called.</span></span></summary>
+        <returns><span data-ttu-id="383fe-219">此方法将始终引发 <see cref="T:System.NotSupportedException" />。</span><span class="sxs-lookup"><span data-stu-id="383fe-219">This method will always throw a <see cref="T:System.NotSupportedException" />.</span></span></returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.NotSupportedException"><span data-ttu-id="b93a8-220">始终在调用此方法时引发。</span><span class="sxs-lookup"><span data-stu-id="b93a8-220">Always thrown when this method is called.</span></span></exception>
+        <exception cref="T:System.NotSupportedException"><span data-ttu-id="383fe-220">始终在调用此方法时引发。</span><span class="sxs-lookup"><span data-stu-id="383fe-220">Always thrown when this method is called.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="ToHashCode">
@@ -539,14 +578,17 @@
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="b93a8-221">连续调用 <see cref="Overload:System.HashCode.Add" /> 后计算最终哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-221">Calculates the final hash code after consecutive <see cref="Overload:System.HashCode.Add" /> invocations.</span></span></summary>
-        <returns><span data-ttu-id="b93a8-222">计算的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b93a8-222">The calculated hash code.</span></span></returns>
-        <remarks><span data-ttu-id="b93a8-223">每个实例必须最多一次调用此方法<see cref="T:System.HashCode" />。</span><span class="sxs-lookup"><span data-stu-id="b93a8-223">This method must be called at most once per instance of <see cref="T:System.HashCode" />.</span></span></remarks>
+        <summary><span data-ttu-id="383fe-221">连续调用 <see cref="Overload:System.HashCode.Add" /> 后计算最终哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-221">Calculates the final hash code after consecutive <see cref="Overload:System.HashCode.Add" /> invocations.</span></span></summary>
+        <returns><span data-ttu-id="383fe-222">计算的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="383fe-222">The calculated hash code.</span></span></returns>
+        <remarks><span data-ttu-id="383fe-223">每个实例必须最多一次调用此方法<see cref="T:System.HashCode" />。</span><span class="sxs-lookup"><span data-stu-id="383fe-223">This method must be called at most once per instance of <see cref="T:System.HashCode" />.</span></span></remarks>
       </Docs>
     </Member>
   </Members>

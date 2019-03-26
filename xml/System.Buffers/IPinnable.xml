@@ -1,5 +1,5 @@
 <Type Name="IPinnable" FullName="System.Buffers.IPinnable">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="65737bbc1182d3e226232b19fc4fe9e9295c0dfd" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57940107" /></Metadata><TypeSignature Language="C#" Value="public interface IPinnable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="69be3db305f6da6f6e7127dbe6894991bce348c0" /><Meta Name="ms.sourcegitcommit" Value="4ee26ac79338b0bf99fa1e0913e8a06b21994d8e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/26/2019" /><Meta Name="ms.locfileid" Value="58460703" /></Metadata><TypeSignature Language="C#" Value="public interface IPinnable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPinnable" />
   <TypeSignature Language="DocId" Value="T:System.Buffers.IPinnable" />
   <TypeSignature Language="VB.NET" Value="Public Interface IPinnable" />
@@ -12,15 +12,18 @@
   <AssemblyInfo>
     <AssemblyName>System.Memory</AssemblyName>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+  </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary><span data-ttu-id="098eb-101">提供用于固定和取消固定对象的一个机制，以防止垃圾回收器移动这些对象。</span><span class="sxs-lookup"><span data-stu-id="098eb-101">Provides a mechanism for pinning and unpinning objects to prevent the garbage collector from moving them.</span></span></summary>
+    <summary><span data-ttu-id="8374e-101">提供用于固定和取消固定对象的一个机制，以防止垃圾回收器移动这些对象。</span><span class="sxs-lookup"><span data-stu-id="8374e-101">Provides a mechanism for pinning and unpinning objects to prevent the garbage collector from moving them.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
 
-<span data-ttu-id="098eb-102"><xref:System.Buffers.MemoryManager%601> 类实现 `IPinnable` 接口。</span><span class="sxs-lookup"><span data-stu-id="098eb-102">The <xref:System.Buffers.MemoryManager%601> class implements the `IPinnable` interface.</span></span>
+<span data-ttu-id="8374e-102"><xref:System.Buffers.MemoryManager%601> 类实现 `IPinnable` 接口。</span><span class="sxs-lookup"><span data-stu-id="8374e-102">The <xref:System.Buffers.MemoryManager%601> class implements the `IPinnable` interface.</span></span>
 
        ]]></format>
     </remarks>
@@ -41,6 +44,9 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Buffers.MemoryHandle</ReturnType>
       </ReturnValue>
@@ -48,17 +54,17 @@
         <Parameter Name="elementIndex" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="elementIndex"><span data-ttu-id="098eb-103">返回的 <see cref="T:System.Buffers.MemoryHandle" /> 指向的内存缓冲区内元素的偏移量。</span><span class="sxs-lookup"><span data-stu-id="098eb-103">The offset to the element within the memory buffer to which the returned <see cref="T:System.Buffers.MemoryHandle" /> points.</span></span></param>
-        <summary><span data-ttu-id="098eb-104">固定内存块。</span><span class="sxs-lookup"><span data-stu-id="098eb-104">Pins a block of memory.</span></span></summary>
-        <returns><span data-ttu-id="098eb-105">内存块的句柄。</span><span class="sxs-lookup"><span data-stu-id="098eb-105">A handle to the block of memory.</span></span></returns>
+        <param name="elementIndex"><span data-ttu-id="8374e-103">返回的 <see cref="T:System.Buffers.MemoryHandle" /> 指向的内存缓冲区内元素的偏移量。</span><span class="sxs-lookup"><span data-stu-id="8374e-103">The offset to the element within the memory buffer to which the returned <see cref="T:System.Buffers.MemoryHandle" /> points.</span></span></param>
+        <summary><span data-ttu-id="8374e-104">固定内存块。</span><span class="sxs-lookup"><span data-stu-id="8374e-104">Pins a block of memory.</span></span></summary>
+        <returns><span data-ttu-id="8374e-105">内存块的句柄。</span><span class="sxs-lookup"><span data-stu-id="8374e-105">A handle to the block of memory.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
 
-<span data-ttu-id="098eb-106">开发人员可以访问一个对象，实现<xref:System.Buffers.IPinnable>未固定只能通过托管 Api 的接口。</span><span class="sxs-lookup"><span data-stu-id="098eb-106">A developer can access an object that implements the <xref:System.Buffers.IPinnable> interface without pinning it only through managed APIs.</span></span> <span data-ttu-id="098eb-107">固定是必需的访问由非托管 Api。</span><span class="sxs-lookup"><span data-stu-id="098eb-107">Pinning is required for access by unmanaged APIs.</span></span> 
+<span data-ttu-id="8374e-106">开发人员可以访问一个对象，实现<xref:System.Buffers.IPinnable>未固定只能通过托管 Api 的接口。</span><span class="sxs-lookup"><span data-stu-id="8374e-106">A developer can access an object that implements the <xref:System.Buffers.IPinnable> interface without pinning it only through managed APIs.</span></span> <span data-ttu-id="8374e-107">固定是必需的访问由非托管 Api。</span><span class="sxs-lookup"><span data-stu-id="8374e-107">Pinning is required for access by unmanaged APIs.</span></span> 
 
-<span data-ttu-id="098eb-108">调用此方法，以指明<xref:System.Buffers.IPinnable>垃圾回收器无法移动对象，以便可以使用固定对象的地址。</span><span class="sxs-lookup"><span data-stu-id="098eb-108">Call this method to indicate that the <xref:System.Buffers.IPinnable> object cannot be moved by the garbage collector so that the address of the pinned object can be used.</span></span>
+<span data-ttu-id="8374e-108">调用此方法，以指明<xref:System.Buffers.IPinnable>垃圾回收器无法移动对象，以便可以使用固定对象的地址。</span><span class="sxs-lookup"><span data-stu-id="8374e-108">Call this method to indicate that the <xref:System.Buffers.IPinnable> object cannot be moved by the garbage collector so that the address of the pinned object can be used.</span></span>
 
 
        ]]></format>
@@ -80,18 +86,21 @@
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="098eb-109">释放已固定的内存块。</span><span class="sxs-lookup"><span data-stu-id="098eb-109">Frees a block of pinned memory.</span></span></summary>
+        <summary><span data-ttu-id="8374e-109">释放已固定的内存块。</span><span class="sxs-lookup"><span data-stu-id="8374e-109">Frees a block of pinned memory.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
 
-<span data-ttu-id="098eb-110">调用此方法，以指明<xref:System.Buffers.IPinnable>对象不再需要进行固定和垃圾回收器现在可以移动该对象。</span><span class="sxs-lookup"><span data-stu-id="098eb-110">Call this method to indicate that the <xref:System.Buffers.IPinnable> object no longer needs to be pinned, and that the garbage collector can now move the object.</span></span>
+<span data-ttu-id="8374e-110">调用此方法，以指明<xref:System.Buffers.IPinnable>对象不再需要进行固定和垃圾回收器现在可以移动该对象。</span><span class="sxs-lookup"><span data-stu-id="8374e-110">Call this method to indicate that the <xref:System.Buffers.IPinnable> object no longer needs to be pinned, and that the garbage collector can now move the object.</span></span>
 
 
        ]]></format>
