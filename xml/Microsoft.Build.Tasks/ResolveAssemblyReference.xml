@@ -1,5 +1,5 @@
 <Type Name="ResolveAssemblyReference" FullName="Microsoft.Build.Tasks.ResolveAssemblyReference">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e07b58bfba338b70adf6143009c0078d69b36a04" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55417227" /></Metadata><TypeSignature Language="C#" Value="public class ResolveAssemblyReference : Microsoft.Build.Tasks.TaskExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="768f34ac27c8dca5e43032c5457848055afcb29e" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57966536" /></Metadata><TypeSignature Language="C#" Value="public class ResolveAssemblyReference : Microsoft.Build.Tasks.TaskExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveAssemblyReference extends Microsoft.Build.Tasks.TaskExtension" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ResolveAssemblyReference" />
   <TypeSignature Language="VB.NET" Value="Public Class ResolveAssemblyReference&#xA;Inherits TaskExtension" />
@@ -73,8 +73,8 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要在引用解析期间考虑的程序集扩展。</summary>
-        <value>要在引用解析期间考虑的程序集扩展。</value>
+        <summary>获取或设置将在引用解析过程中考虑的程序集扩展名。</summary>
+        <value>将在引用解析过程中考虑的程序集扩展名。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -271,15 +271,15 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个布尔值，该值指定是否自动处理最后得到的依赖项关系图，如同向 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" /> 属性传递了 App.Config 文件一样。</summary>
-        <value>如果自动处理最后得到的依赖项关系图，如同向 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" /> 属性传递了 App.Config 文件一样，则为 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示是否自动处理最后生成的依赖项关系图，如同向 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" /> 属性传递了 App.Config 文件一样。</summary>
+        <value><see langword="true" /> 如果生成依赖项关系图会自动处理，如同向传递了 App.Config 文件<see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" />属性; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  默认值为 `false`。  
   
- 有关此属性的详细信息，请参阅[ResolveAssemblyReference 任务](https://msdn.microsoft.com/library/4d56d848-b29b-4dff-86a2-0a96c9e4a170)  
+ 有关此属性的详细信息，请参阅[ResolveAssemblyReference 任务](/visualstudio/msbuild/resolveassemblyreference-task)。  
   
  ]]></format>
         </remarks>
@@ -428,7 +428,7 @@
       <Parameters />
       <Docs>
         <summary>执行 <c>ResolveAssemblyReference</c> 任务。</summary>
-        <returns>如果任务成功执行，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns>如果成功地执行了任务，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -492,8 +492,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个布尔值，该值指定是将查找依赖项 (<see langword="true" />) 还是仅将查找主引用 (<see langword="false" />)。</summary>
-        <value>如果将查找依赖项，则为 <see langword="true" />；如果仅将查找主引用，则为 <see langword="false" />。</value>
+        <summary>获取或设置一个布尔值，该值指定将查找依赖项 (<see langword="true" />)，还是只查找主引用 (<see langword="false" />)。</summary>
+        <value>如果将查找依赖项，则为 <see langword="true" />；如果只查找主引用，则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -533,8 +533,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个布尔值，指定是否将找到相关的文件，如 .pdb 文件和 .xml 文件。</summary>
-        <value>如果将找到相关的文件，如 .pdb 文件和 .xml 文件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示是否将查找相关文件（如 .pdb 文件和 .xml 文件）。</summary>
+        <value>如果将查找相关文件，如 .pdb 文件和 .xml 文件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -574,8 +574,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个布尔值，该值指定是否会找到附属程序集。</summary>
-        <value>如果会找到附属程序集，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示是否将查找附属程序集。</summary>
+        <value>如果将查找附属程序集，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -615,8 +615,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个布尔值，该值指定是否会找到序列化程序集。</summary>
-        <value>如果会找到序列化程序集，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示是否将查找序列化程序集。</summary>
+        <value>如果将查找序列化程序集，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -724,7 +724,7 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>一个字符串，包含指定目标框架的子集的名称。</summary>
+        <summary>获取或设置一个字符串，其中包含指定目标框架的子集的名称。</summary>
         <value>一个包含子集名称的字符串值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -869,8 +869,8 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>一个表示 XML 文件列表的 <see cref="T:Microsoft.Build.Framework.ITaskItem" />，这些 XML 文件包含应在目标子集中的程序集。</summary>
-        <value>XML 文件的 <see cref="T:Microsoft.Build.Framework.ITaskItem" /> 列表。</value>
+        <summary>获取或设置一个表示 XML 文件列表的 <see cref="T:Microsoft.Build.Framework.ITaskItem" />，这些 XML 文件包含应位于目标子集中的程序集。</summary>
+        <value>XML 文件的列表。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -922,8 +922,8 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置包含将在目标计算机上安装的程序集的 XML 文件的列表。</summary>
-        <value>包含将在目标计算机上安装的程序集的 XML 文件的列表。</value>
+        <summary>获取或设置 XML 文件的列表，这些 XML 文件包含应在目标计算机上安装的程序集。</summary>
+        <value>XML 文件的列表，这些 XML 文件包含应在目标计算机上安装的程序集。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1013,7 +1013,7 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与引用项具有相同基名称的相关文件，如 .xml 和 .pdb 文件。</summary>
+        <summary>获取与引用具有相同基名称的相关文件，如 .xml 和 .pdb 文件。</summary>
         <value>相关文件。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
@@ -1081,8 +1081,8 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取已解析为完整路径的所有主引用列表。</summary>
-        <value>已解析为完整路径的所有主引用列表。</value>
+        <summary>获取已解析为完整路径的所有主引用的列表。</summary>
+        <value>已解析为完整路径的所有主引用的列表。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1103,10 +1103,10 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>包含 SDK 名称、SDK 位置和目标配置的已解析的 SDK 引用的列表。  
+        <summary>获取或设置包含 SDK 名称、SDK 位置和目标配置的已解析的 SDK 引用的列表。  
   
 如果引用具有 SDKName 元数据附加到，这些位置仅被搜索。</summary>
-        <value>返回 <see cref="T:Microsoft.Build.Framework.ITaskItem" />。</value>
+        <value>已解析的 SDK 引用的列表。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1139,8 +1139,8 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取找到的任意附属文件。</summary>
-        <value>找到的任意附属文件。</value>
+        <summary>获取找到的所有附属文件。</summary>
+        <value>找到的所有附属文件。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1217,7 +1217,7 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>指定目录或特殊位置，将在其中进行搜索以找到磁盘上表示程序集的文件。</summary>
+        <summary>获取或设置目录或特殊位置，将在其中进行搜索以查找磁盘上表示程序集的文件。</summary>
         <value>目录或特殊位置，将在其中进行搜索以找到磁盘上表示程序集的文件。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
@@ -1251,7 +1251,7 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获得序列化程序集。</summary>
+        <summary>获取序列化程序集。</summary>
         <value>序列化程序集。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
@@ -1285,8 +1285,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个布尔值，该值指定是否未记录任何消息。</summary>
-        <value>如果未记录任何消息，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示是否未记录任何消息。</summary>
+        <value>如果不记录消息，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1326,8 +1326,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个文件名，该文件名表示用于保存此任务的中间生成状态的位置。</summary>
-        <value>表示用于保存此任务的中间生成状态的位置的文件名。</value>
+        <summary>获取或设置一个文件名，该文件名指示保存此任务的中间生成状态的位置。</summary>
+        <value>文件名，该文件名指示保存此任务的中间生成状态的位置。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1360,8 +1360,8 @@
         <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>为每个不重复的冲突程序集标识获取一个项，而不考虑 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AutoUnify" /> 属性的值。</summary>
-        <value>对应于不重复冲突程序集标识的项。</value>
+        <summary>无论 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AutoUnify" /> 属性的值如何，对于每个不同的冲突程序集标识，都获取一项。</summary>
+        <value>与不同的冲突程序集标识相对应的项。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1541,8 +1541,8 @@
         <ReturnType>System.String[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>将在目标框架目录中搜索的目标框架子集名称的列表。</summary>
-        <value>To be added.</value>
+        <summary>获取或设置将在目标框架目录中搜索的目标框架子集名称的列表。</summary>
+        <value>目标框架子集名称的列表。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>
@@ -1613,7 +1613,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置用于分析全局程序集缓存 (GAC) 引用的首选目标处理器体系结构，它可以具有 <c>x86</c>、<c>IA64</c> 或 <c>AMD64</c> 的值。</summary>
-        <value>用于分析全局程序集缓存 (GAC) 引用的首选目标处理器体系结构。</value>
+        <value>用于解析全局程序集缓存 (GAC) 引用的首选目标处理器架构。</value>
         <remarks>To be added.</remarks>
         <forInternalUseOnly />
       </Docs>

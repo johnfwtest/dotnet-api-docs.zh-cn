@@ -1,5 +1,5 @@
 <Type Name="XPathExpression" FullName="System.Xml.XPath.XPathExpression">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="962f644293df8cd51688e8ee190c6598ddd76414" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51885546" /></Metadata><TypeSignature Language="C#" Value="public abstract class XPathExpression" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="52cbbb10a6de3f1a407286bae35e28bdaaa0ce13" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57962394" /></Metadata><TypeSignature Language="C#" Value="public abstract class XPathExpression" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XPathExpression extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XPath.XPathExpression" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XPathExpression" />
@@ -30,7 +30,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>提供一个类型化的类，表示已编译的 XPath 表达式。</summary>
+    <summary>提供表示已编译的 XPath 表达式的类型化类。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -140,7 +140,7 @@
         <Parameter Name="comparer" Type="System.Collections.IComparer" />
       </Parameters>
       <Docs>
-        <param name="expr">一个表示排序关键字的对象。 这可以是节点的 <see langword="string" /> 值，还可以是具有已编译 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
+        <param name="expr">表示排序关键字的对象。 这可以是节点的 <see langword="string" /> 值或是带有已编译的 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
         <param name="comparer"><see cref="T:System.Collections.IComparer" /> 对象，为比较两个对象的等效性提供特定的数据类型比较。</param>
         <summary>当在派生类中重写时，按指定的 <see cref="T:System.Collections.IComparer" /> 对象对 XPath 表达式选择的节点排序。</summary>
         <remarks>
@@ -173,7 +173,7 @@ expression.AddSort("@ISBN", (IComparer)isbn);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XPath.XPathExpression" /> 或排序关键字包括前缀，并且未提供 <see cref="T:System.Xml.XmlNamespaceManager" /> 或未在所提供的 <see cref="T:System.Xml.XmlNamespaceManager" /> 中找到该前缀。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XPath.XPathExpression" /> 或排序关键字包含前缀，但未提供 <see cref="T:System.Xml.XmlNamespaceManager" />，或者在提供的 <see cref="T:System.Xml.XmlNamespaceManager" /> 中未找到该前缀。</exception>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.Xml.XmlNamespaceManager" />
         <altmember cref="M:System.Collections.IComparer.Compare(System.Object,System.Object)" />
@@ -219,12 +219,12 @@ expression.AddSort("@ISBN", (IComparer)isbn);
         <Parameter Name="dataType" Type="System.Xml.XPath.XmlDataType" />
       </Parameters>
       <Docs>
-        <param name="expr">一个表示排序关键字的对象。 这可以是节点的 <see langword="string" /> 值，还可以是具有已编译 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
-        <param name="order">一个 <see cref="T:System.Xml.XPath.XmlSortOrder" /> 值，它指示排序顺序。</param>
-        <param name="caseOrder">一个 <see cref="T:System.Xml.XPath.XmlCaseOrder" /> 值，它指示大写字母和小写字母的排序方式。</param>
-        <param name="lang">要用于比较的语言。 使用 <see cref="T:System.Globalization.CultureInfo" /> 类，该类可传递到语言类型的 <see cref="Overload:System.String.Compare" /> 方法，美式英语的“us-en”。 如果指定了空的字符串，则使用系统环境来确定 <see cref="T:System.Globalization.CultureInfo" />。</param>
-        <param name="dataType">一个 <see cref="T:System.Xml.XPath.XmlDataType" /> 值，它指示数据类型的排序顺序。</param>
-        <summary>当在派生类中被重写时，根据所提供的参数对 XPath 表达式所选的节点进行排序。</summary>
+        <param name="expr">表示排序关键字的对象。 这可以是节点的 <see langword="string" /> 值或是带有已编译的 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
+        <param name="order"><see cref="T:System.Xml.XPath.XmlSortOrder" /> 值，指示排序顺序。</param>
+        <param name="caseOrder"><see cref="T:System.Xml.XPath.XmlCaseOrder" /> 值，指示如何对大写和小写字母进行排序。</param>
+        <param name="lang">用于比较的语言。 使用 <see cref="T:System.Globalization.CultureInfo" /> 类，该类可传递到语言类型（例如，“us-en”表示美国英语）的 <see cref="Overload:System.String.Compare" /> 方法。 如果指定了空字符串，则使用系统环境确定 <see cref="T:System.Globalization.CultureInfo" />。</param>
+        <param name="dataType"><see cref="T:System.Xml.XPath.XmlDataType" /> 值，指示数据类型的排序顺序。</param>
+        <summary>当在派生类中重写时，按提供的参数对 XPath 表达式选择的节点排序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -280,7 +280,7 @@ expression.AddSort("@ISBN", (IComparer)isbn);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XPath.XPathExpression" /> 或排序关键字包括前缀，并且未提供 <see cref="T:System.Xml.XmlNamespaceManager" /> 或未在所提供的 <see cref="T:System.Xml.XmlNamespaceManager" /> 中找到该前缀。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XPath.XPathExpression" /> 或排序关键字包含前缀，但未提供 <see cref="T:System.Xml.XmlNamespaceManager" />，或者在提供的 <see cref="T:System.Xml.XmlNamespaceManager" /> 中未找到该前缀。</exception>
         <altmember cref="T:System.Xml.XPath.XmlSortOrder" />
         <altmember cref="T:System.Xml.XPath.XmlCaseOrder" />
         <altmember cref="T:System.Xml.XPath.XmlDataType" />
@@ -381,12 +381,12 @@ expression.AddSort("@ISBN", (IComparer)isbn);
         <ReturnType>System.Xml.XPath.XPathExpression</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xpath" Type="System.String" />
+        <Parameter Name="xpath" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="xpath">XPath 表达式。</param>
-        <summary>编译指定的 XPath 表达式并返回表示 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</summary>
-        <returns>一个 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</returns>
+        <summary>编译指定的 XPath 表达式，并且返回表示 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -484,14 +484,14 @@ expression.AddSort("@ISBN", (IComparer)isbn);
         <ReturnType>System.Xml.XPath.XPathExpression</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="xpath" Type="System.String" />
-        <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" />
+        <Parameter Name="xpath" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="xpath">XPath 表达式。</param>
         <param name="nsResolver">实现用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 接口的对象。</param>
         <summary>使用用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象编译指定的 XPath 表达式，并且返回表示 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</summary>
-        <returns>一个 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</returns>
+        <returns><see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -591,7 +591,7 @@ expression.AddSort("@ISBN", (IComparer)isbn);
       </ReturnValue>
       <Docs>
         <summary>当在派生类中重写时，获取 XPath 表达式的结果类型。</summary>
-        <value><see cref="T:System.Xml.XPath.XPathResultType" /> 值，该值表示 XPath 表达式的结果类型。</value>
+        <value><see cref="T:System.Xml.XPath.XPathResultType" /> 值，表示 XPath 表达式的结果类型。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -646,7 +646,7 @@ expression.AddSort("@ISBN", (IComparer)isbn);
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在派生类中被重写时，指定要用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象。</summary>
+        <summary>当在派生类中重写时，指定要用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SetContext">
@@ -680,11 +680,11 @@ expression.AddSort("@ISBN", (IComparer)isbn);
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" />
+        <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="nsResolver">实现 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 接口以用于命名空间解析的对象。</param>
-        <summary>在派生类中被重写时，指定要用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象。</summary>
+        <param name="nsResolver">实现用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 接口的对象。</param>
+        <summary>当在派生类中重写时，指定要用于命名空间解析的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -743,7 +743,7 @@ expression.AddSort("@ISBN", (IComparer)isbn);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象参数不派生自 <see cref="T:System.Xml.IXmlNamespaceResolver" />。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象参数不是从 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 派生的。</exception>
         <altmember cref="M:System.Xml.XPath.XPathExpression.SetContext(System.Xml.XmlNamespaceManager)" />
         <altmember cref="T:System.Xml.IXmlNamespaceResolver" />
         <altmember cref="M:System.Xml.XPath.XPathExpression.Compile(System.String,System.Xml.IXmlNamespaceResolver)" />
@@ -786,7 +786,7 @@ expression.AddSort("@ISBN", (IComparer)isbn);
       </Parameters>
       <Docs>
         <param name="nsManager">要用于命名空间解析的 <see cref="T:System.Xml.XmlNamespaceManager" /> 对象。</param>
-        <summary>在派生类中被重写时，指定要用于命名空间解析的 <see cref="T:System.Xml.XmlNamespaceManager" /> 对象。</summary>
+        <summary>当在派生类中重写时，指定要用于命名空间解析的 <see cref="T:System.Xml.XmlNamespaceManager" /> 对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

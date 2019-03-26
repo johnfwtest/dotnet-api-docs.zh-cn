@@ -1,5 +1,5 @@
 <Type Name="Forest" FullName="System.DirectoryServices.ActiveDirectory.Forest">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1c2fea88ec9f3b7b5f016178d295d13ea6737b6c" /><Meta Name="ms.sourcegitcommit" Value="112ca25eddde8ac8b788d67c406b7745ba914261" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/15/2019" /><Meta Name="ms.locfileid" Value="54312486" /></Metadata><TypeSignature Language="C#" Value="public class Forest : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="961809dcd470d58e0c031ab424b84364374cc94c" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57916200" /></Metadata><TypeSignature Language="C#" Value="public class Forest : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Forest extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.Forest" />
   <TypeSignature Language="VB.NET" Value="Public Class Forest&#xA;Implements IDisposable" />
@@ -20,7 +20,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 类表示 Active Directory 域服务林。</summary>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 类表示一个 Active Directory 域服务目录林。</summary>
     <remarks>To be added.</remarks>
     <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求值： <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
   </Docs>
@@ -75,10 +75,10 @@
         <Parameter Name="trustPassword" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetForestName">用其创建信任关系的林的 DNS 名称。</param>
+        <param name="targetForestName">与信任一起创建的目录林的 DNS 名称。</param>
         <param name="direction">其中一个 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 成员，该成员确定相对于此林的信任方向。</param>
         <param name="trustPassword">信任的密码。</param>
-        <summary>使用指定的林创建信任关系的本地方。</summary>
+        <summary>创建与指定目录林有信任关系的本地方。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -170,7 +170,7 @@
         <Parameter Name="targetForestName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetForestName">与其存在信任关系的林的 DNS 名称。</param>
+        <param name="targetForestName">与其存在信任关系的目录林的 DNS 名称。</param>
         <summary>删除信任关系的本地方。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -183,7 +183,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 参数指定的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 没有信任关系。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 是一个空字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForestName" /> 为 <see langword="null" />。</exception>
@@ -213,7 +213,7 @@
         <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
       </Parameters>
       <Docs>
-        <param name="targetForest">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象，表示与其存在信任关系的林。</param>
+        <param name="targetForest">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象，它表示与其存在信任关系的目录林。</param>
         <summary>删除信任关系的双方。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -264,7 +264,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>释放由对象占用的所有托管和非托管资源。</summary>
+        <summary>释放由该对象占用的所有托管资源和非托管资源。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -290,7 +290,7 @@
       </Parameters>
       <Docs>
         <param name="disposing">一个 <see cref="T:System.Boolean" /> 值，该值确定是否应释放托管资源。 如果应释放托管资源，则为 <see langword="true" />；如果仅应释放非托管资源，则为 <see langword="false" />。</param>
-        <summary>释放该对象使用的托管资源，并且可以选择释放非托管资源。</summary>
+        <summary>释放由该对象使用的托管资源，并可选择释放非托管资源。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,8 +312,8 @@
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取林中的所有域的集合。</summary>
-        <value>当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 中包含 <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> 域的 <see cref="T:System.DirectoryServices.ActiveDirectory.DomainCollection" /> 集合。</value>
+        <summary>获取此目录林中所有域的集合。</summary>
+        <value>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.DomainCollection" /> 集合，它包含当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> 中的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 域。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
@@ -329,7 +329,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在此林中查找所有可检测到的全局目录。</summary>
+        <summary>在此目录林中查找所有可发现的全局目录。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="FindAllDiscoverableGlobalCatalogs">
@@ -351,8 +351,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在此林中查找所有可检测到的全局目录。</summary>
-        <returns>包含找到的全局目录集合的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />。</returns>
+        <summary>在此目录林中查找所有可发现的全局目录。</summary>
+        <returns>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />，它包含找到的全局目录的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -388,8 +388,8 @@
       </Parameters>
       <Docs>
         <param name="siteName">要搜索的站点的名称。</param>
-        <summary>在此林中查找位于指定站点中的所有可发现的全局目录。</summary>
-        <returns>包含找到的全局目录集合的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />。</returns>
+        <summary>在此目录林中查找指定站点的所有可发现的全局目录。</summary>
+        <returns>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />，它包含找到的全局目录的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -414,7 +414,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在此林中查找所有全局目录。</summary>
+        <summary>在此目录林中查找所有全局目录。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="FindAllGlobalCatalogs">
@@ -436,8 +436,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在此林中查找所有全局目录。</summary>
-        <returns>包含找到的全局目录集合的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />。</returns>
+        <summary>在此目录林中查找所有全局目录。</summary>
+        <returns>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />，它包含找到的全局目录的集合。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
@@ -466,8 +466,8 @@
       </Parameters>
       <Docs>
         <param name="siteName">要搜索的站点的名称。</param>
-        <summary>在此林中为给定站点查找所有全局目录。</summary>
-        <returns>包含找到的全局目录集合的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" /> 对象。</returns>
+        <summary>在此目录林中查找给定站点的所有全局目录。</summary>
+        <returns>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" /> 对象，它包含找到的全局目录的集合。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="siteName" /> 是一个空字符串。</exception>
@@ -483,7 +483,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在此林中查找单个全局目录。</summary>
+        <summary>在此目录林中查找单个全局目录。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="FindGlobalCatalog">
@@ -505,11 +505,11 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在此林中查找任何全局目录。</summary>
-        <returns>此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />。</returns>
+        <summary>在此目录林中查找任何全局目录。</summary>
+        <returns>此 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">找不到全局目录。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
         <altmember cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />
       </Docs>
@@ -536,8 +536,8 @@
       </Parameters>
       <Docs>
         <param name="flag">指定位置条件的 <see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" /> 值。</param>
-        <summary>在此林中为指定位置条件查找全局目录。</summary>
-        <returns>指定位置条件的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 对象。</returns>
+        <summary>在此目录林中查找满足所指定位置条件的一个全局目录。</summary>
+        <returns>满足所指定位置条件的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 对象。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">找不到全局目录。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
@@ -568,8 +568,8 @@
       </Parameters>
       <Docs>
         <param name="siteName">要搜索的站点的名称。</param>
-        <summary>在此林中为指定站点查找一个全局目录。</summary>
-        <returns>指定站点的一个 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 对象。</returns>
+        <summary>在此目录林中查找指定站点的全局目录。</summary>
+        <returns>指定站点的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 对象。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">找不到全局目录。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
@@ -602,9 +602,9 @@
       </Parameters>
       <Docs>
         <param name="siteName">要搜索的站点的名称。</param>
-        <param name="flag"><see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" /> 值，该值指定位置条件。</param>
-        <summary>在此林中查找一个全局目录，作为指定站点和位置条件。</summary>
-        <returns>指定的站点和位置条件的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 对象。</returns>
+        <param name="flag">指定位置条件的 <see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" /> 值。</param>
+        <summary>在此目录林中查找满足指定站点和位置条件的全局目录。</summary>
+        <returns>满足指定站点和位置条件的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 对象。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">找不到全局目录。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
@@ -633,8 +633,8 @@
         <ReturnType>System.DirectoryServices.ActiveDirectory.ForestMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取林的运行模式。</summary>
-        <value>表示此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的当前林模式的 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" /> 值。</value>
+        <summary>获取此目录林的操作模式。</summary>
+        <value>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" /> 值，它表示此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 当前的目录林模式。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
@@ -683,10 +683,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取当前林的信任关系的集合。</summary>
-        <returns>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection" /> 集合，其中包含表示当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation" /> 对象。</returns>
+        <summary>获取当前目录林的信任关系的集合。</summary>
+        <returns>包含 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection" /> 对象的 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation" /> 集合，这些对象表示当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的信任关系。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
         <exception cref="T:System.UnauthorizedAccessException">指定的帐户没有权限执行此操作。</exception>
@@ -714,7 +714,7 @@
       <Parameters />
       <Docs>
         <summary>获取当前用户上下文的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</summary>
-        <returns>表示当前林的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</returns>
+        <returns>一个表示当前目录林的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
       </Docs>
@@ -740,7 +740,7 @@
         <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
       </Parameters>
       <Docs>
-        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> 对象，它包含用于检索对象的目标和凭据。</param>
+        <param name="context">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> 对象，它包含用于检索对象的目标和凭据。</param>
         <summary>获取指定上下文的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</summary>
         <returns><see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象，它表示通过此方法检索到的林。</returns>
         <remarks>To be added.</remarks>
@@ -773,7 +773,7 @@
       </Parameters>
       <Docs>
         <param name="targetForestName">与其存在入站信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的 DNS 名称。</param>
-        <summary>获取一个布尔值，该值指示是否在与指定林的入站信任关系上启动选择性身份验证。  如果启用了选择性身份验证，则为 <see langword="true" />；否则为 <see langword="false" />。</summary>
+        <summary>获取一个布尔值，该值指示是否对与指定林的入站信任关系启动选择性身份验证。  如果启用了选择性身份验证，则为 <see langword="true" />；否则为 <see langword="false" />。</summary>
         <returns>如果启用了选择性身份验证，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -818,11 +818,11 @@
       </Parameters>
       <Docs>
         <param name="targetForestName">与其存在信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的 DNS 名称。</param>
-        <summary>获取信任的 SID 筛选状态。</summary>
+        <summary>获取某个信任的 SID 筛选状态。</summary>
         <returns>如果启用 SID 筛选，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象没有信任关系。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 是一个空字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForestName" /> 为 <see langword="null" />。</exception>
@@ -853,12 +853,12 @@
         <Parameter Name="targetForestName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetForestName">要为其获得信任关系信息的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的名称。</param>
-        <summary>获取此林和指定的林之间的信任关系。</summary>
-        <returns>表示此林和指定的林之间的信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation" /> 对象。</returns>
+        <param name="targetForestName">要获取其信任关系信息的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的名称。</param>
+        <summary>获取此目录林与指定目录林之间的信任关系。</summary>
+        <returns>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation" /> 对象，它表示此目录林与指定目录林之间的信任关系。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 没有信任关系。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 是一个空字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForestName" /> 为 <see langword="null" />。</exception>
@@ -885,8 +885,8 @@
         <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取林中的所有全局目录的集合。</summary>
-        <value>包含当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 中 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 全局目录的 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" /> 集合。</value>
+        <summary>获取此目录林中所有全局目录的集合。</summary>
+        <value>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" /> 集合，它包含当前 <see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" /> 中的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 全局目录。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
@@ -910,7 +910,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取林的名称。</summary>
+        <summary>获取此目录林的名称。</summary>
         <value>此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的名称。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
@@ -934,8 +934,8 @@
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取保存林的 FSMO 命名主机角色的域控制器。</summary>
-        <value>表示域控制器的 <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> 对象，该控制器是此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的 FSMO 命名主机。</value>
+        <summary>获取拥有此目录林的 FSMO 命名主机角色的域控制器。</summary>
+        <value>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> 对象，它表示作为此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的 FSMO 命名主机的域控制器。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
@@ -963,8 +963,8 @@
         <Parameter Name="forestMode" Type="System.DirectoryServices.ActiveDirectory.ForestMode" />
       </Parameters>
       <Docs>
-        <param name="forestMode">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" /> 枚举值，该值指定林的新操作级别。</param>
-        <summary>为林提升操作模式。</summary>
+        <param name="forestMode">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" /> 枚举值，用于为目录林指定新的操作级别。</param>
+        <summary>提升目录林的操作模式。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -983,9 +983,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
-        <exception cref="T:System.ArgumentException">基于林的当前操作模式，为 <paramref name="forestMode" /> 指定的值无效。</exception>
+        <exception cref="T:System.ArgumentException">根据该目录林的当前操作模式，为 <paramref name="forestMode" /> 指定的值无效。</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="forestMode" /> 不是有效的 <see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" /> 枚举值。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
         <exception cref="T:System.UnauthorizedAccessException">指定的帐户没有权限执行此操作。</exception>
@@ -1009,7 +1009,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="forestMode" Type="System.Int32" />
+        <Parameter Name="forestMode" Type="System.Int32" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="forestMode">提升到此级别。</param>
@@ -1038,7 +1038,7 @@
         <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
       </Parameters>
       <Docs>
-        <param name="targetForest">表示信任与其共存的林对象的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</param>
+        <param name="targetForest">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象，表示与其存在信任关系的目录林对象。</param>
         <summary>修复信任关系。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForest" /> 指定的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象没有信任关系。</exception>
@@ -1092,8 +1092,8 @@
         <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取林的架构。</summary>
-        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema" /> 对象，该对象表示当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的架构。</value>
+        <summary>获取此目录林的架构。</summary>
+        <value>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema" /> 对象，表示当前 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的架构。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
@@ -1118,10 +1118,10 @@
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取保存林的 FSMO 架构主机角色的域控制器。</summary>
-        <value>表示域控制器的 <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> 对象，该控制器是此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的 FSMO 架构主机。</value>
+        <summary>获取拥有此目录林的 FSMO 架构主机角色的域控制器。</summary>
+        <value>一个 <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> 对象，它表示作为此 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 的 FSMO 架构主机的域控制器。</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放此对象。</exception>
         <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
@@ -1149,12 +1149,12 @@
         <Parameter Name="enable" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="targetForestName">入站信任关系所存在的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的 DNS 名称。</param>
-        <param name="enable">如果要启用选择性身份验证，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="targetForestName">与其存在入站信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的 DNS 名称。</param>
+        <param name="enable">如果启用选择性身份验证，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>启用或禁用入站信任的选择性身份验证。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的林没有任何信任关系。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的目录林没有信任关系。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 是一个空字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForestName" /> 为 <see langword="null" />。</exception>
@@ -1188,7 +1188,7 @@
       <Docs>
         <param name="targetForestName">与其存在信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的 DNS 名称。</param>
         <param name="enable">如果要启用 SID 筛选，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>对指定林设置 SID 筛选状态。</summary>
+        <summary>对指定的目录林设置 SID 筛选状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1197,7 +1197,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的林没有任何信任关系。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的目录林没有信任关系。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 是一个空字符串。</exception>
@@ -1254,7 +1254,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回当前林的字符串表示形式。</summary>
+        <summary>返回当前目录林的字符串表示形式。</summary>
         <returns>一个 <see cref="T:System.String" />，表示 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的 DNS 名称。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1291,12 +1291,12 @@
         <Parameter Name="newTrustPassword" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetForestName">要更改其本地信任密码的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的名称。</param>
-        <param name="newTrustPassword">信任关系的新密码。</param>
+        <param name="targetForestName"><see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的名称，要更改该对象的本地信任密码。</param>
+        <param name="newTrustPassword">该信任关系的新密码。</param>
         <summary>更新信任关系本地方的密码。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的林没有任何信任关系。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的目录林没有信任关系。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 或 <paramref name="newTrustPassword" /> 是一个空字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForestName" /> 或 <paramref name="newTrustPassword" /> 为 <see langword="null" />。</exception>
@@ -1328,9 +1328,9 @@
         <Parameter Name="newTrustPassword" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="targetForestName">必须为其更改本地信任方向和密码的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的名称。</param>
-        <param name="newTrustDirection">信任关系的新信任方向的 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值。</param>
-        <param name="newTrustPassword">信任关系的新密码。</param>
+        <param name="targetForestName"><see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象的名称，必须更改该对象的本地信任方向和密码。</param>
+        <param name="newTrustDirection">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值，表示该信任关系的新的信任方向。</param>
+        <param name="newTrustPassword">该信任关系的新密码。</param>
         <summary>更新信任关系本地方的密码和信任方向。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象没有信任关系。</exception>
@@ -1366,12 +1366,12 @@
         <Parameter Name="newTrustDirection" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
       </Parameters>
       <Docs>
-        <param name="targetForest">必须更改信任方向的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</param>
-        <param name="newTrustDirection">为信任关系指定新的信任方向的 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值。</param>
+        <param name="targetForest">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象，必须更改该对象的信任方向。</param>
+        <param name="newTrustDirection">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值，该值为信任关系指定新的信任方向。</param>
         <summary>更新信任关系的信任方向。 对信任的双方更新信任方向。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForest" /> 指定的林没有任何信任关系。</exception>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForest" /> 指定的目录林没有信任关系。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">对基础目录服务的调用导致了错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForest" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="newTrustDirection" /> 不是有效的 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值。</exception>
@@ -1403,9 +1403,9 @@
       </Parameters>
       <Docs>
         <param name="targetForestName">与其存在信任的域的 DNS 名称。</param>
-        <summary>验证以前建立的与指定林的出站信任关系是否有效。</summary>
+        <summary>确认以前建立的与指定目录林的出站信任是有效的。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的林没有任何出站信任关系。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForestName" /> 指定的目录林没有出站信任关系。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="targetForestName" /> 是一个空字符串。</exception>
@@ -1439,8 +1439,8 @@
       </Parameters>
       <Docs>
         <param name="targetForest">要确认其信任关系的 <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 对象。</param>
-        <param name="direction">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值，该值指定相对于此林的信任方向。</param>
-        <summary>确认以前建立的与指定林的信任是有效的。</summary>
+        <param name="direction">一个 <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 值，该值指定相对于此目录林的信任方向。</param>
+        <summary>确认以前建立的与指定目录林的信任是有效的。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1449,7 +1449,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForest" /> 指定的林没有信任关系，或者目标林没有 <paramref name="direction" /> 指定的信任方向。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">与 <paramref name="targetForest" /> 指定的目录林没有信任关系，或者目标目录林没有 <paramref name="direction" /> 指定的信任方向。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">调用基础目录服务导致错误。</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">目标服务器忙或不可用。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="targetForest" /> 为 <see langword="null" />。</exception>

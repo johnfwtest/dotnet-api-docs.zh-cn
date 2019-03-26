@@ -1,5 +1,5 @@
 <Type Name="Stack&lt;T&gt;" FullName="System.Collections.Generic.Stack&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3974e97e893db48f241a47a19c02bfa795c7a260" /><Meta Name="ms.sourcegitcommit" Value="c0c07dbd19cd7017243f9ac36915755f79bc8da6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/27/2018" /><Meta Name="ms.locfileid" Value="52353695" /></Metadata><TypeSignature Language="C#" Value="public class Stack&lt;T&gt; : System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.ICollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f828fbb4019ba1166d7066ea1d80a31b43d533ab" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57948210" /></Metadata><TypeSignature Language="C#" Value="public class Stack&lt;T&gt; : System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Stack`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Collections.Generic.Stack`1" />
   <TypeSignature Language="VB.NET" Value="Public Class Stack(Of T)&#xA;Implements ICollection, IEnumerable(Of T), IReadOnlyCollection(Of T)" />
@@ -57,8 +57,8 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <typeparam name="T">指定堆栈中元素的类型。</typeparam>
-    <summary>表示可变大小的后进先出 (LIFO) 集合（对于相同指定类型的实例）。</summary>
+    <typeparam name="T">指定堆栈中的元素的类型。</typeparam>
+    <summary>表示相同指定类型的实例可变大小的后进先出 (LIFO) 集合。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -206,7 +206,7 @@
         <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="collection">从中复制元素的集合。</param>
+        <param name="collection">从其中复制元素的集合。</param>
         <summary>初始化 <see cref="T:System.Collections.Generic.Stack`1" /> 类的新实例，该实例包含从指定集合复制的元素并且具有足够的容量来容纳所复制的元素。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -587,7 +587,8 @@
       <Parameters />
       <Docs>
         <summary>返回 <see cref="T:System.Collections.Generic.Stack`1" /> 的一个枚举数。</summary>
-        <returns><see cref="T:System.Collections.Generic.Stack`1.Enumerator" /> 的一个 <see cref="T:System.Collections.Generic.Stack`1" />。</returns>
+        <returns>
+  <see cref="T:System.Collections.Generic.Stack`1.Enumerator" /> 的一个 <see cref="T:System.Collections.Generic.Stack`1" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -727,7 +728,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>删除并返回 <see cref="T:System.Collections.Generic.Stack`1" /> 顶部的对象。</summary>
+        <summary>移除并返回位于 <see cref="T:System.Collections.Generic.Stack`1" /> 顶部的对象。</summary>
         <returns>从 <see cref="T:System.Collections.Generic.Stack`1" /> 的顶部移除的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -795,7 +796,7 @@
       </Parameters>
       <Docs>
         <param name="item">要推入到 <see cref="T:System.Collections.Generic.Stack`1" /> 中的对象。 对于引用类型，该值可以为 <see langword="null" />。</param>
-        <summary>在 <see cref="T:System.Collections.Generic.Stack`1" /> 的顶部插入一个对象。</summary>
+        <summary>将对象插入 <see cref="T:System.Collections.Generic.Stack`1" /> 的顶部。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -927,7 +928,7 @@
       <Docs>
         <param name="array">一维 <see cref="T:System.Array" />，它是从 <see cref="T:System.Collections.ICollection" /> 复制的元素的目标。 <see cref="T:System.Array" /> 必须具有从零开始的索引。</param>
         <param name="arrayIndex"><paramref name="array" /> 中从零开始的索引，从此处开始复制。</param>
-        <summary>从特定的 <see cref="T:System.Collections.ICollection" /> 索引处开始，将 <see cref="T:System.Array" /> 的元素复制到一个 <see cref="T:System.Array" /> 中。</summary>
+        <summary>从特定的 <see cref="T:System.Collections.ICollection" /> 索引开始，将 <see cref="T:System.Array" /> 的元素复制到一个 <see cref="T:System.Array" /> 中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -944,13 +945,13 @@
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex" /> 小于零。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
-或 
+- 或 - 
  <paramref name="array" /> 没有从零开始的索引。  
   
-或 
+- 或 - 
 源 <see cref="T:System.Collections.ICollection" /> 中的元素个数大于从 <paramref name="arrayIndex" /> 到目标 <paramref name="array" /> 末尾之间的可用空间。  
   
-或 
+- 或 - 
 无法自动将源 <see cref="T:System.Collections.ICollection" /> 的类型转换为目标 <paramref name="array" /> 的类型。</exception>
       </Docs>
     </Member>
@@ -1276,7 +1277,7 @@ finally {
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="result" Type="T" RefType="out" />
+        <Parameter Name="result" Type="T" RefType="out" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="result">To be added.</param>
@@ -1308,7 +1309,7 @@ finally {
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="result" Type="T" RefType="out" />
+        <Parameter Name="result" Type="T" RefType="out" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="result">To be added.</param>

@@ -1,5 +1,5 @@
 <Type Name="NamedPipeClientStream" FullName="System.IO.Pipes.NamedPipeClientStream">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e2c18cde9af5bb08dbdd83ca6c349b434ab0b8f8" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48653732" /></Metadata><TypeSignature Language="C#" Value="public sealed class NamedPipeClientStream : System.IO.Pipes.PipeStream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d9a48bb33c64241b6ecf5599d82d8729aadae474" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57910792" /></Metadata><TypeSignature Language="C#" Value="public sealed class NamedPipeClientStream : System.IO.Pipes.PipeStream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NamedPipeClientStream extends System.IO.Pipes.PipeStream" />
   <TypeSignature Language="DocId" Value="T:System.IO.Pipes.NamedPipeClientStream" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class NamedPipeClientStream&#xA;Inherits PipeStream" />
@@ -43,7 +43,7 @@
 ## Examples  
  下面的示例演示一种方法将字符串从父进程发送到同一计算机上使用命名管道的子进程。 此示例将创建<xref:System.IO.Pipes.NamedPipeServerStream>父进程中的对象。 <xref:System.IO.Pipes.NamedPipeServerStream>对象具有<xref:System.IO.Pipes.PipeDirection>的值<xref:System.IO.Pipes.PipeDirection.Out>。 然后等待服务器<xref:System.IO.Pipes.NamedPipeClientStream>中用于连接到它的子进程的对象。 在此示例中，这两个进程都位于同一台计算机上并<xref:System.IO.Pipes.NamedPipeClientStream>对象具有<xref:System.IO.Pipes.PipeDirection>的值<xref:System.IO.Pipes.PipeDirection.In>。 接下来，父进程将用户提供的字符串发送给子进程。 该字符串显示到控制台。  
   
- 此示例适用于客户端过程中，连接到服务器进程。 整个代码示例中，包括代码管道客户端和服务器，请参阅[如何： 使用命名管道进行网络进程间通信](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)。  
+ 此示例适用于客户端过程中，连接到服务器进程。 整个代码示例中，包括代码管道客户端和服务器，请参阅[如何：使用命名管道进行网络进程间通信](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)。  
   
  [!code-csharp[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/cs/Program.cs#01)]
  [!code-vb[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/vb/program.vb#01)]  
@@ -161,7 +161,7 @@
         <Parameter Name="pipeName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="serverName">要连接的远程计算机的名称，或者为“.”，以指定本地计算机。</param>
+        <param name="serverName">要连接的远程计算机的名称，或者为“.”以指定本地计算机。</param>
         <param name="pipeName">管道的名称。</param>
         <summary>使用指定的管道和服务器名称初始化 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 类的新实例。</summary>
         <remarks>
@@ -224,7 +224,7 @@
         <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
       </Parameters>
       <Docs>
-        <param name="serverName">要连接的远程计算机的名称，或者为“.”，以指定本地计算机。</param>
+        <param name="serverName">要连接的远程计算机的名称，或者为“.”以指定本地计算机。</param>
         <param name="pipeName">管道的名称。</param>
         <param name="direction">确定管道方向的枚举值之一。</param>
         <summary>使用指定的管道和服务器名称，以及指定的管道方向初始化 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 类的新实例。</summary>
@@ -254,7 +254,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> 或 <paramref name="serverName" /> 是长度为零的字符串。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="pipeName" /> 设置为“匿名”。  
   
-或 
+- 或 - 
  <paramref name="direction" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeDirection" /> 值。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
       </Docs>
@@ -349,10 +349,10 @@
         <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
       </Parameters>
       <Docs>
-        <param name="serverName">要连接的远程计算机的名称，或者为“.”，以指定本地计算机。</param>
+        <param name="serverName">要连接的远程计算机的名称，或者为“.”以指定本地计算机。</param>
         <param name="pipeName">管道的名称。</param>
         <param name="direction">确定管道方向的枚举值之一。</param>
-        <param name="options">确定如何打开或创建管道的枚举值之一。</param>
+        <param name="options">一个可确定如何打开或创建管道的枚举值。</param>
         <summary>使用指定的管道和服务器名称，以及指定的管道方向和管道选项初始化 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -370,10 +370,10 @@
         <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> 或 <paramref name="serverName" /> 是长度为零的字符串。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="pipeName" /> 设置为“匿名”。  
   
-或 
+- 或 - 
  <paramref name="direction" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeDirection" /> 值。  
   
-或 
+- 或 - 
  <paramref name="options" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeOptions" /> 值。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
       </Docs>
@@ -418,10 +418,10 @@
         <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
       </Parameters>
       <Docs>
-        <param name="serverName">要连接的远程计算机的名称，或者为“.”，以指定本地计算机。</param>
+        <param name="serverName">要连接的远程计算机的名称，或者为“.”以指定本地计算机。</param>
         <param name="pipeName">管道的名称。</param>
         <param name="direction">确定管道方向的枚举值之一。</param>
-        <param name="options">确定如何打开或创建管道的枚举值之一。</param>
+        <param name="options">一个可确定如何打开或创建管道的枚举值。</param>
         <param name="impersonationLevel">确定安全模拟级别的枚举值之一。</param>
         <summary>使用指定的管道和服务器名称、指定的管道方向和管道选项以及安全模拟级别初始化 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 类的新实例。</summary>
         <remarks>
@@ -436,13 +436,13 @@
         <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> 或 <paramref name="serverName" /> 是长度为零的字符串。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="pipeName" /> 设置为“匿名”。  
   
-或 
+- 或 - 
  <paramref name="direction" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeDirection" /> 值。  
   
-或 
+- 或 - 
  <paramref name="options" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeOptions" /> 值。  
   
-或 
+- 或 - 
  <paramref name="impersonationLevel" /> 不是有效的 <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> 值。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
       </Docs>
@@ -473,18 +473,18 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="serverName" Type="System.String" />
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="desiredAccessRights" Type="System.IO.Pipes.PipeAccessRights" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
-        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="serverName" Type="System.String" Index="0" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeName" Type="System.String" Index="1" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="desiredAccessRights" Type="System.IO.Pipes.PipeAccessRights" Index="2" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="3" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" Index="4" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" Index="5" FrameworkAlternate="netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="serverName">要连接的远程计算机的名称，或者为“.”，以指定本地计算机。</param>
+        <param name="serverName">要连接的远程计算机的名称，或者为“.”以指定本地计算机。</param>
         <param name="pipeName">管道的名称。</param>
-        <param name="desiredAccessRights">指定所需管道访问权限的枚举值之一。</param>
-        <param name="options">确定如何打开或创建管道的枚举值之一。</param>
+        <param name="desiredAccessRights">指定管道所需访问权限的枚举值之一。</param>
+        <param name="options">一个可确定如何打开或创建管道的枚举值。</param>
         <param name="impersonationLevel">确定安全模拟级别的枚举值之一。</param>
         <param name="inheritability">确定基础句柄是否将由子进程继承的枚举值之一。</param>
         <summary>使用指定的管道和服务器名称、指定的管道选项、安全模拟级别以及继承模式初始化 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 类的新实例。</summary>
@@ -500,13 +500,13 @@
         <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> 或 <paramref name="serverName" /> 是长度为零的字符串。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="pipeName" /> 设置为“匿名”。  
   
-或 
+- 或 - 
  <paramref name="options" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeOptions" /> 值。  
   
-或 
+- 或 - 
  <paramref name="impersonationLevel" /> 不是有效的 <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> 值。  
   
-或 
+- 或 - 
  <paramref name="inheritability" /> 不是有效的 <see cref="T:System.IO.HandleInheritability" /> 值。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
       </Docs>
@@ -540,18 +540,18 @@
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="serverName" Type="System.String" />
-        <Parameter Name="pipeName" Type="System.String" />
-        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
-        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
-        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
-        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="serverName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="pipeName" Type="System.String" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" Index="2" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" Index="3" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" Index="4" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" Index="5" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="serverName">要连接的远程计算机的名称，或者为“.”，以指定本地计算机。</param>
+        <param name="serverName">要连接的远程计算机的名称，或者为“.”以指定本地计算机。</param>
         <param name="pipeName">管道的名称。</param>
         <param name="direction">确定管道方向的枚举值之一。</param>
-        <param name="options">确定如何打开或创建管道的枚举值之一。</param>
+        <param name="options">一个可确定如何打开或创建管道的枚举值。</param>
         <param name="impersonationLevel">确定安全模拟级别的枚举值之一。</param>
         <param name="inheritability">确定基础句柄是否将由子进程继承的枚举值之一。</param>
         <summary>使用指定的管道和服务器名称、指定的管道方向、管道选项、安全模拟级别以及继承模式初始化 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 类的新实例。</summary>
@@ -560,16 +560,16 @@
         <exception cref="T:System.ArgumentException"><paramref name="pipeName" /> 或 <paramref name="serverName" /> 是长度为零的字符串。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="pipeName" /> 设置为“匿名”。  
   
-或 
+- 或 - 
  <paramref name="direction" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeDirection" /> 值。  
   
-或 
+- 或 - 
  <paramref name="options" /> 不是有效的 <see cref="T:System.IO.Pipes.PipeOptions" /> 值。  
   
-或 
+- 或 - 
  <paramref name="impersonationLevel" /> 不是有效的 <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> 值。  
   
-或 
+- 或 - 
  <paramref name="inheritability" /> 不是有效的 <see cref="T:System.IO.HandleInheritability" /> 值。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.Demand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
       </Docs>
@@ -655,7 +655,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>连接到具有无限超时值的等待的服务器。</summary>
+        <summary>连接到具有无限的超时值的等待服务器。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -716,7 +716,7 @@
       </Parameters>
       <Docs>
         <param name="timeout">在连接超时之前等待服务器响应的毫秒数。</param>
-        <summary>在指定的超时期间内连接到等待的服务器。</summary>
+        <summary>在指定的超时时间内连接到等待的服务器。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -803,7 +803,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="timeout" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="timeout">在连接超时之前等待服务器响应的毫秒数。</param>
@@ -838,7 +838,7 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="cancellationToken">要监视取消请求的标记。 默认值为 <see cref="P:System.Threading.CancellationToken.None" />。</param>
@@ -873,8 +873,8 @@
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="timeout" Type="System.Int32" />
-        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="timeout" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="timeout">在连接超时之前等待服务器响应的毫秒数。</param>
@@ -949,8 +949,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取共享同一管道名称的服务器实例的数量。</summary>
-        <value>共享同一管道名称的服务器实例的数量。</value>
+        <summary>获取共享同一管道名称的服务器实例的数目。</summary>
+        <value>共享同一管道名称的服务器实例的数目。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -969,7 +969,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">尚未设置管道句柄。  
   
-或 
+- 或 - 
 当前 <see cref="T:System.IO.Pipes.NamedPipeClientStream" /> 对象尚未连接到 <see cref="T:System.IO.Pipes.NamedPipeServerStream" /> 对象。</exception>
         <exception cref="T:System.IO.IOException">管道已中断或出现 I/O 错误。</exception>
         <exception cref="T:System.ObjectDisposedException">基础管道图柄已关闭。</exception>

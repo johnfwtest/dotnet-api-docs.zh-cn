@@ -1,5 +1,5 @@
 <Type Name="DocumentViewerBase" FullName="System.Windows.Controls.Primitives.DocumentViewerBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="005174468a7bc51707dafb1834bd3712e59aa68a" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55355451" /></Metadata><TypeSignature Language="C#" Value="public abstract class DocumentViewerBase : System.Windows.Controls.Control, IServiceProvider, System.Windows.Markup.IAddChild" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e7c50fe1a6e66b45b7c6de8cf2f6535fa3de7957" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57961739" /></Metadata><TypeSignature Language="C#" Value="public abstract class DocumentViewerBase : System.Windows.Controls.Control, IServiceProvider, System.Windows.Markup.IAddChild" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract DocumentViewerBase extends System.Windows.Controls.Control implements class System.IServiceProvider, class System.Windows.Markup.IAddChild" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.DocumentViewerBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DocumentViewerBase&#xA;Inherits Control&#xA;Implements IAddChild, IServiceProvider" />
@@ -335,8 +335,8 @@
         <ReturnType>System.Windows.Documents.IDocumentPaginatorSource</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要分页或由查看器显示的 <see cref="T:System.Windows.Documents.IDocumentPaginatorSource" />。</summary>
-        <value>要分页或由查看器显示的 <see cref="T:System.Windows.Documents.IDocumentPaginatorSource" />。  
+        <summary>获取或设置要由查看器分页和显示的 <see cref="T:System.Windows.Documents.IDocumentPaginatorSource" />。</summary>
+        <value>要由查看器分页和显示的 <see cref="T:System.Windows.Documents.IDocumentPaginatorSource" />。  
   
 默认属性是**null**。</value>
         <remarks>
@@ -498,8 +498,8 @@
         <Parameter Name="changed" Type="System.Boolean" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="changed">如果首次调用 <see cref="M:System.Windows.Controls.Primitives.DocumentViewerBase.GetPageViewsCollection(System.Boolean@)" /> 或者自从上次调用 <see cref="M:System.Windows.Controls.Primitives.DocumentViewerBase.GetPageViewsCollection(System.Boolean@)" /> 后集合未发生更改，则返回 <see langword="true" />；如果自从上次调用 <see cref="M:System.Windows.Controls.Primitives.DocumentViewerBase.GetPageViewsCollection(System.Boolean@)" /> 后集合发生了更改，则返回 <see langword="false" />。</param>
-        <summary>创建并返回与当前显示文档（由 <see cref="P:System.Windows.Controls.Primitives.DocumentViewerBase.Document" /> 属性表示）关联的 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 对象的新的只读集合。</summary>
+        <param name="changed">在首次调用 <see cref="M:System.Windows.Controls.Primitives.DocumentViewerBase.GetPageViewsCollection(System.Boolean@)" /> 或自从上次调用 <see cref="M:System.Windows.Controls.Primitives.DocumentViewerBase.GetPageViewsCollection(System.Boolean@)" /> 后集合未发生更改，则返回 <see langword="true" />；如果自从上次调用 <see cref="M:System.Windows.Controls.Primitives.DocumentViewerBase.GetPageViewsCollection(System.Boolean@)" /> 后集合发生了更改，则返回 <see langword="false" />。</param>
+        <summary>创建和返回与当前显示文档（由 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 属性表示）关联的 <see cref="P:System.Windows.Controls.Primitives.DocumentViewerBase.Document" /> 对象的新的、只读集合。</summary>
         <returns>与当前显示文档关联的 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 对象的只读集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -686,8 +686,8 @@
         <ReturnType>System.Collections.IEnumerator</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取可枚举的子级中的查看器的逻辑树。</summary>
-        <value>可以用于枚举查看器逻辑子级的 <see cref="T:System.Collections.IEnumerator" /> 对象。  
+        <summary>获取查看器的逻辑树中子级的枚举器。</summary>
+        <value>可用于枚举查看器的逻辑子级的 <see cref="T:System.Collections.IEnumerator" /> 对象。  
   
 此属性没有默认值。</value>
         <remarks>
@@ -993,8 +993,8 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="oldDpiScaleInfo" Type="System.Windows.DpiScale" />
-        <Parameter Name="newDpiScaleInfo" Type="System.Windows.DpiScale" />
+        <Parameter Name="oldDpiScaleInfo" Type="System.Windows.DpiScale" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="newDpiScaleInfo" Type="System.Windows.DpiScale" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="oldDpiScaleInfo">上一 DPI 比例设置。</param>
@@ -1373,8 +1373,8 @@
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Controls.Primitives.DocumentPageView&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取查看器所包含的活动 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 对象的只读集合。</summary>
-        <value>查看器所包含的活动 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 对象的只读集合。  
+        <summary>获取此查看器所包含的活动 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 对象的只读集合。</summary>
+        <value>此查看器所包含的活动 <see cref="T:System.Windows.Controls.Primitives.DocumentPageView" /> 对象的只读集合。  
   
 此属性没有默认值。</value>
         <remarks>
@@ -1502,8 +1502,8 @@
         <Parameter Name="value" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="element">要在其上设置 <see cref="P:System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPage" /> 值的依赖对象。</param>
-        <param name="value">要将此属性设为的新值。</param>
+        <param name="element">要对其设置 <see cref="P:System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPage" /> 的值的依赖项对象。</param>
+        <param name="value">要为属性设置的新值。</param>
         <summary>设置指定依赖对象上的 <see cref="P:System.Windows.Controls.Primitives.DocumentViewerBase.IsMasterPage" /> 附加属性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  

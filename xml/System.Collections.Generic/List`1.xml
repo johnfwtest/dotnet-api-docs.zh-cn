@@ -1,5 +1,5 @@
 <Type Name="List&lt;T&gt;" FullName="System.Collections.Generic.List&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d2cd21c473d2a8e7d15784e964161e6a1da7bcfa" /><Meta Name="ms.sourcegitcommit" Value="954560a1b131dce1872e29ce5c01cd9f2c927f11" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/11/2019" /><Meta Name="ms.locfileid" Value="54235133" /></Metadata><TypeSignature Language="C#" Value="public class List&lt;T&gt; : System.Collections.Generic.ICollection&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.IList" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="237db7a7608b2fc4bca885e421aed0e36d4f6079" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57944839" /></Metadata><TypeSignature Language="C#" Value="public class List&lt;T&gt; : System.Collections.Generic.ICollection&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit List`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.ICollection`1&lt;!T&gt;, class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.Generic.IList`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyList`1&lt;!T&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
   <TypeSignature Language="DocId" Value="T:System.Collections.Generic.List`1" />
   <TypeSignature Language="VB.NET" Value="Public Class List(Of T)&#xA;Implements ICollection(Of T), IEnumerable(Of T), IList, IList(Of T), IReadOnlyCollection(Of T), IReadOnlyList(Of T)" />
@@ -435,7 +435,7 @@
         <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="collection">应将其元素添加到 <see cref="T:System.Collections.Generic.List`1" /> 的末尾的集合。 集合自身不能为 <see langword="null" />，但它可以包含为 <see langword="null" /> 的元素（如果类型 <paramref name="T" /> 为引用类型）。</param>
+        <param name="collection">一个集合，其元素应被添加到 <see cref="T:System.Collections.Generic.List`1" /> 的末尾。 集合自身不能为 <see langword="null" />，但它可以包含为 <see langword="null" /> 的元素（如果类型 <paramref name="T" /> 为引用类型）。</param>
         <summary>将指定集合的元素添加到 <see cref="T:System.Collections.Generic.List`1" /> 的末尾。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -806,7 +806,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置该内部数据结构在不调整大小的情况下能够容纳的元素总数。</summary>
-        <value>在需要调整大小之前 <see cref="T:System.Collections.Generic.List`1" /> 可包含的元素数目。</value>
+        <value>在需要调整大小之前 <see cref="T:System.Collections.Generic.List`1" /> 能够容纳的元素的数目。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1001,7 +1001,7 @@
         <TypeParameter Name="TOutput" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="converter" Type="System.Converter&lt;T,TOutput&gt;" />
+        <Parameter Name="converter" Type="System.Converter&lt;T,TOutput&gt;" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <typeparam name="TOutput">目标数组元素的类型。</typeparam>
@@ -1082,7 +1082,7 @@
       </Parameters>
       <Docs>
         <param name="array">一维 <see cref="T:System.Array" />，它是从 <see cref="T:System.Collections.Generic.List`1" /> 复制的元素的目标。 <see cref="T:System.Array" /> 必须具有从零开始的索引。</param>
-        <summary>从目标数组的开头开始，将整个 <see cref="T:System.Collections.Generic.List`1" /> 复制到兼容的一维数组。</summary>
+        <summary>将整个 <see cref="T:System.Collections.Generic.List`1" /> 复制到兼容的一维数组中，从目标数组的开头开始放置。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1212,7 +1212,7 @@
         <param name="array">一维 <see cref="T:System.Array" />，它是从 <see cref="T:System.Collections.Generic.List`1" /> 复制的元素的目标。 <see cref="T:System.Array" /> 必须具有从零开始的索引。</param>
         <param name="arrayIndex"><paramref name="array" /> 中从零开始的索引，从此处开始复制。</param>
         <param name="count">要复制的元素数。</param>
-        <summary>从目标数组的指定索引处开始，将元素的范围从 <see cref="T:System.Collections.Generic.List`1" /> 复制到兼容的一维数组。</summary>
+        <summary>将一定范围的元素从 <see cref="T:System.Collections.Generic.List`1" /> 复制到兼容的一维数组中，从目标数组的指定索引位置开始放置。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1346,8 +1346,8 @@
       </Parameters>
       <Docs>
         <param name="match"><see cref="T:System.Predicate`1" /> 委托，用于定义要搜索的元素应满足的条件。</param>
-        <summary>确定 <see cref="T:System.Collections.Generic.List`1" /> 是否包含与指定谓词定义的条件匹配的元素。</summary>
-        <returns>如果 <see cref="T:System.Collections.Generic.List`1" /> 包含一个或多个元素与指定谓词定义的条件匹配，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>确定 <see cref="T:System.Collections.Generic.List`1" /> 是否包含与指定谓词所定义的条件相匹配的元素。</summary>
+        <returns>如果 <see cref="T:System.Collections.Generic.List`1" /> 包含一个或多个与指定谓词所定义的条件相匹配的元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1448,7 +1448,7 @@
  [!code-csharp[System.Collections.Generic.List.ContainsExists#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.list.containsexists/cs/program.cs#1)]
  [!code-vb[System.Collections.Generic.List.ContainsExists#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.containsexists/vb/module1.vb#1)]  
   
- 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：书籍 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
+ 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：图书 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
   
  下表描述了为 find 方法提供的示例。  
   
@@ -1513,7 +1513,7 @@
       <Docs>
         <param name="match"><see cref="T:System.Predicate`1" /> 委托，用于定义要搜索的元素应满足的条件。</param>
         <summary>检索与指定谓词定义的条件匹配的所有元素。</summary>
-        <returns>如果找到一个 <see cref="T:System.Collections.Generic.List`1" />，其中所有元素均与指定谓词定义的条件匹配，则为该数组；否则为一个空 <see cref="T:System.Collections.Generic.List`1" />。</returns>
+        <returns>如果找到，则为一个 <see cref="T:System.Collections.Generic.List`1" />，其中包含与指定谓词所定义的条件相匹配的所有元素；否则为一个空 <see cref="T:System.Collections.Generic.List`1" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1525,7 +1525,7 @@
    
   
 ## Examples  
- 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：书籍 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
+ 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：图书 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
   
  下表描述了为 find 方法提供的示例。  
   
@@ -1885,7 +1885,7 @@ Public Function StartsWith(e As Employee) As Boolean
    
   
 ## Examples  
- 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：书籍 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
+ 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：图书 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
   
  下表描述了为 find 方法提供的示例。  
   
@@ -1975,7 +1975,7 @@ Public Function StartsWith(e As Employee) As Boolean
    
   
 ## Examples  
- 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：书籍 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
+ 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：图书 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
   
  下表描述了为 find 方法提供的示例。  
   
@@ -2120,7 +2120,7 @@ Public Function StartsWith(e As Employee) As Boolean
    
   
 ## Examples  
- 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：书籍 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
+ 下面的示例演示的查找方法<xref:System.Collections.Generic.List%601>类。 有关示例<xref:System.Collections.Generic.List%601>类包含`book`类的对象`Book`，使用的数据进行[示例 XML 文件：图书 (LINQ to XML)](https://msdn.microsoft.com/library/94252daf-6097-4625-afc2-0eb778958d4f)。 `FillList`方法在示例中使用[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)分析的属性值的值从 XML`book`对象。  
   
  下表描述了为 find 方法提供的示例。  
   
@@ -2186,10 +2186,10 @@ Public Function StartsWith(e As Employee) As Boolean
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="action" Type="System.Action&lt;T&gt;" />
+        <Parameter Name="action" Type="System.Action&lt;T&gt;" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="action">要对 <see cref="T:System.Collections.Generic.List`1" /> 的每个元素执行的 <see cref="T:System.Action`1" /> 委托。</param>
+        <param name="action">要对 <see cref="T:System.Action`1" /> 的每个元素执行的 <see cref="T:System.Collections.Generic.List`1" /> 委托。</param>
         <summary>对 <see cref="T:System.Collections.Generic.List`1" /> 的每个元素执行指定操作。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2319,8 +2319,8 @@ Public Function StartsWith(e As Employee) As Boolean
       <Docs>
         <param name="index">范围开始处的从零开始的 <see cref="T:System.Collections.Generic.List`1" /> 索引。</param>
         <param name="count">范围中的元素数。</param>
-        <summary>在源 <see cref="T:System.Collections.Generic.List`1" /> 中创建元素范围的浅表复制。</summary>
-        <returns>源 <see cref="T:System.Collections.Generic.List`1" /> 中的元素范围的浅表副本复制。</returns>
+        <summary>创建源 <see cref="T:System.Collections.Generic.List`1" /> 中的元素范围的浅表副本。</summary>
+        <returns>源 <see cref="T:System.Collections.Generic.List`1" /> 中的元素范围的浅表副本。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2469,7 +2469,7 @@ Public Function StartsWith(e As Employee) As Boolean
       <Docs>
         <param name="item">要在 <see cref="T:System.Collections.Generic.List`1" /> 中定位的对象。 对于引用类型，该值可以为 <see langword="null" />。</param>
         <param name="index">从零开始的搜索的起始索引。 空列表中 0（零）为有效值。</param>
-        <summary>搜索指定对象并返回 <see cref="T:System.Collections.Generic.List`1" /> 中从指定索引到最后一个元素这部分元素中第一个匹配项的从零开始索引。</summary>
+        <summary>搜索指定的对象，并返回 <see cref="T:System.Collections.Generic.List`1" /> 中从指定索引到最后一个元素的元素范围内第一个匹配项的从零开始的索引。</summary>
         <returns>如果在 <see cref="T:System.Collections.Generic.List`1" /> 中从 <paramref name="index" /> 到最后一个元素的元素范围内找到 <paramref name="item" /> 的第一个匹配项，则为该项的从零开始的索引；否则为 -1。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2682,7 +2682,7 @@ Public Function StartsWith(e As Employee) As Boolean
       </Parameters>
       <Docs>
         <param name="index">应在此处插入新元素的从零开始的索引。</param>
-        <param name="collection">应将其元素插入到 <see cref="T:System.Collections.Generic.List`1" /> 中的集合。 集合自身不能为 <see langword="null" />，但它可以包含为 <see langword="null" /> 的元素（如果类型 <paramref name="T" /> 为引用类型）。</param>
+        <param name="collection">一个集合，应将其元素插入到 <see cref="T:System.Collections.Generic.List`1" /> 中。 集合自身不能为 <see langword="null" />，但它可以包含为 <see langword="null" /> 的元素（如果类型 <paramref name="T" /> 为引用类型）。</param>
         <summary>将集合中的元素插入 <see cref="T:System.Collections.Generic.List`1" /> 的指定索引处。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2844,7 +2844,7 @@ Public Function StartsWith(e As Employee) As Boolean
       </Parameters>
       <Docs>
         <param name="item">要在 <see cref="T:System.Collections.Generic.List`1" /> 中定位的对象。 对于引用类型，该值可以为 <see langword="null" />。</param>
-        <summary>搜索指定对象并返回整个 <see cref="T:System.Collections.Generic.List`1" /> 中最后一个匹配项的从零开始索引。</summary>
+        <summary>搜索指定的对象，并返回整个 <see cref="T:System.Collections.Generic.List`1" /> 中最后一个匹配项的从零开始的索引。</summary>
         <returns>如果在整个 <see cref="T:System.Collections.Generic.List`1" /> 中找到 <paramref name="item" /> 的最后一个匹配项，则为该项的从零开始的索引；否则为 -1。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2907,7 +2907,7 @@ Public Function StartsWith(e As Employee) As Boolean
       <Docs>
         <param name="item">要在 <see cref="T:System.Collections.Generic.List`1" /> 中定位的对象。 对于引用类型，该值可以为 <see langword="null" />。</param>
         <param name="index">向后搜索的从零开始的起始索引。</param>
-        <summary>搜索指定对象并返回 <see cref="T:System.Collections.Generic.List`1" /> 中从第一个元素到指定索引这部分元素中最后一个匹配项的从零开始的索引。</summary>
+        <summary>搜索指定的对象，并返回 <see cref="T:System.Collections.Generic.List`1" /> 中从第一个元素到指定索引的元素范围内最后一个匹配项的从零开始的索引。</summary>
         <returns>如果找到，则返回在 <see cref="T:System.Collections.Generic.List`1" /> 中从第一个元素到 <paramref name="index" /> 的元素范围内找到 <paramref name="item" /> 的最后一个匹配项的从零开始的索引；否则为 -1。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3050,7 +3050,7 @@ Public Function StartsWith(e As Employee) As Boolean
       <Docs>
         <param name="item">要从 <see cref="T:System.Collections.Generic.List`1" /> 中删除的对象。 对于引用类型，该值可以为 <see langword="null" />。</param>
         <summary>从 <see cref="T:System.Collections.Generic.List`1" /> 中移除特定对象的第一个匹配项。</summary>
-        <returns>如果成功移除了 <paramref name="item" />，则为 <see langword="true" />；否则为 <see langword="false" />。  如果在 <see langword="false" /> 中没有找到 <paramref name="item" />，则此方法也会返回 <see cref="T:System.Collections.Generic.List`1" />。</returns>
+        <returns>如果成功移除 <paramref name="item" />，则为 <see langword="true" />；否则为 <see langword="false" />。  如果在 <see cref="T:System.Collections.Generic.List`1" /> 中没有找到 <paramref name="item" />，该方法也会返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3905,7 +3905,7 @@ Public Function StartsWith(e As Employee) As Boolean
       <Docs>
         <param name="array">一维 <see cref="T:System.Array" />，它是从 <see cref="T:System.Collections.ICollection" /> 复制的元素的目标。 <see cref="T:System.Array" /> 必须具有从零开始的索引。</param>
         <param name="arrayIndex"><paramref name="array" /> 中从零开始的索引，从此处开始复制。</param>
-        <summary>从特定的 <see cref="T:System.Collections.ICollection" /> 索引处开始，将 <see cref="T:System.Array" /> 的元素复制到一个 <see cref="T:System.Array" /> 中。</summary>
+        <summary>从特定的 <see cref="T:System.Collections.ICollection" /> 索引开始，将 <see cref="T:System.Array" /> 的元素复制到一个 <see cref="T:System.Array" /> 中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4173,7 +4173,7 @@ finally
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="item" /> 是一个无法赋值给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="item" /> 属于不能分配给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Contains">
@@ -4285,7 +4285,7 @@ finally
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="item" /> 是一个无法赋值给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="item" /> 属于不能分配给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Insert">
@@ -4337,7 +4337,7 @@ finally
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 不是 <see cref="T:System.Collections.IList" /> 中的有效索引。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="item" /> 是一个无法赋值给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="item" /> 属于不能分配给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.IsFixedSize">
@@ -4544,7 +4544,7 @@ finally
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="item" /> 是一个无法赋值给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="item" /> 属于不能分配给 <see cref="T:System.Collections.IList" /> 的类型。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToArray">
@@ -4578,7 +4578,7 @@ finally
       <Parameters />
       <Docs>
         <summary>将 <see cref="T:System.Collections.Generic.List`1" /> 的元素复制到新数组中。</summary>
-        <returns>一个包含 <see cref="T:System.Collections.Generic.List`1" /> 的元素副本的数组。</returns>
+        <returns>一个数组，它包含 <see cref="T:System.Collections.Generic.List`1" /> 的元素的副本。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4630,7 +4630,7 @@ finally
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将容量设置为 <see cref="T:System.Collections.Generic.List`1" /> 中元素的实际数目（如果该数目小于某个阈值）。</summary>
+        <summary>将容量设置为 <see cref="T:System.Collections.Generic.List`1" /> 中的实际元素数目（如果该数目小于某个阈值）。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4700,8 +4700,8 @@ finally
         <Parameter Name="match" Type="System.Predicate&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="match">用于定义检查元素时要对照条件的 <see cref="T:System.Predicate`1" /> 委托。</param>
-        <summary>确定 <see cref="T:System.Collections.Generic.List`1" /> 中的每个元素是否都与指定谓词定义的条件匹配。</summary>
+        <param name="match"><see cref="T:System.Predicate`1" /> 委托，定义要据以检查元素的条件。</param>
+        <summary>确定是否 <see cref="T:System.Collections.Generic.List`1" /> 中的每个元素都与指定的谓词所定义的条件相匹配。</summary>
         <returns>如果 <see cref="T:System.Collections.Generic.List`1" /> 中的每个元素都与指定的谓词所定义的条件相匹配，则为 <see langword="true" />；否则为 <see langword="false" />。 如果列表没有元素，则返回值为 <see langword="true" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

@@ -1,5 +1,5 @@
 <Type Name="RelatedEnd" FullName="System.Data.Objects.DataClasses.RelatedEnd">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8c0280040d886345c6b5596e2b0e09932481cd17" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55388003" /></Metadata><TypeSignature Language="C#" Value="public abstract class RelatedEnd : System.Data.Objects.DataClasses.IRelatedEnd" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c88bf71eae75892964aeb0558e60ca3a8296cb1f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57954722" /></Metadata><TypeSignature Language="C#" Value="public abstract class RelatedEnd : System.Data.Objects.DataClasses.IRelatedEnd" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit RelatedEnd extends System.Object implements class System.Data.Objects.DataClasses.IRelatedEnd" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.RelatedEnd" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class RelatedEnd&#xA;Implements IRelatedEnd" />
@@ -103,8 +103,8 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" />
-        <Parameter Name="allowCollection" Type="System.Boolean" />
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="allowCollection" Type="System.Boolean" Index="1" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">要附加的实体对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合的类型。</typeparam>
@@ -273,8 +273,8 @@
         <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
       </Parameters>
       <Docs>
-        <param name="mergeOption">将对象合并到现有 <see cref="T:System.Data.Objects.MergeOption" /> 时使用的 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
-        <summary>在派生类中重写时，将使用指定合并选项从相关端加载一个对象或多个对象。</summary>
+        <param name="mergeOption">将对象合并到现有 <see cref="T:System.Data.Objects.MergeOption" /> 中时，要使用的 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
+        <summary>在派生类中重写时，使用指定合并选项从相关端加载一个或多个对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -316,15 +316,15 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" />
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
-        <Parameter Name="setIsLoaded" Type="System.Boolean" />
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="1" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="setIsLoaded" Type="System.Boolean" Index="2" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">要合并的实体对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合的类型。</typeparam>
-        <param name="collection">添加到此相关端的实体对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
-        <param name="mergeOption">将对象合并到现有 <see cref="T:System.Data.Objects.MergeOption" /> 时使用的 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
-        <param name="setIsLoaded">指示相关对象集是否完整并匹配服务器。 <see cref="M:System.Data.Objects.DataClasses.EntityCollection`1.Load(System.Data.Objects.MergeOption)" /> 等操作将 setIsLoaded 设置为 <see langword="true" />但 <see cref="Overload:System.Data.Objects.DataClasses.EntityCollection`1.Attach" /> 将其设置为 <see langword="false" />。</param>
+        <param name="collection">要添加到此相关端的实体对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
+        <param name="mergeOption">将对象合并到现有 <see cref="T:System.Data.Objects.MergeOption" /> 中时，要使用的 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
+        <param name="setIsLoaded">指示相关对象集是否完整且与服务器匹配。 <see cref="M:System.Data.Objects.DataClasses.EntityCollection`1.Load(System.Data.Objects.MergeOption)" /> 等操作将 setIsLoaded 设置为 <see langword="true" />但 <see cref="Overload:System.Data.Objects.DataClasses.EntityCollection`1.Attach" /> 将其设置为 <see langword="false" />。</param>
         <summary>将相关实体合并到本地 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
@@ -363,7 +363,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="context">序列化的流。</param>
@@ -400,7 +400,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此相关端所参与的关系的名称。</summary>
-        <value>此 <see cref="T:System.Data.Objects.DataClasses.RelatedEnd" /> 所参与的关系的名称。 关系名称不由命名空间限定。</value>
+        <value>此 <see cref="T:System.Data.Objects.DataClasses.RelatedEnd" /> 所参与的关系的名称。 此关系名称不由命名空间进行限定。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -465,7 +465,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取关系的源端的角色名称。</summary>
+        <summary>获取关系源端处的角色名称。</summary>
         <value>表示角色名称的 <see cref="T:System.String" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -551,7 +551,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">要添加到相关端的实体实例。</param>
@@ -572,7 +572,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将对象附加到相关端。</summary>
+        <summary>在相关端处附加对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Attach">
@@ -598,7 +598,7 @@
       </Parameters>
       <Docs>
         <param name="entity">附加的对象。</param>
-        <summary>将对象附加到相关端。</summary>
+        <summary>在相关端处附加对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -629,7 +629,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">要附加到相关端的实体实例。</param>
@@ -712,7 +712,7 @@
       </Parameters>
       <Docs>
         <param name="entity">要从集合中移除的实体实例。</param>
-        <summary>从相关端的集合中移除一个对象。</summary>
+        <summary>从相关端处的集合中移除一个对象。</summary>
         <returns>指示对象是否已移除的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -744,7 +744,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entity" Type="System.Object" Index="0" FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="entity">要从相关端中移除的实体实例。</param>
@@ -788,7 +788,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取关系的目标端的角色名称。</summary>
+        <summary>获取关系目标端处的角色名称。</summary>
         <value>表示角色名称的 <see cref="T:System.String" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -828,9 +828,9 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="entity" Type="TEntity" />
-        <Parameter Name="index" Type="System.Int32" />
-        <Parameter Name="allowCollection" Type="System.Boolean" />
+        <Parameter Name="entity" Type="TEntity" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="index" Type="System.Int32" Index="1" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="allowCollection" Type="System.Boolean" Index="2" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">要验证的对象的类型。</typeparam>
@@ -875,14 +875,14 @@
         <TypeParameter Name="TEntity" />
       </TypeParameters>
       <Parameters>
-        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
-        <Parameter Name="relatedEndName" Type="System.String" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" Index="0" FrameworkAlternate="netframework-3.5" />
+        <Parameter Name="relatedEndName" Type="System.String" Index="1" FrameworkAlternate="netframework-3.5" />
       </Parameters>
       <Docs>
         <typeparam name="TEntity">要验证的对象的类型。</typeparam>
-        <param name="mergeOption">将对象合并到现有 <see cref="T:System.Data.Objects.MergeOption" /> 时使用的 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
+        <param name="mergeOption">将对象合并到现有 <see cref="T:System.Data.Objects.MergeOption" /> 中时，要使用的 <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
         <param name="relatedEndName">相关端的名称。</param>
-        <summary>确保相关对象可以成功加载到本地集合或引用中。</summary>
+        <summary>确保一个或多个相关对象可以成功加载到本地集合或引用中。</summary>
         <returns>一个 <see cref="T:System.Data.Objects.ObjectQuery`1" />，用于加载一个或多个相关端对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[
