@@ -1,5 +1,5 @@
 <Type Name="ProcessStartInfo" FullName="System.Diagnostics.ProcessStartInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e29164c9c15cf68d07935ec9ee9ae939cae76006" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56389181" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProcessStartInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bc25ef95ea680c41d6e7234eae9ea21bd20943a2" /><Meta Name="ms.sourcegitcommit" Value="c181255cb311fdd498458b3f12418f773c97254a" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/21/2019" /><Meta Name="ms.locfileid" Value="58320819" /></Metadata><TypeSignature Language="C#" Value="public sealed class ProcessStartInfo" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ProcessStartInfo extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.ProcessStartInfo" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ProcessStartInfo" />
@@ -192,8 +192,8 @@
       </Parameters>
       <Docs>
         <param name="fileName">启动进程时使用的应用程序。</param>
-        <param name="arguments">进程启动时要传递给应用程序的命令行自变量。</param>
-        <summary>初始化 <see cref="T:System.Diagnostics.ProcessStartInfo" /> 类的新实例，指定启动该进程时使用的应用程序文件名以及要传递给该应用程序的一组命令行自变量。</summary>
+        <param name="arguments">进程启动时要传递给应用程序的命令行参数。</param>
+        <summary>初始化 <see cref="T:System.Diagnostics.ProcessStartInfo" /> 类的新实例，指定启动该进程时使用的应用程序文件名以及要传递给该应用程序的一组命令行参数。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -315,7 +315,7 @@ info.ArgumentList.Add("-last Smith")
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置启动应用程序时要使用的一组命令行自变量。</summary>
+        <summary>获取或设置启动应用程序时要使用的一组命令行参数。</summary>
         <value>单个字符串包含要传递给在 <see cref="P:System.Diagnostics.ProcessStartInfo.FileName" /> 属性中指定的目标应用程序的参数。 默认值为空字符串("")。 在 Windows Vista 和早期的 Windows 操作系统上，添加至进程全径的长度的参数长度必须小于 2080。 在 Windows 7 和更高版本，此长度必须小于 32699。  
   
 参数由目标应用程序进行分析和解释，因此必须与该应用程序的预期保持一致。 对于以下示例中所演示的 .NET 的应用程序，空格被解释为多个参数之间的分隔符。 包含空格的单个参数必须用引号引起来，但这些引号不会传递到目标应用程序。 在包括引号在内的最终已分析的自变量中，每个标记均会进行三重转义。</value>
@@ -443,7 +443,7 @@ info.ArgumentList.Add("-last Smith")
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置确定要在启动进程时使用的域的值。 如果此值为 <see langword="null" />，则必须以 UPN 格式指定 <see cref="P:System.Diagnostics.ProcessStartInfo.UserName" /> 属性。</summary>
+        <summary>获取或设置一个值，该值标识要在启动进程时使用的域。 如果此值为 <see langword="null" />，则必须以 UPN 格式指定 <see cref="P:System.Diagnostics.ProcessStartInfo.UserName" /> 属性。</summary>
         <value>要在启动进程时使用的 Active Directory 域。 如果此值为 <see langword="null" />，则必须以 UPN 格式指定 <see cref="P:System.Diagnostics.ProcessStartInfo.UserName" /> 属性。</value>
         <remarks>此属性是兴趣的浓厚使用 Active Directory 的企业环境中的用户。</remarks>
       </Docs>
@@ -561,7 +561,7 @@ info.ArgumentList.Add("-last Smith")
       </ReturnValue>
       <Docs>
         <summary>获取文件的搜索路径、临时文件的目录、应用程序特定的选项和其他类似信息。</summary>
-        <value>提供应用于此进程和子进程的环境变量的字符串字典。 默认值为 <see langword="null" />。</value>
+        <value>一个字符串字典，提供应用于此进程和子进程的环境变量。 默认值为 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -620,7 +620,7 @@ info.ArgumentList.Add("-last Smith")
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示不能启动进程时是否向用户显示错误对话框的值。</summary>
+        <summary>获取或设置一个值，该值指示不能启动进程时是否向用户显示错误对话框。</summary>
         <value>如果在不能启动进程时在屏幕上显示错误对话框，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -826,7 +826,7 @@ info.ArgumentList.Add("-last Smith")
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示是否从注册表加载 Windows 用户配置文件的值。</summary>
+        <summary>获取或设置一个值，该值指示是否从注册表加载 Windows 用户配置文件。</summary>
         <value>如果应加载 Windows 用户概况，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -941,7 +941,7 @@ info.ArgumentList.Add("-last Smith")
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置明文形式的用户密码以便在开始进程时使用。</summary>
+        <summary>获取或设置明文形式的用户密码以便在启动进程时使用。</summary>
         <value>明文形式的用户密码。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -995,7 +995,7 @@ info.ArgumentList.Add("-last Smith")
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示是否将应用程序的错误输出写入 <see cref="P:System.Diagnostics.Process.StandardError" /> 流中的值。</summary>
+        <summary>获取或设置一个值，该值指示是否将应用程序的错误输出写入 <see cref="P:System.Diagnostics.Process.StandardError" /> 流中。</summary>
         <value>如果错误输出应写入 <see cref="P:System.Diagnostics.Process.StandardError" />，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1011,47 +1011,25 @@ info.ArgumentList.Add("-last Smith")
  与此相反，<xref:System.Diagnostics.Process.BeginErrorReadLine%2A>开始异步读取操作上<xref:System.Diagnostics.Process.StandardError%2A>流。 此方法启用流输出一个指定的事件处理程序，并立即返回给调用方，可以执行其他工作，而流输出定向到事件处理程序。  
   
 > [!NOTE]
->  处理异步输出的应用程序应调用<xref:System.Diagnostics.Process.WaitForExit%2A>方法，以确保已刷新输出缓冲区。  
+>  处理异步输出的应用程序应调用<xref:System.Diagnostics.Process.WaitForExit%2A?displayProperty=nameWithType>方法，以确保已刷新输出缓冲区。  
   
  同步读取操作引入了读取从调用方之间的依赖关系<xref:System.Diagnostics.Process.StandardError%2A>流和子进程的写入该流。 这些依赖关系可能会导致死锁情况。 当调用方读取子进程的重定向流时，它所依赖的子。 调用方等待读取操作，直到子写入流或关闭流。 子进程在编写时数据不足，无法填充其重定向的流，它是依赖于父。 子进程先等待下一个写入操作的父项从完整的流中读取或关闭流。 对于其他以完成操作时，调用方和子进程等待并都不可以继续时，将产生死锁情况。 可以通过评估的调用方和子进程之间的依赖关系来避免死锁。  
+
+本节中的最后两个示例使用<xref:System.Diagnostics.Process.Start%2A>方法来启动名为可执行文件*Write500Lines.exe*。 下面的示例包含其源代码。
+
+[!code-csharp[Executable launched by Process.Start](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/write500lines.cs)]
+[!code-vb[Executable launched by Process.Start](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/write500lines.vb)]
+
+下面的示例演示如何从重定向的错误流中读取并等待子进程退出。 它通过调用避免死锁条件`p.StandardError.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。   
+
+[!code-csharp[Reading from the error stream](~/samples/snippets/csharp/api/system.diagnostics/process/standarderror/stderror-sync.cs)]
+[!code-vb[Reading from the error stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standarderror/stderror-sync.vb)]  
   
- 例如，下面的 C# 代码演示如何从重定向流中读取并等待子进程退出。  
-  
-```csharp  
-// Start the child process.  
- Process p = new Process();  
- // Redirect the error stream of the child process.  
- p.StartInfo.UseShellExecute = false;  
- p.StartInfo.RedirectStandardError = true;  
- p.StartInfo.FileName = "Write500Lines.exe";  
- p.Start();  
- // Do not wait for the child process to exit before  
- // reading to the end of its redirected error stream.  
- // p.WaitForExit();  
- // Read the error stream first and then wait.  
- string error = p.StandardError.ReadToEnd();  
- p.WaitForExit();  
-```  
-  
- 代码示例调用，因此可避免死锁条件`p.StandardError.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
-  
- 从标准输出和标准错误流中读取的所有文本时出现类似问题。 例如，下面的 C# 代码执行两个流的读取的操作。  
-  
-```csharp  
-// Do not perform a synchronous read to the end of both  
-// redirected streams.  
-// string output = p.StandardOutput.ReadToEnd();  
-// string error = p.StandardError.ReadToEnd();  
-// p.WaitForExit();  
-// Use asynchronous read operations on at least one of the streams.  
-p.BeginOutputReadLine();  
-string error = p.StandardError.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- 代码示例执行异步读取操作上，因此可避免死锁条件<xref:System.Diagnostics.Process.StandardOutput%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
-  
- 异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
+从标准输出和标准错误流中读取的所有文本时出现类似问题。 以下 C# 代码，例如，执行这两个流的读取的操作。 它可通过执行异步读取操作上避免死锁条件<xref:System.Diagnostics.Process.StandardError%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
+[!code-csharp[Reading from both streams](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-async.cs)]
+[!code-vb[Reading from both streams](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-async.vb)]  
+
+异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
   
    
   
@@ -1117,8 +1095,8 @@ p.WaitForExit();
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示应用程序的输入是否从 <see cref="P:System.Diagnostics.Process.StandardInput" /> 流中读取的值。</summary>
-        <value>如果应从 <see cref="P:System.Diagnostics.Process.StandardInput" /> 读取输入，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示应用程序的输入是否从 <see cref="P:System.Diagnostics.Process.StandardInput" /> 流中读取。</summary>
+        <value>如果应从 <see cref="P:System.Diagnostics.Process.StandardInput" /> 读取输入，作为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1214,35 +1192,21 @@ p.WaitForExit();
   
  同步读取操作引入了读取从调用方之间的依赖关系<xref:System.Diagnostics.Process.StandardOutput%2A>流和子进程的写入该流。 这些依赖关系可能会导致死锁情况。 当调用方读取子进程的重定向流时，它所依赖的子。 调用方等待读取操作，直到子写入流或关闭流。 子进程在编写时数据不足，无法填充其重定向的流，它是依赖于父。 子进程先等待下一个写入操作的父项从完整的流中读取或关闭流。 对于其他以完成操作时，调用方和子进程等待并都不可以继续时，将产生死锁情况。 可以通过评估的调用方和子进程之间的依赖关系来避免死锁。  
   
- 例如，下面的 C# 代码演示如何从重定向流中读取并等待子进程退出。  
-  
-```csharp  
-Process p = new Process();  
-p.StartInfo.UseShellExecute = false;  
-p.StartInfo.RedirectStandardOutput = true;  
-p.StartInfo.FileName = "Write500Lines.exe";  
-p.Start();  
-  
-// To avoid deadlocks, always read the output stream first and then wait.  
-string output = p.StandardOutput.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- 代码示例调用，因此可避免死锁条件`p.StandardOutput.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardOutput.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardOutput%2A>流。  
-  
- 从标准输出和标准错误流中读取的所有文本时出现类似问题。 例如，下面的 C# 代码执行两个流的读取的操作。  
-  
-```csharp  
-// To avoid deadlocks, use asynchronous read operations on at least one of the streams.  
-// Do not perform a synchronous read to the end of both redirected streams.  
-p.BeginOutputReadLine();  
-string error = p.StandardError.ReadToEnd();  
-p.WaitForExit();  
-```  
-  
- 代码示例执行异步读取操作上，因此可避免死锁条件<xref:System.Diagnostics.Process.StandardOutput%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。  
-  
- 异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
+本节中的最后两个示例使用<xref:System.Diagnostics.Process.Start%2A>方法来启动名为可执行文件*Write500Lines.exe*。 下面的示例包含其源代码。
+
+[!code-csharp[Executable launched by Process.Start](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/write500lines.cs)]
+[!code-vb[Executable launched by Process.Start](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/write500lines.vb)]
+
+下面的示例演示如何从重定向流中读取并等待子进程退出。 该示例调用，因此可避免死锁条件`p.StandardOutput.ReadToEnd`之前`p.WaitForExit`。 如果父进程的调用可能导致死锁条件`p.WaitForExit`之前`p.StandardOutput.ReadToEnd`和子进程会写入足够多的文本以填充重定向的流。 父进程将无限期地等待子进程退出。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardOutput%2A>流。  
+
+[!code-csharp[Reading synchronously from a redirected output stream](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-sync.cs)]  
+[!code-vb[Reading synchronously from a redirected output stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-sync.vb)] 
+
+从标准输出和标准错误流中读取的所有文本时出现类似问题。 以下示例执行两个流的读取的操作。 它可通过执行异步读取操作上避免死锁条件<xref:System.Diagnostics.Process.StandardError%2A>流。 如果父进程调用产生死锁情况`p.StandardOutput.ReadToEnd`跟`p.StandardError.ReadToEnd`和子进程会写入足够多的文本以填充其错误流。 父进程将无限期地等待子进程关闭其<xref:System.Diagnostics.Process.StandardOutput%2A>流。 子进程将无限期地等待父读取完整<xref:System.Diagnostics.Process.StandardError%2A>流。   
+[!code-csharp[Reading from a redirected output and error stream](~/samples/snippets/csharp/api/system.diagnostics/process/standardoutput/stdoutput-async.cs)]  
+[!code-vb[Reading from a redirected output and error stream](~/samples/snippets/visualbasic/api/system.diagnostics/process/standardoutput/stdoutput-async.vb)]    
+
+异步读取的操作可用于避免这些依赖关系和其潜在的死锁。 或者，您可以通过创建两个线程和读取单独的线程上的每个流的输出来避免死锁情况。  
   
    
   
@@ -1294,7 +1258,7 @@ p.WaitForExit();
       </ReturnValue>
       <Docs>
         <summary>获取或设置错误输出的首选编码。</summary>
-        <value>表示错误输出的首选编码的对象。 默认值为 <see langword="null" />。</value>
+        <value>一个对象，表示错误输出的首选编码。 默认值为 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1369,7 +1333,7 @@ p.WaitForExit();
       </ReturnValue>
       <Docs>
         <summary>获取或设置标准输出的首选编码。</summary>
-        <value>表示标准输出的首选编码的对象。 默认值为 <see langword="null" />。</value>
+        <value>一个对象，表示标准输出的首选编码。 默认值为 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1481,7 +1445,7 @@ p.WaitForExit();
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示是否使用操作系统 shell 启动进程的值。</summary>
+        <summary>获取或设置一个值，该值指示是否使用操作系统 shell 启动进程。</summary>
         <value>如果应在启动进程时使用 shell，则为 <see langword="true" />；如果直接从可执行文件创建进程，则为 <see langword="false" />。 默认值是<see langword="true" />上的.NET Framework 应用和<see langword="false" />上.NET Core 应用。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[## Remarks
@@ -1581,7 +1545,7 @@ Word 在此上下文中的"shell"(`UseShellExecute`) 指的是图形外壳程序
       </ReturnValue>
       <Docs>
         <summary>获取或设置打开 <see cref="P:System.Diagnostics.ProcessStartInfo.FileName" /> 属性指定的应用程序或文档时要使用的谓词。</summary>
-        <value>要对进程打开的文件执行的操作。 默认值为空字符串 ("")，它表示没有操作。</value>
+        <value>要对进程打开的文件执行的操作。 默认值是空字符串 ("")，它表示没有操作。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1711,7 +1675,7 @@ Word 在此上下文中的"shell"(`UseShellExecute`) 指的是图形外壳程序
       </ReturnValue>
       <Docs>
         <summary>获取或设置启动进程时使用的窗口状态。</summary>
-        <value>枚举值之一，它指示是在最大化窗口、最小化窗口、正常(即非最大化也非最小化)窗口还是在不可见的窗口中启动进程。 默认值为 <see langword="Normal" />。</value>
+        <value>枚举值之一，它指示是在最大化窗口、最小化窗口、正常（即非最大化也非最小化）窗口还是在不可见的窗口中启动进程。 默认值为 <see langword="Normal" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
