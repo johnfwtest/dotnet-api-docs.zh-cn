@@ -1,5 +1,5 @@
 <Type Name="SqlCommand" FullName="System.Data.SqlClient.SqlCommand">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e2d815f9b6d9c55850afb03380f37f59092420b3" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57925612" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlCommand : System.Data.Common.DbCommand, ICloneable, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="81955bd31216671fd3a01eef9a27f1ace637dc5b" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58727816" /></Metadata><TypeSignature Language="C#" Value="public sealed class SqlCommand : System.Data.Common.DbCommand, ICloneable, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlCommand extends System.Data.Common.DbCommand implements class System.Data.IDbCommand, class System.ICloneable, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlCommand" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SqlCommand&#xA;Inherits DbCommand&#xA;Implements ICloneable, IDisposable" />
@@ -1403,7 +1403,7 @@ SqlCommand command = new SqlCommand("SELECT ContactID, FirstName, LastName FROM 
 ## Remarks  
  如果没有要取消的命令，则不会有任何反应。 但是，如果有正在执行的命令，则即使取消尝试失败，也不会生成异常。  
   
- 在某些少见，情况下，如果调用<xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A>然后调用<xref:System.Data.SqlClient.SqlDataReader.Close%2A>(隐式或显式) 之前调用<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>，然后调用<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>、 cancel 命令不会发送到 SQL Server 和结果集可以继续进行流式处理后调用<xref:System.Data.SqlClient.SqlConnection.Close%2A>。 若要避免此问题，请确保您调用<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>之前关闭读取器或连接。  
+ 在某些情况下，如果您调用<xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A>，然后调用<xref:System.Data.SqlClient.SqlDataReader.Close%2A>（隐式或显式） 之前调用<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>，然后调用<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>、 cancel 命令不会发送到 SQL Server 和结果集可以继续进行流式处理后调用<xref:System.Data.SqlClient.SqlConnection.Close%2A>。 若要避免此问题，请确保您调用<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>之前关闭读取器或连接。  
   
    
   
