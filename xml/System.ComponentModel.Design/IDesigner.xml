@@ -1,5 +1,5 @@
 <Type Name="IDesigner" FullName="System.ComponentModel.Design.IDesigner">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5553d98f4a32dd13e6c445af691c54f2c8326e69" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51872824" /></Metadata><TypeSignature Language="C#" Value="public interface IDesigner : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="42aa3678c7ce83f659c32f1fffc76e68abbdddb8" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58680689" /></Metadata><TypeSignature Language="C#" Value="public interface IDesigner : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesigner implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IDesigner" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDesigner&#xA;Implements IDisposable" />
@@ -15,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -32,31 +33,31 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary><span data-ttu-id="8eb5f-101">提供用于生成自定义设计器的基本框架。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-101">Provides the basic framework for building a custom designer.</span></span></summary>
+    <summary><span data-ttu-id="d801c-101">提供用于生成自定义设计器的基本框架。</span><span class="sxs-lookup"><span data-stu-id="d801c-101">Provides the basic framework for building a custom designer.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="8eb5f-102"><xref:System.ComponentModel.Design.IDesigner>接口提供了通过它可以实现基本服务的设计器的接口。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-102">The <xref:System.ComponentModel.Design.IDesigner> interface provides an interface through which you can implement basic services for a designer.</span></span> <span data-ttu-id="8eb5f-103">设计器可以在设计时修改组件的行为，并可能会提供其自己的服务和行为。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-103">A designer can modify the behavior of a component at design time, and may provide its own services and behavior.</span></span> <span data-ttu-id="8eb5f-104">设计器仅在设计时活动，并且必须与组件的类型相关联<xref:System.ComponentModel.DesignerAttribute>时在设计时创建关联的类型的组件，才能加载。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-104">A designer is only active at design-time, and must be associated with a type of component using a <xref:System.ComponentModel.DesignerAttribute> in order to be loaded when a component of the associated type is created at design time.</span></span>  
+ <span data-ttu-id="d801c-102"><xref:System.ComponentModel.Design.IDesigner>接口提供了通过它可以实现基本服务的设计器的接口。</span><span class="sxs-lookup"><span data-stu-id="d801c-102">The <xref:System.ComponentModel.Design.IDesigner> interface provides an interface through which you can implement basic services for a designer.</span></span> <span data-ttu-id="d801c-103">设计器可以在设计时修改组件的行为，并可能会提供其自己的服务和行为。</span><span class="sxs-lookup"><span data-stu-id="d801c-103">A designer can modify the behavior of a component at design time, and may provide its own services and behavior.</span></span> <span data-ttu-id="d801c-104">设计器仅在设计时活动，并且必须与组件的类型相关联<xref:System.ComponentModel.DesignerAttribute>时在设计时创建关联的类型的组件，才能加载。</span><span class="sxs-lookup"><span data-stu-id="d801c-104">A designer is only active at design-time, and must be associated with a type of component using a <xref:System.ComponentModel.DesignerAttribute> in order to be loaded when a component of the associated type is created at design time.</span></span>  
   
- <span data-ttu-id="8eb5f-105"><xref:System.ComponentModel.Design.IDesigner>接口提供方法和属性，可以实现以在设计时提供自定义行为。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-105">The <xref:System.ComponentModel.Design.IDesigner> interface provides methods and properties that you can implement in order to provide custom behavior at design time.</span></span>  
+ <span data-ttu-id="d801c-105"><xref:System.ComponentModel.Design.IDesigner>接口提供方法和属性，可以实现以在设计时提供自定义行为。</span><span class="sxs-lookup"><span data-stu-id="d801c-105">The <xref:System.ComponentModel.Design.IDesigner> interface provides methods and properties that you can implement in order to provide custom behavior at design time.</span></span>  
   
- <span data-ttu-id="8eb5f-106">实现<xref:System.ComponentModel.Design.IDesigner.Initialize%2A>的设计器创建组件时，执行操作的方法。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-106">Implement the <xref:System.ComponentModel.Design.IDesigner.Initialize%2A> method of a designer to perform actions when a component is created.</span></span> <span data-ttu-id="8eb5f-107">如果组件应在设计时具有特殊配置或根据条件在设计器可以确定应更改其配置，这可以很有用。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-107">This can be useful if a component should have a special configuration at design-time, or if its configuration should change depending on conditions that the designer can determine.</span></span>  
+ <span data-ttu-id="d801c-106">实现<xref:System.ComponentModel.Design.IDesigner.Initialize%2A>的设计器创建组件时，执行操作的方法。</span><span class="sxs-lookup"><span data-stu-id="d801c-106">Implement the <xref:System.ComponentModel.Design.IDesigner.Initialize%2A> method of a designer to perform actions when a component is created.</span></span> <span data-ttu-id="d801c-107">如果组件应在设计时具有特殊配置或根据条件在设计器可以确定应更改其配置，这可以很有用。</span><span class="sxs-lookup"><span data-stu-id="d801c-107">This can be useful if a component should have a special configuration at design-time, or if its configuration should change depending on conditions that the designer can determine.</span></span>  
   
- <span data-ttu-id="8eb5f-108">设计器可以提供有关在用户右键单击组件或控件在设计时环境中的时，将显示的快捷菜单的菜单命令。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-108">A designer can provide menu commands on the shortcut menu that is displayed when a user right-clicks a component or control in the design-time environment.</span></span> <span data-ttu-id="8eb5f-109">您可以实现<xref:System.ComponentModel.Design.IDesigner.Verbs%2A>属性来定义 get 访问器返回<xref:System.ComponentModel.Design.DesignerVerbCollection>包含<xref:System.ComponentModel.Design.DesignerVerb>生成菜单命令的对象。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-109">You can implement the <xref:System.ComponentModel.Design.IDesigner.Verbs%2A> property to define a get accessor that returns a <xref:System.ComponentModel.Design.DesignerVerbCollection> containing the <xref:System.ComponentModel.Design.DesignerVerb> objects for generating menu commands.</span></span>  
+ <span data-ttu-id="d801c-108">设计器可以提供有关在用户右键单击组件或控件在设计时环境中的时，将显示的快捷菜单的菜单命令。</span><span class="sxs-lookup"><span data-stu-id="d801c-108">A designer can provide menu commands on the shortcut menu that is displayed when a user right-clicks a component or control in the design-time environment.</span></span> <span data-ttu-id="d801c-109">您可以实现<xref:System.ComponentModel.Design.IDesigner.Verbs%2A>属性来定义 get 访问器返回<xref:System.ComponentModel.Design.DesignerVerbCollection>包含<xref:System.ComponentModel.Design.DesignerVerb>生成菜单命令的对象。</span><span class="sxs-lookup"><span data-stu-id="d801c-109">You can implement the <xref:System.ComponentModel.Design.IDesigner.Verbs%2A> property to define a get accessor that returns a <xref:System.ComponentModel.Design.DesignerVerbCollection> containing the <xref:System.ComponentModel.Design.DesignerVerb> objects for generating menu commands.</span></span>  
   
- <span data-ttu-id="8eb5f-110">双击该组件时，将显示在组件栏中的组件的设计器可以执行默认操作。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-110">A designer for a component that appears in the component tray can perform a default action when the component is double-clicked.</span></span> <span data-ttu-id="8eb5f-111">实现<xref:System.ComponentModel.Design.IDesigner.DoDefaultAction%2A>方法，以指定要执行双击该组件时的行为。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-111">Implement the <xref:System.ComponentModel.Design.IDesigner.DoDefaultAction%2A> method to specify the behavior to perform when the component is double-clicked.</span></span>  
+ <span data-ttu-id="d801c-110">双击该组件时，将显示在组件栏中的组件的设计器可以执行默认操作。</span><span class="sxs-lookup"><span data-stu-id="d801c-110">A designer for a component that appears in the component tray can perform a default action when the component is double-clicked.</span></span> <span data-ttu-id="d801c-111">实现<xref:System.ComponentModel.Design.IDesigner.DoDefaultAction%2A>方法，以指定要执行双击该组件时的行为。</span><span class="sxs-lookup"><span data-stu-id="d801c-111">Implement the <xref:System.ComponentModel.Design.IDesigner.DoDefaultAction%2A> method to specify the behavior to perform when the component is double-clicked.</span></span>  
   
- <span data-ttu-id="8eb5f-112">设计器还可以使用可用的设计时服务来执行各种任务，包括调查组件和它们的属性的当前设计时环境、 读取和设置的组件，属性值管理工具箱中，管理所选的组件，或显示一个用户界面，可以在配置值，或要应用进一步的处理。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-112">A designer can also use the available design-time services to perform a variety of tasks, including surveying the current design-time environment for components and their properties, reading and setting the values of properties of components, managing the toolbox, managing selected components, or displaying a user interface that can be used to configure values or to apply further processing.</span></span>  
+ <span data-ttu-id="d801c-112">设计器还可以使用可用的设计时服务来执行各种任务，包括调查组件和它们的属性的当前设计时环境、 读取和设置的组件，属性值管理工具箱中，管理所选的组件，或显示一个用户界面，可以在配置值，或要应用进一步的处理。</span><span class="sxs-lookup"><span data-stu-id="d801c-112">A designer can also use the available design-time services to perform a variety of tasks, including surveying the current design-time environment for components and their properties, reading and setting the values of properties of components, managing the toolbox, managing selected components, or displaying a user interface that can be used to configure values or to apply further processing.</span></span>  
   
- <span data-ttu-id="8eb5f-113">若要在窗体上实现用于被放置的控件的设计器，可以继承自<xref:System.Windows.Forms.Design.ControlDesigner>类。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-113">To implement a designer for a control that can be sited on a form, you can inherit from the <xref:System.Windows.Forms.Design.ControlDesigner> class.</span></span> <span data-ttu-id="8eb5f-114">其关联的设计器不是派生的控件<xref:System.Windows.Forms.Design.ControlDesigner>组件栏中显示。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-114">Controls whose associated designer does not derive from <xref:System.Windows.Forms.Design.ControlDesigner> are displayed in the component tray.</span></span> <span data-ttu-id="8eb5f-115"><xref:System.ComponentModel.Design.ComponentDesigner>并<xref:System.Windows.Forms.Design.ControlDesigner>类将实现<xref:System.ComponentModel.Design.IDesigner>接口，并提供可能的设计器作者使用的其他设计时支持。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-115">The <xref:System.ComponentModel.Design.ComponentDesigner> and <xref:System.Windows.Forms.Design.ControlDesigner> classes implement the <xref:System.ComponentModel.Design.IDesigner> interface and provide additional design-time support that may be of use to authors of designers.</span></span> <span data-ttu-id="8eb5f-116">有关详细信息，请参阅这些类的参考文档。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-116">For more information, see the reference documentation for these classes.</span></span>  
+ <span data-ttu-id="d801c-113">若要在窗体上实现用于被放置的控件的设计器，可以继承自<xref:System.Windows.Forms.Design.ControlDesigner>类。</span><span class="sxs-lookup"><span data-stu-id="d801c-113">To implement a designer for a control that can be sited on a form, you can inherit from the <xref:System.Windows.Forms.Design.ControlDesigner> class.</span></span> <span data-ttu-id="d801c-114">其关联的设计器不是派生的控件<xref:System.Windows.Forms.Design.ControlDesigner>组件栏中显示。</span><span class="sxs-lookup"><span data-stu-id="d801c-114">Controls whose associated designer does not derive from <xref:System.Windows.Forms.Design.ControlDesigner> are displayed in the component tray.</span></span> <span data-ttu-id="d801c-115"><xref:System.ComponentModel.Design.ComponentDesigner>并<xref:System.Windows.Forms.Design.ControlDesigner>类将实现<xref:System.ComponentModel.Design.IDesigner>接口，并提供可能的设计器作者使用的其他设计时支持。</span><span class="sxs-lookup"><span data-stu-id="d801c-115">The <xref:System.ComponentModel.Design.ComponentDesigner> and <xref:System.Windows.Forms.Design.ControlDesigner> classes implement the <xref:System.ComponentModel.Design.IDesigner> interface and provide additional design-time support that may be of use to authors of designers.</span></span> <span data-ttu-id="d801c-116">有关详细信息，请参阅这些类的参考文档。</span><span class="sxs-lookup"><span data-stu-id="d801c-116">For more information, see the reference documentation for these classes.</span></span>  
   
- <span data-ttu-id="8eb5f-117">有关创建设计组件的概述，请参阅[扩展设计时支持](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-117">For an overview of creating design components, please see [Extending Design-Time Support](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).</span></span>  
+ <span data-ttu-id="d801c-117">有关创建设计组件的概述，请参阅[扩展设计时支持](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)。</span><span class="sxs-lookup"><span data-stu-id="d801c-117">For an overview of creating design components, please see [Extending Design-Time Support](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="8eb5f-118">此示例演示<xref:System.ComponentModel.Design.IDesigner>存储对其组件的本地引用的实现时该组件在双击之后，并提供设计器谓词菜单命令执行默认操作。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-118">This example demonstrates an <xref:System.ComponentModel.Design.IDesigner> implementation that stores a local reference to its component, performs a default action when the component is double-clicked, and provides a designer verb menu command.</span></span>  
+ <span data-ttu-id="d801c-118">此示例演示<xref:System.ComponentModel.Design.IDesigner>存储对其组件的本地引用的实现时该组件在双击之后，并提供设计器谓词菜单命令执行默认操作。</span><span class="sxs-lookup"><span data-stu-id="d801c-118">This example demonstrates an <xref:System.ComponentModel.Design.IDesigner> implementation that stores a local reference to its component, performs a default action when the component is double-clicked, and provides a designer verb menu command.</span></span>  
   
  [!code-cpp[IDesignerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerExample/CPP/testcontrol.cpp#1)]
  [!code-csharp[IDesignerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerExample/CS/testcontrol.cs#1)]
@@ -67,7 +68,7 @@
     <altmember cref="T:System.ComponentModel.Design.IRootDesigner" />
     <altmember cref="T:System.ComponentModel.Design.IDesignerHost" />
     <altmember cref="T:System.ComponentModel.Design.DesignerVerb" />
-    <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2"><span data-ttu-id="8eb5f-119">扩展设计时支持</span><span class="sxs-lookup"><span data-stu-id="8eb5f-119">Extending Design-Time Support</span></span></related>
+    <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2"><span data-ttu-id="d801c-119">扩展设计时支持</span><span class="sxs-lookup"><span data-stu-id="d801c-119">Extending Design-Time Support</span></span></related>
   </Docs>
   <Members>
     <Member MemberName="Component">
@@ -88,6 +89,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -98,8 +100,8 @@
         <ReturnType>System.ComponentModel.IComponent</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="8eb5f-120">获取此设计器正在设计的基组件。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-120">Gets the base component that this designer is designing.</span></span></summary>
-        <value><span data-ttu-id="8eb5f-121">表示此设计器所设计的基组件的 <see cref="T:System.ComponentModel.IComponent" />。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-121">An <see cref="T:System.ComponentModel.IComponent" /> indicating the base component that this designer is designing.</span></span></value>
+        <summary><span data-ttu-id="d801c-120">获取此设计器正在设计的基组件。</span><span class="sxs-lookup"><span data-stu-id="d801c-120">Gets the base component that this designer is designing.</span></span></summary>
+        <value><span data-ttu-id="d801c-121">表示此设计器所设计的基组件的 <see cref="T:System.ComponentModel.IComponent" />。</span><span class="sxs-lookup"><span data-stu-id="d801c-121">An <see cref="T:System.ComponentModel.IComponent" /> indicating the base component that this designer is designing.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -121,6 +123,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -132,12 +135,12 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="8eb5f-122">执行此设计器的默认行为。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-122">Performs the default action for this designer.</span></span></summary>
+        <summary><span data-ttu-id="d801c-122">执行此设计器的默认行为。</span><span class="sxs-lookup"><span data-stu-id="d801c-122">Performs the default action for this designer.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="8eb5f-123">当用户双击组件栏中的组件的表示形式时，调用此方法。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-123">This method is called when a user double-clicks the representation of a component in the component tray.</span></span>  
+ <span data-ttu-id="d801c-123">当用户双击组件栏中的组件的表示形式时，调用此方法。</span><span class="sxs-lookup"><span data-stu-id="d801c-123">This method is called when a user double-clicks the representation of a component in the component tray.</span></span>  
   
  ]]></format>
         </remarks>
@@ -161,6 +164,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -174,8 +178,8 @@
         <Parameter Name="component" Type="System.ComponentModel.IComponent" />
       </Parameters>
       <Docs>
-        <param name="component"><span data-ttu-id="8eb5f-124">与此设计器相关联的组件。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-124">The component to associate with this designer.</span></span></param>
-        <summary><span data-ttu-id="8eb5f-125">用指定的组件初始化设计器。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-125">Initializes the designer with the specified component.</span></span></summary>
+        <param name="component"><span data-ttu-id="d801c-124">与此设计器相关联的组件。</span><span class="sxs-lookup"><span data-stu-id="d801c-124">The component to associate with this designer.</span></span></param>
+        <summary><span data-ttu-id="d801c-125">用指定的组件初始化设计器。</span><span class="sxs-lookup"><span data-stu-id="d801c-125">Initializes the designer with the specified component.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,6 +201,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -207,16 +212,16 @@
         <ReturnType>System.ComponentModel.Design.DesignerVerbCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="8eb5f-126">获取设计器支持的设计时谓词的集合。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-126">Gets a collection of the design-time verbs supported by the designer.</span></span></summary>
-        <value><span data-ttu-id="8eb5f-127">包含设计器支持的谓词的 <see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />；如果组件没有谓词，则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-127">A <see cref="T:System.ComponentModel.Design.DesignerVerbCollection" /> that contains the verbs supported by the designer, or <see langword="null" /> if the component has no verbs.</span></span></value>
+        <summary><span data-ttu-id="d801c-126">获取设计器支持的设计时谓词的集合。</span><span class="sxs-lookup"><span data-stu-id="d801c-126">Gets a collection of the design-time verbs supported by the designer.</span></span></summary>
+        <value><span data-ttu-id="d801c-127">包含设计器支持的谓词的 <see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />；如果组件没有谓词，则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="d801c-127">A <see cref="T:System.ComponentModel.Design.DesignerVerbCollection" /> that contains the verbs supported by the designer, or <see langword="null" /> if the component has no verbs.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="8eb5f-128">返回设计时谓词支持与设计器相关联的组件。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-128">Returns the design time verbs supported by the component associated with the designer.</span></span> <span data-ttu-id="8eb5f-129">此方法返回的谓词通常显示通过右键单击菜单中的设计时环境。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-129">The verbs returned by this method are typically displayed by the design-time environment in a right-click menu.</span></span> <span data-ttu-id="8eb5f-130">如果用户选择谓词，相应的事件处理程序之一<xref:System.ComponentModel.Design.DesignerVerb>调用。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-130">When a user selects one of the verbs, the event handler of the corresponding <xref:System.ComponentModel.Design.DesignerVerb> is invoked.</span></span>  
+ <span data-ttu-id="d801c-128">返回设计时谓词支持与设计器相关联的组件。</span><span class="sxs-lookup"><span data-stu-id="d801c-128">Returns the design time verbs supported by the component associated with the designer.</span></span> <span data-ttu-id="d801c-129">此方法返回的谓词通常显示通过右键单击菜单中的设计时环境。</span><span class="sxs-lookup"><span data-stu-id="d801c-129">The verbs returned by this method are typically displayed by the design-time environment in a right-click menu.</span></span> <span data-ttu-id="d801c-130">如果用户选择谓词，相应的事件处理程序之一<xref:System.ComponentModel.Design.DesignerVerb>调用。</span><span class="sxs-lookup"><span data-stu-id="d801c-130">When a user selects one of the verbs, the event handler of the corresponding <xref:System.ComponentModel.Design.DesignerVerb> is invoked.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="8eb5f-131">设计时环境通常会提供**属性...** 组件的右键单击菜单上的条目。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-131">A design-time environment typically provides a **Properties...** entry on a component's right-click menu.</span></span> <span data-ttu-id="8eb5f-132">若要避免重复标题的菜单项，标题为"属性..."没有谓词应包括在<xref:System.ComponentModel.Design.DesignerVerbCollection>。</span><span class="sxs-lookup"><span data-stu-id="8eb5f-132">To avoid duplicate titles for menu entries, no verb with a title of "Properties..." should be included in a <xref:System.ComponentModel.Design.DesignerVerbCollection>.</span></span>  
+>  <span data-ttu-id="d801c-131">设计时环境通常会提供**属性...** 组件的右键单击菜单上的条目。</span><span class="sxs-lookup"><span data-stu-id="d801c-131">A design-time environment typically provides a **Properties...** entry on a component's right-click menu.</span></span> <span data-ttu-id="d801c-132">若要避免重复标题的菜单项，标题为"属性..."没有谓词应包括在<xref:System.ComponentModel.Design.DesignerVerbCollection>。</span><span class="sxs-lookup"><span data-stu-id="d801c-132">To avoid duplicate titles for menu entries, no verb with a title of "Properties..." should be included in a <xref:System.ComponentModel.Design.DesignerVerbCollection>.</span></span>  
   
  ]]></format>
         </remarks>
