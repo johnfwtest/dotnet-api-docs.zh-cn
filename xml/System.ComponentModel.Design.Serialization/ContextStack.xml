@@ -1,5 +1,5 @@
 <Type Name="ContextStack" FullName="System.ComponentModel.Design.Serialization.ContextStack">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d22a04e9e20649b40936a51fc4ba76ebfbda9014" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57916018" /></Metadata><TypeSignature Language="C#" Value="public sealed class ContextStack" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="489d972dc27b5a50b52b2158196737e6a3cb3eca" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58717386" /></Metadata><TypeSignature Language="C#" Value="public sealed class ContextStack" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContextStack extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.ContextStack" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ContextStack" />
@@ -15,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -26,23 +27,23 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary><span data-ttu-id="1cf21-101">提供堆栈对象，序列化程序可使用该对象向嵌套的序列化程序提供信息。</span><span class="sxs-lookup"><span data-stu-id="1cf21-101">Provides a stack object that can be used by a serializer to make information available to nested serializers.</span></span></summary>
+    <summary><span data-ttu-id="f4bdc-101">提供堆栈对象，序列化程序可使用该对象向嵌套的序列化程序提供信息。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-101">Provides a stack object that can be used by a serializer to make information available to nested serializers.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="1cf21-102">部分序列化程序需要有关对象的上下文的信息，以便正确地保留其状态。</span><span class="sxs-lookup"><span data-stu-id="1cf21-102">Some serializers require information about the context of an object to correctly persist their state.</span></span> <span data-ttu-id="1cf21-103"><xref:System.ComponentModel.Design.Serialization.ContextStack>类可以序列化程序将正在序列化的对象的上下文相关的数据设置为堆栈另一个序列化程序可以访问的位置。</span><span class="sxs-lookup"><span data-stu-id="1cf21-103">The <xref:System.ComponentModel.Design.Serialization.ContextStack> class enables a serializer to set data about the context of an object that is being serialized to a stack where another serializer can access it.</span></span> <span data-ttu-id="1cf21-104">值<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A>提供的属性<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>共享信息的部分序列化程序的使用。</span><span class="sxs-lookup"><span data-stu-id="1cf21-104">The value of the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A> property is provided by an <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> to share information of use to some serializers.</span></span>  
+ <span data-ttu-id="f4bdc-102">部分序列化程序需要有关对象的上下文的信息，以便正确地保留其状态。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-102">Some serializers require information about the context of an object to correctly persist their state.</span></span> <span data-ttu-id="f4bdc-103"><xref:System.ComponentModel.Design.Serialization.ContextStack>类可以序列化程序将正在序列化的对象的上下文相关的数据设置为堆栈另一个序列化程序可以访问的位置。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-103">The <xref:System.ComponentModel.Design.Serialization.ContextStack> class enables a serializer to set data about the context of an object that is being serialized to a stack where another serializer can access it.</span></span> <span data-ttu-id="f4bdc-104">值<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A>提供的属性<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>共享信息的部分序列化程序的使用。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-104">The value of the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A> property is provided by an <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> to share information of use to some serializers.</span></span>  
   
- <span data-ttu-id="1cf21-105">上下文堆栈很有用，因为可以深度嵌套的序列化的设计文档过程，并且每个层级的嵌套的对象可能需要上下文信息，以便正确地保留对象的状态。</span><span class="sxs-lookup"><span data-stu-id="1cf21-105">A context stack is useful because the process of serializing a design document can be deeply nested, and objects at each level of nesting may require context information to correctly persist the state of the object.</span></span> <span data-ttu-id="1cf21-106">序列化程序可以调用嵌套的序列化程序之前将上下文对象设置为堆栈。</span><span class="sxs-lookup"><span data-stu-id="1cf21-106">A serializer can set a context object to the stack before invoking a nested serializer.</span></span> <span data-ttu-id="1cf21-107">每个对象设置为堆栈应序列化程序，以对嵌套的序列化程序的调用返回后将其删除。</span><span class="sxs-lookup"><span data-stu-id="1cf21-107">Each object set to the stack should be removed by the serializer that set it after a call to a nested serializer returns.</span></span>  
+ <span data-ttu-id="f4bdc-105">上下文堆栈很有用，因为可以深度嵌套的序列化的设计文档过程，并且每个层级的嵌套的对象可能需要上下文信息，以便正确地保留对象的状态。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-105">A context stack is useful because the process of serializing a design document can be deeply nested, and objects at each level of nesting may require context information to correctly persist the state of the object.</span></span> <span data-ttu-id="f4bdc-106">序列化程序可以调用嵌套的序列化程序之前将上下文对象设置为堆栈。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-106">A serializer can set a context object to the stack before invoking a nested serializer.</span></span> <span data-ttu-id="f4bdc-107">每个对象设置为堆栈应序列化程序，以对嵌套的序列化程序的调用返回后将其删除。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-107">Each object set to the stack should be removed by the serializer that set it after a call to a nested serializer returns.</span></span>  
   
- <span data-ttu-id="1cf21-108">通常情况下，在堆栈上的对象包含当前正在序列化的对象的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="1cf21-108">Typically, the objects on the stack contain information about the context of the current object that is being serialized.</span></span> <span data-ttu-id="1cf21-109">父序列化程序将上下文信息添加到下一个要进行序列化的对象有关堆栈，调用适当的序列化程序和序列化程序完成在对象上执行时从堆栈移除的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="1cf21-109">A parent serializer adds context information to the stack about the next object to be serialized, calls an appropriate serializer and, when the serializer finishes executing on the object, removes the context information from the stack.</span></span> <span data-ttu-id="1cf21-110">负责的每个序列化程序，以确定哪些对象获取此堆栈上推送实现。</span><span class="sxs-lookup"><span data-stu-id="1cf21-110">It is up to the implementation of each serializer to determine what objects get pushed on this stack.</span></span>  
+ <span data-ttu-id="f4bdc-108">通常情况下，在堆栈上的对象包含当前正在序列化的对象的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-108">Typically, the objects on the stack contain information about the context of the current object that is being serialized.</span></span> <span data-ttu-id="f4bdc-109">父序列化程序将上下文信息添加到下一个要进行序列化的对象有关堆栈，调用适当的序列化程序和序列化程序完成在对象上执行时从堆栈移除的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-109">A parent serializer adds context information to the stack about the next object to be serialized, calls an appropriate serializer and, when the serializer finishes executing on the object, removes the context information from the stack.</span></span> <span data-ttu-id="f4bdc-110">负责的每个序列化程序，以确定哪些对象获取此堆栈上推送实现。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-110">It is up to the implementation of each serializer to determine what objects get pushed on this stack.</span></span>  
   
- <span data-ttu-id="1cf21-111">例如，具有一个属性的对象名为`Enabled`数据类型为<xref:System.Boolean>。</span><span class="sxs-lookup"><span data-stu-id="1cf21-111">As an example, an object with a property named `Enabled` has a data type of <xref:System.Boolean>.</span></span> <span data-ttu-id="1cf21-112">如果序列化程序将此值写入数据的流，它可能需要包括上下文或正在写入的属性的类型。</span><span class="sxs-lookup"><span data-stu-id="1cf21-112">If a serializer writes this value to a data stream, it might need to include the context or type of property it is writing.</span></span> <span data-ttu-id="1cf21-113">序列化程序不具有此信息，但是，因为它仅指示要写入<xref:System.Boolean>值。</span><span class="sxs-lookup"><span data-stu-id="1cf21-113">The serializer does not have this information, however, because it is only instructed to write the <xref:System.Boolean> value.</span></span> <span data-ttu-id="1cf21-114">若要对序列化程序提供此信息，父序列化程序可以推送<xref:System.ComponentModel.PropertyDescriptor>，它指向`Enabled`上下文堆栈上的属性。</span><span class="sxs-lookup"><span data-stu-id="1cf21-114">To provide this information to the serializer, the parent serializer can push a <xref:System.ComponentModel.PropertyDescriptor> that points to the `Enabled` property on the context stack.</span></span>  
+ <span data-ttu-id="f4bdc-111">例如，具有一个属性的对象名为`Enabled`数据类型为<xref:System.Boolean>。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-111">As an example, an object with a property named `Enabled` has a data type of <xref:System.Boolean>.</span></span> <span data-ttu-id="f4bdc-112">如果序列化程序将此值写入数据的流，它可能需要包括上下文或正在写入的属性的类型。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-112">If a serializer writes this value to a data stream, it might need to include the context or type of property it is writing.</span></span> <span data-ttu-id="f4bdc-113">序列化程序不具有此信息，但是，因为它仅指示要写入<xref:System.Boolean>值。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-113">The serializer does not have this information, however, because it is only instructed to write the <xref:System.Boolean> value.</span></span> <span data-ttu-id="f4bdc-114">若要对序列化程序提供此信息，父序列化程序可以推送<xref:System.ComponentModel.PropertyDescriptor>，它指向`Enabled`上下文堆栈上的属性。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-114">To provide this information to the serializer, the parent serializer can push a <xref:System.ComponentModel.PropertyDescriptor> that points to the `Enabled` property on the context stack.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="1cf21-115">下面的代码示例演示了如何使用<xref:System.ComponentModel.Design.Serialization.ContextStack>推送，然后删除 10 个值。</span><span class="sxs-lookup"><span data-stu-id="1cf21-115">The following code example demonstrates using a <xref:System.ComponentModel.Design.Serialization.ContextStack> to push and then remove 10 values.</span></span>  
+ <span data-ttu-id="f4bdc-115">下面的代码示例演示了如何使用<xref:System.ComponentModel.Design.Serialization.ContextStack>推送，然后删除 10 个值。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-115">The following code example demonstrates using a <xref:System.ComponentModel.Design.Serialization.ContextStack> to push and then remove 10 values.</span></span>  
   
  [!code-cpp[ContextStackExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#1)]
  [!code-csharp[ContextStackExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#1)]
@@ -50,7 +51,7 @@
   
  ]]></format>
     </remarks>
-    <permission cref="T:System.Security.NamedPermissionSet"><span data-ttu-id="1cf21-116">对系统资源的完全访问权限。</span><span class="sxs-lookup"><span data-stu-id="1cf21-116">for full access to system resources.</span></span> <span data-ttu-id="1cf21-117">要求值： <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />， <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-117">Demand values: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />, <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />.</span></span> <span data-ttu-id="1cf21-118">关联的状态：</span><span class="sxs-lookup"><span data-stu-id="1cf21-118">Associated state:</span></span></permission>
+    <permission cref="T:System.Security.NamedPermissionSet"><span data-ttu-id="f4bdc-116">对系统资源的完全访问权限。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-116">for full access to system resources.</span></span> <span data-ttu-id="f4bdc-117">要求值： <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />， <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-117">Demand values: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />, <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />.</span></span> <span data-ttu-id="f4bdc-118">关联的状态：</span><span class="sxs-lookup"><span data-stu-id="f4bdc-118">Associated state:</span></span></permission>
     <altmember cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
   </Docs>
   <Members>
@@ -71,6 +72,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -84,12 +86,12 @@
       </Attributes>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="1cf21-119">初始化 <see cref="T:System.ComponentModel.Design.Serialization.ContextStack" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="1cf21-119">Initializes a new instance of the <see cref="T:System.ComponentModel.Design.Serialization.ContextStack" /> class.</span></span></summary>
+        <summary><span data-ttu-id="f4bdc-119">初始化 <see cref="T:System.ComponentModel.Design.Serialization.ContextStack" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-119">Initializes a new instance of the <see cref="T:System.ComponentModel.Design.Serialization.ContextStack" /> class.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="1cf21-120">下面的代码示例演示如何创建<xref:System.ComponentModel.Design.Serialization.ContextStack>实例。</span><span class="sxs-lookup"><span data-stu-id="1cf21-120">The following code example demonstrates creating a <xref:System.ComponentModel.Design.Serialization.ContextStack> instance.</span></span>  
+ <span data-ttu-id="f4bdc-120">下面的代码示例演示如何创建<xref:System.ComponentModel.Design.Serialization.ContextStack>实例。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-120">The following code example demonstrates creating a <xref:System.ComponentModel.Design.Serialization.ContextStack> instance.</span></span>  
   
  [!code-cpp[ContextStackExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#2)]
  [!code-csharp[ContextStackExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#2)]
@@ -116,6 +118,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -126,20 +129,20 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="context" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="context" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="context"><span data-ttu-id="1cf21-121">要追加到堆栈中的上下文对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-121">A context object to append to the stack.</span></span></param>
-        <summary><span data-ttu-id="1cf21-122">将对象追加到堆栈的结尾，而不是将其推到堆栈的顶部。</span><span class="sxs-lookup"><span data-stu-id="1cf21-122">Appends an object to the end of the stack, rather than pushing it onto the top of the stack.</span></span></summary>
+        <param name="context"><span data-ttu-id="f4bdc-121">要追加到堆栈中的上下文对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-121">A context object to append to the stack.</span></span></param>
+        <summary><span data-ttu-id="f4bdc-122">将对象追加到堆栈的结尾，而不是将其推到堆栈的顶部。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-122">Appends an object to the end of the stack, rather than pushing it onto the top of the stack.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="1cf21-123">此方法允许序列化程序通过添加不需要在顺序中删除的上下文数据对象与其他序列化程序进行通信。</span><span class="sxs-lookup"><span data-stu-id="1cf21-123">This method allows a serializer to communicate with other serializers by adding contextual data objects that do not have to be removed in order.</span></span> <span data-ttu-id="1cf21-124">没有方法来删除已追加到堆栈的末尾，而不删除所有其他对象的对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-124">There is no way to remove an object that was appended to the end of the stack without removing all other objects.</span></span>  
+ <span data-ttu-id="f4bdc-123">此方法允许序列化程序通过添加不需要在顺序中删除的上下文数据对象与其他序列化程序进行通信。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-123">This method allows a serializer to communicate with other serializers by adding contextual data objects that do not have to be removed in order.</span></span> <span data-ttu-id="f4bdc-124">没有方法来删除已追加到堆栈的末尾，而不删除所有其他对象的对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-124">There is no way to remove an object that was appended to the end of the stack without removing all other objects.</span></span>  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="1cf21-125"><paramref name="context" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-125"><paramref name="context" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="f4bdc-125"><paramref name="context" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-125"><paramref name="context" /> is <see langword="null" />.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="Current">
@@ -160,6 +163,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -170,13 +174,13 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="1cf21-126">获取堆栈上的当前对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-126">Gets the current object on the stack.</span></span></summary>
-        <value><span data-ttu-id="1cf21-127">堆栈上的当前对象，或者如果未推入任何对象则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-127">The current object on the stack, or <see langword="null" /> if no objects were pushed.</span></span></value>
+        <summary><span data-ttu-id="f4bdc-126">获取堆栈上的当前对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-126">Gets the current object on the stack.</span></span></summary>
+        <value><span data-ttu-id="f4bdc-127">堆栈上的当前对象，或者如果未推入任何对象则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-127">The current object on the stack, or <see langword="null" /> if no objects were pushed.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="1cf21-128">当前对象是位于堆栈顶部的对象或上一次添加到堆栈的对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-128">The current object is the object at the top of the stack, or the object last added to the stack.</span></span>  
+ <span data-ttu-id="f4bdc-128">当前对象是位于堆栈顶部的对象或上一次添加到堆栈的对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-128">The current object is the object at the top of the stack, or the object last added to the stack.</span></span>  
   
  ]]></format>
         </remarks>
@@ -189,7 +193,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="1cf21-129">获取或设置堆栈上指定级别的对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-129">Gets or sets the object on the stack at the specified level.</span></span></summary>
+        <summary><span data-ttu-id="f4bdc-129">获取或设置堆栈上指定级别的对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-129">Gets or sets the object on the stack at the specified level.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Item">
@@ -210,6 +214,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -223,11 +228,11 @@
         <Parameter Name="level" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="level"><span data-ttu-id="1cf21-130">要在堆栈上检索的对象的级别。</span><span class="sxs-lookup"><span data-stu-id="1cf21-130">The level of the object to retrieve on the stack.</span></span> <span data-ttu-id="1cf21-131">级别 0 是堆栈的顶级，级别 1 是接下来的一级，依次类推。</span><span class="sxs-lookup"><span data-stu-id="1cf21-131">Level 0 is the top of the stack, level 1 is the next down, and so on.</span></span> <span data-ttu-id="1cf21-132">此级别必须大于或等于 0。</span><span class="sxs-lookup"><span data-stu-id="1cf21-132">This level must be 0 or greater.</span></span> <span data-ttu-id="1cf21-133">如果级别大于该堆栈上的级别数，它返回 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-133">If level is greater than the number of levels on the stack, it returns <see langword="null" />.</span></span></param>
-        <summary><span data-ttu-id="1cf21-134">获取堆栈上指定级别的对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-134">Gets the object on the stack at the specified level.</span></span></summary>
-        <value><span data-ttu-id="1cf21-135">堆栈上指定级别的对象，或者在该级别不存在任何对象则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-135">The object on the stack at the specified level, or <see langword="null" /> if no object exists at that level.</span></span></value>
+        <param name="level"><span data-ttu-id="f4bdc-130">要在堆栈上检索的对象的级别。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-130">The level of the object to retrieve on the stack.</span></span> <span data-ttu-id="f4bdc-131">级别 0 是堆栈的顶级，级别 1 是接下来的一级，依次类推。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-131">Level 0 is the top of the stack, level 1 is the next down, and so on.</span></span> <span data-ttu-id="f4bdc-132">此级别必须大于或等于 0。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-132">This level must be 0 or greater.</span></span> <span data-ttu-id="f4bdc-133">如果级别大于该堆栈上的级别数，它返回 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-133">If level is greater than the number of levels on the stack, it returns <see langword="null" />.</span></span></param>
+        <summary><span data-ttu-id="f4bdc-134">获取堆栈上指定级别的对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-134">Gets the object on the stack at the specified level.</span></span></summary>
+        <value><span data-ttu-id="f4bdc-135">堆栈上指定级别的对象，或者在该级别不存在任何对象则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-135">The object on the stack at the specified level, or <see langword="null" /> if no object exists at that level.</span></span></value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><span data-ttu-id="1cf21-136"><paramref name="level" /> 小于 0。</span><span class="sxs-lookup"><span data-stu-id="1cf21-136"><paramref name="level" /> is less than 0.</span></span></exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><span data-ttu-id="f4bdc-136"><paramref name="level" /> 小于 0。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-136"><paramref name="level" /> is less than 0.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -248,6 +253,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -261,18 +267,18 @@
         <Parameter Name="type" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="type"><span data-ttu-id="1cf21-137">要从上下文堆栈检索的类型。</span><span class="sxs-lookup"><span data-stu-id="1cf21-137">A type to retrieve from the context stack.</span></span></param>
-        <summary><span data-ttu-id="1cf21-138">获取堆栈上从指定类型继承或者实现指定类型的第一个对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-138">Gets the first object on the stack that inherits from or implements the specified type.</span></span></summary>
-        <value><span data-ttu-id="1cf21-139">堆栈上从指定类型继承或者实现指定类型的第一个对象，或者如果在堆栈上没有任何对象实现此类型则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-139">The first object on the stack that inherits from or implements the specified type, or <see langword="null" /> if no object on the stack implements the type.</span></span></value>
+        <param name="type"><span data-ttu-id="f4bdc-137">要从上下文堆栈检索的类型。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-137">A type to retrieve from the context stack.</span></span></param>
+        <summary><span data-ttu-id="f4bdc-138">获取堆栈上从指定类型继承或者实现指定类型的第一个对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-138">Gets the first object on the stack that inherits from or implements the specified type.</span></span></summary>
+        <value><span data-ttu-id="f4bdc-139">堆栈上从指定类型继承或者实现指定类型的第一个对象，或者如果在堆栈上没有任何对象实现此类型则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-139">The first object on the stack that inherits from or implements the specified type, or <see langword="null" /> if no object on the stack implements the type.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="1cf21-140">堆栈，搜索实现或继承的对象的每个级别上进行检查`type`。</span><span class="sxs-lookup"><span data-stu-id="1cf21-140">A check is made on each level of the stack, searching for an object that implements or inherits `type`.</span></span> <span data-ttu-id="1cf21-141">如果找到匹配项，则返回它。</span><span class="sxs-lookup"><span data-stu-id="1cf21-141">If a match is found, it is returned.</span></span>  
+ <span data-ttu-id="f4bdc-140">堆栈，搜索实现或继承的对象的每个级别上进行检查`type`。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-140">A check is made on each level of the stack, searching for an object that implements or inherits `type`.</span></span> <span data-ttu-id="f4bdc-141">如果找到匹配项，则返回它。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-141">If a match is found, it is returned.</span></span>  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="1cf21-142"><paramref name="type" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-142"><paramref name="type" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="f4bdc-142"><paramref name="type" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-142"><paramref name="type" /> is <see langword="null" />.</span></span></exception>
       </Docs>
     </Member>
     <Member MemberName="Pop">
@@ -293,6 +299,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -304,13 +311,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="1cf21-143">从堆栈中移除当前对象并返回其值。</span><span class="sxs-lookup"><span data-stu-id="1cf21-143">Removes the current object off of the stack, returning its value.</span></span></summary>
-        <returns><span data-ttu-id="1cf21-144">已从堆栈中移除的对象；如果堆栈中没有对象，则返回 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-144">The object removed from the stack; <see langword="null" /> if no objects are on the stack.</span></span></returns>
+        <summary><span data-ttu-id="f4bdc-143">从堆栈中移除当前对象并返回其值。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-143">Removes the current object off of the stack, returning its value.</span></span></summary>
+        <returns><span data-ttu-id="f4bdc-144">已从堆栈中移除的对象；如果堆栈中没有对象，则返回 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-144">The object removed from the stack; <see langword="null" /> if no objects are on the stack.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="1cf21-145">下面的代码示例演示了如何移除中的值<xref:System.ComponentModel.Design.Serialization.ContextStack>。</span><span class="sxs-lookup"><span data-stu-id="1cf21-145">The following code example demonstrates removing a value from a <xref:System.ComponentModel.Design.Serialization.ContextStack>.</span></span>  
+ <span data-ttu-id="f4bdc-145">下面的代码示例演示了如何移除中的值<xref:System.ComponentModel.Design.Serialization.ContextStack>。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-145">The following code example demonstrates removing a value from a <xref:System.ComponentModel.Design.Serialization.ContextStack>.</span></span>  
   
  [!code-cpp[ContextStackExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#4)]
  [!code-csharp[ContextStackExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#4)]
@@ -338,6 +345,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -351,13 +359,13 @@
         <Parameter Name="context" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="context"><span data-ttu-id="1cf21-146">推入到堆栈上的上下文对象。</span><span class="sxs-lookup"><span data-stu-id="1cf21-146">The context object to push onto the stack.</span></span></param>
-        <summary><span data-ttu-id="1cf21-147">将指定对象推入（即放置）到堆栈上。</span><span class="sxs-lookup"><span data-stu-id="1cf21-147">Pushes, or places, the specified object onto the stack.</span></span></summary>
+        <param name="context"><span data-ttu-id="f4bdc-146">推入到堆栈上的上下文对象。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-146">The context object to push onto the stack.</span></span></param>
+        <summary><span data-ttu-id="f4bdc-147">将指定对象推入（即放置）到堆栈上。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-147">Pushes, or places, the specified object onto the stack.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="1cf21-148">下面的代码示例演示了推送值到<xref:System.ComponentModel.Design.Serialization.ContextStack>。</span><span class="sxs-lookup"><span data-stu-id="1cf21-148">The following code example demonstrates pushing values to a <xref:System.ComponentModel.Design.Serialization.ContextStack>.</span></span>  
+ <span data-ttu-id="f4bdc-148">下面的代码示例演示了推送值到<xref:System.ComponentModel.Design.Serialization.ContextStack>。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-148">The following code example demonstrates pushing values to a <xref:System.ComponentModel.Design.Serialization.ContextStack>.</span></span>  
   
  [!code-cpp[ContextStackExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#3)]
  [!code-csharp[ContextStackExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#3)]
@@ -365,7 +373,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="1cf21-149"><paramref name="context" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1cf21-149"><paramref name="context" /> is <see langword="null" />.</span></span></exception>
+        <exception cref="T:System.ArgumentNullException"><span data-ttu-id="f4bdc-149"><paramref name="context" /> 为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="f4bdc-149"><paramref name="context" /> is <see langword="null" />.</span></span></exception>
       </Docs>
     </Member>
   </Members>

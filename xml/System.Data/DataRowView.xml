@@ -1,5 +1,5 @@
 <Type Name="DataRowView" FullName="System.Data.DataRowView">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1a58ebd3b4c256c971154399e1e7a4d75beb7009" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57915108" /></Metadata><TypeSignature Language="C#" Value="public class DataRowView : System.ComponentModel.ICustomTypeDescriptor, System.ComponentModel.IDataErrorInfo, System.ComponentModel.IEditableObject, System.ComponentModel.INotifyPropertyChanged" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fd63fc9699cb152b29bc2ff94593064e4c44d63e" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58741360" /></Metadata><TypeSignature Language="C#" Value="public class DataRowView : System.ComponentModel.ICustomTypeDescriptor, System.ComponentModel.IDataErrorInfo, System.ComponentModel.IEditableObject, System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataRowView extends System.Object implements class System.ComponentModel.ICustomTypeDescriptor, class System.ComponentModel.IDataErrorInfo, class System.ComponentModel.IEditableObject, class System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="DocId" Value="T:System.Data.DataRowView" />
   <TypeSignature Language="VB.NET" Value="Public Class DataRowView&#xA;Implements ICustomTypeDescriptor, IDataErrorInfo, IEditableObject, INotifyPropertyChanged" />
@@ -15,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Data.Common</AssemblyName>
@@ -39,28 +40,28 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary><span data-ttu-id="108d7-101">表示 <see cref="T:System.Data.DataRow" /> 的自定义视图。</span><span class="sxs-lookup"><span data-stu-id="108d7-101">Represents a customized view of a <see cref="T:System.Data.DataRow" />.</span></span></summary>
+    <summary><span data-ttu-id="1f89c-101">表示 <see cref="T:System.Data.DataRow" /> 的自定义视图。</span><span class="sxs-lookup"><span data-stu-id="1f89c-101">Represents a customized view of a <see cref="T:System.Data.DataRow" />.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-102">每当数据是显示，例如，在<xref:System.Windows.Forms.DataGrid>可以显示控件，只有一个版本的每个行。</span><span class="sxs-lookup"><span data-stu-id="108d7-102">Whenever data is displayed, such as in a <xref:System.Windows.Forms.DataGrid> control, only one version of each row can be displayed.</span></span> <span data-ttu-id="108d7-103">显示的行是<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-103">The displayed row is a <xref:System.Data.DataRowView>.</span></span>  
+ <span data-ttu-id="1f89c-102">每当数据是显示，例如，在<xref:System.Windows.Forms.DataGrid>可以显示控件，只有一个版本的每个行。</span><span class="sxs-lookup"><span data-stu-id="1f89c-102">Whenever data is displayed, such as in a <xref:System.Windows.Forms.DataGrid> control, only one version of each row can be displayed.</span></span> <span data-ttu-id="1f89c-103">显示的行是<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-103">The displayed row is a <xref:System.Data.DataRowView>.</span></span>  
   
- <span data-ttu-id="108d7-104">一个<xref:System.Data.DataRowView>可以有四个不同的版本状态之一： `Default`， `Original`， `Current`，和`Proposed`。</span><span class="sxs-lookup"><span data-stu-id="108d7-104">A <xref:System.Data.DataRowView> can have one of four different version states: `Default`, `Original`, `Current`, and `Proposed`.</span></span>  
+ <span data-ttu-id="1f89c-104">一个<xref:System.Data.DataRowView>可以有四个不同的版本状态之一： `Default`， `Original`， `Current`，和`Proposed`。</span><span class="sxs-lookup"><span data-stu-id="1f89c-104">A <xref:System.Data.DataRowView> can have one of four different version states: `Default`, `Original`, `Current`, and `Proposed`.</span></span>  
   
- <span data-ttu-id="108d7-105">之后调用<xref:System.Data.DataRow.BeginEdit%2A>上<xref:System.Data.DataRow>，任何已编辑的值将成为`Proposed`值。</span><span class="sxs-lookup"><span data-stu-id="108d7-105">After invoking <xref:System.Data.DataRow.BeginEdit%2A> on a <xref:System.Data.DataRow>, any edited value becomes the `Proposed` value.</span></span> <span data-ttu-id="108d7-106">直至<xref:System.Data.DataRowView.CancelEdit%2A>或<xref:System.Data.DataRowView.EndEdit%2A>是调用，该行有`Original`和一个`Proposed`版本。</span><span class="sxs-lookup"><span data-stu-id="108d7-106">Until either <xref:System.Data.DataRowView.CancelEdit%2A> or <xref:System.Data.DataRowView.EndEdit%2A> is invoked, the row has an `Original` and a `Proposed` version.</span></span> <span data-ttu-id="108d7-107">如果<xref:System.Data.DataRowView.CancelEdit%2A>是调用，建议的版本将被放弃，并且值会恢复为`Original`。</span><span class="sxs-lookup"><span data-stu-id="108d7-107">If <xref:System.Data.DataRowView.CancelEdit%2A> is invoked, the proposed version is discarded, and the value reverts to `Original`.</span></span> <span data-ttu-id="108d7-108">如果<xref:System.Data.DataRowView.EndEdit%2A>调用时，<xref:System.Data.DataRowView>不再具有`Proposed`版本; 相反，建议的值将成为当前值。</span><span class="sxs-lookup"><span data-stu-id="108d7-108">If <xref:System.Data.DataRowView.EndEdit%2A> is invoked, the <xref:System.Data.DataRowView> no longer has a `Proposed` version; instead, the proposed value becomes the current value.</span></span> <span data-ttu-id="108d7-109">默认值为仅在具有与定义的默认值的列的行上可用。</span><span class="sxs-lookup"><span data-stu-id="108d7-109">Default values are available only on rows that have columns with default values defined.</span></span>  
+ <span data-ttu-id="1f89c-105">之后调用<xref:System.Data.DataRow.BeginEdit%2A>上<xref:System.Data.DataRow>，任何已编辑的值将成为`Proposed`值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-105">After invoking <xref:System.Data.DataRow.BeginEdit%2A> on a <xref:System.Data.DataRow>, any edited value becomes the `Proposed` value.</span></span> <span data-ttu-id="1f89c-106">直至<xref:System.Data.DataRowView.CancelEdit%2A>或<xref:System.Data.DataRowView.EndEdit%2A>是调用，该行有`Original`和一个`Proposed`版本。</span><span class="sxs-lookup"><span data-stu-id="1f89c-106">Until either <xref:System.Data.DataRowView.CancelEdit%2A> or <xref:System.Data.DataRowView.EndEdit%2A> is invoked, the row has an `Original` and a `Proposed` version.</span></span> <span data-ttu-id="1f89c-107">如果<xref:System.Data.DataRowView.CancelEdit%2A>是调用，建议的版本将被放弃，并且值会恢复为`Original`。</span><span class="sxs-lookup"><span data-stu-id="1f89c-107">If <xref:System.Data.DataRowView.CancelEdit%2A> is invoked, the proposed version is discarded, and the value reverts to `Original`.</span></span> <span data-ttu-id="1f89c-108">如果<xref:System.Data.DataRowView.EndEdit%2A>调用时，<xref:System.Data.DataRowView>不再具有`Proposed`版本; 相反，建议的值将成为当前值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-108">If <xref:System.Data.DataRowView.EndEdit%2A> is invoked, the <xref:System.Data.DataRowView> no longer has a `Proposed` version; instead, the proposed value becomes the current value.</span></span> <span data-ttu-id="1f89c-109">默认值为仅在具有与定义的默认值的列的行上可用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-109">Default values are available only on rows that have columns with default values defined.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="108d7-110">下面的示例使用<xref:System.Data.DataRowView.RowVersion%2A>属性来确定行的状态<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-110">The following example uses the <xref:System.Data.DataRowView.RowVersion%2A> property to determine the state of a row in the <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="108d7-111">(请参阅<xref:System.Data.DataView.RowFilter%2A>另一个示例使用<xref:System.Data.DataRowView>。)</span><span class="sxs-lookup"><span data-stu-id="108d7-111">(See <xref:System.Data.DataView.RowFilter%2A> for another example using <xref:System.Data.DataRowView>.)</span></span>  
+ <span data-ttu-id="1f89c-110">下面的示例使用<xref:System.Data.DataRowView.RowVersion%2A>属性来确定行的状态<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-110">The following example uses the <xref:System.Data.DataRowView.RowVersion%2A> property to determine the state of a row in the <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="1f89c-111">(请参阅<xref:System.Data.DataView.RowFilter%2A>另一个示例使用<xref:System.Data.DataRowView>。)</span><span class="sxs-lookup"><span data-stu-id="1f89c-111">(See <xref:System.Data.DataView.RowFilter%2A> for another example using <xref:System.Data.DataRowView>.)</span></span>  
   
  [!code-csharp[DataWorks DataRowView.RowVersion1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataRowView.RowVersion1/CS/source.cs#1)]
  [!code-vb[DataWorks DataRowView.RowVersion1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataRowView.RowVersion1/VB/source.vb#1)]  
   
  ]]></format>
     </remarks>
-    <threadsafe><span data-ttu-id="108d7-112">此类型是安全的多线程读取操作。</span><span class="sxs-lookup"><span data-stu-id="108d7-112">This type is safe for multithreaded read operations.</span></span> <span data-ttu-id="108d7-113">你必须同步的任何写入操作。</span><span class="sxs-lookup"><span data-stu-id="108d7-113">You must synchronize any write operations.</span></span></threadsafe>
+    <threadsafe><span data-ttu-id="1f89c-112">此类型是安全的多线程读取操作。</span><span class="sxs-lookup"><span data-stu-id="1f89c-112">This type is safe for multithreaded read operations.</span></span> <span data-ttu-id="1f89c-113">你必须同步的任何写入操作。</span><span class="sxs-lookup"><span data-stu-id="1f89c-113">You must synchronize any write operations.</span></span></threadsafe>
     <altmember cref="T:System.Data.DataRow" />
   </Docs>
   <Members>
@@ -85,6 +86,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -96,19 +98,19 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-114">开始编辑过程。</span><span class="sxs-lookup"><span data-stu-id="108d7-114">Begins an edit procedure.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-114">开始编辑过程。</span><span class="sxs-lookup"><span data-stu-id="1f89c-114">Begins an edit procedure.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-115">使用<xref:System.Data.DataView.AddNew%2A>添加<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-115">Use <xref:System.Data.DataView.AddNew%2A> to add a <xref:System.Data.DataRowView>.</span></span>  
+ <span data-ttu-id="1f89c-115">使用<xref:System.Data.DataView.AddNew%2A>添加<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-115">Use <xref:System.Data.DataView.AddNew%2A> to add a <xref:System.Data.DataRowView>.</span></span>  
   
- <span data-ttu-id="108d7-116"><xref:System.Data.DataRowView.BeginEdit%2A>方法等同于<xref:System.Data.DataRow.BeginEdit%2A?displayProperty=nameWithType>方法的<xref:System.Data.DataRow>。</span><span class="sxs-lookup"><span data-stu-id="108d7-116">The <xref:System.Data.DataRowView.BeginEdit%2A> method is identical to the <xref:System.Data.DataRow.BeginEdit%2A?displayProperty=nameWithType> method of the <xref:System.Data.DataRow>.</span></span> <span data-ttu-id="108d7-117">在调用<xref:System.Data.DataRowView.BeginEdit%2A>，进行的任何更改<xref:System.Data.DataRowView>回滚后通过调用<xref:System.Data.DataRow.CancelEdit%2A>。</span><span class="sxs-lookup"><span data-stu-id="108d7-117">After calling <xref:System.Data.DataRowView.BeginEdit%2A>, any changes made to the <xref:System.Data.DataRowView> can be rolled back by calling <xref:System.Data.DataRow.CancelEdit%2A>.</span></span> <span data-ttu-id="108d7-118">调用<xref:System.Data.DataRowView.BeginEdit%2A>方法，然后再允许用户更改行值。</span><span class="sxs-lookup"><span data-stu-id="108d7-118">Call the <xref:System.Data.DataRowView.BeginEdit%2A> method before allowing users to change row values.</span></span> <span data-ttu-id="108d7-119">通过设置值已更改后，检索新的值<xref:System.Data.DataRowView.RowVersion%2A>到`DataRowVersion.Proposed`。</span><span class="sxs-lookup"><span data-stu-id="108d7-119">After values have been changed, you retrieve the new values by setting the <xref:System.Data.DataRowView.RowVersion%2A> to `DataRowVersion.Proposed`.</span></span> <span data-ttu-id="108d7-120">检查的值与业务规则，并根据需要通过调用回滚所做的更改<xref:System.Data.DataRowView.CancelEdit%2A>，或调用<xref:System.Data.DataRowView.EndEdit%2A>接受所做的更改。</span><span class="sxs-lookup"><span data-stu-id="108d7-120">Check the values with a business rule, and roll back the changes if needed by calling <xref:System.Data.DataRowView.CancelEdit%2A>, or call <xref:System.Data.DataRowView.EndEdit%2A> to accept the changes.</span></span>  
+ <span data-ttu-id="1f89c-116"><xref:System.Data.DataRowView.BeginEdit%2A>方法等同于<xref:System.Data.DataRow.BeginEdit%2A?displayProperty=nameWithType>方法的<xref:System.Data.DataRow>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-116">The <xref:System.Data.DataRowView.BeginEdit%2A> method is identical to the <xref:System.Data.DataRow.BeginEdit%2A?displayProperty=nameWithType> method of the <xref:System.Data.DataRow>.</span></span> <span data-ttu-id="1f89c-117">在调用<xref:System.Data.DataRowView.BeginEdit%2A>，进行的任何更改<xref:System.Data.DataRowView>回滚后通过调用<xref:System.Data.DataRow.CancelEdit%2A>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-117">After calling <xref:System.Data.DataRowView.BeginEdit%2A>, any changes made to the <xref:System.Data.DataRowView> can be rolled back by calling <xref:System.Data.DataRow.CancelEdit%2A>.</span></span> <span data-ttu-id="1f89c-118">调用<xref:System.Data.DataRowView.BeginEdit%2A>方法，然后再允许用户更改行值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-118">Call the <xref:System.Data.DataRowView.BeginEdit%2A> method before allowing users to change row values.</span></span> <span data-ttu-id="1f89c-119">通过设置值已更改后，检索新的值<xref:System.Data.DataRowView.RowVersion%2A>到`DataRowVersion.Proposed`。</span><span class="sxs-lookup"><span data-stu-id="1f89c-119">After values have been changed, you retrieve the new values by setting the <xref:System.Data.DataRowView.RowVersion%2A> to `DataRowVersion.Proposed`.</span></span> <span data-ttu-id="1f89c-120">检查的值与业务规则，并根据需要通过调用回滚所做的更改<xref:System.Data.DataRowView.CancelEdit%2A>，或调用<xref:System.Data.DataRowView.EndEdit%2A>接受所做的更改。</span><span class="sxs-lookup"><span data-stu-id="1f89c-120">Check the values with a business rule, and roll back the changes if needed by calling <xref:System.Data.DataRowView.CancelEdit%2A>, or call <xref:System.Data.DataRowView.EndEdit%2A> to accept the changes.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="108d7-121">下面的示例中编辑行<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-121">The following example edits a row in a <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="108d7-122">调用<xref:System.Data.DataRowView.BeginEdit%2A>之前，和<xref:System.Data.DataRowView.EndEdit%2A>之后。</span><span class="sxs-lookup"><span data-stu-id="108d7-122">calling the <xref:System.Data.DataRowView.BeginEdit%2A> before, and <xref:System.Data.DataRowView.EndEdit%2A> afterwards.</span></span>  
+ <span data-ttu-id="1f89c-121">下面的示例中编辑行<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-121">The following example edits a row in a <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="1f89c-122">调用<xref:System.Data.DataRowView.BeginEdit%2A>之前，和<xref:System.Data.DataRowView.EndEdit%2A>之后。</span><span class="sxs-lookup"><span data-stu-id="1f89c-122">calling the <xref:System.Data.DataRowView.BeginEdit%2A> before, and <xref:System.Data.DataRowView.EndEdit%2A> afterwards.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.BeginEdit Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.BeginEdit Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.BeginEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.BeginEdit Example/VB/source.vb#1)]  
@@ -145,6 +147,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -156,17 +159,17 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-123">取消编辑过程。</span><span class="sxs-lookup"><span data-stu-id="108d7-123">Cancels an edit procedure.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-123">取消编辑过程。</span><span class="sxs-lookup"><span data-stu-id="1f89c-123">Cancels an edit procedure.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-124">在调用<xref:System.Data.DataRowView.CancelEdit%2A>，对行的所有更改都会都回滚。</span><span class="sxs-lookup"><span data-stu-id="108d7-124">After calling <xref:System.Data.DataRowView.CancelEdit%2A>, all changes to the row are rolled back.</span></span> <span data-ttu-id="108d7-125">您还可以回滚更改通过调用<xref:System.Data.DataTable.RejectChanges%2A>的父级上<xref:System.Data.DataTable>。</span><span class="sxs-lookup"><span data-stu-id="108d7-125">You can also roll back changes by calling <xref:System.Data.DataTable.RejectChanges%2A> on the parent <xref:System.Data.DataTable>.</span></span>  
+ <span data-ttu-id="1f89c-124">在调用<xref:System.Data.DataRowView.CancelEdit%2A>，对行的所有更改都会都回滚。</span><span class="sxs-lookup"><span data-stu-id="1f89c-124">After calling <xref:System.Data.DataRowView.CancelEdit%2A>, all changes to the row are rolled back.</span></span> <span data-ttu-id="1f89c-125">您还可以回滚更改通过调用<xref:System.Data.DataTable.RejectChanges%2A>的父级上<xref:System.Data.DataTable>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-125">You can also roll back changes by calling <xref:System.Data.DataTable.RejectChanges%2A> on the parent <xref:System.Data.DataTable>.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="108d7-126">下面的示例中编辑行<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-126">The following example edits a row in a <xref:System.Data.DataView>.</span></span> <span data-ttu-id="108d7-127"><xref:System.Data.DataRowView.CancelEdit%2A>调用方法以取消所做的更改，如果验证失败。</span><span class="sxs-lookup"><span data-stu-id="108d7-127">The <xref:System.Data.DataRowView.CancelEdit%2A> method is called to cancel the changes if the validation fails.</span></span>  
+ <span data-ttu-id="1f89c-126">下面的示例中编辑行<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-126">The following example edits a row in a <xref:System.Data.DataView>.</span></span> <span data-ttu-id="1f89c-127"><xref:System.Data.DataRowView.CancelEdit%2A>调用方法以取消所做的更改，如果验证失败。</span><span class="sxs-lookup"><span data-stu-id="1f89c-127">The <xref:System.Data.DataRowView.CancelEdit%2A> method is called to cancel the changes if the validation fails.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.BeginEdit Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.BeginEdit Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.BeginEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.BeginEdit Example/VB/source.vb#1)]  
@@ -190,7 +193,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="108d7-128">返回子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-128">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-128">返回子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-128">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CreateChildView">
@@ -211,6 +214,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -224,9 +228,9 @@
         <Parameter Name="relation" Type="System.Data.DataRelation" />
       </Parameters>
       <Docs>
-        <param name="relation"><span data-ttu-id="108d7-129"><see cref="T:System.Data.DataRelation" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="108d7-129">The <see cref="T:System.Data.DataRelation" /> object.</span></span></param>
-        <summary><span data-ttu-id="108d7-130">返回具有指定的子级 <see cref="T:System.Data.DataView" /> 的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataRelation" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-130">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified child <see cref="T:System.Data.DataRelation" />.</span></span></summary>
-        <returns><span data-ttu-id="108d7-131">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-131">a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
+        <param name="relation"><span data-ttu-id="1f89c-129"><see cref="T:System.Data.DataRelation" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="1f89c-129">The <see cref="T:System.Data.DataRelation" /> object.</span></span></param>
+        <summary><span data-ttu-id="1f89c-130">返回具有指定的子级 <see cref="T:System.Data.DataView" /> 的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataRelation" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-130">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified child <see cref="T:System.Data.DataRelation" />.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-131">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-131">a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -248,6 +252,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -261,9 +266,9 @@
         <Parameter Name="relationName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="relationName"><span data-ttu-id="108d7-132">一个包含 <see cref="T:System.Data.DataRelation" /> 名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="108d7-132">A string containing the <see cref="T:System.Data.DataRelation" /> name.</span></span></param>
-        <summary><span data-ttu-id="108d7-133">返回具有指定的子级 <see cref="T:System.Data.DataView" /> 名称的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataRelation" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-133">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified child <see cref="T:System.Data.DataRelation" /> name.</span></span></summary>
-        <returns><span data-ttu-id="108d7-134">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-134">a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
+        <param name="relationName"><span data-ttu-id="1f89c-132">一个包含 <see cref="T:System.Data.DataRelation" /> 名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="1f89c-132">A string containing the <see cref="T:System.Data.DataRelation" /> name.</span></span></param>
+        <summary><span data-ttu-id="1f89c-133">返回具有指定的子级 <see cref="T:System.Data.DataView" /> 名称的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataRelation" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-133">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified child <see cref="T:System.Data.DataRelation" /> name.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-134">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-134">a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -283,6 +288,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -293,14 +299,14 @@
         <ReturnType>System.Data.DataView</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="relation" Type="System.Data.DataRelation" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-        <Parameter Name="followParent" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="relation" Type="System.Data.DataRelation" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="followParent" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="relation"><span data-ttu-id="108d7-135"><see cref="T:System.Data.DataRelation" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="108d7-135">The <see cref="T:System.Data.DataRelation" /> object.</span></span></param>
-        <param name="followParent"><span data-ttu-id="108d7-136">父对象。</span><span class="sxs-lookup"><span data-stu-id="108d7-136">The parent object.</span></span></param>
-        <summary><span data-ttu-id="108d7-137">返回具有指定的 <see cref="T:System.Data.DataRelation" /> 及父级的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataView" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-137">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified <see cref="T:System.Data.DataRelation" /> and parent.</span></span></summary>
-        <returns><span data-ttu-id="108d7-138">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-138">A <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
+        <param name="relation"><span data-ttu-id="1f89c-135"><see cref="T:System.Data.DataRelation" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="1f89c-135">The <see cref="T:System.Data.DataRelation" /> object.</span></span></param>
+        <param name="followParent"><span data-ttu-id="1f89c-136">父对象。</span><span class="sxs-lookup"><span data-stu-id="1f89c-136">The parent object.</span></span></param>
+        <summary><span data-ttu-id="1f89c-137">返回具有指定的 <see cref="T:System.Data.DataRelation" /> 及父级的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataView" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-137">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified <see cref="T:System.Data.DataRelation" /> and parent.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-138">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-138">A <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -320,6 +326,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -330,14 +337,14 @@
         <ReturnType>System.Data.DataView</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="relationName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-        <Parameter Name="followParent" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="relationName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="followParent" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="relationName"><span data-ttu-id="108d7-139">一个包含 <see cref="T:System.Data.DataRelation" /> 名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="108d7-139">A string containing the <see cref="T:System.Data.DataRelation" /> name.</span></span></param>
-        <param name="followParent"><span data-ttu-id="108d7-140">父级</span><span class="sxs-lookup"><span data-stu-id="108d7-140">The parent</span></span></param>
-        <summary><span data-ttu-id="108d7-141">返回具有指定的 <see cref="T:System.Data.DataView" /> 及父级的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataRelation" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-141">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified <see cref="T:System.Data.DataRelation" /> name and parent.</span></span></summary>
-        <returns><span data-ttu-id="108d7-142">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-142">a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
+        <param name="relationName"><span data-ttu-id="1f89c-139">一个包含 <see cref="T:System.Data.DataRelation" /> 名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="1f89c-139">A string containing the <see cref="T:System.Data.DataRelation" /> name.</span></span></param>
+        <param name="followParent"><span data-ttu-id="1f89c-140">父级</span><span class="sxs-lookup"><span data-stu-id="1f89c-140">The parent</span></span></param>
+        <summary><span data-ttu-id="1f89c-141">返回具有指定的 <see cref="T:System.Data.DataView" /> 及父级的子级 <see cref="T:System.Data.DataTable" /> 的 <see cref="T:System.Data.DataRelation" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-141">Returns a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" /> with the specified <see cref="T:System.Data.DataRelation" /> name and parent.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-142">子级 <see cref="T:System.Data.DataView" /> 的 <see cref="T:System.Data.DataTable" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-142">a <see cref="T:System.Data.DataView" /> for the child <see cref="T:System.Data.DataTable" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -359,6 +366,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -369,13 +377,13 @@
         <ReturnType>System.Data.DataView</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-143">获取该行所属的 <see cref="T:System.Data.DataView" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-143">Gets the <see cref="T:System.Data.DataView" /> to which this row belongs.</span></span></summary>
-        <value><span data-ttu-id="108d7-144">该行所属的 <see langword="DataView" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-144">The <see langword="DataView" /> to which this row belongs.</span></span></value>
+        <summary><span data-ttu-id="1f89c-143">获取该行所属的 <see cref="T:System.Data.DataView" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-143">Gets the <see cref="T:System.Data.DataView" /> to which this row belongs.</span></span></summary>
+        <value><span data-ttu-id="1f89c-144">该行所属的 <see langword="DataView" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-144">The <see langword="DataView" /> to which this row belongs.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="108d7-145">下面的示例返回<xref:System.Data.DataView>指定的<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-145">The following example returns the <xref:System.Data.DataView> of the specified <xref:System.Data.DataRowView>.</span></span>  
+ <span data-ttu-id="1f89c-145">下面的示例返回<xref:System.Data.DataView>指定的<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-145">The following example returns the <xref:System.Data.DataView> of the specified <xref:System.Data.DataRowView>.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.DataView Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.DataView Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.DataView Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.DataView Example/VB/source.vb#1)]  
@@ -402,6 +410,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -413,20 +422,20 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-146">删除行。</span><span class="sxs-lookup"><span data-stu-id="108d7-146">Deletes a row.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-146">删除行。</span><span class="sxs-lookup"><span data-stu-id="1f89c-146">Deletes a row.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-147">才会永久删除该行<xref:System.Data.DataTable.AcceptChanges%2A>上调用<xref:System.Data.DataTable>为所属行。</span><span class="sxs-lookup"><span data-stu-id="108d7-147">The row is not permanently deleted until <xref:System.Data.DataTable.AcceptChanges%2A> is invoked on the <xref:System.Data.DataTable> that the row belongs to.</span></span>  
+ <span data-ttu-id="1f89c-147">才会永久删除该行<xref:System.Data.DataTable.AcceptChanges%2A>上调用<xref:System.Data.DataTable>为所属行。</span><span class="sxs-lookup"><span data-stu-id="1f89c-147">The row is not permanently deleted until <xref:System.Data.DataTable.AcceptChanges%2A> is invoked on the <xref:System.Data.DataTable> that the row belongs to.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="108d7-148">一个<xref:System.Data.DataRowView>时可能无效`DataRow`从基础表中删除。</span><span class="sxs-lookup"><span data-stu-id="108d7-148">A <xref:System.Data.DataRowView> may be invalid when a `DataRow` is deleted from the underlying table.</span></span> <span data-ttu-id="108d7-149">当<xref:System.Data.DataRowView>将变为无效，访问值与关联的操作<xref:System.Data.DataRowView>，如<xref:System.Data.DataRowView.Delete%2A>，引发异常。</span><span class="sxs-lookup"><span data-stu-id="108d7-149">When the <xref:System.Data.DataRowView> becomes invalid, operations that access values associated with <xref:System.Data.DataRowView>, such as <xref:System.Data.DataRowView.Delete%2A>, throw an exception.</span></span>  
+>  <span data-ttu-id="1f89c-148">一个<xref:System.Data.DataRowView>时可能无效`DataRow`从基础表中删除。</span><span class="sxs-lookup"><span data-stu-id="1f89c-148">A <xref:System.Data.DataRowView> may be invalid when a `DataRow` is deleted from the underlying table.</span></span> <span data-ttu-id="1f89c-149">当<xref:System.Data.DataRowView>将变为无效，访问值与关联的操作<xref:System.Data.DataRowView>，如<xref:System.Data.DataRowView.Delete%2A>，引发异常。</span><span class="sxs-lookup"><span data-stu-id="1f89c-149">When the <xref:System.Data.DataRowView> becomes invalid, operations that access values associated with <xref:System.Data.DataRowView>, such as <xref:System.Data.DataRowView.Delete%2A>, throw an exception.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="108d7-150">下面的示例使用<xref:System.Data.DataRowView.Delete%2A>某行的方法。</span><span class="sxs-lookup"><span data-stu-id="108d7-150">The following example uses the <xref:System.Data.DataRowView.Delete%2A> method on a row.</span></span>  
+ <span data-ttu-id="1f89c-150">下面的示例使用<xref:System.Data.DataRowView.Delete%2A>某行的方法。</span><span class="sxs-lookup"><span data-stu-id="1f89c-150">The following example uses the <xref:System.Data.DataRowView.Delete%2A> method on a row.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.Delete Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.Delete Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.Delete Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.Delete Example/VB/source.vb#1)]  
@@ -457,6 +466,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -468,12 +478,12 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-151">提交基础 <see cref="T:System.Data.DataRow" /> 的更改并结束使用 <see cref="M:System.Data.DataRowView.BeginEdit" />启动的编辑会话。</span><span class="sxs-lookup"><span data-stu-id="108d7-151">Commits changes to the underlying <see cref="T:System.Data.DataRow" /> and ends the editing session that was begun with <see cref="M:System.Data.DataRowView.BeginEdit" />.</span></span>  <span data-ttu-id="108d7-152">使用 <see cref="M:System.Data.DataRowView.CancelEdit" /> 放弃对 <see cref="T:System.Data.DataRow" /> 所做的更改。</span><span class="sxs-lookup"><span data-stu-id="108d7-152">Use <see cref="M:System.Data.DataRowView.CancelEdit" /> to discard the changes made to the <see cref="T:System.Data.DataRow" />.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-151">提交基础 <see cref="T:System.Data.DataRow" /> 的更改并结束使用 <see cref="M:System.Data.DataRowView.BeginEdit" />启动的编辑会话。</span><span class="sxs-lookup"><span data-stu-id="1f89c-151">Commits changes to the underlying <see cref="T:System.Data.DataRow" /> and ends the editing session that was begun with <see cref="M:System.Data.DataRowView.BeginEdit" />.</span></span>  <span data-ttu-id="1f89c-152">使用 <see cref="M:System.Data.DataRowView.CancelEdit" /> 放弃对 <see cref="T:System.Data.DataRow" /> 所做的更改。</span><span class="sxs-lookup"><span data-stu-id="1f89c-152">Use <see cref="M:System.Data.DataRowView.CancelEdit" /> to discard the changes made to the <see cref="T:System.Data.DataRow" />.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="108d7-153">下面的示例中编辑行<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-153">The following example edits a row in a <xref:System.Data.DataView>.</span></span> <span data-ttu-id="108d7-154">调用<xref:System.Data.DataRowView.BeginEdit%2A>之前，和<xref:System.Data.DataRowView.EndEdit%2A>之后。</span><span class="sxs-lookup"><span data-stu-id="108d7-154">calling the <xref:System.Data.DataRowView.BeginEdit%2A> before, and <xref:System.Data.DataRowView.EndEdit%2A> afterwards.</span></span>  
+ <span data-ttu-id="1f89c-153">下面的示例中编辑行<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-153">The following example edits a row in a <xref:System.Data.DataView>.</span></span> <span data-ttu-id="1f89c-154">调用<xref:System.Data.DataRowView.BeginEdit%2A>之前，和<xref:System.Data.DataRowView.EndEdit%2A>之后。</span><span class="sxs-lookup"><span data-stu-id="1f89c-154">calling the <xref:System.Data.DataRowView.BeginEdit%2A> before, and <xref:System.Data.DataRowView.EndEdit%2A> afterwards.</span></span>  
   
  [!code-vb[Classic WebData DataRowView.EndEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.EndEdit Example/VB/source.vb#1)]  
   
@@ -506,6 +516,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -519,9 +530,9 @@
         <Parameter Name="other" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="other"><span data-ttu-id="108d7-155">要比较的 <see cref="T:System.Object" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-155">An <see cref="T:System.Object" /> to be compared.</span></span></param>
-        <summary><span data-ttu-id="108d7-156">获取一个值，该值指示当前的 <see cref="T:System.Data.DataRowView" /> 是否与指定对象相同。</span><span class="sxs-lookup"><span data-stu-id="108d7-156">Gets a value indicating whether the current <see cref="T:System.Data.DataRowView" /> is identical to the specified object.</span></span></summary>
-        <returns><span data-ttu-id="108d7-157">如果 <paramref name="object" /> 是 <see cref="T:System.Data.DataRowView" /> 且它返回与当前 <see cref="T:System.Data.DataRowView" /> 相同的行，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-157"><see langword="true" /> if <paramref name="object" /> is a <see cref="T:System.Data.DataRowView" /> and it returns the same row as the current <see cref="T:System.Data.DataRowView" />; otherwise <see langword="false" />.</span></span></returns>
+        <param name="other"><span data-ttu-id="1f89c-155">要比较的 <see cref="T:System.Object" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-155">An <see cref="T:System.Object" /> to be compared.</span></span></param>
+        <summary><span data-ttu-id="1f89c-156">获取一个值，该值指示当前的 <see cref="T:System.Data.DataRowView" /> 是否与指定对象相同。</span><span class="sxs-lookup"><span data-stu-id="1f89c-156">Gets a value indicating whether the current <see cref="T:System.Data.DataRowView" /> is identical to the specified object.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-157">如果 <paramref name="object" /> 是 <see cref="T:System.Data.DataRowView" /> 且它返回与当前 <see cref="T:System.Data.DataRowView" /> 相同的行，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-157"><see langword="true" /> if <paramref name="object" /> is a <see cref="T:System.Data.DataRowView" /> and it returns the same row as the current <see cref="T:System.Data.DataRowView" />; otherwise <see langword="false" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -543,6 +554,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -554,8 +566,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-158">返回 <see cref="T:System.Data.DataRow" /> 对象的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="108d7-158">Returns the hash code of the <see cref="T:System.Data.DataRow" /> object.</span></span></summary>
-        <returns><span data-ttu-id="108d7-159">如果此实例的值不为零，则为 32 位有符号整数哈希代码 1，它表示布尔值 <see langword="true" />；否则为整数 0，它表示布尔值 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-159">A 32-bit signed integer hash code 1, which represents Boolean <see langword="true" /> if the value of this instance is nonzero; otherwise the integer zero, which represents Boolean <see langword="false" />.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-158">返回 <see cref="T:System.Data.DataRow" /> 对象的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="1f89c-158">Returns the hash code of the <see cref="T:System.Data.DataRow" /> object.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-159">如果此实例的值不为零，则为 32 位有符号整数哈希代码 1，它表示布尔值 <see langword="true" />；否则为整数 0，它表示布尔值 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-159">A 32-bit signed integer hash code 1, which represents Boolean <see langword="true" /> if the value of this instance is nonzero; otherwise the integer zero, which represents Boolean <see langword="false" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -577,6 +589,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -587,8 +600,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-160">指示行是否处于编辑模式。</span><span class="sxs-lookup"><span data-stu-id="108d7-160">Indicates whether the row is in edit mode.</span></span></summary>
-        <value><span data-ttu-id="108d7-161">如果行处于编辑模式，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-161"><see langword="true" /> if the row is in edit mode; otherwise <see langword="false" />.</span></span></value>
+        <summary><span data-ttu-id="1f89c-160">指示行是否处于编辑模式。</span><span class="sxs-lookup"><span data-stu-id="1f89c-160">Indicates whether the row is in edit mode.</span></span></summary>
+        <value><span data-ttu-id="1f89c-161">如果行处于编辑模式，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-161"><see langword="true" /> if the row is in edit mode; otherwise <see langword="false" />.</span></span></value>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Data.DataRowView.BeginEdit" />
       </Docs>
@@ -611,6 +624,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -621,13 +635,13 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-162">指示 <see cref="T:System.Data.DataRowView" /> 是否为新。</span><span class="sxs-lookup"><span data-stu-id="108d7-162">Indicates whether a <see cref="T:System.Data.DataRowView" /> is new.</span></span></summary>
-        <value><span data-ttu-id="108d7-163">如果是新行，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-163"><see langword="true" /> if the row is new; otherwise <see langword="false" />.</span></span></value>
+        <summary><span data-ttu-id="1f89c-162">指示 <see cref="T:System.Data.DataRowView" /> 是否为新。</span><span class="sxs-lookup"><span data-stu-id="1f89c-162">Indicates whether a <see cref="T:System.Data.DataRowView" /> is new.</span></span></summary>
+        <value><span data-ttu-id="1f89c-163">如果是新行，则为 <see langword="true" />；否则为 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-163"><see langword="true" /> if the row is new; otherwise <see langword="false" />.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-164">调用后调用<xref:System.Data.DataView.AddNew%2A>，<xref:System.Data.DataRowView.IsNew%2A>都是如此返回<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-164">After you call you call <xref:System.Data.DataView.AddNew%2A>, <xref:System.Data.DataRowView.IsNew%2A> will be true for the returned <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="108d7-165"><xref:System.Data.DataRowView.IsNew%2A> 直到将为 true<xref:System.Data.DataRowView.EndEdit%2A>上调用<xref:System.Data.DataRowView>，或<xref:System.Data.DataView.AddNew%2A>再次调用。</span><span class="sxs-lookup"><span data-stu-id="108d7-165"><xref:System.Data.DataRowView.IsNew%2A> will be true until either <xref:System.Data.DataRowView.EndEdit%2A> is called on the <xref:System.Data.DataRowView>, or <xref:System.Data.DataView.AddNew%2A> is called again.</span></span> <span data-ttu-id="108d7-166">（没有只能有一个新行。）</span><span class="sxs-lookup"><span data-stu-id="108d7-166">(There is only one new row.)</span></span>  
+ <span data-ttu-id="1f89c-164">调用后调用<xref:System.Data.DataView.AddNew%2A>，<xref:System.Data.DataRowView.IsNew%2A>都是如此返回<xref:System.Data.DataRowView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-164">After you call you call <xref:System.Data.DataView.AddNew%2A>, <xref:System.Data.DataRowView.IsNew%2A> will be true for the returned <xref:System.Data.DataRowView>.</span></span> <span data-ttu-id="1f89c-165"><xref:System.Data.DataRowView.IsNew%2A> 直到将为 true<xref:System.Data.DataRowView.EndEdit%2A>上调用<xref:System.Data.DataRowView>，或<xref:System.Data.DataView.AddNew%2A>再次调用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-165"><xref:System.Data.DataRowView.IsNew%2A> will be true until either <xref:System.Data.DataRowView.EndEdit%2A> is called on the <xref:System.Data.DataRowView>, or <xref:System.Data.DataView.AddNew%2A> is called again.</span></span> <span data-ttu-id="1f89c-166">（没有只能有一个新行。）</span><span class="sxs-lookup"><span data-stu-id="1f89c-166">(There is only one new row.)</span></span>  
   
  ]]></format>
         </remarks>
@@ -640,7 +654,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="108d7-167">获取或设置指定列中的值。</span><span class="sxs-lookup"><span data-stu-id="108d7-167">Gets or sets a value in a specified column.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-167">获取或设置指定列中的值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-167">Gets or sets a value in a specified column.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Item">
@@ -661,6 +675,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -674,14 +689,14 @@
         <Parameter Name="ndx" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="ndx"><span data-ttu-id="108d7-168">指定的列。</span><span class="sxs-lookup"><span data-stu-id="108d7-168">The specified column.</span></span></param>
-        <summary><span data-ttu-id="108d7-169">获取或设置指定列中的值。</span><span class="sxs-lookup"><span data-stu-id="108d7-169">Gets or sets a value in a specified column.</span></span></summary>
-        <value><span data-ttu-id="108d7-170">列的值。</span><span class="sxs-lookup"><span data-stu-id="108d7-170">The value of the column.</span></span></value>
+        <param name="ndx"><span data-ttu-id="1f89c-168">指定的列。</span><span class="sxs-lookup"><span data-stu-id="1f89c-168">The specified column.</span></span></param>
+        <summary><span data-ttu-id="1f89c-169">获取或设置指定列中的值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-169">Gets or sets a value in a specified column.</span></span></summary>
+        <value><span data-ttu-id="1f89c-170">列的值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-170">The value of the column.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="108d7-171">下面的示例中的每个每个项显示的值<xref:System.Data.DataRowView>在<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-171">The following example displays the value in each item of each <xref:System.Data.DataRowView> in a <xref:System.Data.DataView>.</span></span>  
+ <span data-ttu-id="1f89c-171">下面的示例中的每个每个项显示的值<xref:System.Data.DataRowView>在<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-171">The following example displays the value in each item of each <xref:System.Data.DataRowView> in a <xref:System.Data.DataView>.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.this2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.this2 Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.this2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.this2 Example/VB/source.vb#1)]  
@@ -708,6 +723,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -721,14 +737,14 @@
         <Parameter Name="property" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="property"><span data-ttu-id="108d7-172">包含指定列的字符串。</span><span class="sxs-lookup"><span data-stu-id="108d7-172">String that contains the specified column.</span></span></param>
-        <summary><span data-ttu-id="108d7-173">获取或设置指定列中的值。</span><span class="sxs-lookup"><span data-stu-id="108d7-173">Gets or sets a value in a specified column.</span></span></summary>
-        <value><span data-ttu-id="108d7-174">列的值。</span><span class="sxs-lookup"><span data-stu-id="108d7-174">The value of the column.</span></span></value>
+        <param name="property"><span data-ttu-id="1f89c-172">包含指定列的字符串。</span><span class="sxs-lookup"><span data-stu-id="1f89c-172">String that contains the specified column.</span></span></param>
+        <summary><span data-ttu-id="1f89c-173">获取或设置指定列中的值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-173">Gets or sets a value in a specified column.</span></span></summary>
+        <value><span data-ttu-id="1f89c-174">列的值。</span><span class="sxs-lookup"><span data-stu-id="1f89c-174">The value of the column.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="108d7-175">下面的示例将文本追加到的每个已修改的行中列的值<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-175">The following example appends text to the value of a column in each modified row of a <xref:System.Data.DataView>.</span></span>  
+ <span data-ttu-id="1f89c-175">下面的示例将文本追加到的每个已修改的行中列的值<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-175">The following example appends text to the value of a column in each modified row of a <xref:System.Data.DataView>.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.this Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.this Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.this Example/VB/source.vb#1)]  
@@ -757,6 +773,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -767,12 +784,12 @@
         <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-176">当 <see cref="T:System.Data.DataRowView" /> 属性发生更改时引发的事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-176">Event that is raised when a <see cref="T:System.Data.DataRowView" /> property is changed.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-176">当 <see cref="T:System.Data.DataRowView" /> 属性发生更改时引发的事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-176">Event that is raised when a <see cref="T:System.Data.DataRowView" /> property is changed.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-177">与关联的列的值时触发此事件<xref:System.Data.DataRowView>更改。</span><span class="sxs-lookup"><span data-stu-id="108d7-177">This event fires when the column value associated with the <xref:System.Data.DataRowView> changes.</span></span> <span data-ttu-id="108d7-178">此更改不会导致相关联的索引位置的<xref:System.Data.DataRowView>更改。</span><span class="sxs-lookup"><span data-stu-id="108d7-178">This change does not cause the associated index position of the <xref:System.Data.DataRowView> to be changed.</span></span>  
+ <span data-ttu-id="1f89c-177">与关联的列的值时触发此事件<xref:System.Data.DataRowView>更改。</span><span class="sxs-lookup"><span data-stu-id="1f89c-177">This event fires when the column value associated with the <xref:System.Data.DataRowView> changes.</span></span> <span data-ttu-id="1f89c-178">此更改不会导致相关联的索引位置的<xref:System.Data.DataRowView>更改。</span><span class="sxs-lookup"><span data-stu-id="1f89c-178">This change does not cause the associated index position of the <xref:System.Data.DataRowView> to be changed.</span></span>  
   
  ]]></format>
         </remarks>
@@ -796,6 +813,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -806,13 +824,13 @@
         <ReturnType>System.Data.DataRow</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-179">获取正被查看的 <see cref="T:System.Data.DataRow" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-179">Gets the <see cref="T:System.Data.DataRow" /> being viewed.</span></span></summary>
-        <value><span data-ttu-id="108d7-180">正被 <see cref="T:System.Data.DataRow" /> 查看的 <see cref="T:System.Data.DataRowView" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-180">The <see cref="T:System.Data.DataRow" /> being viewed by the <see cref="T:System.Data.DataRowView" />.</span></span></value>
+        <summary><span data-ttu-id="1f89c-179">获取正被查看的 <see cref="T:System.Data.DataRow" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-179">Gets the <see cref="T:System.Data.DataRow" /> being viewed.</span></span></summary>
+        <value><span data-ttu-id="1f89c-180">正被 <see cref="T:System.Data.DataRow" /> 查看的 <see cref="T:System.Data.DataRowView" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-180">The <see cref="T:System.Data.DataRow" /> being viewed by the <see cref="T:System.Data.DataRowView" />.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="108d7-181">下面的示例使用<xref:System.Data.DataRowView.Row%2A>属性可打印的每个已修改行中的第三个列的值<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="108d7-181">The following example uses the <xref:System.Data.DataRowView.Row%2A> property to print the value of the third column in each modified row of a <xref:System.Data.DataView>.</span></span>  
+ <span data-ttu-id="1f89c-181">下面的示例使用<xref:System.Data.DataRowView.Row%2A>属性可打印的每个已修改行中的第三个列的值<xref:System.Data.DataView>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-181">The following example uses the <xref:System.Data.DataRowView.Row%2A> property to print the value of the third column in each modified row of a <xref:System.Data.DataView>.</span></span>  
   
  [!code-csharp[Classic WebData DataRowView.Row Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowView.Row Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRowView.Row Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowView.Row Example/VB/source.vb#1)]  
@@ -841,6 +859,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -851,18 +870,18 @@
         <ReturnType>System.Data.DataRowVersion</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-182">获取 <see cref="T:System.Data.DataRow" /> 的当前版本说明。</span><span class="sxs-lookup"><span data-stu-id="108d7-182">Gets the current version description of the <see cref="T:System.Data.DataRow" />.</span></span></summary>
-        <value><span data-ttu-id="108d7-183"><see cref="T:System.Data.DataRowVersion" /> 值之一。</span><span class="sxs-lookup"><span data-stu-id="108d7-183">One of the <see cref="T:System.Data.DataRowVersion" /> values.</span></span> <span data-ttu-id="108d7-184"><see cref="P:System.Data.DataRowView.RowVersion" /> 属性的可能值有：<see langword="Default" />、<see langword="Original" />、<see langword="Current" /> 和 <see langword="Proposed" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-184">Possible values for the <see cref="P:System.Data.DataRowView.RowVersion" /> property are <see langword="Default" />, <see langword="Original" />, <see langword="Current" />, and <see langword="Proposed" />.</span></span></value>
+        <summary><span data-ttu-id="1f89c-182">获取 <see cref="T:System.Data.DataRow" /> 的当前版本说明。</span><span class="sxs-lookup"><span data-stu-id="1f89c-182">Gets the current version description of the <see cref="T:System.Data.DataRow" />.</span></span></summary>
+        <value><span data-ttu-id="1f89c-183"><see cref="T:System.Data.DataRowVersion" /> 值之一。</span><span class="sxs-lookup"><span data-stu-id="1f89c-183">One of the <see cref="T:System.Data.DataRowVersion" /> values.</span></span> <span data-ttu-id="1f89c-184"><see cref="P:System.Data.DataRowView.RowVersion" /> 属性的可能值有：<see langword="Default" />、<see langword="Original" />、<see langword="Current" /> 和 <see langword="Proposed" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-184">Possible values for the <see cref="P:System.Data.DataRowView.RowVersion" /> property are <see langword="Default" />, <see langword="Original" />, <see langword="Current" />, and <see langword="Proposed" />.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-185"><xref:System.Data.DataView.RowStateFilter%2A>属性同时指定<xref:System.Data.DataRowState>和<xref:System.Data.DataRowVersion>设置。</span><span class="sxs-lookup"><span data-stu-id="108d7-185">The <xref:System.Data.DataView.RowStateFilter%2A> property specifies both <xref:System.Data.DataRowState> and <xref:System.Data.DataRowVersion> settings.</span></span> <span data-ttu-id="108d7-186">有关详细信息，请参阅<xref:System.Data.DataRowState>、<xref:System.Data.DataRowVersion>和<xref:System.Data.DataViewRowState>。</span><span class="sxs-lookup"><span data-stu-id="108d7-186">For more information, see <xref:System.Data.DataRowState>, <xref:System.Data.DataRowVersion>, and <xref:System.Data.DataViewRowState>.</span></span>  
+ <span data-ttu-id="1f89c-185"><xref:System.Data.DataView.RowStateFilter%2A>属性同时指定<xref:System.Data.DataRowState>和<xref:System.Data.DataRowVersion>设置。</span><span class="sxs-lookup"><span data-stu-id="1f89c-185">The <xref:System.Data.DataView.RowStateFilter%2A> property specifies both <xref:System.Data.DataRowState> and <xref:System.Data.DataRowVersion> settings.</span></span> <span data-ttu-id="1f89c-186">有关详细信息，请参阅<xref:System.Data.DataRowState>、<xref:System.Data.DataRowVersion>和<xref:System.Data.DataViewRowState>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-186">For more information, see <xref:System.Data.DataRowState>, <xref:System.Data.DataRowVersion>, and <xref:System.Data.DataViewRowState>.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="108d7-187">下面的示例使用<xref:System.Data.DataRowView.RowVersion%2A>属性来显示<xref:System.Data.DataRowVersion>。</span><span class="sxs-lookup"><span data-stu-id="108d7-187">The following example uses the <xref:System.Data.DataRowView.RowVersion%2A> property to display the <xref:System.Data.DataRowVersion>.</span></span>  
+ <span data-ttu-id="1f89c-187">下面的示例使用<xref:System.Data.DataRowView.RowVersion%2A>属性来显示<xref:System.Data.DataRowVersion>。</span><span class="sxs-lookup"><span data-stu-id="1f89c-187">The following example uses the <xref:System.Data.DataRowView.RowVersion%2A> property to display the <xref:System.Data.DataRowVersion>.</span></span>  
   
  [!code-csharp[DataWorks DataRowView.RowVersion1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataRowView.RowVersion1/CS/source.cs#1)]
  [!code-vb[DataWorks DataRowView.RowVersion1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataRowView.RowVersion1/VB/source.vb#1)]  
@@ -895,6 +914,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -906,13 +926,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-188">返回此组件实例的自定义属性的集合。</span><span class="sxs-lookup"><span data-stu-id="108d7-188">Returns a collection of custom attributes for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-189">包含此对象的 AttributeCollection 特性。</span><span class="sxs-lookup"><span data-stu-id="108d7-189">An AttributeCollection containing the attributes for this object.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-188">返回此组件实例的自定义属性的集合。</span><span class="sxs-lookup"><span data-stu-id="1f89c-188">Returns a collection of custom attributes for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-189">包含此对象的 AttributeCollection 特性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-189">An AttributeCollection containing the attributes for this object.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-190">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-190">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-191">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-191">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-190">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-190">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-191">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-191">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -938,6 +958,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -949,13 +970,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-192">返回此组件实例的类名称。</span><span class="sxs-lookup"><span data-stu-id="108d7-192">Returns the class name of this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-193">此组件实例的类名。</span><span class="sxs-lookup"><span data-stu-id="108d7-193">The class name of this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-192">返回此组件实例的类名称。</span><span class="sxs-lookup"><span data-stu-id="1f89c-192">Returns the class name of this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-193">此组件实例的类名。</span><span class="sxs-lookup"><span data-stu-id="1f89c-193">The class name of this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-194">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-194">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-195">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-195">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-194">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-194">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-195">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-195">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -981,6 +1002,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -992,13 +1014,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-196">返回某个组件的此实例的名称。</span><span class="sxs-lookup"><span data-stu-id="108d7-196">Returns the name of this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-197">此组件实例的名称。</span><span class="sxs-lookup"><span data-stu-id="108d7-197">The name of this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-196">返回某个组件的此实例的名称。</span><span class="sxs-lookup"><span data-stu-id="1f89c-196">Returns the name of this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-197">此组件实例的名称。</span><span class="sxs-lookup"><span data-stu-id="1f89c-197">The name of this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-198">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-198">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-199">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-199">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-198">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-198">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-199">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-199">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1024,6 +1046,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1035,13 +1058,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-200">返回此组件实例的类型转换器。</span><span class="sxs-lookup"><span data-stu-id="108d7-200">Returns a type converter for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-201">此组件实例的类型转换器。</span><span class="sxs-lookup"><span data-stu-id="108d7-201">The type converter for this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-200">返回此组件实例的类型转换器。</span><span class="sxs-lookup"><span data-stu-id="1f89c-200">Returns a type converter for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-201">此组件实例的类型转换器。</span><span class="sxs-lookup"><span data-stu-id="1f89c-201">The type converter for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-202">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-202">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-203">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-203">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-202">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-202">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-203">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-203">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1067,6 +1090,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1078,13 +1102,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-204">返回某个组件的此实例的默认事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-204">Returns the default event for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-205">此组件实例的默认事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-205">The default event for this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-204">返回某个组件的此实例的默认事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-204">Returns the default event for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-205">此组件实例的默认事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-205">The default event for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-206">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-206">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-207">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-207">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-206">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-206">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-207">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-207">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1110,6 +1134,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1121,13 +1146,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-208">返回此组件实例的默认属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-208">Returns the default property for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-209">此组件实例的默认属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-209">The default property for this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-208">返回此组件实例的默认属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-208">Returns the default property for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-209">此组件实例的默认属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-209">The default property for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-210">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-210">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-211">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-211">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-210">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-210">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-211">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-211">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1153,6 +1178,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1166,14 +1192,14 @@
         <Parameter Name="editorBaseType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="editorBaseType"><span data-ttu-id="108d7-212">表示该对象的编辑器的 <see cref="T:System.Type" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-212">A <see cref="T:System.Type" /> that represents the editor for this object.</span></span></param>
-        <summary><span data-ttu-id="108d7-213">返回此组件实例的指定类型的编辑器。</span><span class="sxs-lookup"><span data-stu-id="108d7-213">Returns an editor of the specified type for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-214">表示该对象编辑器的指定类型的 <see cref="T:System.Object" />；如果无法找到编辑器，则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="108d7-214">An <see cref="T:System.Object" /> of the specified type that is the editor for this object, or <see langword="null" /> if the editor cannot be found.</span></span></returns>
+        <param name="editorBaseType"><span data-ttu-id="1f89c-212">表示该对象的编辑器的 <see cref="T:System.Type" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-212">A <see cref="T:System.Type" /> that represents the editor for this object.</span></span></param>
+        <summary><span data-ttu-id="1f89c-213">返回此组件实例的指定类型的编辑器。</span><span class="sxs-lookup"><span data-stu-id="1f89c-213">Returns an editor of the specified type for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-214">表示该对象编辑器的指定类型的 <see cref="T:System.Object" />；如果无法找到编辑器，则为 <see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="1f89c-214">An <see cref="T:System.Object" /> of the specified type that is the editor for this object, or <see langword="null" /> if the editor cannot be found.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-215">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-215">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-216">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-216">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-215">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-215">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-216">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-216">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1186,12 +1212,12 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="108d7-217">返回此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-217">Returns the events for this instance of a component.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-217">返回此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-217">Returns the events for this instance of a component.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-218">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-218">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-219">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-219">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-218">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-218">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-219">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-219">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1217,6 +1243,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1228,13 +1255,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-220">返回此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-220">Returns the events for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-221">此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-221">The events for this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-220">返回此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-220">Returns the events for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-221">此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-221">The events for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-222">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-222">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-223">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-223">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-222">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-222">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-223">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-223">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1260,6 +1287,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1273,14 +1301,14 @@
         <Parameter Name="attributes" Type="System.Attribute[]" />
       </Parameters>
       <Docs>
-        <param name="attributes"><span data-ttu-id="108d7-224">特性</span><span class="sxs-lookup"><span data-stu-id="108d7-224">The attributes</span></span></param>
-        <summary><span data-ttu-id="108d7-225">返回具有指定特性的此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-225">Returns the events for this instance of a component with specified attributes.</span></span></summary>
-        <returns><span data-ttu-id="108d7-226">此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="108d7-226">The events for this instance of a component.</span></span></returns>
+        <param name="attributes"><span data-ttu-id="1f89c-224">特性</span><span class="sxs-lookup"><span data-stu-id="1f89c-224">The attributes</span></span></param>
+        <summary><span data-ttu-id="1f89c-225">返回具有指定特性的此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-225">Returns the events for this instance of a component with specified attributes.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-226">此组件实例的事件。</span><span class="sxs-lookup"><span data-stu-id="1f89c-226">The events for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-227">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-227">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-228">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-228">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-227">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-227">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-228">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-228">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1293,12 +1321,12 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="108d7-229">返回此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-229">Returns the properties for this instance of a component.</span></span></summary>
+        <summary><span data-ttu-id="1f89c-229">返回此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-229">Returns the properties for this instance of a component.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-230">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-230">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-231">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-231">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-230">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-230">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-231">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-231">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1324,6 +1352,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1335,13 +1364,13 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="108d7-232">返回此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-232">Returns the properties for this instance of a component.</span></span></summary>
-        <returns><span data-ttu-id="108d7-233">此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-233">The properties for this instance of a component.</span></span></returns>
+        <summary><span data-ttu-id="1f89c-232">返回此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-232">Returns the properties for this instance of a component.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-233">此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-233">The properties for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-234">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-234">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-235">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-235">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-234">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-234">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-235">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-235">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1367,6 +1396,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1380,14 +1410,14 @@
         <Parameter Name="attributes" Type="System.Attribute[]" />
       </Parameters>
       <Docs>
-        <param name="attributes"><span data-ttu-id="108d7-236">属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-236">The attributes.</span></span></param>
-        <summary><span data-ttu-id="108d7-237">返回具有指定特性的此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-237">Returns the properties for this instance of a component with specified attributes.</span></span></summary>
-        <returns><span data-ttu-id="108d7-238">此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-238">The properties for this instance of a component.</span></span></returns>
+        <param name="attributes"><span data-ttu-id="1f89c-236">属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-236">The attributes.</span></span></param>
+        <summary><span data-ttu-id="1f89c-237">返回具有指定特性的此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-237">Returns the properties for this instance of a component with specified attributes.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-238">此组件实例的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-238">The properties for this instance of a component.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-239">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-239">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-240">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-240">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-239">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-239">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-240">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-240">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1413,6 +1443,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1426,14 +1457,14 @@
         <Parameter Name="pd" Type="System.ComponentModel.PropertyDescriptor" />
       </Parameters>
       <Docs>
-        <param name="pd"><span data-ttu-id="108d7-241">一个 <see cref="T:System.ComponentModel.PropertyDescriptor" />，表示要查找其所有者的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-241">A <see cref="T:System.ComponentModel.PropertyDescriptor" /> that represents the property whose owner is to be found.</span></span></param>
-        <summary><span data-ttu-id="108d7-242">返回一个对象，该对象包含指定的属性描述符所描述的属性。</span><span class="sxs-lookup"><span data-stu-id="108d7-242">Returns an object that contains the property described by the specified property descriptor.</span></span></summary>
-        <returns><span data-ttu-id="108d7-243">一个 <see cref="T:System.Object" />，表示指定属性的所有者。</span><span class="sxs-lookup"><span data-stu-id="108d7-243">An <see cref="T:System.Object" /> that represents the owner of the specified property.</span></span></returns>
+        <param name="pd"><span data-ttu-id="1f89c-241">一个 <see cref="T:System.ComponentModel.PropertyDescriptor" />，表示要查找其所有者的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-241">A <see cref="T:System.ComponentModel.PropertyDescriptor" /> that represents the property whose owner is to be found.</span></span></param>
+        <summary><span data-ttu-id="1f89c-242">返回一个对象，该对象包含指定的属性描述符所描述的属性。</span><span class="sxs-lookup"><span data-stu-id="1f89c-242">Returns an object that contains the property described by the specified property descriptor.</span></span></summary>
+        <returns><span data-ttu-id="1f89c-243">一个 <see cref="T:System.Object" />，表示指定属性的所有者。</span><span class="sxs-lookup"><span data-stu-id="1f89c-243">An <see cref="T:System.Object" /> that represents the owner of the specified property.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-244">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-244">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-245">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-245">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
+ <span data-ttu-id="1f89c-244">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-244">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-245">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.ICustomTypeDescriptor> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-245">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.ICustomTypeDescriptor> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1459,6 +1490,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1469,13 +1501,13 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="108d7-246">获取描述该对象的任何验证错误的消息。</span><span class="sxs-lookup"><span data-stu-id="108d7-246">Gets a message that describes any validation errors for the object.</span></span></summary>
-        <value><span data-ttu-id="108d7-247">对象上的验证错误。</span><span class="sxs-lookup"><span data-stu-id="108d7-247">The validation error on the object.</span></span></value>
+        <summary><span data-ttu-id="1f89c-246">获取描述该对象的任何验证错误的消息。</span><span class="sxs-lookup"><span data-stu-id="1f89c-246">Gets a message that describes any validation errors for the object.</span></span></summary>
+        <value><span data-ttu-id="1f89c-247">对象上的验证错误。</span><span class="sxs-lookup"><span data-stu-id="1f89c-247">The validation error on the object.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-248">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-248">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-249">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.IDataErrorInfo> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-249">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.IDataErrorInfo> interface.</span></span>  
+ <span data-ttu-id="1f89c-248">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-248">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-249">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.IDataErrorInfo> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-249">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.IDataErrorInfo> interface.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1501,6 +1533,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data.Common</AssemblyName>
@@ -1511,17 +1544,17 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="colName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="colName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="colName"><span data-ttu-id="108d7-250">要获取其错误信息的属性的名称。</span><span class="sxs-lookup"><span data-stu-id="108d7-250">The name of the property whose error message to get.</span></span></param>
-        <summary><span data-ttu-id="108d7-251">获取具有给定名称的属性的错误信息。</span><span class="sxs-lookup"><span data-stu-id="108d7-251">Gets the error message for the property with the given name.</span></span></summary>
-        <value><span data-ttu-id="108d7-252">该属性的错误信息。</span><span class="sxs-lookup"><span data-stu-id="108d7-252">The error message for the property.</span></span> <span data-ttu-id="108d7-253">默认值为空字符串("")。</span><span class="sxs-lookup"><span data-stu-id="108d7-253">The default is an empty string ("").</span></span></value>
+        <param name="colName"><span data-ttu-id="1f89c-250">要获取其错误信息的属性的名称。</span><span class="sxs-lookup"><span data-stu-id="1f89c-250">The name of the property whose error message to get.</span></span></param>
+        <summary><span data-ttu-id="1f89c-251">获取具有给定名称的属性的错误信息。</span><span class="sxs-lookup"><span data-stu-id="1f89c-251">Gets the error message for the property with the given name.</span></span></summary>
+        <value><span data-ttu-id="1f89c-252">该属性的错误信息。</span><span class="sxs-lookup"><span data-stu-id="1f89c-252">The error message for the property.</span></span> <span data-ttu-id="1f89c-253">默认值为空字符串("")。</span><span class="sxs-lookup"><span data-stu-id="1f89c-253">The default is an empty string ("").</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="108d7-254">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="108d7-254">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="108d7-255">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.IDataErrorInfo> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="108d7-255">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.IDataErrorInfo> interface.</span></span>  
+ <span data-ttu-id="1f89c-254">此成员是显式的接口成员实现。</span><span class="sxs-lookup"><span data-stu-id="1f89c-254">This member is an explicit interface member implementation.</span></span> <span data-ttu-id="1f89c-255">它只能在 <xref:System.Data.DataRowView> 实例强制转换为 <xref:System.ComponentModel.IDataErrorInfo> 接口时使用。</span><span class="sxs-lookup"><span data-stu-id="1f89c-255">It can be used only when the <xref:System.Data.DataRowView> instance is cast to an <xref:System.ComponentModel.IDataErrorInfo> interface.</span></span>  
   
  ]]></format>
         </remarks>
