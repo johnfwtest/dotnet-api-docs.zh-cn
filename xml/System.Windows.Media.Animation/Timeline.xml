@@ -1,5 +1,5 @@
 <Type Name="Timeline" FullName="System.Windows.Media.Animation.Timeline">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="5365f1a896f7803f71e8106a88f666209e4da049" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55320728" /></Metadata><TypeSignature Language="C#" Value="public abstract class Timeline : System.Windows.Media.Animation.Animatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4bbac06536f66f17ac47339f211f542eb1f4e039" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58684483" /></Metadata><TypeSignature Language="C#" Value="public abstract class Timeline : System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Timeline extends System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.Timeline" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Timeline&#xA;Inherits Animatable" />
@@ -203,8 +203,8 @@
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指定在将时间消逝从零加速到其最大速率的过程中所占用时间线的 <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> 的百分比。</summary>
-        <value>一个介于 0 和 1 之间的值（包括 0 和 1），该值指定在将时间消逝从零加速到其最大速率的过程所占用时间线的 <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> 的百分比。 如果同时设置时间线的 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 属性，则 <see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 和 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 之和必须小于等于 1。 默认值为 0。</value>
+        <summary>获取或设置一个值，该值指定在将时间消逝从零加速到其最大速率过程中所占用时间线的 <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> 的百分比。</summary>
+        <value>一个介于 0 和 1 之间的值（包括 0 和 1），用于指定在将时间消逝从零加速到其最大速率过程中所占用时间线的 <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> 的百分比。 如果同时设置时间线的 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 属性，则 <see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 和 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 之和必须小于等于 1。 默认值为 0。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -222,7 +222,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 小于 0 或大于 1。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 与 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 之和大于 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 和 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 之和大于 1。</exception>
         <altmember cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" />
       </Docs>
     </Member>
@@ -826,7 +826,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 小于 0 或大于 1。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 与 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 之和大于 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" /> 和 <see cref="P:System.Windows.Media.Animation.Timeline.DecelerationRatio" /> 之和大于 1。</exception>
         <altmember cref="P:System.Windows.Media.Animation.Timeline.AccelerationRatio" />
       </Docs>
     </Member>
@@ -1046,8 +1046,8 @@
         <ReturnType>System.Windows.Media.Animation.FillBehavior</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指定 <see cref="T:System.Windows.Media.Animation.Timeline" /> 在到达其有效期末尾后的行为。</summary>
-        <value>一个值，该值指定时间线在到达其有效期末尾后但其父级仍处于其有效期或填充期时的行为表现。 默认值为 <see cref="F:System.Windows.Media.Animation.FillBehavior.HoldEnd" />。</value>
+        <summary>获取或设置一个值，该值指定 <see cref="T:System.Windows.Media.Animation.Timeline" /> 在活动周期结束后的行为方式。</summary>
+        <value>一个值，用于指定时间线在其活动周期结束后但其父时间线仍处于活动周期或填充周期时的行为方式。 默认值为 <see cref="F:System.Windows.Media.Animation.FillBehavior.HoldEnd" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1113,11 +1113,11 @@
         <Parameter Name="isChecking" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="isChecking">若为 <see langword="true" />，则检查此实例是否可以冻结；若为 <see langword="false" />，则冻结此实例。</param>
+        <param name="isChecking">如果是 <see langword="true" />，则检查是否可冻结该实例；如果是 <see langword="false" />，则冻结该实例。</param>
         <summary>使此 <see cref="T:System.Windows.Media.Animation.Timeline" /> 成为不可修改的，或确定是否可使其成为不可修改的。</summary>
-        <returns>当 <paramref name="isChecking" /> 为 true 时，如果此实例可以成为只读，则此方法返回 <see langword="true" />，如果无法成为只读，则返回 <see langword="false" />。  
+        <returns>如果 <paramref name="isChecking" /> 为 true，则该方法将在可使该实例为只读的情况下返回 <see langword="true" />，而在其他情况下返回 <see langword="false" />。  
   
-当 <paramref name="isChecking" /> 为 false 时，如果此实例现在为只读，则此方法返回 <see langword="true" />，如果它不能成为只读并且具有已开始更改此对象冻结状态的副作用，则返回 <see langword="false" />。</returns>
+如果 <paramref name="isChecking" /> 为 false，则该方法将在该实例目前为只读的情况下返回 <see langword="true" />，而在其他情况下返回 <see langword="false" />，并且其副作用是已开始更改该对象的冻结状态。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1415,7 +1415,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置此时间线的重复行为。</summary>
-        <value>迭代 <see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />，指定时间线应播放的次数；<see cref="T:System.TimeSpan" /> 值，指定时间线活动期间的总的时间长度；或者特殊值 <see cref="P:System.Windows.Media.Animation.RepeatBehavior.Forever" />，指定时间线将不限次数地重复播放。 默认值是<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />与<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />的<c>1</c>，这表示时间线播放一次。</value>
+        <value>一个迭代 <see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />，指定时间线将要播放的次数；一个 <see cref="T:System.TimeSpan" /> 值，指定此时间线活动周期的总长度；或者特殊值 <see cref="P:System.Windows.Media.Animation.RepeatBehavior.Forever" />，指定时间线应该无限重复。 默认值是<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />与<see cref="P:System.Windows.Media.Animation.RepeatBehavior.Count" />的<c>1</c>，这表示时间线播放一次。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="IDataReader" FullName="System.Data.IDataReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="36f7519ace2300fdc9f2b918e4fcb6445b1dd405" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="37668995" /></Metadata><TypeSignature Language="C#" Value="public interface IDataReader : IDisposable, System.Data.IDataRecord" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b10a51a48d6bdfd7ec3c7d25fcc4bae20255b9b4" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58711434" /></Metadata><TypeSignature Language="C#" Value="public interface IDataReader : IDisposable, System.Data.IDataRecord" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataReader implements class System.Data.IDataRecord, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Data.IDataReader" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDataReader&#xA;Implements IDataRecord, IDisposable" />
@@ -21,6 +21,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -54,7 +55,9 @@
   
  ]]></format>
     </remarks>
-    <block subset="none" type="overrides"><para>若要将升级.NET Framework 数据提供程序之间的一致性，命名为窗体中的继承类<paramref name="Prv" />命令其中<paramref name="Prv" />是提供给特定的.NET Framework 数据提供程序命名空间中的所有类的统一前缀。例如，<paramref name="Sql" />的前缀<see cref="T:System.Data.SqlClient.SqlDataAdapter" />类中<see langword="System.Data.SqlClient" />命名空间。用户不创建的实例<see langword="DataReader" />直接类。相反，它们获得<see langword="DataReader" />实例通过<see langword="ExecuteReader" />方法的<see langword="Command" />对象。因此，应将标记<see langword="DataReader" />为内部构造函数。</para></block>
+    <block subset="none" type="overrides"><para>若要将升级.NET Framework 数据提供程序之间的一致性，命名为窗体中的继承类<paramref name="Prv" />命令其中<paramref name="Prv" />是提供给特定的.NET Framework 数据提供程序命名空间中的所有类的统一前缀。 例如，<paramref name="Sql" />的前缀<see cref="T:System.Data.SqlClient.SqlDataAdapter" />类中<see langword="System.Data.SqlClient" />命名空间。  
+  
+用户不创建的实例<see langword="DataReader" />直接类。 相反，它们获得<see langword="DataReader" />实例通过<see langword="ExecuteReader" />方法的<see langword="Command" />对象。 因此，应将标记<see langword="DataReader" />为内部构造函数。</para></block>
   </Docs>
   <Members>
     <Member MemberName="Close">
@@ -81,6 +84,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -122,6 +126,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -163,13 +168,14 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个描述 <see cref="T:System.Data.DataTable" /> 的列元数据的 <see cref="T:System.Data.IDataReader" />。</summary>
+        <summary>返回一个 <see cref="T:System.Data.DataTable" />，它描述 <see cref="T:System.Data.IDataReader" /> 的列元数据。</summary>
         <returns>一个描述列元数据的 <see cref="T:System.Data.DataTable" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -186,7 +192,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.IDataReader" /> 已关闭。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.IDataReader" /> 是关闭的。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsClosed">
@@ -213,6 +219,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -254,6 +261,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -301,6 +309,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -353,12 +362,13 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取通过执行 SQL 语句更改、插入或删除的行数。</summary>
+        <summary>通过执行 SQL 语句获取更改、插入或删除的行数。</summary>
         <value>已更改、插入或删除的行数；如果没有受影响的行或语句失败，则为 0；对于 SELECT 语句为 -1。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

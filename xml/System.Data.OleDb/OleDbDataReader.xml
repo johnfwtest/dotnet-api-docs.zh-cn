@@ -1,5 +1,5 @@
 <Type Name="OleDbDataReader" FullName="System.Data.OleDb.OleDbDataReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3d6d40dbeb249f51467035602fe3c52eb01a2c37" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57926561" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbDataReader : System.Data.Common.DbDataReader" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d445053b3af85413c6732a957db483ce6f61ad59" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58561011" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbDataReader : System.Data.Common.DbDataReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbDataReader extends System.Data.Common.DbDataReader" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbDataReader" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbDataReader&#xA;Inherits DbDataReader" />
@@ -193,7 +193,7 @@
       </Parameters>
       <Docs>
         <param name="ordinal">从零开始的列序号。</param>
-        <summary>以布尔值的形式获取指定列的值。</summary>
+        <summary>获取指定列的布尔值形式的值。</summary>
         <returns>列的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -747,7 +747,7 @@
       </Parameters>
       <Docs>
         <param name="ordinal">从零开始的列序号。</param>
-        <summary>获取指定列的 16 位带符号整数形式的值。</summary>
+        <summary>获取指定列的 16 位有符号整数形式的值。</summary>
         <returns>指定列的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -895,7 +895,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A> 第一次执行区分大小写查找。 如果失败，进行第二个的不区分大小写搜索。 该方法将引发`IndexOutOfRange`exceptionif 找不到从零开始的列序号。  
+ <xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A> 第一次执行区分大小写查找。 如果失败，进行第二个的不区分大小写搜索。 该方法将引发`IndexOutOfRange`异常，如果找不到从零开始的列序号。  
   
  <xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A> 不区分假名宽度。  
   
@@ -934,7 +934,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个描述 <see cref="T:System.Data.DataTable" /> 的列元数据的 <see cref="T:System.Data.OleDb.OleDbDataReader" />。</summary>
+        <summary>返回一个 <see cref="T:System.Data.DataTable" />，它描述 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 的列元数据。</summary>
         <returns>一个描述列元数据的 <see cref="T:System.Data.DataTable" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -968,7 +968,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.OleDb.OleDbDataReader" /> 已关闭。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.OleDb.OleDbDataReader" /> 是关闭的。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/dataadapters-and-datareaders.md">DataAdapter 和 DataReader</related>
       </Docs>
     </Member>
@@ -1106,7 +1106,7 @@
       <Docs>
         <param name="values">要将属性列复制到的 <see cref="T:System.Object" /> 数组。</param>
         <summary>使用当前行的列值来填充对象数组。</summary>
-        <returns>数组中的 <see cref="T:System.Object" /> 实例数。</returns>
+        <returns>数组中 <see cref="T:System.Object" /> 的实例的数目。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1253,7 +1253,7 @@
         <summary>在给定列序号的情况下，获取指定列的以本机格式表示的值。</summary>
         <value>指定列的以本机格式表示的值。</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
         <related type="Article" href="~/docs/framework/data/adonet/dataadapters-and-datareaders.md">DataAdapter 和 DataReader</related>
       </Docs>
     </Member>
@@ -1389,7 +1389,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取通过执行 SQL 语句更改、插入或删除的行数。</summary>
+        <summary>通过执行 SQL 语句获取更改、插入或删除的行数。</summary>
         <value>已更改、插入或删除的行数；如果没有受影响的行或语句失败，则为 0；对于 SELECT 语句为 -1。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

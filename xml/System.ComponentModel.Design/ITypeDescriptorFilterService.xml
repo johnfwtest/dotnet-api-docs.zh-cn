@@ -1,5 +1,5 @@
 <Type Name="ITypeDescriptorFilterService" FullName="System.ComponentModel.Design.ITypeDescriptorFilterService">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="560d1d0f3f0ac591966c66d848c794269545cf1d" /><Meta Name="ms.sourcegitcommit" Value="16d2d159872fd213cae4b8f371d7ae9c8b027c89" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/17/2018" /><Meta Name="ms.locfileid" Value="51919424" /></Metadata><TypeSignature Language="C#" Value="public interface ITypeDescriptorFilterService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dde13c6623bf839a58865ff79bd94fd5c045fa19" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58741652" /></Metadata><TypeSignature Language="C#" Value="public interface ITypeDescriptorFilterService" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeDescriptorFilterService" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ITypeDescriptorFilterService" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITypeDescriptorFilterService" />
@@ -15,6 +15,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -23,7 +24,7 @@
   </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary>提供在设计模式下修改组件的成员描述符集的接口。</summary>
+    <summary>提供在设计模式下修改组件的成员说明符集的接口。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -47,7 +48,7 @@
   
  若要使用的示例，将代码添加到 Windows 窗体项目并从类库的组件加载到工具箱。  
   
- 另请参阅[演练： 自动填充工具箱与自定义组件](https://msdn.microsoft.com/library/fw694kde\(v=vs.110\).aspx)。  
+ 另请参阅[演练：自动填充工具箱与自定义组件](https://msdn.microsoft.com/library/fw694kde\(v=vs.110\).aspx)。  
   
  向窗体添加一些按钮。 添加`ButtonDesignerFilterComponent`向窗体，它将显示在组件栏中。 `ButtonDesignerFilterComponent`将添加`ButtonDesignerFilterService`，它可以实现<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>，作为设计模式服务提供商。 现有的或新<xref:System.Windows.Forms.Button>窗体上的对象将开始颜色循环之后`ButtonDesignerFilterService`与每个现有和新按钮的设计器替换`ColorCycleButtonDesigner`。 这些按钮将进行颜色的循环时您将鼠标指针移动它们，和交替继续循环或将前景色和背景颜色重置上`MouseLeave`事件。 新<xref:System.Windows.Forms.Button>将给定对象`ColorCycleButtonDesigner`通过<xref:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterAttributes%2A>方法`ButtonDesignerFilterService`的已加载，直到`ButtonDesignerFilterComponent`被释放，并替换原始<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>。 `ColorCycleButton`在此示例中的类是<xref:System.Windows.Forms.Button>与关联`ColorCycleButtonDesigner`。  
   
@@ -83,6 +84,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -97,9 +99,9 @@
         <Parameter Name="attributes" Type="System.Collections.IDictionary" />
       </Parameters>
       <Docs>
-        <param name="component">要筛选其属性的组件。</param>
-        <param name="attributes">可修改的属性字典。</param>
-        <summary>筛选组件通过 <see cref="T:System.ComponentModel.TypeDescriptor" /> 公开的属性。</summary>
+        <param name="component">要筛选其特性的组件。</param>
+        <param name="attributes">可修改的特性字典。</param>
+        <summary>筛选组件通过 <see cref="T:System.ComponentModel.TypeDescriptor" /> 公开的特性。</summary>
         <returns>如果将缓存经过筛选的特性集，则为 <see langword="true" />；如果筛选服务必须再次查询，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -133,6 +135,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -182,6 +185,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
@@ -196,7 +200,7 @@
         <Parameter Name="properties" Type="System.Collections.IDictionary" />
       </Parameters>
       <Docs>
-        <param name="component">要为其筛选属性的组件。</param>
+        <param name="component">要筛选其属性的组件。</param>
         <param name="properties">可修改的属性字典。</param>
         <summary>筛选组件通过 <see cref="T:System.ComponentModel.TypeDescriptor" /> 公开的属性。</summary>
         <returns>如果将缓存经过筛选的属性集，则为 <see langword="true" />；如果筛选服务必须再次查询，则为 <see langword="false" />。</returns>

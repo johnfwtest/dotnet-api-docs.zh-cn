@@ -1,5 +1,5 @@
 <Type Name="IDataRecord" FullName="System.Data.IDataRecord">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c661174a64fdbd60caea6e9f797e3dacafd6299d" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52192690" /></Metadata><TypeSignature Language="C#" Value="public interface IDataRecord" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="78284d589c6bb466ce47e37c3379144120407e01" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58693524" /></Metadata><TypeSignature Language="C#" Value="public interface IDataRecord" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataRecord" />
   <TypeSignature Language="DocId" Value="T:System.Data.IDataRecord" />
   <TypeSignature Language="VB.NET" Value="Public Interface IDataRecord" />
@@ -21,6 +21,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -40,7 +41,7 @@
 |OLE DB 类型|CLR 类型|  
 |-----------------|--------------|  
 |DBTYPE_BOOL|Int16|  
-|DBTYPE_BSTR|字符串|  
+|DBTYPE_BSTR|string|  
 |DBTYPE_BYTES|byte[]|  
 |DBTYPE_CY|十进制|  
 |DBTYPE_DATE|DateTime|  
@@ -64,7 +65,7 @@
 |DBTYPE_PROPVARIANT|object|  
 |DBTYPE_R4|Single|  
 |DBTYPE_R8|Double|  
-|DBTYPE_STR|字符串|  
+|DBTYPE_STR|string|  
 |DBTYPE_UDT|不受支持|  
 |DBTYPE_UI1|字节 (Int16)|  
 |DBTYPE_UI2|UInt16 (Int32)|  
@@ -72,7 +73,7 @@
 |DBTYPE_UI8|UInt64 （十进制）|  
 |DBTYPE_VARIANT|object|  
 |DBTYPE_VARNUMERIC|不受支持|  
-|DBTYPE_WSTR|字符串|  
+|DBTYPE_WSTR|string|  
   
    
   
@@ -110,6 +111,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -151,6 +153,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -160,7 +163,7 @@
       </Parameters>
       <Docs>
         <param name="i">从零开始的列序号。</param>
-        <summary>以布尔值的形式获取指定列的值。</summary>
+        <summary>获取指定列的布尔值形式的值。</summary>
         <returns>列的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -170,7 +173,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetByte">
@@ -197,6 +200,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte</ReturnType>
@@ -209,7 +213,7 @@
         <summary>获取指定列的 8 位无符号整数值。</summary>
         <returns>指定列的 8 位无符号整数值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetBytes">
@@ -236,6 +240,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -267,7 +272,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetChar">
@@ -294,6 +299,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Char</ReturnType>
@@ -306,7 +312,7 @@
         <summary>获取指定列的字符值。</summary>
         <returns>指定列的字符值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetChars">
@@ -333,6 +339,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -364,7 +371,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetData">
@@ -391,6 +398,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDataReader</ReturnType>
@@ -403,7 +411,7 @@
         <summary>返回指定列序号的 <see cref="T:System.Data.IDataReader" />。</summary>
         <returns>指定列序号的 <see cref="T:System.Data.IDataReader" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetDataTypeName">
@@ -430,6 +438,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -449,7 +458,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetDateTime">
@@ -476,6 +485,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
@@ -488,7 +498,7 @@
         <summary>获取指定字段的日期和时间数据值。</summary>
         <returns>指定字段的日期和时间数据值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetDecimal">
@@ -515,6 +525,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Decimal</ReturnType>
@@ -527,7 +538,7 @@
         <summary>获取指定字段的固定位置数值。</summary>
         <returns>指定字段的固定位置数值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetDouble">
@@ -554,6 +565,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -566,7 +578,7 @@
         <summary>获取指定字段的双精度浮点数。</summary>
         <returns>指定字段的双精度浮点数。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetFieldType">
@@ -593,6 +605,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -612,7 +625,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetFloat">
@@ -639,6 +652,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Single</ReturnType>
@@ -651,7 +665,7 @@
         <summary>获取指定字段的单精度浮点数。</summary>
         <returns>指定字段的单精度浮点数。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetGuid">
@@ -678,6 +692,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>
@@ -690,7 +705,7 @@
         <summary>返回指定字段的 GUID 值。</summary>
         <returns>指定字段的 GUID 值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetInt16">
@@ -717,6 +732,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int16</ReturnType>
@@ -729,7 +745,7 @@
         <summary>获取指定字段的 16 位带符号整数值。</summary>
         <returns>指定字段的 16 位带符号整数值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetInt32">
@@ -756,6 +772,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -768,7 +785,7 @@
         <summary>获取指定字段的 32 位带符号整数值。</summary>
         <returns>指定字段的 32 位带符号整数值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetInt64">
@@ -795,6 +812,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -807,7 +825,7 @@
         <summary>获取指定字段的 64 位带符号整数值。</summary>
         <returns>指定字段的 64 位带符号整数值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetName">
@@ -834,6 +852,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -846,7 +865,7 @@
         <summary>获取要查找的字段的名称。</summary>
         <returns>字段的名称，如果没有要返回的值，则为空字符串 ("")。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetOrdinal">
@@ -873,6 +892,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -928,6 +948,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -940,7 +961,7 @@
         <summary>获取指定字段的字符串值。</summary>
         <returns>指定字段的字符串值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetValue">
@@ -967,6 +988,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -979,7 +1001,7 @@
         <summary>返回指定字段的值。</summary>
         <returns>返回时将包含字段值的 <see cref="T:System.Object" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetValues">
@@ -1006,6 +1028,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1016,7 +1039,7 @@
       <Docs>
         <param name="values">要将属性字段复制到其中的 <see cref="T:System.Object" /> 数组。</param>
         <summary>使用当前记录的列值填充对象的数组。</summary>
-        <returns>数组中的 <see cref="T:System.Object" /> 实例数。</returns>
+        <returns>数组中 <see cref="T:System.Object" /> 的实例的数目。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1053,6 +1076,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1072,7 +1096,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Item">
@@ -1109,6 +1133,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1121,7 +1146,7 @@
         <summary>获取位于指定索引处的列。</summary>
         <value>位于作为 <see cref="T:System.Object" /> 指定索引处的列。</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IndexOutOfRangeException">传递的索引超出了 0 到 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">传递的索引位于 0 至 <see cref="P:System.Data.IDataRecord.FieldCount" /> 的范围之外。</exception>
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -1148,6 +1173,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
