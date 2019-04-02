@@ -1,5 +1,5 @@
 <Type Name="ObjectDisposedException" FullName="System.ObjectDisposedException">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4e8c5719504555d24af5113a93d97cc4ed220d06" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57922117" /></Metadata><TypeSignature Language="C#" Value="public class ObjectDisposedException : InvalidOperationException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2bfe09a3abef6130146772edb4c110b831c838e7" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58704318" /></Metadata><TypeSignature Language="C#" Value="public class ObjectDisposedException : InvalidOperationException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ObjectDisposedException extends System.InvalidOperationException" />
   <TypeSignature Language="DocId" Value="T:System.ObjectDisposedException" />
   <TypeSignature Language="VB.NET" Value="Public Class ObjectDisposedException&#xA;Inherits InvalidOperationException" />
@@ -24,6 +24,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.InvalidOperationException</BaseTypeName>
@@ -38,34 +39,34 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary><span data-ttu-id="eeb22-101">对已释放的对象执行操作时所引发的异常。</span><span class="sxs-lookup"><span data-stu-id="eeb22-101">The exception that is thrown when an operation is performed on a disposed object.</span></span></summary>
+    <summary><span data-ttu-id="16c53-101">对已释放的对象执行操作时所引发的异常。</span><span class="sxs-lookup"><span data-stu-id="16c53-101">The exception that is thrown when an operation is performed on a disposed object.</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="eeb22-102"><xref:System.ObjectDisposedException>当你尝试访问的成员的实现的对象时引发<xref:System.IDisposable>接口，并且该对象已被释放。</span><span class="sxs-lookup"><span data-stu-id="eeb22-102">An <xref:System.ObjectDisposedException> is thrown when you try to access a member of an object that implements the <xref:System.IDisposable> interface, and that object has been disposed.</span></span> <span data-ttu-id="eeb22-103">通常情况下，此异常由下列条件之一引起：</span><span class="sxs-lookup"><span data-stu-id="eeb22-103">Typically, this exception is caused by one of the following conditions:</span></span>  
+ <span data-ttu-id="16c53-102"><xref:System.ObjectDisposedException>当你尝试访问的成员的实现的对象时引发<xref:System.IDisposable>接口，并且该对象已被释放。</span><span class="sxs-lookup"><span data-stu-id="16c53-102">An <xref:System.ObjectDisposedException> is thrown when you try to access a member of an object that implements the <xref:System.IDisposable> interface, and that object has been disposed.</span></span> <span data-ttu-id="16c53-103">通常情况下，此异常由下列条件之一引起：</span><span class="sxs-lookup"><span data-stu-id="16c53-103">Typically, this exception is caused by one of the following conditions:</span></span>  
   
--   <span data-ttu-id="eeb22-104">调用对象的`Dispose`方法，并且你正在尝试访问实例成员，可获取或设置对象的状态。</span><span class="sxs-lookup"><span data-stu-id="eeb22-104">You've called an object's `Dispose` method, and you're trying to access an instance member that gets or sets the object's state.</span></span> <span data-ttu-id="eeb22-105">下面的示例阐释<xref:System.ObjectDisposedException>时尝试重置计时器通知的频率调用后引发<xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType>方法。</span><span class="sxs-lookup"><span data-stu-id="eeb22-105">The following example illustrates the <xref:System.ObjectDisposedException> that is thrown when you try to reset the frequency of timer notifications after you call the <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType> method.</span></span>  
+-   <span data-ttu-id="16c53-104">调用对象的`Dispose`方法，并且你正在尝试访问实例成员，可获取或设置对象的状态。</span><span class="sxs-lookup"><span data-stu-id="16c53-104">You've called an object's `Dispose` method, and you're trying to access an instance member that gets or sets the object's state.</span></span> <span data-ttu-id="16c53-105">下面的示例阐释<xref:System.ObjectDisposedException>时尝试重置计时器通知的频率调用后引发<xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType>方法。</span><span class="sxs-lookup"><span data-stu-id="16c53-105">The following example illustrates the <xref:System.ObjectDisposedException> that is thrown when you try to reset the frequency of timer notifications after you call the <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType> method.</span></span>  
   
      [!code-csharp[System.ObjectDisposedException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.objectdisposedexception/cs/dispose1.cs#1)]
      [!code-vb[System.ObjectDisposedException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.objectdisposedexception/vb/dispose1.vb#1)]  
   
--   <span data-ttu-id="eeb22-106">调用对象的`Close`方法，并且你正在尝试访问实例成员，可获取或设置对象的状态。</span><span class="sxs-lookup"><span data-stu-id="eeb22-106">You've called an object's `Close` method, and you're trying to access an instance member that gets or sets the object's state.</span></span> <span data-ttu-id="eeb22-107">通常情况下，`Close`方法提供类型的公共实现<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>方法。</span><span class="sxs-lookup"><span data-stu-id="eeb22-107">Often, the `Close` method provides a type's public implementation of the <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> method.</span></span>  
+-   <span data-ttu-id="16c53-106">调用对象的`Close`方法，并且你正在尝试访问实例成员，可获取或设置对象的状态。</span><span class="sxs-lookup"><span data-stu-id="16c53-106">You've called an object's `Close` method, and you're trying to access an instance member that gets or sets the object's state.</span></span> <span data-ttu-id="16c53-107">通常情况下，`Close`方法提供类型的公共实现<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>方法。</span><span class="sxs-lookup"><span data-stu-id="16c53-107">Often, the `Close` method provides a type's public implementation of the <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> method.</span></span>  
   
--   <span data-ttu-id="eeb22-108">调用对象的`Dispose`方法多次。</span><span class="sxs-lookup"><span data-stu-id="eeb22-108">You've called an object's `Dispose` method multiple times.</span></span> <span data-ttu-id="eeb22-109">通常情况下，这不会引发异常。</span><span class="sxs-lookup"><span data-stu-id="eeb22-109">Typically, this doesn't throw an exception.</span></span> <span data-ttu-id="eeb22-110">不过，根据某个类型的实现如何<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>，它可能不允许对多个调用`Dispose`。</span><span class="sxs-lookup"><span data-stu-id="eeb22-110">However, depending on how a type implements <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>, it may not allow multiple calls to `Dispose`.</span></span>  
+-   <span data-ttu-id="16c53-108">调用对象的`Dispose`方法多次。</span><span class="sxs-lookup"><span data-stu-id="16c53-108">You've called an object's `Dispose` method multiple times.</span></span> <span data-ttu-id="16c53-109">通常情况下，这不会引发异常。</span><span class="sxs-lookup"><span data-stu-id="16c53-109">Typically, this doesn't throw an exception.</span></span> <span data-ttu-id="16c53-110">不过，根据某个类型的实现如何<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>，它可能不允许对多个调用`Dispose`。</span><span class="sxs-lookup"><span data-stu-id="16c53-110">However, depending on how a type implements <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>, it may not allow multiple calls to `Dispose`.</span></span>  
   
- <span data-ttu-id="eeb22-111">在大多数情况下，此异常会从开发人员错误。</span><span class="sxs-lookup"><span data-stu-id="eeb22-111">In most cases, this exception results from developer error.</span></span> <span data-ttu-id="eeb22-112">而不是处理中的错误`try` / `catch`块中，您应该更正错误，通常呈现该对象。</span><span class="sxs-lookup"><span data-stu-id="eeb22-112">Instead of handling the error in a `try`/`catch` block, you should correct the error, typically by reinstantiating the object.</span></span>  
+ <span data-ttu-id="16c53-111">在大多数情况下，此异常会从开发人员错误。</span><span class="sxs-lookup"><span data-stu-id="16c53-111">In most cases, this exception results from developer error.</span></span> <span data-ttu-id="16c53-112">而不是处理中的错误`try` / `catch`块中，您应该更正错误，通常呈现该对象。</span><span class="sxs-lookup"><span data-stu-id="16c53-112">Instead of handling the error in a `try`/`catch` block, you should correct the error, typically by reinstantiating the object.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="eeb22-113">下面的示例演示了一个错误导致`ObjectDisposedException`引发异常。</span><span class="sxs-lookup"><span data-stu-id="eeb22-113">The following example demonstrates an error that causes the `ObjectDisposedException` exception to be thrown.</span></span>  
+ <span data-ttu-id="16c53-113">下面的示例演示了一个错误导致`ObjectDisposedException`引发异常。</span><span class="sxs-lookup"><span data-stu-id="16c53-113">The following example demonstrates an error that causes the `ObjectDisposedException` exception to be thrown.</span></span>  
   
  [!code-cpp[ObjDispEx#1](~/samples/snippets/cpp/VS_Snippets_CLR/ObjDispEx/CPP/objdispexc.cpp#1)]
  [!code-csharp[ObjDispEx#1](~/samples/snippets/csharp/VS_Snippets_CLR/ObjDispEx/CS/objdispexc.cs#1)]
  [!code-vb[ObjDispEx#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObjDispEx/VB/objdispexc.vb#1)]  
   
- <span data-ttu-id="eeb22-114">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="eeb22-114">This code produces the following output:</span></span>  
+ <span data-ttu-id="16c53-114">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="16c53-114">This code produces the following output:</span></span>  
   
 ```  
 Caught:  
@@ -87,7 +88,7 @@ Caught:
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="eeb22-115">初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="eeb22-115">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class.</span></span></summary>
+        <summary><span data-ttu-id="16c53-115">初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="16c53-115">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName=".ctor">
@@ -117,22 +118,23 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="objectName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="objectName"><span data-ttu-id="eeb22-116">包含已释放对象的名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="eeb22-116">A string containing the name of the disposed object.</span></span></param>
-        <summary><span data-ttu-id="eeb22-117">使用包含已释放对象名称的字符串初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="eeb22-117">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with a string containing the name of the disposed object.</span></span></summary>
+        <param name="objectName"><span data-ttu-id="16c53-116">包含已释放对象的名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="16c53-116">A string containing the name of the disposed object.</span></span></param>
+        <summary><span data-ttu-id="16c53-117">使用包含已释放对象名称的字符串初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="16c53-117">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with a string containing the name of the disposed object.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="eeb22-118"><xref:System.ObjectDisposedException.Message%2A>属性初始化为系统提供的消息，用于描述该错误并包括`objectName`参数。</span><span class="sxs-lookup"><span data-stu-id="eeb22-118">The <xref:System.ObjectDisposedException.Message%2A> property is initialized to a system-supplied message that describes the error and includes the `objectName` parameter.</span></span> <span data-ttu-id="eeb22-119">此消息将当前系统区域性考虑在内。</span><span class="sxs-lookup"><span data-stu-id="eeb22-119">This message takes into account the current system culture.</span></span>  
+ <span data-ttu-id="16c53-118"><xref:System.ObjectDisposedException.Message%2A>属性初始化为系统提供的消息，用于描述该错误并包括`objectName`参数。</span><span class="sxs-lookup"><span data-stu-id="16c53-118">The <xref:System.ObjectDisposedException.Message%2A> property is initialized to a system-supplied message that describes the error and includes the `objectName` parameter.</span></span> <span data-ttu-id="16c53-119">此消息将当前系统区域性考虑在内。</span><span class="sxs-lookup"><span data-stu-id="16c53-119">This message takes into account the current system culture.</span></span>  
   
- <span data-ttu-id="eeb22-120">`InnerException`属性的新实例初始化为`null`。</span><span class="sxs-lookup"><span data-stu-id="eeb22-120">The `InnerException` property of the new instance is initialized to `null`.</span></span>  
+ <span data-ttu-id="16c53-120">`InnerException`属性的新实例初始化为`null`。</span><span class="sxs-lookup"><span data-stu-id="16c53-120">The `InnerException` property of the new instance is initialized to `null`.</span></span>  
   
- <span data-ttu-id="eeb22-121">如果`objectName`是`null`，则`Message`属性包含只有一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-121">If `objectName` is `null`, the `Message` property contains only an error message.</span></span>  
+ <span data-ttu-id="16c53-121">如果`objectName`是`null`，则`Message`属性包含只有一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="16c53-121">If `objectName` is `null`, the `Message` property contains only an error message.</span></span>  
   
  ]]></format>
         </remarks>
@@ -156,6 +158,7 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -168,13 +171,13 @@ Caught:
         </Attribute>
       </Attributes>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="info"><span data-ttu-id="eeb22-122">包含有关所引发异常的序列化对象数据的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</span><span class="sxs-lookup"><span data-stu-id="eeb22-122">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</span></span></param>
-        <param name="context"><span data-ttu-id="eeb22-123"><see cref="T:System.Runtime.Serialization.StreamingContext" />，它包含关于源或目标的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-123">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</span></span></param>
-        <summary><span data-ttu-id="eeb22-124">用序列化数据初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="eeb22-124">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with serialized data.</span></span></summary>
+        <param name="info"><span data-ttu-id="16c53-122">包含有关所引发异常的序列化对象数据的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</span><span class="sxs-lookup"><span data-stu-id="16c53-122">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</span></span></param>
+        <param name="context"><span data-ttu-id="16c53-123"><see cref="T:System.Runtime.Serialization.StreamingContext" />，它包含关于源或目标的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="16c53-123">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</span></span></param>
+        <summary><span data-ttu-id="16c53-124">用序列化数据初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="16c53-124">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with serialized data.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,20 +207,21 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-        <Parameter Name="innerException" Type="System.Exception" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="message" Type="System.String" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="innerException" Type="System.Exception" Index="1" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="message"><span data-ttu-id="eeb22-125">解释异常原因的错误消息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-125">The error message that explains the reason for the exception.</span></span></param>
-        <param name="innerException"><span data-ttu-id="eeb22-126">导致当前异常的异常。</span><span class="sxs-lookup"><span data-stu-id="eeb22-126">The exception that is the cause of the current exception.</span></span> <span data-ttu-id="eeb22-127">如果 <paramref name="innerException" /> 不为 <see langword="null" />，则在处理内部异常的 <see langword="catch" /> 块中引发当前异常。</span><span class="sxs-lookup"><span data-stu-id="eeb22-127">If <paramref name="innerException" /> is not <see langword="null" />, the current exception is raised in a <see langword="catch" /> block that handles the inner exception.</span></span></param>
-        <summary><span data-ttu-id="eeb22-128">使用指定的错误消息和对作为此异常原因的内部异常的引用来初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="eeb22-128">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.</span></span></summary>
+        <param name="message"><span data-ttu-id="16c53-125">解释异常原因的错误消息。</span><span class="sxs-lookup"><span data-stu-id="16c53-125">The error message that explains the reason for the exception.</span></span></param>
+        <param name="innerException"><span data-ttu-id="16c53-126">导致当前异常的异常。</span><span class="sxs-lookup"><span data-stu-id="16c53-126">The exception that is the cause of the current exception.</span></span> <span data-ttu-id="16c53-127">如果 <paramref name="innerException" /> 不为 <see langword="null" />，则在处理内部异常的 <see langword="catch" /> 块中引发当前异常。</span><span class="sxs-lookup"><span data-stu-id="16c53-127">If <paramref name="innerException" /> is not <see langword="null" />, the current exception is raised in a <see langword="catch" /> block that handles the inner exception.</span></span></param>
+        <summary><span data-ttu-id="16c53-128">使用指定的错误消息和对作为此异常原因的内部异常的引用来初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="16c53-128">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="eeb22-129">因前一个异常而直接引发的异常应在 <xref:System.Exception.InnerException%2A> 属性中包含对前一个异常的引用。</span><span class="sxs-lookup"><span data-stu-id="eeb22-129">An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the <xref:System.Exception.InnerException%2A> property.</span></span> <span data-ttu-id="eeb22-130"><xref:System.Exception.InnerException%2A>属性返回传递到构造函数的相同值。</span><span class="sxs-lookup"><span data-stu-id="eeb22-130">The <xref:System.Exception.InnerException%2A> property returns the same value that is passed into the constructor.</span></span>  
+ <span data-ttu-id="16c53-129">因前一个异常而直接引发的异常应在 <xref:System.Exception.InnerException%2A> 属性中包含对前一个异常的引用。</span><span class="sxs-lookup"><span data-stu-id="16c53-129">An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the <xref:System.Exception.InnerException%2A> property.</span></span> <span data-ttu-id="16c53-130"><xref:System.Exception.InnerException%2A>属性返回传递到构造函数的相同值。</span><span class="sxs-lookup"><span data-stu-id="16c53-130">The <xref:System.Exception.InnerException%2A> property returns the same value that is passed into the constructor.</span></span>  
   
  ]]></format>
         </remarks>
@@ -250,22 +254,23 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="objectName" Type="System.String" />
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="objectName"><span data-ttu-id="eeb22-131">已释放的对象名。</span><span class="sxs-lookup"><span data-stu-id="eeb22-131">The name of the disposed object.</span></span></param>
-        <param name="message"><span data-ttu-id="eeb22-132">解释异常原因的错误消息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-132">The error message that explains the reason for the exception.</span></span></param>
-        <summary><span data-ttu-id="eeb22-133">使用指定的对象名称和消息初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="eeb22-133">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with the specified object name and message.</span></span></summary>
+        <param name="objectName"><span data-ttu-id="16c53-131">已释放的对象名。</span><span class="sxs-lookup"><span data-stu-id="16c53-131">The name of the disposed object.</span></span></param>
+        <param name="message"><span data-ttu-id="16c53-132">解释异常原因的错误消息。</span><span class="sxs-lookup"><span data-stu-id="16c53-132">The error message that explains the reason for the exception.</span></span></param>
+        <summary><span data-ttu-id="16c53-133">使用指定的对象名称和消息初始化 <see cref="T:System.ObjectDisposedException" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="16c53-133">Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class with the specified object name and message.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="eeb22-134">`InnerException`属性的新实例初始化为`null`。</span><span class="sxs-lookup"><span data-stu-id="eeb22-134">The `InnerException` property of the new instance is initialized to `null`.</span></span>  
+ <span data-ttu-id="16c53-134">`InnerException`属性的新实例初始化为`null`。</span><span class="sxs-lookup"><span data-stu-id="16c53-134">The `InnerException` property of the new instance is initialized to `null`.</span></span>  
   
- <span data-ttu-id="eeb22-135">如果`objectName`是`null`，则`Message`属性包含只有一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-135">If `objectName` is `null`, the `Message` property contains only an error message.</span></span>  
+ <span data-ttu-id="16c53-135">如果`objectName`是`null`，则`Message`属性包含只有一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="16c53-135">If `objectName` is `null`, the `Message` property contains only an error message.</span></span>  
   
  ]]></format>
         </remarks>
@@ -289,6 +294,7 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -304,16 +310,16 @@ Caught:
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="info"><span data-ttu-id="eeb22-136">包含有关所引发异常的序列化对象数据的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</span><span class="sxs-lookup"><span data-stu-id="eeb22-136">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</span></span></param>
-        <param name="context"><span data-ttu-id="eeb22-137"><see cref="T:System.Runtime.Serialization.StreamingContext" />，它包含关于源或目标的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-137">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</span></span></param>
-        <summary><span data-ttu-id="eeb22-138">使用参数名和附加异常信息检索 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="eeb22-138">Retrieves the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> object with the parameter name and additional exception information.</span></span></summary>
+        <param name="info"><span data-ttu-id="16c53-136">包含有关所引发异常的序列化对象数据的 <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</span><span class="sxs-lookup"><span data-stu-id="16c53-136">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</span></span></param>
+        <param name="context"><span data-ttu-id="16c53-137"><see cref="T:System.Runtime.Serialization.StreamingContext" />，它包含关于源或目标的上下文信息。</span><span class="sxs-lookup"><span data-stu-id="16c53-137">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</span></span></param>
+        <summary><span data-ttu-id="16c53-138">使用参数名和附加异常信息检索 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="16c53-138">Retrieves the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> object with the parameter name and additional exception information.</span></span></summary>
         <remarks>To be added.</remarks>
-        <permission cref="T:System.Security.Permissions.SecurityPermission"><span data-ttu-id="eeb22-139">用于提供序列化服务。</span><span class="sxs-lookup"><span data-stu-id="eeb22-139">for providing serialization services.</span></span> <span data-ttu-id="eeb22-140">关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /> 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></span><span class="sxs-lookup"><span data-stu-id="eeb22-140">Associated enumeration:   <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /> Security action: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></span></span></permission>
-        <permission cref="T:System.Security.SecurityCriticalAttribute"><span data-ttu-id="eeb22-141">直接调用方需要完全信任。</span><span class="sxs-lookup"><span data-stu-id="eeb22-141">requires full trust for the immediate caller.</span></span> <span data-ttu-id="eeb22-142">不能由部分受信任的或透明的代码使用此成员。</span><span class="sxs-lookup"><span data-stu-id="eeb22-142">This member cannot be used by partially trusted or transparent code.</span></span></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission"><span data-ttu-id="16c53-139">用于提供序列化服务。</span><span class="sxs-lookup"><span data-stu-id="16c53-139">for providing serialization services.</span></span> <span data-ttu-id="16c53-140">关联的枚举： <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /> 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></span><span class="sxs-lookup"><span data-stu-id="16c53-140">Associated enumeration:   <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /> Security action: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></span></span></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute"><span data-ttu-id="16c53-141">直接调用方需要完全信任。</span><span class="sxs-lookup"><span data-stu-id="16c53-141">requires full trust for the immediate caller.</span></span> <span data-ttu-id="16c53-142">不能由部分受信任的或透明的代码使用此成员。</span><span class="sxs-lookup"><span data-stu-id="16c53-142">This member cannot be used by partially trusted or transparent code.</span></span></permission>
       </Docs>
     </Member>
     <Member MemberName="Message">
@@ -343,6 +349,7 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -353,15 +360,15 @@ Caught:
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="eeb22-143">获取描述错误的消息。</span><span class="sxs-lookup"><span data-stu-id="eeb22-143">Gets the message that describes the error.</span></span></summary>
-        <value><span data-ttu-id="eeb22-144">描述错误的字符串。</span><span class="sxs-lookup"><span data-stu-id="eeb22-144">A string that describes the error.</span></span></value>
+        <summary><span data-ttu-id="16c53-143">获取描述错误的消息。</span><span class="sxs-lookup"><span data-stu-id="16c53-143">Gets the message that describes the error.</span></span></summary>
+        <value><span data-ttu-id="16c53-144">描述错误的字符串。</span><span class="sxs-lookup"><span data-stu-id="16c53-144">A string that describes the error.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="eeb22-145">如果<xref:System.ObjectDisposedException.ObjectName%2A>属性不是`null`，该消息包含的对象的名称。</span><span class="sxs-lookup"><span data-stu-id="eeb22-145">If the <xref:System.ObjectDisposedException.ObjectName%2A> property is not `null`, the message includes the name of the object.</span></span>  
+ <span data-ttu-id="16c53-145">如果<xref:System.ObjectDisposedException.ObjectName%2A>属性不是`null`，该消息包含的对象的名称。</span><span class="sxs-lookup"><span data-stu-id="16c53-145">If the <xref:System.ObjectDisposedException.ObjectName%2A> property is not `null`, the message includes the name of the object.</span></span>  
   
- <span data-ttu-id="eeb22-146">此属性将替代<xref:System.Exception.Message%2A?displayProperty=nameWithType>。</span><span class="sxs-lookup"><span data-stu-id="eeb22-146">This property overrides <xref:System.Exception.Message%2A?displayProperty=nameWithType>.</span></span>  
+ <span data-ttu-id="16c53-146">此属性将替代<xref:System.Exception.Message%2A?displayProperty=nameWithType>。</span><span class="sxs-lookup"><span data-stu-id="16c53-146">This property overrides <xref:System.Exception.Message%2A?displayProperty=nameWithType>.</span></span>  
   
  ]]></format>
         </remarks>
@@ -394,18 +401,19 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="eeb22-147">获取已释放对象的名称。</span><span class="sxs-lookup"><span data-stu-id="eeb22-147">Gets the name of the disposed object.</span></span></summary>
-        <value><span data-ttu-id="eeb22-148">包含已释放对象的名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="eeb22-148">A string containing the name of the disposed object.</span></span></value>
+        <summary><span data-ttu-id="16c53-147">获取已释放对象的名称。</span><span class="sxs-lookup"><span data-stu-id="16c53-147">Gets the name of the disposed object.</span></span></summary>
+        <value><span data-ttu-id="16c53-148">包含已释放对象的名称的字符串。</span><span class="sxs-lookup"><span data-stu-id="16c53-148">A string containing the name of the disposed object.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="eeb22-149">如果当前的属性不是`null`或<xref:System.String.Empty?displayProperty=nameWithType>，此属性的值包含在返回的字符串<xref:System.ObjectDisposedException.Message%2A>属性。</span><span class="sxs-lookup"><span data-stu-id="eeb22-149">If the current property is not `null` or <xref:System.String.Empty?displayProperty=nameWithType>, the value of this property is included in the string returned by the <xref:System.ObjectDisposedException.Message%2A> property.</span></span>  
+ <span data-ttu-id="16c53-149">如果当前的属性不是`null`或<xref:System.String.Empty?displayProperty=nameWithType>，此属性的值包含在返回的字符串<xref:System.ObjectDisposedException.Message%2A>属性。</span><span class="sxs-lookup"><span data-stu-id="16c53-149">If the current property is not `null` or <xref:System.String.Empty?displayProperty=nameWithType>, the value of this property is included in the string returned by the <xref:System.ObjectDisposedException.Message%2A> property.</span></span>  
   
  ]]></format>
         </remarks>
