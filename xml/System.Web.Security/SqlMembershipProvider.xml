@@ -1,5 +1,5 @@
 <Type Name="SqlMembershipProvider" FullName="System.Web.Security.SqlMembershipProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f3531af812835ca0d70f8073d23d52ef1fee74e7" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55415849" /></Metadata><TypeSignature Language="C#" Value="public class SqlMembershipProvider : System.Web.Security.MembershipProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f63e54742b0373c07e74d5992a27d4378a359712" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58548622" /></Metadata><TypeSignature Language="C#" Value="public class SqlMembershipProvider : System.Web.Security.MembershipProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlMembershipProvider extends System.Web.Security.MembershipProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.SqlMembershipProvider" />
   <TypeSignature Language="VB.NET" Value="Public Class SqlMembershipProvider&#xA;Inherits MembershipProvider" />
@@ -143,7 +143,7 @@
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例并设置<xref:System.Web.Security.SqlMembershipProvider.ApplicationName%2A>到`MyApplication`。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例并设置<xref:System.Web.Security.SqlMembershipProvider.ApplicationName%2A>到`MyApplication`。  
   
 ```  
 <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
@@ -375,7 +375,7 @@
         <param name="email">新用户的电子邮件地址。</param>
         <param name="passwordQuestion">新用户的密码提示问题。</param>
         <param name="passwordAnswer">新用户的密码提示问题答案。</param>
-        <param name="isApproved">是否批准对新的用户进行验证。</param>
+        <param name="isApproved">是否允许验证新用户。</param>
         <param name="providerUserKey">唯一标识 SQL Server 数据库中成员资格用户的 <see cref="T:System.Guid" />。</param>
         <param name="status">一个 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 值，指示是否成功创建用户。</param>
         <summary>向 SQL Server 成员资格数据库添加一个新用户。</summary>
@@ -462,7 +462,7 @@
       </Parameters>
       <Docs>
         <param name="username">要删除的用户的名称。</param>
-        <param name="deleteAllRelatedData">如果要从数据库中删除与用户相关的数据，则为 <see langword="true" />；如果要在数据库中保留与用户相关的数据，则为 <see langword="false" />。</param>
+        <param name="deleteAllRelatedData">如果为 <see langword="true" />，则从数据库中删除与该用户相关的数据；如果为 <see langword="false" />，则将与该用户相关的数据保留在数据库。</param>
         <summary>从 SQL Server 成员资格数据库删除用户的成员资格信息。</summary>
         <returns>如果用户已删除，则为 <see langword="true" />；否则为 <see langword="false" />。 如果数据库中没有此用户，也会返回 <see langword="false" /> 值。</returns>
         <remarks>
@@ -530,7 +530,7 @@
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例并启用密码重置。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例并启用密码重置。  
   
 ```  
 <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
@@ -587,7 +587,7 @@
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例并启用密码检索。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例并启用密码检索。  
   
 ```  
 <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
@@ -703,7 +703,7 @@
         <param name="pageIndex">要返回的结果页的索引。 <paramref name="pageIndex" /> 从零开始。</param>
         <param name="pageSize">要返回的结果页的大小。</param>
         <param name="totalRecords">当此方法返回时，此参数包含匹配用户的总数。</param>
-        <summary>获取成员资格用户的集合，其中用户名包含要匹配的指定用户名。</summary>
+        <summary>获取一个成员资格用户的集合，其中的用户名包含要匹配的指定用户名。</summary>
         <returns>包含一页 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 对象的 <see cref="T:System.Web.Security.MembershipUserCollection" />，这些对象从 <paramref name="pageIndex" /> 指定的页开始。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -867,7 +867,7 @@
       <Parameters />
       <Docs>
         <summary>返回当前访问该应用程序的用户数。</summary>
-        <returns>当前正在访问应用程序的用户数。</returns>
+        <returns>当前访问该应用程序的用户数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -915,7 +915,7 @@
         <Parameter Name="passwordAnswer" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="username">要为其检索密码的用户。</param>
+        <param name="username">为其检索密码的用户。</param>
         <param name="passwordAnswer">用户的密码提示问题答案。</param>
         <summary>从 SQL Server 成员资格数据库返回指定用户名的密码。</summary>
         <returns>指定用户名所对应的密码。</returns>
@@ -1047,7 +1047,7 @@
         <Parameter Name="userIsOnline" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="username">要为其获取信息的用户的名称。</param>
+        <param name="username">要获取其信息的用户名。</param>
         <param name="userIsOnline">设置为 <see langword="true" /> 则更新用户的上次活动日期/时间戳；设置为 <see langword="false" /> 则返回用户信息而不更新用户的上次活动日期/时间戳。</param>
         <summary>从 SQL Server 成员资格数据库返回用户的信息，并提供更新用户的上次活动日期/时间戳的可选功能。</summary>
         <returns>一个 <see cref="T:System.Web.Security.MembershipUser" /> 对象，它表示指定的用户。 如果在数据库中没有找到指定的 <paramref name="username" /> 值所对应的用户，则返回 <see langword="null" />。</returns>
@@ -1190,7 +1190,7 @@
 在应用程序配置中，<see langword="passwordFormat" /> 特性设置为 <see cref="F:System.Web.Security.MembershipPasswordFormat.Hashed" /> 且 <see langword="enablePasswordRetrieval" /> 特性设置为 <see langword="true" />。  
   
 - 或 - 
-<see langword="passwordFormat" /> 特性设置为 <see langword="Encrypted" /> 且 <see href="https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100)">&lt;machineKey&gt;</see> 配置元素为 <see langword="decryptionKey" /> 特性指定了 <see langword="AutoGenerate" />。  
+<see langword="passwordFormat" /> 特性设置为 <see langword="Encrypted" /> 且 <see href="https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100)">&lt;machineKey&gt;</see> 配置元素为 <see langword="decryptionKey" /> 特性指定了 <see langword="AutoGenerate" />。  
   
 - 或 - 
 <see langword="connectionStringName" /> 特性为空或应用程序配置中不存在该特性。  
@@ -1230,8 +1230,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在锁定成员资格用户之前允许的无效密码或密码答案尝试次数。</summary>
-        <value>锁定成员资格用户之前允许的无效密码或密码答案尝试次数。</value>
+        <summary>获取锁定成员资格用户前允许的无效密码或无效密码提示问题答案尝试次数。</summary>
+        <value>锁定成员资格用户之前允许的无效密码或无效密码提示问题答案尝试次数。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1240,14 +1240,14 @@
   
  <xref:System.Web.Security.SqlMembershipProvider>单独保留无效密码尝试次数和无效密码提示问题答案尝试计数。 无效密码尝试结果中仅密码尝试计数器递增。 无效密码提示问题答案尝试仅密码提示问题答案计数器递增。  
   
- <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>在该应用程序配置中设置属性值`maxInvalidPasswordAttempts`的属性[成员身份](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))配置节。  
+ <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts%2A>在该应用程序配置中设置属性值`maxInvalidPasswordAttempts`的属性[成员身份](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))配置节。  
   
  如果<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>属性设置为`false`，不跟踪无效密码提示问题答案尝试次数。  
   
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 它指定应用程序使用的实例<xref:System.Web.Security.SqlMembershipProvider>，并设置`maxInvalidPasswordAttempts`属性为五个的无效尝试和`passwordAttemptWindow`为 30 分钟。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 它指定应用程序使用的实例<xref:System.Web.Security.SqlMembershipProvider>，并设置`maxInvalidPasswordAttempts`属性为五个的无效尝试和`passwordAttemptWindow`为 30 分钟。  
   
 ```  
 <membership defaultProvider="SqlProvider"   
@@ -1350,8 +1350,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取密码所需的最小长度。</summary>
-        <value>密码所需的最小长度。</value>
+        <summary>获取密码所要求的最小长度。</summary>
+        <value>密码所要求的最小长度。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1417,14 +1417,14 @@
   
  <xref:System.Web.Security.SqlMembershipProvider>单独保留的无效密码尝试次数和无效密码提示问题答案尝试计数。 无效密码尝试结果中仅密码尝试计数器递增。 无效密码提示问题答案尝试仅密码提示问题答案计数器递增。  
   
- <xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>在该应用程序配置中设置属性值`passwordAttemptWindow`的属性[成员身份](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))配置节。  
+ <xref:System.Web.Security.Membership.PasswordAttemptWindow%2A>在该应用程序配置中设置属性值`passwordAttemptWindow`的属性[成员身份](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))配置节。  
   
  如果<xref:System.Web.Security.Membership.RequiresQuestionAndAnswer%2A>属性设置为`false`，不跟踪无效密码提示问题答案尝试次数。  
   
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 它指定应用程序使用的实例<xref:System.Web.Security.SqlMembershipProvider>，并设置`maxInvalidPasswordAttempts`属性为五个的无效尝试和`passwordAttemptWindow`为 30 分钟。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 它指定应用程序使用的实例<xref:System.Web.Security.SqlMembershipProvider>，并设置`maxInvalidPasswordAttempts`属性为五个的无效尝试和`passwordAttemptWindow`为 30 分钟。  
   
 ```  
 <membership defaultProvider="SqlProvider"   
@@ -1476,16 +1476,16 @@
 ## Remarks  
  使用`Hashed`仅`Clear`和`Encrypted`是不安全的。 `Hashed` 使用单向哈希算法和随机生成的 salt 值存储在数据库中时，将会经过密码哈希。 密码验证时，它是哈希处理用于验证数据库中的 salt 值。 无法检索哈希的密码。 `Encrypted` 密码不被视为安全，受到破坏，可以显示出您的数据库的内容也可以公开加密密钥。 这意味着无法解密已加密的密码，并将其公开。  
   
- <xref:System.Web.Security.SqlMembershipProvider.PasswordFormat%2A>中指定值[提供程序](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/6d4936ht(v%3dvs.100))的 ASP.NET 应用程序的 Web.config 文件部分。  
+ <xref:System.Web.Security.SqlMembershipProvider.PasswordFormat%2A>中指定值[提供程序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6d4936ht(v%3dvs.100))的 ASP.NET 应用程序的 Web.config 文件部分。  
   
- `Encrypted` 并`Hashed`密码加密或哈希处理的基于信息中提供的默认[machineKey](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100))中你的配置元素。 请注意，如果指定的值`3DES`有关`validation`属性，或如果未不指定任何值，哈希的密码将进行哈希处理使用<xref:System.Security.Cryptography.SHA1>算法。  
+ `Encrypted` 并`Hashed`密码加密或哈希处理的基于信息中提供的默认[machineKey](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100))中你的配置元素。 请注意，如果指定的值`3DES`有关`validation`属性，或如果未不指定任何值，哈希的密码将进行哈希处理使用<xref:System.Security.Cryptography.SHA1>算法。  
   
- 可以使用定义的自定义哈希算法`hashAlgorithmType`的属性[元素 （ASP.NET 设置架构） 的成员身份](https://msdn.microsoft.com/library/b9c1ee8f-33ca-4361-8666-b42a0fe86049)配置元素。 如果选择加密，默认密码加密使用 AES。 您可以通过设置更改加密算法`decryption`的属性[machineKey](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100))配置元素。 如果您正在加密密码，必须提供一个显式值`decryptionKey`中的属性[machineKey](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100))元素。 默认值`AutoGenerate`为`decryptionKey`使用加密密码与 ASP.NET 成员资格时，不支持属性。  
+ 可以使用定义的自定义哈希算法`hashAlgorithmType`的属性[元素 （ASP.NET 设置架构） 的成员身份](https://msdn.microsoft.com/library/b9c1ee8f-33ca-4361-8666-b42a0fe86049)配置元素。 如果选择加密，默认密码加密使用 AES。 您可以通过设置更改加密算法`decryption`的属性[machineKey](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100))配置元素。 如果您正在加密密码，必须提供一个显式值`decryptionKey`中的属性[machineKey](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w8h3skw9(v%3dvs.100))元素。 默认值`AutoGenerate`为`decryptionKey`使用加密密码与 ASP.NET 成员资格时，不支持属性。  
   
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例，并将其密码的格式设置为`Hashed`。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例，并将其密码的格式设置为`Hashed`。  
   
 ```  
 <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
@@ -1607,7 +1607,7 @@
    
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例，并将其配置为需要进行密码重置或检索的密码提示问题答案。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 指定应用程序的<xref:System.Web.Security.SqlMembershipProvider>实例，并将其配置为需要进行密码重置或检索的密码提示问题答案。  
   
 ```  
 <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
@@ -1657,7 +1657,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- 下面的代码示例演示[成员资格](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 它指定<xref:System.Web.Security.SqlMembershipProvider>实例，并将其配置为每个用户名需要唯一电子邮件地址。  
+ 下面的代码示例演示[成员资格](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100))中的元素`system.web`的 ASP.NET 应用程序的 Web.config 文件部分。 它指定<xref:System.Web.Security.SqlMembershipProvider>实例，并将其配置为每个用户名需要唯一电子邮件地址。  
   
 ```  
 <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
@@ -1701,9 +1701,9 @@
         <Parameter Name="passwordAnswer" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="username">要为其重置密码的用户。</param>
+        <param name="username">为其重置密码的用户。</param>
         <param name="passwordAnswer">指定的用户的密码提示问题答案。</param>
-        <summary>将用户密码重置为自动生成的新密码。</summary>
+        <summary>将用户密码重置为一个自动生成的新密码。</summary>
         <returns>指定的用户的新密码。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1784,7 +1784,7 @@
       <Docs>
         <param name="username">要为其清除锁定状态的成员资格用户的用户名。</param>
         <summary>清除用户的锁定状态，以便可以验证该成员资格用户。</summary>
-        <returns>如果成功解除成员资格用户的锁定，则为 <see langword="true" />；否则为 <see langword="false" />。 如果数据库中没有此用户，也会返回 <see langword="false" /> 值。</returns>
+        <returns>如果成功取消成员资格用户的锁定，则为 <see langword="true" />；否则为 <see langword="false" />。 如果数据库中没有此用户，也会返回 <see langword="false" /> 值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="OdbcParameter" FullName="System.Data.Odbc.OdbcParameter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="00395bd9f9aa352d29b62ecf8eca76a427c3279a" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56759309" /></Metadata><TypeSignature Language="C#" Value="public sealed class OdbcParameter : System.Data.Common.DbParameter, ICloneable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0ecaa02dc8754496668938db83ca98b7f4e3ec22" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58558463" /></Metadata><TypeSignature Language="C#" Value="public sealed class OdbcParameter : System.Data.Common.DbParameter, ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcParameter extends System.Data.Common.DbParameter implements class System.Data.IDataParameter, class System.Data.IDbDataParameter, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcParameter" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OdbcParameter&#xA;Inherits DbParameter&#xA;Implements ICloneable" />
@@ -541,7 +541,7 @@ public void CreateOdbcParameter()
         <ReturnType>System.Data.ParameterDirection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示参数是只可输入、只可输出、双向还是存储过程返回值参数。</summary>
+        <summary>获取或设置一个值，该值指示参数是只可输入的参数、只可输出的参数、双向参数还是存储过程返回值参数。</summary>
         <value><see cref="T:System.Data.ParameterDirection" /> 值之一。 默认值为 <see langword="Input" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -622,7 +622,7 @@ public void CreateMyProc(OdbcConnection connection)
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示参数是否接受空值。</summary>
+        <summary>获取或设置一个值，该值指示参数是否接受 null 值。</summary>
         <value>如果接受 null 值，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1014,7 +1014,7 @@ public void CreateOdbcParameter()
 >  不支持此属性将数据传递到数据库强制使用。 若要舍入、 截断，或者将其传递到数据库之前强制数据，请使用<xref:System.Math>的一部分，该类`System`之前将值分配给该参数的命名空间`Value`属性。  
   
 > [!NOTE]
->  随.NET Framework 1.0 版的.NET framework 数据提供程序不会验证`scale`的<xref:System.Decimal>参数值。 这会导致修改的数据源中插入的数据。 如果使用.NET Framework 1.0 版，验证 s`cale` d 的`ecimal`之前设置参数值的值。 使用.NET Framework 1.1 版或更高版本时`scale`值超出了`decimal`参数的小数位数可能仅会被截断规模，如果这是基础 ODBC 驱动程序的行为。  
+>  随.NET Framework 1.0 版的.NET framework 数据提供程序不会验证`scale`的<xref:System.Decimal>参数值。 这会导致修改的数据源中插入的数据。 如果使用.NET Framework 1.0 版，验证`scale`的`decimal`之前设置参数值的值。 使用.NET Framework 1.1 版或更高版本时`scale`值超出了`decimal`参数的小数位数可能仅会被截断规模，如果这是基础 ODBC 驱动程序的行为。  
   
    
   
@@ -1077,7 +1077,7 @@ public void CreateOdbcParameter()
       </ReturnValue>
       <Docs>
         <summary>获取或设置列内数据的最大大小。</summary>
-        <value>列内数据的最大大小。 默认值是从参数值推导出的。</value>
+        <value>列内数据的最大大小。 默认值将根据参数值进行推断。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1339,7 +1339,7 @@ public void CreateOdbcParameter()
       <Parameters />
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="M:System.ICloneable.Clone" />。</summary>
-        <returns>作为此实例副本的新 <see cref="T:System.Object" />。</returns>
+        <returns>新的 <see cref="T:System.Object" /> 对象，是此实例的副本。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
