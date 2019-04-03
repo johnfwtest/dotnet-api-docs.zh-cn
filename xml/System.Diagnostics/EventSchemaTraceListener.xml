@@ -1,5 +1,5 @@
 <Type Name="EventSchemaTraceListener" FullName="System.Diagnostics.EventSchemaTraceListener">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="70b4119f5af2c338bf217e77a7f7bff73dd29a73" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57945099" /></Metadata><TypeSignature Language="C#" Value="public class EventSchemaTraceListener : System.Diagnostics.TextWriterTraceListener" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="881858fedf02b9247230e9939756902bfc548594" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58550897" /></Metadata><TypeSignature Language="C#" Value="public class EventSchemaTraceListener : System.Diagnostics.TextWriterTraceListener" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventSchemaTraceListener extends System.Diagnostics.TextWriterTraceListener" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventSchemaTraceListener" />
   <TypeSignature Language="VB.NET" Value="Public Class EventSchemaTraceListener&#xA;Inherits TextWriterTraceListener" />
@@ -64,7 +64,7 @@
   
  下表介绍的元素和属性的 XML 输出。  
   
-|元素|特性|输出|说明|  
+|元素|特性|Output|说明|  
 |-------------|----------------|------------|-----------|  
 |`CallStack`|无|取决于是否存在<xref:System.Diagnostics.TraceOptions.Callstack>标记中<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>属性。|特殊字符如 > 或 < 使用转义序列替换。 请参阅下一步的表中的转义的字符转换表。|  
 |`Computer`|无|始终存在。|此元素表示的值的<xref:System.Environment.MachineName%2A>属性。|  
@@ -74,7 +74,7 @@
 |`Event`|无|始终存在。|此元素包含一个跟踪事件。|  
 |`EventData`|无|存在事件日志。|此元素表示参数输入 (`message`， `args`)。 它包含`Data`元素与通过调用创建的转义 XML 数据<xref:System.Diagnostics.EventSchemaTraceListener.TraceEvent%2A>方法。|  
 |`EventID`|无|始终存在。|此元素表示参数输入 (`id`)。|  
-|`Execution`|`ProcessID`|取决于是否存在<xref:System.Diagnostics.TraceOptions.ProcessId>标记中<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>属性。|`ProcessID`中指定属性<xref:System.Diagnostics.TraceEventCache>。 在 Microsoft Windows 98 和 Windows 千禧年 Edition 操作系统中，如果`ProcessID`大于 2147483647，它是负数的正值表示形式并应将转换为获取正确的进程标识符。|  
+|`Execution`|`ProcessID`|取决于是否存在<xref:System.Diagnostics.TraceOptions.ProcessId>标记中<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>属性。|`ProcessID`中指定属性<xref:System.Diagnostics.TraceEventCache>。 Microsoft Windows 98 和 Windows Millennium Edition 操作系统中，如果`ProcessID`大于 2147483647，它是负数的正值表示形式并应将转换为获取正确的进程标识符。|  
 ||`ThreadID`|当存在`ProcessID`存在。|`ThreadID`中指定属性<xref:System.Diagnostics.TraceEventCache>。|  
 |`Level`|无|始终存在。|此元素表示参数输入 (的数值`eventType`)。 参数大于 255 的值是输出为级别 8，它表示<xref:System.Diagnostics.TraceEventType.Information?displayProperty=nameWithType>。 跟踪事件类型<xref:System.Diagnostics.TraceEventType.Critical>， <xref:System.Diagnostics.TraceEventType.Error>， <xref:System.Diagnostics.TraceEventType.Warning>， <xref:System.Diagnostics.TraceEventType.Information>，和<xref:System.Diagnostics.TraceEventType.Verbose>分别作为级别 1、 2、 4、 8 和 10 中，为输出。|  
 |`LogicalOperationStack`|无|取决于是否存在<xref:System.Diagnostics.TraceOptions.LogicalOperationStack>标记中<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>属性。|只有一个逻辑操作可以存在。 因此，作为写入值`LogicalOperation`节点下的`LogicalOperationStack`元素。|  
@@ -88,7 +88,7 @@
   
  下表显示 XML 输出中转义的字符。 转义发生在所有元素和特性除外`UserData`元素，它包含用户提供，进行非转义的数据。 `UserData`元素是对的调用结果<xref:System.Diagnostics.EventSchemaTraceListener.TraceData%2A>方法。  
   
-|转义字符|“值”|  
+|转义字符|值|  
 |-----------------------|-----------|  
 |&|&amp;|  
 |\<|&lt;|  
