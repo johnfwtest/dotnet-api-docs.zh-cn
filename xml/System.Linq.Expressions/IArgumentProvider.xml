@@ -1,5 +1,5 @@
 <Type Name="IArgumentProvider" FullName="System.Linq.Expressions.IArgumentProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c1987bffe3d2cba01471534c9b3fac3e0c152c07" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/24/2018" /><Meta Name="ms.locfileid" Value="36555643" /></Metadata><TypeSignature Language="C#" Value="public interface IArgumentProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="18b622ce78fe8295b4aac908d2b2687c5ed1f01f" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58715515" /></Metadata><TypeSignature Language="C#" Value="public interface IArgumentProvider" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IArgumentProvider" />
   <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.IArgumentProvider" />
   <TypeSignature Language="VB.NET" Value="Public Interface IArgumentProvider" />
@@ -20,18 +20,19 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
-    <summary>提供用于访问多个树节点（DynamicExpression、ElementInit、MethodCallExpression、InvocationExpression、NewExpression 和 InexExpression）的参数的内部接口。  不应使用此 API。  它只会由于 DLL 重构而公开并仅用于内部性能优化。  
+    <summary>提供用于访问多个树节点（DynamicExpression、ElementInit、MethodCallExpression、InvocationExpression、NewExpression 和 IndexExpression）的参数的内部接口。  不应使用此 API。  由于 DLL 重构，它只能是公共的；并且仅用于内部性能优化。  
   
-这能够实现两次优化，从而减少了表达式树的大小。  第一次优化可以使树节点保留在 IList &lt;T&gt; 上而不是 ReadOnlyCollection 上。  IList &lt;T&gt; 可节省为每个节点分配 ReadOnlyCollection 的成本。  第二次优化能够创建专用的子类，可保留特定数量的自变量（例如，Block2、Block3、Block4）。  因此，这些节点避免了分配用于存储其元素的 ReadOnlyCollection 和数组，从而为每个节点节省了 32 个字节。  
+这能够实现两次优化，从而减少了表达式树的大小。  第一次优化可以使树节点保留在 IList &lt;T&gt; 上而不是 ReadOnlyCollection 上。  IList &lt;T&gt; 可节省为每个节点分配 ReadOnlyCollection 的成本。  第二次优化能够创建专用的子类，可保留特定数量的参数（例如，Block2、Block3、Block4）。  因此，这些节点避免了分配 ReadOnlyCollection 和数组以存储其元素，从而为每个节点节省了 32 个字节。  
   
 表达式树节点继续公开 ReadOnlyCollections 的原始 LINQ 属性。  这些节点通过重复使用用于存储数组或元素（通常存储在数组中）的字段来执行此操作。  
   
-对于数组用例，集合将类型化为 IList &lt;T&gt;，而不是 ReadOnlyCollection &lt;T&gt;。  当节点在最初构造时它是一个数组。  当编译器访问成员时它会使用此接口。  访问数组元素可以将数组升级到 ReadOnlyCollection。  
+对于数组用例，集合将类型化为 IList &lt;T&gt;，而不是 ReadOnlyCollection &lt;T&gt;。  当最初构造该节点时，它是一个数组。  当编译器访问成员时，它会使用此接口。  访问数组元素可以将数组提升为 ReadOnlyCollection。  
   
-对于对象用例，我们会存储类型化为对象的字段中的第一个参数。  当最初构造该节点时，该字段将持有该表达式。  编译器通过此接口访问参数，第一个参数的访问器使用 Expression.ReturnObject 返回用于处理表达式或 ReadOnlyCollection 用例的对象。  当用户访问 ReadOnlyCollection 时，将更新对象字段以直接保留 ReadOnlyCollection。  
+对于对象用例，我们会将第一个参数存储在类型为对象的字段中。  当最初构造该节点时，该字段将持有该表达式。  编译器通过此接口访问参数，第一个参数的访问器使用 Expression.ReturnObject 返回用于处理表达式或 ReadOnlyCollection 用例的对象。  当用户访问 ReadOnlyCollection 时，将更新对象字段以直接保留 ReadOnlyCollection。  
   
 表达式始终返回相同的 ReadOnlyCollection，这一点很重要。  否则，将中断重写树查看器。  从 LINQ v1 返回不同的 ReadOnlyCollections 形成相同的表达式节点，这是一个重大突破。  当前用户可以依赖对象标识来区分该节点是否已更改。  在重载字段中存储 ReadOnlyCollection 既可减少内存使用量，又可保持公共 API 兼容性。</summary>
     <remarks>To be added.</remarks>
@@ -60,6 +61,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -93,6 +95,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Linq.Expressions.Expression</ReturnType>
