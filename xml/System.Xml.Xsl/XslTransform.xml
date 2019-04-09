@@ -1,5 +1,5 @@
 <Type Name="XslTransform" FullName="System.Xml.Xsl.XslTransform">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4afbddceffc87860ef4d77470b0756b765447efc" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58736745" /></Metadata><TypeSignature Language="C#" Value="public sealed class XslTransform" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="56c2b4ff793499c653610da3b24ae254bfe9e9b3" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58875367" /></Metadata><TypeSignature Language="C#" Value="public sealed class XslTransform" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XslTransform extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.XslTransform" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class XslTransform" />
@@ -85,13 +85,52 @@
   
 -   `msxsl:script`元素必须包括`implements-prefix`属性，其中包含表示与脚本块关联的命名空间的前缀。 此命名空间必须定义的样式表中。 样式表可以包含多个脚本块的命名空间进行分组。 不能具有相同的命名空间内的多个语言的脚本块。 脚本块可以调用在另一个脚本块中定义的函数提供的脚本块驻留在相同的命名空间。 根据规则和脚本语言的语法的脚本块的内容进行解析 (通过提供`language`属性)。 例如，如果你有 C# 脚本块，注释就会通过`//`字符。 注释必须是有效的 XML 内容。  
   
- `Note` 建议将脚本块包装在 CDATA 部分。  
+> [!NOTE]
+> 建议将脚本块包装在 CDATA 部分。
   
-```  
-<msxsl:script implements-prefix='xy' language='C#'>  
-  <![CDATA[  
-  // Add code here.  
-  ]]]></format>
+ [!INCLUDE [xsltransform-script](~/includes/xsltransform-script.md)] 
+   
+ 函数可以在 `msxsl:script` 元素内声明。 下表显示了默认情况下支持的命名空间。  
+  
+|支持的命名空间|描述|  
+|--------------------------|-----------------|  
+|`System`|系统类。|  
+|`System.Collection`|集合类。|  
+|`System.Text`|文本处理类。|  
+|`System.Xml`|核心 XML 类。|  
+|`System.Xml.Xsl`|XSLT 类。|  
+|`System.Xml.XPath`|XML 路径语言 (XPath) 类。|  
+  
+ 提供的自变量和定义的脚本函数的返回值必须是下面列出的 World Wide Web 联合会 (W3C) 类型之一。 下表详细说明了 W3C 类型、 XPath 或 XSLT 之间的映射和相应的.NET Framework 类。  
+  
+|W3C 类型|等效的.NET 类|  
+|--------------|---------------------------|  
+|字符串 (XPath)|`System.String`|  
+|一个布尔值 (XPath)|`System.Boolean`|  
+|数字 (XPath)|`System.Double`|  
+|结果树片段 (XSLT)|`System.Xml.XPath.XPathNavigator`|  
+|节点集 (XPath)|`System.Xml.XPath.XPathNodeIterator`|  
+  
+ 如果脚本函数使用下列数值类型之一：Int16、 UInt16、 Int32、 UInt32、 Int64、 UInt64、 Single 或 Decimal，将这些类型强制转换为 Double，映射为 W3C XPath 类型的数字。  
+  
+ 将引发异常时，调用的函数不能将参数结果转换为所需的类型之一。  
+  
+> [!NOTE]
+>  `msxsl:script` 并`msxsl:node-list`是中的唯一函数`urn:schemas-microsoft-com:xslt`命名空间支持的<xref:System.Xml.Xsl.XslTransform>类。  
+  
+ <xref:System.Xml.Xsl.XslTransform> 能够利用公共语言运行时 (CLR) 代码，作为一种扩展机制。 这通过传递到类的实例实现<xref:System.Xml.Xsl.XslTransform>类并调用它 XSLT 样式表中的公共方法。 使用定义的方法`params`关键字，它允许未指定要传递的参数数量，在此方案中无法正常工作。 请参阅[params](~/docs/csharp/language-reference/keywords/params.md)的更多详细信息。  
+  
+ 有关详细信息请参阅[XslTransform 类的 XSLT 转换](~/docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)。  
+  
+   
+  
+## Examples  
+ 以下示例转换指定的 XML 文档，并将结果输出到控制台。  
+  
+ [!code-csharp[Classic WebData XslTransform Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XslTransform Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XslTransform Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XslTransform Example/VB/source.vb#1)]  
+  
+ ]]></format>
     </remarks>
     <threadsafe><see cref="T:System.Xml.Xsl.XslTransform" /> 对象是用于转换操作的唯一线程安全。 其他操作不保证是线程安全。 您必须确保没有其他方法的调用对象上在加载操作期间。</threadsafe>
   </Docs>

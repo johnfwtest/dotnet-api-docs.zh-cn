@@ -1,5 +1,5 @@
 <Type Name="RijndaelManaged" FullName="System.Security.Cryptography.RijndaelManaged">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c67e7e2d4d514f25de6d9626eec72eee65ab0ac6" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58691427" /></Metadata><TypeSignature Language="C#" Value="public sealed class RijndaelManaged : System.Security.Cryptography.Rijndael" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="abecb72e70d2588c23f96a36567595e2807535c7" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874206" /></Metadata><TypeSignature Language="C#" Value="public sealed class RijndaelManaged : System.Security.Cryptography.Rijndael" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RijndaelManaged extends System.Security.Cryptography.Rijndael" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RijndaelManaged" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RijndaelManaged&#xA;Inherits Rijndael" />
@@ -39,8 +39,8 @@
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
-## Remarks  
- 此算法支持密钥长度为 128、 192 或 256 位;默认值为 256 位。 此算法支持 128、 192 或 256 位; 块的大小默认值为 128 位 (<xref:System.Security.Cryptography.Aes>-兼容)。  
+## Remarks 
+ 此算法支持密钥长度为 128、 192 或 256 位;默认值为 256 位。 在.NET Framework 中，此算法支持 128、 192 或 256 位; 块的大小默认值为 128 位 (<xref:System.Security.Cryptography.Aes>-兼容)。 在.NET Core 中，它等同于 AES，并支持 128 位块大小。 
   
  <xref:System.Security.Cryptography.Rijndael>算法是前置任务的<xref:System.Security.Cryptography.Aes>。 应使用<xref:System.Security.Cryptography.Aes>类而不是<xref:System.Security.Cryptography.RijndaelManaged>。 有关详细信息，请参阅文章[Rijndael 之间的差异和 AES](https://go.microsoft.com/fwlink/?LinkId=200932) .NET 安全性博客中。  
   
@@ -125,9 +125,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置加密操作的块大小（以位为单位）。</summary>
+        <value>块大小，以位为单位的加密操作。 默认值为 128 位。</value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 在.NET Framework 中，Rijndael 的有效的块大小值是 128、 192 和 256 位。 在.NET Core 中的块大小为 Rijndael 只能是 128 位。 请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSize?displayProperty=nameWithType>有关块大小的详细信息。    
+ ]]></format></remarks>
       </Docs>
     </Member>
     <MemberGroup MemberName="CreateDecryptor">
@@ -481,9 +485,13 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置用于对称算法的初始化向量 (IV)。</summary>
+        <value>初始化向量 (IV) 用于对称算法。</value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.IV?displayProperty=nameWithType>有关初始化向量的详细信息。  
+ ]]></format></remarks>
       </Docs>
     </Member>
     <Member MemberName="Key">
@@ -510,9 +518,13 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置用于对称算法的密钥。</summary>
+        <value>用于对称算法密钥。</value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.Key?displayProperty=nameWithType>有关机密密钥的详细信息。  
+ ]]></format></remarks>
       </Docs>
     </Member>
     <Member MemberName="KeySize">
@@ -539,9 +551,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置用于对称算法的密钥大小（以位为单位）。</summary>
+        <value>以位为单位，用于对称算法的密钥大小。 默认值为 256 位。</value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Rijndael 的有效密钥大小是 128、 192 和 256 位。  
+ ]]></format></remarks>
       </Docs>
     </Member>
     <Member MemberName="LegalKeySizes">
@@ -568,9 +584,13 @@
         <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取对称算法支持的密钥大小（以位为单位）。</summary>
+        <value>密钥的大小，以位为单位的对称算法支持。</value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Rijndael 的有效密钥大小是 128、 192 和 256 位。  
+ ]]></format></remarks>
       </Docs>
     </Member>
     <Member MemberName="Mode">
@@ -597,9 +617,13 @@
         <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置对称算法的运算模式。</summary>
+        <value>对称算法的运算模式。 默认值是 <see cref="F:System.Security.Cryptography.CipherMode.CBC" /></value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 请参阅<xref:System.Security.Cryptography.CipherMode>枚举为特定模式的描述。  
+ ]]></format></remarks>
       </Docs>
     </Member>
     <Member MemberName="Padding">
@@ -626,9 +650,13 @@
         <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置对称算法中使用的填充模式。</summary>
+        <value>对称算法中使用的填充模式。 默认值为 <see cref="F:System.Security.Cryptography.PaddingMode.PKCS7" />。</value>
+        <remarks><format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType>填充有关详细信息的属性。  
+ ]]></format></remarks>
       </Docs>
     </Member>
   </Members>

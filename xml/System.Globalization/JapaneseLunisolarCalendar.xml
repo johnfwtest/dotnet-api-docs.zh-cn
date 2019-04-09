@@ -1,5 +1,5 @@
 <Type Name="JapaneseLunisolarCalendar" FullName="System.Globalization.JapaneseLunisolarCalendar">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="34959ab03c9a83dd895877446bb299ad2cca78e2" /><Meta Name="ms.sourcegitcommit" Value="3f21796619d6e69ad383c958cc013ce44c0678de" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/11/2019" /><Meta Name="ms.locfileid" Value="56058150" /></Metadata><TypeSignature Language="C#" Value="public class JapaneseLunisolarCalendar : System.Globalization.EastAsianLunisolarCalendar" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9d3340c6de421bcc6406054670f6b511bc7ad387" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59013737" /></Metadata><TypeSignature Language="C#" Value="public class JapaneseLunisolarCalendar : System.Globalization.EastAsianLunisolarCalendar" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit JapaneseLunisolarCalendar extends System.Globalization.EastAsianLunisolarCalendar" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.JapaneseLunisolarCalendar" />
   <TypeSignature Language="VB.NET" Value="Public Class JapaneseLunisolarCalendar&#xA;Inherits EastAsianLunisolarCalendar" />
@@ -19,6 +19,7 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
@@ -40,21 +41,22 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Globalization.JapaneseLunisolarCalendar>类派生自<xref:System.Globalization.EastAsianLunisolarCalendar>类，该类表示阴阳历。 <xref:System.Globalization.EastAsianLunisolarCalendar>类支持甲子年循环 （重复每隔 60 年） 除了 solar 年和阴历月。 在日历中每个太阳年甲子年、 天干，与地支，相关，而这些日历可以有一年中的任何月份之后的闰月。  
+ <xref:System.Globalization.JapaneseLunisolarCalendar>类派生自<xref:System.Globalization.EastAsianLunisolarCalendar>类，该类表示阴阳历。 <xref:System.Globalization.EastAsianLunisolarCalendar>类支持甲子年循环 （重复每隔 60 年） 除了 solar 年和阴历月。 在日历中每个太阳年甲子年、 天干，与地支，相关，而这些日历可以有一年中的任何月份之后的闰月。 <xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>方法返回一个数字，介于 1 到 13，该值指示指定日期与关联的月份之间。 如果，在一年的第八个和第九个月之间存在闰月<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>方法的第八个月内，闰第 8 个月的 9 和 10 中的第九个月返回 8。   
   
 > [!NOTE]
->  有关使用信息<xref:System.Globalization.JapaneseLunisolarCalendar>类和其他日历.NET Framework 中的类，请参阅[使用日历](~/docs/standard/datetime/working-with-calendars.md)。  
+>  有关使用信息<xref:System.Globalization.JapaneseLunisolarCalendar>类和其他日历.NET 类库中的类，请参阅[使用日历](~/docs/standard/datetime/working-with-calendars.md)。  
   
- 例如，<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>方法返回一个数字，介于 1 到 13，该值指示指定日期与关联的月份之间。 如果，在一年的第八个和第九个月之间存在闰月<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>方法的第八个月内，闰第 8 个月的 9 和 10 中的第九个月返回 8。  
-
-`JapaneseLuniSolarCalendar`类识别为每个皇帝 reign 一个纪元。 当前纪元是日本平成 12 时代，开始的公历 1989 年。 纪元名称通常显示年份。 例如，公历 2001 年为日语日历年平成 13。 请注意，第一年的某个时间段称为"元年。" 因此，公历 1989 年是日语日历平成元年。  
+`JapaneseLuniSolarCalendar`类识别为每个皇帝 reign 一个纪元。 例如，两个最新纪元为平成时代，公历 1989 年，从开始和 Reiwa 时代，从开始公历 2019 年。 纪元名称通常显示年份。 例如，公历 2001 年为日语日历年平成 13。 请注意，第一年的某个时间段称为"元年。" 因此，公历 1989 年是日语日历平成元年。  
 
 [!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
+与不同<xref:System.Globalization.JapaneseCalendar>类，`JapaneseLunisolarCalendar`类不支持的明治和 Taisho 纪元的范围中的日期。
 
  此类将分配数字到纪元，如下所示：  
   
 |GetEra 值|纪元名称|纪元的缩写|公历日期|  
 |------------------|--------------|----------------------|---------------------|  
+|5|令和 (Reiwa)|令和 （R，r）|1，2019 年 5 提供|
 |4|平成 (日本平成 12)|平 (H，h)|年 1 月 8 日 1989 1989年提供|  
 |3|昭和 (Showa)|昭 （S，s）|1926 年 12 月 25日日，到 1989 年 1 月 7日日|  
 |2|大正 (Taisho)|大 （T，t）|1912 年 7 月 30日日到 1926 年 12 月 24日，|  
@@ -92,6 +94,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -120,6 +123,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -167,6 +171,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -186,6 +191,8 @@
  此属性返回的数组中的值是介于 1 和最大的纪元编号的数字。 中的第一个数组元素，返回的最大数纪元和中的最后一个元素返回的最少纪元。  
 
 [!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
+
+虽然<xref:System.Globalization.JapaneseLunisolarCalendar>定义明治和 Taisho 纪元 (纪元 1 和 2，分别)，日历不支持在其范围内的日期。 例如，调用<xref:System.Globalization.JapaneseLunisolarCalendar.GetEra%2A>或<xref:System.Globalization.EastAsianLunisolarCalendar.ToDateTime%2A>那些纪元范围中的日期将引发<xref:System.ArgumentOutOfRangeException>。
 
  <xref:System.Globalization.JapaneseLunisolarCalendar.Eras%2A?displayProperty=nameWithType>属性将返回相同的值<xref:System.Globalization.JapaneseCalendar.Eras%2A?displayProperty=nameWithType>属性。  
   
@@ -215,6 +222,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -257,6 +265,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -306,6 +315,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -343,6 +353,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
