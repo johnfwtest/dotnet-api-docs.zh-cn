@@ -1,9 +1,9 @@
 <Type Name="Rectangle" FullName="System.Drawing.Rectangle">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d5d9bbb017b8d06ffbbb74529b2853e49dbf6110" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57910818" /></Metadata><TypeSignature Language="C#" Value="public struct Rectangle" />
-  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Rectangle extends System.ValueType" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9aaae91eee5d92902f9cf8fd5e26a1c40985c996" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58741831" /></Metadata><TypeSignature Language="C#" Value="public struct Rectangle : IEquatable&lt;System.Drawing.Rectangle&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Rectangle extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Drawing.Rectangle&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Drawing.Rectangle" />
-  <TypeSignature Language="VB.NET" Value="Public Structure Rectangle" />
-  <TypeSignature Language="C++ CLI" Value="public value class Rectangle" />
+  <TypeSignature Language="VB.NET" Value="Public Structure Rectangle&#xA;Implements IEquatable(Of Rectangle)" />
+  <TypeSignature Language="C++ CLI" Value="public value class Rectangle : IEquatable&lt;System::Drawing::Rectangle&gt;" />
   <TypeSignature Language="F#" Value="type Rectangle = struct" />
   <AssemblyInfo>
     <AssemblyName>System.Drawing.Primitives</AssemblyName>
@@ -20,11 +20,16 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ValueType</BaseTypeName>
   </Base>
-  <Interfaces></Interfaces>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Drawing.Rectangle&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Attributes>
     <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.RectangleConverter))</AttributeName>
@@ -37,31 +42,31 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary><span data-ttu-id="b29bc-101">存储一组整数，共四个，表示一个矩形的位置和大小</span><span class="sxs-lookup"><span data-stu-id="b29bc-101">Stores a set of four integers that represent the location and size of a rectangle</span></span></summary>
+    <summary><span data-ttu-id="f87d9-101">存储一组整数，共四个，表示一个矩形的位置和大小</span><span class="sxs-lookup"><span data-stu-id="f87d9-101">Stores a set of four integers that represent the location and size of a rectangle</span></span></summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-102">定义一个矩形及其<xref:System.Drawing.Rectangle.Width%2A>， <xref:System.Drawing.Rectangle.Height%2A>，并由表示的左上角<xref:System.Drawing.Rectangle.Location%2A>属性。</span><span class="sxs-lookup"><span data-stu-id="b29bc-102">A rectangle is defined by its <xref:System.Drawing.Rectangle.Width%2A>, <xref:System.Drawing.Rectangle.Height%2A>, and upper-left corner represented by the <xref:System.Drawing.Rectangle.Location%2A> property.</span></span>  
+ <span data-ttu-id="f87d9-102">定义一个矩形及其<xref:System.Drawing.Rectangle.Width%2A>， <xref:System.Drawing.Rectangle.Height%2A>，并由表示的左上角<xref:System.Drawing.Rectangle.Location%2A>属性。</span><span class="sxs-lookup"><span data-stu-id="f87d9-102">A rectangle is defined by its <xref:System.Drawing.Rectangle.Width%2A>, <xref:System.Drawing.Rectangle.Height%2A>, and upper-left corner represented by the <xref:System.Drawing.Rectangle.Location%2A> property.</span></span>  
   
- <span data-ttu-id="b29bc-103">若要绘制矩形，需要<xref:System.Drawing.Graphics>对象和一个<xref:System.Drawing.Pen>对象。</span><span class="sxs-lookup"><span data-stu-id="b29bc-103">To draw rectangles, you need a <xref:System.Drawing.Graphics> object and a <xref:System.Drawing.Pen> object.</span></span> <span data-ttu-id="b29bc-104"><xref:System.Drawing.Graphics>对象提供<xref:System.Drawing.Graphics.DrawRectangle%2A>方法，和<xref:System.Drawing.Pen>对象将存储的行中，如颜色和宽度的功能。</span><span class="sxs-lookup"><span data-stu-id="b29bc-104">The <xref:System.Drawing.Graphics> object provides the <xref:System.Drawing.Graphics.DrawRectangle%2A> method, and the <xref:System.Drawing.Pen> object stores features of the line, such as color and width.</span></span> <span data-ttu-id="b29bc-105">在绘制矩形的单位由<xref:System.Drawing.Graphics.PageUnit%2A>和<xref:System.Drawing.Graphics.PageScale%2A>用于绘图对象的图形属性。</span><span class="sxs-lookup"><span data-stu-id="b29bc-105">The units the rectangle is drawn in is determined by the <xref:System.Drawing.Graphics.PageUnit%2A> and <xref:System.Drawing.Graphics.PageScale%2A> properties of the graphics object used for drawing.</span></span> <span data-ttu-id="b29bc-106">默认单位为像素。</span><span class="sxs-lookup"><span data-stu-id="b29bc-106">The default unit is pixels.</span></span>  
+ <span data-ttu-id="f87d9-103">若要绘制矩形，需要<xref:System.Drawing.Graphics>对象和一个<xref:System.Drawing.Pen>对象。</span><span class="sxs-lookup"><span data-stu-id="f87d9-103">To draw rectangles, you need a <xref:System.Drawing.Graphics> object and a <xref:System.Drawing.Pen> object.</span></span> <span data-ttu-id="f87d9-104"><xref:System.Drawing.Graphics>对象提供<xref:System.Drawing.Graphics.DrawRectangle%2A>方法，和<xref:System.Drawing.Pen>对象将存储的行中，如颜色和宽度的功能。</span><span class="sxs-lookup"><span data-stu-id="f87d9-104">The <xref:System.Drawing.Graphics> object provides the <xref:System.Drawing.Graphics.DrawRectangle%2A> method, and the <xref:System.Drawing.Pen> object stores features of the line, such as color and width.</span></span> <span data-ttu-id="f87d9-105">在绘制矩形的单位由<xref:System.Drawing.Graphics.PageUnit%2A>和<xref:System.Drawing.Graphics.PageScale%2A>用于绘图对象的图形属性。</span><span class="sxs-lookup"><span data-stu-id="f87d9-105">The units the rectangle is drawn in is determined by the <xref:System.Drawing.Graphics.PageUnit%2A> and <xref:System.Drawing.Graphics.PageScale%2A> properties of the graphics object used for drawing.</span></span> <span data-ttu-id="f87d9-106">默认单位为像素。</span><span class="sxs-lookup"><span data-stu-id="f87d9-106">The default unit is pixels.</span></span>  
   
- <span data-ttu-id="b29bc-107">若要绘制<xref:System.Drawing.Rectangle>用颜色填充，你需要<xref:System.Drawing.Graphics>对象和一个对象派生自<xref:System.Drawing.Brush>如<xref:System.Drawing.SolidBrush>或<xref:System.Drawing.Drawing2D.LinearGradientBrush>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-107">To draw a <xref:System.Drawing.Rectangle> filled with color, you need a <xref:System.Drawing.Graphics> object and an object derived from <xref:System.Drawing.Brush> such as <xref:System.Drawing.SolidBrush> or <xref:System.Drawing.Drawing2D.LinearGradientBrush>.</span></span> <span data-ttu-id="b29bc-108"><xref:System.Drawing.Graphics>对象提供<xref:System.Drawing.Graphics.FillRectangle%2A>方法和<xref:System.Drawing.Brush>对象提供的颜色和填充信息。</span><span class="sxs-lookup"><span data-stu-id="b29bc-108">The <xref:System.Drawing.Graphics> object provides the <xref:System.Drawing.Graphics.FillRectangle%2A> method and the <xref:System.Drawing.Brush> object provides the color and fill information.</span></span>  
+ <span data-ttu-id="f87d9-107">若要绘制<xref:System.Drawing.Rectangle>用颜色填充，你需要<xref:System.Drawing.Graphics>对象和一个对象派生自<xref:System.Drawing.Brush>如<xref:System.Drawing.SolidBrush>或<xref:System.Drawing.Drawing2D.LinearGradientBrush>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-107">To draw a <xref:System.Drawing.Rectangle> filled with color, you need a <xref:System.Drawing.Graphics> object and an object derived from <xref:System.Drawing.Brush> such as <xref:System.Drawing.SolidBrush> or <xref:System.Drawing.Drawing2D.LinearGradientBrush>.</span></span> <span data-ttu-id="f87d9-108"><xref:System.Drawing.Graphics>对象提供<xref:System.Drawing.Graphics.FillRectangle%2A>方法和<xref:System.Drawing.Brush>对象提供的颜色和填充信息。</span><span class="sxs-lookup"><span data-stu-id="f87d9-108">The <xref:System.Drawing.Graphics> object provides the <xref:System.Drawing.Graphics.FillRectangle%2A> method and the <xref:System.Drawing.Brush> object provides the color and fill information.</span></span>  
   
- <span data-ttu-id="b29bc-109">对于更高级的形状，请使用<xref:System.Drawing.Region>对象。</span><span class="sxs-lookup"><span data-stu-id="b29bc-109">For more advanced shapes, use a <xref:System.Drawing.Region> object.</span></span>  
+ <span data-ttu-id="f87d9-109">对于更高级的形状，请使用<xref:System.Drawing.Region>对象。</span><span class="sxs-lookup"><span data-stu-id="f87d9-109">For more advanced shapes, use a <xref:System.Drawing.Region> object.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-110">下面的示例绘制一个具有在其左上角的矩形 （10，10）。</span><span class="sxs-lookup"><span data-stu-id="b29bc-110">The following example draws a rectangle with its upper-left corner at (10, 10).</span></span> <span data-ttu-id="b29bc-111">矩形的宽度为 100，50 的高度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-111">The rectangle has a width of 100 and a height of 50.</span></span> <span data-ttu-id="b29bc-112">第二个参数传递给<xref:System.Drawing.Pen.%23ctor%2A>构造函数指示钢笔的宽度为 5 像素。</span><span class="sxs-lookup"><span data-stu-id="b29bc-112">The second argument passed to the <xref:System.Drawing.Pen.%23ctor%2A> constructor indicates that the pen width is 5 pixels.</span></span>  
+ <span data-ttu-id="f87d9-110">下面的示例绘制一个具有在其左上角的矩形 （10，10）。</span><span class="sxs-lookup"><span data-stu-id="f87d9-110">The following example draws a rectangle with its upper-left corner at (10, 10).</span></span> <span data-ttu-id="f87d9-111">矩形的宽度为 100，50 的高度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-111">The rectangle has a width of 100 and a height of 50.</span></span> <span data-ttu-id="f87d9-112">第二个参数传递给<xref:System.Drawing.Pen.%23ctor%2A>构造函数指示钢笔的宽度为 5 像素。</span><span class="sxs-lookup"><span data-stu-id="f87d9-112">The second argument passed to the <xref:System.Drawing.Pen.%23ctor%2A> constructor indicates that the pen width is 5 pixels.</span></span>  
   
- <span data-ttu-id="b29bc-113">当绘制矩形时，触笔上居中显示矩形的边界。</span><span class="sxs-lookup"><span data-stu-id="b29bc-113">When the rectangle is drawn, the pen is centered on the rectangle's boundary.</span></span> <span data-ttu-id="b29bc-114">矩形的边钢笔的宽度为 5，因为所绘制的 5 个像素宽，因此绘制该 1 像素上边界本身，2 个像素绘制内，和 2 个像素绘制在外部。</span><span class="sxs-lookup"><span data-stu-id="b29bc-114">Because the pen width is 5, the sides of the rectangle are drawn 5 pixels wide, such that 1 pixel is drawn on the boundary itself, 2 pixels are drawn on the inside, and 2 pixels are drawn on the outside.</span></span> <span data-ttu-id="b29bc-115">有关笔对齐方式的更多详细信息，请参阅[如何：设置笔的宽度和对齐方式](~/docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md)。</span><span class="sxs-lookup"><span data-stu-id="b29bc-115">For more details on pen alignment, see [How to: Set Pen Width and Alignment](~/docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md).</span></span>  
+ <span data-ttu-id="f87d9-113">当绘制矩形时，触笔上居中显示矩形的边界。</span><span class="sxs-lookup"><span data-stu-id="f87d9-113">When the rectangle is drawn, the pen is centered on the rectangle's boundary.</span></span> <span data-ttu-id="f87d9-114">矩形的边钢笔的宽度为 5，因为所绘制的 5 个像素宽，因此绘制该 1 像素上边界本身，2 个像素绘制内，和 2 个像素绘制在外部。</span><span class="sxs-lookup"><span data-stu-id="f87d9-114">Because the pen width is 5, the sides of the rectangle are drawn 5 pixels wide, such that 1 pixel is drawn on the boundary itself, 2 pixels are drawn on the inside, and 2 pixels are drawn on the outside.</span></span> <span data-ttu-id="f87d9-115">有关笔对齐方式的更多详细信息，请参阅[如何：设置笔的宽度和对齐方式](~/docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md)。</span><span class="sxs-lookup"><span data-stu-id="f87d9-115">For more details on pen alignment, see [How to: Set Pen Width and Alignment](~/docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md).</span></span>  
   
- <span data-ttu-id="b29bc-116">下图显示了所得矩形的大小。</span><span class="sxs-lookup"><span data-stu-id="b29bc-116">The following illustration shows the resulting rectangle.</span></span> <span data-ttu-id="b29bc-117">点线显示，其中矩形已绘制如果钢笔的宽度必须被一个像素。</span><span class="sxs-lookup"><span data-stu-id="b29bc-117">The dotted lines show where the rectangle would have been drawn if the pen width had been one pixel.</span></span> <span data-ttu-id="b29bc-118">矩形的左上角的放大的视图显示胖黑色线条在这些点线上居中。</span><span class="sxs-lookup"><span data-stu-id="b29bc-118">The enlarged view of the upper-left corner of the rectangle shows that the thick black lines are centered on those dotted lines.</span></span>  
+ <span data-ttu-id="f87d9-116">下图显示了所得矩形的大小。</span><span class="sxs-lookup"><span data-stu-id="f87d9-116">The following illustration shows the resulting rectangle.</span></span> <span data-ttu-id="f87d9-117">点线显示，其中矩形已绘制如果钢笔的宽度必须被一个像素。</span><span class="sxs-lookup"><span data-stu-id="f87d9-117">The dotted lines show where the rectangle would have been drawn if the pen width had been one pixel.</span></span> <span data-ttu-id="f87d9-118">矩形的左上角的放大的视图显示胖黑色线条在这些点线上居中。</span><span class="sxs-lookup"><span data-stu-id="f87d9-118">The enlarged view of the upper-left corner of the rectangle shows that the thick black lines are centered on those dotted lines.</span></span>  
   
- <span data-ttu-id="b29bc-119">![笔](~/add/media/pens1.gif "笔")</span><span class="sxs-lookup"><span data-stu-id="b29bc-119">![Pens](~/add/media/pens1.gif "Pens")</span></span>  
+ <span data-ttu-id="f87d9-119">![笔](~/add/media/pens1.gif "笔")</span><span class="sxs-lookup"><span data-stu-id="f87d9-119">![Pens](~/add/media/pens1.gif "Pens")</span></span>  
   
- <span data-ttu-id="b29bc-120">该示例设计为使用 Windows 窗体，并且它需要<xref:System.Windows.Forms.PaintEventArgs> `e`，这是一个参数的<xref:System.Windows.Forms.Control.Paint>事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="b29bc-120">The example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
+ <span data-ttu-id="f87d9-120">该示例设计为使用 Windows 窗体，并且它需要<xref:System.Windows.Forms.PaintEventArgs> `e`，这是一个参数的<xref:System.Windows.Forms.Control.Paint>事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="f87d9-120">The example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
  [!code-csharp[System.Drawing.UsingAPen#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.UsingAPen#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#21)]  
@@ -77,7 +82,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="b29bc-121">用指定的位置和大小初始化 <see cref="T:System.Drawing.Rectangle" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="b29bc-121">Initializes a new instance of the <see cref="T:System.Drawing.Rectangle" /> class with the specified location and size.</span></span></summary>
+        <summary><span data-ttu-id="f87d9-121">用指定的位置和大小初始化 <see cref="T:System.Drawing.Rectangle" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f87d9-121">Initializes a new instance of the <see cref="T:System.Drawing.Rectangle" /> class with the specified location and size.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName=".ctor">
@@ -102,15 +107,16 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="location" Type="System.Drawing.Point" />
         <Parameter Name="size" Type="System.Drawing.Size" />
       </Parameters>
       <Docs>
-        <param name="location"><span data-ttu-id="b29bc-122"><see cref="T:System.Drawing.Point" />，它表示矩形区域的左上角。</span><span class="sxs-lookup"><span data-stu-id="b29bc-122">A <see cref="T:System.Drawing.Point" /> that represents the upper-left corner of the rectangular region.</span></span></param>
-        <param name="size"><span data-ttu-id="b29bc-123"><see cref="T:System.Drawing.Size" />，它表示矩形区域的宽度和高度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-123">A <see cref="T:System.Drawing.Size" /> that represents the width and height of the rectangular region.</span></span></param>
-        <summary><span data-ttu-id="b29bc-124">用指定的位置和大小初始化 <see cref="T:System.Drawing.Rectangle" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="b29bc-124">Initializes a new instance of the <see cref="T:System.Drawing.Rectangle" /> class with the specified location and size.</span></span></summary>
+        <param name="location"><span data-ttu-id="f87d9-122"><see cref="T:System.Drawing.Point" />，它表示矩形区域的左上角。</span><span class="sxs-lookup"><span data-stu-id="f87d9-122">A <see cref="T:System.Drawing.Point" /> that represents the upper-left corner of the rectangular region.</span></span></param>
+        <param name="size"><span data-ttu-id="f87d9-123"><see cref="T:System.Drawing.Size" />，它表示矩形区域的宽度和高度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-123">A <see cref="T:System.Drawing.Size" /> that represents the width and height of the rectangular region.</span></span></param>
+        <summary><span data-ttu-id="f87d9-124">用指定的位置和大小初始化 <see cref="T:System.Drawing.Rectangle" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f87d9-124">Initializes a new instance of the <see cref="T:System.Drawing.Rectangle" /> class with the specified location and size.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,6 +143,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -150,16 +157,16 @@
         <Parameter Name="height" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="x"><span data-ttu-id="b29bc-125">矩形左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-125">The x-coordinate of the upper-left corner of the rectangle.</span></span></param>
-        <param name="y"><span data-ttu-id="b29bc-126">矩形左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-126">The y-coordinate of the upper-left corner of the rectangle.</span></span></param>
-        <param name="width"><span data-ttu-id="b29bc-127">矩形的宽度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-127">The width of the rectangle.</span></span></param>
-        <param name="height"><span data-ttu-id="b29bc-128">矩形的高度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-128">The height of the rectangle.</span></span></param>
-        <summary><span data-ttu-id="b29bc-129">用指定的位置和大小初始化 <see cref="T:System.Drawing.Rectangle" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="b29bc-129">Initializes a new instance of the <see cref="T:System.Drawing.Rectangle" /> class with the specified location and size.</span></span></summary>
+        <param name="x"><span data-ttu-id="f87d9-125">矩形左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-125">The x-coordinate of the upper-left corner of the rectangle.</span></span></param>
+        <param name="y"><span data-ttu-id="f87d9-126">矩形左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-126">The y-coordinate of the upper-left corner of the rectangle.</span></span></param>
+        <param name="width"><span data-ttu-id="f87d9-127">矩形的宽度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-127">The width of the rectangle.</span></span></param>
+        <param name="height"><span data-ttu-id="f87d9-128">矩形的高度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-128">The height of the rectangle.</span></span></param>
+        <summary><span data-ttu-id="f87d9-129">用指定的位置和大小初始化 <see cref="T:System.Drawing.Rectangle" /> 类的新实例。</span><span class="sxs-lookup"><span data-stu-id="f87d9-129">Initializes a new instance of the <see cref="T:System.Drawing.Rectangle" /> class with the specified location and size.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-130">下面的代码示例演示<xref:System.Drawing.Rectangle.%23ctor%2A>， <xref:System.Drawing.Rectangle.Intersect%2A>， <xref:System.Drawing.Rectangle.IsEmpty%2A>，和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="b29bc-130">The following code example demonstrates the <xref:System.Drawing.Rectangle.%23ctor%2A>, <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A>, and <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="b29bc-131">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-131">This example should be used with a Windows Form.</span></span> <span data-ttu-id="b29bc-132">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-132">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-130">下面的代码示例演示<xref:System.Drawing.Rectangle.%23ctor%2A>， <xref:System.Drawing.Rectangle.Intersect%2A>， <xref:System.Drawing.Rectangle.IsEmpty%2A>，和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="f87d9-130">The following code example demonstrates the <xref:System.Drawing.Rectangle.%23ctor%2A>, <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A>, and <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="f87d9-131">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-131">This example should be used with a Windows Form.</span></span> <span data-ttu-id="f87d9-132">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-132">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#2)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#2)]
@@ -192,9 +199,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -205,13 +213,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-133">获取 y 坐标，该坐标是此 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.Y" /> 与 <see cref="P:System.Drawing.Rectangle.Height" /> 属性值之和。</span><span class="sxs-lookup"><span data-stu-id="b29bc-133">Gets the y-coordinate that is the sum of the <see cref="P:System.Drawing.Rectangle.Y" /> and <see cref="P:System.Drawing.Rectangle.Height" /> property values of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-134">此 <see cref="T:System.Drawing.Rectangle" /> 的 <see cref="P:System.Drawing.Rectangle.Y" /> 与 <see cref="P:System.Drawing.Rectangle.Height" /> 之和的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-134">The y-coordinate that is the sum of <see cref="P:System.Drawing.Rectangle.Y" /> and <see cref="P:System.Drawing.Rectangle.Height" /> of this <see cref="T:System.Drawing.Rectangle" />.</span></span></value>
+        <summary><span data-ttu-id="f87d9-133">获取 y 坐标，该坐标是此 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.Y" /> 与 <see cref="P:System.Drawing.Rectangle.Height" /> 属性值之和。</span><span class="sxs-lookup"><span data-stu-id="f87d9-133">Gets the y-coordinate that is the sum of the <see cref="P:System.Drawing.Rectangle.Y" /> and <see cref="P:System.Drawing.Rectangle.Height" /> property values of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-134">此 <see cref="T:System.Drawing.Rectangle" /> 的 <see cref="P:System.Drawing.Rectangle.Y" /> 与 <see cref="P:System.Drawing.Rectangle.Height" /> 之和的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-134">The y-coordinate that is the sum of <see cref="P:System.Drawing.Rectangle.Y" /> and <see cref="P:System.Drawing.Rectangle.Height" /> of this <see cref="T:System.Drawing.Rectangle" />.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-135">值<xref:System.Drawing.Rectangle.Bottom%2A>属性表示的下边缘的第一个点的 y 坐标<xref:System.Drawing.Rectangle>未包含在<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-135">The value of the <xref:System.Drawing.Rectangle.Bottom%2A> property represents the y-coordinate of the first point at the bottom edge of the <xref:System.Drawing.Rectangle> that is not contained in the <xref:System.Drawing.Rectangle>.</span></span>  
+ <span data-ttu-id="f87d9-135">值<xref:System.Drawing.Rectangle.Bottom%2A>属性表示的下边缘的第一个点的 y 坐标<xref:System.Drawing.Rectangle>未包含在<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-135">The value of the <xref:System.Drawing.Rectangle.Bottom%2A> property represents the y-coordinate of the first point at the bottom edge of the <xref:System.Drawing.Rectangle> that is not contained in the <xref:System.Drawing.Rectangle>.</span></span>  
   
  ]]></format>
         </remarks>
@@ -240,6 +248,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
@@ -248,9 +257,9 @@
         <Parameter Name="value" Type="System.Drawing.RectangleF" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="b29bc-136">要转换的 <see cref="T:System.Drawing.RectangleF" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-136">The <see cref="T:System.Drawing.RectangleF" /> structure to be converted.</span></span></param>
-        <summary><span data-ttu-id="b29bc-137">通过将 <see cref="T:System.Drawing.RectangleF" /> 值舍入到比它大的相邻整数值，将指定的 <see cref="T:System.Drawing.RectangleF" /> 结构转换为 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-137">Converts the specified <see cref="T:System.Drawing.RectangleF" /> structure to a <see cref="T:System.Drawing.Rectangle" /> structure by rounding the <see cref="T:System.Drawing.RectangleF" /> values to the next higher integer values.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-138">返回 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-138">Returns a <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
+        <param name="value"><span data-ttu-id="f87d9-136">要转换的 <see cref="T:System.Drawing.RectangleF" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-136">The <see cref="T:System.Drawing.RectangleF" /> structure to be converted.</span></span></param>
+        <summary><span data-ttu-id="f87d9-137">通过将 <see cref="T:System.Drawing.RectangleF" /> 值舍入到比它大的相邻整数值，将指定的 <see cref="T:System.Drawing.RectangleF" /> 结构转换为 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-137">Converts the specified <see cref="T:System.Drawing.RectangleF" /> structure to a <see cref="T:System.Drawing.Rectangle" /> structure by rounding the <see cref="T:System.Drawing.RectangleF" /> values to the next higher integer values.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-138">返回 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-138">Returns a <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -261,7 +270,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="b29bc-139">确定指定的点是否包含在此 <see cref="T:System.Drawing.Rectangle" /> 定义的矩形区域范围内。</span><span class="sxs-lookup"><span data-stu-id="b29bc-139">Determines if the specified point is contained within the rectangular region defined by this <see cref="T:System.Drawing.Rectangle" />.</span></span></summary>
+        <summary><span data-ttu-id="f87d9-139">确定指定的点是否包含在此 <see cref="T:System.Drawing.Rectangle" /> 定义的矩形区域范围内。</span><span class="sxs-lookup"><span data-stu-id="f87d9-139">Determines if the specified point is contained within the rectangular region defined by this <see cref="T:System.Drawing.Rectangle" />.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Contains">
@@ -287,6 +296,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -295,14 +305,14 @@
         <Parameter Name="pt" Type="System.Drawing.Point" />
       </Parameters>
       <Docs>
-        <param name="pt"><span data-ttu-id="b29bc-140">要测试的 <see cref="T:System.Drawing.Point" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-140">The <see cref="T:System.Drawing.Point" /> to test.</span></span></param>
-        <summary><span data-ttu-id="b29bc-141">确定指定的点是否包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内。</span><span class="sxs-lookup"><span data-stu-id="b29bc-141">Determines if the specified point is contained within this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-142">如果 <paramref name="pt" /> 表示的点包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构中，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-142">This method returns <see langword="true" /> if the point represented by <paramref name="pt" /> is contained within this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise <see langword="false" />.</span></span></returns>
+        <param name="pt"><span data-ttu-id="f87d9-140">要测试的 <see cref="T:System.Drawing.Point" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-140">The <see cref="T:System.Drawing.Point" /> to test.</span></span></param>
+        <summary><span data-ttu-id="f87d9-141">确定指定的点是否包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内。</span><span class="sxs-lookup"><span data-stu-id="f87d9-141">Determines if the specified point is contained within this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-142">如果 <paramref name="pt" /> 表示的点包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构中，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-142">This method returns <see langword="true" /> if the point represented by <paramref name="pt" /> is contained within this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise <see langword="false" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-143">包含矩形必须规范化为此方法以返回准确的结果。</span><span class="sxs-lookup"><span data-stu-id="b29bc-143">The containing rectangle must be normalized for this method to return accurate results.</span></span>  
+ <span data-ttu-id="f87d9-143">包含矩形必须规范化为此方法以返回准确的结果。</span><span class="sxs-lookup"><span data-stu-id="f87d9-143">The containing rectangle must be normalized for this method to return accurate results.</span></span>  
   
  ]]></format>
         </remarks>
@@ -331,6 +341,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -339,19 +350,19 @@
         <Parameter Name="rect" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="rect"><span data-ttu-id="b29bc-144">要测试的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-144">The <see cref="T:System.Drawing.Rectangle" /> to test.</span></span></param>
-        <summary><span data-ttu-id="b29bc-145">确定 <paramref name="rect" /> 表示的矩形区域是否完全包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内。</span><span class="sxs-lookup"><span data-stu-id="b29bc-145">Determines if the rectangular region represented by <paramref name="rect" /> is entirely contained within this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-146">如果 <paramref name="rect" /> 表示的矩形区域完全包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-146">This method returns <see langword="true" /> if the rectangular region represented by <paramref name="rect" /> is entirely contained within this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise <see langword="false" />.</span></span></returns>
+        <param name="rect"><span data-ttu-id="f87d9-144">要测试的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-144">The <see cref="T:System.Drawing.Rectangle" /> to test.</span></span></param>
+        <summary><span data-ttu-id="f87d9-145">确定 <paramref name="rect" /> 表示的矩形区域是否完全包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内。</span><span class="sxs-lookup"><span data-stu-id="f87d9-145">Determines if the rectangular region represented by <paramref name="rect" /> is entirely contained within this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-146">如果 <paramref name="rect" /> 表示的矩形区域完全包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-146">This method returns <see langword="true" /> if the rectangular region represented by <paramref name="rect" /> is entirely contained within this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise <see langword="false" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-147">包含矩形必须规范化为此方法以返回准确的结果。</span><span class="sxs-lookup"><span data-stu-id="b29bc-147">The containing rectangle must be normalized for this method to return accurate results.</span></span>  
+ <span data-ttu-id="f87d9-147">包含矩形必须规范化为此方法以返回准确的结果。</span><span class="sxs-lookup"><span data-stu-id="f87d9-147">The containing rectangle must be normalized for this method to return accurate results.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-148">下面的代码示例演示<xref:System.Drawing.Rectangle.Contains%2A>方法和<xref:System.Drawing.SystemPens>类。</span><span class="sxs-lookup"><span data-stu-id="b29bc-148">The following code example demonstrates the <xref:System.Drawing.Rectangle.Contains%2A> method and the <xref:System.Drawing.SystemPens> class.</span></span> <span data-ttu-id="b29bc-149">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-149">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="b29bc-150">将此代码粘贴到包含名为的按钮的窗体`Button1`，调用`DrawFirstRectangle`从窗体的构造函数或<xref:System.Windows.Forms.Form.Load>方法，并关联`Button1_Click`方法与该按钮<xref:System.Windows.Forms.Control.Click>事件。</span><span class="sxs-lookup"><span data-stu-id="b29bc-150">Paste this code into a form that contains a button named `Button1`, call `DrawFirstRectangle` from the form's constructor or <xref:System.Windows.Forms.Form.Load> method, and associate the `Button1_Click` method with the button's <xref:System.Windows.Forms.Control.Click> event.</span></span>  
+ <span data-ttu-id="f87d9-148">下面的代码示例演示<xref:System.Drawing.Rectangle.Contains%2A>方法和<xref:System.Drawing.SystemPens>类。</span><span class="sxs-lookup"><span data-stu-id="f87d9-148">The following code example demonstrates the <xref:System.Drawing.Rectangle.Contains%2A> method and the <xref:System.Drawing.SystemPens> class.</span></span> <span data-ttu-id="f87d9-149">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-149">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="f87d9-150">将此代码粘贴到包含名为的按钮的窗体`Button1`，调用`DrawFirstRectangle`从窗体的构造函数或<xref:System.Windows.Forms.Form.Load>方法，并关联`Button1_Click`方法与该按钮<xref:System.Windows.Forms.Control.Click>事件。</span><span class="sxs-lookup"><span data-stu-id="f87d9-150">Paste this code into a form that contains a button named `Button1`, call `DrawFirstRectangle` from the form's constructor or <xref:System.Windows.Forms.Form.Load> method, and associate the `Button1_Click` method with the button's <xref:System.Windows.Forms.Control.Click> event.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#3)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#3)]
@@ -384,6 +395,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -393,15 +405,15 @@
         <Parameter Name="y" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="x"><span data-ttu-id="b29bc-151">要测试的点的 X 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-151">The x-coordinate of the point to test.</span></span></param>
-        <param name="y"><span data-ttu-id="b29bc-152">要测试的点的 Y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-152">The y-coordinate of the point to test.</span></span></param>
-        <summary><span data-ttu-id="b29bc-153">确定指定的点是否包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内。</span><span class="sxs-lookup"><span data-stu-id="b29bc-153">Determines if the specified point is contained within this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-154">如果 <paramref name="x" /> 和 <paramref name="y" /> 定义的点包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构中，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-154">This method returns <see langword="true" /> if the point defined by <paramref name="x" /> and <paramref name="y" /> is contained within this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise <see langword="false" />.</span></span></returns>
+        <param name="x"><span data-ttu-id="f87d9-151">要测试的点的 X 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-151">The x-coordinate of the point to test.</span></span></param>
+        <param name="y"><span data-ttu-id="f87d9-152">要测试的点的 Y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-152">The y-coordinate of the point to test.</span></span></param>
+        <summary><span data-ttu-id="f87d9-153">确定指定的点是否包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构内。</span><span class="sxs-lookup"><span data-stu-id="f87d9-153">Determines if the specified point is contained within this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-154">如果 <paramref name="x" /> 和 <paramref name="y" /> 定义的点包含在此 <see cref="T:System.Drawing.Rectangle" /> 结构中，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-154">This method returns <see langword="true" /> if the point defined by <paramref name="x" /> and <paramref name="y" /> is contained within this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise <see langword="false" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-155">包含矩形必须规范化为此方法以返回准确的结果。</span><span class="sxs-lookup"><span data-stu-id="b29bc-155">The containing rectangle must be normalized for this method to return accurate results.</span></span>  
+ <span data-ttu-id="f87d9-155">包含矩形必须规范化为此方法以返回准确的结果。</span><span class="sxs-lookup"><span data-stu-id="f87d9-155">The containing rectangle must be normalized for this method to return accurate results.</span></span>  
   
  ]]></format>
         </remarks>
@@ -430,17 +442,18 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-156">表示其属性未被初始化的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-156">Represents a <see cref="T:System.Drawing.Rectangle" /> structure with its properties left uninitialized.</span></span></summary>
+        <summary><span data-ttu-id="f87d9-156">表示其属性未被初始化的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-156">Represents a <see cref="T:System.Drawing.Rectangle" /> structure with its properties left uninitialized.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-157">由其宽度、 高度和左上角定义一个矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-157">A rectangle is defined by its width, height and upper-left corner.</span></span>  
+ <span data-ttu-id="f87d9-157">由其宽度、 高度和左上角定义一个矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-157">A rectangle is defined by its width, height and upper-left corner.</span></span>  
   
  ]]></format>
         </remarks>
@@ -464,6 +477,7 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -472,7 +486,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="other" Type="System.Drawing.Rectangle" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="other" Type="System.Drawing.Rectangle" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
         <param name="other">To be added.</param>
@@ -504,6 +518,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -512,9 +527,9 @@
         <Parameter Name="obj" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="obj"><span data-ttu-id="b29bc-158">要测试的 <see cref="T:System.Object" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-158">The <see cref="T:System.Object" /> to test.</span></span></param>
-        <summary><span data-ttu-id="b29bc-159">测试 <paramref name="obj" /> 是否为与此 <see cref="T:System.Drawing.Rectangle" /> 结构具有相同位置和大小的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-159">Tests whether <paramref name="obj" /> is a <see cref="T:System.Drawing.Rectangle" /> structure with the same location and size of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-160">如果 <see langword="true" /> 是 <paramref name="obj" /> 结构，并且其 <see cref="T:System.Drawing.Rectangle" />、<see cref="P:System.Drawing.Rectangle.X" />、<see cref="P:System.Drawing.Rectangle.Y" /> 和 <see cref="P:System.Drawing.Rectangle.Width" /> 属性与此 <see cref="P:System.Drawing.Rectangle.Height" /> 结构的对应属性相等，此方法将返回 <see cref="T:System.Drawing.Rectangle" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-160">This method returns <see langword="true" /> if <paramref name="obj" /> is a <see cref="T:System.Drawing.Rectangle" /> structure and its <see cref="P:System.Drawing.Rectangle.X" />, <see cref="P:System.Drawing.Rectangle.Y" />, <see cref="P:System.Drawing.Rectangle.Width" />, and <see cref="P:System.Drawing.Rectangle.Height" /> properties are equal to the corresponding properties of this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise, <see langword="false" />.</span></span></returns>
+        <param name="obj"><span data-ttu-id="f87d9-158">要测试的 <see cref="T:System.Object" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-158">The <see cref="T:System.Object" /> to test.</span></span></param>
+        <summary><span data-ttu-id="f87d9-159">测试 <paramref name="obj" /> 是否为与此 <see cref="T:System.Drawing.Rectangle" /> 结构具有相同位置和大小的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-159">Tests whether <paramref name="obj" /> is a <see cref="T:System.Drawing.Rectangle" /> structure with the same location and size of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-160">如果 <see langword="true" /> 是 <paramref name="obj" /> 结构，并且其 <see cref="T:System.Drawing.Rectangle" />、<see cref="P:System.Drawing.Rectangle.X" />、<see cref="P:System.Drawing.Rectangle.Y" /> 和 <see cref="P:System.Drawing.Rectangle.Width" /> 属性与此 <see cref="P:System.Drawing.Rectangle.Height" /> 结构的对应属性相等，此方法将返回 <see cref="T:System.Drawing.Rectangle" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-160">This method returns <see langword="true" /> if <paramref name="obj" /> is a <see cref="T:System.Drawing.Rectangle" /> structure and its <see cref="P:System.Drawing.Rectangle.X" />, <see cref="P:System.Drawing.Rectangle.Y" />, <see cref="P:System.Drawing.Rectangle.Width" />, and <see cref="P:System.Drawing.Rectangle.Height" /> properties are equal to the corresponding properties of this <see cref="T:System.Drawing.Rectangle" /> structure; otherwise, <see langword="false" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -541,6 +556,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -557,22 +573,22 @@
         <Parameter Name="bottom" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="b29bc-161">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-161">The x-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
-        <param name="top"><span data-ttu-id="b29bc-162">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-162">The y-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
-        <param name="right"><span data-ttu-id="b29bc-163">此 <see cref="T:System.Drawing.Rectangle" /> 结构右下角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-163">The x-coordinate of the lower-right corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
-        <param name="bottom"><span data-ttu-id="b29bc-164">此 <see cref="T:System.Drawing.Rectangle" /> 结构右下角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-164">The y-coordinate of the lower-right corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
-        <summary><span data-ttu-id="b29bc-165">创建一个具有指定边缘位置的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-165">Creates a <see cref="T:System.Drawing.Rectangle" /> structure with the specified edge locations.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-166">此方法创建的新 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-166">The new <see cref="T:System.Drawing.Rectangle" /> that this method creates.</span></span></returns>
+        <param name="left"><span data-ttu-id="f87d9-161">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-161">The x-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
+        <param name="top"><span data-ttu-id="f87d9-162">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-162">The y-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
+        <param name="right"><span data-ttu-id="f87d9-163">此 <see cref="T:System.Drawing.Rectangle" /> 结构右下角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-163">The x-coordinate of the lower-right corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
+        <param name="bottom"><span data-ttu-id="f87d9-164">此 <see cref="T:System.Drawing.Rectangle" /> 结构右下角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-164">The y-coordinate of the lower-right corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></param>
+        <summary><span data-ttu-id="f87d9-165">创建一个具有指定边缘位置的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-165">Creates a <see cref="T:System.Drawing.Rectangle" /> structure with the specified edge locations.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-166">此方法创建的新 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-166">The new <see cref="T:System.Drawing.Rectangle" /> that this method creates.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-167">此方法创建<xref:System.Drawing.Rectangle>带有指定的左上角和右下角。</span><span class="sxs-lookup"><span data-stu-id="b29bc-167">This method creates a <xref:System.Drawing.Rectangle> with the specified upper-left and lower-right corners.</span></span>  
+ <span data-ttu-id="f87d9-167">此方法创建<xref:System.Drawing.Rectangle>带有指定的左上角和右下角。</span><span class="sxs-lookup"><span data-stu-id="f87d9-167">This method creates a <xref:System.Drawing.Rectangle> with the specified upper-left and lower-right corners.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-168">下面的代码示例演示如何创建一个矩形使用<xref:System.Drawing.Rectangle.FromLTRB%2A>方法。</span><span class="sxs-lookup"><span data-stu-id="b29bc-168">The following code example demonstrates how to create a rectangle using the <xref:System.Drawing.Rectangle.FromLTRB%2A> method.</span></span> <span data-ttu-id="b29bc-169">此示例旨在与 Windows 窗体一起使用。</span><span class="sxs-lookup"><span data-stu-id="b29bc-169">This example is designed to be used with a Windows Form.</span></span> <span data-ttu-id="b29bc-170">将此代码粘贴到窗体并调用`CreateARectangleFromLTRB`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-170">Paste this code into a form and call the `CreateARectangleFromLTRB` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-168">下面的代码示例演示如何创建一个矩形使用<xref:System.Drawing.Rectangle.FromLTRB%2A>方法。</span><span class="sxs-lookup"><span data-stu-id="f87d9-168">The following code example demonstrates how to create a rectangle using the <xref:System.Drawing.Rectangle.FromLTRB%2A> method.</span></span> <span data-ttu-id="f87d9-169">此示例旨在与 Windows 窗体一起使用。</span><span class="sxs-lookup"><span data-stu-id="f87d9-169">This example is designed to be used with a Windows Form.</span></span> <span data-ttu-id="f87d9-170">将此代码粘贴到窗体并调用`CreateARectangleFromLTRB`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-170">Paste this code into a form and call the `CreateARectangleFromLTRB` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#7)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#7)]
@@ -605,14 +621,15 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="b29bc-171">返回此 <see cref="T:System.Drawing.Rectangle" /> 结构的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b29bc-171">Returns the hash code for this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="b29bc-172">有关如何使用哈希代码的信息，请参见 <see cref="M:System.Object.GetHashCode" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-172">For information about the use of hash codes, see <see cref="M:System.Object.GetHashCode" /> .</span></span></summary>
-        <returns><span data-ttu-id="b29bc-173">一个整数，表示此矩形的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="b29bc-173">An integer that represents the hash code for this rectangle.</span></span></returns>
+        <summary><span data-ttu-id="f87d9-171">返回此 <see cref="T:System.Drawing.Rectangle" /> 结构的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="f87d9-171">Returns the hash code for this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="f87d9-172">有关如何使用哈希代码的信息，请参见 <see cref="M:System.Object.GetHashCode" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-172">For information about the use of hash codes, see <see cref="M:System.Object.GetHashCode" /> .</span></span></summary>
+        <returns><span data-ttu-id="f87d9-173">一个整数，表示此矩形的哈希代码。</span><span class="sxs-lookup"><span data-stu-id="f87d9-173">An integer that represents the hash code for this rectangle.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -639,6 +656,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -652,13 +670,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-174">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构的高度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-174">Gets or sets the height of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-175">此 <see cref="T:System.Drawing.Rectangle" /> 结构的高度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-175">The height of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="b29bc-176">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="b29bc-176">The default is 0.</span></span></value>
+        <summary><span data-ttu-id="f87d9-174">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构的高度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-174">Gets or sets the height of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-175">此 <see cref="T:System.Drawing.Rectangle" /> 结构的高度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-175">The height of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="f87d9-176">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="f87d9-176">The default is 0.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-177">更改<xref:System.Drawing.Rectangle.Height%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Bottom%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-177">Changing the <xref:System.Drawing.Rectangle.Height%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Bottom%2A> property of the <xref:System.Drawing.Rectangle>.</span></span> <span data-ttu-id="b29bc-178">在绘制矩形的单位由<xref:System.Drawing.Graphics.PageUnit%2A>和<xref:System.Drawing.Graphics.PageScale%2A>用于绘图对象的图形属性。</span><span class="sxs-lookup"><span data-stu-id="b29bc-178">The units the rectangle is drawn in is determined by the <xref:System.Drawing.Graphics.PageUnit%2A> and <xref:System.Drawing.Graphics.PageScale%2A> properties of the graphics object used for drawing.</span></span> <span data-ttu-id="b29bc-179">默认单位为像素。</span><span class="sxs-lookup"><span data-stu-id="b29bc-179">The default unit is pixels.</span></span>  
+ <span data-ttu-id="f87d9-177">更改<xref:System.Drawing.Rectangle.Height%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Bottom%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-177">Changing the <xref:System.Drawing.Rectangle.Height%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Bottom%2A> property of the <xref:System.Drawing.Rectangle>.</span></span> <span data-ttu-id="f87d9-178">在绘制矩形的单位由<xref:System.Drawing.Graphics.PageUnit%2A>和<xref:System.Drawing.Graphics.PageScale%2A>用于绘图对象的图形属性。</span><span class="sxs-lookup"><span data-stu-id="f87d9-178">The units the rectangle is drawn in is determined by the <xref:System.Drawing.Graphics.PageUnit%2A> and <xref:System.Drawing.Graphics.PageScale%2A> properties of the graphics object used for drawing.</span></span> <span data-ttu-id="f87d9-179">默认单位为像素。</span><span class="sxs-lookup"><span data-stu-id="f87d9-179">The default unit is pixels.</span></span>  
   
  ]]></format>
         </remarks>
@@ -671,7 +689,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="b29bc-180">将 <see cref="T:System.Drawing.Rectangle" /> 结构放大指定量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-180">Enlarges a <see cref="T:System.Drawing.Rectangle" /> structure by the specified amount.</span></span></summary>
+        <summary><span data-ttu-id="f87d9-180">将 <see cref="T:System.Drawing.Rectangle" /> 结构放大指定量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-180">Enlarges a <see cref="T:System.Drawing.Rectangle" /> structure by the specified amount.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Inflate">
@@ -696,6 +714,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -704,18 +723,18 @@
         <Parameter Name="size" Type="System.Drawing.Size" />
       </Parameters>
       <Docs>
-        <param name="size"><span data-ttu-id="b29bc-181">此矩形的放大量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-181">The amount to inflate this rectangle.</span></span></param>
-        <summary><span data-ttu-id="b29bc-182">将此 <see cref="T:System.Drawing.Rectangle" /> 放大指定量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-182">Enlarges this <see cref="T:System.Drawing.Rectangle" /> by the specified amount.</span></span></summary>
+        <param name="size"><span data-ttu-id="f87d9-181">此矩形的放大量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-181">The amount to inflate this rectangle.</span></span></param>
+        <summary><span data-ttu-id="f87d9-182">将此 <see cref="T:System.Drawing.Rectangle" /> 放大指定量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-182">Enlarges this <see cref="T:System.Drawing.Rectangle" /> by the specified amount.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-183">此方法将放大此矩形，而不是它的副本。</span><span class="sxs-lookup"><span data-stu-id="b29bc-183">This method enlarges this rectangle, not a copy of it.</span></span> <span data-ttu-id="b29bc-184">在这两个方向上沿某个轴被放大矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-184">The rectangle is enlarged in both directions along an axis.</span></span>  <span data-ttu-id="b29bc-185">例如，如果在 x 轴的 50 被放大 50 通过 50 的矩形，所生成的矩形将为 150 个单位 （原始 50、 负方向，50 和 50 个在加号方向） 保持矩形的几何中心。</span><span class="sxs-lookup"><span data-stu-id="b29bc-185">For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.</span></span>  
+ <span data-ttu-id="f87d9-183">此方法将放大此矩形，而不是它的副本。</span><span class="sxs-lookup"><span data-stu-id="f87d9-183">This method enlarges this rectangle, not a copy of it.</span></span> <span data-ttu-id="f87d9-184">在这两个方向上沿某个轴被放大矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-184">The rectangle is enlarged in both directions along an axis.</span></span>  <span data-ttu-id="f87d9-185">例如，如果在 x 轴的 50 被放大 50 通过 50 的矩形，所生成的矩形将为 150 个单位 （原始 50、 负方向，50 和 50 个在加号方向） 保持矩形的几何中心。</span><span class="sxs-lookup"><span data-stu-id="f87d9-185">For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-186">下面的示例设计为使用 Windows 窗体，并且它需要<xref:System.Windows.Forms.PaintEventArgs> `e`，这是一个参数的<xref:System.Windows.Forms.Control.Paint>事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="b29bc-186">The following example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span> <span data-ttu-id="b29bc-187">该代码会创建<xref:System.Drawing.Rectangle>和 50 个单位，这两个轴中将其放大。</span><span class="sxs-lookup"><span data-stu-id="b29bc-187">The code creates a <xref:System.Drawing.Rectangle> and enlarges it by 50 units in both axes.</span></span> <span data-ttu-id="b29bc-188">矩形绘制到屏幕膨胀 （黑色） 之前和之后膨胀 （红色）。</span><span class="sxs-lookup"><span data-stu-id="b29bc-188">The rectangle is drawn to screen before inflation (black) and after inflation (red).</span></span>  
+ <span data-ttu-id="f87d9-186">下面的示例设计为使用 Windows 窗体，并且它需要<xref:System.Windows.Forms.PaintEventArgs> `e`，这是一个参数的<xref:System.Windows.Forms.Control.Paint>事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="f87d9-186">The following example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span> <span data-ttu-id="f87d9-187">该代码会创建<xref:System.Drawing.Rectangle>和 50 个单位，这两个轴中将其放大。</span><span class="sxs-lookup"><span data-stu-id="f87d9-187">The code creates a <xref:System.Drawing.Rectangle> and enlarges it by 50 units in both axes.</span></span> <span data-ttu-id="f87d9-188">矩形绘制到屏幕膨胀 （黑色） 之前和之后膨胀 （红色）。</span><span class="sxs-lookup"><span data-stu-id="f87d9-188">The rectangle is drawn to screen before inflation (black) and after inflation (red).</span></span>  
   
  [!code-cpp[System.Drawing.ClassicRectangleExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRectangleExamples/CPP/form1.cpp#2)]
  [!code-csharp[System.Drawing.ClassicRectangleExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRectangleExamples/CS/form1.cs#2)]
@@ -748,6 +767,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -762,21 +782,21 @@
         <Parameter Name="height" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="width"><span data-ttu-id="b29bc-189">此 <see cref="T:System.Drawing.Rectangle" /> 的水平放大量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-189">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> horizontally.</span></span></param>
-        <param name="height"><span data-ttu-id="b29bc-190">此 <see cref="T:System.Drawing.Rectangle" /> 的垂直放大量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-190">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> vertically.</span></span></param>
-        <summary><span data-ttu-id="b29bc-191">将此 <see cref="T:System.Drawing.Rectangle" /> 放大指定量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-191">Enlarges this <see cref="T:System.Drawing.Rectangle" /> by the specified amount.</span></span></summary>
+        <param name="width"><span data-ttu-id="f87d9-189">此 <see cref="T:System.Drawing.Rectangle" /> 的水平放大量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-189">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> horizontally.</span></span></param>
+        <param name="height"><span data-ttu-id="f87d9-190">此 <see cref="T:System.Drawing.Rectangle" /> 的垂直放大量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-190">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> vertically.</span></span></param>
+        <summary><span data-ttu-id="f87d9-191">将此 <see cref="T:System.Drawing.Rectangle" /> 放大指定量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-191">Enlarges this <see cref="T:System.Drawing.Rectangle" /> by the specified amount.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-192">此方法将放大此矩形，而不是它的副本。</span><span class="sxs-lookup"><span data-stu-id="b29bc-192">This method enlarges this rectangle, not a copy of it.</span></span> <span data-ttu-id="b29bc-193">在这两个方向上沿某个轴被放大矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-193">The rectangle is enlarged in both directions along an axis.</span></span> <span data-ttu-id="b29bc-194">例如，如果在 x 轴的 50 被放大 50 通过 50 的矩形，所生成的矩形将为 150 个单位 （原始 50、 负方向，50 和 50 个在加号方向） 保持矩形的几何中心。</span><span class="sxs-lookup"><span data-stu-id="b29bc-194">For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.</span></span>  
+ <span data-ttu-id="f87d9-192">此方法将放大此矩形，而不是它的副本。</span><span class="sxs-lookup"><span data-stu-id="f87d9-192">This method enlarges this rectangle, not a copy of it.</span></span> <span data-ttu-id="f87d9-193">在这两个方向上沿某个轴被放大矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-193">The rectangle is enlarged in both directions along an axis.</span></span> <span data-ttu-id="f87d9-194">例如，如果在 x 轴的 50 被放大 50 通过 50 的矩形，所生成的矩形将为 150 个单位 （原始 50、 负方向，50 和 50 个在加号方向） 保持矩形的几何中心。</span><span class="sxs-lookup"><span data-stu-id="f87d9-194">For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.</span></span>  
   
- <span data-ttu-id="b29bc-195">如果任一`x`或`y`为负，<xref:System.Drawing.Rectangle>结构伸缩相应的方向。</span><span class="sxs-lookup"><span data-stu-id="b29bc-195">If either `x` or `y` is negative, the <xref:System.Drawing.Rectangle> structure is deflated in the corresponding direction.</span></span>  
+ <span data-ttu-id="f87d9-195">如果任一`x`或`y`为负，<xref:System.Drawing.Rectangle>结构伸缩相应的方向。</span><span class="sxs-lookup"><span data-stu-id="f87d9-195">If either `x` or `y` is negative, the <xref:System.Drawing.Rectangle> structure is deflated in the corresponding direction.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-196">下面的示例创建<xref:System.Drawing.Rectangle>结构并将它放大通过 100 个单位 x 轴方向：</span><span class="sxs-lookup"><span data-stu-id="b29bc-196">The following example creates a <xref:System.Drawing.Rectangle> structure and enlarges it by 100 units in the x-axis direction:</span></span>  
+ <span data-ttu-id="f87d9-196">下面的示例创建<xref:System.Drawing.Rectangle>结构并将它放大通过 100 个单位 x 轴方向：</span><span class="sxs-lookup"><span data-stu-id="f87d9-196">The following example creates a <xref:System.Drawing.Rectangle> structure and enlarges it by 100 units in the x-axis direction:</span></span>  
   
  [!code-cpp[System.Drawing.ClassicRectangleExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRectangleExamples/CPP/form1.cpp#3)]
  [!code-csharp[System.Drawing.ClassicRectangleExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRectangleExamples/CS/form1.cs#3)]
@@ -809,6 +829,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
@@ -819,21 +840,21 @@
         <Parameter Name="y" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="rect"><span data-ttu-id="b29bc-197">要从其开始操作的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-197">The <see cref="T:System.Drawing.Rectangle" /> with which to start.</span></span> <span data-ttu-id="b29bc-198">不修改此矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-198">This rectangle is not modified.</span></span></param>
-        <param name="x"><span data-ttu-id="b29bc-199">此 <see cref="T:System.Drawing.Rectangle" /> 的水平放大量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-199">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> horizontally.</span></span></param>
-        <param name="y"><span data-ttu-id="b29bc-200">此 <see cref="T:System.Drawing.Rectangle" /> 的垂直放大量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-200">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> vertically.</span></span></param>
-        <summary><span data-ttu-id="b29bc-201">创建并返回指定 <see cref="T:System.Drawing.Rectangle" /> 结构的放大副本。</span><span class="sxs-lookup"><span data-stu-id="b29bc-201">Creates and returns an enlarged copy of the specified <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="b29bc-202">该副本被放大指定的量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-202">The copy is enlarged by the specified amount.</span></span> <span data-ttu-id="b29bc-203">不修改原始 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-203">The original <see cref="T:System.Drawing.Rectangle" /> structure remains unmodified.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-204">放大的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-204">The enlarged <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
+        <param name="rect"><span data-ttu-id="f87d9-197">要从其开始操作的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-197">The <see cref="T:System.Drawing.Rectangle" /> with which to start.</span></span> <span data-ttu-id="f87d9-198">不修改此矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-198">This rectangle is not modified.</span></span></param>
+        <param name="x"><span data-ttu-id="f87d9-199">此 <see cref="T:System.Drawing.Rectangle" /> 的水平放大量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-199">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> horizontally.</span></span></param>
+        <param name="y"><span data-ttu-id="f87d9-200">此 <see cref="T:System.Drawing.Rectangle" /> 的垂直放大量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-200">The amount to inflate this <see cref="T:System.Drawing.Rectangle" /> vertically.</span></span></param>
+        <summary><span data-ttu-id="f87d9-201">创建并返回指定 <see cref="T:System.Drawing.Rectangle" /> 结构的放大副本。</span><span class="sxs-lookup"><span data-stu-id="f87d9-201">Creates and returns an enlarged copy of the specified <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="f87d9-202">该副本被放大指定的量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-202">The copy is enlarged by the specified amount.</span></span> <span data-ttu-id="f87d9-203">不修改原始 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-203">The original <see cref="T:System.Drawing.Rectangle" /> structure remains unmodified.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-204">放大的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-204">The enlarged <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-205">此方法创建的副本`rect`、 放大该副本，然后返回放大的副本。</span><span class="sxs-lookup"><span data-stu-id="b29bc-205">This method makes a copy of `rect`, enlarges the copy, and then returns the enlarged copy.</span></span> <span data-ttu-id="b29bc-206">在这两个方向上沿某个轴被放大矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-206">The rectangle is enlarged in both directions along an axis.</span></span> <span data-ttu-id="b29bc-207">例如，如果在 x 轴的 50 被放大 50 通过 50 的矩形，所生成的矩形将为 150 个单位 （原始 50、 负方向，50 和 50 个在加号方向） 保持矩形的几何中心。</span><span class="sxs-lookup"><span data-stu-id="b29bc-207">For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.</span></span>  
+ <span data-ttu-id="f87d9-205">此方法创建的副本`rect`、 放大该副本，然后返回放大的副本。</span><span class="sxs-lookup"><span data-stu-id="f87d9-205">This method makes a copy of `rect`, enlarges the copy, and then returns the enlarged copy.</span></span> <span data-ttu-id="f87d9-206">在这两个方向上沿某个轴被放大矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-206">The rectangle is enlarged in both directions along an axis.</span></span> <span data-ttu-id="f87d9-207">例如，如果在 x 轴的 50 被放大 50 通过 50 的矩形，所生成的矩形将为 150 个单位 （原始 50、 负方向，50 和 50 个在加号方向） 保持矩形的几何中心。</span><span class="sxs-lookup"><span data-stu-id="f87d9-207">For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-208">下面的示例设计为使用 Windows 窗体，并且它需要<xref:System.Windows.Forms.PaintEventArgs> `e`，这是一个参数的<xref:System.Windows.Forms.Control.Paint>事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="b29bc-208">The following example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span> <span data-ttu-id="b29bc-209">该代码会创建<xref:System.Drawing.Rectangle>和 50 个单位，这两个轴中将其放大。</span><span class="sxs-lookup"><span data-stu-id="b29bc-209">The code creates a <xref:System.Drawing.Rectangle> and enlarges it by 50 units in both axes.</span></span> <span data-ttu-id="b29bc-210">请注意所得矩形的大小 （红色） 是在两个轴的 150 个单位。</span><span class="sxs-lookup"><span data-stu-id="b29bc-210">Notice that the resulting rectangle (red) is 150 units in both axes.</span></span>  
+ <span data-ttu-id="f87d9-208">下面的示例设计为使用 Windows 窗体，并且它需要<xref:System.Windows.Forms.PaintEventArgs> `e`，这是一个参数的<xref:System.Windows.Forms.Control.Paint>事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="f87d9-208">The following example is designed for use with Windows Forms, and it requires <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span> <span data-ttu-id="f87d9-209">该代码会创建<xref:System.Drawing.Rectangle>和 50 个单位，这两个轴中将其放大。</span><span class="sxs-lookup"><span data-stu-id="f87d9-209">The code creates a <xref:System.Drawing.Rectangle> and enlarges it by 50 units in both axes.</span></span> <span data-ttu-id="f87d9-210">请注意所得矩形的大小 （红色） 是在两个轴的 150 个单位。</span><span class="sxs-lookup"><span data-stu-id="f87d9-210">Notice that the resulting rectangle (red) is 150 units in both axes.</span></span>  
   
  [!code-cpp[System.Drawing.ClassicRectangleExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRectangleExamples/CPP/form1.cpp#1)]
  [!code-csharp[System.Drawing.ClassicRectangleExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRectangleExamples/CS/form1.cs#1)]
@@ -850,7 +871,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="b29bc-211">确定表示两个矩形交集的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-211">Determines the <see cref="T:System.Drawing.Rectangle" /> structure that represents the intersection of two rectangles.</span></span></summary>
+        <summary><span data-ttu-id="f87d9-211">确定表示两个矩形交集的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-211">Determines the <see cref="T:System.Drawing.Rectangle" /> structure that represents the intersection of two rectangles.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Intersect">
@@ -876,6 +897,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -884,13 +906,13 @@
         <Parameter Name="rect" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="rect"><span data-ttu-id="b29bc-212">用其进行相交操作的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-212">The <see cref="T:System.Drawing.Rectangle" /> with which to intersect.</span></span></param>
-        <summary><span data-ttu-id="b29bc-213">将此 <see cref="T:System.Drawing.Rectangle" /> 替换为其自身与指定 <see cref="T:System.Drawing.Rectangle" /> 的交集。</span><span class="sxs-lookup"><span data-stu-id="b29bc-213">Replaces this <see cref="T:System.Drawing.Rectangle" /> with the intersection of itself and the specified <see cref="T:System.Drawing.Rectangle" />.</span></span></summary>
+        <param name="rect"><span data-ttu-id="f87d9-212">用其进行相交操作的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-212">The <see cref="T:System.Drawing.Rectangle" /> with which to intersect.</span></span></param>
+        <summary><span data-ttu-id="f87d9-213">将此 <see cref="T:System.Drawing.Rectangle" /> 替换为其自身与指定 <see cref="T:System.Drawing.Rectangle" /> 的交集。</span><span class="sxs-lookup"><span data-stu-id="f87d9-213">Replaces this <see cref="T:System.Drawing.Rectangle" /> with the intersection of itself and the specified <see cref="T:System.Drawing.Rectangle" />.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-214">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="b29bc-214">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="b29bc-215">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-215">This example should be used with a Windows Form.</span></span> <span data-ttu-id="b29bc-216">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-216">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-214">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="f87d9-214">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="f87d9-215">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-215">This example should be used with a Windows Form.</span></span> <span data-ttu-id="f87d9-216">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-216">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#2)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#2)]
@@ -923,6 +945,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
@@ -932,15 +955,15 @@
         <Parameter Name="b" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="a"><span data-ttu-id="b29bc-217">要相交的矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-217">A rectangle to intersect.</span></span></param>
-        <param name="b"><span data-ttu-id="b29bc-218">要相交的矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-218">A rectangle to intersect.</span></span></param>
-        <summary><span data-ttu-id="b29bc-219">返回第三个 <see cref="T:System.Drawing.Rectangle" /> 结构，它表示其他两个 <see cref="T:System.Drawing.Rectangle" /> 结构的交集。</span><span class="sxs-lookup"><span data-stu-id="b29bc-219">Returns a third <see cref="T:System.Drawing.Rectangle" /> structure that represents the intersection of two other <see cref="T:System.Drawing.Rectangle" /> structures.</span></span> <span data-ttu-id="b29bc-220">如果没有重叠，将返回空的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-220">If there is no intersection, an empty <see cref="T:System.Drawing.Rectangle" /> is returned.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-221">表示 <see cref="T:System.Drawing.Rectangle" /> 和 <paramref name="a" /> 的交集的 <paramref name="b" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-221">A <see cref="T:System.Drawing.Rectangle" /> that represents the intersection of <paramref name="a" /> and <paramref name="b" />.</span></span></returns>
+        <param name="a"><span data-ttu-id="f87d9-217">要相交的矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-217">A rectangle to intersect.</span></span></param>
+        <param name="b"><span data-ttu-id="f87d9-218">要相交的矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-218">A rectangle to intersect.</span></span></param>
+        <summary><span data-ttu-id="f87d9-219">返回第三个 <see cref="T:System.Drawing.Rectangle" /> 结构，它表示其他两个 <see cref="T:System.Drawing.Rectangle" /> 结构的交集。</span><span class="sxs-lookup"><span data-stu-id="f87d9-219">Returns a third <see cref="T:System.Drawing.Rectangle" /> structure that represents the intersection of two other <see cref="T:System.Drawing.Rectangle" /> structures.</span></span> <span data-ttu-id="f87d9-220">如果没有重叠，将返回空的 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-220">If there is no intersection, an empty <see cref="T:System.Drawing.Rectangle" /> is returned.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-221">表示 <see cref="T:System.Drawing.Rectangle" /> 和 <paramref name="a" /> 的交集的 <paramref name="b" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-221">A <see cref="T:System.Drawing.Rectangle" /> that represents the intersection of <paramref name="a" /> and <paramref name="b" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-222">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="b29bc-222">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="b29bc-223">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-223">This example should be used with a Windows Form.</span></span> <span data-ttu-id="b29bc-224">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-224">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-222">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="f87d9-222">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="f87d9-223">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-223">This example should be used with a Windows Form.</span></span> <span data-ttu-id="f87d9-224">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-224">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#1)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#1)]
@@ -973,6 +996,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -981,14 +1005,14 @@
         <Parameter Name="rect" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="rect"><span data-ttu-id="b29bc-225">要测试的矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-225">The rectangle to test.</span></span></param>
-        <summary><span data-ttu-id="b29bc-226">确定此矩形是否与 <paramref name="rect" /> 相交。</span><span class="sxs-lookup"><span data-stu-id="b29bc-226">Determines if this rectangle intersects with <paramref name="rect" />.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-227">如果有重叠，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-227">This method returns <see langword="true" /> if there is any intersection, otherwise <see langword="false" />.</span></span></returns>
+        <param name="rect"><span data-ttu-id="f87d9-225">要测试的矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-225">The rectangle to test.</span></span></param>
+        <summary><span data-ttu-id="f87d9-226">确定此矩形是否与 <paramref name="rect" /> 相交。</span><span class="sxs-lookup"><span data-stu-id="f87d9-226">Determines if this rectangle intersects with <paramref name="rect" />.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-227">如果有重叠，此方法将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-227">This method returns <see langword="true" /> if there is any intersection, otherwise <see langword="false" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-228">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="b29bc-228">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="b29bc-229">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-229">This example should be used with a Windows Form.</span></span> <span data-ttu-id="b29bc-230">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-230">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-228">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="f87d9-228">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="f87d9-229">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-229">This example should be used with a Windows Form.</span></span> <span data-ttu-id="f87d9-230">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-230">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#2)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#2)]
@@ -1021,9 +1045,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1031,13 +1056,13 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-231">测试此 <see cref="T:System.Drawing.Rectangle" /> 的所有数值属性是否都具有零值。</span><span class="sxs-lookup"><span data-stu-id="b29bc-231">Tests whether all numeric properties of this <see cref="T:System.Drawing.Rectangle" /> have values of zero.</span></span></summary>
-        <value><span data-ttu-id="b29bc-232">如果此 <see langword="true" /> 的 <see cref="P:System.Drawing.Rectangle.Width" />、<see cref="P:System.Drawing.Rectangle.Height" />、<see cref="P:System.Drawing.Rectangle.X" /> 和 <see cref="P:System.Drawing.Rectangle.Y" /> 属性都具有零值，此属性将返回 <see cref="T:System.Drawing.Rectangle" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-232">This property returns <see langword="true" /> if the <see cref="P:System.Drawing.Rectangle.Width" />, <see cref="P:System.Drawing.Rectangle.Height" />, <see cref="P:System.Drawing.Rectangle.X" />, and <see cref="P:System.Drawing.Rectangle.Y" /> properties of this <see cref="T:System.Drawing.Rectangle" /> all have values of zero; otherwise, <see langword="false" />.</span></span></value>
+        <summary><span data-ttu-id="f87d9-231">测试此 <see cref="T:System.Drawing.Rectangle" /> 的所有数值属性是否都具有零值。</span><span class="sxs-lookup"><span data-stu-id="f87d9-231">Tests whether all numeric properties of this <see cref="T:System.Drawing.Rectangle" /> have values of zero.</span></span></summary>
+        <value><span data-ttu-id="f87d9-232">如果此 <see langword="true" /> 的 <see cref="P:System.Drawing.Rectangle.Width" />、<see cref="P:System.Drawing.Rectangle.Height" />、<see cref="P:System.Drawing.Rectangle.X" /> 和 <see cref="P:System.Drawing.Rectangle.Y" /> 属性都具有零值，此属性将返回 <see cref="T:System.Drawing.Rectangle" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-232">This property returns <see langword="true" /> if the <see cref="P:System.Drawing.Rectangle.Width" />, <see cref="P:System.Drawing.Rectangle.Height" />, <see cref="P:System.Drawing.Rectangle.X" />, and <see cref="P:System.Drawing.Rectangle.Y" /> properties of this <see cref="T:System.Drawing.Rectangle" /> all have values of zero; otherwise, <see langword="false" />.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-233">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="b29bc-233">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="b29bc-234">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-234">This example should be used with a Windows Form.</span></span> <span data-ttu-id="b29bc-235">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-235">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-233">下面的代码示例演示<xref:System.Drawing.Rectangle.Intersect%2A>，<xref:System.Drawing.Rectangle.IsEmpty%2A>和<xref:System.Drawing.Rectangle.IntersectsWith%2A>成员。</span><span class="sxs-lookup"><span data-stu-id="f87d9-233">The following code example demonstrates the <xref:System.Drawing.Rectangle.Intersect%2A>, <xref:System.Drawing.Rectangle.IsEmpty%2A> and the <xref:System.Drawing.Rectangle.IntersectsWith%2A> members.</span></span> <span data-ttu-id="f87d9-234">此示例应在 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-234">This example should be used with a Windows Form.</span></span> <span data-ttu-id="f87d9-235">将此代码粘贴到窗体和处理该窗体时调用此方法<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-235">Paste this code into a form and call this method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#2)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#2)]
@@ -1070,9 +1095,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1083,8 +1109,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-236">获取此 <see cref="T:System.Drawing.Rectangle" /> 结构左边缘的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-236">Gets the x-coordinate of the left edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-237">此 <see cref="T:System.Drawing.Rectangle" /> 结构左边缘的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-237">The x-coordinate of the left edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
+        <summary><span data-ttu-id="f87d9-236">获取此 <see cref="T:System.Drawing.Rectangle" /> 结构左边缘的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-236">Gets the x-coordinate of the left edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-237">此 <see cref="T:System.Drawing.Rectangle" /> 结构左边缘的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-237">The x-coordinate of the left edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1111,9 +1137,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -1127,8 +1154,8 @@
         <ReturnType>System.Drawing.Point</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-238">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-238">Gets or sets the coordinates of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-239"><see cref="T:System.Drawing.Point" />，它表示此 <see cref="T:System.Drawing.Rectangle" /> 结构的左上角。</span><span class="sxs-lookup"><span data-stu-id="b29bc-239">A <see cref="T:System.Drawing.Point" /> that represents the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
+        <summary><span data-ttu-id="f87d9-238">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-238">Gets or sets the coordinates of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-239"><see cref="T:System.Drawing.Point" />，它表示此 <see cref="T:System.Drawing.Rectangle" /> 结构的左上角。</span><span class="sxs-lookup"><span data-stu-id="f87d9-239">A <see cref="T:System.Drawing.Point" /> that represents the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1139,7 +1166,7 @@
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary><span data-ttu-id="b29bc-240">将此矩形的位置调整指定的量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-240">Adjusts the location of this rectangle by the specified amount.</span></span></summary>
+        <summary><span data-ttu-id="f87d9-240">将此矩形的位置调整指定的量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-240">Adjusts the location of this rectangle by the specified amount.</span></span></summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Offset">
@@ -1165,6 +1192,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1173,18 +1201,18 @@
         <Parameter Name="pos" Type="System.Drawing.Point" />
       </Parameters>
       <Docs>
-        <param name="pos"><span data-ttu-id="b29bc-241">该位置的偏移量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-241">Amount to offset the location.</span></span></param>
-        <summary><span data-ttu-id="b29bc-242">将此矩形的位置调整指定的量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-242">Adjusts the location of this rectangle by the specified amount.</span></span></summary>
+        <param name="pos"><span data-ttu-id="f87d9-241">该位置的偏移量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-241">Amount to offset the location.</span></span></param>
+        <summary><span data-ttu-id="f87d9-242">将此矩形的位置调整指定的量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-242">Adjusts the location of this rectangle by the specified amount.</span></span></summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-243">此方法通过指定点的 x 坐标和垂直方向的指定点的 y 坐标的水平调整左上角的位置。</span><span class="sxs-lookup"><span data-stu-id="b29bc-243">This method adjusts the location of the upper-left corner horizontally by the x-coordinate of the specified point, and vertically by the y-coordinate of the specified point.</span></span>  
+ <span data-ttu-id="f87d9-243">此方法通过指定点的 x 坐标和垂直方向的指定点的 y 坐标的水平调整左上角的位置。</span><span class="sxs-lookup"><span data-stu-id="f87d9-243">This method adjusts the location of the upper-left corner horizontally by the x-coordinate of the specified point, and vertically by the y-coordinate of the specified point.</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-244">下面的代码示例演示<xref:System.Drawing.Rectangle.Contains%2A>，并<xref:System.Drawing.Rectangle.Offset%2A>方法和<xref:System.Drawing.SystemPens>类。</span><span class="sxs-lookup"><span data-stu-id="b29bc-244">The following code example demonstrates the <xref:System.Drawing.Rectangle.Contains%2A>, and <xref:System.Drawing.Rectangle.Offset%2A> methods and the <xref:System.Drawing.SystemPens> class.</span></span> <span data-ttu-id="b29bc-245">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-245">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="b29bc-246">将此代码粘贴到包含名为的按钮的窗体`Button1`，调用`DrawFirstRectangle`从窗体的构造函数或<xref:System.Windows.Forms.Form.Load>方法，并关联`Button1_Click`方法与该按钮<xref:System.Windows.Forms.Control.Click>事件。</span><span class="sxs-lookup"><span data-stu-id="b29bc-246">Paste this code into a form that contains a button named `Button1`, call `DrawFirstRectangle` from the form's constructor or <xref:System.Windows.Forms.Form.Load> method, and associate the `Button1_Click` method with the button's <xref:System.Windows.Forms.Control.Click> event.</span></span>  
+ <span data-ttu-id="f87d9-244">下面的代码示例演示<xref:System.Drawing.Rectangle.Contains%2A>，并<xref:System.Drawing.Rectangle.Offset%2A>方法和<xref:System.Drawing.SystemPens>类。</span><span class="sxs-lookup"><span data-stu-id="f87d9-244">The following code example demonstrates the <xref:System.Drawing.Rectangle.Contains%2A>, and <xref:System.Drawing.Rectangle.Offset%2A> methods and the <xref:System.Drawing.SystemPens> class.</span></span> <span data-ttu-id="f87d9-245">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-245">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="f87d9-246">将此代码粘贴到包含名为的按钮的窗体`Button1`，调用`DrawFirstRectangle`从窗体的构造函数或<xref:System.Windows.Forms.Form.Load>方法，并关联`Button1_Click`方法与该按钮<xref:System.Windows.Forms.Control.Click>事件。</span><span class="sxs-lookup"><span data-stu-id="f87d9-246">Paste this code into a form that contains a button named `Button1`, call `DrawFirstRectangle` from the form's constructor or <xref:System.Windows.Forms.Form.Load> method, and associate the `Button1_Click` method with the button's <xref:System.Windows.Forms.Control.Click> event.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#3)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#3)]
@@ -1217,6 +1245,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -1231,9 +1260,9 @@
         <Parameter Name="y" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="x"><span data-ttu-id="b29bc-247">水平偏移量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-247">The horizontal offset.</span></span></param>
-        <param name="y"><span data-ttu-id="b29bc-248">垂直偏移量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-248">The vertical offset.</span></span></param>
-        <summary><span data-ttu-id="b29bc-249">将此矩形的位置调整指定的量。</span><span class="sxs-lookup"><span data-stu-id="b29bc-249">Adjusts the location of this rectangle by the specified amount.</span></span></summary>
+        <param name="x"><span data-ttu-id="f87d9-247">水平偏移量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-247">The horizontal offset.</span></span></param>
+        <param name="y"><span data-ttu-id="f87d9-248">垂直偏移量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-248">The vertical offset.</span></span></param>
+        <summary><span data-ttu-id="f87d9-249">将此矩形的位置调整指定的量。</span><span class="sxs-lookup"><span data-stu-id="f87d9-249">Adjusts the location of this rectangle by the specified amount.</span></span></summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1260,6 +1289,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1269,10 +1299,10 @@
         <Parameter Name="right" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="b29bc-250">相等运算符左侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-250">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the left of the equality operator.</span></span></param>
-        <param name="right"><span data-ttu-id="b29bc-251">相等运算符右侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-251">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the right of the equality operator.</span></span></param>
-        <summary><span data-ttu-id="b29bc-252">测试两个 <see cref="T:System.Drawing.Rectangle" /> 结构的位置和大小是否相同。</span><span class="sxs-lookup"><span data-stu-id="b29bc-252">Tests whether two <see cref="T:System.Drawing.Rectangle" /> structures have equal location and size.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-253">如果两个 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.X" />、<see cref="P:System.Drawing.Rectangle.Y" />、<see cref="P:System.Drawing.Rectangle.Width" /> 和 <see cref="P:System.Drawing.Rectangle.Height" /> 属性值均相等，此运算符将返回 <see langword="true" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-253">This operator returns <see langword="true" /> if the two <see cref="T:System.Drawing.Rectangle" /> structures have equal <see cref="P:System.Drawing.Rectangle.X" />, <see cref="P:System.Drawing.Rectangle.Y" />, <see cref="P:System.Drawing.Rectangle.Width" />, and <see cref="P:System.Drawing.Rectangle.Height" /> properties.</span></span></returns>
+        <param name="left"><span data-ttu-id="f87d9-250">相等运算符左侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-250">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the left of the equality operator.</span></span></param>
+        <param name="right"><span data-ttu-id="f87d9-251">相等运算符右侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-251">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the right of the equality operator.</span></span></param>
+        <summary><span data-ttu-id="f87d9-252">测试两个 <see cref="T:System.Drawing.Rectangle" /> 结构的位置和大小是否相同。</span><span class="sxs-lookup"><span data-stu-id="f87d9-252">Tests whether two <see cref="T:System.Drawing.Rectangle" /> structures have equal location and size.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-253">如果两个 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.X" />、<see cref="P:System.Drawing.Rectangle.Y" />、<see cref="P:System.Drawing.Rectangle.Width" /> 和 <see cref="P:System.Drawing.Rectangle.Height" /> 属性值均相等，此运算符将返回 <see langword="true" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-253">This operator returns <see langword="true" /> if the two <see cref="T:System.Drawing.Rectangle" /> structures have equal <see cref="P:System.Drawing.Rectangle.X" />, <see cref="P:System.Drawing.Rectangle.Y" />, <see cref="P:System.Drawing.Rectangle.Width" />, and <see cref="P:System.Drawing.Rectangle.Height" /> properties.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1299,6 +1329,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -1313,10 +1344,10 @@
         <Parameter Name="right" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="left"><span data-ttu-id="b29bc-254">不等运算符左侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-254">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the left of the inequality operator.</span></span></param>
-        <param name="right"><span data-ttu-id="b29bc-255">不等运算符右侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-255">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the right of the inequality operator.</span></span></param>
-        <summary><span data-ttu-id="b29bc-256">测试两个 <see cref="T:System.Drawing.Rectangle" /> 结构的位置或大小是否不同。</span><span class="sxs-lookup"><span data-stu-id="b29bc-256">Tests whether two <see cref="T:System.Drawing.Rectangle" /> structures differ in location or size.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-257">如果两个 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.X" />、<see cref="P:System.Drawing.Rectangle.Y" />、<see cref="P:System.Drawing.Rectangle.Width" /> 或 <see cref="P:System.Drawing.Rectangle.Height" /> 属性值中有任何一个不相等，此运算符将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-257">This operator returns <see langword="true" /> if any of the <see cref="P:System.Drawing.Rectangle.X" />, <see cref="P:System.Drawing.Rectangle.Y" />, <see cref="P:System.Drawing.Rectangle.Width" /> or <see cref="P:System.Drawing.Rectangle.Height" /> properties of the two <see cref="T:System.Drawing.Rectangle" /> structures are unequal; otherwise <see langword="false" />.</span></span></returns>
+        <param name="left"><span data-ttu-id="f87d9-254">不等运算符左侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-254">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the left of the inequality operator.</span></span></param>
+        <param name="right"><span data-ttu-id="f87d9-255">不等运算符右侧的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-255">The <see cref="T:System.Drawing.Rectangle" /> structure that is to the right of the inequality operator.</span></span></param>
+        <summary><span data-ttu-id="f87d9-256">测试两个 <see cref="T:System.Drawing.Rectangle" /> 结构的位置或大小是否不同。</span><span class="sxs-lookup"><span data-stu-id="f87d9-256">Tests whether two <see cref="T:System.Drawing.Rectangle" /> structures differ in location or size.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-257">如果两个 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.X" />、<see cref="P:System.Drawing.Rectangle.Y" />、<see cref="P:System.Drawing.Rectangle.Width" /> 或 <see cref="P:System.Drawing.Rectangle.Height" /> 属性值中有任何一个不相等，此运算符将返回 <see langword="true" />；否则将返回 <see langword="false" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-257">This operator returns <see langword="true" /> if any of the <see cref="P:System.Drawing.Rectangle.X" />, <see cref="P:System.Drawing.Rectangle.Y" />, <see cref="P:System.Drawing.Rectangle.Width" /> or <see cref="P:System.Drawing.Rectangle.Height" /> properties of the two <see cref="T:System.Drawing.Rectangle" /> structures are unequal; otherwise <see langword="false" />.</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1343,9 +1374,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -1356,13 +1388,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-258">获取 x 坐标，该坐标是此 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.X" />与 <see cref="P:System.Drawing.Rectangle.Width" /> 属性值之和。</span><span class="sxs-lookup"><span data-stu-id="b29bc-258">Gets the x-coordinate that is the sum of <see cref="P:System.Drawing.Rectangle.X" /> and <see cref="P:System.Drawing.Rectangle.Width" /> property values of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-259">此 <see cref="T:System.Drawing.Rectangle" /> 的 <see cref="P:System.Drawing.Rectangle.X" /> 与 <see cref="P:System.Drawing.Rectangle.Width" /> 之和的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-259">The x-coordinate that is the sum of <see cref="P:System.Drawing.Rectangle.X" /> and <see cref="P:System.Drawing.Rectangle.Width" /> of this <see cref="T:System.Drawing.Rectangle" />.</span></span></value>
+        <summary><span data-ttu-id="f87d9-258">获取 x 坐标，该坐标是此 <see cref="T:System.Drawing.Rectangle" /> 结构的 <see cref="P:System.Drawing.Rectangle.X" />与 <see cref="P:System.Drawing.Rectangle.Width" /> 属性值之和。</span><span class="sxs-lookup"><span data-stu-id="f87d9-258">Gets the x-coordinate that is the sum of <see cref="P:System.Drawing.Rectangle.X" /> and <see cref="P:System.Drawing.Rectangle.Width" /> property values of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-259">此 <see cref="T:System.Drawing.Rectangle" /> 的 <see cref="P:System.Drawing.Rectangle.X" /> 与 <see cref="P:System.Drawing.Rectangle.Width" /> 之和的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-259">The x-coordinate that is the sum of <see cref="P:System.Drawing.Rectangle.X" /> and <see cref="P:System.Drawing.Rectangle.Width" /> of this <see cref="T:System.Drawing.Rectangle" />.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-260">值<xref:System.Drawing.Rectangle.Right%2A>属性表示的矩形的不包含在矩形中的右边缘的第一个点的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-260">The value of the <xref:System.Drawing.Rectangle.Right%2A> property represents the x-coordinate of the first point at the right edge of the rectangle that is not contained in the rectangle.</span></span>  
+ <span data-ttu-id="f87d9-260">值<xref:System.Drawing.Rectangle.Right%2A>属性表示的矩形的不包含在矩形中的右边缘的第一个点的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-260">The value of the <xref:System.Drawing.Rectangle.Right%2A> property represents the x-coordinate of the first point at the right edge of the rectangle that is not contained in the rectangle.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1391,6 +1423,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
@@ -1399,14 +1432,14 @@
         <Parameter Name="value" Type="System.Drawing.RectangleF" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="b29bc-261">要转换的 <see cref="T:System.Drawing.RectangleF" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-261">The <see cref="T:System.Drawing.RectangleF" /> to be converted.</span></span></param>
-        <summary><span data-ttu-id="b29bc-262">通过将 <see cref="T:System.Drawing.RectangleF" /> 舍入到最近的整数值，将指定的 <see cref="T:System.Drawing.Rectangle" /> 转换为 <see cref="T:System.Drawing.RectangleF" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-262">Converts the specified <see cref="T:System.Drawing.RectangleF" /> to a <see cref="T:System.Drawing.Rectangle" /> by rounding the <see cref="T:System.Drawing.RectangleF" /> values to the nearest integer values.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-263"><see cref="T:System.Drawing.Rectangle" /> 的四舍五入整数值。</span><span class="sxs-lookup"><span data-stu-id="b29bc-263">The rounded interger value of the <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
+        <param name="value"><span data-ttu-id="f87d9-261">要转换的 <see cref="T:System.Drawing.RectangleF" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-261">The <see cref="T:System.Drawing.RectangleF" /> to be converted.</span></span></param>
+        <summary><span data-ttu-id="f87d9-262">通过将 <see cref="T:System.Drawing.RectangleF" /> 舍入到最近的整数值，将指定的 <see cref="T:System.Drawing.Rectangle" /> 转换为 <see cref="T:System.Drawing.RectangleF" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-262">Converts the specified <see cref="T:System.Drawing.RectangleF" /> to a <see cref="T:System.Drawing.Rectangle" /> by rounding the <see cref="T:System.Drawing.RectangleF" /> values to the nearest integer values.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-263"><see cref="T:System.Drawing.Rectangle" /> 的四舍五入整数值。</span><span class="sxs-lookup"><span data-stu-id="f87d9-263">The rounded integer value of the <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-264">下面的代码示例演示如何使用<xref:System.Drawing.Rectangle.Round%2A>和<xref:System.Drawing.Rectangle.Truncate%2A>方法。</span><span class="sxs-lookup"><span data-stu-id="b29bc-264">The following code example demonstrates how to use the <xref:System.Drawing.Rectangle.Round%2A> and <xref:System.Drawing.Rectangle.Truncate%2A> methods.</span></span> <span data-ttu-id="b29bc-265">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-265">This example is designed for use with a Windows Form.</span></span>  <span data-ttu-id="b29bc-266">将此代码粘贴到窗体并调用`RoundingAndTruncatingRectangles`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-266">Paste this code into a form and call the `RoundingAndTruncatingRectangles` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-264">下面的代码示例演示如何使用<xref:System.Drawing.Rectangle.Round%2A>和<xref:System.Drawing.Rectangle.Truncate%2A>方法。</span><span class="sxs-lookup"><span data-stu-id="f87d9-264">The following code example demonstrates how to use the <xref:System.Drawing.Rectangle.Round%2A> and <xref:System.Drawing.Rectangle.Truncate%2A> methods.</span></span> <span data-ttu-id="f87d9-265">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-265">This example is designed for use with a Windows Form.</span></span>  <span data-ttu-id="f87d9-266">将此代码粘贴到窗体并调用`RoundingAndTruncatingRectangles`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-266">Paste this code into a form and call the `RoundingAndTruncatingRectangles` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#5)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#5)]
@@ -1439,9 +1472,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2">
@@ -1455,8 +1489,8 @@
         <ReturnType>System.Drawing.Size</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-267">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 的大小。</span><span class="sxs-lookup"><span data-stu-id="b29bc-267">Gets or sets the size of this <see cref="T:System.Drawing.Rectangle" />.</span></span></summary>
-        <value><span data-ttu-id="b29bc-268"><see cref="T:System.Drawing.Size" />，它表示此 <see cref="T:System.Drawing.Rectangle" /> 结构的宽度和高度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-268">A <see cref="T:System.Drawing.Size" /> that represents the width and height of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
+        <summary><span data-ttu-id="f87d9-267">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 的大小。</span><span class="sxs-lookup"><span data-stu-id="f87d9-267">Gets or sets the size of this <see cref="T:System.Drawing.Rectangle" />.</span></span></summary>
+        <value><span data-ttu-id="f87d9-268"><see cref="T:System.Drawing.Size" />，它表示此 <see cref="T:System.Drawing.Rectangle" /> 结构的宽度和高度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-268">A <see cref="T:System.Drawing.Size" /> that represents the width and height of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1483,9 +1517,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0">
+        <Attribute FrameworkAlternate="netcore-2.0;netcore-2.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-2.2;netcore-3.0;netstandard-2.1">
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1496,8 +1531,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-269">获取此 <see cref="T:System.Drawing.Rectangle" /> 结构上边缘的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-269">Gets the y-coordinate of the top edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-270">此 <see cref="T:System.Drawing.Rectangle" /> 结构上边缘的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-270">The y-coordinate of the top edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
+        <summary><span data-ttu-id="f87d9-269">获取此 <see cref="T:System.Drawing.Rectangle" /> 结构上边缘的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-269">Gets the y-coordinate of the top edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-270">此 <see cref="T:System.Drawing.Rectangle" /> 结构上边缘的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-270">The y-coordinate of the top edge of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1524,14 +1559,15 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary><span data-ttu-id="b29bc-271">将此 <see cref="T:System.Drawing.Rectangle" /> 的特性转换为可读字符串。</span><span class="sxs-lookup"><span data-stu-id="b29bc-271">Converts the attributes of this <see cref="T:System.Drawing.Rectangle" /> to a human-readable string.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-272">一个包含此 <see cref="T:System.Drawing.Rectangle" /> 结构 ¾ 的位置、宽度和高度的字符串，例如 {X=20, Y=20, Width=100, Height=50}</span><span class="sxs-lookup"><span data-stu-id="b29bc-272">A string that contains the position, width, and height of this <see cref="T:System.Drawing.Rectangle" /> structure ¾ for example, {X=20, Y=20, Width=100, Height=50}</span></span></returns>
+        <summary><span data-ttu-id="f87d9-271">将此 <see cref="T:System.Drawing.Rectangle" /> 的特性转换为可读字符串。</span><span class="sxs-lookup"><span data-stu-id="f87d9-271">Converts the attributes of this <see cref="T:System.Drawing.Rectangle" /> to a human-readable string.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-272">一个包含此 <see cref="T:System.Drawing.Rectangle" /> 结构 ¾ 的位置、宽度和高度的字符串，例如 {X=20, Y=20, Width=100, Height=50}</span><span class="sxs-lookup"><span data-stu-id="f87d9-272">A string that contains the position, width, and height of this <see cref="T:System.Drawing.Rectangle" /> structure ¾ for example, {X=20, Y=20, Width=100, Height=50}</span></span></returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1558,6 +1594,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
@@ -1566,14 +1603,14 @@
         <Parameter Name="value" Type="System.Drawing.RectangleF" />
       </Parameters>
       <Docs>
-        <param name="value"><span data-ttu-id="b29bc-273">要转换的 <see cref="T:System.Drawing.RectangleF" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-273">The <see cref="T:System.Drawing.RectangleF" /> to be converted.</span></span></param>
-        <summary><span data-ttu-id="b29bc-274">通过截断 <see cref="T:System.Drawing.RectangleF" /> 值，将指定的 <see cref="T:System.Drawing.RectangleF" /> 转换为 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="b29bc-274">Converts the specified <see cref="T:System.Drawing.RectangleF" /> to a <see cref="T:System.Drawing.Rectangle" /> by truncating the <see cref="T:System.Drawing.RectangleF" /> values.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-275"><see cref="T:System.Drawing.Rectangle" /> 的截断值。</span><span class="sxs-lookup"><span data-stu-id="b29bc-275">The truncated value of the  <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
+        <param name="value"><span data-ttu-id="f87d9-273">要转换的 <see cref="T:System.Drawing.RectangleF" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-273">The <see cref="T:System.Drawing.RectangleF" /> to be converted.</span></span></param>
+        <summary><span data-ttu-id="f87d9-274">通过截断 <see cref="T:System.Drawing.RectangleF" /> 值，将指定的 <see cref="T:System.Drawing.RectangleF" /> 转换为 <see cref="T:System.Drawing.Rectangle" />。</span><span class="sxs-lookup"><span data-stu-id="f87d9-274">Converts the specified <see cref="T:System.Drawing.RectangleF" /> to a <see cref="T:System.Drawing.Rectangle" /> by truncating the <see cref="T:System.Drawing.RectangleF" /> values.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-275"><see cref="T:System.Drawing.Rectangle" /> 的截断值。</span><span class="sxs-lookup"><span data-stu-id="f87d9-275">The truncated value of the  <see cref="T:System.Drawing.Rectangle" />.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- <span data-ttu-id="b29bc-276">下面的代码示例演示如何使用<xref:System.Drawing.Rectangle.Round%2A>和<xref:System.Drawing.Rectangle.Truncate%2A>方法。</span><span class="sxs-lookup"><span data-stu-id="b29bc-276">The following code example demonstrates how to use the <xref:System.Drawing.Rectangle.Round%2A> and <xref:System.Drawing.Rectangle.Truncate%2A> methods.</span></span> <span data-ttu-id="b29bc-277">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-277">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="b29bc-278">将此代码粘贴到窗体并调用`RoundingAndTruncatingRectangles`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-278">Paste this code into a form and call the `RoundingAndTruncatingRectangles` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-276">下面的代码示例演示如何使用<xref:System.Drawing.Rectangle.Round%2A>和<xref:System.Drawing.Rectangle.Truncate%2A>方法。</span><span class="sxs-lookup"><span data-stu-id="f87d9-276">The following code example demonstrates how to use the <xref:System.Drawing.Rectangle.Round%2A> and <xref:System.Drawing.Rectangle.Truncate%2A> methods.</span></span> <span data-ttu-id="f87d9-277">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-277">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="f87d9-278">将此代码粘贴到窗体并调用`RoundingAndTruncatingRectangles`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-278">Paste this code into a form and call the `RoundingAndTruncatingRectangles` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#5)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#5)]
@@ -1606,6 +1643,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Rectangle</ReturnType>
@@ -1615,20 +1653,20 @@
         <Parameter Name="b" Type="System.Drawing.Rectangle" />
       </Parameters>
       <Docs>
-        <param name="a"><span data-ttu-id="b29bc-279">要合并的矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-279">A rectangle to union.</span></span></param>
-        <param name="b"><span data-ttu-id="b29bc-280">要合并的矩形。</span><span class="sxs-lookup"><span data-stu-id="b29bc-280">A rectangle to union.</span></span></param>
-        <summary><span data-ttu-id="b29bc-281">获取包含两个 <see cref="T:System.Drawing.Rectangle" /> 结构的交集的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-281">Gets a <see cref="T:System.Drawing.Rectangle" /> structure that contains the union of two <see cref="T:System.Drawing.Rectangle" /> structures.</span></span></summary>
-        <returns><span data-ttu-id="b29bc-282">包含两个 <see cref="T:System.Drawing.Rectangle" /> 结构的交集的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="b29bc-282">A <see cref="T:System.Drawing.Rectangle" /> structure that bounds the union of the two <see cref="T:System.Drawing.Rectangle" /> structures.</span></span></returns>
+        <param name="a"><span data-ttu-id="f87d9-279">要合并的矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-279">A rectangle to union.</span></span></param>
+        <param name="b"><span data-ttu-id="f87d9-280">要合并的矩形。</span><span class="sxs-lookup"><span data-stu-id="f87d9-280">A rectangle to union.</span></span></param>
+        <summary><span data-ttu-id="f87d9-281">获取包含两个 <see cref="T:System.Drawing.Rectangle" /> 结构的交集的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-281">Gets a <see cref="T:System.Drawing.Rectangle" /> structure that contains the union of two <see cref="T:System.Drawing.Rectangle" /> structures.</span></span></summary>
+        <returns><span data-ttu-id="f87d9-282">包含两个 <see cref="T:System.Drawing.Rectangle" /> 结构的交集的 <see cref="T:System.Drawing.Rectangle" /> 结构。</span><span class="sxs-lookup"><span data-stu-id="f87d9-282">A <see cref="T:System.Drawing.Rectangle" /> structure that bounds the union of the two <see cref="T:System.Drawing.Rectangle" /> structures.</span></span></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-283">当两个矩形之一为空，这意味着它的所有值均为零，<xref:System.Drawing.Rectangle.Union%2A>方法返回的矩形的起始点 （0，0） 和高度和非空矩形的宽度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-283">When one of the two rectangles is empty, meaning all of its values are zero, the <xref:System.Drawing.Rectangle.Union%2A> method returns a rectangle with a starting point of (0, 0), and the height and width of the non-empty rectangle.</span></span> <span data-ttu-id="b29bc-284">例如，如果您有两个矩形：A = （0，0，0，0） 和 B = （1，1; 2，2），然后一个的并集，而 B 是 （0、 0; 2、 2）。</span><span class="sxs-lookup"><span data-stu-id="b29bc-284">For example, if you have two rectangles: A = (0, 0; 0, 0) and B = (1, 1; 2, 2), then the union of A and B is (0, 0; 2, 2).</span></span>  
+ <span data-ttu-id="f87d9-283">当两个矩形之一为空，这意味着它的所有值均为零，<xref:System.Drawing.Rectangle.Union%2A>方法返回的矩形的起始点 （0，0） 和高度和非空矩形的宽度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-283">When one of the two rectangles is empty, meaning all of its values are zero, the <xref:System.Drawing.Rectangle.Union%2A> method returns a rectangle with a starting point of (0, 0), and the height and width of the non-empty rectangle.</span></span> <span data-ttu-id="f87d9-284">例如，如果您有两个矩形：A = （0，0，0，0） 和 B = （1，1; 2，2），然后一个的并集，而 B 是 （0、 0; 2、 2）。</span><span class="sxs-lookup"><span data-stu-id="f87d9-284">For example, if you have two rectangles: A = (0, 0; 0, 0) and B = (1, 1; 2, 2), then the union of A and B is (0, 0; 2, 2).</span></span>  
   
    
   
 ## Examples  
- <span data-ttu-id="b29bc-285">下面的代码示例演示如何使用 <xref:System.Drawing.Rectangle.Union%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="b29bc-285">The following code example demonstrates how to use the <xref:System.Drawing.Rectangle.Union%2A> method.</span></span> <span data-ttu-id="b29bc-286">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="b29bc-286">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="b29bc-287">将此代码粘贴到窗体并调用`ShowRectangleUnion`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-287">Paste this code into a form and call the `ShowRectangleUnion` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
+ <span data-ttu-id="f87d9-285">下面的代码示例演示如何使用 <xref:System.Drawing.Rectangle.Union%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="f87d9-285">The following code example demonstrates how to use the <xref:System.Drawing.Rectangle.Union%2A> method.</span></span> <span data-ttu-id="f87d9-286">此示例设计用于 Windows 窗体。</span><span class="sxs-lookup"><span data-stu-id="f87d9-286">This example is designed for use with a Windows Form.</span></span> <span data-ttu-id="f87d9-287">将此代码粘贴到窗体并调用`ShowRectangleUnion`方法时处理该窗体<xref:System.Windows.Forms.Control.Paint>事件，并传递`e`作为<xref:System.Windows.Forms.PaintEventArgs>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-287">Paste this code into a form and call the `ShowRectangleUnion` method when handling the form's <xref:System.Windows.Forms.Control.Paint> event, passing `e` as <xref:System.Windows.Forms.PaintEventArgs>.</span></span>  
   
  [!code-cpp[System.Drawing.RectanglesAndPoints#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CPP/form1.cpp#4)]
  [!code-csharp[System.Drawing.RectanglesAndPoints#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RectanglesAndPoints/CS/form1.cs#4)]
@@ -1661,6 +1699,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1674,13 +1713,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-288">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构的宽度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-288">Gets or sets the width of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-289">此 <see cref="T:System.Drawing.Rectangle" /> 结构的宽度。</span><span class="sxs-lookup"><span data-stu-id="b29bc-289">The width of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="b29bc-290">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="b29bc-290">The default is 0.</span></span></value>
+        <summary><span data-ttu-id="f87d9-288">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构的宽度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-288">Gets or sets the width of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-289">此 <see cref="T:System.Drawing.Rectangle" /> 结构的宽度。</span><span class="sxs-lookup"><span data-stu-id="f87d9-289">The width of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="f87d9-290">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="f87d9-290">The default is 0.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-291">更改<xref:System.Drawing.Rectangle.Width%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Right%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-291">Changing the <xref:System.Drawing.Rectangle.Width%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Right%2A> property of the <xref:System.Drawing.Rectangle>.</span></span> <span data-ttu-id="b29bc-292">在绘制矩形的单位由<xref:System.Drawing.Graphics.PageUnit%2A>和<xref:System.Drawing.Graphics.PageScale%2A>用于绘图对象的图形属性。</span><span class="sxs-lookup"><span data-stu-id="b29bc-292">The units the rectangle is drawn in is determined by the <xref:System.Drawing.Graphics.PageUnit%2A> and <xref:System.Drawing.Graphics.PageScale%2A> properties of the graphics object used for drawing.</span></span> <span data-ttu-id="b29bc-293">默认单位为像素。</span><span class="sxs-lookup"><span data-stu-id="b29bc-293">The default unit is pixels.</span></span>  
+ <span data-ttu-id="f87d9-291">更改<xref:System.Drawing.Rectangle.Width%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Right%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-291">Changing the <xref:System.Drawing.Rectangle.Width%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Right%2A> property of the <xref:System.Drawing.Rectangle>.</span></span> <span data-ttu-id="f87d9-292">在绘制矩形的单位由<xref:System.Drawing.Graphics.PageUnit%2A>和<xref:System.Drawing.Graphics.PageScale%2A>用于绘图对象的图形属性。</span><span class="sxs-lookup"><span data-stu-id="f87d9-292">The units the rectangle is drawn in is determined by the <xref:System.Drawing.Graphics.PageUnit%2A> and <xref:System.Drawing.Graphics.PageScale%2A> properties of the graphics object used for drawing.</span></span> <span data-ttu-id="f87d9-293">默认单位为像素。</span><span class="sxs-lookup"><span data-stu-id="f87d9-293">The default unit is pixels.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1709,6 +1748,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1722,13 +1762,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-294">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-294">Gets or sets the x-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-295">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-295">The x-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="b29bc-296">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="b29bc-296">The default is 0.</span></span></value>
+        <summary><span data-ttu-id="f87d9-294">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-294">Gets or sets the x-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-295">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 x 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-295">The x-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="f87d9-296">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="f87d9-296">The default is 0.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-297">更改<xref:System.Drawing.Rectangle.X%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Right%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-297">Changing the <xref:System.Drawing.Rectangle.X%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Right%2A> property of the <xref:System.Drawing.Rectangle>.</span></span>  
+ <span data-ttu-id="f87d9-297">更改<xref:System.Drawing.Rectangle.X%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Right%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-297">Changing the <xref:System.Drawing.Rectangle.X%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Right%2A> property of the <xref:System.Drawing.Rectangle>.</span></span>  
   
  ]]></format>
         </remarks>
@@ -1757,6 +1797,7 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>2.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1770,13 +1811,13 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary><span data-ttu-id="b29bc-298">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-298">Gets or sets the y-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
-        <value><span data-ttu-id="b29bc-299">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="b29bc-299">The y-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="b29bc-300">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="b29bc-300">The default is 0.</span></span></value>
+        <summary><span data-ttu-id="f87d9-298">获取或设置此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-298">Gets or sets the y-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span></summary>
+        <value><span data-ttu-id="f87d9-299">此 <see cref="T:System.Drawing.Rectangle" /> 结构左上角的 y 坐标。</span><span class="sxs-lookup"><span data-stu-id="f87d9-299">The y-coordinate of the upper-left corner of this <see cref="T:System.Drawing.Rectangle" /> structure.</span></span> <span data-ttu-id="f87d9-300">默认值为 0。</span><span class="sxs-lookup"><span data-stu-id="f87d9-300">The default is 0.</span></span></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <span data-ttu-id="b29bc-301">更改<xref:System.Drawing.Rectangle.Y%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Bottom%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="b29bc-301">Changing the <xref:System.Drawing.Rectangle.Y%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Bottom%2A> property of the <xref:System.Drawing.Rectangle>.</span></span>  
+ <span data-ttu-id="f87d9-301">更改<xref:System.Drawing.Rectangle.Y%2A>属性也将导致更改<xref:System.Drawing.Rectangle.Bottom%2A>属性的<xref:System.Drawing.Rectangle>。</span><span class="sxs-lookup"><span data-stu-id="f87d9-301">Changing the <xref:System.Drawing.Rectangle.Y%2A> property will also cause a change in the <xref:System.Drawing.Rectangle.Bottom%2A> property of the <xref:System.Drawing.Rectangle>.</span></span>  
   
  ]]></format>
         </remarks>
