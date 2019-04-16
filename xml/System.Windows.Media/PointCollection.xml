@@ -1,5 +1,5 @@
 <Type Name="PointCollection" FullName="System.Windows.Media.PointCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b761760a37ea34be2c4dcb232cf522449ca84162" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55410809" /></Metadata><TypeSignature Language="C#" Value="public sealed class PointCollection : System.Windows.Freezable, IFormattable, System.Collections.Generic.ICollection&lt;System.Windows.Point&gt;, System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;, System.Collections.Generic.IList&lt;System.Windows.Point&gt;, System.Collections.IList" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="de41e2b2de8968f1137bf9e5431189903ca456cb" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59016545" /></Metadata><TypeSignature Language="C#" Value="public sealed class PointCollection : System.Windows.Freezable, IFormattable, System.Collections.Generic.ICollection&lt;System.Windows.Point&gt;, System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;, System.Collections.Generic.IList&lt;System.Windows.Point&gt;, System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PointCollection extends System.Windows.Freezable implements class System.Collections.Generic.ICollection`1&lt;valuetype System.Windows.Point&gt;, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt;, class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Point&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.IFormattable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.PointCollection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PointCollection&#xA;Inherits Freezable&#xA;Implements ICollection(Of Point), IEnumerable(Of Point), IFormattable, IList, IList(Of Point)" />
@@ -83,7 +83,7 @@
  *oneOrMorePoints*  
  一个或多个<xref:System.Windows.Point>值，每个对都由一个逗号和/或一个或多个空格分隔。  
   
- <xref:System.Windows.Point> *[delimeter* <xref:System.Windows.Point> *]\**  
+ <xref:System.Windows.Point> *[delimiter* <xref:System.Windows.Point> *]\**  
   
  例如，`"0,0 100,100 200,100"`和`"0,0,100,100,200,100"`都有效。  
   
@@ -264,7 +264,7 @@
       <Parameters />
       <Docs>
         <summary>创建此 <see cref="T:System.Windows.Media.PointCollection" /> 的可修改克隆，从而深度复制此对象的值。 在复制依赖项属性时，此方法会复制资源引用和数据绑定（但可能不再解析），但不复制动画或其当前值。</summary>
-        <returns>当前对象的可修改复本。 即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="true." />，所克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性也将为 <see langword="false" /></returns>
+        <returns>当前对象的可修改复本。 克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性将为 <see langword="false" />（即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="true." /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -384,7 +384,7 @@
       <Docs>
         <param name="value">要在 <see cref="T:System.Windows.Point" /> 中定位的 <see cref="T:System.Windows.Media.PointCollection" />。</param>
         <summary>确定 <see cref="T:System.Windows.Media.PointCollection" /> 是否包含指定的 <see cref="T:System.Windows.Point" />。</summary>
-        <returns>如果在 <see cref="T:System.Windows.Media.PointCollection" /> 中找到了 <see cref="T:System.Windows.Point" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果在 <see cref="T:System.Windows.Media.PointCollection" /> 中找到 <see cref="T:System.Windows.Point" />）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Collections.Generic.ICollection`1.Contains(`0)" />
       </Docs>
@@ -540,8 +540,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回可循环访问 <see cref="T:System.Windows.Media.PointCollection" /> 的枚举器。</summary>
-        <returns>可用于循环访问 <see cref="T:System.Windows.Media.PointCollection" /> 的 <see cref="T:System.Windows.Media.PointCollection.Enumerator" />。</returns>
+        <summary>返回一个可以循环访问 <see cref="T:System.Windows.Media.PointCollection" /> 的枚举器。</summary>
+        <returns>一个 <see cref="T:System.Windows.Media.PointCollection.Enumerator" />，可用于循环访问 <see cref="T:System.Windows.Media.PointCollection" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Collections.Generic.IEnumerable`1.GetEnumerator" />
       </Docs>
@@ -714,7 +714,7 @@
       <Docs>
         <param name="value">要从 <see cref="T:System.Windows.Point" /> 移除的 <see cref="T:System.Windows.Media.PointCollection" />。</param>
         <summary>从 <see cref="T:System.Windows.Point" /> 中移除指定的 <see cref="T:System.Windows.Media.PointCollection" /> 的第一个匹配项。</summary>
-        <returns>如果从 <see cref="T:System.Windows.Media.PointCollection" /> 中移除了 <paramref name="value" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果从 <see cref="T:System.Windows.Media.PointCollection" /> 中删除了 <paramref name="value" />）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Windows.Media.PointCollection" /> 为只读。  
   
@@ -774,7 +774,7 @@
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="P:System.Collections.Generic.ICollection`1.IsReadOnly" />。</summary>
-        <value>如果 <see langword="true" /> 是只读的，则为 <see cref="T:System.Windows.Media.PointCollection" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Windows.Media.PointCollection" />是只读的; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -876,7 +876,7 @@
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="P:System.Collections.ICollection.IsSynchronized" />。</summary>
-        <value>如果对 <see langword="true" /> 的访问是同步的（线程安全），则为 <see cref="T:System.Windows.Media.PointCollection" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果访问<see cref="T:System.Windows.Media.PointCollection" />是同步的 （线程安全）; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1012,7 +1012,7 @@
       <Docs>
         <param name="value">要在 <see cref="T:System.Object" /> 中定位的 <see cref="T:System.Windows.Media.PointCollection" />。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Collections.IList.Contains(System.Object)" />。</summary>
-        <returns>如果在 <see cref="T:System.Windows.Media.PointCollection" /> 中找到了 <see cref="T:System.Object" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果在 <see cref="T:System.Windows.Media.PointCollection" /> 中找到 <see cref="T:System.Object" />）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1118,7 +1118,7 @@
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="P:System.Collections.IList.IsFixedSize" />。</summary>
-        <value>如果 <see langword="true" /> 具有固定大小，则为 <see cref="T:System.Windows.Media.PointCollection" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Windows.Media.PointCollection" />具有固定大小; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1151,7 +1151,7 @@
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="P:System.Collections.IList.IsReadOnly" />。</summary>
-        <value>如果 <see langword="true" /> 是只读的，则为 <see cref="T:System.Windows.Media.PointCollection" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Windows.Media.PointCollection" />是只读的; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1261,11 +1261,11 @@
         <param name="format">指定要使用的格式的 <see cref="T:System.String" />。  
   
 - 或 - 
- 如果为 <see langword="null" />（在 Visual Basic 中为 <see langword="Nothing" />），则使用为 <see cref="T:System.IFormattable" /> 实现的类型定义的默认格式。</param>
+ <see langword="null" /> （在 Visual Basic 中为 <see langword="Nothing" />），将使用为 <see cref="T:System.IFormattable" /> 实现的类型所定义的默认格式。</param>
         <param name="provider">用于格式化该值的 <see cref="T:System.IFormatProvider" />。  
   
 - 或 - 
- 如果为 <see langword="null" />（在 Visual Basic 中为 <see langword="Nothing" />），则从操作系统的当前区域设置中获取数字信息。</param>
+ <see langword="null" /> （在 Visual Basic 中为 <see langword="Nothing" />），将从操作系统的当前区域设置中获取数字格式信息。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />。</summary>
         <returns>一个 <see cref="T:System.String" />，包含具有指定格式的当前实例的值。</returns>
         <remarks>

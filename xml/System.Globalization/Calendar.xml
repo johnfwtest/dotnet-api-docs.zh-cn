@@ -1,5 +1,5 @@
 <Type Name="Calendar" FullName="System.Globalization.Calendar">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="69bf3811e5fcb6655c20551c388acfd81d500394" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58741005" /></Metadata><TypeSignature Language="C#" Value="public abstract class Calendar : ICloneable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d5466debc4be57e754b42a75ff704271e2ab461b" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59015739" /></Metadata><TypeSignature Language="C#" Value="public abstract class Calendar : ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Calendar extends System.Object implements class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.Calendar" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Calendar&#xA;Implements ICloneable" />
@@ -52,7 +52,7 @@
  日历将时间划分为单位，如周、 月和年。 在每个日历不同数、 长度和划分的开始。  
   
 > [!NOTE]
->  在.NET Framework 中使用的日历类的信息，请参阅[使用日历](~/docs/standard/datetime/working-with-calendars.md)。  
+>  在.NET 中使用的日历类的信息，请参阅[使用日历](~/docs/standard/datetime/working-with-calendars.md)。  
   
  任何时间点可以表示为一组使用特定日历的数字值。 例如，春分发生 (1999 年，3、 20、 8、 46、 0、 0.0) 在公历日历中，即 1999 年 3 月 20，公元 在 8:46:00:0.0。 实现<xref:System.Globalization.Calendar>可以将特定日历的范围中的任何日期映射到一组类似的数字值，并<xref:System.DateTime>可以将这种集的数字值映射到使用中的信息的文本表示形式<xref:System.Globalization.Calendar>和<xref:System.Globalization.DateTimeFormatInfo>。 文本表示形式可以是区分区域性的例如，"8:46 AM 年 3 月 20 1999 AD"对于 EN-US 区域性，或不区分区域性的例如，"1999年-03-20T08:46:00"采用 ISO 8601 格式。  
   
@@ -697,7 +697,7 @@
   
  所生成的月份部分<xref:System.DateTime>如果生成的日期是外部的指定月份影响<xref:System.DateTime>。 所生成的年份部分<xref:System.DateTime>受影响，如果结果的月份之外的指定年份<xref:System.DateTime>。 所产生的时代一部分<xref:System.DateTime>之外的纪元的指定生成的年是否影响<xref:System.DateTime>。 所生成的时间的日部分<xref:System.DateTime>保持不变，与指定<xref:System.DateTime>。  
   
- 在所有.NET Framework 类派生自<xref:System.Globalization.Calendar>类，一周定义为七天。  
+ 在所有.NET 类派生自<xref:System.Globalization.Calendar>类，一周定义为七天。  
   
  <xref:System.DateTime.Kind%2A>所返回的属性<xref:System.DateTime>值始终等于<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>。 可以保留<xref:System.DateTime.Kind%2A>的属性`time`参数通过调用<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>方法，如以下示例所示。  
   
@@ -851,7 +851,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- 下面的示例使用反射来实例化每个<xref:System.Globalization.Calendar>类型在.NET Framework 中找到并显示的值及其<xref:System.Globalization.Calendar.AlgorithmType%2A>属性。  
+ 下面的示例使用反射来实例化每个<xref:System.Globalization.Calendar>类型在.NET 中找到并显示的值及其<xref:System.Globalization.Calendar.AlgorithmType%2A>属性。  
   
  [!code-csharp[System.Globalization.Calendar.AlgorithmType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.algorithmtype/cs/algorithmtype1.cs#1)]
  [!code-vb[System.Globalization.Calendar.AlgorithmType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.algorithmtype/vb/algorithmtype1.vb#1)]  
@@ -1049,8 +1049,10 @@
   
 [!INCLUDE[japanese-era-note](~/includes/calendar-era.md)]
 
+<xref:System.Globalization.JapaneseCalendar>和<xref:System.Globalization.JapaneseLunisolarCalendar>类支持多个纪元。 大多数日历实现，但是，支持单个纪元。
+ 
 ## Examples  
- 下面的代码示例显示中包含的值<xref:System.Globalization.JapaneseCalendar.Eras%2A?displayProperty=nameWithType>。  
+ 下面的示例显示中包含的值<xref:System.Globalization.JapaneseCalendar.Eras%2A?displayProperty=nameWithType>平成纪元 (1989年 2019) 时当前纪元。   
   
  [!code-cpp[System.Globalization.JapaneseCalendar.Eras#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.JapaneseCalendar.Eras/CPP/yslin_japanesecalendar_eras.cpp#1)]
  [!code-csharp[System.Globalization.JapaneseCalendar.Eras#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.JapaneseCalendar.Eras/CS/yslin_japanesecalendar_eras.cs#1)]
@@ -2440,7 +2442,7 @@
         <param name="month">一个正整数，用于表示月份。</param>
         <param name="day">一个正整数，用于表示天。</param>
         <summary>确定当前纪元中的指定日期是否为闰日。</summary>
-        <returns>如果指定的日期是闰日，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的日期是闰日）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2518,7 +2520,7 @@
         <param name="day">一个正整数，用于表示天。</param>
         <param name="era">一个整数，用于表示纪元。</param>
         <summary>当在派生类中重写时，将确定指定纪元中的指定日期是否为闰日。</summary>
-        <returns>如果指定的日期是闰日，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的日期是闰日）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2599,7 +2601,7 @@
         <param name="year">一个整数，用于表示年份。</param>
         <param name="month">一个正整数，用于表示月份。</param>
         <summary>确定当前纪元中指定年份的指定月份是否为闰月。</summary>
-        <returns>如果指定的月份是闰月，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的月份是闰月）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2671,7 +2673,7 @@
         <param name="month">一个正整数，用于表示月份。</param>
         <param name="era">一个整数，用于表示纪元。</param>
         <summary>当在派生类中重写时，将确定指定纪元中指定年份的指定月份是否为闰月。</summary>
-        <returns>如果指定的月份是闰月，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的月份是闰月）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2746,7 +2748,7 @@
       <Docs>
         <param name="year">一个整数，用于表示年份。</param>
         <summary>确定当前纪元中的指定年份是否为闰年。</summary>
-        <returns>如果指定的年是闰年，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的年是闰年）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2810,7 +2812,7 @@
         <param name="year">一个整数，用于表示年份。</param>
         <param name="era">一个整数，用于表示纪元。</param>
         <summary>当在派生类中重写时，将确定指定纪元中的指定年份是否为闰年。</summary>
-        <returns>如果指定的年是闰年，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的年是闰年）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2869,7 +2871,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示此 <see cref="T:System.Globalization.Calendar" /> 对象是否为只读。</summary>
-        <value>如果此 <see cref="T:System.Globalization.Calendar" /> 对象为只读，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果此<see cref="T:System.Globalization.Calendar" />对象是只读的; 否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,5 +1,5 @@
 <Type Name="CountdownEvent" FullName="System.Threading.CountdownEvent">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e280a96dad9470ccd85f0ff6149773d9eb3ef1fc" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58693341" /></Metadata><TypeSignature Language="C#" Value="public class CountdownEvent : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5b563ff33f789ebd3be56c6a76b425315365137a" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874574" /></Metadata><TypeSignature Language="C#" Value="public class CountdownEvent : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CountdownEvent extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.CountdownEvent" />
   <TypeSignature Language="VB.NET" Value="Public Class CountdownEvent&#xA;Implements IDisposable" />
@@ -191,7 +191,7 @@
         <exception cref="T:System.InvalidOperationException">当前实例已设置 。  
   
 - 或 - 
- 在计数由 <paramref name="signalCount." /> 递增后，<see cref="P:System.Threading.CountdownEvent.CurrentCount" /> 大于或等于 <see cref="F:System.Int32.MaxValue" />。</exception>
+ <see cref="P:System.Threading.CountdownEvent.CurrentCount" /> 在计数递增后，等于或大于 <see cref="F:System.Int32.MaxValue" /> <paramref name="signalCount." /></exception>
         <related type="Article" href="https://msdn.microsoft.com/library/eec3812a-e20f-4ecd-bfef-6921d508b708">CountdownEvent</related>
       </Docs>
     </Member>
@@ -400,7 +400,7 @@
       </ReturnValue>
       <Docs>
         <summary>表示 <see cref="T:System.Threading.CountdownEvent" /> 对象的当前计数是否已归零。</summary>
-        <value>如果当前的计数为零，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果当前计数为零;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -507,7 +507,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">当前实例已被释放。</exception>
+        <exception cref="T:System.ObjectDisposedException">已释放当前实例。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 小于 0。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/eec3812a-e20f-4ecd-bfef-6921d508b708">CountdownEvent</related>
       </Docs>
@@ -786,7 +786,7 @@
         <returns>如果设置了 <see cref="T:System.Threading.CountdownEvent" />，则为 true；否则为 false。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">已释放当前实例。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/eec3812a-e20f-4ecd-bfef-6921d508b708">CountdownEvent</related>
       </Docs>
     </Member>
@@ -916,7 +916,7 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.OperationCanceledException"><paramref name="cancellationToken" /> 已取消。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放当前实例。 - 或 - 创建 <paramref name="cancellationToken" /> 的 <see cref="T:System.Threading.CancellationTokenSource" /> 已被释放。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/eec3812a-e20f-4ecd-bfef-6921d508b708">CountdownEvent</related>
       </Docs>
     </Member>

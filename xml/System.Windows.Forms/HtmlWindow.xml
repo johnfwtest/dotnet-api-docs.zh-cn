@@ -1,5 +1,5 @@
 <Type Name="HtmlWindow" FullName="System.Windows.Forms.HtmlWindow">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="324f2beb322efc0eaae4770d1e7ba0405153780c" /><Meta Name="ms.sourcegitcommit" Value="b0551d7828f015124aca601dbb64bd913cc5067d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/13/2018" /><Meta Name="ms.locfileid" Value="53334699" /></Metadata><TypeSignature Language="C#" Value="public sealed class HtmlWindow" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4ac69f83b8bb1282ea8edf8c9ba33714d1e06b04" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59352233" /></Metadata><TypeSignature Language="C#" Value="public sealed class HtmlWindow" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlWindow extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HtmlWindow" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HtmlWindow" />
@@ -68,9 +68,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Forms.MessageBox>类提供了更强大的<xref:System.Windows.Forms.HtmlWindow.Alert%2A>方法。  
-  
- 尽管<xref:System.Windows.Forms.HtmlWindow.Alert%2A>接受 Unicode 文本作为输入，Internet Explorer 脚本提示符上将不显示非拉丁语言的文本正确 Windows 95、 Windows 98、 Windows ME 或 Windows NT 由于操作系统限制。 有关详细信息，请参阅[信息：Internet Explorer 脚本提示和 MBCS/Unicode](https://support.microsoft.com/default.aspx?scid=kb;en-us;211147)。  
+ <xref:System.Windows.Forms.MessageBox?displayProperty=nameWithType>类提供了更强大的<xref:System.Windows.Forms.HtmlWindow.Alert%2A>方法。  
   
  ]]></format>
         </remarks>
@@ -173,55 +171,38 @@
       <Docs>
         <param name="message">要显示给用户的文本。</param>
         <summary>显示一个包含一则消息和多个按钮的对话框以请求作出“是”/“否”等响应。</summary>
-        <returns>如果用户单击“是”，则为 <see langword="true" />；如果用户单击“否”或关闭对话框，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果用户单击“是”）；如果用户单击“否”或关闭对话框，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  <xref:System.Windows.Forms.HtmlWindow.Confirm%2A> 显示模式对话框;用户将无法访问而无需先关闭此对话框中的基础的 HTML 页面。  
   
- 尽管<xref:System.Windows.Forms.HtmlWindow.Confirm%2A>接受 Unicode 文本作为输入，Internet Explorer 脚本提示符上将不显示非拉丁语言的文本正确 Windows 95、 Windows 98、 Windows ME 或 Windows NT 由于操作系统限制。 有关详细信息，请参阅[信息：Internet Explorer 脚本提示和 MBCS/Unicode](https://support.microsoft.com/default.aspx?scid=kb;en-us;211147)。  
-  
-   
-  
 ## Examples  
- 复制以下 HTML，并将其保存到一个称为 orderForm.htm 窗体：  
-  
- `<HTML>`  
-  
- `<BODY>`  
-  
- `<FORM name="NewOrderForm">`  
-  
- `Select Part Type:`  
-  
- `<SELECT name="PartType">`  
-  
- `<OPTION>AZ-3700`  
-  
- `<OPTION>AZ-3701`  
-  
- `<OPTION>AZ-3702`  
-  
- `<SELECT><br>`  
-  
- `Quantity: <INPUT type="text" name="PartQty" size="2" maxsize="2"><br>`  
-  
- `Building/Desk:`  
-  
- `<INPUT type="text" name="PartBuilding" size="2" maxsize="2"> /`  
-  
- `<INPUT type="text" name="PartDesk" size="2" maxsize="2"><p>`  
-  
- `<INPUT type="submit" value="Transmit Order">`  
-  
- `</FORM>`  
-  
- `</BODY>`  
-  
- `</HTML>`  
-  
- 下面的代码示例显示<xref:System.Windows.Forms.HtmlWindow.Confirm%2A>对话框中，当用户提交`NewOrderForm`。  
+
+复制以下 HTML，并将其保存到一个称为 orderForm.htm 窗体：  
+
+```html
+<HTML>
+<BODY>
+<FORM name="NewOrderForm">
+Select Part Type:
+<SELECT name="PartType">
+  <OPTION>AZ-3700
+  <OPTION>AZ-3701
+  <OPTION>AZ-3702  
+</SELECT><br/>
+Quantity: <INPUT type="text" name="PartQty" size="2" maxsize="2" /><br/>
+Building/Desk:
+<INPUT type="text" name="PartBuilding" size="2" maxsize="2"/> /  
+<INPUT type="text" name="PartDesk" size="2" maxsize="2"/><p/>
+<INPUT type="submit" value="Transmit Order"/>
+</FORM>
+</BODY>
+</HTML>
+```
+
+下面的示例显示<xref:System.Windows.Forms.HtmlWindow.Confirm%2A>对话框中，当用户提交`NewOrderForm`。  
   
  [!code-csharp[System.Windows.Forms.HtmlWindow#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#10)]
  [!code-vb[System.Windows.Forms.HtmlWindow#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#10)]  
@@ -364,7 +345,7 @@
       <Docs>
         <param name="obj">要测试的对象。</param>
         <summary>测试对象是否与当前对象相等。</summary>
-        <returns>如果对象相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果对象相等）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -596,7 +577,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示此窗口是处于打开还是关闭状态。</summary>
-        <value>如果此窗口在屏幕上仍然处于打开状态，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果窗口仍处于打开状态在屏幕上。否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -885,7 +866,7 @@
         <param name="left">第一个 <see cref="T:System.Windows.Forms.HtmlWindow" /> 对象。</param>
         <param name="right">第二个 <see cref="T:System.Windows.Forms.HtmlWindow" /> 对象。</param>
         <summary>测试两个 <see cref="T:System.Windows.Forms.HtmlWindow" /> 对象是否相等。</summary>
-        <returns>如果两个参数都为 <see langword="null" />，或是两个元素具有相同的基础 COM 接口，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果两个参数都为 <see langword="null" />，或是两个元素具有相同的基础 COM 接口）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -920,7 +901,7 @@
         <param name="left">第一个 <see cref="T:System.Windows.Forms.HtmlWindow" /> 对象。</param>
         <param name="right">第二个 <see cref="T:System.Windows.Forms.HtmlWindow" /> 对象。</param>
         <summary>测试两个 <see langword="HtmlWindow" /> 对象是否不相等。</summary>
-        <returns>如果只有两个对象之一为 <see langword="null" />，或基础 COM 指针不匹配，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果两个对象只有其中之一为 <see langword="null" />，或基础 COM 指针不匹配）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1330,8 +1311,6 @@
   
 ## Remarks  
  <xref:System.Windows.Forms.HtmlWindow.Prompt%2A> 提供了快速、 轻松地从用户获取简单的文本输入。  
-  
- 尽管<xref:System.Windows.Forms.HtmlWindow.Prompt%2A>接受 Unicode 文本作为输入，Internet Explorer 脚本提示符上将不显示非拉丁语言的文本正确 Windows 95、 Windows 98、 Windows ME 或 Windows NT 由于操作系统限制。 有关详细信息，请参阅[信息：Internet Explorer 脚本提示和 MBCS/Unicode](https://support.microsoft.com/default.aspx?scid=kb;en-us;211147)。  
   
  ]]></format>
         </remarks>

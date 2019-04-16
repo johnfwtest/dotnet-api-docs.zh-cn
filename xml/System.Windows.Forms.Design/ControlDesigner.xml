@@ -1,5 +1,5 @@
 <Type Name="ControlDesigner" FullName="System.Windows.Forms.Design.ControlDesigner">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8bae74565037158ffbcc0ef646660e4998826cfd" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57949831" /></Metadata><TypeSignature Language="C#" Value="public class ControlDesigner : System.ComponentModel.Design.ComponentDesigner" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dca817abec774959baf373d445734a021760d141" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59355041" /></Metadata><TypeSignature Language="C#" Value="public class ControlDesigner : System.ComponentModel.Design.ComponentDesigner" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlDesigner extends System.ComponentModel.Design.ComponentDesigner" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.ControlDesigner" />
   <TypeSignature Language="VB.NET" Value="Public Class ControlDesigner&#xA;Inherits ComponentDesigner" />
@@ -32,7 +32,7 @@
 ## Remarks  
  <xref:System.Windows.Forms.Design.ControlDesigner> 派生自的组件的设计器提供基类<xref:System.Windows.Forms.Control>。 除了方法和功能从继承<xref:System.ComponentModel.Design.ComponentDesigner>类，<xref:System.Windows.Forms.Design.ControlDesigner>提供了其他方法来支持扩展和更改的关联行为<xref:System.Windows.Forms.Control>在设计时。  
   
- 可以将设计器关联的类型使用<xref:System.ComponentModel.DesignerAttribute>。 有关自定义设计时行为的概述，请参阅[扩展设计时支持](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)。  
+ 可以将设计器关联的类型使用<xref:System.ComponentModel.DesignerAttribute>。 有关自定义设计时行为的概述，请参阅[扩展设计时支持](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100))。  
   
    
   
@@ -50,7 +50,7 @@
     <altmember cref="T:System.ComponentModel.Design.ComponentDesigner" />
     <altmember cref="T:System.ComponentModel.Design.IDesigner" />
     <altmember cref="T:System.ComponentModel.DesignerAttribute" />
-    <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -213,7 +213,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示调整手柄的分配是否取决于 <see cref="P:System.Windows.Forms.Control.AutoSize" /> 属性的值。</summary>
-        <value>如果调整手柄的分配取决于 <see cref="P:System.Windows.Forms.Control.AutoSize" /> 和 <see langword="true" /> 属性的值，则为 <see langword="AutoSizeMode" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果重设大小手柄的分配取决于值<see cref="P:System.Windows.Forms.Control.AutoSize" />并<see langword="AutoSizeMode" />属性; 否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -307,7 +307,7 @@
       <Docs>
         <param name="parentDesigner"><see cref="T:System.ComponentModel.Design.IDesigner" />，它可管理要检查的控件。</param>
         <summary>指示指定设计器的控件是否可以成为此设计器控件的父级。</summary>
-        <returns>如果由指定设计器管理的控件可以成为由此设计器管理的控件的父级，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果由指定设计器管理的控件可以成为由此设计器管理的控件的父级）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -443,7 +443,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing"><see langword="true" /> （如果释放托管资源和非托管资源）；如果仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -456,7 +456,7 @@
  ]]></format>
         </remarks>
         <block subset="none" type="overrides"><para>
-            <see langword="Dispose" /> 可以由其他对象多次调用。 重写时<see langword="Dispose(Boolean)" />，请小心不要引用在早期调用之前释放对象<see langword="Dispose" />。 有关如何实现详细信息<see langword="Dispose(Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
+            <see langword="Dispose" /> 可以多次调用由其他对象。 重写时<see langword="Dispose(Boolean)" />，请小心不要引用在早期调用之前释放对象<see langword="Dispose" />。 有关如何实现详细信息<see langword="Dispose(Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
 有关详细信息<see langword="Dispose" />并<see cref="M:System.Object.Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[重写 Finalize 方法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100))。</para></block>
         <altmember cref="T:System.ComponentModel.Design.IDesigner" />
@@ -490,7 +490,7 @@
         <param name="child">要为其启用设计模式的子控件。</param>
         <param name="name">为最终用户公开的 <paramref name="child" /> 名称。</param>
         <summary>启用子控件的设计时功能。</summary>
-        <returns>如果可以启用子控件的设计时功能，则为 <see langword="true" />；如果宿主基础结构不支持这一功能，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果可以启用子控件的设计时功能）；如果宿主基础结构不支持这一功能，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -531,7 +531,7 @@
         <Parameter Name="value" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="value">要启用对控件的拖放支持，则为 <see langword="true" />；如果该控件不应有拖放支持，则为 <see langword="false" />。 默认值为 <see langword="false" />。</param>
+        <param name="value"><see langword="true" /> （如果要启用对控件的拖放支持）；如果该控件不应有拖放支持，则为 <see langword="false" />。 默认值为 <see langword="false" />。</param>
         <summary>启用或禁用对正在设计的控件的拖放支持。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -566,7 +566,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否可以在该设计器组件上绘制拖动矩形。</summary>
-        <value>如果可以绘制拖动矩形，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果绘制的拖动矩形可以;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -669,7 +669,7 @@
       <Docs>
         <param name="point"><see cref="T:System.Drawing.Point" />，它指示屏幕坐标中单击鼠标的位置。</param>
         <summary>指示该控件是否应处理在指定点单击鼠标的操作。</summary>
-        <returns>如果在指定点单击的操作将由该控件处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果在指定点单击的操作将由该控件处理）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -737,7 +737,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取设计器的 <see cref="T:System.ComponentModel.InheritanceAttribute" />。</summary>
-        <value>如果设计器是根设计器，则为 <see cref="F:System.ComponentModel.InheritanceAttribute.Inherited" />；否则，为父设计器的 <see cref="P:System.ComponentModel.Design.ComponentDesigner.InheritanceAttribute" /> 属性值。</value>
+        <value><see cref="F:System.ComponentModel.InheritanceAttribute.Inherited" /> 如果在设计器为根设计器;否则为值的父设计器的<see cref="P:System.ComponentModel.Design.ComponentDesigner.InheritanceAttribute" />属性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1292,7 +1292,7 @@
         <Parameter Name="cancel" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="cancel">要取消拖动，为 <see langword="true" />；要提交拖动，为 <see langword="false" />。</param>
+        <param name="cancel"><see langword="true" /> （如果取消拖动）；如果要提交拖动，则为 <see langword="false" />。</param>
         <summary>在拖放操作结束时接收调用，以完成或取消此次操作。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1570,7 +1570,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示在拖动操作期间 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 是否允许按对齐线对齐。</summary>
-        <value>如果在主要拖动控件位于该设计器之上时 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 允许在拖动操作期间按对齐线对齐，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Windows.Forms.Design.ControlDesigner" />时在主要拖动控件是通过此设计器; 否则为将允许在拖动操作期间按对齐线对齐<see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <block subset="none" type="overrides"><para>默认实现始终返回 <see langword="true" />。</para></block>
       </Docs>

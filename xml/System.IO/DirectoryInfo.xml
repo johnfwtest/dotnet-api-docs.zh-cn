@@ -1,5 +1,5 @@
 <Type Name="DirectoryInfo" FullName="System.IO.DirectoryInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="75d7b2fe90769fea2a14de5dc615513c7713075f" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58698306" /></Metadata><TypeSignature Language="C#" Value="public sealed class DirectoryInfo : System.IO.FileSystemInfo" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="28fcb435354d1b5e6e1bb1b14c5818378e90f11b" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59349444" /></Metadata><TypeSignature Language="C#" Value="public sealed class DirectoryInfo : System.IO.FileSystemInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DirectoryInfo extends System.IO.FileSystemInfo" />
   <TypeSignature Language="DocId" Value="T:System.IO.DirectoryInfo" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DirectoryInfo&#xA;Inherits FileSystemInfo" />
@@ -154,7 +154,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="path" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="path" /> 包含无效字符，例如 "、&lt;、&gt; 或 |。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> 包含 "、&lt;、&gt; 或 | 等无效字符。</exception>
         <exception cref="T:System.IO.PathTooLongException">指定的路径和/或文件名超过了系统定义的最大长度。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于读取文件和目录。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
         <altmember cref="T:System.IO.DriveInfo" />
@@ -274,7 +274,7 @@
         </remarks>
         <exception cref="T:System.IO.IOException"><paramref name="path" /> 指定的目录为只读或为非空。</exception>
         <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="path" /> 是一个长度为零的字符串，仅包含空格，或包含一个或多个由 <see cref="F:System.IO.Path.InvalidPathChars" /> 定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> 是一个长度为零的字符串，仅包含空格或者包含一个或多个由 <see cref="F:System.IO.Path.InvalidPathChars" /> 定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="path" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.IO.PathTooLongException">指定的路径和/或文件名超过了系统定义的最大长度。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效，例如位于未映射的驱动器上。</exception>
@@ -365,7 +365,7 @@
   
 - 或 - 
 调用方没有代码访问权限来读取返回的 <see cref="T:System.IO.DirectoryInfo" /> 对象所描述的目录。  当 <paramref name="path" /> 参数描述现有目录时，会发生这种情况。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="path" /> 包含不是驱动器标签（“C:\\”）的一部分的冒号字符 (:)。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> 包含不是驱动器标签 ("C:\\") 的一部分的冒号字符 (:)。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于读取和写入文件。 关联枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />， <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
         <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
@@ -430,7 +430,7 @@
   
 - 或 - 
 调用方没有代码访问权限来读取返回的 <see cref="T:System.IO.DirectoryInfo" /> 对象所描述的目录。  当 <paramref name="path" /> 参数描述现有目录时，会发生这种情况。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="path" /> 包含不是驱动器标签（“C:\\”）的一部分的冒号字符 (:)。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" /> 包含不是驱动器标签 ("C:\\") 的一部分的冒号字符 (:)。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于读取和写入文件。 关联枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />， <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
       </Docs>
     </Member>
@@ -554,7 +554,7 @@
         <Parameter Name="recursive" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="recursive">若为 <see langword="true" />，则删除此目录、其子目录以及所有文件；否则为 <see langword="false" />。</param>
+        <param name="recursive"><see langword="true" /> 则删除此目录、其子目录以及所有文件；否则为 <see langword="false" />。</param>
         <summary>删除 <see cref="T:System.IO.DirectoryInfo" /> 的此实例，指定是否删除子目录和文件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1559,7 +1559,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取指示目录是否存在的值。</summary>
-        <value>如果目录存在，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果目录存在，则否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1665,7 +1665,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 调用此方法重载是等效于调用<xref:System.IO.Directory.GetAccessControl%2A>方法重载并指定访问控制部分<xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType> &#124; <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType> &#124; <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType> (<xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType> `Or` <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType> `Or` <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType>在 Visual Basic 中)。  
+ 调用此方法重载是等效于调用<xref:System.IO.Directory.GetAccessControl%2A>方法重载并指定访问控制部分<xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType> &#124; <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType> &#124; <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType> (<xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType>`Or`<xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType>`Or`<xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType>在 Visual Basic 中)。  
   
  使用<xref:System.IO.DirectoryInfo.GetAccessControl%2A>方法来检索当前文件的访问控制列表 (ACL) 项。  
   
@@ -1932,7 +1932,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个由 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="searchPattern" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">封装在 <see langword="DirectoryInfo" /> 对象中的路径无效（例如，在未映射的驱动器上）。</exception>
         <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限。</exception>
@@ -2059,7 +2059,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个由 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="searchPattern" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="searchOption" /> 不是有效的 <see cref="T:System.IO.SearchOption" /> 值。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">封装在 <see langword="DirectoryInfo" /> 对象中的路径无效（例如，在未映射的驱动器上）。</exception>
@@ -2280,7 +2280,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个由 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="searchPattern" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">路径无效（例如，在未映射的驱动器上）。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限。</exception>
@@ -2434,7 +2434,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个由 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="searchPattern" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="searchOption" /> 不是有效的 <see cref="T:System.IO.SearchOption" /> 值。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">路径无效（例如，在未映射的驱动器上）。</exception>
@@ -2625,7 +2625,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个由 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="searchPattern" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效（例如，它位于未映射的驱动器上）。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限。</exception>
@@ -2744,7 +2744,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="searchPattern" /> 包含一个或多个由 <see cref="M:System.IO.Path.GetInvalidPathChars" /> 方法定义的无效字符。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="searchPattern" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="searchOption" /> 不是有效的 <see cref="T:System.IO.SearchOption" /> 值。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效（例如，它位于未映射的驱动器上）。</exception>
@@ -2815,7 +2815,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="destDirName" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="destDirName" /> 是空字符串 ("")。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="destDirName" /> 是空字符串 (''")。</exception>
         <exception cref="T:System.IO.IOException">尝试将目录移动到不同的卷。  
   
 - 或 - 

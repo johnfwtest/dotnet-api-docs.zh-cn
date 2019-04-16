@@ -1,5 +1,5 @@
 <Type Name="HttpListener" FullName="System.Net.HttpListener">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ba678f29634e4785745a38f1cc28f75d1a9d2d8a" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58744844" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListener : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5cf85e11d98a02e74b8f4e39b325f1e6ce724e9e" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59014907" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListener : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListener extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListener" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpListener&#xA;Implements IDisposable" />
@@ -402,12 +402,11 @@
   
  此方法关闭列表<xref:System.Net.HttpListener>对象而不会处理排队的请求。 任何挂起的请求不能完成。  
   
-   
-  
 ## Examples  
- 下面的代码示例演示如何调用此方法。  
+
+下面的代码示例演示如何调用`Close`方法：
   
- [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+[!code-csharp[Net_Listener_Basic#12](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#12)]  
   
  ]]></format>
         </remarks>
@@ -539,7 +538,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">未通过调用 <see cref="M:System.Net.HttpListener.BeginGetContext(System.AsyncCallback,System.Object)" /> 方法获取 <paramref name="asyncResult" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="asyncResult" /> 不是通过调用 <see cref="M:System.Net.HttpListener.BeginGetContext(System.AsyncCallback,System.Object)" /> 方法获取的。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Net.HttpListenerException">Win32 函数调用失败。 检查异常的 <see cref="P:System.Net.HttpListenerException.ErrorCode" /> 属性以确定导致异常的原因。</exception>
         <exception cref="T:System.InvalidOperationException">已为指定的 <paramref name="asyncResult" /> 对象调用 <see cref="M:System.Net.HttpListener.EndGetContext(System.IAsyncResult)" /> 方法。</exception>
@@ -852,7 +851,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，指示 <see cref="T:System.Net.HttpListener" /> 是否已启动。</summary>
-        <value>如果已启动 <see cref="T:System.Net.HttpListener" />，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Net.HttpListener" />已启动; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -899,7 +898,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，指示 <see cref="T:System.Net.HttpListener" /> 是否可用于当前操作系统。</summary>
-        <value>如果支持 <see cref="T:System.Net.HttpListener" />，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Net.HttpListener" />受支持; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1116,9 +1115,10 @@
    
   
 ## Examples  
- 下面的代码示例演示了如何使用<xref:System.Net.HttpListener.Stop%2A>方法来停止处理传入的请求。  
-  
- [!code-csharp[Net_Listener_Basic#12](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#12)]  
+ 
+下面的代码示例演示了如何使用<xref:System.Net.HttpListener.Stop%2A>方法来停止处理传入的请求。  
+ 
+[!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]
   
  ]]></format>
         </remarks>
@@ -1254,7 +1254,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <see cref="T:System.Boolean" /> 值，该值控制当使用 NTLM 时是否需要对使用同一传输控制协议 (TCP) 连接的其他请求进行身份验证。</summary>
-        <value>如果第一个请求的 <see cref="T:System.Security.Principal.IIdentity" /> 将用于同一连接上的后续请求，则返回 <see langword="true" />；否则返回 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Security.Principal.IIdentity" />的第一个请求将用于在同一连接上的后续请求，否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

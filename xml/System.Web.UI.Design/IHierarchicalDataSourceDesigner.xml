@@ -1,5 +1,5 @@
 <Type Name="IHierarchicalDataSourceDesigner" FullName="System.Web.UI.Design.IHierarchicalDataSourceDesigner">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7177c95ea489f63686334bfbf09b655c8eb001ba" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53224327" /></Metadata><TypeSignature Language="C#" Value="public interface IHierarchicalDataSourceDesigner" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b37f29e312074983c261b9453ec0cae54a147e49" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59348841" /></Metadata><TypeSignature Language="C#" Value="public interface IHierarchicalDataSourceDesigner" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHierarchicalDataSourceDesigner" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />
   <TypeSignature Language="VB.NET" Value="Public Interface IHierarchicalDataSourceDesigner" />
@@ -23,8 +23,8 @@
     </remarks>
     <altmember cref="T:System.Web.UI.HierarchicalDataSourceControl" />
     <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/68f85054-2253-47f5-a4f2-3f1ac8c9f27b">如何：在设计模式下扩展控件的外观和行为</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171820(v=vs.120)">如何：在设计模式下扩展控件的外观和行为</related>
   </Docs>
   <Members>
     <Member MemberName="CanConfigure">
@@ -45,7 +45,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否可以调用 <see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" /> 方法。</summary>
-        <value>如果基础数据源有可用 <see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" /> 启动的配置向导，则为 <see langword="true" />，否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 基础数据源是否可以使用启动配置向导<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -57,7 +57,7 @@
         <block subset="none" type="overrides"><para>如果你实现了<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />接口来创建您自己的数据源，并不提供配置功能<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanConfigure" />属性应始终返回<see langword="false" />并且<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />方法应引发<see cref="T:System.NotSupportedException" />。</para></block>
         <altmember cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="CanRefreshSchema">
@@ -78,7 +78,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否可以调用 <see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" /> 方法。</summary>
-        <value>如果可以调用 <see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />可被调用; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -90,7 +90,7 @@
         <block subset="none" type="overrides"><para>如果你实现了<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />接口，以创建您自己的数据源和架构将永远不会更改，请<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />属性应始终返回<see langword="false" />并<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />方法应引发<see cref="T:System.NotSupportedException" />。</para></block>
         <altmember cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="Configure">
@@ -115,7 +115,7 @@
         <remarks>To be added.</remarks>
         <block subset="none" type="overrides"><para>如果你实现了<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />接口来创建您自己的数据源，并不提供配置功能<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanConfigure" />属性应始终返回<see langword="false" />并且<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />方法应引发<see cref="T:System.NotSupportedException" />。</para></block>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="DataSourceChanged">
@@ -139,7 +139,7 @@
         <remarks>To be added.</remarks>
         <block subset="none" type="overrides"><para>通常情况下，实现<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />接口，<see cref="E:System.Web.UI.Design.IHierarchicalDataSourceDesigner.DataSourceChanged" />事件处理程序调用<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />方法。 如果<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />属性是<see langword="true" />和重新创建的任何示例数据，然后引发事件，让每个数据绑定控件，用于刷新其标记。</para></block>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="GetView">
@@ -167,7 +167,7 @@
         <returns>与数据源控件关联的命名数据源视图。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="RefreshSchema">
@@ -190,14 +190,14 @@
         <Parameter Name="preferSilent" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="preferSilent"><see langword="true" />，则在刷新架构时取消引发的事件；否则为 <see langword="false" />。</param>
+        <param name="preferSilent"><see langword="true" /> （如果在刷新架构时取消引发的事件）；否则为 <see langword="false" />。</param>
         <summary>刷新基础数据源的架构。</summary>
         <remarks>To be added.</remarks>
         <block subset="none" type="overrides"><para>如果你实现了<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />接口，以创建您自己的数据源和架构将永远不会更改，请<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />属性应始终返回<see langword="false" />并<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />方法应引发<see cref="T:System.NotSupportedException" />。  
   
 通常情况下，如果<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />由用户执行任何操作，由于在设计宿主调用<paramref name="preferSilent" />参数应为<see langword="false" />，因为用户可能希望刷新架构中的任何问题的通知。 但是，如果该架构是隐式，如调用后刷新<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />方法，或刷新过程涉及多个步骤，如果<paramref name="preferSilent" />应设置为<see langword="true" />。</para></block>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="ResumeDataSourceEvents">
@@ -222,7 +222,7 @@
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.SuppressDataSourceEvents" />
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="SchemaRefreshed">
@@ -245,7 +245,7 @@
         <summary>基础数据源的字段或数据已更改时发生。</summary>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
     <Member MemberName="SuppressDataSourceEvents">
@@ -278,7 +278,7 @@
         <block subset="none" type="overrides"><para>通常情况下，您就可以调用<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.SuppressDataSourceEvents" />方法打开一个对话框，如使用时<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />方法，或在调用期间<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />方法中，如果生成架构需要多个进程，其中的任何一可能会创建一个例外。 处理完成后，调用<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.ResumeDataSourceEvents" />方法。</para></block>
         <altmember cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.ResumeDataSourceEvents" />
         <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/wxh45wzs(v=vs.100)">ASP.NET 控件设计器概述</related>
-        <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
       </Docs>
     </Member>
   </Members>

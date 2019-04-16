@@ -1,5 +1,5 @@
 <Type Name="XmlReader" FullName="System.Xml.XmlReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2fe814537e9f03817975516ef86aaf6ae51e22e7" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58723573" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="90a6a0facff37d5e17e797e128971423207eeb48" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59355132" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlReader extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlReader" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XmlReader&#xA;Implements IDisposable" />
@@ -99,7 +99,7 @@
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|  
 |<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A> 属性|是否允许 DTD 处理。 默认设置为不允许 DTD 处理。|  
 |<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 属性|读取器是否应验证数据，以及要执行 （DTD 或架构） 的验证类型。 默认设置为无数据验证。|  
-|<xref:System.Xml.XmlReaderSettings.ValidationEventHandler> 事件|事件处理程序接收的验证事件的相关信息。 如果未提供事件处理程序，在出现第一个验证错误时将引发 <xref:System.Xml.XmlException>。|  
+|<xref:System.Xml.XmlReaderSettings.ValidationEventHandler> Event — 事件|事件处理程序接收的验证事件的相关信息。 如果未提供事件处理程序，在出现第一个验证错误时将引发 <xref:System.Xml.XmlException>。|  
 |<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> 属性|其他验证选项通过<xref:System.Xml.Schema.XmlSchemaValidationFlags>枚举成员：<br /><br /> -   `AllowXmlAttributes`-允许 XML 特性 (`xml:*`) 在实例文档，即使它们不在架构中定义中。 属性基于其数据类型进行验证。 请参阅<xref:System.Xml.Schema.XmlSchemaValidationFlags>设置以在特定方案中使用的参考页。 （默认情况下禁用）。<br />-   `ProcessIdentityConstraints` -处理标识约束 (`xs:ID`， `xs:IDREF`， `xs:key`， `xs:keyref`， `xs:unique`) 验证过程中遇到。 （默认情况下启用）。<br />-   `ProcessSchemaLocation` -处理由指定的架构`xsi:schemaLocation`或`xsi:noNamespaceSchemaLocation`属性。 （默认情况下启用）。<br />-   `ProcessInlineSchema`-在验证过程中处理内联 XML 架构。 （默认情况下禁用）。<br />-   `ReportValidationWarnings`-如果发生验证警告报告事件。 如果没有验证特定元素或属性时所依据的 DTD 或 XML 架构，通常会发出警告。 <xref:System.Xml.XmlReaderSettings.ValidationEventHandler> 用于通知。 （默认情况下禁用）。|  
 |<xref:System.Xml.XmlReaderSettings.Schemas%2A>|用于验证的 <xref:System.Xml.Schema.XmlSchemaSet>。|  
 |<xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 属性|<xref:System.Xml.XmlResolver>用于解析和访问外部资源。 这可以包括外部实体，例如 DTD 和架构和任何`xs:include`或`xs:import`XML 架构中包含的元素。 如果未指定<xref:System.Xml.XmlResolver>，则<xref:System.Xml.XmlReader>使用的默认值<xref:System.Xml.XmlUrlResolver>使用没有用户凭据。|  
@@ -216,8 +216,8 @@
 |---------------------------------------------------------------------------------------------------------------------------------------------------|--------|  
 |<xref:System.Xml.XmlReader.Value%2A> 属性|获取当前节点的文本内容。 返回的值取决于节点类型中;请参阅<xref:System.Xml.XmlReader.Value%2A>引用页面了解详细信息。|  
 |<xref:System.Xml.XmlReader.ReadString%2A> 方法|获取作为字符串的元素或文本节点的内容。 此方法停止处理指令和注释。<br /><br /> 此方法如何处理特定节点类型的详细信息，请参阅<xref:System.Xml.XmlReader.ReadString%2A>参考页。|  
-|<xref:System.Xml.XmlReader.ReadInnerXml%2A> 和 <xref:System.Xml.XmlReader.ReadInnerXmlAsync%2A> 方法|获取当前节点，包括标记中，但不包括开始和结束标记的所有内容。 例如，对于：<br /><br /> `<node>this<child id="123"/></node>`<br /><br /> <xref:System.Xml.XmlReader.ReadInnerXml%2A> 返回：<br /><br /> `this<child id="123"/>`|  
-|<xref:System.Xml.XmlReader.ReadOuterXml%2A> 和 <xref:System.Xml.XmlReader.ReadOuterXmlAsync%2A> 方法|获取当前节点及其子级，包括标记和开始/结束标记的所有内容。 例如，对于：<br /><br /> `<node>this<child id="123"/></node>`<br /><br /> <xref:System.Xml.XmlReader.ReadOuterXml%2A> 返回：<br /><br /> `<node>this<child id="123"/></node>`|  
+|<xref:System.Xml.XmlReader.ReadInnerXml%2A> 和<xref:System.Xml.XmlReader.ReadInnerXmlAsync%2A>方法|获取当前节点，包括标记中，但不包括开始和结束标记的所有内容。 例如，对于：<br /><br /> `<node>this<child id="123"/></node>`<br /><br /> <xref:System.Xml.XmlReader.ReadInnerXml%2A> 返回：<br /><br /> `this<child id="123"/>`|  
+|<xref:System.Xml.XmlReader.ReadOuterXml%2A> 和<xref:System.Xml.XmlReader.ReadOuterXmlAsync%2A>方法|获取当前节点及其子级，包括标记和开始/结束标记的所有内容。 例如，对于：<br /><br /> `<node>this<child id="123"/></node>`<br /><br /> <xref:System.Xml.XmlReader.ReadOuterXml%2A> 返回：<br /><br /> `<node>this<child id="123"/></node>`|  
   
 <a name="xmlreader_clr"></a>   
 ## <a name="converting-to-clr-types"></a>将转换为 CLR 类型  
@@ -344,7 +344,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
 -   在读取 XML 文档具有大量唯一的本地名称、 命名空间或前缀，则会出现问题。 如果您使用的派生的类<xref:System.Xml.XmlReader>，并调用<xref:System.Xml.XmlReader.LocalName%2A>， <xref:System.Xml.XmlReader.Prefix%2A>，或<xref:System.Xml.XmlReader.NamespaceURI%2A>每个项的属性，则返回的字符串添加到<xref:System.Xml.NameTable>。 包含的集合<xref:System.Xml.NameTable>绝不会减小大小，创建字符串句柄的虚拟内存泄漏。 有关这一种解决方法是从派生<xref:System.Xml.NameTable>类，并强制实施最大大小配额。 (没有方法来防止利用<xref:System.Xml.NameTable>，或切换<xref:System.Xml.NameTable>已满时)。 另一种缓解是避免使用提到的属性，并改用<xref:System.Xml.XmlReader.MoveToAttribute%2A>方法替换<xref:System.Xml.XmlReader.IsStartElement%2A>方法在可能的情况; 这些方法不返回的字符串和这样可以避免过度填充问题<xref:System.Xml.NameTable>集合。  
   
--   <xref:System.Xml.XmlReaderSettings> 对象可以包含敏感信息，例如用户凭据。 不可信的组件可能会使用 <xref:System.Xml.XmlReaderSettings> 对象及其用户凭据来创建 <xref:System.Xml.XmlReader> 对象，以读取数据。 缓存时要小心<xref:System.Xml.XmlReaderSettings>对象，或传递时<xref:System.Xml.XmlReaderSettings>到另一个对象从一个组件。  
+-   <xref:System.Xml.XmlReaderSettings> 对象可以包含敏感信息，如用户凭据。 不可信的组件可能会使用 <xref:System.Xml.XmlReaderSettings> 对象及其用户凭据来创建 <xref:System.Xml.XmlReader> 对象，以读取数据。 缓存时要小心<xref:System.Xml.XmlReaderSettings>对象，或传递时<xref:System.Xml.XmlReaderSettings>到另一个对象从一个组件。  
   
 -   不接受来自不可信的源的支持组件，例如 <xref:System.Xml.NameTable>、<xref:System.Xml.XmlNamespaceManager> 和 <xref:System.Xml.XmlResolver> 对象。  
   
@@ -536,7 +536,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Xml.XmlReader" /> 是否实现二进制内容读取方法。</summary>
-        <value>如果实现了二进制内容读取方法，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果实现了二进制内容读取的方法;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -582,7 +582,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Xml.XmlReader" /> 是否实现 <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)" /> 方法。</summary>
-        <value>如果 <see cref="T:System.Xml.XmlReader" /> 实现 <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)" /> 方法，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Xml.XmlReader" />实现<see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)" />方法; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -629,7 +629,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示此读取器是否可以分析和解析实体。</summary>
-        <value>如果此读取器可以分析和解析实体，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果读取器可以分析和解析实体;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -724,7 +724,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 |<xref:System.Xml.XmlReaderSettings.NameTable%2A>|`null`|  
 |<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A>|<xref:System.Xml.DtdProcessing.Prohibit>|  
 |<xref:System.Xml.XmlReaderSettings.Schemas%2A>|空的 <xref:System.Xml.Schema.XmlSchemaSet> 对象|  
-|<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A>|<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints> 已启用|  
+|<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A>|<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints> enabled|  
 |<xref:System.Xml.XmlReaderSettings.ValidationType%2A>|<xref:System.Xml.ValidationType.None>|  
 |<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>|一个新 <xref:System.Xml.XmlUrlResolver> 对象。  从.NET Framework 4.5.2 开始，此设置的默认值为`null`。|  
   
@@ -733,12 +733,12 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
 |需求|Set|  
 |-----------------|---------|  
-|数据必须是格式正确的 XML 文档。|<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A> 到<xref:System.Xml.ConformanceLevel.Document>。|  
-|数据必须是格式正确的 XML 已分析实体。|<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A> 到<xref:System.Xml.ConformanceLevel.Fragment>。|  
-|必须根据 DTD 验证数据。|<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A> 至 <xref:System.Xml.DtdProcessing.Parse><br /><xref:System.Xml.XmlReaderSettings.ValidationType%2A> 到<xref:System.Xml.ValidationType.DTD>。|  
-|必须根据 XML 架构验证数据。|<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 至 <xref:System.Xml.ValidationType.Schema><br /><xref:System.Xml.XmlReaderSettings.Schemas%2A> 到<xref:System.Xml.Schema.XmlSchemaSet>用于进行验证。 请注意，<xref:System.Xml.XmlReader>不支持 XML 数据缩减 (XDR) 架构验证。|  
-|必须根据内联 XML 架构验证数据。|<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 至 <xref:System.Xml.ValidationType.Schema><br /><xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> 到<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>。|  
-|类型支持。|<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 至 <xref:System.Xml.ValidationType.Schema><br /><xref:System.Xml.XmlReaderSettings.Schemas%2A> 到<xref:System.Xml.Schema.XmlSchemaSet>使用。|  
+|数据必须是格式正确的 XML 文档。|<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A> <xref:System.Xml.ConformanceLevel.Document>的唯一值。|  
+|数据必须是格式正确的 XML 已分析实体。|<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A> <xref:System.Xml.ConformanceLevel.Fragment>的唯一值。|  
+|必须根据 DTD 验证数据。|<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A> 更改为 <xref:System.Xml.DtdProcessing.Parse><br /><xref:System.Xml.XmlReaderSettings.ValidationType%2A> <xref:System.Xml.ValidationType.DTD>的唯一值。|  
+|必须根据 XML 架构验证数据。|<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 更改为 <xref:System.Xml.ValidationType.Schema><br /><xref:System.Xml.XmlReaderSettings.Schemas%2A> 到<xref:System.Xml.Schema.XmlSchemaSet>用于进行验证。 请注意，<xref:System.Xml.XmlReader>不支持 XML 数据缩减 (XDR) 架构验证。|  
+|必须根据内联 XML 架构验证数据。|<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 更改为 <xref:System.Xml.ValidationType.Schema><br /><xref:System.Xml.XmlReaderSettings.ValidationFlags%2A> <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>的唯一值。|  
+|类型支持。|<xref:System.Xml.XmlReaderSettings.ValidationType%2A> 更改为 <xref:System.Xml.ValidationType.Schema><br /><xref:System.Xml.XmlReaderSettings.Schemas%2A> 到<xref:System.Xml.Schema.XmlSchemaSet>使用。|  
   
  <xref:System.Xml.XmlReader> 不支持 XML 数据缩减 (XDR) 架构验证。  
   
@@ -1780,7 +1780,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
         <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing"><see langword="true" /> （如果释放托管资源和非托管资源）；如果仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.Xml.XmlReader" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
@@ -1819,7 +1819,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取一个值，该值指示此读取器是否定位在流的结尾。</summary>
-        <value>如果此读取器定位在流的结尾，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果读取器定位在流; 的结尾否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
@@ -2104,7 +2104,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前节点是否有任何属性。</summary>
-        <value>如果当前节点具有属性，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果当前节点具有属性;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2152,7 +2152,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取一个值，该值指示当前节点是否可以具有 <see cref="P:System.Xml.XmlReader.Value" />。</summary>
-        <value>如果读取器当前定位在的节点可以具有 <see langword="Value" />，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则节点值为 <see langword="String.Empty" />。</value>
+        <value><see langword="true" /> 如果读取器当前定位在的节点可以具有<see langword="Value" />; 否则为<see langword="false" />。 如果为 <see langword="false" />，则节点值为 <see langword="String.Empty" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2214,7 +2214,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取一个值，该值指示当前节点是否是从 DTD 或架构中定义的默认值生成的特性。</summary>
-        <value>如果当前节点是其值从 DTD 或架构中定义的默认值生成的属性，则为 <see langword="true" />；如果属性值为显式设置的，则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果当前节点是其值从 DTD 或架构中; 中定义的默认值生成的属性<see langword="false" />如果显式设置属性值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2384,7 +2384,7 @@ public class Sample
       <Docs>
         <param name="str">要验证的名称。</param>
         <summary>返回一个值，该值指示字符串参数是否是有效的 XML 名称。</summary>
-        <returns>如果该名称有效，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果名称有效）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2433,7 +2433,7 @@ public class Sample
       <Docs>
         <param name="str">要验证的名称标记。</param>
         <summary>返回一个值，该值指示该字符串参数是否是有效的 XML 名称标记。</summary>
-        <returns>如果它是有效的名称标记，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果它是有效的名称标记）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2492,7 +2492,7 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 并测试当前内容节点是否是开始标记或空元素标记。</summary>
-        <returns>如果 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 找到开始标记或空元素标记，则为 <see langword="true" />；如果找到不同于 <see langword="false" /> 的节点类型，则为 <see langword="XmlNodeType.Element" />。</returns>
+        <returns><see langword="true" /> （如果 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 找到开始标记或空元素标记）；如果找到不同于 <see langword="XmlNodeType.Element" /> 的节点类型，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2555,7 +2555,7 @@ public class Sample
       <Docs>
         <param name="name">与找到的元素的 <see langword="Name" /> 属性匹配的字符串。</param>
         <summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 并测试当前内容节点是否是开始标记或空元素标记，以及所找到元素的 <see cref="P:System.Xml.XmlReader.Name" /> 属性是否与给定的参数匹配。</summary>
-        <returns>如果生成的节点是一个元素，且 <see langword="true" /> 属性与指定的字符串匹配，则为 <see langword="Name" />。 如果找到 <see langword="false" /> 之外的节点类型，或者元素的 <see langword="XmlNodeType.Element" /> 属性与指定的字符串不匹配，则为 <see langword="Name" />。</returns>
+        <returns><see langword="true" /> （如果生成的节点是一个元素，且 <see langword="Name" /> 属性与指定的字符串匹配）。 <see langword="false" /> （如果找到 <see langword="XmlNodeType.Element" /> 之外的节点类型，或者元素的 <see langword="Name" /> 属性与指定的字符串不匹配）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2616,7 +2616,7 @@ public class Sample
         <param name="localname">与找到的元素的 <see langword="LocalName" /> 属性匹配的字符串。</param>
         <param name="ns">与找到的元素的 <see langword="NamespaceURI" /> 属性匹配的字符串。</param>
         <summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 并测试当前内容节点是否是开始标记或空元素标记，以及所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 属性是否与给定的字符串匹配。</summary>
-        <returns>如果生成的节点是一个元素，则为 <see langword="true" />。 如果找到 <see langword="false" /> 之外的节点类型，或者元素的 <see langword="XmlNodeType.Element" /> 和 <see langword="LocalName" /> 属性与指定的字符串不匹配，则为 <see langword="NamespaceURI" />。</returns>
+        <returns><see langword="true" /> （如果生成的节点是一个元素）。 <see langword="false" /> （如果找到 <see langword="XmlNodeType.Element" /> 之外的节点类型，或者元素的 <see langword="LocalName" /> 和 <see langword="NamespaceURI" /> 属性与指定的字符串不匹配）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3042,7 +3042,7 @@ public class Sample
       <Docs>
         <param name="name">属性的限定名称。</param>
         <summary>当在派生类中被重写时，移动到具有指定 <see cref="P:System.Xml.XmlReader.Name" /> 的属性。</summary>
-        <returns>如果找到了属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则读取器的位置未改变。</returns>
+        <returns><see langword="true" /> （如果找到了属性）；否则为 <see langword="false" />。 如果为 <see langword="false" />，则读取器的位置未改变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3094,7 +3094,7 @@ public class Sample
         <param name="name">属性的本地名称。</param>
         <param name="ns">属性的命名空间 URI。</param>
         <summary>当在派生类中被重写时，移动到具有指定的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 的属性。</summary>
-        <returns>如果找到了属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则读取器的位置未改变。</returns>
+        <returns><see langword="true" /> （如果找到了属性）；否则为 <see langword="false" />。 如果为 <see langword="false" />，则读取器的位置未改变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3176,7 +3176,7 @@ public class Sample
   
 ```xml  
 <?xml version="1.0"><!DOCTYPE price SYSTEM "abc"  
-  [<!ENTTIY p  
+  [<!ENTITY p  
   "123.4">]><price>&p;</price>  
 ```  
   
@@ -3281,7 +3281,7 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>当在派生类中被重写时，移动到包含当前属性节点的元素。</summary>
-        <returns>如果读取器定位在属性上（读取器移动到拥有该属性的元素），则为 <see langword="true" />；如果读取器未定位在属性上（读取器的位置不更改），则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果读取器定位在属性上（读取器移动到拥有该属性的元素））；如果读取器未定位在属性上（读取器的位置不更改），则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3335,7 +3335,7 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>当在派生类中被重写时，移动到第一个属性。</summary>
-        <returns>如果属性存在（读取器移动到第一个属性），则为 <see langword="true" />；否则为 <see langword="false" />（读取器的位置不更改）。</returns>
+        <returns><see langword="true" /> （如果属性存在（读取器移动到第一个属性））；否则为 <see langword="false" />（读取器的位置不更改）。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3384,7 +3384,7 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>当在派生类中被重写时，移动到下一个属性。</summary>
-        <returns>如果存在下一个属性，则为 <see langword="true" />；如果没有其他属性，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果存在下一个属性）；如果没有其他属性，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3758,7 +3758,7 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>当在派生类中被重写时，从流中读取下一个节点。</summary>
-        <returns>如果已成功读取下一节点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果已成功读取下一节点）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3823,7 +3823,7 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>异步读取该流的下一个节点。</summary>
-        <returns>如果成功读取了下一个节点，则为 <see langword="true" />；如果没有其他节点可读取，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果成功读取了下一个节点）；如果没有其他节点可读取，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3874,9 +3874,9 @@ public class Sample
       <Parameters />
       <Docs>
         <summary>当在派生类中被重写时，将属性值解析为一个或多个 <see langword="Text" />、<see langword="EntityReference" /> 或 <see langword="EndEntity" /> 节点。</summary>
-        <returns>如果有可返回的节点，则为 <see langword="true" />。  
+        <returns><see langword="true" /> （如果有可返回的节点）。  
   
- 如果进行初始调用时读取器不是定位在属性节点上，或者如果已读取了所有属性值，则为 <see langword="false" />。  
+ <see langword="false" /> （如果进行初始调用时读取器不是定位在属性节点上，或者如果已读取了所有属性值）。  
   
 如果是空属性（如 <c>misc=""</c>），则返回 <see langword="true" />，同时返回值为 <see langword="String.Empty" /> 的单个节点。</returns>
         <remarks>
@@ -3939,7 +3939,7 @@ public class Sample
 ## Remarks  
  此方法读取位于当前读取器位置的文本内容，并将其转换为请求的返回类型。 文本、空白、有效空白和 CDATA 节串联在一起。 跳过注释和处理指令，并自动解析实体引用。  
   
- 此方法用于读取、 如果有必要，请将其转换并返回从当前节点的原子值项内容。 返回输入的类型是否为当前节点包含当前节点的值的目标类型的实例的类型的有效映射。 请参阅备注部分中的<xref:System.Xml.XmlReader>referencepage 有关默认映射的列表。  
+ 此方法用于读取、 如果有必要，请将其转换并返回从当前节点的原子值项内容。 返回输入的类型是否为当前节点包含当前节点的值的目标类型的实例的类型的有效映射。 请参阅备注部分中的<xref:System.Xml.XmlReader>默认映射的列表的参考页。  
   
  例如，如果你有以下 XML 文本：  
   
@@ -4122,7 +4122,7 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />。
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" /> 不受当前节点支持。
 
 - 或 -
 
@@ -4252,7 +4252,7 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />。
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" /> 不受当前节点支持。
 
 - 或 -
 
@@ -4376,7 +4376,7 @@ public class Sample
    
   
 ## Examples  
- 下面的示例使用<xref:System.Xml.XmlReader.ReadContentAsBoolean%2A>方法来读取特性作为 B`oolean`值。  
+ 下面的示例使用<xref:System.Xml.XmlReader.ReadContentAsBoolean%2A>方法来读取属性的`Boolean`值。  
   
  [!code-csharp[XmlReader.ReadContentAs#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader.ReadContentAs/CS/readContentAs.cs#1)]
  [!code-vb[XmlReader.ReadContentAs#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader.ReadContentAs/VB/readContentAs.vb#1)]  
@@ -7719,12 +7719,12 @@ public class Sample
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Xml.XmlReader.ReadSubtree%2A> 只能在元素节点上调用。 读取整个子树后，调用<xref:System.Xml.XmlReader.Read%2A>方法将返回`false`。 当新的 XML 读取器已关闭，定位于原始 readeris`EndElement`的子树的节点。 因此，如果您调用<xref:System.Xml.XmlReader.ReadSubtree%2A>未关闭的书元素后读取和新的 XML 读取器子树, 的开始标记上的方法，原始的 XML 读取器定位在的书元素的结束标记。  
+ <xref:System.Xml.XmlReader.ReadSubtree%2A> 只能在元素节点上调用。 读取整个子树后，调用<xref:System.Xml.XmlReader.Read%2A>方法将返回`false`。 当新的 XML 读取器已关闭时，原始读取器定位在`EndElement`的子树的节点。 因此，如果您调用<xref:System.Xml.XmlReader.ReadSubtree%2A>未关闭的书元素后读取和新的 XML 读取器子树, 的开始标记上的方法，原始的 XML 读取器定位在的书元素的结束标记。  
   
  在关闭新的读取器之前，不应对原始读取器执行任何操作。 不支持此操作，因为这样可能会导致意想不到的行为。  
   
 > [!NOTE]
->  <xref:System.Xml.XmlReader.ReadSubtree%2A>方法不适用于 creatingcopies 可以独立使用的 XML 数据。 它的和精心设计创建 XML 元素周围的边界。 如果你想要将数据传递给另一个组件进行处理，并且您希望限制该组件可以访问你的数据，这非常有用。 当传递的 XML 读取器返回的<xref:System.Xml.XmlReader.ReadSubtree%2A>到另一个应用程序，该应用程序的方法可以访问仅该 XML 元素，不是整个 XML 文档。  
+>  <xref:System.Xml.XmlReader.ReadSubtree%2A>方法不用于创建可以独立地使用 XML 数据的副本。 它旨在创建 XML 元素周围的边界。 如果你想要将数据传递给另一个组件进行处理，并且您希望限制该组件可以访问你的数据，这非常有用。 当传递的 XML 读取器返回的<xref:System.Xml.XmlReader.ReadSubtree%2A>到另一个应用程序，该应用程序的方法可以访问仅该 XML 元素，不是整个 XML 文档。  
   
    
   
@@ -7819,7 +7819,7 @@ public class Sample
       <Docs>
         <param name="name">要移动到的元素的限定名。</param>
         <summary>让 <see cref="T:System.Xml.XmlReader" /> 前进到下一个具有指定限定名的子代元素。</summary>
-        <returns>如果找到匹配的子代元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader" /> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。  
+        <returns><see langword="true" /> （如果找到匹配的子代元素）；否则为 <see langword="false" />。 如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader" /> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。  
   
 如果调用 <see cref="T:System.Xml.XmlReader" /> 时没有将 <see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String)" /> 定位在某个元素上，则此方法返回 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 的位置保持不变。</returns>
         <remarks>
@@ -7879,7 +7879,7 @@ public class Sample
         <param name="localName">要移动到的元素的本地名称。</param>
         <param name="namespaceURI">要移动到的元素的命名空间 URI。</param>
         <summary>让 <see cref="T:System.Xml.XmlReader" /> 前进到下一个具有指定的本地名称和命名空间 URI 的子代元素。</summary>
-        <returns>如果找到匹配的子代元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader" /> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。  
+        <returns><see langword="true" /> （如果找到匹配的子代元素）；否则为 <see langword="false" />。 如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader" /> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。  
   
 如果调用 <see cref="T:System.Xml.XmlReader" /> 时没有将 <see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String,System.String)" /> 定位在某个元素上，则此方法返回 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 的位置保持不变。</returns>
         <remarks>To be added.</remarks>
@@ -7936,7 +7936,7 @@ public class Sample
       <Docs>
         <param name="name">元素的限定名。</param>
         <summary>一直读取，直到找到具有指定限定名的元素。</summary>
-        <returns>如果找到匹配的元素，则为 <see langword="true" />；否则为 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 位于文件的末尾。</returns>
+        <returns><see langword="true" /> （如果找到匹配的元素）；否则为 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 位于文件的末尾。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7945,7 +7945,7 @@ public class Sample
   
 ```xml  
 <!--"sample.xml"-->  
-<?xmlversion="1.0">  
+<?xml version="1.0">  
    <items>  
       <item xmls="urn:1"/>  
    </items>  
@@ -8006,7 +8006,7 @@ reader.ReadToFollowing("item");
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
         <summary>一直读取，直到找到具有指定的本地名称和命名空间 URI 的元素。</summary>
-        <returns>如果找到匹配的元素，则为 <see langword="true" />；否则为 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 位于文件的末尾。</returns>
+        <returns><see langword="true" /> （如果找到匹配的元素）；否则为 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 位于文件的末尾。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8015,7 +8015,7 @@ reader.ReadToFollowing("item");
   
 ```xml  
 <!--"sample.xml"-->  
-<?xmlversion="1.0">  
+<?xml version="1.0">  
    <items>  
       <item xmls="urn:1"/>  
    </items>  
@@ -8087,7 +8087,7 @@ reader.ReadToFollowing("item", "urn:1");
       <Docs>
         <param name="name">要移动到的同级元素的限定名。</param>
         <summary>让 <see langword="XmlReader" /> 前进到下一个具有指定限定名的同级元素。</summary>
-        <returns>如果找到匹配的同级元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果没有找到匹配的同级元素，<see langword="XmlReader" /> 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。</returns>
+        <returns><see langword="true" /> （如果找到匹配的同级元素）；否则为 <see langword="false" />。 如果没有找到匹配的同级元素，<see langword="XmlReader" /> 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8148,7 +8148,7 @@ reader.ReadToFollowing("item", "urn:1");
         <param name="localName">要移动到的同级元素的本地名称。</param>
         <param name="namespaceURI">你希望移动到的同级元素的命名空间 URI。</param>
         <summary>将 <see langword="XmlReader" /> 推进到具有指定的本地名称和命名空间 URI 的下一个同级元素。</summary>
-        <returns>如果找到匹配的同级元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果没有找到匹配的同级元素，<see langword="XmlReader" /> 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。</returns>
+        <returns><see langword="true" /> （如果找到匹配的同级元素）；否则为 <see langword="false" />。 如果没有找到匹配的同级元素，<see langword="XmlReader" /> 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

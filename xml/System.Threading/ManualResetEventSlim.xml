@@ -1,5 +1,5 @@
 <Type Name="ManualResetEventSlim" FullName="System.Threading.ManualResetEventSlim">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6bfe1fac458d712458e423e75ec417d0b0331f40" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58710034" /></Metadata><TypeSignature Language="C#" Value="public class ManualResetEventSlim : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b5248c3c063a15c2bc461ce02f6e57a727c1eff7" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874626" /></Metadata><TypeSignature Language="C#" Value="public class ManualResetEventSlim : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManualResetEventSlim extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ManualResetEventSlim" />
   <TypeSignature Language="VB.NET" Value="Public Class ManualResetEventSlim&#xA;Implements IDisposable" />
@@ -44,7 +44,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 可将此类用于更好的性能比<xref:System.Threading.ManualResetEvent>时等待时间预计非常短，并且该事件不会跨越进程边界。 等待事件收到信号期间，<xref:System.Threading.ManualResetEventSlim> 会短暂使用忙碌旋转。 等待时间较短时，旋转的开销相对于使用等待句柄来进行等待的开销会少很多。 不过，如果在特定时间段内事件没有收到信号，<xref:System.Threading.ManualResetEventSlim> 会求助于常规的事件句柄等待。  
+ 可将此类用于更好的性能比<xref:System.Threading.ManualResetEvent>时等待时间预计非常短，并且该事件不会跨越进程边界。 <xref:System.Threading.ManualResetEventSlim> 使用忙碌旋转短时间等待事件收到信号时。 等待时间较短时，旋转的开销相对于使用等待句柄来进行等待的开销会少很多。 不过，如果在特定时间段内事件没有收到信号，<xref:System.Threading.ManualResetEventSlim> 会求助于常规的事件句柄等待。  
   
    
   
@@ -133,7 +133,7 @@
       </Parameters>
       <Docs>
         <param name="initialState">若要将初始状态设置为终止，则为 true；若要将初始状态设置为非终止，则为 false。</param>
-        <summary>使用一个指示是否将初始状态设置为有信号的布尔值初始化 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的新实例。</summary>
+        <summary>用一个指示是否将初始状态设置为终止的布尔值初始化 <see cref="T:System.Threading.ManualResetEventSlim" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
       </Docs>
@@ -521,9 +521,9 @@
       <Docs>
         <param name="millisecondsTimeout">等待的毫秒数，或为 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，表示无限期等待。</param>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止，同时使用 32 位带符号整数测量时间间隔。</summary>
-        <returns>如果已设置 <see cref="T:System.Threading.ManualResetEventSlim" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果设置了 <see cref="T:System.Threading.ManualResetEventSlim" />）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">对象已被释放。</exception>
         <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
@@ -610,7 +610,7 @@
       <Docs>
         <param name="timeout">表示等待毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止，同时使用 <see cref="T:System.TimeSpan" /> 测量时间间隔。</summary>
-        <returns>如果已设置 <see cref="T:System.Threading.ManualResetEventSlim" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果设置了 <see cref="T:System.Threading.ManualResetEventSlim" />）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 
 - 或 - 
@@ -655,10 +655,10 @@
         <param name="millisecondsTimeout">等待的毫秒数，或为 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，表示无限期等待。</param>
         <param name="cancellationToken">要观察的 <see cref="T:System.Threading.CancellationToken" />。</param>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止，并使用 32 位带符号整数测量时间间隔，同时观察 <see cref="T:System.Threading.CancellationToken" />。</summary>
-        <returns>如果已设置 <see cref="T:System.Threading.ManualResetEventSlim" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果设置了 <see cref="T:System.Threading.ManualResetEventSlim" />）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.OperationCanceledException"><paramref name="cancellationToken" /> 已取消。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
         <exception cref="T:System.InvalidOperationException">已超出最大等待者数</exception>
         <exception cref="T:System.ObjectDisposedException">该对象已被释放，或者创建了 <paramref name="cancellationToken" /> 的 <see cref="T:System.Threading.CancellationTokenSource" /> 已被释放。</exception>
         <related type="Article" href="~/docs/standard/threading/overview-of-synchronization-primitives.md">同步基元概述</related>
@@ -699,7 +699,7 @@
         <param name="timeout">表示等待毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
         <param name="cancellationToken">要观察的 <see cref="T:System.Threading.CancellationToken" />。</param>
         <summary>阻止当前线程，直到设置了当前 <see cref="T:System.Threading.ManualResetEventSlim" /> 为止，并使用 <see cref="T:System.TimeSpan" /> 测量时间间隔，同时观察 <see cref="T:System.Threading.CancellationToken" />。</summary>
-        <returns>如果已设置 <see cref="T:System.Threading.ManualResetEventSlim" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果设置了 <see cref="T:System.Threading.ManualResetEventSlim" />）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.OperationCanceledException"><paramref name="cancellationToken" /> 已取消。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 为 -1 毫秒以外的负数，表示无限期超时。 

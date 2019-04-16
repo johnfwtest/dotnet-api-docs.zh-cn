@@ -1,5 +1,5 @@
 <Type Name="WindowsFormsApplicationBase" FullName="Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="13d01ca369dda836256a2fa39e2834b93becb8e4" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55325148" /></Metadata><TypeSignature Language="C#" Value="public class WindowsFormsApplicationBase : Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b20b8fa74b08967ff8beb13c8da4f4e47f01e07c" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58875276" /></Metadata><TypeSignature Language="C#" Value="public class WindowsFormsApplicationBase : Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi WindowsFormsApplicationBase extends Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />
   <TypeSignature Language="VB.NET" Value="Public Class WindowsFormsApplicationBase&#xA;Inherits ConsoleApplicationBase" />
@@ -24,7 +24,7 @@
   
  `My.Application` 对象由以下类组成：  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> 提供了所有项目中的可用成员。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> 提供了可在所有项目中的成员。  
   
 -   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> 提供了可在 Windows 窗体应用程序中的成员。  
   
@@ -100,7 +100,7 @@
         <Parameter Name="authenticationMode" Type="Microsoft.VisualBasic.ApplicationServices.AuthenticationMode" />
       </Parameters>
       <Docs>
-        <param name="authenticationMode"><see cref="T:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode" />。 指定应用程序的身份验证模式。</param>
+        <param name="authenticationMode">用于指定应用程序的身份验证模式的枚举值之一。</param>
         <summary>使用指定的身份验证模式初始化 <see cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -141,7 +141,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取 Windows 窗体应用程序当前线程的 <see cref="T:System.Windows.Forms.ApplicationContext" /> 对象。</summary>
-        <value>此属性返回当前线程的 <see cref="T:System.Windows.Forms.ApplicationContext" /> 对象。 该对象包含有关线程的上下文信息。</value>
+        <value>有关当前线程的上下文信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -205,7 +205,7 @@
   
  下表列出的任务涉及示例`My.Application.DoEvents`方法。  
   
-|到|查看|  
+|功能|查看|  
 |-|-|  
 |允许窗体输入，而繁忙的 UI 响应|[演练：处理事件](~/docs/visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|  
   
@@ -349,8 +349,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>确定此应用程序是否为单实例应用程序。</summary>
-        <value><see cref="T:System.Boolean" /> 值，指示此应用程序是否为单实例应用程序。</value>
+        <summary>获取或设置一个值，该值指示此应用程序是否是单实例应用程序。</summary>
+        <value><see langword="True" /> 若要指示此应用程序是单实例应用程序;否则为<see langword="False" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -423,8 +423,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>确定初始屏幕的最小显示时间长度（以毫秒为单位）。</summary>
-        <value><see langword="Integer" />。 初始屏幕的最小显示时间长度（以毫秒为单位）。</value>
+        <summary>获取或设置显示初始屏幕的最小时间长度（以毫秒为单位）。</summary>
+        <value>初始屏幕的最小显示时间长度（以毫秒为单位）。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -651,7 +651,7 @@
         <Parameter Name="commandLineArgs" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;" />
       </Parameters>
       <Docs>
-        <param name="commandLineArgs"><see langword="String" /> 类型的 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />，包含当前应用程序的命令行参数，参数形式为字符串。</param>
+        <param name="commandLineArgs">只读集合，包含命令行参数作为当前应用程序的字符串。</param>
         <summary>设置可视样式、文本显示样式以及应用程序主线程的当前主体（如果应用程序使用 Windows 身份验证），如果定义了初始屏幕，还要初始化初始屏幕。</summary>
         <returns><see cref="T:System.Boolean" />，指示是否应继续启动应用程序。</returns>
         <remarks>
@@ -662,9 +662,9 @@
   
  此方法将调用以下方法：  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>.  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>.  
   
  ]]></format>
         </remarks>
@@ -708,11 +708,11 @@
 ## Remarks  
  默认情况下，它将进入 Windows 窗体消息循环之前, 此方法将调用`OnCreateMainForm`（若要创建应用程序的主窗体） 和`HideSplashScreen`（若要关闭初始屏幕） 的方法：  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>。 提供设计器发出初始化主窗体的代码的方法。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>. 提供设计器发出初始化主窗体的代码的方法。  
   
      默认情况下，此方法没有任何影响。 但是，如果选择主窗体应用程序的 Visual Basic**项目设计器**，在设计器将重写<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>方法设置的方法与<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>到主窗体的新实例的属性。  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>。 如果应用程序具有定义的初始屏幕，并且它已打开，则此方法关闭初始屏幕。  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>. 如果应用程序具有定义的初始屏幕，并且它已打开，则此方法关闭初始屏幕。  
   
      默认情况下，此方法关闭初始屏幕。  
   
@@ -784,7 +784,7 @@
         <Parameter Name="eventArgs" Type="Microsoft.VisualBasic.ApplicationServices.StartupEventArgs" />
       </Parameters>
       <Docs>
-        <param name="eventArgs"><see cref="T:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs" />。 包含应用程序的命令行参数，并指示是否应取消应用程序启动。</param>
+        <param name="eventArgs">应用程序的命令行参数，指示是否应取消应用程序启动。</param>
         <summary>在派生类中重写后，允许代码在应用程序启动时运行。</summary>
         <returns><see cref="T:System.Boolean" />，指示应用程序是否应继续启动。</returns>
         <remarks>
@@ -828,7 +828,7 @@
         <Parameter Name="eventArgs" Type="Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" />
       </Parameters>
       <Docs>
-        <param name="eventArgs"><see cref="T:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" />。 包含后续应用程序实例的命令行参数，并且指示第一个应用程序实例是否应在退出异常处理程序后进入前台。</param>
+        <param name="eventArgs">后续应用程序实例的命令行参数，并且指示第一个应用程序实例是否应在退出异常处理程序后进入前台。</param>
         <summary>在派生类中重写后，允许代码在单实例应用程序的后续实例启动时运行。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -869,7 +869,7 @@
         <Parameter Name="e" Type="Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e"><see cref="T:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs" />。</param>
+        <param name="e">事件的数据。</param>
         <summary>在派生类中重写后，允许代码在应用程序中出现未经处理的异常时运行。</summary>
         <returns>一个 <see cref="T:System.Boolean" />，它指示是否已引发 <see cref="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException" /> 事件。</returns>
         <remarks>
@@ -903,7 +903,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取应用程序中所有打开的窗体的集合。</summary>
-        <value><see cref="T:System.Windows.Forms.FormCollection" /> 对象，包含应用程序中所有打开的窗体。</value>
+        <value>包含所有应用程序的打开的窗体的集合。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -969,7 +969,7 @@
         <Parameter Name="commandLine" Type="System.String[]" />
       </Parameters>
       <Docs>
-        <param name="commandLine"><see langword="String" /> 类型的数组。 <see langword="Sub Main" /> 中的命令行。</param>
+        <param name="commandLine"><see langword="Sub Main" /> 中的命令行。</param>
         <summary>设置或启动 Visual Basic 应用程序模型。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1028,7 +1028,7 @@
       </ReturnValue>
       <Docs>
         <summary>确定应用程序在退出时是否保存用户设置。</summary>
-        <value><see langword="Boolean" />。 <see langword="True" /> 指明应用程序在退出时保存用户设置。 否则，将不会以隐含方式保存设置。</value>
+        <value><see langword="True" /> 若要指示应用程序退出时保存用户设置。 否则为<see langword="False" />以指示不隐式保存设置。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1169,7 +1169,7 @@
         </remarks>
         <altmember cref="T:System.EventArgs" />
         <related type="Article" href="~/docs/visual-basic/language-reference/objects/index.md">对象 (Visual Basic)</related>
-        <related type="Article" href="~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md">如何：当应用程序启动或关闭时记录消息</related>
+        <related type="Article" href="~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md">如何：在应用程序启动或关闭时记录消息</related>
         <related type="Article" href="/visualstudio/ide/reference/application-page-project-designer-visual-basic">Application Page, Project Designer (Visual Basic)</related>
         <related type="Article" href="~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md">Visual Basic 应用程序模型概述</related>
       </Docs>
@@ -1197,7 +1197,7 @@
       </ReturnValue>
       <Docs>
         <summary>确定应用程序的主窗体关闭时执行的操作。</summary>
-        <value><see cref="T:Microsoft.VisualBasic.ApplicationServices.ShutdownMode" /> 枚举值，指示应用程序在主窗体关闭时应执行的操作。</value>
+        <value>一个枚举值，该值指示应用程序主窗体关闭时应执行的操作。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1232,7 +1232,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置此应用程序的初始屏幕。</summary>
-        <value><see cref="T:System.Windows.Forms.Form" /> 对象，应用程序使用此对象作为初始屏幕。</value>
+        <value>应用程序初始屏幕。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1391,7 +1391,7 @@
   
  下表列出了所涉及的任务的示例`My.Application.StartupNextInstance`事件。  
   
-|到|查看|  
+|功能|查看|  
 |-|-|  
 |检查第一个应用程序实例的命令行参数|<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs%2A>|  
   
@@ -1470,9 +1470,9 @@
 ## <a name="tasks"></a>任务  
  下表列出了涉及的任务的示例`My.Application.UnhandledException`事件。  
   
-|到|查看|  
+|功能|查看|  
 |-|-|  
-|记录未处理的异常|[如何：日志异常](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|记录未处理的异常|[如何：记录异常](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
   
 ## <a name="availability-by-project-type"></a>项目类型的可用性  
   
@@ -1531,7 +1531,7 @@
       </ReturnValue>
       <Docs>
         <summary>当在派生类中重写时，此属性允许设计器为应用程序窗体指定默认的文本呈现引擎。</summary>
-        <value><see langword="Boolean" />。 值为 <see langword="False" /> 指示应用程序应使用 [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] 的默认文本呈现引擎。 如果该值为 <see langword="True" />，则指示应用程序应使用 Visual Basic .NET 2002 和 Visual Basic .NET 2003 的文本呈现引擎。</value>
+        <value><see langword="Boolean" />. 值为 <see langword="False" /> 指示应用程序应使用 [!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)] 的默认文本呈现引擎。 如果该值为 <see langword="True" />，则指示应用程序应使用 Visual Basic .NET 2002 和 Visual Basic .NET 2003 的文本呈现引擎。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

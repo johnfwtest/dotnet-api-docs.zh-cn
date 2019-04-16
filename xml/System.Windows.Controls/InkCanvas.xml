@@ -1,5 +1,5 @@
 <Type Name="InkCanvas" FullName="System.Windows.Controls.InkCanvas">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="00e3c627b13a63653511e037ef8b60ee2e9eb1e9" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56380926" /></Metadata><TypeSignature Language="C#" Value="public class InkCanvas : System.Windows.FrameworkElement, System.Windows.Markup.IAddChild" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="4a95604592c0931b964ce402a4cb4c03758d075f" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59017325" /></Metadata><TypeSignature Language="C#" Value="public class InkCanvas : System.Windows.FrameworkElement, System.Windows.Markup.IAddChild" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi InkCanvas extends System.Windows.FrameworkElement implements class System.Windows.Markup.IAddChild" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Controls.InkCanvas" />
   <TypeSignature Language="VB.NET" Value="Public Class InkCanvas&#xA;Inherits FrameworkElement&#xA;Implements IAddChild" />
@@ -270,7 +270,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.Controls.InkCanvas.BackgroundProperty>|  
-|元数据属性设置为 `true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>， <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+|元数据属性设置为 `true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
   
    
   
@@ -408,7 +408,7 @@
       <Parameters />
       <Docs>
         <summary>指示剪贴板的内容是否可以粘贴到 <see cref="T:System.Windows.Controls.InkCanvas" />。</summary>
-        <returns>如果可以粘贴剪贴板的内容，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果可以粘贴剪贴板的内容）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -513,7 +513,7 @@
    
   
 ## Examples  
- 下面的示例选择两个元素上<xref:System.Windows.Controls.InkCanvas>并将它们复制到剪贴板。 此示例假定有<xref:System.Windows.Controls.TextBox>称为`textbox1`和一个<xref:System.Windows.Controls.Button>调用`button1 -`，然后 thatboth 控件的子元素<xref:System.Windows.Controls.InkCanvas>。  
+ 下面的示例选择两个元素上<xref:System.Windows.Controls.InkCanvas>并将它们复制到剪贴板。 此示例假定有<xref:System.Windows.Controls.TextBox>称为`textbox1`和一个<xref:System.Windows.Controls.Button>调用`button1 -`和两个控件位于的子元素<xref:System.Windows.Controls.InkCanvas>。  
   
  [!code-csharp[InkCanvasSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/InkCanvasSamples/CSharp/Window1.xaml.cs#3)]
  [!code-vb[InkCanvasSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkCanvasSamples/VisualBasic/Window1.xaml.vb#3)]  
@@ -597,7 +597,7 @@
    
   
 ## Examples  
- 下面的示例演示如何使用两个<xref:System.Windows.Ink.DrawingAttributes>对象来模拟使用笔和荧光笔上相同的体验<xref:System.Windows.Controls.InkCanvas>。 该示例假定标记语言 (XAML) 文件中的根元素是<xref:System.Windows.Controls.DockPanel>调用`root`。 它还假定，没有<xref:System.Windows.Controls.Button>称为`switchHilighter`并且<xref:System.Windows.Controls.Primitives.ButtonBase.Click>事件连接到的事件处理程序。  
+ 下面的示例演示如何使用两个<xref:System.Windows.Ink.DrawingAttributes>对象来模拟使用笔和荧光笔上相同的体验<xref:System.Windows.Controls.InkCanvas>。 该示例假定标记语言 (XAML) 文件中的根元素是<xref:System.Windows.Controls.DockPanel>调用`root`。 它还假定，没有<xref:System.Windows.Controls.Button>称为`switchHighlighter`并且<xref:System.Windows.Controls.Primitives.ButtonBase.Click>事件连接到的事件处理程序。  
   
  [!code-csharp[DrawingAttributes#3](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingAttributes/CSharp/Window1.xaml.cs#3)]
  [!code-vb[DrawingAttributes#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingAttributes/VisualBasic/Window1.xaml.vb#3)]  
@@ -1511,9 +1511,9 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">集合中所请求子元素从零开始的索引。</param>
-        <summary>重写 <see cref="M:System.Windows.Media.Visual.GetVisualChild(System.Int32)" />，然后从子元素集合返回指定索引处的子级。</summary>
-        <returns>所请求的子元素。 它不应返回 <see langword="null" />；如果提供的索引超出范围，将引发异常。</returns>
+        <param name="index">集合中请求的子元素的从零开始的索引。</param>
+        <summary>重写 <see cref="M:System.Windows.Media.Visual.GetVisualChild(System.Int32)" />，并从子元素集合中返回指定索引处的子元素。</summary>
+        <returns>请求的子元素。 这不应返回 <see langword="null" />；如果提供的索引超出范围，则引发异常。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.FrameworkElement.GetVisualChild(System.Int32)" />
       </Docs>
@@ -1629,7 +1629,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取（确定）笔势识别组件在用户系统上是否可用。</summary>
-        <value>如果识别组件可用，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果识别组件可用;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1796,7 +1796,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个布尔值，该值指示是否允许用户移动 <see cref="T:System.Windows.Controls.InkCanvas" /> 上选定的墨迹笔画和/或元素。</summary>
-        <value>如果用户可以移动 <see cref="T:System.Windows.Controls.InkCanvas" /> 上的笔画和/或元素，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果用户可以移动笔画和/或元素<see cref="T:System.Windows.Controls.InkCanvas" />; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1999,8 +1999,8 @@
         <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">说明更改的属性、旧值和新值的事件数据。</param>
-        <summary>每当更新此 <see cref="T:System.Windows.FrameworkElement" /> 上任何依赖项属性的有效值时调用。 将在实参形参中报告已更改的特定依赖项属性。 重写 <see cref="M:System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />。</summary>
+        <param name="e">描述已更改的属性的事件数据（包括旧值和新值）。</param>
+        <summary>每当更新此 <see cref="T:System.Windows.FrameworkElement" /> 的任何依赖属性的有效值时调用。 将在实参形参中报告已更改的特定依赖属性。 重写 <see cref="M:System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />。</summary>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.FrameworkElement.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
       </Docs>
@@ -2490,7 +2490,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个布尔值，该值指示用户是否可以调整 <see cref="T:System.Windows.Controls.InkCanvas" /> 上选定的墨迹笔画和/或元素的大小。</summary>
-        <value>如果用户可以调整 <see cref="T:System.Windows.Controls.InkCanvas" /> 上的笔画和/或元素的大小，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果用户可以调整笔画和/或元素大小上<see cref="T:System.Windows.Controls.InkCanvas" />; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3639,7 +3639,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个布尔值，该值指示是否重写标准的 <see cref="T:System.Windows.Controls.InkCanvas" /> 光标功能以支持自定义光标。</summary>
-        <value>如果 <see cref="T:System.Windows.Controls.InkCanvas" /> 正在使用自定义光标，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Windows.Controls.InkCanvas" />使用自定义的游标; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

@@ -1,5 +1,5 @@
 <Type Name="DistributedTransactionPermission" FullName="System.Transactions.DistributedTransactionPermission">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="de93e21aa7eef86ae84d0950862ac8a721978349" /><Meta Name="ms.sourcegitcommit" Value="220917117f9d774aaa482439aa7324e39dc1f5b6" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/25/2019" /><Meta Name="ms.locfileid" Value="56775971" /></Metadata><TypeSignature Language="C#" Value="public sealed class DistributedTransactionPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="25733a68d2fb899dd3ee42da030ea9f18303ed22" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874743" /></Metadata><TypeSignature Language="C#" Value="public sealed class DistributedTransactionPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DistributedTransactionPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Transactions.DistributedTransactionPermission" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DistributedTransactionPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
@@ -35,7 +35,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 本地事务只使用单个持久的源或多个可变源资源。 分布式的事务，但是，必须与多个持久资源，可能会通过网络交互。 升级到 MSDTC 事务的管理时，启动升级的代码来验证具有此权限。 有关安全级别的详细信息，请参阅[中访问资源的安全信任级别](https://msdn.microsoft.com/library/8e45acbc-0d81-4f64-9da7-8f766aebff51)。 事务管理升级的详细信息，请参阅[Transaction Management Escalation](https://msdn.microsoft.com/library/5b87ae58-8ccf-4b9b-9715-41e4aade89b7)。 启动升级的代码，而不一定最初创建本地事务的代码会影响安全请求。  
+ 本地事务仅使用单个持久的源或多个可变源中的资源。 分布式的事务，但是，必须与多个持久资源，可能会通过网络交互。 升级到 MSDTC 事务的管理时，启动升级的代码来验证具有此权限。 有关安全级别的详细信息，请参阅[中访问资源的安全信任级别](https://msdn.microsoft.com/library/8e45acbc-0d81-4f64-9da7-8f766aebff51)。 事务管理升级的详细信息，请参阅[Transaction Management Escalation](https://msdn.microsoft.com/library/5b87ae58-8ccf-4b9b-9715-41e4aade89b7)。 启动升级的代码，而不一定最初创建本地事务的代码会影响安全请求。  
   
  ]]></format>
     </remarks>
@@ -157,8 +157,8 @@
       </Parameters>
       <Docs>
         <param name="target">要与当前权限相交的权限。 它必须与当前权限属于同一类型。</param>
-        <summary>创建并返回一个权限，该权限是当前权限和指定权限的交集。</summary>
-        <returns>一个新权限，它表示当前权限与指定权限的交集。 如果交集为空，则此新权限为 <see langword="null" />。</returns>
+        <summary>创建并返回一个权限，该权限是当前权限与指定权限的交集。</summary>
+        <returns>表示当前权限和指定权限的交集的一个新权限。 如果交集为空，则此新权限为 <see langword="null" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -190,7 +190,7 @@
       <Docs>
         <param name="target">要测试子集关系的权限。 此权限必须与当前权限属于同一类型。</param>
         <summary>返回一个值，该值指示当前权限是否为指定权限的一个子集。</summary>
-        <returns>如果当前 <see cref="T:System.Security.IPermission" /> 是指定 <see cref="T:System.Security.IPermission" /> 的子集，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果当前 <see cref="T:System.Security.IPermission" /> 是指定 <see cref="T:System.Security.IPermission" /> 的子集）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,7 +222,7 @@
       <Parameters />
       <Docs>
         <summary>返回一个值，该值指示是否允许对受当前权限保护的资源进行不受限制地访问。</summary>
-        <returns>如果允许不受限制地使用受此权限所保护的资源，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果允许不受限制地使用受此权限所保护的资源）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

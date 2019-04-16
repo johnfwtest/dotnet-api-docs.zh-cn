@@ -1,5 +1,5 @@
 <Type Name="ActiveDirectoryMembershipProvider" FullName="System.Web.Security.ActiveDirectoryMembershipProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="1f60548ba9299c7b80ea0d1ddc04b388ba3347c2" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53395827" /></Metadata><TypeSignature Language="C#" Value="public class ActiveDirectoryMembershipProvider : System.Web.Security.MembershipProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ef60c94ed5cad241679e6411511e05473b61b9f0" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58875315" /></Metadata><TypeSignature Language="C#" Value="public class ActiveDirectoryMembershipProvider : System.Web.Security.MembershipProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDirectoryMembershipProvider extends System.Web.Security.MembershipProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.ActiveDirectoryMembershipProvider" />
   <TypeSignature Language="VB.NET" Value="Public Class ActiveDirectoryMembershipProvider&#xA;Inherits MembershipProvider" />
@@ -51,7 +51,7 @@
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>|securityIdentifier|No|  
 |<xref:System.Web.Security.MembershipUser.UserName%2A>|userPrincipalName|是的但必须为 userPrincipalName 或 sAMAccountName|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>|注释|No|  
-|<xref:System.Web.Security.MembershipUser.CreationDate%2A>|whenCreated|否|  
+|<xref:System.Web.Security.MembershipUser.CreationDate%2A>|whenCreated|No|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.Email%2A>|邮件|是的但必须是 Unicode 字符串类型的单值属性。|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>|n/a|不支持通过<xref:System.Web.Security.ActiveDirectoryMembershipProvider>。|  
 |<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>|n/a|不支持通过<xref:System.Web.Security.ActiveDirectoryMembershipProvider>。|  
@@ -269,7 +269,7 @@
         <param name="oldPassword">指定的用户的当前密码。</param>
         <param name="newPassword">指定的用户的新密码。</param>
         <summary>更改指定用户的密码。</summary>
-        <returns>如果密码更新成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果密码更新成功）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -304,17 +304,17 @@
   
 - 或 - 
  <paramref name="newPassword" /> 小于 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength" /> 属性所指定的最小密码长度 
-或 
+- 或 - 
  <paramref name="newPassword" /> 包含的非字母字符数比 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters" /> 属性所指定的数目少。  
   
 - 或 - 
- 根据 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression" /> 属性中定义的正则表达式进行的 <paramref name="newPassword" /> 验证失败。</exception>
+ <paramref name="newPassword" /> 验证失败（根据 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression" /> 属性中定义的正则表达式进行验证）。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="username" /> 为 <see langword="null" />。  
   
 - 或 - 
  <paramref name="oldPassword" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="newPassword" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Web.Security.MembershipPasswordException"><paramref name="newPassword" /> 不满足 Active Directory 服务器所定义的复杂性要求。</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">未能建立到 Active Directory 应用程序模式服务器的安全连接。</exception>
@@ -351,7 +351,7 @@
         <param name="newPasswordQuestion">指定的用户的新密码提示问题。</param>
         <param name="newPasswordAnswer">指定的用户的新密码提示问题答案。</param>
         <summary>更新 Active Directory 存储区中的用户密码提示问题和答案。</summary>
-        <returns>如果更新操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果密码不正确、用户已锁定或用户不在 Active Directory 数据存储区中，也会返回一个 <see langword="false" /> 值。</returns>
+        <returns><see langword="true" /> （如果更新操作成功）；否则为 <see langword="false" />。 如果密码不正确、用户已锁定或用户不在 Active Directory 数据存储区中，也会返回一个 <see langword="false" /> 值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -390,34 +390,34 @@
 - 或 - 
  <paramref name="username" /> 包含逗号。  
   
-或 
+- 或 - 
 用户名映射到 <see langword="userPrincipalName" /> 特性，并且 <paramref name="username" /> 参数包含反斜杠。  
   
 - 或 - 
  <paramref name="password" /> 是一个长度为零的字符串。  
   
-或 
+- 或 - 
  <paramref name="password" /> 超过最大密码长度（通常为 128 个字符）。  
   
 - 或 - 
  <paramref name="newPasswordQuestion" /> 为空，并且 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" /> 属性值为 <see langword="true" />。  
   
-或 
- <paramref name="newPasswordQuestion" /> 的长度超过 256 个字符。  
-  
-或 
- <paramref name="newPasswordAnswer" /> 加密后的长度超过 128 个字符。</exception>
-        <exception cref="T:System.ArgumentNullException"><paramref name="username" /> 为 <see langword="null" />。  
-  
-或 
- <paramref name="password" /> 为 <see langword="null" />。  
-  
-或 
- <paramref name="newPasswordQuestion" /> 为 <see langword="null" />，但 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" /> 属性为 <see langword="true" />。  
+- 或 - 
+ <paramref name="newPasswordQuestion" /> 超过 256 个字符。  
   
 - 或 - 
- <paramref name="newPasswordAnswer" /> 为 <see langword="null" />，但 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" /> 属性为 <see langword="true" />。</exception>
-        <exception cref="T:System.Configuration.Provider.ProviderException">[machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)配置元素指示自动生成的计算机加密密钥。 必须将 [machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)元素的 <see langword="decriptionKey" /> 属性显式设置为使用 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 存储密码提示问题答案。</exception>
+ <paramref name="newPasswordAnswer" /> 加密后超过 128 个字符。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="username" /> 为 <see langword="null" />。  
+  
+- 或 - 
+ <paramref name="password" /> 为 <see langword="null" />。  
+  
+- 或 - 
+ <paramref name="newPasswordQuestion" /> 为 <see langword="null" /> 且 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" /> 属性为 <see langword="true" />。  
+  
+- 或 - 
+ <paramref name="newPasswordAnswer" /> 为 <see langword="null" /> 且 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" /> 属性为 <see langword="true" />。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">[machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)配置元素指示自动生成的计算机加密密钥。 必须将 [machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)元素的 <see langword="decryptionKey" /> 属性显式设置为使用 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 存储密码提示问题答案。</exception>
         <exception cref="T:System.InvalidOperationException">在初始化 <see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)" /> 实例前，调用了 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 方法。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980(v=vs.100)">ASP.NET 成员资格简介</related>
       </Docs>
@@ -454,8 +454,8 @@
         <param name="email">新用户的电子邮件地址。</param>
         <param name="passwordQuestion">新用户的密码提示问题。</param>
         <param name="passwordAnswer">新用户的密码提示问题答案。</param>
-        <param name="isApproved">是否批准对新的用户进行验证。</param>
-        <param name="providerUserKey">用户的成员资格数据源中的唯一标识符。 使用 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 类时，此参数必须为 <see langword="null" />。</param>
+        <param name="isApproved">是否允许验证新用户。</param>
+        <param name="providerUserKey">成员资格数据源中该用户的唯一标识符。 使用 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 类时，此参数必须为 <see langword="null" />。</param>
         <param name="status">此方法返回时，包含一个 <see cref="T:System.Web.Security.MembershipCreateStatus" /> 枚举值，指示是否成功创建了用户。</param>
         <summary>将新用户添加到 Active Directory 数据存储区。</summary>
         <returns>一个 <see cref="T:System.Web.Security.ActiveDirectoryMembershipUser" /> 实例，包含新创建用户的信息；如果未成功创建用户，则为 <see langword="null" />。</returns>
@@ -504,11 +504,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="providerUserKey" /> 参数不是 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="providerUserKey" /> 参数不为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException">管理员尚未将密码提示问题和答案字段映射到 Active Directory 架构的特性，并且 <paramref name="passwordQuestion" /> 或 <paramref name="passwordAnswer" /> 参数不是 <see langword="null" />。</exception>
-        <exception cref="T:System.Configuration.Provider.ProviderException">[machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)配置元素指示自动生成的计算机加密密钥。 必须将 [machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)元素的 <see langword="decriptionKey" /> 属性显式设置为使用 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 存储密码提示问题答案。  
+        <exception cref="T:System.Configuration.Provider.ProviderException">[machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)配置元素指示自动生成的计算机加密密钥。 必须将 [machineKey 元素（ASP.NET 设置框架）](https://msdn.microsoft.com/library/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)元素的 <see langword="decryptionKey" /> 属性显式设置为使用 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 存储密码提示问题答案。  
   
-或 
+- 或 - 
 尝试设置新用户的密码时，<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 无法建立到目录的安全连接。</exception>
         <exception cref="T:System.Runtime.InteropServices.COMException">尝试创建用户时出现错误。</exception>
         <exception cref="T:System.InvalidOperationException">在初始化 <see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" /> 实例前，调用了 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 方法。</exception>
@@ -598,7 +598,7 @@
         <param name="username">要删除的用户的名称。</param>
         <param name="deleteAllRelatedData"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.DeleteUser(System.String,System.Boolean)" /> 方法将此参数忽略。</param>
         <summary>从 Active Directory 数据存储区移除用户的成员资格信息。</summary>
-        <returns>如果删除了用户，则为 <see langword="true" />；如果在数据存储区中未找到该用户，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果删除了用户）；如果在数据存储区中未找到该用户，则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -616,7 +616,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="username" /> 为空，或超过用户名的最大长度（通常为 256 个字符）。  
   
-或 
+- 或 - 
  <paramref name="username" /> 包含逗号。  
   
 - 或 - 
@@ -645,7 +645,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 实例是否已配置为允许用户重置其密码。</summary>
-        <value>如果允许密码重置，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果允许密码重置;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -726,7 +726,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否可从 Active Directory 数据存储区检索用户密码。 此属性始终返回 <see langword="false" />。</summary>
-        <value><see langword="false" /> 指示 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 类不支持密码检索。</value>
+        <value><see langword="false" /> 若要指示不受密码检索<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />类。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -756,7 +756,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示面向搜索的 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 方法是否可用。</summary>
-        <value>如果搜索方法可用，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果搜索方法才会有效。否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -833,7 +833,7 @@
         <param name="pageSize">要返回的结果页的大小。</param>
         <param name="totalRecords">此方法返回时，包含集合中返回的用户总数。 此参数未经初始化即被传递。</param>
         <summary>根据用户的电子邮件地址，从 Active Directory 数据存储返回成员资格用户集合。</summary>
-        <returns>一个 <see cref="T:System.Web.Security.MembershipUserCollection" />，其中包含从 <paramref name="pageSize" /> 所指定的页开始的 <paramref name="pageIndex" /> <see cref="T:System.Web.Security.MembershipUser" /> 实例。</returns>
+        <returns>一个 <see cref="T:System.Web.Security.MembershipUserCollection" />，其中包含从 <paramref name="pageIndex" /> 所指定的页开始的 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 实例。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -860,9 +860,9 @@
         <exception cref="T:System.ArgumentException"><paramref name="emailToMatch" /> 为空。  
   
 - 或 - 
- <paramref name="emailToMatch" /> 的长度超过 256 个字符。  
+ <paramref name="emailToMatch" /> 超过 256 个字符。  
   
-或 
+- 或 - 
  <paramref name="pageIndex" /> 小于 0。  
   
 - 或 - 
@@ -902,7 +902,7 @@
         <param name="pageSize">要返回的结果页的大小。</param>
         <param name="totalRecords">当此方法返回时，此参数包含在集合中返回的记录的总数。 此参数未经初始化即被传递。</param>
         <summary>根据用户名从 Active Directory 数据存储区返回用户的集合。</summary>
-        <returns>一个 <see cref="T:System.Web.Security.MembershipUserCollection" />，其中包含从 <paramref name="pageSize" /> 所指定的页开始的 <paramref name="pageIndex" /> <see cref="T:System.Web.Security.MembershipUser" /> 实例。</returns>
+        <returns>一个 <see cref="T:System.Web.Security.MembershipUserCollection" />，其中包含从 <paramref name="pageIndex" /> 所指定的页开始的 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 实例。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -924,7 +924,7 @@
         <exception cref="T:System.InvalidOperationException">在初始化 <see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)" /> 实例前，调用了 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 方法。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="usernameToMatch" /> 为空，或超过用户名的最大长度（通常为 256 个字符）。  
   
-或 
+- 或 - 
  <paramref name="usernameToMatch" /> 包含逗号。  
   
 - 或 - 
@@ -1006,7 +1006,7 @@
         <param name="pageSize">要返回的结果页的大小。</param>
         <param name="totalRecords">当此方法返回时，此参数包含在集合中返回的记录的总数。 此参数未经初始化即被传递。</param>
         <summary>获取 Active Directory 数据源中存储的所有用户的集合。</summary>
-        <returns>一个 <see cref="T:System.Web.Security.MembershipUserCollection" />，其中包含从 <paramref name="pageSize" /> 所指定的页开始的 <paramref name="pageIndex" /> <see cref="T:System.Web.Security.MembershipUser" /> 实例。</returns>
+        <returns>一个 <see cref="T:System.Web.Security.MembershipUserCollection" />，其中包含从 <paramref name="pageIndex" /> 所指定的页开始的 <paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" /> 实例。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1055,7 +1055,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在所有情况下都会引发 <see cref="T:System.NotSupportedException" /> 异常。</summary>
+        <summary>任何情况下均引发 <see cref="T:System.NotSupportedException" /> 异常。</summary>
         <returns>所有情况下均为 <see cref="T:System.NotSupportedException" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1090,7 +1090,7 @@
         <Parameter Name="passwordAnswer" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="username">要为其检索密码的用户。</param>
+        <param name="username">为其检索密码的用户。</param>
         <param name="passwordAnswer">用户的密码提示问题答案。</param>
         <summary>从数据库返回指定用户的密码。 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 类不支持此方法。</summary>
         <returns>总是引发 <see cref="T:System.NotSupportedException" /> 异常。</returns>
@@ -1178,7 +1178,7 @@
         <Parameter Name="userIsOnline" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="username">要为其获取信息的用户的名称。</param>
+        <param name="username">要获取其信息的用户名。</param>
         <param name="userIsOnline"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.String,System.Boolean)" /> 方法忽略此参数。</param>
         <summary>获取与指定用户名关联的成员资格用户信息。</summary>
         <returns>一个 <see cref="T:System.Web.Security.MembershipUser" /> 实例，它表示指定的用户。 如果在 Active Directory 数据存储区中没有找到任何具有指定 <paramref name="username" /> 值的用户，则返回 <see langword="null" />。</returns>
@@ -1250,8 +1250,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="email" /> 的长度超过 256 个字符 
-或 
+        <exception cref="T:System.ArgumentException"><paramref name="email" /> 超过 256 个字符 
+- 或 - 
 修整后，<paramref name="email" /> 为空。</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">数据存储区中存在多个具有相同电子邮件地址的用户，而 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" /> 属性值为 <see langword="true" />。</exception>
         <exception cref="T:System.InvalidOperationException">该提供程序未初始化。</exception>
@@ -1293,19 +1293,19 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="config" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">在应用程序配置中指定的 <see langword="applicationName" /> 特性超过 256 个字符。  
   
-或 
+- 或 - 
 <see langword="connectionStringName" /> 特性为空或应用程序配置中不存在该特性。  
   
-或 
+- 或 - 
 在应用程序配置文件中的 <see langword="connectionStringName" /> 特性中指定的连接字符串为空或不存在。  
   
 - 或 - 
 在应用程序配置文件中，<see langword="connectionProtection" /> 特性设置为 <see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal" /> 或 <see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.None" /> 以外的值。  
   
-或 
+- 或 - 
 应用程序配置文件中指定了 <see langword="connectionUsername" /> 特性，但其值为空。  
   
-或 
+- 或 - 
 应用程序配置文件中指定了 <see langword="connectionPassword" /> 特性，但其值为空。  
   
 - 或 - 
@@ -1323,10 +1323,10 @@
 - 或 - 
 指定了 <see langword="requiresUniqueEmail" /> 特性，但它不是布尔值。  
   
-或 
+- 或 - 
 指定了 <see langword="enablePasswordReset" /> 特性，但它不是布尔值。  
   
-或 
+- 或 - 
 指定了 <see langword="requiresQuestionAndAnswer" /> 特性，但它不是布尔值。  
   
 - 或 - 
@@ -1335,7 +1335,7 @@
 - 或 - 
 指定了 <see langword="minRequiredNonalphanumericCharacters" /> 特性，但它为负或大于 128。  
   
-或 
+- 或 - 
 在应用程序配置文件的 <see langword="passwordStrengthRegularExpression" /> 特性中指定的正则表达式不是有效的正则表达式 
 - 或 - 
 指定了 <see langword="attributeMapUsername" /> 特性，但它是一个空字符串。  
@@ -1355,22 +1355,22 @@
 - 或 - 
 <see langword="connectionProtection" /> 特性设置为 <see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal" />，但不能与服务器建立 SSL 和经过签名且密封的连接。  
   
-或 
+- 或 - 
 <see langword="connectionProtection" /> 特性设置为 <see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.None" />，但未设置 <see langword="connectionUsername" /> 和 <see langword="connectionPassword" /> 特性。  
   
-或 
+- 或 - 
 <see langword="connectionProtection" /> 特性设置为 <see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal" />，但 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 未能与 ADAM 服务器建立 SSL 连接。  
   
 - 或 - 
 <see langword="connectionString" /> 特性指定全局编录 (GC) 或 SSL 全局编录端口。  
   
-或 
+- 或 - 
 <see langword="connectionString" /> 特性指定 Active Directory 服务器或域，但 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 未能检索域的默认命名上下文。  
   
-或 
+- 或 - 
 <see langword="connectionString" /> 特性指定 Active Directory 服务器或域，但 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 未能检索默认用户容器。  
   
-或 
+- 或 - 
 <see langword="connectionString" /> 特性指定 ADAM 服务器，但未指定应用程序分区或容器。  
   
 - 或 - 
@@ -1387,7 +1387,7 @@
 - 或 - 
 指定了一个特性映射，但用户实例中不存在该特性。  
   
-或 
+- 或 - 
 指定了一个特性映射，但该目录特性的数据类型不正确。  
   
 - 或 - 
@@ -1405,7 +1405,7 @@
 - 或 - 
 指定了 <see langword="maxInvalidPasswordAttempts" /> 特性，但它不是非零正整数。  
   
-或 
+- 或 - 
 指定了 <see langword="passwordAttemptWindow" /> 特性，但它不是非零正整数。  
   
 - 或 - 
@@ -1562,8 +1562,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取密码所需的最小长度。</summary>
-        <value>密码所需的最小长度。</value>
+        <summary>获取密码所要求的最小长度。</summary>
+        <value>密码所要求的最小长度。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1842,7 +1842,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示成员资格提供程序是否配置为要求在创建用户时提供密码提示问题和答案。</summary>
-        <value>如果 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> 对象配置为需要用户的密码提示问题和答案，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />对象是已配置为要求密码提示问题和回答用户; 否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1977,9 +1977,9 @@
         <Parameter Name="passwordAnswer" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="username">要为其重置密码的用户。</param>
+        <param name="username">为其重置密码的用户。</param>
         <param name="passwordAnswer">指定的用户的密码提示问题答案。</param>
-        <summary>将用户密码重置为自动生成的新密码。</summary>
+        <summary>将用户密码重置为一个自动生成的新密码。</summary>
         <returns>指定的用户的新密码。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2011,7 +2011,7 @@
   
 -   必须修改 Active Directory 架构以包含用于存储密码提示问题和答案，属性和密码的三个跟踪字段回答的更改。  
   
--   `attributeMapPasswordQuestion`， `attributeMapPasswordAnswer`， `attributMapFailedPasswordAnswerCount`， `attributeMapFailedPasswordAnswerTime`，和`attributeMapFailedPasswordAnswerLockedTime`属性必须设置应用程序配置文件中。  
+-   `attributeMapPasswordQuestion`， `attributeMapPasswordAnswer`， `attributeMapFailedPasswordAnswerCount`， `attributeMapFailedPasswordAnswerTime`，和`attributeMapFailedPasswordAnswerLockedTime`属性必须设置应用程序配置文件中。  
   
 -   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer%2A>属性必须设置为`true`。  
   
@@ -2028,9 +2028,9 @@
   
 - 或 - 
  <paramref name="username" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException">修整后，<paramref name="passwordAnswer" /> 为空 
+        <exception cref="T:System.ArgumentException"><paramref name="passwordAnswer" /> 修整后为空 
 - 或 - 
- <paramref name="passwordAnswer" /> 的长度超过 128 个字符。  
+ <paramref name="passwordAnswer" /> 超过 128 个字符。  
   
 - 或 - 
  <paramref name="username" /> 为空，或超过用户名允许的最大长度（通常为 256 个字符）。  
@@ -2042,17 +2042,17 @@
 用户名映射到 <see langword="userPrincipalName" />，但 <paramref name="username" /> 参数包含反斜杠。</exception>
         <exception cref="T:System.Web.Security.MembershipPasswordException">由于多次登录失败或多次重置密码提示问题失败，用户被锁定。  
   
-或 
- <paramref name="passwordAnswer" /> 与存储的密码提示问题答案不一致。</exception>
+- 或 - 
+ <paramref name="passwordAnswer" /> 与存储的密码提示问题答案不匹配。</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException"><paramref name="username" /> 所指定的用户在 Active Directory 数据存储区中不存在。  
   
-或 
+- 或 - 
 生成的密码不能传递自定义验证处理程序。  
   
 - 或 - 
 生成的密码不够复杂，无法满足 Active Directory 服务器所设置的自定义密码策略。  
   
-或 
+- 或 - 
 无法建立到 Active Directory 应用程序模式服务器的安全连接，因此不能设置新密码。</exception>
         <exception cref="T:System.Exception">发生了未经处理的异常。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980(v=vs.100)">ASP.NET 成员资格简介</related>
@@ -2080,7 +2080,7 @@
       <Docs>
         <param name="username">要为其清除锁定状态的成员资格用户的名称。</param>
         <summary>清除锁定，以便成员资格用户能够进行验证。</summary>
-        <returns>如果成功解除成员资格用户的锁定，则为 <see langword="true" />；否则为 <see langword="false" />。 如果数据存储区中找不到该成员资格用户，<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser(System.String)" /> 方法也会返回 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果成员资格用户成功解锁）；否则为 <see langword="false" />。 如果数据存储区中找不到该成员资格用户，<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser(System.String)" /> 方法也会返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2097,7 +2097,7 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="username" /> 为空，或超过用户名允许的最大长度（通常为 256 个字符）。  
   
-或 
+- 或 - 
  <paramref name="username" /> 包含逗号。  
   
 - 或 - 
@@ -2150,16 +2150,16 @@
 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" /> 属性为 <see langword="true" />，但所提供的 <see cref="T:System.Web.Security.MembershipUser" /> 实例的电子邮件地址为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException">修整后，<see cref="P:System.Web.Security.MembershipUser.Email" /> 属性为空。  
   
-或 
+- 或 - 
 <see cref="P:System.Web.Security.MembershipUser.Email" /> 属性超过 256 个字符。  
   
-或 
+- 或 - 
 <see cref="P:System.Web.Security.MembershipUser.Comment" /> 属性超过 1024 个字符。  
   
-或 
+- 或 - 
 <see cref="P:System.Web.Security.MembershipUser.Comment" /> 属性为空。  
   
-或 
+- 或 - 
 所提供的 <see cref="T:System.Web.Security.MembershipUser" /> 实例的用户名为空，或超过用户名允许的最大长度（通常为 256 个字符）。  
   
 - 或 - 
@@ -2169,7 +2169,7 @@
 用户名已映射到 <see langword="userPrincipalName" />，但所提供的 <see cref="T:System.Web.Security.MembershipUser" /> 实例的用户名包含反斜杠。</exception>
         <exception cref="T:System.Configuration.Provider.ProviderException">Active Directory 数据存储区中找不到指定的用户。  
   
-或 
+- 或 - 
 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" /> 属性为 <see langword="true" />，而 <see cref="P:System.Web.Security.MembershipUser.Email" /> 属性的新值与现有电子邮件地址重复。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980(v=vs.100)">ASP.NET 成员资格简介</related>
       </Docs>
@@ -2198,7 +2198,7 @@
         <param name="username">要验证的用户的名称。</param>
         <param name="password">指定的用户的密码。</param>
         <summary>验证 Active Directory 数据存储区中是否存在指定的用户名和密码。</summary>
-        <returns>如果指定的 <paramref name="username" /> 和 <paramref name="password" /> 有效，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 Active Directory 数据存储区中不存在指定的用户，<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser(System.String,System.String)" /> 方法则返回 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的 <paramref name="username" /> 和 <paramref name="password" /> 有效）；否则为 <see langword="false" />。 如果 Active Directory 数据存储区中不存在指定的用户，<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser(System.String,System.String)" /> 方法则返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

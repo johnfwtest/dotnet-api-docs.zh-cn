@@ -1,5 +1,5 @@
 <Type Name="SoapMessage" FullName="System.Web.Services.Protocols.SoapMessage">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="91dcee27b32d921ed3599a35b151e95e6f1a686d" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53221181" /></Metadata><TypeSignature Language="C#" Value="public abstract class SoapMessage" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f240626bd0878993529e7c68020bb272035d9233" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58873782" /></Metadata><TypeSignature Language="C#" Value="public abstract class SoapMessage" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapMessage extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapMessage" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class SoapMessage" />
@@ -95,7 +95,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置 <see langword="Content-Encoding" /> HTTP 标头的内容。</summary>
-        <value><see langword="Content-Encoding" /> HTTP 标头的内容。</value>
+        <value><see langword="Content-Encoding" />HTTP 标头的内容。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -147,7 +147,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">在 <see cref="P:System.Web.Services.Protocols.SoapMessage.ContentType" /> 或 <see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize" /> 阶段可访问 <see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.Services.Protocols.SoapMessage.ContentType" /> 在 <see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize" /> 或 <see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize" /> 阶段可访问。</exception>
         <altmember cref="T:System.Web.Services.Protocols.SoapMessageStage" />
         <altmember cref="P:System.Web.Services.Protocols.SoapMessage.ContentEncoding" />
       </Docs>
@@ -286,7 +286,7 @@
       </ReturnValue>
       <Docs>
         <summary>从对 XML Web services 方法的调用中获取 <see cref="T:System.Web.Services.Protocols.SoapException" />。</summary>
-        <value>在对 XML Web services 方法的调用中发生的 <see cref="T:System.Web.Services.Protocols.SoapException" />。 如果在对 Web 服务方法的调用过程中未发生任何 <see cref="T:System.Web.Services.Protocols.SoapException" />，则为 <see langword="null" />。</value>
+        <value>在对 XML Web services 方法的调用中发生的 <see cref="T:System.Web.Services.Protocols.SoapException" />。 <see langword="null" /> 如果没有<see cref="T:System.Web.Services.Protocols.SoapException" />对 Web 服务方法的调用期间出现。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -330,7 +330,7 @@
 ## Remarks  
  <xref:System.Web.Services.Protocols.SoapMessage.GetInParameterValue%2A>属性是仅在参数中的可访问时才可用。 ASP.NET 将引发<xref:System.InvalidOperationException>访问时<xref:System.Web.Services.Protocols.SoapMessage.GetInParameterValue%2A>如果参数中的属性将不可用。  
   
- 在中<xref:System.Web.Services.Protocols.SoapClientMessage>in 参数均位于<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize> <xref:System.Web.Services.Protocols.SoapMessageStage>。 在中<xref:System.Web.Services.Protocols.SoapServerMessage>in 参数均位于<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize> <xref:System.Web.Services.Protocols.SoapMessageStage>。  
+ 在中<xref:System.Web.Services.Protocols.SoapClientMessage>in 参数位于<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>。 在中<xref:System.Web.Services.Protocols.SoapServerMessage>in 参数位于<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>。  
   
    
   
@@ -379,7 +379,7 @@
 ## Remarks  
  如果输出参数不可用，则 ASP.NET 将引发<xref:System.InvalidOperationException>访问时<xref:System.Web.Services.Protocols.SoapMessage.GetOutParameterValue%2A>属性。  
   
- 在中<xref:System.Web.Services.Protocols.SoapClientMessage>的 out 参数中有<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize> <xref:System.Web.Services.Protocols.SoapMessageStage>。 在中<xref:System.Web.Services.Protocols.SoapServerMessage>的 out 参数中有<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>的<xref:System.Web.Services.Protocols.SoapMessageStage>。  
+ 在中<xref:System.Web.Services.Protocols.SoapClientMessage>的 out 参数位于<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>。 在中<xref:System.Web.Services.Protocols.SoapServerMessage>的 out 参数中有<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>的<xref:System.Web.Services.Protocols.SoapMessageStage>。  
   
    
   
@@ -435,7 +435,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">XML Web services 方法没有返回值。  
   
-或 
+- 或 - 
 返回值不可用。</exception>
       </Docs>
     </Member>
@@ -459,7 +459,7 @@
       </ReturnValue>
       <Docs>
         <summary>应用于当前 SOAP 请求或 SOAP 响应的 SOAP 标头的集合。</summary>
-        <value>应用于当前 SOAP 请求或 SOAP 响应的 <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />。 如果不存在 SOAP 标头，则为 <see langword="null" />。</value>
+        <value>应用于当前 SOAP 请求或 SOAP 响应的 <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />。 <see langword="null" />如果没有 SOAP 标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -531,7 +531,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示应用于 XML Web services 方法的 <see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" /> 或 <see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" /> 特性的 <see cref="T:System.Web.Services.Protocols.SoapRpcMethodAttribute" /> 属性。</summary>
-        <value>如果应用于 XML Web services 方法的 <see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" /> 或 <see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" /> 的 <see cref="T:System.Web.Services.Protocols.SoapRpcMethodAttribute" /> 属性为 <see langword="true" />，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" />的属性<see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />或<see cref="T:System.Web.Services.Protocols.SoapRpcMethodAttribute" />应用于 XML Web 服务方法是<see langword="true" />; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

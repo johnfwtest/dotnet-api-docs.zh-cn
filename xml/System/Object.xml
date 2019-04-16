@@ -1,5 +1,5 @@
 <Type Name="Object" FullName="System.Object">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7e55e8acd5a3dd0694385dd71a0e2108d66e1c37" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58719702" /></Metadata><TypeSignature Language="C#" Value="public class Object" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cfdf20f498b9446fa1ef100b01c36257161f0c6c" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58875068" /></Metadata><TypeSignature Language="C#" Value="public class Object" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit object" />
   <TypeSignature Language="DocId" Value="T:System.Object" />
   <TypeSignature Language="VB.NET" Value="Public Class Object" />
@@ -181,7 +181,7 @@
       <Docs>
         <param name="obj">要与当前对象进行比较的对象。</param>
         <summary>确定指定的对象是否等于当前对象。</summary>
-        <returns>如果指定的对象等于当前对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定的对象等于当前对象）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -211,7 +211,7 @@
  当您调用<xref:System.Object.Equals%28System.Object%29>中的类上的方法重载[!INCLUDE[wrt](~/includes/wrt-md.md)]，它不替代的类提供的默认行为<xref:System.Object.Equals%28System.Object%29>。 这是.NET Framework 提供了有关支持的一部分[!INCLUDE[wrt](~/includes/wrt-md.md)](请参阅[.NET Framework 支持的 Windows 应用商店应用程序和 Windows 运行时](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 中的类[!INCLUDE[wrt](~/includes/wrt-md.md)]不继承<xref:System.Object>，并不实现<xref:System.Object.Equals%28System.Object%29>方法。 但是，它们显示为具有<xref:System.Object.ToString%2A>， <xref:System.Object.Equals%28System.Object%29>，和<xref:System.Object.GetHashCode%2A>方法在 C# 或 Visual Basic 代码中，使用它们以及.NET Framework 提供的默认行为，这些方法时。  
   
 > [!NOTE]
->  [!INCLUDE[wrt](~/includes/wrt-md.md)] 在 C# 或 Visual Basic 编写的类可以重写<xref:System.Object.Equals%28System.Object%29>方法重载。  
+>  [!INCLUDE[wrt](~/includes/wrt-md.md)] 类用C#或 Visual Basic 可以重写<xref:System.Object.Equals%28System.Object%29>方法重载。  
   
 ## <a name="notes-for-callers"></a>调用方的说明  
  经常重写派生的类<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>方法来实现值相等性。 此外，类型也经常提供到另一个强类型的重载`Equals`方法，通常通过实现<xref:System.IEquatable%601>接口。 当您调用`Equals`方法来测试相等性，您应该知道的当前实例是否重写<xref:System.Object.Equals%2A?displayProperty=nameWithType>，并了解如何为特定的调用`Equals`方法得到解决。 否则为你可能要为确定相等性不同于您的预期，执行测试，该方法可能返回意外的值。  
@@ -247,9 +247,9 @@
   
  下面的语句必须为 true 的所有实现<xref:System.Object.Equals%28System.Object%29>方法。 在列表中， `x`， `y`，并`z`表示对象引用了不**null**。  
   
--   `x.Equals(x)` 返回`true`，涉及浮点类型的情况除外。 请参阅 ISO/IEC/IEEE 60559:2011，信息技术-微处理器系统-浮点运算。  
+-   `x.Equals(x)` 返回`true`，涉及浮点类型的情况除外。 请参阅[ISO/IEC/IEEE 60559:2011、 信息技术-微处理器系统-浮点算术](https://www.iso.org/standard/57469.html)。  
   
--   `x.Equals(y)` 返回与 `y.Equals(x)` 相同的值。  
+-   `x.Equals(y)` 返回值与相同`y.Equals(x)`。  
   
 -   `x.Equals(y)` 返回`true`如果这两个`x`并`y`是`NaN`。  
   
@@ -370,7 +370,7 @@
         <param name="objA">要比较的第一个对象。</param>
         <param name="objB">要比较的第二个对象。</param>
         <summary>确定指定的对象实例是否被视为相等。</summary>
-        <returns>如果认为对象相等，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <paramref name="objA" /> 和 <paramref name="objB" /> 均为 null，此方法返回 <see langword="true" />。</returns>
+        <returns><see langword="true" /> （如果对象被视为相等）；否则为 <see langword="false" />。 如果 <paramref name="objA" /> 和 <paramref name="objB" /> 均为 null，此方法返回 <see langword="true" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -497,7 +497,7 @@
 > [!NOTE]
 >  C# 编译器不允许你重写<xref:System.Object.Finalize%2A>方法。 相反，通过实现提供终结器[析构函数](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)为您的类。 C# 析构函数自动调用其基类的析构函数。  
 >   
->  Visual c + + 还提供其自己的语法用于实现<xref:System.Object.Finalize%2A>方法。 有关详细信息，请参阅的"析构函数和终结器"部分[如何：定义和使用类和结构 (C + + CLI)](https://msdn.microsoft.com/library/1c03cb0d-1459-4b5e-af65-97d6b3094fd7)。  
+>  VisualC++还提供用于实现其自己的语法<xref:System.Object.Finalize%2A>方法。 有关详细信息，请参阅的"析构函数和终结器"部分[如何：定义和使用类和结构 (C++/CLI)](https://msdn.microsoft.com/library/1c03cb0d-1459-4b5e-af65-97d6b3094fd7)。  
   
  垃圾回收是不确定的因为您不知道准确地说当垃圾回收器执行终止。 释放资源立即，您还可以选择实现 [dispose 模式](~/docs/standard/garbage-collection/implementing-dispose.md) 和<xref:System.IDisposable>接口。 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>实现可由使用者类的释放非托管的资源，并且你可以使用<xref:System.Object.Finalize%2A>方法来释放非托管的资源的事件中<xref:System.IDisposable.Dispose%2A>不会调用方法。  
   
@@ -620,7 +620,7 @@
  当您调用<xref:System.Object.GetHashCode%2A>方法中的类[!INCLUDE[wrt](~/includes/wrt-md.md)]，它不替代的类提供的默认行为<xref:System.Object.GetHashCode%2A>。 这是.NET Framework 提供了有关支持的一部分[!INCLUDE[wrt](~/includes/wrt-md.md)](请参阅[.NET Framework 支持的 Windows 应用商店应用程序和 Windows 运行时](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 中的类[!INCLUDE[wrt](~/includes/wrt-md.md)]不继承<xref:System.Object>，并不实现<xref:System.Object.GetHashCode%2A>。 但是，它们显示为具有<xref:System.Object.ToString%2A>， <xref:System.Object.Equals%28System.Object%29>，和<xref:System.Object.GetHashCode%2A>方法在 C# 或 Visual Basic 代码中，使用它们以及.NET Framework 提供的默认行为，这些方法时。  
   
 > [!NOTE]
->  [!INCLUDE[wrt](~/includes/wrt-md.md)] 在 C# 或 Visual Basic 编写的类可以重写<xref:System.Object.GetHashCode%2A>方法。  
+>  [!INCLUDE[wrt](~/includes/wrt-md.md)] 类用C#或 Visual Basic 可以重写<xref:System.Object.GetHashCode%2A>方法。  
   
    
   
@@ -900,7 +900,7 @@
         <param name="objA">要比较的第一个对象。</param>
         <param name="objB">要比较的第二个对象。</param>
         <summary>确定指定的 <see cref="T:System.Object" /> 实例是否是相同的实例。</summary>
-        <returns>如果 <paramref name="objA" /> 是与 <paramref name="objB" /> 相同的实例，或两者均为 null，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果 <paramref name="objA" /> 是与 <paramref name="objB" /> 相同的实例，或两者均为 null）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1078,7 +1078,7 @@
  从开始[!INCLUDE[net_v451](~/includes/net-v451-md.md)]，将使用公共语言运行时[IStringable.ToString](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)上[!INCLUDE[wrt](~/includes/wrt-md.md)]再回退到的默认实现对象<xref:System.Object.ToString%2A?displayProperty=nameWithType>。  
   
 > [!NOTE]
->  [!INCLUDE[wrt](~/includes/wrt-md.md)] 在 C# 或 Visual Basic 编写的类可以重写<xref:System.Object.ToString%2A>方法。  
+>  [!INCLUDE[wrt](~/includes/wrt-md.md)] 类用C#或 Visual Basic 可以重写<xref:System.Object.ToString%2A>方法。  
   
 ### <a name="the-includewrtincludeswrt-mdmd-and-the-istringable-interface"></a>[!INCLUDE[wrt](~/includes/wrt-md.md)]和 IStringable 接口  
  从开始[!INCLUDE[win81](~/includes/win81-md.md)]，则[!INCLUDE[wrt](~/includes/wrt-md.md)]包括[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)接口的单一方法[IStringable.ToString](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)，提供了基本格式设置支持相媲美提供的<xref:System.Object.ToString%2A?displayProperty=nameWithType>。 若要避免产生混乱，不应实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)上托管类型。  
@@ -1086,7 +1086,7 @@
  通过本机代码或 JavaScript 或 C + 等语言编写的代码调用时的托管的对象 + /CX 中，它们看起来实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)。 公共语言运行时自动将路由从调用[IStringable.ToString](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)到<xref:System.Object.ToString%2A?displayProperty=nameWithType>在事件[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)未在托管对象上实现。  
   
 > [!WARNING]
->  因为公共语言运行时自动实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)所有的托管类型中的[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]应用程序，我们建议，不提供你自己[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)实现。 实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)调用时，可能会导致意外的行为`ToString`从[!INCLUDE[wrt](~/includes/wrt-md.md)]、 C + + /CX 或 JavaScript。  
+>  因为公共语言运行时自动实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)所有的托管类型中的[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]应用程序，我们建议，不提供你自己[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)实现。 实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)调用时，可能会导致意外的行为`ToString`从[!INCLUDE[wrt](~/includes/wrt-md.md)]， C++/CX 或 JavaScript。  
   
  如果选择实现[IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)中导出的公共托管类型中[!INCLUDE[wrt](~/includes/wrt-md.md)]组件，以下限制适用：  
   

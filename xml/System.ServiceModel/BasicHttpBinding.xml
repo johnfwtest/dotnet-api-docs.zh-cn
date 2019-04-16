@@ -1,5 +1,5 @@
 <Type Name="BasicHttpBinding" FullName="System.ServiceModel.BasicHttpBinding">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="89643e3c344a5d378184c0fafab687d5df94b6a4" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58557228" /></Metadata><TypeSignature Language="C#" Value="public class BasicHttpBinding : System.ServiceModel.HttpBindingBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="d9b8a9f2385de57668ed6739fb2763dbf6561d34" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874353" /></Metadata><TypeSignature Language="C#" Value="public class BasicHttpBinding : System.ServiceModel.HttpBindingBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BasicHttpBinding extends System.ServiceModel.HttpBindingBase implements class System.ServiceModel.Channels.IBindingRuntimePreferences" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.BasicHttpBinding" />
   <TypeSignature Language="VB.NET" Value="Public Class BasicHttpBinding&#xA;Inherits HttpBindingBase" />
@@ -223,7 +223,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示客户端是否接受 Cookie 并根据今后的请求传播 Cookie。</summary>
-        <value>如果接受 Cookie，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果允许使用 cookie;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -310,7 +310,7 @@ binding.AllowCookies = true;
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示是否对本地地址不使用代理服务器。</summary>
-        <value>如果对本地地址不使用代理服务器，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 若要绕过本地地址; 的代理服务器否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -431,7 +431,7 @@ binding.BypassProxyOnLocal = true;
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示是否启用 HTTP Cookie 容器。</summary>
-        <value>如果启用 HTTP cookie 容器，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果启用 HTTP cookie 容器;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -638,9 +638,9 @@ binding.MaxBufferPoolSize = 0x80000 * 2;
 
 MaxBufferSize 属性和其意义的值会不同，具体取决于是否对消息进行缓冲还是流上它们收到通过该通道：
 
-对于缓冲传输，（<xref:System.ServiceModel.BasicHttpBinding.TransferMode> 设置为 <xref:System.ServiceModel.TransferMode.Buffered>）。 该值始终等于由 <xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize> 指定的值。
+- 对于缓冲传输 (<xref:System.ServiceModel.BasicHttpBinding.TransferMode>设置为<xref:System.ServiceModel.TransferMode.Buffered?displayProperty=nameWithType>)，此值始终为等于指定的<xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize>属性。
 
-对于流传输（<xref:System.ServiceModel.BasicHttpBinding.TransferMode> 设置为 <xref:System.ServiceModel.TransferMode.Streamed>），必须对 SOAP 标头进行缓冲才能生成消息。 可根据需要对正文进行流处理。 在这种情况下，MaxBufferSize 是否小于或等于<xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize>，其中<xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize>限制整个消息 （标头和正文） 的大小和 MaxBufferSize 限制仅对 SOAP 标头的大小。
+- 对于流传输（<xref:System.ServiceModel.BasicHttpBinding.TransferMode> 设置为 <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType>），必须对 SOAP 标头进行缓冲才能生成消息。 可根据需要对正文进行流处理。 在这种情况下，MaxBufferSize 是否小于或等于<xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize>，其中<xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize>限制整个消息 （标头和正文） 的大小和 MaxBufferSize 限制仅对 SOAP 标头的大小。
 
 此处对缓冲区大小所设置的限制是为了优化消息交换的性能。 如果消息超过为缓冲区设置的最大值，则不会丢弃该消息。 相反，如果从 CLR 堆请求更多的内存，这将带来比使用缓冲区更多的垃圾回收系统开销。
 
@@ -1048,7 +1048,7 @@ string thisScheme = binding.Scheme;
       <Parameters />
       <Docs>
         <summary>指示是否 HTTP cookie 容器应启用序列化。</summary>
-        <returns><see langword="true" />如果 HTTP cookie 容器应启用序列化，否则<see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果 HTTP cookie 容器应启用序列化），否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1078,7 +1078,7 @@ string thisScheme = binding.Scheme;
       <Parameters />
       <Docs>
         <summary>返回是否应序列化对 SOAP 消息结构的复杂性施加的约束值。</summary>
-        <returns>如果应对读取器配额进行序列化，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果应对读取器配额进行序列化）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1108,7 +1108,7 @@ string thisScheme = binding.Scheme;
       <Parameters />
       <Docs>
         <summary>返回是否应基于是否已进行序列化（例如在消息级别或传输级别）来对安全设置进行序列化。</summary>
-        <returns>如果应对安全进行序列化，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果应对安全进行序列化）；否则，为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1138,7 +1138,7 @@ string thisScheme = binding.Scheme;
       <Parameters />
       <Docs>
         <summary>返回是否应对文本编码设置进行序列化。</summary>
-        <returns>如果应对文本编码进行序列化，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果应对文本编码进行序列化）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1318,7 +1318,7 @@ binding.TransferMode = TransferMode.Streamed;
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示是否应使用系统的自动配置 HTTP 代理（如果可用）。</summary>
-        <value>如果应使用系统的自动配置 HTTP 代理（如果可用），则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <value><see langword="true" /> 如果应使用系统自动配置 HTTP 代理，如果可用;否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
 

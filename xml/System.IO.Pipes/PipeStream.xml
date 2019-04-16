@@ -1,5 +1,5 @@
 <Type Name="PipeStream" FullName="System.IO.Pipes.PipeStream">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0c8da9a5270f562801f763549ff9b457fdd22715" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58743246" /></Metadata><TypeSignature Language="C#" Value="public abstract class PipeStream : System.IO.Stream" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2899c5942346a061275733d74ad851693f9d0512" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874691" /></Metadata><TypeSignature Language="C#" Value="public abstract class PipeStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PipeStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.IO.Pipes.PipeStream" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class PipeStream&#xA;Inherits Stream" />
@@ -320,7 +320,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前流是否支持读操作。</summary>
-        <value>如果流支持读操作，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果流支持，读取操作;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -361,7 +361,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前流是否支持查找操作。</summary>
-        <value>在所有情况下均为 <see langword="false" />。</value>
+        <value><see langword="false" /> 在所有情况下。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -407,7 +407,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前流是否支持写操作。</summary>
-        <value>如果流支持写操作，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果流支持写入操作;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -569,7 +569,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing"><see langword="true" /> （如果释放托管资源和非托管资源）；如果仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放 <see cref="T:System.IO.Pipes.PipeStream" /> 类使用的非托管资源，并可以选择释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -581,7 +581,7 @@
         </remarks>
         <block subset="none" type="overrides"><para>在派生类中，将所有<see cref="T:System.IO.Stream" />中的清除逻辑<see cref="M:System.IO.Pipes.PipeStream.Dispose(System.Boolean)" />方法。  
   
- <see cref="M:System.ComponentModel.Component.Dispose" /> 可以由其他对象多次调用。 重写 <see cref="M:System.IO.Pipes.PipeStream.Dispose(System.Boolean)" /> 时，请注意不要引用在以前调用 <see cref="M:System.ComponentModel.Component.Dispose" /> 时已释放的对象。 有关如何实现详细信息<see cref="M:System.IO.Pipes.PipeStream.Dispose(System.Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
+ <see cref="M:System.ComponentModel.Component.Dispose" /> 可以多次调用由其他对象。 重写 <see cref="M:System.IO.Pipes.PipeStream.Dispose(System.Boolean)" /> 时，请注意不要引用在以前调用 <see cref="M:System.ComponentModel.Component.Dispose" /> 时已释放的对象。 有关如何实现详细信息<see cref="M:System.IO.Pipes.PipeStream.Dispose(System.Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
 有关详细信息<see cref="M:System.ComponentModel.Component.Dispose" />并<see cref="M:System.Object.Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)。</para></block>
       </Docs>
@@ -882,8 +882,8 @@
       </Parameters>
       <Docs>
         <param name="handle">要初始化的管道的 <see cref="T:Microsoft.Win32.SafeHandles.SafePipeHandle" /> 对象。</param>
-        <param name="isExposed">要公开句柄，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <param name="isAsync"><see langword="true" /> 指示句柄已异步打开；否则为 <see langword="false" />。</param>
+        <param name="isExposed"><see langword="true" /> （如果要公开句柄）；否则为 <see langword="false" />。</param>
+        <param name="isAsync"><see langword="true" /> （如果指示句柄已异步打开）；否则为 <see langword="false" />。</param>
         <summary>从指定的 <see cref="T:System.IO.Pipes.PipeStream" /> 对象中初始化 <see cref="T:Microsoft.Win32.SafeHandles.SafePipeHandle" /> 对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -931,7 +931,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.IO.Pipes.PipeStream" /> 对象是异步打开还是同步打开。</summary>
-        <value>如果 <see cref="T:System.IO.Pipes.PipeStream" /> 对象是异步打开的，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.IO.Pipes.PipeStream" />对象已异步打开; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -972,7 +972,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示是否已连接 <see cref="T:System.IO.Pipes.PipeStream" /> 对象。</summary>
-        <value>如果已连接 <see cref="T:System.IO.Pipes.PipeStream" /> 对象，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果<see cref="T:System.IO.Pipes.PipeStream" />对象是连接; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1017,7 +1017,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否公开了 <see cref="T:System.IO.Pipes.PipeStream" /> 对象的句柄。</summary>
-        <value>如果公开了 <see cref="T:System.IO.Pipes.PipeStream" /> 对象的句柄，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果句柄<see cref="T:System.IO.Pipes.PipeStream" />对象是公开; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1063,7 +1063,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示最近的读操作返回的消息中是否有更多数据。</summary>
-        <value>如果消息中没有更多要读取的字符，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果有更多要读取消息; 中的字符否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1486,6 +1486,8 @@
   
 ## Remarks  
  不支持匿名管道<xref:System.IO.Pipes.PipeTransmissionMode.Message>模式消息传输。  
+
+ 若要避免<xref:System.InvalidOperationException>访问`ReadMode`，<xref:System.IO.Pipes.PipeStream.IsConnected>可以用于验证管道连接。
   
  ]]></format>
         </remarks>

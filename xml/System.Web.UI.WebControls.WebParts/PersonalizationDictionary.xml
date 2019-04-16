@@ -1,5 +1,5 @@
 <Type Name="PersonalizationDictionary" FullName="System.Web.UI.WebControls.WebParts.PersonalizationDictionary">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cc47b7dc78a8b9ad4f4cb150858601a4015c9734" /><Meta Name="ms.sourcegitcommit" Value="c5fd6b431a16f0412349201a0e93a9eacddf4b35" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/14/2018" /><Meta Name="ms.locfileid" Value="53390425" /></Metadata><TypeSignature Language="C#" Value="public class PersonalizationDictionary : System.Collections.IDictionary" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="915f19737f97d7a839e4028544f68597e31bba90" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59349541" /></Metadata><TypeSignature Language="C#" Value="public class PersonalizationDictionary : System.Collections.IDictionary" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PersonalizationDictionary extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />
   <TypeSignature Language="VB.NET" Value="Public Class PersonalizationDictionary&#xA;Implements IDictionary" />
@@ -25,7 +25,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>封装基本验证规则，这些规则指示是在 <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 还是 <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围内将一段自定义数据视为可个性化。</summary>
+    <summary>封装基本验证规则，这些规则指示是否将一段自定义数据视为可在 <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> 或 <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> 范围内进行个性化设置。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -39,10 +39,10 @@
     <altmember cref="T:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider" />
     <altmember cref="T:System.Collections.IDictionary" />
     <altmember cref="T:System.Collections.ICollection" />
-    <related type="Article" href="https://msdn.microsoft.com/library/ab78a66e-9feb-4391-b3c3-8c07555e2308">ASP.NET Web 部件页</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320">Web 部件个性化设置概述</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/a88d2bd5-4932-4ec1-b176-7d7da45f85d9">演练：使用用户控件的实现的 Web 部件个性化设置</related>
-    <related type="Article" href="https://msdn.microsoft.com/library/7885563f-7bbe-45a0-b5e2-c6bf1bc2deaa">Web 部件个性化设置</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/e0s9t4ck(v=vs.100)">ASP.NET Web 部件控件</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/z36h8be9(v=vs.100)">Web 部件个性化设置概述</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/784d8z92(v=vs.100)">演练：使用用户控件的实现的 Web 部件个性化设置</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/ms178182(v=vs.100)">Web 部件个性化设置</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -140,7 +140,7 @@
   
  很好的做法，但是，若要将所有属性都添加到字典使用<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save%2A>包括具有的属性<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>或<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>作用域，而不考虑在页面范围。  
   
- .NET Framework 仅保存与属性<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>范围限定在适当的时候。 换而言之，共享属性不会保存时<xref:System.Web.UI.WebControls.WebParts.WebPart>中最初添加的控件<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>作用域更高版本在保存页处于<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>作用域。 在另一方案中，如果<xref:System.Web.UI.WebControls.WebParts.WebPart>控件已添加到中的页<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>页中时更高版本保存作用域和控件<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>作用域，自定义共享的属性值保存 （以及自定义用户范围的属性）。 会影响页的个性化设置范围的个性化设置数据的详细信息和如何共享和用户范围的属性，请参阅[Web 部件个性化设置概述](https://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)主题。  
+ .NET Framework 仅保存与属性<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>范围限定在适当的时候。 换而言之，共享属性不会保存时<xref:System.Web.UI.WebControls.WebParts.WebPart>中最初添加的控件<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>作用域更高版本在保存页处于<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>作用域。 在另一方案中，如果<xref:System.Web.UI.WebControls.WebParts.WebPart>控件已添加到中的页<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>页中时更高版本保存作用域和控件<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>作用域，自定义共享的属性值保存 （以及自定义用户范围的属性）。 会影响页的个性化设置范围的个性化设置数据的详细信息和如何共享和用户范围的属性，请参阅[Web 部件个性化设置概述](https://docs.microsoft.com/previous-versions/aspnet/z36h8be9(v=vs.100))主题。  
   
  与任何集合一样，此方法按 1 递增集合计数，并且集合上当前处于活动状态的任何枚举数应会失效。  
   
@@ -148,16 +148,16 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="key" /> 是字典中已有的键的重复。  
   
-或 
- <paramref name="key" /> 是一个空字符串 ("")，或者修整 <paramref name="key" /> 会生成一个空字符串。  
+- 或 - 
+ <paramref name="key" /> 是一个空字符串 ("") 或者修整 <paramref name="key" /> 会生成一个空字符串。  
   
 - 或 - 
  <paramref name="value" /> 不是 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。  
   
-或 
+- 或 - 
  <paramref name="value" /> 为 <see langword="null" />。</exception>
-        <related type="Article" href="https://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320">Web 部件个性化设置概述</related>
+        <related type="Article" href="https://docs.microsoft.com/previous-versions/aspnet/z36h8be9(v=vs.100)">Web 部件个性化设置概述</related>
       </Docs>
     </Member>
     <Member MemberName="Clear">
@@ -216,7 +216,7 @@
       <Docs>
         <param name="key">键值。</param>
         <summary>返回一个值，该值指示个性化设置字典中是否已包含一条具有相同键的自定义状态信息。</summary>
-        <returns>如果所提供的键与个性化设置字典中的某个键匹配，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果所提供的键与个性化字典中的键匹配）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -225,7 +225,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="key" /> 是一个空字符串 ("")，或者修整 <paramref name="key" /> 会生成一个空字符串。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="key" /> 是一个空字符串 ("") 或者修整 <paramref name="key" /> 会生成一个空字符串。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -264,10 +264,10 @@
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
 - 或 - 
- 根据 <paramref name="array" /> 参数，<paramref name="index" /> 的大小有误。  
+ <paramref name="array" /> 的大小有误（根据 <paramref name="index" /> 参数）。  
   
 - 或 - 
- <paramref name="array" /> 的容量不足以保存个性化设置字典中所包含的值。</exception>
+ <paramref name="array" /> 的容量不足，无法保存个性化设置字典中所包含的值。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 小于零。</exception>
       </Docs>
@@ -359,7 +359,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取个性化设置字典的大小是否固定。</summary>
-        <value>在所有情况下均为 <see langword="false" />。</value>
+        <value><see langword="false" /> 在所有情况下。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -391,7 +391,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取个性化设置字典是否是只读的。</summary>
-        <value>在所有情况下均为 <see langword="false" />。</value>
+        <value><see langword="false" /> 在所有情况下。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -423,7 +423,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取个性化设置字典是否是同步的。</summary>
-        <value>在所有情况下均为 <see langword="false" />。</value>
+        <value><see langword="false" /> 在所有情况下。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -470,7 +470,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="key" /> 是一个空字符串 ("")，或者修整 <paramref name="key" /> 会生成一个空字符串。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="key" /> 是一个空字符串 ("") 或者修整 <paramref name="key" /> 会生成一个空字符串。</exception>
       </Docs>
     </Member>
     <Member MemberName="Keys">
@@ -538,7 +538,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="key" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="key" /> 是一个空字符串 ("")，或者修整 <paramref name="key" /> 会生成一个空字符串。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="key" /> 是一个空字符串 ("") 或者修整 <paramref name="key" /> 会生成一个空字符串。</exception>
       </Docs>
     </Member>
     <Member MemberName="SyncRoot">
@@ -648,7 +648,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="key" /> 不是 <see cref="T:System.String" /> 对象。  
   
-或 
+- 或 - 
  <paramref name="value" /> 不是 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" /> 对象。</exception>
         <altmember cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" />
         <altmember cref="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Add(System.String,System.Web.UI.WebControls.WebParts.PersonalizationEntry)" />
@@ -678,7 +678,7 @@
       <Docs>
         <param name="key">一个 <see cref="T:System.String" /> 对象，该对象标识特定的 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" /> 以检查它是否存在于个性化设置字典中。</param>
         <summary>实现 <see cref="M:System.Collections.IDictionary.Contains(System.Object)" /> 类的 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" /> 方法。</summary>
-        <returns>如果个性化设置字典中存在 <paramref name="key" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果个性化字典中存在 <paramref name="key" />）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

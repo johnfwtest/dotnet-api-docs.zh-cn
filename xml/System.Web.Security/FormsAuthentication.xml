@@ -1,5 +1,5 @@
 <Type Name="FormsAuthentication" FullName="System.Web.Security.FormsAuthentication">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c1ad955960af1252b8fdf942af79df80d162cc15" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58553887" /></Metadata><TypeSignature Language="C#" Value="public sealed class FormsAuthentication" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e263ff699870482bd488f25313f8bb898b795019" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874795" /></Metadata><TypeSignature Language="C#" Value="public sealed class FormsAuthentication" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FormsAuthentication extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.FormsAuthentication" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FormsAuthentication" />
@@ -143,7 +143,7 @@
         <param name="name">用户名。</param>
         <param name="password">用户的密码。</param>
         <summary>对照存储在应用程序配置文件中的凭据来验证用户名和密码。</summary>
-        <returns>如果用户名和密码有效，则返回 <see langword="true" />；否则返回 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果用户名和密码有效）；否则返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -315,7 +315,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示应用程序是否已配置为支持无 Cookie Forms 身份验证。</summary>
-        <value>如果应用程序已配置为支持无 Cookie 的 Forms 身份验证，则返回 <see langword="false" />；否则返回 <see langword="true" />。</value>
+        <value><see langword="false" /> 如果应用程序配置为支持无 cookie forms 身份验证;否则为<see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -381,7 +381,7 @@
 <paramref name="encryptedTicket" /> 的长度超过 4096 个字符。  
   
 - 或 - 
- <paramref name="encryptedTicket" /> 的格式无效。</exception>
+ <paramref name="encryptedTicket" /> 格式无效。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/658d0430-1644-4744-b52d-08b0d6fcacb8">ASP.NET Web 应用程序安全性</related>
       </Docs>
     </Member>
@@ -445,7 +445,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否可以将经过身份验证的用户重定向到其他 Web 应用程序中的 URL。</summary>
-        <value>如果可以将经过身份验证的用户重定向到其他 Web 应用程序中的 URL，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果身份验证的用户可以重定向到 Url 中其他 Web 应用程序;，否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -679,7 +679,7 @@
       </Parameters>
       <Docs>
         <param name="userName">已验证身份的用户的名称。</param>
-        <param name="createPersistentCookie">若要创建持久 Cookie（跨浏览器会话保存的 Cookie），则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="createPersistentCookie"><see langword="true" /> （如果要创建持久 Cookie（跨浏览器会话保存的 Cookie））；否则为 <see langword="false" />。</param>
         <summary>为给定的用户名创建身份验证 Cookie。 这不会将 Cookie 设置为传出响应的一部分，因此应用程序对如何发出该 Cookie 有更多的控制权限。</summary>
         <returns>一个 <see cref="T:System.Web.HttpCookie" />，其中包含加密的 Forms 身份验证票证信息。 使用 <see cref="P:System.Web.Security.FormsAuthentication.FormsCookiePath" /> 属性的默认值。</returns>
         <remarks>
@@ -722,7 +722,7 @@
       </Parameters>
       <Docs>
         <param name="userName">已验证身份的用户的名称。</param>
-        <param name="createPersistentCookie">若要创建持久 Cookie（跨浏览器会话保存的 Cookie），则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="createPersistentCookie"><see langword="true" /> （如果要创建持久 Cookie（跨浏览器会话保存的 Cookie））；否则为 <see langword="false" />。</param>
         <param name="strCookiePath">身份验证 Cookie 的 <see cref="P:System.Web.HttpCookie.Path" />。</param>
         <summary>为给定的用户名创建身份验证 Cookie。 这不会将 Cookie 设置为传出响应的一部分。</summary>
         <returns>一个 <see cref="T:System.Web.HttpCookie" />，其中包含加密的 Forms 身份验证票证信息。</returns>
@@ -841,7 +841,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="password" /> 为 <see langword="null" />  
+        <exception cref="T:System.ArgumentNullException"><paramref name="password" /> is <see langword="null" />  
   
 - 或 - 
  <paramref name="passwordFormat" /> 为 <see langword="null" />。</exception>
@@ -897,7 +897,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否启用了 Forms 身份验证。</summary>
-        <value>如果启用窗体身份验证，则为 <see langword="true" />；否则，为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果启用窗体身份验证;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -976,7 +976,7 @@
       </Parameters>
       <Docs>
         <param name="userName">经过身份验证的用户名。</param>
-        <param name="createPersistentCookie">若要创建持久 Cookie（跨浏览器会话保存的 Cookie），则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="createPersistentCookie"><see langword="true" /> （如果要创建持久 Cookie（跨浏览器会话保存的 Cookie））；否则为 <see langword="false" />。</param>
         <summary>将经过身份验证的用户重定向回最初请求的 URL 或默认 URL。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1036,7 +1036,7 @@
       </Parameters>
       <Docs>
         <param name="userName">经过身份验证的用户名。</param>
-        <param name="createPersistentCookie">若要创建持久 Cookie（跨浏览器会话保存的 Cookie），则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="createPersistentCookie"><see langword="true" /> （如果要创建持久 Cookie（跨浏览器会话保存的 Cookie））；否则为 <see langword="false" />。</param>
         <param name="strCookiePath">Forms 身份验证票证的 Cookie 路径。</param>
         <summary>使用 Forms 身份验证 Cookie 的指定 Cookie 路径，将经过身份验证的用户重定向回最初请求的 URL 或默认 URL。</summary>
         <remarks>
@@ -1236,7 +1236,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，指示 Forms 身份验证 Cookie 是否需要 SSL 以返回到服务器。</summary>
-        <value>如果将 Forms 身份验证 Cookie 返回到服务器需要 SSL，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果 SSL 所需窗体身份验证 cookie 返回到服务器;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1307,7 +1307,7 @@
       </Parameters>
       <Docs>
         <param name="userName">已验证的用户的名称。 这不必映射到 Windows 帐户。</param>
-        <param name="createPersistentCookie">如果为 <see langword="true" />，则创建持久 Cookie（跨浏览器会话保存的 Cookie）；否则为 <see langword="false" />。</param>
+        <param name="createPersistentCookie"><see langword="true" /> （如果要创建持久 Cookie（跨浏览器会话保存的 Cookie））；否则为 <see langword="false" />。</param>
         <summary>为提供的用户名创建一个身份验证票证，并将该票证添加到响应的 Cookie 集合中或 URL 中（如果使用的是无 Cookie 身份验证）。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1317,7 +1317,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.Security.FormsAuthentication.RequireSSL" /> 为 <see langword="true" />，而 <see cref="P:System.Web.HttpRequest.IsSecureConnection" /> 为 <see langword="false" />。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.Security.FormsAuthentication.RequireSSL" /> 为 <see langword="true" /> 且 <see cref="P:System.Web.HttpRequest.IsSecureConnection" /> 为 <see langword="false" />。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/658d0430-1644-4744-b52d-08b0d6fcacb8">ASP.NET Web 应用程序安全性</related>
       </Docs>
     </Member>
@@ -1345,7 +1345,7 @@
       </Parameters>
       <Docs>
         <param name="userName">已验证的用户的名称。</param>
-        <param name="createPersistentCookie">若要创建持久 Cookie（跨浏览器会话保存的 Cookie），则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="createPersistentCookie"><see langword="true" /> （如果要创建持久 Cookie（跨浏览器会话保存的 Cookie））；否则为 <see langword="false" />。</param>
         <param name="strCookiePath">Forms 身份验证票证的 Cookie 路径。</param>
         <summary>为提供的用户名创建一个身份验证票证，并使用提供的 cookie 路径或使用 URL（如果使用的是无 Cookie 身份验证）将该票证添加到响应的 Cookie 集合中。</summary>
         <remarks>
@@ -1356,7 +1356,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.Security.FormsAuthentication.RequireSSL" /> 为 <see langword="true" />，而 <see cref="P:System.Web.HttpRequest.IsSecureConnection" /> 为 <see langword="false" />。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.Security.FormsAuthentication.RequireSSL" /> 为 <see langword="true" /> 且 <see cref="P:System.Web.HttpRequest.IsSecureConnection" /> 为 <see langword="false" />。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/658d0430-1644-4744-b52d-08b0d6fcacb8">ASP.NET Web 应用程序安全性</related>
         <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=197376">说明：ASP.NET 2.0 中的窗体身份验证</related>
         <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=197377">如何：在 ASP.NET 2.0 中使用的成员身份</related>
@@ -1434,7 +1434,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否启用弹性过期时间。</summary>
-        <value>如果启用可调过期，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <value><see langword="true" /> 如果已启用可调过期;否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

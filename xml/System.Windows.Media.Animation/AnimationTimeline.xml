@@ -1,5 +1,5 @@
 <Type Name="AnimationTimeline" FullName="System.Windows.Media.Animation.AnimationTimeline">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2fc5418e687028342bce0d83ee862157084fadd1" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53226121" /></Metadata><TypeSignature Language="C#" Value="public abstract class AnimationTimeline : System.Windows.Media.Animation.Timeline" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ec2ca3367ff7b38c36f7a69643e387e6f760173b" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59015753" /></Metadata><TypeSignature Language="C#" Value="public abstract class AnimationTimeline : System.Windows.Media.Animation.Timeline" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AnimationTimeline extends System.Windows.Media.Animation.Timeline" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.AnimationTimeline" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class AnimationTimeline&#xA;Inherits Timeline" />
@@ -114,7 +114,7 @@
       <Parameters />
       <Docs>
         <summary>创建此 <see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> 的可修改克隆，从而深度复制此对象的值。 在复制依赖项属性时，此方法会复制资源引用和数据绑定（但可能不再解析），但不复制动画或其当前值。</summary>
-        <returns>当前对象的可修改复本。 即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="true." />，所克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性也将为 <see langword="false" /></returns>
+        <returns>当前对象的可修改复本。 克隆的对象的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性将为 <see langword="false" />（即使源的 <see cref="P:System.Windows.Freezable.IsFrozen" /> 属性为 <see langword="true." /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -179,11 +179,11 @@
         <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
       </Parameters>
       <Docs>
-        <param name="defaultOriginValue">如果动画不具有其自己的起始值，则为动画提供原始值。 如果此动画是组合链中的第一个动画，则它将是正在进行动画处理的属性的基值；否则，它将是该组合链中的前一个动画返回的值。</param>
+        <param name="defaultOriginValue">如果动画没有自己的起始值，则为提供给动画的原始值。 如果此动画是组合链中的第一个动画，则它将是正在进行动画处理的属性的基值；否则，它将是该组合链中的前一个动画返回的值。</param>
         <param name="defaultDestinationValue">如果动画没有自己的目标值，则为提供给动画的目标值。</param>
-        <param name="animationClock">动画将使用可以生成 <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> 或 <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" /> 值的 <see cref="T:System.Windows.Media.Animation.AnimationClock" /> 来生成其输出值。</param>
+        <param name="animationClock">一个 <see cref="T:System.Windows.Media.Animation.AnimationClock" />，它可以生成供动画用来生成它的输出值的 <see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" /> 或 <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" /> 值。</param>
         <summary>获取动画的当前值。</summary>
-        <returns>此动画信任的值应为该属性的当前值。</returns>
+        <returns>此动画认为应该为属性当前值的值。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -280,7 +280,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示此动画是否将 <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" /> 方法的 defaultDestinationValue 参数用作其目标值。</summary>
-        <value><see langword="true" /> 如果*defaultDesintationValue*的参数<see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />方法是此动画的值时到达其简单持续时间的终点 (其时钟<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />为 1); 否则为<see langword="false" />。 默认实现始终返回 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果*defaultDestinationValue*的参数<see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />方法是此动画的值时到达其简单持续时间的终点 (其时钟<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />为 1); 否则为<see langword="false" />。 默认实现始终返回 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />
       </Docs>

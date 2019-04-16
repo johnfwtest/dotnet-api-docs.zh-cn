@@ -1,5 +1,5 @@
 <Type Name="ComponentDesigner" FullName="System.ComponentModel.Design.ComponentDesigner">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="52d881ad958640862c90085f07f58037d43e45b2" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57929798" /></Metadata><TypeSignature Language="C#" Value="public class ComponentDesigner : IDisposable, System.ComponentModel.Design.IComponentInitializer, System.ComponentModel.Design.IDesignerFilter, System.ComponentModel.Design.ITreeDesigner" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="cba9ab7eabae2155b27a0813aea41b359d88de55" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59348658" /></Metadata><TypeSignature Language="C#" Value="public class ComponentDesigner : IDisposable, System.ComponentModel.Design.IComponentInitializer, System.ComponentModel.Design.IDesignerFilter, System.ComponentModel.Design.ITreeDesigner" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComponentDesigner extends System.Object implements class System.ComponentModel.Design.IComponentInitializer, class System.ComponentModel.Design.IDesigner, class System.ComponentModel.Design.IDesignerFilter, class System.ComponentModel.Design.ITreeDesigner, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ComponentDesigner" />
   <TypeSignature Language="VB.NET" Value="Public Class ComponentDesigner&#xA;Implements IComponentInitializer, IDesignerFilter, IDisposable, ITreeDesigner" />
@@ -45,7 +45,7 @@
   
  <xref:System.ComponentModel.Design.ComponentDesigner> 提供了一个空<xref:System.ComponentModel.Design.IDesignerFilter>接口的实现，可以重写其方法以在设计时调整属性、 属性和关联组件的事件。  
   
- 可以将设计器关联的类型使用<xref:System.ComponentModel.DesignerAttribute>。 有关自定义设计时行为的概述，请参阅[扩展设计时支持](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)。  
+ 可以将设计器关联的类型使用<xref:System.ComponentModel.DesignerAttribute>。 有关自定义设计时行为的概述，请参阅[扩展设计时支持](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100))。  
   
  <xref:System.ComponentModel.Design.ComponentDesigner>类实现继承的组件的属性说明符的特殊行为。 名为的内部类型`InheritedPropertyDescriptor`默认情况下使用<xref:System.ComponentModel.Design.ComponentDesigner>实现来代替继承自基类的属性。 有两种情况下，在其中添加这些属性描述符。  
   
@@ -69,7 +69,7 @@
     <altmember cref="T:System.ComponentModel.Design.IDesigner" />
     <altmember cref="T:System.ComponentModel.Design.IDesignerFilter" />
     <altmember cref="T:System.ComponentModel.DesignerAttribute" />
-    <related type="Article" href="https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2">扩展设计时支持</related>
+    <related type="Article" href="https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37899azc(v=vs.100)">扩展设计时支持</related>
     <related type="Article" href="https://msdn.microsoft.com/library/c186c4b6-076c-438d-9ed3-f13da29c8c1f">如何：访问设计时服务</related>
   </Docs>
   <Members>
@@ -286,7 +286,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing"><see langword="true" /> （如果释放托管资源和非托管资源）；如果仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.ComponentModel.Design.ComponentDesigner" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -299,7 +299,7 @@
  ]]></format>
         </remarks>
         <block subset="none" type="overrides"><para>
-            <see langword="Dispose" /> 可以由其他对象多次调用。 重写时<see langword="Dispose(Boolean)" />小心不要引用已经释放的早期调用中的对象<see langword="Dispose" />。 有关如何实现详细信息<see langword="Dispose(Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
+            <see langword="Dispose" /> 可以多次调用由其他对象。 重写时<see langword="Dispose(Boolean)" />小心不要引用已经释放的早期调用中的对象<see langword="Dispose" />。 有关如何实现详细信息<see langword="Dispose(Boolean)" />，请参阅[实现 Dispose 方法](~/docs/standard/garbage-collection/implementing-dispose.md)。  
   
 有关详细信息<see langword="Dispose" />并<see cref="M:System.Object.Finalize" />，请参阅[清理了非托管资源](~/docs/standard/garbage-collection/unmanaged.md)并[重写 Finalize 方法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ddae83kx(v=vs.100))。</para></block>
       </Docs>
@@ -478,7 +478,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否继承此组件。</summary>
-        <value>如果继承此组件，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果继承的组件;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

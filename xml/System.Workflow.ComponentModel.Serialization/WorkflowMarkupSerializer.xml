@@ -1,5 +1,5 @@
 <Type Name="WorkflowMarkupSerializer" FullName="System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e21881fadec44e5d0b5a48b62e5cf3e1b5aeac39" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55373599" /></Metadata><TypeSignature Language="C#" Value="public class WorkflowMarkupSerializer" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b47bebd15cb56714339a9ab0474f254b904332d2" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59355652" /></Metadata><TypeSignature Language="C#" Value="public class WorkflowMarkupSerializer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowMarkupSerializer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer" />
   <TypeSignature Language="VB.NET" Value="Public Class WorkflowMarkupSerializer" />
@@ -29,13 +29,13 @@
 > [!NOTE]
 >  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
   
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 提供将工作流和 <xref:System.Workflow.ComponentModel.Activity> 类序列化为 XAML 格式以及将 XAML 内容反序列化为工作流和活动类对象的方法。 这些服务主要由工作流设计器使用，用于在工作流设计图面上保留类。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 提供序列化流的方法和<xref:System.Workflow.ComponentModel.Activity>类划分为 XAML 格式和 XAML 内容反序列化为工作流和活动类对象。 这些服务主要由工作流设计器使用，用于在工作流设计图面上保留类。  
   
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 是 <xref:System.Workflow.ComponentModel.Serialization> 命名空间中包括的所有标记序列化程序的基类。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 是的基类的所有标记序列化程序中包含<xref:System.Workflow.ComponentModel.Serialization>命名空间。  
   
  有关详细信息，请参阅[序列化](https://msdn.microsoft.com/library/4d1111c0-9447-4231-a997-96a2b74b3453)。  
   
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 不支持对嵌套类型进行序列化。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 不支持嵌套类型的序列化。  
   
  <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 的功能依赖于 Windows Workflow Foundation 外部的其他类型的功能。 由于这些其他类型的限制，并非所有数据类型均可以通过 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 序列化。 下面的列表就是部分不支持的类型的示例。  
   
@@ -66,7 +66,7 @@
   
  使用 FlagsAttribute 修饰的枚举  
   
- 除此列表之外，任何同时使用 `ContentPropertyAttibute` 和 `DesignerSerializationVisibilityAttribute` 修饰的属性不能由 `WorkflowMarkupSerializer` 序列化。  
+ 除此列表之外，任何同时使用 `ContentPropertyAttribute` 和 `DesignerSerializationVisibilityAttribute` 修饰的属性不能由 `WorkflowMarkupSerializer` 序列化。  
   
  ]]></format>
     </remarks>
@@ -123,7 +123,7 @@
       </Parameters>
       <Docs>
         <param name="serializationManager">要在此操作中使用的 <see cref="T:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationManager" />。</param>
-        <param name="parentObject">要将子对象添加到的 <see cref="T:System.Object" />。</param>
+        <param name="parentObject">要将子对象添加到其中的 <see cref="T:System.Object" />。</param>
         <param name="childObj">要添加的 <see cref="T:System.Object" />。</param>
         <summary>将子对象添加到指定的对象中。</summary>
         <remarks>
@@ -161,13 +161,13 @@
         <param name="serializationManager">用于序列化此对象的 <see cref="T:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationManager" />。</param>
         <param name="value">指定的 <see cref="T:System.Object" />。</param>
         <summary>返回一个布尔值，该值指示能否将指定的对象序列化为字符串。</summary>
-        <returns>如果指定对象可以序列化为字符串，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指定对象可以序列化为字符串）；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="serializationManager" /> 为空引用（在 Visual Basic 中为 <see langword="Nothing" />）。
 
 - 或 -
 
-<paramref name="value" /> 为空引用 (<see langword="Nothing" />)。</exception>
+<paramref name="value" /> 为空引用 (<see langword="Nothing" /> )。</exception>
       </Docs>
     </Member>
     <Member MemberName="ClearChildren">
@@ -206,7 +206,7 @@
 
 - 或 -
 
-<paramref name="obj" /> 为空引用 (<see langword="Nothing" />)。</exception>
+<paramref name="obj" /> 为空引用 (<see langword="Nothing" /> )。</exception>
       </Docs>
     </Member>
     <Member MemberName="ClrNamespacesProperty">
@@ -267,7 +267,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.CreateInstance%2A> 使用与指定参数最匹配的类型构造函数。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.CreateInstance%2A> 使用与指定的参数最匹配的类型构造函数。  
   
  ]]></format>
         </remarks>
@@ -275,7 +275,7 @@
 
 - 或 -
 
-<paramref name="type" /> 为空引用 (<see langword="Nothing" />)。</exception>
+<paramref name="type" /> 为空引用 (<see langword="Nothing" /> )。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Deserialize">
@@ -357,7 +357,7 @@
 
 - 或 -
 
-<paramref name="reader" /> 为空引用 (<see langword="Nothing" />)。</exception>
+<paramref name="reader" /> 为空引用 (<see langword="Nothing" /> )。</exception>
       </Docs>
     </Member>
     <Member MemberName="DeserializeFromString">
@@ -566,7 +566,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterDeserialize%2A> 在运行 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Deserialize%2A> 方法之后立即调用。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterDeserialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在将 `obj` 序列化为可扩展应用程序标记语言 (XAML) 后在该对象上执行任何所需的处理。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterDeserialize%2A> 之后立即调用<xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Deserialize%2A>方法运行。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterDeserialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在将 `obj` 序列化为可扩展应用程序标记语言 (XAML) 后在该对象上执行任何所需的处理。  
   
  <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterSerialize%2A> 不提供任何默认行为。 若要添加任何处理逻辑，必须在派生类中重写此方法。  
   
@@ -602,7 +602,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterSerialize%2A> 在运行 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Serialize%2A> 方法之后立即调用。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterSerialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在将 `obj` 序列化为可扩展应用程序标记语言 (XAML) 后在该对象上执行任何所需的处理。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterSerialize%2A> 之后立即调用<xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Serialize%2A>方法运行。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterSerialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在将 `obj` 序列化为可扩展应用程序标记语言 (XAML) 后在该对象上执行任何所需的处理。  
   
  <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnAfterSerialize%2A> 不提供任何默认行为。 若要添加任何处理逻辑，必须在派生类中重写此方法。  
   
@@ -638,7 +638,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeDeserialize%2A> 在即将运行 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Deserialize%2A> 方法之前调用。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在将 `obj` 序列化为可扩展应用程序标记语言 (XAML) 之前，在该对象上执行所需的处理。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeDeserialize%2A> 立即之前调用<xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Deserialize%2A>方法运行。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在将 `obj` 序列化为可扩展应用程序标记语言 (XAML) 之前，在该对象上执行所需的处理。  
   
  <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeDeserialize%2A> 不提供任何默认行为。 若要添加任何处理逻辑，必须在派生类中重写此方法。  
   
@@ -674,7 +674,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 在即将运行 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Serialize%2A> 方法之前调用。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在序列化过程中的 `obj` 步骤开始之前，在 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Serialize%2A> 上执行所需的处理。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 立即之前调用<xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Serialize%2A>方法运行。 可以在继承 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 的类中重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便在序列化过程中的 `obj` 步骤开始之前，在 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.Serialize%2A> 上执行所需的处理。  
   
  <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.OnBeforeSerialize%2A> 不提供任何默认行为。 若要添加任何处理逻辑，必须在派生类中重写此方法。  
   
@@ -720,7 +720,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
   
  枚举数组  
   
- 除此列表之外，任何同时使用 `ContentPropertyAttibute` 和 `DesignerSerializationVisibilityAttribute` 修饰的属性不能由 `WorkflowMarkupSerializer` 序列化。  
+ 除此列表之外，任何同时使用 `ContentPropertyAttribute` 和 `DesignerSerializationVisibilityAttribute` 修饰的属性不能由 `WorkflowMarkupSerializer` 序列化。  
   
  ]]></format>
         </remarks>
@@ -764,7 +764,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
 
 - 或 -
 
-<paramref name="obj" /> 为空引用 (<see langword="Nothing" />)。</exception>
+<paramref name="obj" /> 为空引用 (<see langword="Nothing" /> )。</exception>
       </Docs>
     </Member>
     <Member MemberName="Serialize">
@@ -810,7 +810,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
 
 - 或 -
 
-<paramref name="obj" /> 为空引用 (<see langword="Nothing" />)。</exception>
+<paramref name="obj" /> 为空引用 (<see langword="Nothing" /> )。</exception>
       </Docs>
     </Member>
     <Member MemberName="SerializeToString">
@@ -837,7 +837,7 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
         <param name="serializationManager">管理序列化过程的 <see cref="T:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationManager" />。</param>
         <param name="value">要序列化为字符串的 <see cref="T:System.Object" />。</param>
         <summary>将指定的 <see cref="T:System.Object" /> 序列化为字符串。</summary>
-        <returns>包含已序列化的 <see cref="T:System.Object" /> 的字符串。</returns>
+        <returns>一个字符串，包含已序列化的 <see cref="T:System.Object" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -873,12 +873,12 @@ code1.SetValue(WorkflowMarkupSerializer.EventsProperty, eventsHashtable);
         <param name="serializationManager">管理序列化过程的 <see cref="T:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializationManager" />。</param>
         <param name="value">要检查的 <see cref="T:System.Object" />。</param>
         <summary>返回一个值，该值指示 <see cref="T:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer" /> 是否应序列化指定的 <see cref="T:System.Object" />。</summary>
-        <returns>为 <see langword="true" /> 则指示应序列化 <paramref name="value" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> （如果指示应序列化 <paramref name="value" />）；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.ShouldSerializeValue%2A> 由 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer> 在序列化指定对象之前调用。 如果 `false` 包含空引用 (`value`)，或者如果 `Nothing` 与当前序列化上下文的 `value` 相等，则该方法返回 <xref:System.ComponentModel.DefaultValueAttribute>。  
+ <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.ShouldSerializeValue%2A> 由调用<xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>其序列化指定的对象之前。 如果 `false` 包含空引用 (`value`)，或者如果 `Nothing` 与当前序列化上下文的 `value` 相等，则该方法返回 <xref:System.ComponentModel.DefaultValueAttribute>。  
   
  在从 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer.ShouldSerializeValue%2A> 继承的类中，可以重写 <xref:System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer>，以便自定义如何确定是否应序列化指定的对象。  
   
