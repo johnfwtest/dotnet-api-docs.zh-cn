@@ -1,5 +1,5 @@
 <Type Name="DllImportAttribute" FullName="System.Runtime.InteropServices.DllImportAttribute">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="37bef5b8d5432f8b55aa701283962ecdf92faa8c" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58681119" /></Metadata><TypeSignature Language="C#" Value="public sealed class DllImportAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0c23c9cf6668ee08439dedcf1a39ed01db29eed8" /><Meta Name="ms.sourcegitcommit" Value="635a1dbdc9cbcf7f7c258ac9ffa0314ed734da90" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/10/2019" /><Meta Name="ms.locfileid" Value="59472191" /></Metadata><TypeSignature Language="C#" Value="public sealed class DllImportAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DllImportAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.DllImportAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DllImportAttribute&#xA;Inherits Attribute" />
@@ -49,7 +49,7 @@
   
  <xref:System.Runtime.InteropServices.DllImportAttribute>属性提供调用从非托管 DLL 导出的函数所需的信息。 作为最低要求，必须提供包含入口点的 DLL 的名称。  
   
- 将此特性应用于 C# 和 c + + 方法定义; 直接但是，Visual Basic 编译器会发出此属性时使用`Declare`语句。 对于复杂的方法定义中包括<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>， <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>， <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>， <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>， <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>，或<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>字段，将此特性应用直接向 Visual Basic 方法定义。  
+ 应用此特性直接向C#和C++方法的定义。但是，Visual Basic 编译器会发出此属性时使用`Declare`语句。 对于复杂的方法定义中包括<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>， <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>， <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>， <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>， <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>，或<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>字段，将此特性应用直接向 Visual Basic 方法定义。  
   
  **请注意**JScript 不支持此属性。 可以使用 C# 或 Visual Basic 的包装类从 JScript 程序访问非托管的 API 方法。  
   
@@ -238,14 +238,14 @@
 ## Remarks  
  此字段设置为其中一个<xref:System.Runtime.InteropServices.CallingConvention>枚举成员。 默认值为<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>字段是<xref:System.Runtime.InteropServices.CallingConvention.Winapi>，其反过来默认值为<xref:System.Runtime.InteropServices.CallingConvention.StdCall>约定。  
   
- 有关详细信息，请参阅 MSDN library 中的调用约定。  
-  
    
   
 ## Examples  
  在某些情况下，使用 Visual Basic 开发人员<xref:System.Runtime.InteropServices.DllImportAttribute>，而不是`Declare`语句，以在托管代码中定义的 DLL 函数。 设置<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>字段是一个例子。  
   
- System.Runtime.InteropServices.DllImportAttribute#1  
+ [!code-cpp[System.Runtime.InteropServices.DllImportAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cpp/source.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.DllImportAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cs/source.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.DllImportAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/vb/source.vb#1)]  
   
  ]]></format>
         </remarks>
@@ -291,7 +291,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 使用此域的成员和<xref:System.Runtime.InteropServices.CharSet>枚举指定字符串参数的封送处理行为并指定要调用 （提供的确切名称或以"A"或"W"结尾的名称） 的入口点名称。 默认枚举成员为 C# 和 Visual Basic`CharSet.Ansi`和 c + + 的默认枚举成员`CharSet.None`，这等同于`CharSet.Ansi`。 在 Visual Basic 中，使用`Declare`语句指定`CharSet`字段。  
+ 使用此域的成员和<xref:System.Runtime.InteropServices.CharSet>枚举指定字符串参数的封送处理行为并指定要调用 （提供的确切名称或以"A"或"W"结尾的名称） 的入口点名称。 默认枚举成员C#和 Visual Basic 是`CharSet.Ansi`的默认枚举成员和C++是`CharSet.None`，这等同于`CharSet.Ansi`。 在 Visual Basic 中，使用`Declare`语句指定`CharSet`字段。  
   
  <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>字段会影响的行为`CharSet`字段在确定要调用的入口点名称。 有关详细的说明和示例的封送处理字符串和名称匹配行为与相关联`CharSet`字段中，请参阅[指定字符集](~/docs/framework/interop/specifying-a-character-set.md)。  
   

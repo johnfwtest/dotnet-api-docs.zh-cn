@@ -1,5 +1,5 @@
 <Type Name="File" FullName="System.IO.File">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4a19b0b66326966c1195690f88f41e90e98ae368" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59350348" /></Metadata><TypeSignature Language="C#" Value="public static class File" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="13a50ab90fca2598330ed34ec1427dd23aaa87a7" /><Meta Name="ms.sourcegitcommit" Value="635a1dbdc9cbcf7f7c258ac9ffa0314ed734da90" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/10/2019" /><Meta Name="ms.locfileid" Value="59472230" /></Metadata><TypeSignature Language="C#" Value="public static class File" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit File extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IO.File" />
   <TypeSignature Language="VB.NET" Value="Public Class File" />
@@ -1265,15 +1265,18 @@
   
 ## Remarks  
  <xref:System.IO.File.Decrypt%2A>方法，可解密使用加密文件<xref:System.IO.File.Encrypt%2A>方法。  <xref:System.IO.File.Decrypt%2A>方法可以解密使用当前用户帐户已加密的文件。  
-  
+
+ > [!IMPORTANT]
+ > 此 API 仅支持 Windows 平台上，可以使用 NTFS 加密文件系统 (EFS)。 如果尝试在非 Windows 系统、 Windows Home Edition 系统或非 NTFS 驱动器结果中的使用这<xref:System.PlatformNotSupportedException>或<xref:System.NotSupportedException>，具体视情况而定。
+ > 
+ > 不建议使用此 API 在.NET Core 中;它为了启用的应用程序迁移到.NET Core 但仍显式面向 Windows 的可移植性。
+
  <xref:System.IO.File.Decrypt%2A>方法要求独占访问正在解密该文件，并将另一个进程正在使用该文件的情况下引发的异常。 如果未加密文件，<xref:System.IO.File.Decrypt%2A>将返回非零值，该值指示成功。  
   
  这两个<xref:System.IO.File.Encrypt%2A>方法和<xref:System.IO.File.Decrypt%2A>方法使用安装在计算机和调用方法的过程的文件加密密钥的加密服务提供程序 (CSP)。  
   
  当前文件系统必须格式化为 NTFS 和当前操作系统必须是 Windows NT 或更高版本。  
-  
    
-  
 ## Examples  
  下面的代码示例使用<xref:System.IO.File.Encrypt%2A>方法和<xref:System.IO.File.Decrypt%2A>方法来加密和解密文件。 文件必须存在为示例正常运行。  
   
@@ -1433,10 +1436,14 @@
         <summary>将某个文件加密，使得只有加密该文件的帐户才能将其解密。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
-  
 ## Remarks  
  <xref:System.IO.File.Encrypt%2A>方法，可加密一个文件，以便仅用来调用此方法的帐户能够对其进行解密。 使用<xref:System.IO.File.Decrypt%2A>方法以解密的加密的文件<xref:System.IO.File.Encrypt%2A>方法。  
-  
+
+ > [!IMPORTANT]
+ > 此 API 仅支持 Windows 平台上，可以使用 NTFS 加密文件系统 (EFS)。 如果尝试在非 Windows 系统、 Windows Home Edition 系统或非 NTFS 驱动器结果中的使用这<xref:System.PlatformNotSupportedException>或<xref:System.NotSupportedException>，具体视情况而定。
+ > 
+ > 不建议使用此 API 在.NET Core 中;它为了启用的应用程序迁移到.NET Core 但仍显式面向 Windows 的可移植性。
+
  <xref:System.IO.File.Encrypt%2A>方法要求独占访问的文件加密，并且如果另一个进程正在使用该文件将失败。  
   
  这两个<xref:System.IO.File.Encrypt%2A>方法和<xref:System.IO.File.Decrypt%2A>方法使用安装在计算机和调用方法的过程的文件加密密钥的加密服务提供程序 (CSP)。  
@@ -1444,8 +1451,6 @@
  此方法不是所有版本的 Windows 上可用。 例如，不在家用版本上可用。  
   
  当前文件系统必须格式化为 NTFS。  
-  
-   
   
 ## Examples  
  下面的代码示例使用<xref:System.IO.File.Encrypt%2A>方法和<xref:System.IO.File.Decrypt%2A>方法来加密和解密文件。 文件必须存在为示例正常运行。  

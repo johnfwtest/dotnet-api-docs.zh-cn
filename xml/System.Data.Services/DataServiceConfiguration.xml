@@ -1,5 +1,5 @@
 <Type Name="DataServiceConfiguration" FullName="System.Data.Services.DataServiceConfiguration">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fa000e2ed9624ff6ce03b61c8199241a7fc2f22e" /><Meta Name="ms.sourcegitcommit" Value="9e06b87bcfa4347dbbaaa4b3cc36b43b93b5badb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/20/2018" /><Meta Name="ms.locfileid" Value="52204026" /></Metadata><TypeSignature Language="C#" Value="public sealed class DataServiceConfiguration : System.Data.Services.IDataServiceConfiguration" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a0c417adb0436193bb959341707152fe0aaa5422" /><Meta Name="ms.sourcegitcommit" Value="e28b7b371ead27d99e20387b8243f09b0cdb9fb3" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/12/2019" /><Meta Name="ms.locfileid" Value="59541588" /></Metadata><TypeSignature Language="C#" Value="public sealed class DataServiceConfiguration : System.Data.Services.IDataServiceConfiguration" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataServiceConfiguration extends System.Object implements class System.Data.Services.IDataServiceConfiguration" />
   <TypeSignature Language="DocId" Value="T:System.Data.Services.DataServiceConfiguration" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DataServiceConfiguration&#xA;Implements IDataServiceConfiguration" />
@@ -26,8 +26,8 @@
 ## Examples  
  此示例显示了基于 Northwind 的数据服务的代码隐藏页面，并将访问权限授予所选实体集。  
   
- [!code-csharp[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#northwindservicefull)]
- [!code-vb[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#northwindservicefull)]  
+ [!code-csharp[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#northwindservicefull)]
+ [!code-vb[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#northwindservicefull)]  
   
  ]]></format>
     </remarks>
@@ -57,7 +57,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个定义数据服务的附加行为的 <see cref="T:System.Data.Services.DataServiceBehavior" /> 对象。</summary>
-        <value><see cref="T:System.Data.Services.DataServiceBehavior" /> 对象。</value>
+        <value>一个 <see cref="T:System.Data.Services.DataServiceBehavior" /> 对象。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c">配置数据服务（WCF 数据服务）</related>
       </Docs>
@@ -82,8 +82,8 @@
         <Parameter Name="typeName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="typeName">启用后能够用于自定义数据服务提供程序的类型的命名空间限定名称。</param>
-        <summary>向数据服务运行时注册数据类型，使得该数据类型可供自定义数据服务提供程序使用。</summary>
+        <param name="typeName">支持与自定义数据服务提供程序一起使用的类型的命名空间限定名称。</param>
+        <summary>向数据服务运行时注册一个数据类型，以便自定义数据服务提供程序可以使用该数据类型。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -127,7 +127,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置数据服务运行时是否应将负载中所含类型转换为请求中指定的实际属性类型。</summary>
+        <summary>获取或设置数据服务运行时是否应将负载中包含的类型转换为请求中指定的实际属性类型。</summary>
         <value>一个指示是否执行转换的布尔值。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c">配置数据服务（WCF 数据服务）</related>
@@ -158,7 +158,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置单个批处理中允许的变更集和查询操作的最大数量。</summary>
+        <summary>获取或设置单个批处理中允许的最大变更集数和查询操作数。</summary>
         <value>一个表示最大变更集数的值。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c">配置数据服务（WCF 数据服务）</related>
@@ -189,8 +189,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置可以包含在单个变更集中的最大更改数。</summary>
-        <value>允许的最大更改数。</value>
+        <summary>获取或设置单个变更集中可包括的最大变更数。</summary>
+        <value>允许的最大变更数。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,7 +281,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置单个 POST 请求中能够包含的最大插入对象数。</summary>
+        <summary>获取或设置可插入单个 POST 请求中的最大对象数。</summary>
         <value>最大对象数。</value>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c">配置数据服务（WCF 数据服务）</related>
@@ -312,7 +312,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置每个返回集合中的最大项数。</summary>
+        <summary>获取或设置每个返回的集合中的最大项数。</summary>
         <value>最大项数。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -398,8 +398,8 @@
 ## Examples  
  此示例显示了基于 Northwind 的数据服务的代码隐藏页面，并将访问权限授予所选实体集。  
   
- [!code-csharp[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#northwindservicefull)]
- [!code-vb[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#northwindservicefull)]  
+ [!code-csharp[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#northwindservicefull)]
+ [!code-vb[Astoria Quickstart Service#NorthwindServiceFull](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#northwindservicefull)]  
   
  ]]></format>
         </remarks>
@@ -467,7 +467,7 @@
       <Docs>
         <param name="name">要为其设置权限的服务操作的名称。</param>
         <param name="rights">要授予此资源的访问权限，可作为 <see cref="T:System.Data.Services.ServiceOperationRights" /> 值传递。</param>
-        <summary>为指定的服务操作设置权限。</summary>
+        <summary>为指定服务操作设置权限。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

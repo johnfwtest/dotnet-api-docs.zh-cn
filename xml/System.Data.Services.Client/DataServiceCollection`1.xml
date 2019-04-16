@@ -1,5 +1,5 @@
 <Type Name="DataServiceCollection&lt;T&gt;" FullName="System.Data.Services.Client.DataServiceCollection&lt;T&gt;">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6fdac801465687acfbdc0ccd9a25c211ebee231f" /><Meta Name="ms.sourcegitcommit" Value="42a3c35677e9d87eeb503607ae50c9d39827d414" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/17/2018" /><Meta Name="ms.locfileid" Value="53481530" /></Metadata><TypeSignature Language="C#" Value="public class DataServiceCollection&lt;T&gt; : System.Collections.ObjectModel.ObservableCollection&lt;T&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="47a12640f6d31a73aba980c41949e3b8f57c3cf7" /><Meta Name="ms.sourcegitcommit" Value="e28b7b371ead27d99e20387b8243f09b0cdb9fb3" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/12/2019" /><Meta Name="ms.locfileid" Value="59541614" /></Metadata><TypeSignature Language="C#" Value="public class DataServiceCollection&lt;T&gt; : System.Collections.ObjectModel.ObservableCollection&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceCollection`1&lt;T&gt; extends System.Collections.ObjectModel.ObservableCollection`1&lt;!T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceCollection`1" />
   <TypeSignature Language="VB.NET" Value="Public Class DataServiceCollection(Of T)&#xA;Inherits ObservableCollection(Of T)" />
@@ -23,7 +23,7 @@
   <Interfaces />
   <Docs>
     <typeparam name="T">一个实体类型。</typeparam>
-    <summary>表示一个动态实体集合，可在添加、移除项目或刷新列表时提供通知。</summary>
+    <summary>表示一个动态实体集合，在添加项、移除项或刷新列表时，此集合将提供通知。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -37,12 +37,12 @@
 ## Examples  
  下面的示例摘自在 WPF 中定义 `SalesOrders` 窗口的可扩展应用程序标记语言 (XAML) 页的代码隐藏页。 加载此窗口时，会根据查询结果创建 <xref:System.Data.Services.Client.DataServiceCollection%601>，该查询将返回按国家/地区进行筛选的具有相关对象的客户。 此结果绑定到作为 WPF 窗口的根布局控件的 <xref:System.Windows.FrameworkElement.DataContext%2A> 的 <xref:System.Windows.Controls.StackPanel> 属性。  
   
- [!code-csharp[Astoria Northwind Client#WpfDataBinding](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf.xaml.cs#wpfdatabinding)]
- [!code-vb[Astoria Northwind Client#WpfDataBinding](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml.vb#wpfdatabinding)]  
+ [!code-csharp[Astoria Northwind Client#WpfDataBinding](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderswpf.xaml.cs#wpfdatabinding)]
+ [!code-vb[Astoria Northwind Client#WpfDataBinding](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderswpf.xaml.vb#wpfdatabinding)]  
   
  以下 XAML 在 WPF 中为上一个示例定义 `SalesOrders` 窗口。  
   
- [!code-xaml[Astoria Northwind Client#WpfDataBindingXaml](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]  
+ [!code-xaml[Astoria Northwind Client#WpfDataBindingXaml](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]  
   
  ]]></format>
     </remarks>
@@ -115,8 +115,8 @@
         <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="items"><see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> 或 LINQ 查询，可返回用于初始化集合的对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
-        <summary>创建基于查询执行的 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例。</summary>
+        <param name="items">一个 <see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> 或 LINQ 查询，将返回用于初始化集合的对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
+        <summary>根据查询执行创建 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -152,7 +152,7 @@
         <Parameter Name="context" Type="System.Data.Services.Client.DataServiceContext" />
       </Parameters>
       <Docs>
-        <param name="context"><see cref="T:System.Data.Services.Client.DataServiceContext" /> 用于跟踪对集合中对象所做的更改。</param>
+        <param name="context">用于跟踪对集合中的对象所做更改的 <see cref="T:System.Data.Services.Client.DataServiceContext" />。</param>
         <summary>创建 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例，该实例使用指定的 <see cref="T:System.Data.Services.Client.DataServiceContext" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -190,8 +190,8 @@
       </Parameters>
       <Docs>
         <param name="items"><see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> 或 LINQ 查询，可返回用于初始化集合的对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
-        <param name="trackingMode"><see cref="T:System.Data.Services.Client.TrackingMode" /> 值，用于指示是否自动跟踪对集合中各项所做的更改。</param>
-        <summary>创建基于查询执行并使用指定跟踪模式的 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例。</summary>
+        <param name="trackingMode">一个 <see cref="T:System.Data.Services.Client.TrackingMode" /> 值，指示是否自动跟踪对集合中的项所做的更改。</param>
+        <summary>根据查询执行并使用指定的跟踪模式创建 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -230,11 +230,11 @@
         <Parameter Name="collectionChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean&gt;" />
       </Parameters>
       <Docs>
-        <param name="context"><see cref="T:System.Data.Services.Client.DataServiceContext" /> 用于跟踪集合中的项。</param>
-        <param name="entitySetName">集合中的对象实体集。</param>
-        <param name="entityChangedCallback">一种委托，用于封装在实体更改时进行调用的方法。</param>
-        <param name="collectionChangedCallback">一种委托，用于封装在实体集合更改时进行调用的方法。</param>
-        <summary>创建使用所提供更改方法委托并使用指定的 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 的 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 类的新实例。</summary>
+        <param name="context">用于跟踪集合中的项的 <see cref="T:System.Data.Services.Client.DataServiceContext" />。</param>
+        <param name="entitySetName">集合中的对象的实体集。</param>
+        <param name="entityChangedCallback">用于封装在实体发生更改时调用的方法的委托。</param>
+        <param name="collectionChangedCallback">用于封装在实体集合发生更改时调用的方法的委托。</param>
+        <summary>使用提供的更改方法委托创建 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例，该实例使用指定的 <see cref="T:System.Data.Services.Client.DataServiceContext" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -274,11 +274,11 @@
       </Parameters>
       <Docs>
         <param name="items"><see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> 或 LINQ 查询，可返回用于初始化集合的对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
-        <param name="trackingMode"><see cref="T:System.Data.Services.Client.TrackingMode" /> 值，用于指示是否自动跟踪对集合中各项所做的更改。</param>
-        <param name="entitySetName">集合中的对象实体集。</param>
-        <param name="entityChangedCallback">一种委托，用于封装在实体更改时进行调用的方法。</param>
-        <param name="collectionChangedCallback">一种委托，用于封装在实体集合更改时进行调用的方法。</param>
-        <summary>创建基于查询执行并使用所提供更改方法委托的 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例。</summary>
+        <param name="trackingMode">一个 <see cref="T:System.Data.Services.Client.TrackingMode" /> 值，指示是否自动跟踪对集合中的项所做的更改。</param>
+        <param name="entitySetName">集合中的对象的实体集。</param>
+        <param name="entityChangedCallback">用于封装在实体发生更改时调用的方法的委托。</param>
+        <param name="collectionChangedCallback">用于封装在实体集合发生更改时调用的方法的委托。</param>
+        <summary>根据查询执行并使用提供的更改方法委托创建 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -313,13 +313,13 @@
         <Parameter Name="collectionChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean&gt;" />
       </Parameters>
       <Docs>
-        <param name="context"><see cref="T:System.Data.Services.Client.DataServiceContext" /> 用于跟踪集合中的项。</param>
+        <param name="context">用于跟踪集合中的项的 <see cref="T:System.Data.Services.Client.DataServiceContext" />。</param>
         <param name="items"><see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> 或 LINQ 查询，可返回用于初始化集合的对象的 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 集合。</param>
-        <param name="trackingMode"><see cref="T:System.Data.Services.Client.TrackingMode" /> 值，用于指示是否自动跟踪对集合中各项所做的更改。</param>
-        <param name="entitySetName">集合中的对象实体集。</param>
-        <param name="entityChangedCallback">一种委托，用于封装在实体更改时进行调用的方法。</param>
-        <param name="collectionChangedCallback">一种委托，用于封装在实体集合更改时进行调用的方法。</param>
-        <summary>创建基于查询执行、使用所提供的更改方法委托并使用所提供的 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 的 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 类的新实例。</summary>
+        <param name="trackingMode">一个 <see cref="T:System.Data.Services.Client.TrackingMode" /> 值，指示是否自动跟踪对集合中的项所做的更改。</param>
+        <param name="entitySetName">集合中的对象的实体集。</param>
+        <param name="entityChangedCallback">用于封装在实体发生更改时调用的方法的委托。</param>
+        <param name="collectionChangedCallback">用于封装在实体集合发生更改时调用的方法的委托。</param>
+        <summary>根据查询执行并使用提供的更改方法委托创建 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 类的新实例，该实例使用提供的 <see cref="T:System.Data.Services.Client.DataServiceContext" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -356,7 +356,7 @@
       </Parameters>
       <Docs>
         <param name="stopTracking">若为 <see langword="true" />，则从 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 中分离所有项。</param>
-        <summary>移除集合中的所有项，并选择性地分离 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 中的所有项。</summary>
+        <summary>从集合中移除所有项，也可以选择从 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 中分离所有项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -406,10 +406,10 @@
    
   
 ## Examples  
- 下面的示例摘自在 WPF 中定义 `SalesOrders` 窗口的可扩展应用程序标记语言 (XAML) 页的代码隐藏页。 加载此窗口时，会根据查询结果创建 <xref:System.Data.Services.Client.DataServiceCollection%601>，该查询将返回客户，并按国家/地区进行筛选。 将加载此分页结果的所有页面和相关订单，并将这些页面绑定到作为 WPF 窗口的根布局控件的 <xref:System.Windows.FrameworkElement.DataContext%2A> 的 <xref:System.Windows.Controls.StackPanel> 属性。 有关更多信息，请参见[如何：将数据绑定到 Windows Presentation Foundation 元素](~/docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)。  
+ 下面的示例摘自在 WPF 中定义 `SalesOrders` 窗口的可扩展应用程序标记语言 (XAML) 页的代码隐藏页。 加载此窗口时，会根据查询结果创建 <xref:System.Data.Services.Client.DataServiceCollection%601>，该查询将返回客户，并按国家/地区进行筛选。 将加载此分页结果的所有页面和相关订单，并将这些页面绑定到作为 WPF 窗口的根布局控件的 <xref:System.Windows.FrameworkElement.DataContext%2A> 的 <xref:System.Windows.Controls.StackPanel> 属性。 有关详细信息，请参阅[如何：将数据绑定到 Windows Presentation Foundation 元素](~/docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)。  
   
- [!code-csharp[Astoria Northwind Client#BindPagedData](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf3.xaml.cs#bindpageddata)]
- [!code-vb[Astoria Northwind Client#BindPagedData](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf3.xaml.vb#bindpageddata)]  
+ [!code-csharp[Astoria Northwind Client#BindPagedData](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderswpf3.xaml.cs#bindpageddata)]
+ [!code-vb[Astoria Northwind Client#BindPagedData](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderswpf3.xaml.vb#bindpageddata)]  
   
  ]]></format>
         </remarks>
@@ -436,7 +436,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>禁止 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 跟踪集合中的所有项。</summary>
+        <summary>禁用集合中所有项的 <see cref="T:System.Data.Services.Client.DataServiceContext" /> 跟踪。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -471,9 +471,9 @@
         <Parameter Name="item" Type="T" />
       </Parameters>
       <Docs>
-        <param name="index">要添加项的索引位置。</param>
+        <param name="index">要添加项处的索引。</param>
         <param name="item">要添加的项。</param>
-        <summary>将指定项添加到集合的指定索引位置。</summary>
+        <summary>将指定的项添加到集合中的指定索引位置。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -515,7 +515,7 @@
         <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="items">要添加到 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 的实体对象的集合。</param>
+        <param name="items">要添加到 <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> 中的实体对象的集合。</param>
         <summary>将实体对象的集合加载到集合中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -551,7 +551,7 @@
       </Parameters>
       <Docs>
         <param name="item">要添加的实体对象。</param>
-        <summary>将单个实体对象加载到集合中。</summary>
+        <summary>将一个实体对象加载到集合中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
