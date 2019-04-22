@@ -1,0 +1,155 @@
+<Type Name="JsonReaderState" FullName="System.Text.Json.JsonReaderState">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6225284e1ba227a6a73f861d5fdaba59c0849938" /><Meta Name="ms.sourcegitcommit" Value="e28b7b371ead27d99e20387b8243f09b0cdb9fb3" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/12/2019" /><Meta Name="ms.locfileid" Value="59541471" /></Metadata><TypeSignature Language="C#" Value="public struct JsonReaderState" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit JsonReaderState extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Text.Json.JsonReaderState" />
+  <TypeSignature Language="VB.NET" Value="Public Structure JsonReaderState" />
+  <TypeSignature Language="C++ CLI" Value="public value class JsonReaderState" />
+  <TypeSignature Language="F#" Value="type JsonReaderState = struct" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Json</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定义一个不透明类型，用于保留和保存所有相关的状态信息，这些信息必须提供给 <see cref="T:System.Text.Json.Utf8JsonReader" />，以便在处理不完整的数据后继续进行读取。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+`JsonReaderState` 需要以支持可重入性时读取不完整的数据，并提供更多的数据后，请继续阅读。 与不同<xref:System.Text.Json.Utf8JsonReader>结构，哪个是 ref 结构、 此类型可以经受得住跨异步/等待边界，因此需要为异步读取更多的数据，然后才能继续进行的新实例提供支持<xref:System.Text.Json.Utf8JsonReader>。
+
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JsonReaderState (int maxDepth = 64, System.Text.Json.JsonReaderOptions options = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 maxDepth, valuetype System.Text.Json.JsonReaderOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.Json.JsonReaderState.#ctor(System.Int32,System.Text.Json.JsonReaderOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (Optional maxDepth As Integer = 64, Optional options As JsonReaderOptions = null)" />
+      <MemberSignature Language="F#" Value="new System.Text.Json.JsonReaderState : int * System.Text.Json.JsonReaderOptions -&gt; System.Text.Json.JsonReaderState" Usage="new System.Text.Json.JsonReaderState (maxDepth, options)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Json</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="maxDepth" Type="System.Int32" />
+        <Parameter Name="options" Type="System.Text.Json.JsonReaderOptions" />
+      </Parameters>
+      <Docs>
+        <param name="maxDepth">读取 JSON 时所允许的最大深度。 这是可选参数，其默认值为 64。 读取时超过此深度会引发 <see cref="T:System.Text.Json.JsonReaderException" /></param>
+        <param name="options"><see cref="T:System.Text.Json.Utf8JsonReader" /> 的自定义行为，不同于 JSON RFC（例如，处理注释的方式）。
+这是可选参数，默认情况下 <see cref="T:System.Text.Json.Utf8JsonReader" /> 结构严格遵循 JSON RFC（即 JSON 中的注释无效）。</param>
+        <summary>初始化 <see cref="T:System.Text.Json.JsonReaderState" /> 结构的新实例。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks
+
+一个<xref:System.Text.Json.JsonReaderState>实例必须将传递给<xref:System.Text.Json.Utf8JsonReader>构造函数使用的 JSON 数据。
+与不同<xref:System.Text.Json.Utf8JsonReader>，这是 ref 结构、 状态可以经受得住跨异步/等待边界，因此这种类型需为异步读取更多的数据，然后才能继续进行的新实例提供支持<xref:System.Text.Json.Utf8JsonReader>类。
+
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="maxDepth" /> 小于或等于 0。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BytesConsumed">
+      <MemberSignature Language="C#" Value="public long BytesConsumed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 BytesConsumed" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Json.JsonReaderState.BytesConsumed" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BytesConsumed As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long BytesConsumed { long get(); };" />
+      <MemberSignature Language="F#" Value="member this.BytesConsumed : int64" Usage="System.Text.Json.JsonReaderState.BytesConsumed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Json</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>获取 <see cref="T:System.Text.Json.Utf8JsonReader" /> 目前为止已为给定 UTF-8 编码输入文本使用的字节总数。</summary>
+        <value>占用的字节总数<see cref="T:System.Text.Json.Utf8JsonReader" />到目前为止。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDepth">
+      <MemberSignature Language="C#" Value="public int MaxDepth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Json.JsonReaderState.MaxDepth" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MaxDepth As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxDepth { int get(); };" />
+      <MemberSignature Language="F#" Value="member this.MaxDepth : int" Usage="System.Text.Json.JsonReaderState.MaxDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Json</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>读取 JSON 时获取允许的最大深度。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks
+        
+读取过去`MaxDepth`引发<xref:System.Text.Json.JsonReaderException>。
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Text.Json.JsonReaderOptions Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Text.Json.JsonReaderOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Json.JsonReaderState.Options" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Options As JsonReaderOptions" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Json::JsonReaderOptions Options { System::Text::Json::JsonReaderOptions get(); };" />
+      <MemberSignature Language="F#" Value="member this.Options : System.Text.Json.JsonReaderOptions" Usage="System.Text.Json.JsonReaderState.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Json</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Json.JsonReaderOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>获取使用 <see cref="T:System.Text.Json.Utf8JsonReader" /> 结构读取 JSON 数据时要使用的自定义行为，该结构可能会偏离严格遵守 JSON 规范的要求（这是默认行为）。</summary>
+        <value>要读取的 JSON 数据时使用的自定义行为。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public SequencePosition Position { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.SequencePosition Position" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Json.JsonReaderState.Position" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Position As SequencePosition" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property SequencePosition Position { SequencePosition get(); };" />
+      <MemberSignature Language="F#" Value="member this.Position : SequencePosition" Usage="System.Text.Json.JsonReaderState.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Json</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SequencePosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>在提供的 UTF-8 编码输入 ReadOnlySequence&lt;byte&gt; 中获取当前 <see cref="T:System.SequencePosition" />。 如果 <see cref="T:System.Text.Json.Utf8JsonReader" /> 结构是使用 ReadOnlySpan&lt;byte&gt; 构造的，这将始终返回默认 <see cref="T:System.SequencePosition" />。</summary>
+        <value>当前<see cref="T:System.SequencePosition" />内提供 utf-8 编码输入 ReadOnlySequence&lt;字节&gt;。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
