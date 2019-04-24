@@ -1,5 +1,5 @@
 <Type Name="Environment" FullName="System.Environment">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="f7e0dacad7ba6ba32044daaf33fd9f44d4d9a4d3" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874970" /></Metadata><TypeSignature Language="C#" Value="public static class Environment" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f7e0dacad7ba6ba32044daaf33fd9f44d4d9a4d3" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58874970" /></Metadata><TypeSignature Language="C#" Value="public static class Environment" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Environment extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Environment" />
   <TypeSignature Language="VB.NET" Value="Public Class Environment" />
@@ -165,7 +165,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">已尝试设置为空字符串 ("")。</exception>
-        <exception cref="T:System.ArgumentNullException">尝试设置为 <see langword="null." /></exception>
+        <exception cref="T:System.ArgumentNullException">已尝试设置为 <see langword="null." /></exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">已尝试设置一个找不到的本地路径。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有相应的权限。</exception>
@@ -739,7 +739,7 @@ goto :EOF
 
 - 当进程运行时通过调用添加到 process 块的任何变量<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%29>方法或<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>方法替换`target`的值<xref:System.EnvironmentVariableTarget.Process?displayProperty=nameWithType>。 在.NET 应用程序终止之前，将始终保留这些环境变量。  
   
-如果进程启动后创建了环境变量，可以使用此方法来检索已通过调用创建的变量<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%29>方法或<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>方法替换`target`的值。<xref:System.EnvironmentVariableTarget.Process?displayProperty=nameWithType>。  
+如果进程启动后创建了环境变量，可以使用此方法来检索已通过调用创建的变量<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%29>方法或<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>方法替换`target`的值<xref:System.EnvironmentVariableTarget.Process?displayProperty=nameWithType>。  
 
 ### <a name="on-macos-and-linux-systems"></a>在 macOS 和 Linux 系统上
 
@@ -1299,7 +1299,7 @@ or
       </ReturnValue>
       <Docs>
         <summary>确定当前操作系统是否为 64 位操作系统。</summary>
-        <value><see langword="true" /> 如果操作系统是 64 位;否则为<see langword="false" />。</value>
+        <value>如果操作系统为 64 位操作系统，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1331,7 +1331,7 @@ or
       </ReturnValue>
       <Docs>
         <summary>确定当前进程是否为 64 位进程。</summary>
-        <value><see langword="true" /> 如果进程为 64 位;否则为<see langword="false" />。</value>
+        <value>如果进程为 64 位进程，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1504,7 +1504,7 @@ or
         <exception cref="T:System.InvalidOperationException">此属性不能获得系统版本。  
   
 - 或 - 
-获取的平台标识符不是其成员 <see cref="T:System.PlatformID" /></exception>
+获得的平台标识符不是 <see cref="T:System.PlatformID" /> 的成员</exception>
       </Docs>
     </Member>
     <Member MemberName="ProcessorCount">
@@ -1767,7 +1767,7 @@ or
 <paramref name="variable" /> 的长度大于或等于 32,767 个字符。  
   
 - 或 - 
- <paramref name="target" /> 不是 <see cref="T:System.EnvironmentVariableTarget" /> 枚举的成员。  
+ <paramref name="target" /> 不是 <see cref="T:System.EnvironmentVariableTarget" /> 枚举的一个成员。  
   
 - 或 - 
  <paramref name="target" /> 为 <see cref="F:System.EnvironmentVariableTarget.Machine" /> 或 <see cref="F:System.EnvironmentVariableTarget.User" />，且 <paramref name="variable" /> 的长度大于或等于 255。  
@@ -2124,7 +2124,7 @@ or
       </ReturnValue>
       <Docs>
         <summary>获取一个值，用以指示当前进程是否在用户交互模式中运行。</summary>
-        <value><see langword="true" /> 如果当前进程运行在用户交互模式下;否则为<see langword="false" />。</value>
+        <value>如果当前进程在用户交互模式中运行，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
