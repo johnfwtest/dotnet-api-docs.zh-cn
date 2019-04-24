@@ -1,5 +1,5 @@
 <Type Name="Task" FullName="System.Threading.Tasks.Task">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6f0ac056072a4ce2c210b9c1c9e114fe6a20fc0a" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58875289" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6f0ac056072a4ce2c210b9c1c9e114fe6a20fc0a" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58875289" /></Metadata><TypeSignature Language="C#" Value="public class Task : IAsyncResult, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Task extends System.Object implements class System.IAsyncResult, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Task" />
   <TypeSignature Language="VB.NET" Value="Public Class Task&#xA;Implements IAsyncResult, IDisposable" />
@@ -721,7 +721,7 @@
         <Parameter Name="continueOnCapturedContext" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="continueOnCapturedContext"><see langword="true" /> （尝试将延续任务封送回原始上下文）；否则为 <see langword="false" />。</param>
+        <param name="continueOnCapturedContext">尝试将延续任务封送回原始上下文，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>配置用于等待此 <see cref="T:System.Threading.Tasks.Task" />的 awaiter。</summary>
         <returns>用于的等待此任务的对象。</returns>
         <remarks>To be added.</remarks>
@@ -2926,7 +2926,7 @@ Task t Status: RanToCompletion, Result: 42
       </ReturnValue>
       <Docs>
         <summary>获取此 <see cref="T:System.Threading.Tasks.Task" /> 实例是否由于被取消的原因而已完成执行。</summary>
-        <value><see langword="true" /> 如果任务由于被取消; 已完成否则为<see langword="false" />。</value>
+        <value>如果任务由于被取消而完成，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3065,7 +3065,7 @@ Task t Status: RanToCompletion, Result: 42
       </ReturnValue>
       <Docs>
         <summary>获取 <see cref="T:System.Threading.Tasks.Task" /> 是否由于未经处理异常的原因而完成。</summary>
-        <value><see langword="true" /> 如果任务引发未经处理的异常;否则为<see langword="false" />。</value>
+        <value>如果任务引发了未经处理的异常，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3998,7 +3998,7 @@ Task t Status: RanToCompletion, Result: 42
       </ReturnValue>
       <Docs>
         <summary>获取操作是否已同步完成的指示。</summary>
-        <value><see langword="true" /> 如果同步进行; 完成该操作否则为<see langword="false" />。</value>
+        <value>如果操作同步完成，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -4105,7 +4105,7 @@ Task t Status: RanToCompletion, Result: 42
       <Docs>
         <param name="millisecondsTimeout">等待的毫秒数，或为 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，表示无限期等待。</param>
         <summary>等待 <see cref="T:System.Threading.Tasks.Task" /> 在指定的毫秒数内完成执行。</summary>
-        <returns><see langword="true" /> （如果在分配的时间内 <see cref="T:System.Threading.Tasks.Task" /> 完成执行）；否则为 <see langword="false" />。</returns>
+        <returns>如果在分配的时间内 <see langword="true" /> 完成执行，则为 <see cref="T:System.Threading.Tasks.Task" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4129,7 +4129,7 @@ Task t Status: RanToCompletion, Result: 42
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.Threading.Tasks.Task" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.AggregateException">已取消任务。 <see cref="P:System.AggregateException.InnerExceptions" /> 集合包含 <see cref="T:System.Threading.Tasks.TaskCanceledException" /> 对象。  
   
 - 或 - 
@@ -4240,7 +4240,7 @@ Task t Status: RanToCompletion, Result: 42
       <Docs>
         <param name="timeout">表示等待毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
         <summary>等待 <see cref="T:System.Threading.Tasks.Task" /> 在指定的时间间隔内完成执行。</summary>
-        <returns><see langword="true" /> （如果在分配的时间内 <see cref="T:System.Threading.Tasks.Task" /> 完成执行）；否则为 <see langword="false" />。</returns>
+        <returns>如果在分配的时间内 <see langword="true" /> 完成执行，则为 <see cref="T:System.Threading.Tasks.Task" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4311,7 +4311,7 @@ Task t Status: RanToCompletion, Result: 42
         <param name="millisecondsTimeout">等待的毫秒数，或为 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，表示无限期等待。</param>
         <param name="cancellationToken">等待任务完成期间要观察的取消标记。</param>
         <summary>等待 <see cref="T:System.Threading.Tasks.Task" /> 完成执行过程。 如果在任务完成之前超时间隔结束或取消标记已取消，等待将终止。</summary>
-        <returns><see langword="true" /> （如果在分配的时间内 <see cref="T:System.Threading.Tasks.Task" /> 完成执行）；否则为 <see langword="false" />。</returns>
+        <returns>如果在分配的时间内 <see langword="true" /> 完成执行，则为 <see cref="T:System.Threading.Tasks.Task" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4343,7 +4343,7 @@ Task t Status: RanToCompletion, Result: 42
         </remarks>
         <exception cref="T:System.OperationCanceledException">已取消 <paramref name="cancellationToken" />。</exception>
         <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.Threading.Tasks.Task" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.AggregateException">已取消任务。 <see cref="P:System.AggregateException.InnerExceptions" /> 集合包含 <see cref="T:System.Threading.Tasks.TaskCanceledException" /> 对象。  
   
 - 或 - 
@@ -4465,7 +4465,7 @@ Task t Status: RanToCompletion, Result: 42
         <param name="tasks">要等待的 <see cref="T:System.Threading.Tasks.Task" /> 实例的数组。</param>
         <param name="millisecondsTimeout">等待的毫秒数，或为 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，表示无限期等待。</param>
         <summary>等待所有提供的 <see cref="T:System.Threading.Tasks.Task" /> 在指定的毫秒数内完成执行。</summary>
-        <returns><see langword="true" /> （如果在分配的时间内所有 <see cref="T:System.Threading.Tasks.Task" /> 实例都已完成执行）；否则为 <see langword="false" />。</returns>
+        <returns>如果在分配的时间内所有 <see langword="true" /> 实例都已完成执行，则为 <see cref="T:System.Threading.Tasks.Task" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 中的一个或多个 <see cref="T:System.Threading.Tasks.Task" /> 对象已释放。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 参数为 <see langword="null" />。</exception>
@@ -4473,7 +4473,7 @@ Task t Status: RanToCompletion, Result: 42
   
 - 或 - 
 在至少一个 <see cref="T:System.Threading.Tasks.Task" /> 实例的执行过程中引发了异常。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="tasks" /> 参数包含一个 null 元素。  
   
 - 或 - 
@@ -4578,7 +4578,7 @@ Task t Status: RanToCompletion, Result: 42
         <param name="tasks">要等待的 <see cref="T:System.Threading.Tasks.Task" /> 实例的数组。</param>
         <param name="timeout">表示等待毫秒数的 <see cref="T:System.TimeSpan" />，或表示 -1 毫秒（无限期等待）的 <see cref="T:System.TimeSpan" />。</param>
         <summary>等待所有提供的可取消 <see cref="T:System.Threading.Tasks.Task" /> 对象在指定的时间间隔内完成执行。</summary>
-        <returns><see langword="true" /> （如果在分配的时间内所有 <see cref="T:System.Threading.Tasks.Task" /> 实例都已完成执行）；否则为 <see langword="false" />。</returns>
+        <returns>如果在分配的时间内所有 <see langword="true" /> 实例都已完成执行，则为 <see cref="T:System.Threading.Tasks.Task" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 中的一个或多个 <see cref="T:System.Threading.Tasks.Task" /> 对象已释放。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 参数为 <see langword="null" />。</exception>
@@ -4635,7 +4635,7 @@ Task t Status: RanToCompletion, Result: 42
         <param name="millisecondsTimeout">等待的毫秒数，或为 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，表示无限期等待。</param>
         <param name="cancellationToken">等待任务完成期间要观察的 <see cref="P:System.Threading.Tasks.TaskFactory.CancellationToken" />。</param>
         <summary>等待提供的所有 <see cref="T:System.Threading.Tasks.Task" /> 对象在指定的毫秒数内完成执行，或等到取消等待。</summary>
-        <returns><see langword="true" /> （如果在分配的时间内所有 <see cref="T:System.Threading.Tasks.Task" /> 实例都已完成执行）；否则为 <see langword="false" />。</returns>
+        <returns>如果在分配的时间内所有 <see langword="true" /> 实例都已完成执行，则为 <see cref="T:System.Threading.Tasks.Task" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4650,7 +4650,7 @@ Task t Status: RanToCompletion, Result: 42
   
 - 或 - 
 在至少一个 <see cref="T:System.Threading.Tasks.Task" /> 实例的执行过程中引发了异常。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="tasks" /> 参数包含一个 null 元素。  
   
 - 或 - 
@@ -4771,7 +4771,7 @@ Task t Status: RanToCompletion, Result: 42
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.Threading.Tasks.Task" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="tasks" /> 参数包含一个 null 元素。</exception>
       </Docs>
     </Member>
@@ -4914,7 +4914,7 @@ Task t Status: RanToCompletion, Result: 42
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.Threading.Tasks.Task" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 为 -1 以外的负数，表示无限期超时。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 是一个非 -1 的负数，而 -1 表示无限期超时。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="tasks" /> 参数包含一个 null 元素。</exception>
         <exception cref="T:System.OperationCanceledException">已取消 <paramref name="cancellationToken" />。</exception>
       </Docs>
@@ -5137,7 +5137,7 @@ Task t Status: RanToCompletion, Result: 42
  [!code-csharp[System.Threading.Tasks.Task.WhenAll#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task.whenall/cs/whenall1.cs#1)]
  [!code-vb[System.Threading.Tasks.Task.WhenAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task.whenall/vb/whenall1.vb#1)]  
   
- 在这种情况下，十个单个任务存储在<xref:System.Collections.Generic.List%601>对象。 <xref:System.Collections.Generic.List%601> 实现<xref:System.Collections.Generic.IEnumerable%601>接口。  
+ 在这种情况下，十个单个任务存储在<xref:System.Collections.Generic.List%601>对象。 <xref:System.Collections.Generic.List%601> 实现 <xref:System.Collections.Generic.IEnumerable%601> 接口。  
   
  ]]></format>
         </remarks>

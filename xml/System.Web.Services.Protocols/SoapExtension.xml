@@ -1,5 +1,5 @@
 <Type Name="SoapExtension" FullName="System.Web.Services.Protocols.SoapExtension">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a0d9266b3dc5962906f3245b68c5dd22026399dd" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874367" /></Metadata><TypeSignature Language="C#" Value="public abstract class SoapExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a0d9266b3dc5962906f3245b68c5dd22026399dd" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58874367" /></Metadata><TypeSignature Language="C#" Value="public abstract class SoapExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapExtension extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapExtension" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class SoapExtension" />
@@ -92,7 +92,7 @@
 ## Remarks  
  <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> 确保具有最高优先级的 SOAP 扩展可以修改 SOAP 消息发送或通过网络返回最接近的实际数据。  
   
- SOAP 扩展应保存的引用<xref:System.IO.Stream>传递到<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>并<xref:System.IO.Stream>从返回<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>。 如果 SOAP 扩展配置为使用 XML Web 服务方法，运行<xref:System.IO.Stream>传递到<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>包含在序列化的 SOAP 请求<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>。 同样，<xref:System.IO.Stream>返回从引用<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>时序列化时发生，因此包含序列化的 SOAP 响应中写入到<xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>。  
+ SOAP 扩展应保存的引用<xref:System.IO.Stream>传递到<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>并<xref:System.IO.Stream>从返回<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>。 如果 SOAP 扩展配置为使用 XML Web 服务方法，运行<xref:System.IO.Stream>传递到<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>包含在序列化的 SOAP 请求<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize> <xref:System.Web.Services.Protocols.SoapMessageStage>。 同样，<xref:System.IO.Stream>返回从引用<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>时序列化时发生，因此包含序列化的 SOAP 响应中写入<xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize> <xref:System.Web.Services.Protocols.SoapMessageStage>。  
   
    
   
@@ -315,7 +315,7 @@
    
   
 ## Examples  
- 下面的示例是<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>SOAP 请求和 SOAP 响应的 SOAP 扩展的部分。 通过日志记录<xref:System.Web.Services.Protocols.SoapMessage>处<xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>，SOAP 扩展访问<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>以通过网络发送。 如果 SOAP 扩展会应用于 XML Web 服务方法创建使用 ASP.NET，则<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>包含来自 XML Web 服务方法的 SOAP 响应。 如果 SOAP 扩展应用于 XML Web 服务客户端，<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>包含对 XML Web 服务方法的 SOAP 请求。  
+ 下面的示例是<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>SOAP 请求和 SOAP 响应的 SOAP 扩展的部分。 通过日志记录<xref:System.Web.Services.Protocols.SoapMessage>处<xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize> <xref:System.Web.Services.Protocols.SoapMessageStage>，SOAP 扩展访问<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>以通过网络发送。 如果 SOAP 扩展会应用于 XML Web 服务方法创建使用 ASP.NET，则<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>包含来自 XML Web 服务方法的 SOAP 响应。 如果 SOAP 扩展应用于 XML Web 服务客户端，<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>包含对 XML Web 服务方法的 SOAP 请求。  
   
  经典 SoapExtension.ProcessMessage 示例 #1  
   

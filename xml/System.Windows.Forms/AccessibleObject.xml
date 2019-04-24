@@ -1,5 +1,5 @@
 <Type Name="AccessibleObject" FullName="System.Windows.Forms.AccessibleObject">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="14b686f479793cbb7e6fd25b1bc140eeb0bda8e4" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58874990" /></Metadata><TypeSignature Language="C#" Value="public class AccessibleObject : System.Runtime.InteropServices.StandardOleMarshalObject, Accessibility.IAccessible, System.Reflection.IReflect" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="14b686f479793cbb7e6fd25b1bc140eeb0bda8e4" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58874990" /></Metadata><TypeSignature Language="C#" Value="public class AccessibleObject : System.Runtime.InteropServices.StandardOleMarshalObject, Accessibility.IAccessible, System.Reflection.IReflect" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessibleObject extends System.Runtime.InteropServices.StandardOleMarshalObject implements class Accessibility.IAccessible, class System.Reflection.IReflect" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleObject" />
   <TypeSignature Language="VB.NET" Value="Public Class AccessibleObject&#xA;Inherits StandardOleMarshalObject&#xA;Implements IAccessible, IReflect" />
@@ -399,10 +399,10 @@
   
 |操作|标志组合|  
 |---------------|----------------------|  
-|若要模拟单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> 或 <xref:System.Windows.Forms.AccessibleSelection.TakeSelection>|  
-|若要通过模拟 CTRL + 单击来选择目标项目|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> 或 <xref:System.Windows.Forms.AccessibleSelection.AddSelection>|  
-|通过模拟 CTRL + 单击来取消选择的目标项|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> 或 <xref:System.Windows.Forms.AccessibleSelection.RemoveSelection>|  
-|若要模拟 SHIFT + 单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> 或 <xref:System.Windows.Forms.AccessibleSelection.ExtendSelection>|  
+|若要模拟单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> OR <xref:System.Windows.Forms.AccessibleSelection.TakeSelection>|  
+|若要通过模拟 CTRL + 单击来选择目标项目|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> OR <xref:System.Windows.Forms.AccessibleSelection.AddSelection>|  
+|通过模拟 CTRL + 单击来取消选择的目标项|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> OR <xref:System.Windows.Forms.AccessibleSelection.RemoveSelection>|  
+|若要模拟 SHIFT + 单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus> OR <xref:System.Windows.Forms.AccessibleSelection.ExtendSelection>|  
 |选择范围内的对象，并将焦点放在最后一个对象|指定<xref:System.Windows.Forms.AccessibleSelection.TakeFocus>上要设置选择定位点的起始对象。 然后再次调用选择并指定<xref:System.Windows.Forms.AccessibleSelection.TakeFocus>或<xref:System.Windows.Forms.AccessibleSelection.ExtendSelection>上的最后一个对象。|  
 |若要取消选择所有对象|指定<xref:System.Windows.Forms.AccessibleSelection.TakeSelection>上任何对象。 此标志可取消选择除刚才所选的所有选定的对象。 然后再次调用选择并指定<xref:System.Windows.Forms.AccessibleSelection.RemoveSelection>对同一对象。|  
   
@@ -1445,7 +1445,7 @@
         <param name="notificationProcessing">如何处理通知的指示器。</param>
         <param name="notificationText">通知的文本。</param>
         <summary>引发 UI 自动化通知事件。</summary>
-        <returns><see langword="true" /> （如果操作成功）；如果基础 Windows 基础结构不可用或操作失败，则为 <see langword="false" />。 调用 <see cref="M:System.Runtime.InteropServices.Marshal.GetLastWin32Error" /> 以获取详细信息。</returns>
+        <returns>如果操作成功，则为 <see langword="true" />；如果基础的 Windows 基础结构不可用或操作失败，则为 <see langword="false" />。 调用 <see cref="M:System.Runtime.InteropServices.Marshal.GetLastWin32Error" /> 以获取详细信息。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1475,7 +1475,7 @@
       <Parameters />
       <Docs>
         <summary>引发 LiveRegionChanged UI 自动化事件。</summary>
-        <returns><see langword="true" /> （如果操作成功）；否则为 <see langword="False" />。</returns>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1593,11 +1593,11 @@
   
 |操作|标志组合|  
 |---------------|----------------------|  
-|若要模拟单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType> `OR` <xref:System.Windows.Forms.AccessibleSelection.TakeSelection?displayProperty=nameWithType> **Note:**  This combination will not select the desired control if called from within your own ap**注意：** 如果从自己的应用程序中调用，这种组合将选择所需的控制。但是，如果从外部应用程序调用，它将具有所需的效果。|  
+|若要模拟单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType> `OR` <xref:System.Windows.Forms.AccessibleSelection.TakeSelection?displayProperty=nameWithType> **注意：** 如果从自己的应用程序中调用，这种组合将选择所需的控制。 但是，如果从外部应用程序调用，它将具有所需的效果。|  
 |若要通过模拟 CTRL + 单击来选择目标项目|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType> `OR` <xref:System.Windows.Forms.AccessibleSelection.AddSelection?displayProperty=nameWithType>|  
 |通过模拟 CTRL + 单击来取消选择的目标项|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType> `OR` <xref:System.Windows.Forms.AccessibleSelection.RemoveSelection?displayProperty=nameWithType>|  
 |若要模拟 SHIFT + 单击|<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType> `OR` <xref:System.Windows.Forms.AccessibleSelection.ExtendSelection?displayProperty=nameWithType>|  
-|选择范围内的对象，并将焦点放在最后一个对象|指定<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType>上要设置选择定位点的起始对象。 然后调用<xref:System.Windows.Forms.AccessibleObject.Select%2A>再次并指定<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType>`OR`<xref:System.Windows.Forms.AccessibleSelection.ExtendSelection?displayProperty=nameWithType>上的最后一个对象。|  
+|选择范围内的对象，并将焦点放在最后一个对象|指定<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType>上要设置选择定位点的起始对象。 然后调用<xref:System.Windows.Forms.AccessibleObject.Select%2A>再次并指定<xref:System.Windows.Forms.AccessibleSelection.TakeFocus?displayProperty=nameWithType> `OR` <xref:System.Windows.Forms.AccessibleSelection.ExtendSelection?displayProperty=nameWithType>上的最后一个对象。|  
 |若要取消选择所有对象|指定<xref:System.Windows.Forms.AccessibleSelection.TakeSelection?displayProperty=nameWithType>上任何对象。 此标志可取消选择除刚才所选的所有选定的对象。 然后调用<xref:System.Windows.Forms.AccessibleObject.Select%2A>再次并指定<xref:System.Windows.Forms.AccessibleSelection.RemoveSelection?displayProperty=nameWithType>对同一对象。|  
   
    
@@ -2116,11 +2116,11 @@
 
 - 或 -
 
-<paramref name="invokeAttr" /> 同时指定属性或字段的 get 和 set。
+<paramref name="invokeAttr" /> 为属性或字段同时指定 get 和 set。
 
 - 或 -
 
-<paramref name="invokeAttr" /> 同时指定字段集和 Invoke 方法。<paramref name="args" /> 用于字段 get 操作。
+<paramref name="invokeAttr" /> 同时指定字段集和 Invoke 方法。提供 <paramref name="args" />  用于字段 get 操作。
 
 - 或 -
 

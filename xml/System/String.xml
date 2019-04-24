@@ -1,5 +1,5 @@
 <Type Name="String" FullName="System.String">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="2c88c30ffa35750968f7aaa452806739fc48db98" /><Meta Name="ms.sourcegitcommit" Value="2982b8c4cce02c2542285fcaf172f7544d6b80bc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/09/2019" /><Meta Name="ms.locfileid" Value="59355184" /></Metadata><TypeSignature Language="C#" Value="public sealed class String : ICloneable, IComparable, IComparable&lt;string&gt;, IConvertible, IEquatable&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;char&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2c88c30ffa35750968f7aaa452806739fc48db98" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="59355184" /></Metadata><TypeSignature Language="C#" Value="public sealed class String : ICloneable, IComparable, IComparable&lt;string&gt;, IConvertible, IEquatable&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;char&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit string extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;char&gt;, class System.Collections.IEnumerable, class System.ICloneable, class System.IComparable, class System.IComparable`1&lt;string&gt;, class System.IConvertible, class System.IEquatable`1&lt;string&gt;" />
   <TypeSignature Language="DocId" Value="T:System.String" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class String&#xA;Implements ICloneable, IComparable, IComparable(Of String), IConvertible, IEnumerable(Of Char), IEquatable(Of String)" />
@@ -81,7 +81,7 @@
  [Null 字符串和空字符串](#Nulls)   
  [不变性和 StringBuilder 类](#Immutability)   
  [区分区域性的操作与序号](#CultureSensitive)   
- [标准化](#Normalization)   
+ [规范化](#Normalization)   
  [按类别的字符串操作](#ByCategory)  
   
 <a name="Instantiation"></a>   
@@ -151,12 +151,12 @@
   
 |.NET 版本|Unicode 标准版本|  
 |----------------------------|-------------------------------------|  
-|[!INCLUDE[net_v11_long](~/includes/net-v11-long-md.md)]|[Unicode 标准版本 4.0.0](https://www.unicode.org/versions/Unicode4.0.0/)|  
-|.NET Framework 2.0|[Unicode 标准，5.0.0 版](https://www.unicode.org/versions/Unicode5.0.0)|  
-|[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]|[Unicode 标准，5.0.0 版](https://www.unicode.org/versions/Unicode5.0.0)|  
-|[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]|[Unicode 标准，5.0.0 版](https://www.unicode.org/versions/Unicode5.0.0)|  
-|[!INCLUDE[net_v45](~/includes/net-v45-md.md)] 和更高版本在 Windows 7|[Unicode 标准，5.0.0 版](https://www.unicode.org/versions/Unicode5.0.0)|  
-|[!INCLUDE[net_v45](~/includes/net-v45-md.md)] 和更高版本在 Windows 8 和更高版本的 Windows 操作系统|[Unicode 标准 6.3.0 版](https://www.unicode.org/versions/Unicode6.3.0/)|  
+|[!INCLUDE[net_v11_long](~/includes/net-v11-long-md.md)]|[Unicode 标准，版本 4.0.0](https://www.unicode.org/versions/Unicode4.0.0/)|  
+|.NET Framework 2.0|[Unicode 标准，版本 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
+|[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]|[Unicode 标准，版本 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
+|[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]|[Unicode 标准，版本 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
+|[!INCLUDE[net_v45](~/includes/net-v45-md.md)] 和更高版本在 Windows 7|[Unicode 标准，版本 5.0.0](https://www.unicode.org/versions/Unicode5.0.0)|  
+|[!INCLUDE[net_v45](~/includes/net-v45-md.md)] 和更高版本在 Windows 8 和更高版本的 Windows 操作系统|[Unicode 标准，版本 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/)|  
 |.NET Core（所有版本）|取决于基础操作系统支持的 Unicode 标准版本。|
 
 <a name="EmbeddedNulls"></a>   
@@ -642,7 +642,7 @@
   
 |例外|条件|引发的|  
 |---------------|---------------|---------------|  
-|<xref:System.ArgumentNullException>|`value` 是`null`。|<xref:System.String.%23ctor%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>|  
+|<xref:System.ArgumentNullException>|`value` 为 `null`。|<xref:System.String.%23ctor%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>|  
 |<xref:System.ArgumentOutOfRangeException>|`startIndex``length`，或`count`小于零。<br /><br /> - 或 -<br /><br /> `startIndex` 与 `length` 的和大于 `value` 中的元素数。<br /><br /> - 或 -<br /><br /> `count` 小于零。|<xref:System.String.%23ctor%28System.Char%2CSystem.Int32%29><br /><br /> <xref:System.String.%23ctor%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>|  
   
  下面是由包含指针参数的构造函数引发的异常的列表。  
@@ -651,7 +651,7 @@
 |---------------|---------------|---------------|  
 |<xref:System.ArgumentException>|`value` 指定包含无效的 Unicode 字符的数组。<br /><br /> - 或 -<br /><br /> `value` 或`value`  +  `startIndex`指定的地址小于 64k。<br /><br /> - 或 -<br /><br /> 一个新<xref:System.String>无法初始化实例，从`value`字节数组的因为`value`不使用默认代码页编码。|所有构造函数的指针。|  
 |<xref:System.ArgumentNullException>|`value` 为 null。|<xref:System.String.%23ctor%28System.SByte%2A%29><br /><br /> <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%29><br /><br /> <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%2CSystem.Text.Encoding%29>|  
-|<xref:System.ArgumentOutOfRangeException>|当前进程不具有对所有通过地址访问的字符的读取访问权限。<br /><br /> - 或 -<br /><br /> `startIndex` 或`length`小于零， `value`  +  `startIndex`导致指针越界，或者当前进程不具有对所有寻址字符读取访问权限。<br /><br /> - 或 -<br /><br /> 新字符串的长度为太大，无法分配。|所有构造函数的指针。|  
+|<xref:System.ArgumentOutOfRangeException>|当前进程不具有对所有通过地址访问的字符的读取访问权限。<br /><br /> - 或 -<br /><br /> `startIndex` 或 `length` 小于零，`value` + `startIndex` 导致指针溢出，或者当前进程不具有对所有寻址字符的读取访问权限。<br /><br /> - 或 -<br /><br /> 新字符串的长度为太大，无法分配。|所有构造函数的指针。|  
 |<xref:System.AccessViolationException>|`value`或`value`  +  `startIndex`  +  `length` -1，指定了无效的地址。|<xref:System.String.%23ctor%28System.SByte%2A%29><br /><br /> <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%29><br /><br /> <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%2CSystem.Text.Encoding%29>|  
   
 <a name="Tasks"></a>   
@@ -665,7 +665,7 @@
 |创建重复多次的同一字符的字符串。|<xref:System.String.%23ctor%28System.Char%2CSystem.Int32%29> ([示例](#Ctor3_Example))|  
 |从指针到 Unicode 或宽字符数组创建字符串。|<xref:System.String.%23ctor%28System.Char%2A%29>|  
 |从 Unicode 或宽字符数组的一部分创建一个字符串，使用它的指针。|<xref:System.String.%23ctor%28System.Char%2A%2CSystem.Int32%2CSystem.Int32%29>|  
-|创建从一个字符串C++`char`数组。|<xref:System.String.%23ctor%28System.SByte%2A%29>, <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%29><br /><br /> - 或 -<br /><br /> <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%2CSystem.Text.Encoding%29>|  
+|创建从一个字符串C++`char`数组。|<xref:System.String.%23ctor%28System.SByte%2A%29>， <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%29><br /><br /> - 或 -<br /><br /> <xref:System.String.%23ctor%28System.SByte%2A%2CSystem.Int32%2CSystem.Int32%2CSystem.Text.Encoding%29>|  
 |创建从 ASCII 字符的字符串。|<xref:System.Text.ASCIIEncoding.GetString%2A?displayProperty=nameWithType>|  
   
 <a name="Creating_Strings"></a>   
@@ -764,10 +764,10 @@
  在中，所有重载都受都支持：4，3.5 SP1  
   
  可移植类库  
- 无需的所有重载<xref:System.SByte>`*`参数支持  
+ 所有重载，而无需<xref:System.SByte>`*`参数支持  
   
  适用于 Windows 应用商店应用的 .NET  
- 无需的所有重载<xref:System.SByte>`*`中支持参数：Windows 8  
+ 所有重载，而无需<xref:System.SByte>`*`中支持参数：Windows 8  
   
  ]]></format>
         </remarks>
@@ -1076,7 +1076,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 或 <paramref name="length" /> 小于零，<paramref name="value" />  + <paramref name="startIndex" /> 导致指针溢出，或者当前进程不具有对所有寻址字符的读取访问权限。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 或 <paramref name="length" /> 小于零，<paramref name="value" /> + <paramref name="startIndex" /> 导致指针溢出，或者当前进程不具有对所有寻址字符的读取访问权限。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="value" /> 指定的数组包含无效的 Unicode 字符，或 <paramref name="value" /> + <paramref name="startIndex" /> 指定的地址小于 64000。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
       </Docs>
@@ -1206,7 +1206,7 @@
   
 - 或 - 
 如果 <paramref name="value" /> 采用 ANSI 进行编码，那么无法使用 <paramref name="value" /> 初始化 <see cref="T:System.String" /> 的新实例。</exception>
-        <exception cref="T:System.AccessViolationException"><paramref name="value" /><paramref name="startIndex" /> 和 <paramref name="length" /> 共同指定的地址无效。</exception>
+        <exception cref="T:System.AccessViolationException"><paramref name="value" />、<paramref name="startIndex" /> 和 <paramref name="length" /> 共同指定的地址无效。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
       </Docs>
     </Member>
@@ -1276,7 +1276,7 @@
   
 - 或 - 
 如果 <paramref name="value" /> 按照指定的 <paramref name="enc" /> 进行编码，那么无法使用 <paramref name="value" /> 初始化 <see cref="T:System.String" /> 的新实例。</exception>
-        <exception cref="T:System.AccessViolationException"><paramref name="value" /><paramref name="startIndex" /> 和 <paramref name="length" /> 共同指定的地址无效。</exception>
+        <exception cref="T:System.AccessViolationException"><paramref name="value" />、<paramref name="startIndex" /> 和 <paramref name="length" /> 共同指定的地址无效。</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
       </Docs>
     </Member>
@@ -1652,7 +1652,7 @@
       <Docs>
         <param name="strA">要比较的第一个字符串。</param>
         <param name="strB">要比较的第二个字符串。</param>
-        <param name="ignoreCase"><see langword="true" /> （如果在比较过程中忽略大小写）；否则为 <see langword="false" />。</param>
+        <param name="ignoreCase">若要在比较过程中忽略大小写，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>比较两个指定的 <see cref="T:System.String" /> 对象（其中忽略或考虑其大小写），并返回一个整数，指示二者在排序顺序中的相对位置。</summary>
         <returns>一个 32 位带符号整数，指示两个比较数之间的词法关系。  
   
@@ -1770,7 +1770,7 @@
  </term><description><paramref name="strA" /> 在排序顺序中位于 <paramref name="strB" /> 之前。  
   
  </description></item><item><term> 零 
- </term><description><paramref name="strA" /> 与 <paramref name="strB" /> 在排序顺序中出现的位置相同。  
+ </term><description><paramref name="strA" /> 与 <paramref name="strB" /> 在排序顺序中的位置相同。  
   
  </description></item><item><term> 大于零 
  </term><description><paramref name="strA" /> 在排序顺序中位于 <paramref name="strB" /> 之后。  
@@ -1810,7 +1810,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="comparisonType" /> 不是 <see cref="T:System.StringComparison" /> 值。</exception>
-        <exception cref="T:System.NotSupportedException"><see cref="T:System.StringComparison" /> 不受支持。</exception>
+        <exception cref="T:System.NotSupportedException">不支持 <see cref="T:System.StringComparison" />。</exception>
         <block subset="none" type="usage"><para>字符集包括可忽略字符。 <see cref="M:System.String.Compare(System.String,System.String,System.StringComparison)" />方法执行区分区域性的比较时不考虑此类字符。 若要识别您的比较中的可忽略字符，提供的值<see cref="F:System.StringComparison.Ordinal" />或<see cref="F:System.StringComparison.OrdinalIgnoreCase" />为<paramref name="comparisonType" />参数。</para></block>
         <altmember cref="T:System.Int32" />
         <altmember cref="M:System.String.CompareOrdinal(System.String,System.String)" />
@@ -1860,7 +1860,7 @@
       <Docs>
         <param name="strA">要比较的第一个字符串。</param>
         <param name="strB">要比较的第二个字符串。</param>
-        <param name="ignoreCase"><see langword="true" /> （如果在比较过程中忽略大小写）；否则为 <see langword="false" />。</param>
+        <param name="ignoreCase">若要在比较过程中忽略大小写，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <param name="culture">一个对象，提供区域性特定的比较信息。</param>
         <summary>比较两个指定的 <see cref="T:System.String" /> 对象（其中忽略或考虑其大小写，并使用区域性特定的信息干预比较），并返回一个整数，指示二者在排序顺序中的相对位置。</summary>
         <returns>一个 32 位带符号整数，指示两个比较数之间的词法关系。  
@@ -2117,13 +2117,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" /> <see cref="P:System.String.Length" />。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexB" /> 大于 <paramref name="strB" /> <see cref="P:System.String.Length" />。  
+ <paramref name="indexB" /> 大于 <paramref name="strB" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexA" /><paramref name="indexB" /> 或 <paramref name="length" /> 为负。  
+ <paramref name="indexA" />、<paramref name="indexB" /> 或 <paramref name="length" /> 为负数。  
   
 - 或 - 
 <paramref name="indexA" /> 或 <paramref name="indexB" /> 为 <see langword="null" />，并且 <paramref name="length" /> 大于零。</exception>
@@ -2175,7 +2175,7 @@
         <param name="strB">要在比较中使用的第二个字符串。</param>
         <param name="indexB"><paramref name="strB" /> 中子字符串的位置。</param>
         <param name="length">要比较的子字符串中字符的最大数量。</param>
-        <param name="ignoreCase"><see langword="true" /> （如果在比较过程中忽略大小写）；否则为 <see langword="false" />。</param>
+        <param name="ignoreCase">若要在比较过程中忽略大小写，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>比较两个指定的 <see cref="T:System.String" /> 对象的子字符串（忽略或考虑其大小写），并返回一个整数，指示二者在排序顺序中的相对位置。</summary>
         <returns>一个 32 位带符号整数，指示两个比较数之间的词法关系。  
   
@@ -2233,13 +2233,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" /> <see cref="P:System.String.Length" />。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexB" /> 大于 <paramref name="strB" /> <see cref="P:System.String.Length" />。  
+ <paramref name="indexB" /> 大于 <paramref name="strB" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexA" /><paramref name="indexB" /> 或 <paramref name="length" /> 为负。  
+ <paramref name="indexA" />、<paramref name="indexB" /> 或 <paramref name="length" /> 为负数。  
   
 - 或 - 
 <paramref name="indexA" /> 或 <paramref name="indexB" /> 为 <see langword="null" />，并且 <paramref name="length" /> 大于零。</exception>
@@ -2352,13 +2352,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" /> <see cref="P:System.String.Length" />。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexB" /> 大于 <paramref name="strB" /> <see cref="P:System.String.Length" />。  
+ <paramref name="indexB" /> 大于 <paramref name="strB" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexA" /><paramref name="indexB" /> 或 <paramref name="length" /> 为负。  
+ <paramref name="indexA" />、<paramref name="indexB" /> 或 <paramref name="length" /> 为负数。  
   
 - 或 - 
 <paramref name="indexA" /> 或 <paramref name="indexB" /> 为 <see langword="null" />，并且 <paramref name="length" /> 大于零。</exception>
@@ -2412,7 +2412,7 @@
         <param name="strB">要在比较中使用的第二个字符串。</param>
         <param name="indexB"><paramref name="strB" /> 中子字符串的位置。</param>
         <param name="length">要比较的子字符串中字符的最大数量。</param>
-        <param name="ignoreCase"><see langword="true" /> （如果在比较过程中忽略大小写）；否则为 <see langword="false" />。</param>
+        <param name="ignoreCase">若要在比较过程中忽略大小写，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <param name="culture">一个对象，提供区域性特定的比较信息。</param>
         <summary>比较两个指定的 <see cref="T:System.String" /> 对象（其中忽略或考虑其大小写，并使用区域性特定的信息干预比较），并返回一个整数，指示二者在排序顺序中的相对位置。</summary>
         <returns>一个整数，指示两个比较字之间的词法关系。  
@@ -2468,13 +2468,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" /> <see cref="P:System.String.Length" />。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="indexA" /> 大于 <paramref name="strA" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexB" /> 大于 <paramref name="strB" /> <see cref="P:System.String.Length" />。  
+ <paramref name="indexB" /> 大于 <paramref name="strB" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexA" /><paramref name="indexB" /> 或 <paramref name="length" /> 为负。  
+ <paramref name="indexA" />、<paramref name="indexB" /> 或 <paramref name="length" /> 为负数。  
   
 - 或 - 
 <paramref name="strA" /> 或 <paramref name="strB" /> 为 <see langword="null" />，并且 <paramref name="length" /> 大于零。</exception>
@@ -2580,7 +2580,7 @@
  <paramref name="indexB" /> 大于 <paramref name="strB" /><see langword=".Length" />。  
   
 - 或 - 
- <paramref name="indexA" /><paramref name="indexB" /> 或 <paramref name="length" /> 为负。  
+ <paramref name="indexA" />、<paramref name="indexB" /> 或 <paramref name="length" /> 为负数。  
   
 - 或 - 
 <paramref name="strA" /> 或 <paramref name="strB" /> 为 <see langword="null" />，并且 <paramref name="length" /> 大于零。</exception>
@@ -2776,13 +2776,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="strA" /> 不为 <see langword="null" />，且<paramref name="indexA" /> 大于 <paramref name="strA" /> <see cref="P:System.String.Length" />。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="strA" /> 不为 <see langword="null" />，且 <paramref name="indexA" /> 大于 <paramref name="strA" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="strB" /> 不为 <see langword="null" />，且<paramref name="indexB" /> 大于 <paramref name="strB" /> <see cref="P:System.String.Length" />。  
+ <paramref name="strB" /> 不为 <see langword="null" />，且 <paramref name="indexB" /> 大于 <paramref name="strB" />.<see cref="P:System.String.Length" />。  
   
 - 或 - 
- <paramref name="indexA" /><paramref name="indexB" /> 或 <paramref name="length" /> 为负。</exception>
+ <paramref name="indexA" />、<paramref name="indexB" /> 或 <paramref name="length" /> 为负数。</exception>
         <altmember cref="M:System.String.Compare(System.String,System.String)" />
         <altmember cref="M:System.String.CompareTo(System.Object)" />
         <altmember cref="T:System.Int32" />
@@ -3964,7 +3964,7 @@
       <Docs>
         <param name="value">要搜寻的字符串。</param>
         <summary>返回一个值，该值指示指定的子串是否出现在此字符串中。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数出现在此字符串中，或者 <paramref name="value" /> 为空字符串 ("")）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数出现在此字符串中，或者 <paramref name="value" /> 为空字符串 ("")，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4195,7 +4195,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="sourceIndex" /><paramref name="destinationIndex" /> 或 <paramref name="count" /> 为负 
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="sourceIndex" />、<paramref name="destinationIndex" /> 或 <paramref name="count" /> 为负 
 - 或 - 
  <paramref name="sourceIndex" /> 不标识当前实例中的位置。  
   
@@ -4380,7 +4380,7 @@
       <Docs>
         <param name="value">要与此实例末尾的子字符串进行比较的字符串。</param>
         <summary>确定此字符串实例的结尾是否与指定的字符串匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 与此实例的末尾匹配）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 与此实例的末尾匹配，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4458,7 +4458,7 @@
         <param name="value">要与此实例末尾的子字符串进行比较的字符串。</param>
         <param name="comparisonType">枚举值之一，用于确定如何比较此字符串与 <paramref name="value" />。</param>
         <summary>确定使用指定的比较选项进行比较时此字符串实例的结尾是否与指定的字符串匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数与此字符串的末尾匹配）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数与此字符串的末尾匹配，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4515,10 +4515,10 @@
       </Parameters>
       <Docs>
         <param name="value">要与此实例末尾的子字符串进行比较的字符串。</param>
-        <param name="ignoreCase"><see langword="true" /> （如果在比较过程中忽略大小写）；否则为 <see langword="false" />。</param>
+        <param name="ignoreCase">若要在比较过程中忽略大小写，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <param name="culture">确定如何对此实例与 <paramref name="value" /> 进行比较的区域性信息。 如果 <paramref name="culture" /> 为 <see langword="null" />，则使用当前区域性。</param>
         <summary>确定在使用指定的区域性进行比较时此字符串实例的结尾是否与指定的字符串匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数与此字符串的末尾匹配）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数与此字符串的末尾匹配，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4625,7 +4625,7 @@
       <Docs>
         <param name="obj">要与此实例进行比较的字符串。</param>
         <summary>确定此实例是否与指定的对象（也必须是 <see cref="T:System.String" /> 对象）具有相同的值。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="obj" /> 为 <see cref="T:System.String" /> 且其值与此实例相同）；否则为 <see langword="false" />。  如果 <paramref name="obj" /> 为 <see langword="null" />，则此方法返回 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 是一个 <paramref name="obj" /> 且其值与此实例相等，则为 <see cref="T:System.String" />；否则为 <see langword="false" />。  如果 <paramref name="obj" /> 为 <see langword="null" />，则此方法返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4696,7 +4696,7 @@
       <Docs>
         <param name="value">要与此实例进行比较的字符串。</param>
         <summary>确定此实例是否与另一个指定的 <see cref="T:System.String" /> 对象具有相同的值。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数的值与此实例的值相同）；否则为 <see langword="false" />。 如果 <paramref name="value" /> 为 <see langword="null" />，则此方法返回 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数的值与此实例的值相同，则为 <paramref name="value" />；否则为 <see langword="false" />。 如果 <paramref name="value" /> 为 <see langword="null" />，则此方法返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4761,7 +4761,7 @@
         <param name="a">要比较的第一个字符串，或 <see langword="null" />。</param>
         <param name="b">要比较的第二个字符串，或 <see langword="null" />。</param>
         <summary>确定两个指定的 <see cref="T:System.String" /> 对象是否具有相同的值。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="a" /> 的值与 <paramref name="b" /> 的值相同）；否则为 <see langword="false" />。 如果 <paramref name="a" /> 和 <paramref name="b" /> 均为 <see langword="null" />，此方法将返回 <see langword="true" />。</returns>
+        <returns>如果 <see langword="true" /> 的值与 <paramref name="a" /> 的值相同，则为 <paramref name="b" />；否则为 <see langword="false" />。 如果 <paramref name="a" /> 和 <paramref name="b" /> 均为 <see langword="null" />，此方法将返回 <see langword="true" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4826,7 +4826,7 @@
         <param name="value">要与此实例进行比较的字符串。</param>
         <param name="comparisonType">枚举值之一，用于指定如何比较字符串。</param>
         <summary>确定此字符串是否与另一个指定的 <see cref="T:System.String" /> 对象具有相同的值。 参数指定区域性、大小写以及比较所用的排序规则。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数的值与此字符串相同）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数的值与此字符串相同，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4898,7 +4898,7 @@
         <param name="b">要比较的第二个字符串，或 <see langword="null" />。</param>
         <param name="comparisonType">枚举值之一，用于指定比较的规则。</param>
         <summary>确定两个指定的 <see cref="T:System.String" /> 对象是否具有相同的值。 参数指定区域性、大小写以及比较所用的排序规则。</summary>
-        <returns><see langword="true" /> 如果 <paramref name="a" /> 参数的值与 <paramref name="b" /> 参数的值相同；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数的值与 <paramref name="a" /> 参数的值相同，则为 <paramref name="b" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4949,7 +4949,7 @@
  [格式项具有相同的索引](#SameIndex)   
  [格式设置和区域性](#Format_Culture)   
  [自定义格式设置操作](#Format_Custom)   
- [String.Format 问答](#QA)  
+ [String.Format Q & A](#QA)  
   
 <a name="Starting"></a>   
 ## <a name="get-started-with-the-stringformat-method"></a>开始使用 String.Format 方法  
@@ -5050,10 +5050,10 @@
 
  格式项具有以下元素：  
   
- *索引*  
+ *index*  
  将成为其字符串表示形式的参数的从零开始的索引包含在字符串中的此位置。 如果此参数为`null`，将在此位置在字符串中包含空字符串。  
   
- *对齐方式*  
+ *alignment*  
  可选。 一个有符号的整数，指示插入参数以及它为右对齐 （正整数） 还是左对齐 （负整数） 到该字段的总长度。 如果省略*对齐*，相应参数的字符串表示形式插入没有前导或尾随空格的字段中。  
   
  如果的值*对齐*是要插入的参数的长度小于*对齐方式*将被忽略并使用参数的字符串表示形式的长度作为字段宽度。  
@@ -5063,7 +5063,7 @@
   
 -   整型和浮点型的所有类型。 (请参阅[标准数字格式字符串](~/docs/standard/base-types/standard-numeric-format-strings.md)并[自定义数字格式字符串](~/docs/standard/base-types/custom-numeric-format-strings.md)。)  
   
--   <xref:System.DateTime> 和<xref:System.DateTimeOffset>。 (请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。)  
+-   <xref:System.DateTime> 和 <xref:System.DateTimeOffset>。 (请参阅[标准日期和时间格式字符串](~/docs/standard/base-types/standard-date-and-time-format-strings.md)并[自定义日期和时间格式字符串](~/docs/standard/base-types/custom-date-and-time-format-strings.md)。)  
   
 -   所有枚举类型。 (请参阅[枚举格式字符串](~/docs/standard/base-types/enumeration-format-strings.md)。)  
   
@@ -5108,7 +5108,7 @@
   
  <xref:System.IFormatProvider>接口具有一个成员， <xref:System.IFormatProvider.GetFormat%2A>，这是负责返回提供格式设置信息的对象。 .NET 具有三个<xref:System.IFormatProvider>提供特定于区域性的格式设置的实现：  
   
--   <xref:System.Globalization.CultureInfo>. 其<xref:System.Globalization.CultureInfo.GetFormat%2A>方法返回区域性特定<xref:System.Globalization.NumberFormatInfo>设置的数字值和区域性特定格式的对象<xref:System.Globalization.DateTimeFormatInfo>格式化日期和时间值的对象。  
+-   <xref:System.Globalization.CultureInfo>。 其<xref:System.Globalization.CultureInfo.GetFormat%2A>方法返回区域性特定<xref:System.Globalization.NumberFormatInfo>设置的数字值和区域性特定格式的对象<xref:System.Globalization.DateTimeFormatInfo>格式化日期和时间值的对象。  
   
 -   <xref:System.Globalization.DateTimeFormatInfo>它用于特定于区域性的日期和时间值的格式设置。 其<xref:System.Globalization.DateTimeFormatInfo.GetFormat%2A>方法返回其自身。  
   
@@ -5438,7 +5438,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 或 <paramref name="args" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引小于零，或者大于或等于 <paramref name="args" /> 数组的长度。</exception>
@@ -5506,7 +5506,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引不为零。</exception>
@@ -5586,7 +5586,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 或 <paramref name="args" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引小于零，或者大于或等于 <paramref name="args" /> 数组的长度。</exception>
@@ -5668,7 +5668,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引不为零或一。</exception>
@@ -5738,7 +5738,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引不为零或一。</exception>
@@ -5809,7 +5809,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引小于零，或者大于二。</exception>
@@ -5874,7 +5874,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.FormatException"><paramref name="format" /> 之间的时间间隔无效。  
+        <exception cref="T:System.FormatException"><paramref name="format" /> 无效。  
   
 - 或 - 
 格式项的索引小于零，或者大于二。</exception>
@@ -7110,7 +7110,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="anyOf" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 为负。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 为负数。  
   
 - 或 - 
  <paramref name="startIndex" /> 大于此实例中的字符数。</exception>
@@ -7496,7 +7496,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Parameters />
       <Docs>
         <summary>指示此字符串是否符合 Unicode 范式 C。</summary>
-        <returns><see langword="true" /> （如果此字符串符合范式 C）；否则为 <see langword="false" />。</returns>
+        <returns>如果此字符串符合范式 C，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7560,7 +7560,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="normalizationForm">一个 Unicode 范式。</param>
         <summary>指示此字符串是否符合指定的 Unicode 范式。</summary>
-        <returns><see langword="true" /> （如果此字符串符合由 <paramref name="normalizationForm" /> 参数指定的范式）；否则为 <see langword="false" />。</returns>
+        <returns>如果此字符串符合由 <see langword="true" /> 参数指定的范式，则为 <paramref name="normalizationForm" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7629,7 +7629,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="value">要测试的字符串。</param>
         <summary>指示指定的字符串是 <see langword="null" /> 还是空字符串 ("")。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数为 <see langword="null" /> 或空字符串 ("")）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数为 <paramref name="value" /> 或空字符串 ("")，则为 <see langword="null" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7706,7 +7706,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="value">要测试的字符串。</param>
         <summary>指示指定的字符串是 <see langword="null" />、空还是仅由空白字符组成。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数为 <see langword="null" /> 或 <see cref="F:System.String.Empty" />，或者如果 <paramref name="value" /> 仅由空白字符组成）。</returns>
+        <returns>如果 <see langword="true" /> 参数为 <paramref name="value" /> 或 <see langword="null" />，或者如果 <see cref="F:System.String.Empty" /> 仅由空白字符组成，则为 <paramref name="value" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7938,7 +7938,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="separator">要用作分隔符的字符串。 <paramref name="separator" /> 包括在返回的字符串中（只有在 <paramref name="values" /> 具有多个元素时）。</param>
+        <param name="separator">要用作分隔符的字符串。 只有在 <paramref name="separator" /> 具有多个元素时，<paramref name="values" /> 才包括在返回的字符串中。</param>
         <param name="values">一个数组，其中包含要连接的元素。</param>
         <summary>串联对象数组的各个元素，其中在每个元素之间使用指定的分隔符。</summary>
         <returns>一个由 <paramref name="values" /> 的元素组成的字符串，这些元素以 <paramref name="separator" /> 字符串分隔。 如果 <paramref name="values" /> 为空数组，该方法将返回 <see cref="F:System.String.Empty" />。</returns>
@@ -8010,7 +8010,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="separator">要用作分隔符的字符串。 <paramref name="separator" /> 包括在返回的字符串中（只有在 <paramref name="value" /> 具有多个元素时）。</param>
+        <param name="separator">要用作分隔符的字符串。 只有在 <paramref name="separator" /> 具有多个元素时，<paramref name="value" /> 才包括在返回的字符串中。</param>
         <param name="value">一个数组，其中包含要连接的元素。</param>
         <summary>串联字符串数组的所有元素，其中在每个元素之间使用指定的分隔符。</summary>
         <returns>一个由 <paramref name="value" /> 中的元素组成的字符串，这些元素以 <paramref name="separator" /> 字符串分隔。 如果 <paramref name="value" /> 为空数组，该方法将返回 <see cref="F:System.String.Empty" />。</returns>
@@ -8120,7 +8120,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         <Parameter Name="count" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="separator">要用作分隔符的字符串。 <paramref name="separator" /> 包括在返回的字符串中（只有在 <paramref name="value" /> 具有多个元素时）。</param>
+        <param name="separator">要用作分隔符的字符串。 只有在 <paramref name="separator" /> 具有多个元素时，<paramref name="value" /> 才包括在返回的字符串中。</param>
         <param name="value">一个数组，其中包含要连接的元素。</param>
         <param name="startIndex"><paramref name="value" /> 中要使用的第一个元素。</param>
         <param name="count">要使用的 <paramref name="value" /> 的元素数。</param>
@@ -8128,7 +8128,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         <returns>由 <paramref name="value" /> 中的字符串组成的字符串，这些字符串以 <paramref name="separator" /> 字符串分隔。  
   
 - 或 - 
- <see cref="F:System.String.Empty" /> （如果 <paramref name="count" /> 为零，<paramref name="value" /> 没有元素，或 <paramref name="separator" /> 以及 <paramref name="value" /> 的全部元素均为 <see cref="F:System.String.Empty" />）。</returns>
+ 如果 <see cref="F:System.String.Empty" /> 为零，<paramref name="count" /> 没有元素，或 <paramref name="value" /> 以及 <paramref name="separator" /> 的全部元素均为 <paramref name="value" />，则为 <see cref="F:System.String.Empty" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8805,7 +8805,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负数。  
   
 - 或 - 
 当前实例不等于 <see cref="F:System.String.Empty" />，并且 <paramref name="startIndex" /> 为负数。  
@@ -8973,7 +8973,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负数。  
   
 - 或 - 
 当前实例不等于 <see cref="F:System.String.Empty" />，并且 <paramref name="startIndex" /> 为负数。  
@@ -9503,7 +9503,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         <param name="a">要比较的第一个字符串，或 <see langword="null" />。</param>
         <param name="b">要比较的第二个字符串，或 <see langword="null" />。</param>
         <summary>确定两个指定的字符串是否具有相同的值。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="a" /> 的值与 <paramref name="b" /> 的值相同）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 的值与 <paramref name="a" /> 的值相同，则为 <paramref name="b" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9602,7 +9602,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         <param name="a">要比较的第一个字符串，或 <see langword="null" />。</param>
         <param name="b">要比较的第二个字符串，或 <see langword="null" />。</param>
         <summary>确定两个指定的字符串是否具有不同的值。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="a" /> 的值与 <paramref name="b" /> 的值不同）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 的值与 <paramref name="a" /> 的值不同，则为 <paramref name="b" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10670,7 +10670,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负数。</exception>
         <block subset="none" type="usage"><para>中[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]及更早版本，如果<see cref="M:System.String.Split(System.Char[])" />方法传递<paramref name="separator" />即<see langword="null" />或不包含任何字符，该方法使用略有不同的一组字符来拆分字符串比<see cref="M:System.String.Trim(System.Char[])" />方法执行到修整字符串。 从.NET Framework 4 开始，这两种方法使用一组相同的 Unicode 空白字符。</para></block>
         <altmember cref="T:System.Char" />
         <altmember cref="T:System.Array" />
@@ -10726,7 +10726,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       </Parameters>
       <Docs>
         <param name="separator">分隔此字符串中子字符串的字符数组、不包含分隔符的空数组或 <see langword="null" />。</param>
-        <param name="options"><see cref="F:System.StringSplitOptions.RemoveEmptyEntries" /> （如果要省略返回的数组中的空数组元素）；如果要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
+        <param name="options">要省略返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.RemoveEmptyEntries" />；要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
         <summary>基于数组中的字符将字符串拆分为多个子字符串。 可以指定子字符串是否包含空数组元素。</summary>
         <returns>一个数组，其元素包含此字符串中的子字符串，这些子字符串由 <paramref name="separator" /> 中的一个或多个字符分隔。 有关详细信息，请参阅“备注”部分。</returns>
         <remarks>
@@ -10864,7 +10864,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       </Parameters>
       <Docs>
         <param name="separator">分隔此字符串中子字符串的字符串数组、不包含分隔符的空数组或 <see langword="null" />。</param>
-        <param name="options"><see cref="F:System.StringSplitOptions.RemoveEmptyEntries" /> （如果要省略返回的数组中的空数组元素）；如果要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
+        <param name="options">要省略返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.RemoveEmptyEntries" />；要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
         <summary>基于数组中的字符串将字符串拆分为多个子字符串。 可以指定子字符串是否包含空数组元素。</summary>
         <returns>一个数组，其元素包含此字符串中的子字符串，这些子字符串由 <paramref name="separator" /> 中的一个或多个字符串分隔。 有关详细信息，请参阅“备注”部分。</returns>
         <remarks>
@@ -11023,7 +11023,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="separator">分隔此字符串中子字符串的字符数组、不包含分隔符的空数组或 <see langword="null" />。</param>
         <param name="count">要返回的子字符串的最大数量。</param>
-        <param name="options"><see cref="F:System.StringSplitOptions.RemoveEmptyEntries" /> （如果要省略返回的数组中的空数组元素）；如果要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
+        <param name="options">要省略返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.RemoveEmptyEntries" />；要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
         <summary>基于数组中的字符将一个字符串拆分成最大数量的子字符串。</summary>
         <returns>一个数组，其元素包含此字符串中的子字符串，这些子字符串由 <paramref name="separator" /> 中的一个或多个字符分隔。 有关详细信息，请参阅“备注”部分。</returns>
         <remarks>
@@ -11063,7 +11063,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负数。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="options" /> 不是 <see cref="T:System.StringSplitOptions" /> 值之一。</exception>
         <block subset="none" type="usage"><para>中[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]及更早版本，如果<see cref="M:System.String.Split(System.Char[])" />方法传递<paramref name="separator" />即<see langword="null" />或不包含任何字符，该方法使用略有不同的一组字符来拆分字符串比<see cref="M:System.String.Trim(System.Char[])" />方法执行到修整字符串。 从.NET Framework 4 开始，这两种方法使用一组相同的 Unicode 空白字符。</para></block>
       </Docs>
@@ -11148,7 +11148,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="separator">分隔此字符串中子字符串的字符串数组、不包含分隔符的空数组或 <see langword="null" />。</param>
         <param name="count">要返回的子字符串的最大数量。</param>
-        <param name="options"><see cref="F:System.StringSplitOptions.RemoveEmptyEntries" /> （如果要省略返回的数组中的空数组元素）；如果要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
+        <param name="options">要省略返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.RemoveEmptyEntries" />；要包含返回的数组中的空数组元素，则为 <see cref="F:System.StringSplitOptions.None" />。</param>
         <summary>基于数组中的字符串将一个字符串拆分成最大数量的子字符串。 可以指定子字符串是否包含空数组元素。</summary>
         <returns>一个数组，其元素包含此字符串中的子字符串，这些子字符串由 <paramref name="separator" /> 中的一个或多个字符串分隔。 有关详细信息，请参阅“备注”部分。</returns>
         <remarks>
@@ -11206,7 +11206,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 为负数。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="options" /> 不是 <see cref="T:System.StringSplitOptions" /> 值之一。</exception>
         <block subset="none" type="usage"><para>中[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]及更早版本，如果<see cref="M:System.String.Split(System.Char[])" />方法传递<paramref name="separator" />即<see langword="null" />或不包含任何字符，该方法使用略有不同的一组字符来拆分字符串比<see cref="M:System.String.Trim(System.Char[])" />方法执行到修整字符串。 从.NET Framework 4 开始，这两种方法使用一组相同的 Unicode 空白字符。</para></block>
       </Docs>
@@ -11296,7 +11296,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="value">要比较的字符串。</param>
         <summary>确定此字符串实例的开头是否与指定的字符串匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 与此字符串的开头匹配）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 与此字符串的开头匹配，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11368,7 +11368,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
         <param name="value">要比较的字符串。</param>
         <param name="comparisonType">枚举值之一，用于确定如何比较此字符串与 <paramref name="value" />。</param>
         <summary>确定在使用指定的比较选项进行比较时此字符串实例的开头是否与指定的字符串匹配。</summary>
-        <returns><see langword="true" /> （如果此实例以 <paramref name="value" /> 开头）；否则为 <see langword="false" />。</returns>
+        <returns>如果此实例以 <see langword="true" /> 开头，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11431,10 +11431,10 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       </Parameters>
       <Docs>
         <param name="value">要比较的字符串。</param>
-        <param name="ignoreCase"><see langword="true" /> （如果在比较过程中忽略大小写）；否则为 <see langword="false" />。</param>
+        <param name="ignoreCase">若要在比较过程中忽略大小写，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <param name="culture">确定如何对此字符串与 <paramref name="value" /> 进行比较的区域性信息。 如果 <paramref name="culture" /> 为 <see langword="null" />，则使用当前区域性。</param>
         <summary>确定在使用指定的区域性进行比较时此字符串实例的开头是否与指定的字符串匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="value" /> 参数与此字符串的开头匹配）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 参数与此字符串的开头匹配，则为 <paramref name="value" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11933,7 +11933,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
       <Docs>
         <param name="provider">忽略此参数。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />。</summary>
-        <returns><see langword="true" /> （如果当前字符串的值为 <see cref="F:System.Boolean.TrueString" />）；如果当前字符串的值为 <see cref="F:System.Boolean.FalseString" />，则为 <see langword="false" />。</returns>
+        <returns>如果当前字符串的值为 <see langword="true" />，则为 <see cref="F:System.Boolean.TrueString" />；如果当前字符串的值为 <see langword="false" />，则为 <see cref="F:System.Boolean.FalseString" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12694,7 +12694,7 @@ String 'This is a string.' in domain 'NewDomain': 75CC8236
  ]]></format>
         </remarks>
         <exception cref="T:System.FormatException">无法分析当前 <see cref="T:System.String" /> 对象的值。</exception>
-        <exception cref="T:System.OverflowException">当前 <see cref="T:System.String" /> 对象的值是一个数字，该数字大于 <see cref="F:System.UInt32.MaxValue" /> 或小于 <see cref="F:System.UInt32.MinValue" /></exception>
+        <exception cref="T:System.OverflowException">当前 <see cref="T:System.String" /> 对象的值是一个大于 <see cref="F:System.UInt32.MaxValue" /> 或小于 <see cref="F:System.UInt32.MinValue" /> 的数字。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.IConvertible.ToUInt64">

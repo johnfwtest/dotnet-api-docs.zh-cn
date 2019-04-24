@@ -1,5 +1,5 @@
 <Type Name="Array" FullName="System.Array">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bc46739bb42952592fb5e622be24ed66f5c36af5" /><Meta Name="ms.sourcegitcommit" Value="3efce15f3841385ee3ba24bd71ff0c0cf9a47815" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/03/2019" /><Meta Name="ms.locfileid" Value="58875536" /></Metadata><TypeSignature Language="C#" Value="public abstract class Array : ICloneable, System.Collections.IList, System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="bc46739bb42952592fb5e622be24ed66f5c36af5" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58875536" /></Metadata><TypeSignature Language="C#" Value="public abstract class Array : ICloneable, System.Collections.IList, System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Array extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.Collections.IStructuralComparable, class System.Collections.IStructuralEquatable, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Array" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Array&#xA;Implements ICloneable, IList, IStructuralComparable, IStructuralEquatable" />
@@ -276,7 +276,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.RankException"><paramref name="array" /> 是多维的。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="value" /> 不实现 <see cref="T:System.IComparable" /> 接口，并且搜索遇到不实现 <see cref="T:System.IComparable" /> 接口的元素。</exception>
         <altmember cref="T:System.IComparable" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -330,7 +330,7 @@
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定 <see cref="T:System.Collections.IComparer" /> 接口，在整个一维排序数组中搜索值。</summary>
         <returns>如果找到 <paramref name="value" />，则为指定 <paramref name="array" /> 中的指定 <paramref name="value" /> 的索引；否则为负数。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 小于 <paramref name="array" /> 中的一个或多个元素，则返回的负数是大于 <paramref name="value" /> 的第一个元素的索引的按位求补。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 大于 <paramref name="array" /> 中的所有元素，则返回的负数是（最后一个元素的索引加 1）的按位求补。 如果使用非排序的 <paramref name="array" /> 调用此方法，返回值则可能不正确并且可能会返回负数，即使 <paramref name="value" /> 存在于 <paramref name="array" /> 中也是如此。</returns>
         <remarks>
@@ -363,8 +363,8 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.RankException"><paramref name="array" /> 是多维的。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="comparer" /> 为 <see langword="null" /> 并且 <paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，<paramref name="value" /> 不实现 <see cref="T:System.IComparable" /> 接口，并且搜索时遇到不实现 <see cref="T:System.IComparable" /> 接口的元素。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，<paramref name="value" /> 不实现 <see cref="T:System.IComparable" /> 接口，并且搜索遇到不实现 <see cref="T:System.IComparable" /> 接口的元素。</exception>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.IComparable" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -453,7 +453,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
+ <paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="value" /> 不实现 <see cref="T:System.IComparable" /> 接口，并且搜索遇到不实现 <see cref="T:System.IComparable" /> 接口的元素。</exception>
         <altmember cref="T:System.IComparable" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -514,7 +514,7 @@
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定 <see cref="T:System.Collections.IComparer" /> 接口，在一维排序数组的某个元素范围中搜索值。</summary>
         <returns>如果找到 <paramref name="value" />，则为指定 <paramref name="array" /> 中的指定 <paramref name="value" /> 的索引；否则为负数。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 小于 <paramref name="array" /> 中的一个或多个元素，则返回的负数是大于 <paramref name="value" /> 的第一个元素的索引的按位求补。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 大于 <paramref name="array" /> 中的所有元素，则返回的负数是（最后一个元素的索引加 1）的按位求补。 如果使用非排序的 <paramref name="array" /> 调用此方法，返回值则可能不正确并且可能会返回负数，即使 <paramref name="value" /> 存在于 <paramref name="array" /> 中也是如此。</returns>
         <remarks>
@@ -554,8 +554,8 @@
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="comparer" /> 为 <see langword="null" /> 并且 <paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，<paramref name="value" /> 不实现 <see cref="T:System.IComparable" /> 接口，并且搜索时遇到不实现 <see cref="T:System.IComparable" /> 接口的元素。</exception>
+ <paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，<paramref name="value" /> 不实现 <see cref="T:System.IComparable" /> 接口，并且搜索遇到不实现 <see cref="T:System.IComparable" /> 接口的元素。</exception>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.IComparable" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -706,7 +706,7 @@
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.Generic.IComparer`1" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable`1" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable`1" /> 实现。</param>
         <summary>使用指定 <see cref="T:System.Collections.Generic.IComparer`1" /> 泛型接口，在整个一维排序数组中搜索值。</summary>
         <returns>如果找到 <paramref name="value" />，则为指定 <paramref name="array" /> 中的指定 <paramref name="value" /> 的索引；否则为负数。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 小于 <paramref name="array" /> 中的一个或多个元素，则返回的负数是大于 <paramref name="value" /> 的第一个元素的索引的按位求补。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 大于 <paramref name="array" /> 中的所有元素，则返回的负数是（最后一个元素的索引加 1）的按位求补。 如果使用非排序的 <paramref name="array" /> 调用此方法，返回值则可能不正确并且可能会返回负数，即使 <paramref name="value" /> 存在于 <paramref name="array" /> 中也是如此。</returns>
         <remarks>
@@ -756,8 +756,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="comparer" /> 为 <see langword="null" /> 并且 <paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" /> 并且 <paramref name="T" /> 不实现 <see cref="T:System.IComparable`1" /> 泛型接口</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="T" /> 不实现 <see cref="T:System.IComparable`1" /> 泛型接口</exception>
         <altmember cref="T:System.Collections.Generic.IComparer`1" />
         <altmember cref="T:System.IComparable`1" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -846,7 +846,7 @@
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
+ <paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="T" /> 不实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
         <altmember cref="T:System.IComparable`1" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -911,7 +911,7 @@
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.Generic.IComparer`1" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable`1" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable`1" /> 实现。</param>
         <summary>使用指定 <see cref="T:System.Collections.Generic.IComparer`1" /> 泛型接口，在一维排序数组的某个元素范围中搜索值。</summary>
         <returns>如果找到 <paramref name="value" />，则为指定 <paramref name="array" /> 中的指定 <paramref name="value" /> 的索引；否则为负数。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 小于 <paramref name="array" /> 中的一个或多个元素，则返回的负数是大于 <paramref name="value" /> 的第一个元素的索引的按位求补。 如果找不到 <paramref name="value" /> 且 <paramref name="value" /> 大于 <paramref name="array" /> 中的所有元素，则返回的负数是（最后一个元素的索引加 1）的按位求补。 如果使用非排序的 <paramref name="array" /> 调用此方法，返回值则可能不正确并且可能会返回负数，即使 <paramref name="value" /> 存在于 <paramref name="array" /> 中也是如此。</returns>
         <remarks>
@@ -947,8 +947,8 @@
         <exception cref="T:System.ArgumentException"><paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="comparer" /> 为 <see langword="null" /> 并且 <paramref name="value" /> 是与 <paramref name="array" /> 的元素不兼容的类型。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" /> 并且 <paramref name="T" /> 不实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
+ <paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="value" /> 的类型与 <paramref name="array" /> 的元素不兼容。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="T" /> 不实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
         <altmember cref="T:System.Collections.Generic.IComparer`1" />
         <altmember cref="T:System.IComparable`1" />
         <altmember cref="Overload:System.Array.Sort" />
@@ -1924,7 +1924,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="array" /> 是多维的。  
   
 - 或 - 
@@ -2014,7 +2014,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="elementType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="elementType" /> 不是有效的 <see cref="T:System.Type" />。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="elementType" /> 不受支持。 例如，不支持 <see cref="T:System.Void" />。  
+        <exception cref="T:System.NotSupportedException">不支持 <paramref name="elementType" />。 例如，不支持 <see cref="T:System.Void" />。  
   
 - 或 - 
  <paramref name="elementType" /> 为开放式泛型类型。</exception>
@@ -2104,7 +2104,7 @@
   
 - 或 - 
 <paramref name="lengths" /> 数组包含的元素少于一个。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="elementType" /> 不受支持。 例如，不支持 <see cref="T:System.Void" />。  
+        <exception cref="T:System.NotSupportedException">不支持 <paramref name="elementType" />。 例如，不支持 <see cref="T:System.Void" />。  
   
 - 或 - 
  <paramref name="elementType" /> 为开放式泛型类型。</exception>
@@ -2185,7 +2185,7 @@
   
 - 或 - 
 <paramref name="lengths" /> 数组包含的元素少于一个。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="elementType" /> 不受支持。 例如，不支持 <see cref="T:System.Void" />。  
+        <exception cref="T:System.NotSupportedException">不支持 <paramref name="elementType" />。 例如，不支持 <see cref="T:System.Void" />。  
   
 - 或 - 
  <paramref name="elementType" /> 为开放式泛型类型。</exception>
@@ -2259,7 +2259,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="elementType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="elementType" /> 不是有效的 <see cref="T:System.Type" />。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="elementType" /> 不受支持。 例如，不支持 <see cref="T:System.Void" />。  
+        <exception cref="T:System.NotSupportedException">不支持 <paramref name="elementType" />。 例如，不支持 <see cref="T:System.Void" />。  
   
 - 或 - 
  <paramref name="elementType" /> 为开放式泛型类型。</exception>
@@ -2358,7 +2358,7 @@
   
 - 或 - 
 <paramref name="lengths" /> 和 <paramref name="lowerBounds" /> 数组包含的元素数不同。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="elementType" /> 不受支持。 例如，不支持 <see cref="T:System.Void" />。  
+        <exception cref="T:System.NotSupportedException">不支持 <paramref name="elementType" />。 例如，不支持 <see cref="T:System.Void" />。  
   
 - 或 - 
  <paramref name="elementType" /> 为开放式泛型类型。</exception>
@@ -2437,7 +2437,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="elementType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="elementType" /> 不是有效的 <see cref="T:System.Type" />。</exception>
-        <exception cref="T:System.NotSupportedException"><paramref name="elementType" /> 不受支持。 例如，不支持 <see cref="T:System.Void" />。  
+        <exception cref="T:System.NotSupportedException">不支持 <paramref name="elementType" />。 例如，不支持 <see cref="T:System.Void" />。  
   
 - 或 - 
  <paramref name="elementType" /> 为开放式泛型类型。</exception>
@@ -2537,7 +2537,7 @@
         <param name="array">要搜索的从零开始的一维 <see cref="T:System.Array" />。</param>
         <param name="match"><see cref="T:System.Predicate`1" />，定义要搜索的元素的条件。</param>
         <summary>确定指定数组包含的元素是否与指定谓词定义的条件匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="array" /> 包含一个或多个元素与指定谓词定义的条件匹配）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <paramref name="array" /> 包含一个或多个元素与指定谓词定义的条件匹配，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3015,7 +3015,7 @@
   
 - 或 - 
  <paramref name="match" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <altmember cref="M:System.Array.Exists``1(``0[],System.Predicate{``0})" />
         <altmember cref="M:System.Array.Find``1(``0[],System.Predicate{``0})" />
         <altmember cref="M:System.Array.FindLast``1(``0[],System.Predicate{``0})" />
@@ -3106,7 +3106,7 @@
   
 - 或 - 
  <paramref name="match" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。  
   
 - 或 - 
  <paramref name="count" /> 小于零。  
@@ -3385,7 +3385,7 @@
   
 - 或 - 
  <paramref name="match" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <altmember cref="M:System.Array.Exists``1(``0[],System.Predicate{``0})" />
         <altmember cref="M:System.Array.Find``1(``0[],System.Predicate{``0})" />
         <altmember cref="M:System.Array.FindLast``1(``0[],System.Predicate{``0})" />
@@ -3476,7 +3476,7 @@
   
 - 或 - 
  <paramref name="match" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。  
   
 - 或 - 
  <paramref name="count" /> 小于零。  
@@ -3607,9 +3607,9 @@
   
  枚举器可用于读取集合中的数据，但不能用于修改基础集合。  
   
- 最初，枚举数定位在集合中第一个元素的前面。 <xref:System.Collections.IEnumerator.Reset%2A> 此外会枚举数放回此位置。  在此位置上，未定义 <xref:System.Collections.IEnumerator.Current%2A>。 因此，在读取 <xref:System.Collections.IEnumerator.MoveNext%2A> 的值之前，必须调用 <xref:System.Collections.IEnumerator.Current%2A> 将枚举器向前移动到集合的第一个元素。  
+ 最初，枚举数定位在集合中第一个元素的前面。 <xref:System.Collections.IEnumerator.Reset%2A> 也会将枚举器放回此位置。  在此位置上，未定义 <xref:System.Collections.IEnumerator.Current%2A>。 因此，在读取 <xref:System.Collections.IEnumerator.MoveNext%2A> 的值之前，必须调用 <xref:System.Collections.IEnumerator.Current%2A> 将枚举器向前移动到集合的第一个元素。  
   
- <xref:System.Collections.IEnumerator.Current%2A> 直到返回相同的对象<xref:System.Collections.IEnumerator.MoveNext%2A>或<xref:System.Collections.IEnumerator.Reset%2A>调用。 <xref:System.Collections.IEnumerator.MoveNext%2A> 设置<xref:System.Collections.IEnumerator.Current%2A>到下一个元素。  
+ 在调用 <xref:System.Collections.IEnumerator.Current%2A> 或 <xref:System.Collections.IEnumerator.MoveNext%2A> 之前，<xref:System.Collections.IEnumerator.Reset%2A> 返回同一对象。 <xref:System.Collections.IEnumerator.MoveNext%2A> 将 <xref:System.Collections.IEnumerator.Current%2A> 设置为下一个元素。  
   
  如果<xref:System.Collections.IEnumerator.MoveNext%2A>越过集合，枚举器的末尾放置在集合中的最后一个元素的后面和<xref:System.Collections.IEnumerator.MoveNext%2A>返回`false`。 当枚举数位于此位置上，对后续调用<xref:System.Collections.IEnumerator.MoveNext%2A>还返回`false`。 如果最后一次调用到<xref:System.Collections.IEnumerator.MoveNext%2A>返回`false`，<xref:System.Collections.IEnumerator.Current%2A>是不确定的。 若要再次将 <xref:System.Collections.IEnumerator.Current%2A> 设置为集合的第一个元素，可以调用 <xref:System.Collections.IEnumerator.Reset%2A> 并接着调用 <xref:System.Collections.IEnumerator.MoveNext%2A>。  
   
@@ -4659,7 +4659,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <exception cref="T:System.RankException"><paramref name="array" /> 是多维的。</exception>
         <altmember cref="Overload:System.Array.LastIndexOf" />
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md">在数组中执行不区分区域性的字符串操作</related>
@@ -4747,7 +4747,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。  
   
 - 或 - 
  <paramref name="count" /> 小于零。  
@@ -4895,7 +4895,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <altmember cref="Overload:System.Array.LastIndexOf" />
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md">在数组中执行不区分区域性的字符串操作</related>
       </Docs>
@@ -4970,7 +4970,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。  
   
 - 或 - 
  <paramref name="count" /> 小于零。  
@@ -5371,7 +5371,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <exception cref="T:System.RankException"><paramref name="array" /> 是多维的。</exception>
         <altmember cref="Overload:System.Array.IndexOf" />
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md">在数组中执行不区分区域性的字符串操作</related>
@@ -5455,7 +5455,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。  
   
 - 或 - 
  <paramref name="count" /> 小于零。  
@@ -5605,7 +5605,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。</exception>
         <altmember cref="Overload:System.Array.IndexOf" />
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md">在数组中执行不区分区域性的字符串操作</related>
       </Docs>
@@ -5680,7 +5680,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 有效索引范围。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> 超出了 <paramref name="array" /> 的有效索引范围。  
   
 - 或 - 
  <paramref name="count" /> 小于零。  
@@ -6979,16 +6979,16 @@ int[,,] TDArray = new int[1,1,1];
       </Parameters>
       <Docs>
         <param name="keys">一维 <see cref="T:System.Array" />，它包含要排序的关键字。</param>
-        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中的每个键对应的项。  
+        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中每个关键字对应的项。  
   
 - 或 - 
- <see langword="null" /> 则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
+ 如果为 <see langword="null" />，则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
         <summary>基于第一个 <see cref="T:System.Array" /> 中的关键字，使用每个关键字的 <see cref="T:System.Array" /> 实现，对两个一维 <see cref="T:System.IComparable" /> 对象（一个包含关键字，另一个包含对应的项）进行排序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  在每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable>接口，才能与其他任何关键字进行比较。  
   
@@ -7024,8 +7024,8 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
 <paramref name="items" /><see cref="T:System.Array" /> 是多维的。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <altmember cref="T:System.IComparable" />
         <altmember cref="Overload:System.Array.BinarySearch" />
         <altmember cref="T:System.Collections.IDictionary" />
@@ -7077,7 +7077,7 @@ int[,,] TDArray = new int[1,1,1];
         <param name="comparer">比较元素时要使用的实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定的 <see cref="T:System.Array" />，对一维 <see cref="T:System.Collections.IComparer" /> 中的元素进行排序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7123,7 +7123,7 @@ int[,,] TDArray = new int[1,1,1];
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="array" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.RankException"><paramref name="array" /> 是多维的。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，<paramref name="array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
         <block subset="none" type="usage"><para>.NET Framework 4 和更早版本使用仅快速排序算法。 快速排序标识无效的比较器在某些情况下，在排序操作将引发<see cref="T:System.IndexOutOfRangeException" />异常，并且会引发<see cref="T:System.ArgumentException" />给调用方的异常。 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，就可以，以前排序操作引发了<see cref="T:System.ArgumentException" />不会引发异常，因为插入排序和 heapsort 算法不检测无效的比较器。 大多数情况下，这适用于具有少于 16 个元素的数组。</para></block>
         <altmember cref="T:System.Collections.IComparer" />
@@ -7174,20 +7174,20 @@ int[,,] TDArray = new int[1,1,1];
       </Parameters>
       <Docs>
         <param name="keys">一维 <see cref="T:System.Array" />，它包含要排序的关键字。</param>
-        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中的每个键对应的项。  
+        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中每个关键字对应的项。  
   
 - 或 - 
- <see langword="null" /> 则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
+ 如果为 <see langword="null" />，则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>基于第一个 <see cref="T:System.Array" /> 中的关键字，使用指定的 <see cref="T:System.Array" />，对两个一维 <see cref="T:System.Collections.IComparer" /> 对象（一个包含关键字，另一个包含对应的项）进行排序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  如果`comparer`是`null`，则每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable>接口，才能与其他任何关键字进行比较。  
   
@@ -7234,11 +7234,11 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
 <paramref name="items" /><see cref="T:System.Array" /> 是多维的。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
   
 - 或 - 
 <paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <block subset="none" type="usage"><para>.NET Framework 4 和更早版本使用仅快速排序算法。 快速排序标识无效的比较器在某些情况下，在排序操作将引发<see cref="T:System.IndexOutOfRangeException" />异常，并且会引发<see cref="T:System.ArgumentException" />给调用方的异常。 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，就可以，以前排序操作引发了<see cref="T:System.ArgumentException" />不会引发异常，因为插入排序和 heapsort 算法不检测无效的比较器。 大多数情况下，这适用于具有少于 16 个元素的数组。</para></block>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.IComparable" />
@@ -7379,10 +7379,10 @@ int[,,] TDArray = new int[1,1,1];
       </Parameters>
       <Docs>
         <param name="keys">一维 <see cref="T:System.Array" />，它包含要排序的关键字。</param>
-        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中的每个键对应的项。  
+        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中每个关键字对应的项。  
   
 - 或 - 
- <see langword="null" /> 则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
+ 如果为 <see langword="null" />，则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
         <param name="index">排序范围的起始索引。</param>
         <param name="length">排序范围内的元素数。</param>
         <summary>基于第一个 <see cref="T:System.Array" /> 中的关键字，使用每个关键字的 <see cref="T:System.Array" /> 实现，对两个一维 <see cref="T:System.IComparable" /> 对象（一个包含关键字，另一个包含对应的项）的部分元素进行排序。</summary>
@@ -7390,7 +7390,7 @@ int[,,] TDArray = new int[1,1,1];
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  中的元素指定的范围内的每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable>接口，才能与其他任何关键字进行比较。  
   
@@ -7430,14 +7430,14 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
  <paramref name="length" /> 小于零。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
   
 - 或 - 
  <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="keys" /><see cref="T:System.Array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
+ <paramref name="items" /> 不为 <see langword="null" />，且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <altmember cref="T:System.IComparable" />
         <altmember cref="Overload:System.Array.BinarySearch" />
         <related type="Article" href="~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md">在数组中执行不区分区域性的字符串操作</related>
@@ -7492,7 +7492,7 @@ int[,,] TDArray = new int[1,1,1];
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>使用指定的 <see cref="T:System.Array" />，对一维 <see cref="T:System.Collections.IComparer" /> 的部分元素进行排序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7546,7 +7546,7 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
 <paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，<paramref name="array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <block subset="none" type="usage"><para>.NET Framework 4 和更早版本使用仅快速排序算法。 快速排序标识无效的比较器在某些情况下，在排序操作将引发<see cref="T:System.IndexOutOfRangeException" />异常，并且会引发<see cref="T:System.ArgumentException" />给调用方的异常。 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，就可以，以前排序操作引发了<see cref="T:System.ArgumentException" />不会引发异常，因为插入排序和 heapsort 算法不检测无效的比较器。 大多数情况下，这适用于具有少于 16 个元素的数组。</para></block>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.IComparable" />
@@ -7601,22 +7601,22 @@ int[,,] TDArray = new int[1,1,1];
       </Parameters>
       <Docs>
         <param name="keys">一维 <see cref="T:System.Array" />，它包含要排序的关键字。</param>
-        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中的每个键对应的项。  
+        <param name="items">一维 <see cref="T:System.Array" />，其中包含与 <paramref name="keys" /><see cref="T:System.Array" /> 中每个关键字对应的项。  
   
 - 或 - 
- <see langword="null" /> 则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
+ 如果为 <see langword="null" />，则只对 <paramref name="keys" /><see cref="T:System.Array" /> 进行排序。</param>
         <param name="index">排序范围的起始索引。</param>
         <param name="length">排序范围内的元素数。</param>
         <param name="comparer">比较元素时要使用的 <see cref="T:System.Collections.IComparer" /> 实现。  
   
 - 或 - 
- <see langword="null" /> 则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
+ 若为 <see langword="null" />，则使用每个元素的 <see cref="T:System.IComparable" /> 实现。</param>
         <summary>基于第一个 <see cref="T:System.Array" /> 中的关键字，使用指定的 <see cref="T:System.Array" />，对两个一维 <see cref="T:System.Collections.IComparer" /> 对象（一个包含关键字，另一个包含对应的项）的部分元素进行排序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  如果`comparer`是`null`，指定范围中的元素内的每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable>接口，才能与其他任何关键字进行比较。  
   
@@ -7667,20 +7667,20 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
  <paramref name="length" /> 小于零。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
+ <paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
   
 - 或 - 
  <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="keys" /><see cref="T:System.Array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。  
+ <paramref name="items" /> 不为 <see langword="null" />，且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。  
   
 - 或 - 
 <paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable" /> 接口。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable" /> 接口。</exception>
         <block subset="none" type="usage"><para>.NET Framework 4 和更早版本使用仅快速排序算法。 快速排序标识无效的比较器在某些情况下，在排序操作将引发<see cref="T:System.IndexOutOfRangeException" />异常，并且会引发<see cref="T:System.ArgumentException" />给调用方的异常。 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，就可以，以前排序操作引发了<see cref="T:System.ArgumentException" />不会引发异常，因为插入排序和 heapsort 算法不检测无效的比较器。 大多数情况下，这适用于具有少于 16 个元素的数组。</para></block>
         <altmember cref="T:System.Collections.IComparer" />
         <altmember cref="T:System.IComparable" />
@@ -8226,7 +8226,7 @@ int[,,] TDArray = new int[1,1,1];
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  在每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable%601>泛型接口，才能与其他任何关键字进行比较。  
   
@@ -8273,10 +8273,10 @@ int[,,] TDArray = new int[1,1,1];
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="keys" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。</exception>
+ <paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
         <altmember cref="T:System.IComparable`1" />
         <altmember cref="Overload:System.Array.BinarySearch" />
@@ -8338,7 +8338,7 @@ int[,,] TDArray = new int[1,1,1];
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  如果`comparer`是`null`，则每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable%601>泛型接口，才能与其他任何关键字进行比较。  
   
@@ -8385,14 +8385,14 @@ int[,,] TDArray = new int[1,1,1];
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="keys" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
+ <paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
   
 - 或 - 
 <paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
         <block subset="none" type="usage"><para>.NET Framework 4 和更早版本使用仅快速排序算法。 快速排序标识无效的比较器在某些情况下，在排序操作将引发<see cref="T:System.IndexOutOfRangeException" />异常，并且会引发<see cref="T:System.ArgumentException" />给调用方的异常。 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，就可以，以前排序操作引发了<see cref="T:System.ArgumentException" />不会引发异常，因为插入排序和 heapsort 算法不检测无效的比较器。 大多数情况下，这适用于具有少于 16 个元素的数组。</para></block>
         <altmember cref="T:System.Collections.Generic.IComparer`1" />
         <altmember cref="T:System.IComparable`1" />
@@ -8456,7 +8456,7 @@ int[,,] TDArray = new int[1,1,1];
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  中的元素指定的范围内的每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable%601>泛型接口，才能与其他任何关键字进行比较。  
   
@@ -8507,16 +8507,16 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
  <paramref name="length" /> 小于零。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
+ <paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
   
 - 或 - 
  <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="keys" /><see cref="T:System.Array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。</exception>
+ <paramref name="items" /> 不为 <see langword="null" />，且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素不实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
         <altmember cref="T:System.IComparable`1" />
         <altmember cref="Overload:System.Array.BinarySearch" />
@@ -8584,7 +8584,7 @@ int[,,] TDArray = new int[1,1,1];
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 在每个键`keys`<xref:System.Array>都有对应项`items`<xref:System.Array>。 在排序中的相应项过程时重新定位一个密钥`items`<xref:System.Array>同样重新定位。 因此，`items`<xref:System.Array>按照中的对应键的排列方式排序`keys`<xref:System.Array>。  
+ 在每个键`keys`<xref:System.Array>都有对应项`items` <xref:System.Array>。 在排序中的相应项过程时重新定位一个键`items`<xref:System.Array>同样重新定位。 因此， `items` <xref:System.Array>按照中的对应键的排列方式排序`keys` <xref:System.Array>。  
   
  如果`comparer`是`null`，指定范围中的元素内的每个键`keys`<xref:System.Array>必须实现<xref:System.IComparable%601>泛型接口，才能与其他任何关键字进行比较。  
   
@@ -8635,20 +8635,20 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
  <paramref name="length" /> 小于零。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
+        <exception cref="T:System.ArgumentException"><paramref name="items" /> 不是 <see langword="null" />，且 <paramref name="keys" /> 的下限与 <paramref name="items" /> 的下限不匹配。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
+ <paramref name="items" /> 不是 <see langword="null" />，并且 <paramref name="keys" /> 的长度大于 <paramref name="items" /> 的长度。  
   
 - 或 - 
  <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="keys" /><see cref="T:System.Array" /> 中指定有效范围。  
   
 - 或 - 
- <paramref name="items" /> 不为 <see langword="null" />，并且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。  
+ <paramref name="items" /> 不为 <see langword="null" />，且 <paramref name="index" /> 和 <paramref name="length" /> 未在 <paramref name="items" /><see cref="T:System.Array" /> 中指定有效范围。  
   
 - 或 - 
 <paramref name="comparer" /> 的实现导致排序时出现错误。 例如，将某个项与其自身比较时，<paramref name="comparer" /> 可能不返回 0。</exception>
-        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，并且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="comparer" /> 为 <see langword="null" />，且 <paramref name="keys" /><see cref="T:System.Array" /> 中的一个或多个元素未实现 <see cref="T:System.IComparable`1" /> 泛型接口。</exception>
         <block subset="none" type="usage"><para>.NET Framework 4 和更早版本使用仅快速排序算法。 快速排序标识无效的比较器在某些情况下，在排序操作将引发<see cref="T:System.IndexOutOfRangeException" />异常，并且会引发<see cref="T:System.ArgumentException" />给调用方的异常。 从开始[!INCLUDE[net_v45](~/includes/net-v45-md.md)]，就可以，以前排序操作引发了<see cref="T:System.ArgumentException" />不会引发异常，因为插入排序和 heapsort 算法不检测无效的比较器。 大多数情况下，这适用于具有少于 16 个元素的数组。</para></block>
         <altmember cref="T:System.Collections.Generic.IComparer`1" />
         <altmember cref="T:System.IComparable`1" />
@@ -8974,7 +8974,7 @@ int[,,] TDArray = new int[1,1,1];
       <Docs>
         <param name="value">要在当前列表中定位的对象。 要定位的元素对于引用类型可以是 <see langword="null" />。</param>
         <summary>确定某元素是否在 <see cref="T:System.Collections.IList" /> 中。</summary>
-        <returns><see langword="true" /> （如果在 <see cref="T:System.Collections.IList" /> 中找到 <paramref name="value" />）；否则为 <see langword="false" />。</returns>
+        <returns>如果在 <see langword="true" /> 中找到 <paramref name="value" />，则为 <see cref="T:System.Collections.IList" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9096,7 +9096,7 @@ int[,,] TDArray = new int[1,1,1];
   
 - 或 - 
 <see cref="T:System.Collections.IList" /> 具有固定的大小。</exception>
-        <exception cref="T:System.NullReferenceException"><paramref name="value" /> 在 <see cref="T:System.Collections.IList" /> 中是空引用。</exception>
+        <exception cref="T:System.NullReferenceException"><paramref name="value" /> 在 <see cref="T:System.Collections.IList" /> 中是 null 引用。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.IsFixedSize">
@@ -9435,7 +9435,7 @@ int[,,] TDArray = new int[1,1,1];
         <param name="other">要与当前实例进行比较的对象。</param>
         <param name="comparer">一个可确定当前实例与 <paramref name="other" /> 是否相等的对象。</param>
         <summary>确定某个对象与当前实例是否相等。</summary>
-        <returns><see langword="true" /> （如果两个对象相等）；否则为 <see langword="false" />。</returns>
+        <returns>如果两个对象相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9538,7 +9538,7 @@ int[,,] TDArray = new int[1,1,1];
         <param name="array">要对照条件进行检查的从零开始的一维 <see cref="T:System.Array" />。</param>
         <param name="match">用于定义检查元素时要对照的条件的谓词。</param>
         <summary>确定数组中的每个元素是否都与指定谓词定义的条件匹配。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="array" /> 中的每个元素都与指定谓词定义的条件匹配）；否则为 <see langword="false" />。 如果数组中没有元素，则返回值为 <see langword="true" />。</returns>
+        <returns>如果 <paramref name="array" /> 中的每个元素都与指定谓词定义的条件匹配，则为 <see langword="true" />；否则为 <see langword="false" />。 如果数组中没有元素，则返回值为 <see langword="true" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

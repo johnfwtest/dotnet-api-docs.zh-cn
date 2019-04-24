@@ -1,5 +1,5 @@
 <Type Name="Type" FullName="System.Type">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="95546fa79ae08611355fed8ec3d0e50effda67f2" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59017624" /></Metadata><TypeSignature Language="C#" Value="public abstract class Type : System.Reflection.MemberInfo, System.Reflection.IReflect, System.Runtime.InteropServices._Type" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="95546fa79ae08611355fed8ec3d0e50effda67f2" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="59017624" /></Metadata><TypeSignature Language="C#" Value="public abstract class Type : System.Reflection.MemberInfo, System.Reflection.IReflect, System.Runtime.InteropServices._Type" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Type extends System.Reflection.MemberInfo implements class System.Reflection.IReflect, class System.Runtime.InteropServices._Type" />
   <TypeSignature Language="DocId" Value="T:System.Type" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class Type&#xA;Inherits MemberInfo&#xA;Implements _Type, IReflect" />
@@ -609,7 +609,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前 <see cref="T:System.Type" /> 对象是否具有尚未被特定类型替代的类型参数。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />对象本身是泛型类型参数或为其特定类型尚未提供; 否则为类型形参<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 对象本身是泛型类型形参或者具有尚未提供特定类型的类型形参，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -992,7 +992,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
       <Docs>
         <param name="o">该对象，其基础系统类型将与当前 <see cref="T:System.Type" /> 的基础系统类型相比较。 为了使比较成功，<paramref name="o" /> 必须能够被强制转换或转换为类型 <see cref="T:System.Type" /> 的一个对象。</param>
         <summary>确定当前 <see cref="T:System.Type" /> 的基础系统类型是否与指定 <see cref="T:System.Object" /> 的基础系统类型相同。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="o" /> 的基础系统类型与当前 <see cref="T:System.Type" /> 的基础系统类型相同）；否则为 <see langword="false" />。 如果 ：此方法也会返回 <see langword="false" />。  
+        <returns>如果 <see langword="true" /> 的基础系统类型与当前 <paramref name="o" /> 的基础系统类型相同，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。 如果 ：此方法也会返回 <see langword="false" />。  
   
 -   <paramref name="o" /> 为 <see langword="null" />。  
   
@@ -1068,7 +1068,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
       <Docs>
         <param name="o">该对象，其基础系统类型将与当前 <see cref="T:System.Type" /> 的基础系统类型相比较。</param>
         <summary>确定当前 <see cref="T:System.Type" /> 的基础系统类型是否与指定 <see cref="T:System.Type" /> 的基础系统类型相同。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="o" /> 的基础系统类型与当前 <see cref="T:System.Type" /> 的基础系统类型相同）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 的基础系统类型与当前 <paramref name="o" /> 的基础系统类型相同，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1398,7 +1398,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有效值<xref:System.Type.MemberType%2A>中定义<xref:System.Reflection.MemberInfo>。 如果没有找到任何此类成员，则返回空数组。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果当前<xref:System.Type>表示泛型类型或泛型方法的类型参数<xref:System.Type.FindMembers%2A>处理声明的类约束和接口约束类型参数的任何成员。  
   
@@ -1854,7 +1854,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法的重载查找公共实例构造函数并不能用于获取类初始值设定项 (.cctor)。 若要获取类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 此方法的重载查找公共实例构造函数并不能用于获取类初始值设定项 (.cctor)。 若要获取类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果请求的构造函数为非公共，此方法返回`null`。  
   
@@ -1941,7 +1941,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 获取不使用参数的构造函数的 <see cref="T:System.Type" /> 类型的空数组（即 Type[] types = new Type[0]）。  
   
 - 或 - 
- <see cref="F:System.Type.EmptyTypes" />.</param>
+ <see cref="F:System.Type.EmptyTypes" />。</param>
         <param name="modifiers"><see cref="T:System.Reflection.ParameterModifier" /> 对象的数组，表示与参数类型数组中的相应元素关联的特性。 默认的联编程序不处理此参数。</param>
         <summary>使用指定绑定约束搜索其参数与指定自变量类型和修饰符匹配的构造函数。</summary>
         <returns>表示符合指定需求的构造函数的 <see cref="T:System.Reflection.ConstructorInfo" /> 对象（如果找到的话）；否则为 <see langword="null" />。</returns>
@@ -1961,7 +1961,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有关更多信息，请参见<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
 > [!NOTE]
 >  查找构造函数和方法时，不能省略参数。 调用时，仅可以省略参数。  
@@ -2076,7 +2076,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有关更多信息，请参见<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  下表显示了返回通过基类的成员`Get`方法反射的类型上时。  
   
@@ -2300,7 +2300,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
 3.  自定义特性不是通用类型系统的一部分。  
   
- 调用此方法的重载<xref:System.Type.GetConstructors%28System.Reflection.BindingFlags%29>方法重载中，使用<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType>在 Visual Basic 中)。 它将找不到类初始值设定项 (.cctor)。 若要查找类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 调用此方法的重载<xref:System.Type.GetConstructors%28System.Reflection.BindingFlags%29>方法重载中，使用<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType>在 Visual Basic 中)。 它将找不到类初始值设定项 (.cctor)。 若要查找类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果当前<xref:System.Type>表示构造泛型类型，此方法返回<xref:System.Reflection.ConstructorInfo>替换为适当的类型参数的类型参数的对象。 例如，如果类`C<T>`具有一个构造函数`C(T t1)`(`Sub New(ByVal t1 As T)`在 Visual Basic 中)，则调用<xref:System.Type.GetConstructors%2A>上`C<int>`返回<xref:System.Reflection.ConstructorInfo>表示`C(int t1)`C# 中 (`Sub New(ByVal t1 As Integer)`在 Visual Basic 中)。  
   
@@ -2413,7 +2413,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有关更多信息，请参见<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果当前<xref:System.Type>表示构造泛型类型，此方法返回<xref:System.Reflection.ConstructorInfo>替换为适当的类型参数的类型参数的对象。 例如，如果类`C<T>`具有一个构造函数`C(T t1)`(`Sub New(ByVal t1 As T)`在 Visual Basic 中)，则调用<xref:System.Type.GetConstructors%2A>上`C<int>`返回<xref:System.Reflection.ConstructorInfo>表示`C(int t1)`C# 中 (`Sub New(ByVal t1 As Integer)`在 Visual Basic 中)。  
   
@@ -3978,7 +3978,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="interfaceType" /> 没有通过当前类型实现。  
+        <exception cref="T:System.ArgumentException">当前类型未实现 <paramref name="interfaceType" />。  
   
 - 或 - 
 <paramref name="interfaceType" /> 参数未引用接口。  
@@ -3990,7 +3990,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 - 或 -
 
 
- <paramref name="interfaceType" /> 是泛型接口，而当前类型是数组类型。</exception>
+ <paramref name="interfaceType" /> 是一个泛型接口，而当前类型是一个数组类型。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="interfaceType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前 <see cref="T:System.Type" /> 表示泛型类型参数；即，<see cref="P:System.Type.IsGenericParameter" /> 为 <see langword="true" />。</exception>
         <exception cref="T:System.NotSupportedException">基类不支持调用的方法。 派生类必须提供一个实现。</exception>
@@ -4121,7 +4121,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  <xref:System.Type.GetMember%2A>方法不返回成员在特定的顺序，如按字母顺序或按声明顺序。 你的代码一定不能依赖于成员的返回的顺序因为顺序而变化。  
   
- 此方法的重载将找不到类初始值设定项 (.cctor)。 若要查找类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 此方法的重载将找不到类初始值设定项 (.cctor)。 若要查找类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  下表显示了返回通过基类的成员`Get`方法反射的类型上时。  
   
@@ -4239,7 +4239,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有关更多信息，请参见<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定".cctor"对于`name`，并<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中) 的`bindingAttr`。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定".cctor"对于`name`，并<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中) 为`bindingAttr`。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果当前<xref:System.Type>表示构造泛型类型，此方法返回<xref:System.Reflection.MemberInfo>具有类型参数替换为适当的类型参数。  
   
@@ -4340,7 +4340,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有关更多信息，请参见<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定".cctor"的`name`，<xref:System.Reflection.MemberTypes.Constructor?displayProperty=nameWithType>有关`type`，和<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中) 对于`bindingAttr`。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定".cctor"对于`name`，<xref:System.Reflection.MemberTypes.Constructor?displayProperty=nameWithType>有关`type`，和<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>中Visual Basic) 为`bindingAttr`。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果当前<xref:System.Type>表示构造泛型类型，此方法返回<xref:System.Reflection.MemberInfo>具有类型参数替换为适当的类型参数。  
   
@@ -4427,7 +4427,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  <xref:System.Type.GetMembers%2A>方法不返回成员在特定的顺序，如按字母顺序或按声明顺序。 你的代码一定不能依赖于成员的返回的顺序因为顺序而变化。  
   
- 调用此方法的重载<xref:System.Type.GetMembers%28System.Reflection.BindingFlags%29>方法重载中，使用<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>在 Visual Basic 中)。 它将找不到类初始值设定项 (.cctor)。 若要查找类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 调用此方法的重载<xref:System.Type.GetMembers%28System.Reflection.BindingFlags%29>方法重载中，使用<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>在 Visual Basic 中)。 它将找不到类初始值设定项 (.cctor)。 若要查找类初始值设定项，请使用采用重载<xref:System.Reflection.BindingFlags>，并指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  下表显示了返回通过基类的成员`Get`方法反射的类型上时。  
   
@@ -4538,7 +4538,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  有关更多信息，请参见<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>。  
   
- 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
+ 若要获取类初始值设定项 (.cctor) 使用此方法的重载，必须指定<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType>在 Visual Basic 中)。 此外可以获取类初始值设定项使用<xref:System.Type.TypeInitializer%2A>属性。  
   
  如果当前表示构造泛型类型，此方法返回<xref:System.Reflection.MemberInfo>替换为适当的类型参数的类型参数的对象。  
   
@@ -4624,7 +4624,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
   
  可以执行以下操作以检索特定的方法之一：  
   
--   调用<xref:System.Type.GetMethod%28System.String%2CSystem.Reflection.BindingFlags%29>方法并指定`bindingAttr`唯一标识该方法的参数。 例如，如果将引发异常，因为类型具有一个静态和实例重载，则可以指定`bindingAttr`自变量的<xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType>`Or`<xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType>。  
+-   调用<xref:System.Type.GetMethod%28System.String%2CSystem.Reflection.BindingFlags%29>方法并指定`bindingAttr`唯一标识该方法的参数。 例如，如果将引发异常，因为类型具有一个静态和实例重载，则可以指定`bindingAttr`的参数<xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> `Or` <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType>。  
   
 -   调用重载<xref:System.Type.GetMethod%2A>方法，包括`types`定义的方法的参数类型的参数。  
   
@@ -5427,7 +5427,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 一个类型为 <see cref="T:System.Type" />（即 Type[] types = new Type[0]）的空数组，用于获取一个不带参数的方法。  
   
 - 或 - 
- <see langword="null" />. 如果 <paramref name="types" /> 为 <see langword="null" />，则参数不匹配。</param>
+ <see langword="null" />。 如果 <paramref name="types" /> 为 <see langword="null" />，则参数不匹配。</param>
         <param name="modifiers"><see cref="T:System.Reflection.ParameterModifier" /> 对象的数组，表示与 <paramref name="types" /> 数组中的相应元素关联的特性。 默认的联编程序不处理此参数。</param>
         <summary>当在派生类中重写时，使用指定的绑定约束和指定的调用约定搜索其参数与指定的自变量类型和修饰符匹配的指定方法。</summary>
         <returns>表示符合指定要求的方法的对象（如果找到的话）；否则为 <see langword="null" />。</returns>
@@ -6524,7 +6524,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
  ]]></format>
         </remarks>
         <exception cref="T:System.Reflection.AmbiguousMatchException">找到了多个具有指定名称的属性。</exception>
-        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 为 <see langword="null" />或 <paramref name="returnType" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 是 <see langword="null" />，或 <paramref name="returnType" /> 是 <see langword="null" />。</exception>
         <altmember cref="T:System.Reflection.PropertyInfo" />
         <altmember cref="T:System.String" />
         <altmember cref="P:System.Type.DefaultBinder" />
@@ -7234,7 +7234,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 |一个可以为 null <xref:System.Int32>|``Type.GetType("System.Nullable`1[System.Int32]")``|  
 |指向非托管的指针 `MyType`|`Type.GetType("MyType*")`|  
 |非托管的指针到指向 `MyType`|`Type.GetType("MyType**")`|  
-|托管的指针或引用 `MyType`|`Type.GetType("MyType&")`. 请注意，与指针不同，引用仅限于一个级别。|  
+|托管的指针或引用 `MyType`|`Type.GetType("MyType&")`。 请注意，与指针不同，引用仅限于一个级别。|  
 |父类和嵌套的类|`Type.GetType("MyParentClass+MyNestedClass")`|  
 |一维数组下限为 0|`Type.GetType("MyType[]")`|  
 |一维数组下限未知|`Type.GetType("MyType[*]")`|  
@@ -7332,7 +7332,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </Parameters>
       <Docs>
         <param name="typeName">要获取的类型的程序集限定名称。 请参阅 <see cref="P:System.Type.AssemblyQualifiedName" />。 如果该类型位于当前正在执行的程序集中或者 Mscorlib.dll 中，则提供由命名空间限定的类型名称就足够了。</param>
-        <param name="throwOnError"><see langword="true" /> 表示在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
+        <param name="throwOnError">如果为 <see langword="true" />，则在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
         <summary>获取具有指定名称的 <see cref="T:System.Type" />，指定是否执行区分大小写的搜索，以及在找不到类型时是否引发异常。</summary>
         <returns>具有指定名称的类型。 如果找不到该类型，则 <paramref name="throwOnError" /> 参数指定是返回 <see langword="null" /> 还是引发异常。 在某些情况下，将引发异常，而不考虑 <paramref name="throwOnError" /> 的值。 请参见“异常”部分。</returns>
         <remarks>
@@ -7433,7 +7433,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 |一个可以为 null <xref:System.Int32>|``Type.GetType("System.Nullable`1[System.Int32]")``|  
 |指向非托管的指针 `MyType`|`Type.GetType("MyType*")`|  
 |非托管的指针到指向 `MyType`|`Type.GetType("MyType**")`|  
-|托管的指针或引用 `MyType`|`Type.GetType("MyType&")`. 请注意，与指针不同，引用仅限于一个级别。|  
+|托管的指针或引用 `MyType`|`Type.GetType("MyType&")`。 请注意，与指针不同，引用仅限于一个级别。|  
 |父类和嵌套的类|`Type.GetType("MyParentClass+MyNestedClass")`|  
 |一维数组下限为 0|`Type.GetType("MyArray[]")`|  
 |一维数组下限未知|`Type.GetType("MyArray[*]")`|  
@@ -7462,16 +7462,16 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <exception cref="T:System.TypeLoadException"><paramref name="throwOnError" /> 是 <see langword="true" />，且找不到该类型。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含嵌入的选项卡等无效字符。 
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 包含无效字符，例如嵌入的制表符。 
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 为空字符串。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 为空字符串。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 表示大小无效的数组类型。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 表示大小无效的数组类型。  
   
 - 或 - 
  <paramref name="typeName" /> 表示 <see cref="T:System.TypedReference" /> 的数组。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含无效的语法。 例如："MyType[,*,]"。  
+        <exception cref="T:System.ArgumentException"><paramref name="throwOnError" /> 是 <see langword="true" />，且 <paramref name="typeName" /> 包含无效的语法。 例如："MyType[,*,]"。  
   
 - 或 - 
  <paramref name="typeName" /> 表示将指针类型、<see langword="ByRef" /> 类型或 <see cref="T:System.Void" /> 作为其类型参数之一的泛型类型。  
@@ -7481,7 +7481,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
 - 或 - 
  <paramref name="typeName" /> 表示泛型类型，并且其类型参数之一不满足相应类型参数的约束。</exception>
-        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 为 <see langword="true" /> 且未找到程序集或程序集的某个依赖项。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 的值为 <see langword="true" />，且未找到程序集或程序集的某个依赖项。</exception>
         <exception cref="T:System.IO.FileLoadException"><block subset="none" type="note">
             <para>  
  在<see href="https://go.microsoft.com/fwlink/?LinkID=247912">适用于 Windows 应用商店应用的 .NET</see> 或<see href="https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library">可移植类库</see>中，改为捕获基类异常 <see cref="T:System.IO.IOException" />。  
@@ -7545,8 +7545,8 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </Parameters>
       <Docs>
         <param name="typeName">要获取的类型的程序集限定名称。 请参阅 <see cref="P:System.Type.AssemblyQualifiedName" />。 如果该类型位于当前正在执行的程序集中或者 Mscorlib.dll 中，则提供由命名空间限定的类型名称就足够了。</param>
-        <param name="throwOnError"><see langword="true" /> 表示在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
-        <param name="ignoreCase"><see langword="true" /> （对 <paramref name="typeName" /> 执行的搜索不区分大小写）；对 <paramref name="typeName" /> 执行的搜索区分大小写，则为 <see langword="false" />。</param>
+        <param name="throwOnError">如果为 <see langword="true" />，则在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
+        <param name="ignoreCase">对 <see langword="true" /> 执行的搜索不区分大小写，则为 <paramref name="typeName" />；对 <see langword="false" /> 执行的搜索区分大小写，则为 <paramref name="typeName" />。</param>
         <summary>获取具有指定名称的 <see cref="T:System.Type" />，指定是否执行区分大小写的搜索，以及在找不到类型时是否引发异常。</summary>
         <returns>具有指定名称的类型。 如果找不到该类型，则 <paramref name="throwOnError" /> 参数指定是返回 <see langword="null" /> 还是引发异常。 在某些情况下，将引发异常，而不考虑 <paramref name="throwOnError" /> 的值。 请参见“异常”部分。</returns>
         <remarks>
@@ -7647,7 +7647,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 |一个可以为 null <xref:System.Int32>|``Type.GetType("System.Nullable`1[System.Int32]")``|  
 |指向非托管的指针 `MyType`|`Type.GetType("MyType*")`|  
 |非托管的指针到指向 `MyType`|`Type.GetType("MyType**")`|  
-|托管的指针或引用 `MyType`|`Type.GetType("MyType&")`. 请注意，与指针不同，引用仅限于一个级别。|  
+|托管的指针或引用 `MyType`|`Type.GetType("MyType&")`。 请注意，与指针不同，引用仅限于一个级别。|  
 |父类和嵌套的类|`Type.GetType("MyParentClass+MyNestedClass")`|  
 |一维数组下限为 0|`Type.GetType("MyArray[]")`|  
 |一维数组下限未知|`Type.GetType("MyArray[*]")`|  
@@ -7667,16 +7667,16 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <exception cref="T:System.TypeLoadException"><paramref name="throwOnError" /> 是 <see langword="true" />，且找不到该类型。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含嵌入的选项卡等无效字符。 
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 包含无效字符，例如嵌入的制表符。 
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 为空字符串。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 为空字符串。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 表示大小无效的数组类型。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 表示大小无效的数组类型。  
   
 - 或 - 
  <paramref name="typeName" /> 表示 <see cref="T:System.TypedReference" /> 的数组。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含无效的语法。 例如："MyType[,*,]"。  
+        <exception cref="T:System.ArgumentException"><paramref name="throwOnError" /> 是 <see langword="true" />，且 <paramref name="typeName" /> 包含无效的语法。 例如："MyType[,*,]"。  
   
 - 或 - 
  <paramref name="typeName" /> 表示将指针类型、<see langword="ByRef" /> 类型或 <see cref="T:System.Void" /> 作为其类型参数之一的泛型类型。  
@@ -7686,7 +7686,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
 - 或 - 
  <paramref name="typeName" /> 表示泛型类型，并且其类型参数之一不满足相应类型参数的约束。</exception>
-        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 为 <see langword="true" /> 且未找到程序集或程序集的某个依赖项。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 的值为 <see langword="true" />，且未找到程序集或程序集的某个依赖项。</exception>
         <exception cref="T:System.IO.FileLoadException">找到了程序集或其依赖项之一，但无法加载它们。</exception>
         <exception cref="T:System.BadImageFormatException">程序集或其依赖项之一无效。  
   
@@ -7821,7 +7821,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <param name="typeResolver">一个方法，它在由 <paramref name="typeName" /> 或标准程序集解析返回的程序集中定位并返回 <paramref name="assemblyResolver" /> 所指定的类型。 如果未提供任何程序集，则该方法可以提供一个程序集。 该方法还采用一个参数以指定是否执行不区分大小写的搜索；<see langword="false" /> 传递给该参数。  
   
 警告   不要通过未知的或不受信任的调用方传递方法。</param>
-        <param name="throwOnError"><see langword="true" /> 表示在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
+        <param name="throwOnError">如果为 <see langword="true" />，则在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
         <summary>获取具有指定名称的类型，指定在找不到该类型时是否引发异常，（可选）提供自定义方法以解析程序集和该类型。</summary>
         <returns>具有指定名称的类型。 如果找不到该类型，则 <paramref name="throwOnError" /> 参数指定是返回 <see langword="null" /> 还是引发异常。 在某些情况下，将引发异常，而不考虑 <paramref name="throwOnError" /> 的值。 请参见“异常”部分。</returns>
         <remarks>
@@ -7839,12 +7839,12 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <exception cref="T:System.TypeLoadException"><paramref name="throwOnError" /> 是 <see langword="true" />，且找不到该类型。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含嵌入的选项卡等无效字符。 
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 包含无效字符，例如嵌入的制表符。 
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 为空字符串。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 为空字符串。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 表示大小无效的数组类型。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 表示大小无效的数组类型。  
   
 - 或 - 
  <paramref name="typeName" /> 表示 <see cref="T:System.TypedReference" /> 的数组。</exception>
@@ -7861,7 +7861,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
 - 或 - 
  <paramref name="typeName" /> 表示泛型类型，并且其类型参数之一不满足相应类型参数的约束。</exception>
-        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 为 <see langword="true" /> 且未找到程序集或程序集的某个依赖项。  
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 的值为 <see langword="true" />，且未找到程序集或程序集的某个依赖项。  
   
 - 或 - 
  <paramref name="typeName" /> 包含无效的程序集名称。  
@@ -7916,8 +7916,8 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <param name="typeResolver">一个方法，它在由 <paramref name="typeName" /> 或标准程序集解析返回的程序集中定位并返回 <paramref name="assemblyResolver" /> 所指定的类型。 如果未提供任何程序集，则该方法可以提供一个程序集。 该方法还采用一个参数以指定是否执行不区分大小写的搜索；<paramref name="ignoreCase" /> 的值传递给该参数。  
   
 警告   不要通过未知的或不受信任的调用方传递方法。</param>
-        <param name="throwOnError"><see langword="true" /> 表示在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
-        <param name="ignoreCase"><see langword="true" /> （对 <paramref name="typeName" /> 执行的搜索不区分大小写）；对 <paramref name="typeName" /> 执行的搜索区分大小写，则为 <see langword="false" />。</param>
+        <param name="throwOnError">如果为 <see langword="true" />，则在找不到该类型时引发异常；如果为 <see langword="false" />，则返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
+        <param name="ignoreCase">对 <see langword="true" /> 执行的搜索不区分大小写，则为 <paramref name="typeName" />；对 <see langword="false" /> 执行的搜索区分大小写，则为 <paramref name="typeName" />。</param>
         <summary>获取具有指定名称的类型，指定是否执行区分大小写的搜索，在找不到类型时是否引发异常，（可选）提供自定义方法以解析程序集和该类型。</summary>
         <returns>具有指定名称的类型。 如果找不到该类型，则 <paramref name="throwOnError" /> 参数指定是返回 <see langword="null" /> 还是引发异常。 在某些情况下，将引发异常，而不考虑 <paramref name="throwOnError" /> 的值。 请参见“异常”部分。</returns>
         <remarks>
@@ -8062,12 +8062,12 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <exception cref="T:System.TypeLoadException"><paramref name="throwOnError" /> 是 <see langword="true" />，且找不到该类型。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含嵌入的选项卡等无效字符。 
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 包含无效字符，例如嵌入的制表符。 
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 为空字符串。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 为空字符串。  
   
 - 或 - 
- <paramref name="throwOnError" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 表示大小无效的数组类型。  
+ <paramref name="throwOnError" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 表示大小无效的数组类型。  
   
 - 或 - 
  <paramref name="typeName" /> 表示 <see cref="T:System.TypedReference" /> 的数组。</exception>
@@ -8084,7 +8084,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
 - 或 - 
  <paramref name="typeName" /> 表示泛型类型，并且其类型参数之一不满足相应类型参数的约束。</exception>
-        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 为 <see langword="true" /> 且未找到程序集或程序集的某个依赖项。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwOnError" /> 的值为 <see langword="true" />，且未找到程序集或程序集的某个依赖项。</exception>
         <exception cref="T:System.IO.FileLoadException">找到了程序集或其依赖项之一，但无法加载它们。  
   
 - 或 - 
@@ -8299,7 +8299,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       <Docs>
         <param name="clsid">要获取的类型的 CLSID。</param>
         <summary>获取与指定类标识符 (CLSID) 关联的类型。</summary>
-        <returns><see langword="System.__ComObject" /> （无论 CLSID 是否有效）。</returns>
+        <returns><see langword="System.__ComObject" />，无论 CLSID 是否有效。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8374,12 +8374,12 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </Parameters>
       <Docs>
         <param name="clsid">要获取的类型的 CLSID。</param>
-        <param name="throwOnError"><see langword="true" /> 表示将引发所发生的任何异常。  
+        <param name="throwOnError"><see langword="true" /> 将引发所发生的任何异常。  
   
 - 或 - 
- <see langword="false" /> 表示将忽略所发生的任何异常。</param>
+ <see langword="false" /> 将忽略所发生的任何异常。</param>
         <summary>获取与指定类标识符 (CLSID) 关联的类型，指定在加载该类型时如果发生错误是否引发异常。</summary>
-        <returns><see langword="System.__ComObject" /> （无论 CLSID 是否有效）。</returns>
+        <returns><see langword="System.__ComObject" />，无论 CLSID 是否有效。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8456,7 +8456,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
         <param name="clsid">要获取的类型的 CLSID。</param>
         <param name="server">用于从中加载该类型的服务器。 如果服务器名称为 <see langword="null" />，则此方法会自动恢复到本地计算机上。</param>
         <summary>从指定服务器获取与指定类标识符 (CLSID) 关联的类型。</summary>
-        <returns><see langword="System.__ComObject" /> （无论 CLSID 是否有效）。</returns>
+        <returns><see langword="System.__ComObject" />，无论 CLSID 是否有效。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8529,12 +8529,12 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       <Docs>
         <param name="clsid">要获取的类型的 CLSID。</param>
         <param name="server">用于从中加载该类型的服务器。 如果服务器名称为 <see langword="null" />，则此方法会自动恢复到本地计算机上。</param>
-        <param name="throwOnError"><see langword="true" /> 表示将引发所发生的任何异常。  
+        <param name="throwOnError"><see langword="true" /> 将引发所发生的任何异常。  
   
 - 或 - 
- <see langword="false" /> 表示将忽略所发生的任何异常。</param>
+ <see langword="false" /> 将忽略所发生的任何异常。</param>
         <summary>从指定服务器获取与指定类标识符 (CLSID) 关联的类型，指定在加载该类型时如果发生错误是否引发异常。</summary>
-        <returns><see langword="System.__ComObject" /> （无论 CLSID 是否有效）。</returns>
+        <returns><see langword="System.__ComObject" />，无论 CLSID 是否有效。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8737,10 +8737,10 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </Parameters>
       <Docs>
         <param name="progID">要获取的类型的 ProgID。</param>
-        <param name="throwOnError"><see langword="true" /> 表示将引发所发生的任何异常。  
+        <param name="throwOnError"><see langword="true" /> 将引发所发生的任何异常。  
   
 - 或 - 
- <see langword="false" /> 表示将忽略所发生的任何异常。</param>
+ <see langword="false" /> 将忽略所发生的任何异常。</param>
         <summary>获取与指定程序标识符 (ProgID) 关联的类型，指定如果在加载该类型时发生错误是否引发异常。</summary>
         <returns>如果 <paramref name="progID" /> 是注册表中的有效项且有与之关联的类型，则为与指定程序标识符 (ProgID) 关联的类型；否则为 <see langword="null" />。</returns>
         <remarks>
@@ -8871,10 +8871,10 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       <Docs>
         <param name="progID">要获取的 <see cref="T:System.Type" /> 的 progID。</param>
         <param name="server">用于从中加载该类型的服务器。 如果服务器名称为 <see langword="null" />，则此方法会自动恢复到本地计算机上。</param>
-        <param name="throwOnError"><see langword="true" /> 表示将引发所发生的任何异常。  
+        <param name="throwOnError"><see langword="true" /> 将引发所发生的任何异常。  
   
 - 或 - 
- <see langword="false" /> 表示将忽略所发生的任何异常。</param>
+ <see langword="false" /> 将忽略所发生的任何异常。</param>
         <summary>从指定服务器获取与指定程序标识符 (progID) 关联的类型，指定如果在加载该类型时发生错误是否引发异常。</summary>
         <returns>如果 <paramref name="progID" /> 是注册表中的有效项且有与之关联的类型，则为与指定程序标识符 (ProgID) 关联的类型；否则为 <see langword="null" />。</returns>
         <remarks>
@@ -9050,7 +9050,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示当前 <see cref="T:System.Type" /> 是包含还是引用另一类型，即当前 <see cref="T:System.Type" /> 是数组、指针还是通过引用传递。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是一个数组，一个指针，或传递的引用; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 为数组、指针或按引用传递，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9109,7 +9109,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       <Parameters />
       <Docs>
         <summary>当在派生类中重写时，实现 <see cref="P:System.Type.HasElementType" /> 属性，确定当前 <see cref="T:System.Type" /> 是否包含另一类型或对其引用；即，当前 <see cref="T:System.Type" /> 是否是数组、指针或由引用传递。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 为数组、指针或按引用传递）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 为数组、指针或按引用传递，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9286,11 +9286,11 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="invokeAttr" /> 不包含 <see langword="CreateInstance" /> 且 <paramref name="name" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="invokeAttr" /> 不包含 <see langword="CreateInstance" />，并且 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="invokeAttr" /> 不是有效的 <see cref="T:System.Reflection.BindingFlags" /> 属性。  
   
 - 或 - 
- <paramref name="invokeAttr" /> 不包含以下某个绑定标记：<see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 和 <see langword="SetProperty" />。  
+ <paramref name="invokeAttr" /> 不包含以下某个绑定标志：<see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 或 <see langword="SetProperty" />。  
   
 - 或 - 
  <paramref name="invokeAttr" /> 包含 <see langword="CreateInstance" /> 与 <see langword="InvokeMethod" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 或 <see langword="SetProperty" /> 的组合。  
@@ -9305,7 +9305,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
  <paramref name="invokeAttr" /> 包含 <see langword="InvokeMethod" /> 与 <see langword="SetField" /> 或 <see langword="SetProperty" /> 的组合。  
   
 - 或 - 
- <paramref name="invokeAttr" /> 包含 <see langword="SetField" /> 且 <paramref name="args" /> 具有多个元素。  
+ <paramref name="invokeAttr" /> 包含 <see langword="SetField" />，并且 <paramref name="args" /> 具有多个元素。  
   
 - 或 - 
 对 COM 对象调用了此方法，但以下绑定标志中有一个未传入：<see langword="BindingFlags.InvokeMethod" />、<see langword="BindingFlags.GetProperty" />、<see langword="BindingFlags.SetProperty" />、<see langword="BindingFlags.PutDispProperty" /> 或 <see langword="BindingFlags.PutRefDispProperty" />。  
@@ -9472,11 +9472,11 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="invokeAttr" /> 不包含 <see langword="CreateInstance" /> 且 <paramref name="name" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="invokeAttr" /> 不包含 <see langword="CreateInstance" />，并且 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="invokeAttr" /> 不是有效的 <see cref="T:System.Reflection.BindingFlags" /> 属性。  
   
 - 或 - 
- <paramref name="invokeAttr" /> 不包含以下某个绑定标记：<see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 和 <see langword="SetProperty" />。  
+ <paramref name="invokeAttr" /> 不包含以下某个绑定标志：<see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 或 <see langword="SetProperty" />。  
   
 - 或 - 
  <paramref name="invokeAttr" /> 包含 <see langword="CreateInstance" /> 与 <see langword="InvokeMethod" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 或 <see langword="SetProperty" /> 的组合。  
@@ -9491,7 +9491,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
  <paramref name="invokeAttr" /> 包含 <see langword="InvokeMethod" /> 与 <see langword="SetField" /> 或 <see langword="SetProperty" /> 的组合。  
   
 - 或 - 
- <paramref name="invokeAttr" /> 包含 <see langword="SetField" /> 且 <paramref name="args" /> 具有多个元素。  
+ <paramref name="invokeAttr" /> 包含 <see langword="SetField" />，并且 <paramref name="args" /> 具有多个元素。  
   
 - 或 - 
 对 COM 对象调用了此方法，但以下绑定标志中有一个未传入：<see langword="BindingFlags.InvokeMethod" />、<see langword="BindingFlags.GetProperty" />、<see langword="BindingFlags.SetProperty" />、<see langword="BindingFlags.PutDispProperty" /> 或 <see langword="BindingFlags.PutRefDispProperty" />。  
@@ -9669,14 +9669,14 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="invokeAttr" /> 不包含 <see langword="CreateInstance" /> 且 <paramref name="name" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="invokeAttr" /> 不包含 <see langword="CreateInstance" />，并且 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="args" /> 和 <paramref name="modifiers" /> 的长度不相同。  
   
 - 或 - 
  <paramref name="invokeAttr" /> 不是有效的 <see cref="T:System.Reflection.BindingFlags" /> 属性。  
   
 - 或 - 
- <paramref name="invokeAttr" /> 不包含以下某个绑定标记：<see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 和 <see langword="SetProperty" />。  
+ <paramref name="invokeAttr" /> 不包含以下某个绑定标志：<see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 或 <see langword="SetProperty" />。  
   
 - 或 - 
  <paramref name="invokeAttr" /> 包含 <see langword="CreateInstance" /> 与 <see langword="InvokeMethod" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> 或 <see langword="SetProperty" /> 的组合。  
@@ -9691,7 +9691,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
  <paramref name="invokeAttr" /> 包含 <see langword="InvokeMethod" /> 与 <see langword="SetField" /> 或 <see langword="SetProperty" /> 的组合。  
   
 - 或 - 
- <paramref name="invokeAttr" /> 包含 <see langword="SetField" /> 且 <paramref name="args" /> 具有多个元素。  
+ <paramref name="invokeAttr" /> 包含 <see langword="SetField" />，并且 <paramref name="args" /> 具有多个元素。  
   
 - 或 - 
 命名的参数数组大于参数数组。  
@@ -9763,7 +9763,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否为抽象的并且必须被重写。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />抽象; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 是抽象的，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9781,7 +9781,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 ## Examples  
  下面的示例创建的数组<xref:System.Type>表示以下类型的对象： 包含类型返回`true`指定的对象是否`abstract`; 否则为它将返回`false`。  
   
--   `AbstractClass`一个抽象类 (类标记为`abstract`在C#并`MustInherit`在 Visual Basic 中)。  
+-   `AbstractClass`一个抽象类 (类标记为`abstract`C# 中和`MustInherit`在 Visual Basic 中)。  
   
 -   `DerivedClass`继承的类`AbstractClass`。  
   
@@ -9834,7 +9834,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否为 <see langword="AnsiClass" /> 选择了字符串格式属性 <see cref="T:System.Type" />。</summary>
-        <value><see langword="true" /> 如果字符串格式属性<see langword="AnsiClass" />选择了<see cref="T:System.Type" />; 否则为<see langword="false" />。</value>
+        <value>如果为 <see langword="true" /> 选择了字符串格式属性 <see langword="AnsiClass" />，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9898,7 +9898,7 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示类型是否为数组。</summary>
-        <value><see langword="true" /> 如果当前类型是一个数组;否则为<see langword="false" />。</value>
+        <value>如果当前类型是数组，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9963,7 +9963,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>在派生类中重写时，实现 <see cref="P:System.Type.IsArray" /> 属性并确定 <see cref="T:System.Type" /> 是否为数组。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 是数组）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 是数组，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10026,10 +10026,10 @@ GetType(Array).IsAssignableFrom(type)
       <Docs>
         <param name="c">要与当前类型进行比较的类型。</param>
         <summary>确定指定类型的实例是否能分配给当前类型实例。</summary>
-        <returns><see langword="true" /> 如果满足下列任一条件，则为 true： 
+        <returns>如果满足下列任一条件，则为 <see langword="true" />： 
 -   <paramref name="c" /> 和当前实例表示相同类型。  
   
--   <paramref name="c" /> 是从当前实例直接或间接派生的。 <paramref name="c" /> 是从当前实例直接派生的（如果它继承于当前实例）；如果继承自从当前实例继承的接连一个或多个类，则 <paramref name="c" /> 是从当前实例间接派生的。  
+-   <paramref name="c" /> 是从当前实例直接或间接派生的。 如果继承于当前实例，则 <paramref name="c" /> 是从当前实例直接派生的；如果继承于从当前实例继承的接连一个或多个类，则 <paramref name="c" /> 是从当前实例间接派生的。  
   
 -   当前实例是 <paramref name="c" /> 实现的一个接口。  
   
@@ -10040,7 +10040,7 @@ GetType(Array).IsAssignableFrom(type)
 [!code-csharp[System.Type.IsAssignableFrom#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.type.isassignablefrom/cs/IsAssignableFrom2.cs#2)] [!code-vb[System.Type.IsAssignableFrom#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.type.isassignablefrom/vb/IsAssignableFrom2.vb#2)] 
 -   <paramref name="c" /> 表示一个值类型，并且当前实例表示 <c>Nullable&lt;c&gt;</c>（在 Visual Basic 中为 <c>Nullable(Of c)</c>）。  
   
- <see langword="false" /> 如果不满足上述任何一个条件或者 <paramref name="c" /> 为 <see langword="null" />。</returns>
+ 如果不满足上述任何一个条件或者 <paramref name="c" /> 为 <see langword="false" />，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10111,7 +10111,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否为 <see langword="AutoClass" /> 选择了字符串格式属性 <see cref="T:System.Type" />。</summary>
-        <value><see langword="true" /> 如果字符串格式属性<see langword="AutoClass" />选择了<see cref="T:System.Type" />; 否则为<see langword="false" />。</value>
+        <value>如果为 <see langword="true" /> 选择了字符串格式属性 <see langword="AutoClass" />，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10162,7 +10162,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取指示当前类型的字段是否由公共语言运行时自动放置的值。</summary>
-        <value><see langword="true" /> 如果<see cref="P:System.Type.Attributes" />当前类型的属性包括<see cref="F:System.Reflection.TypeAttributes.AutoLayout" />; 否则为<see langword="false" />。</value>
+        <value>如果当前类型的 <see langword="true" /> 属性包括 <see cref="P:System.Type.Attributes" />，则为 <see cref="F:System.Reflection.TypeAttributes.AutoLayout" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10232,7 +10232,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Type" /> 是否由引用传递。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />传递的引用; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 按引用传递，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10284,7 +10284,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>在派生类中重写时，实现 <see cref="P:System.Type.IsByRef" /> 属性并确定<see cref="T:System.Type" /> 是否通过引用传递。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 按引用传递）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see cref="T:System.Type" /> 按引用传递，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Type.IsByRef" />
       </Docs>
@@ -10350,7 +10350,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是一个类或委托；即，不是值类型或接口。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是一个类; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 是类，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10416,7 +10416,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否为 COM 对象。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是一个 COM 对象; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 为 COM 对象，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10465,7 +10465,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>当在派生类中重写时，实现 <see cref="P:System.Type.IsCOMObject" /> 属性并确定 <see cref="T:System.Type" /> 是否为 COM 对象。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 为 COM 对象）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 为 COM 对象，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10509,7 +10509,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取指示此对象是否表示构造的泛型类型的值。 你可以创建构造型泛型类型的实例。</summary>
-        <value><see langword="true" /> 如果此对象表示构造泛型类型;否则为<see langword="false" />。</value>
+        <value>如果此对象表示构造泛型类型，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10555,7 +10555,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 在上下文中是否可以被承载。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />可以是托管在上下文中; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 能够在某个上下文中承载，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10609,7 +10609,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>实现 <see cref="P:System.Type.IsContextful" /> 属性并确定 <see cref="T:System.Type" /> 在上下文中是否可以被承载。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 能够在某个上下文中承载）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see cref="T:System.Type" /> 能够在某个上下文中承载，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10670,7 +10670,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前的 <see cref="T:System.Type" /> 是否表示枚举。</summary>
-        <value><see langword="true" /> 如果当前<see cref="T:System.Type" />表示枚举; 否则为<see langword="false" />。</value>
+        <value>如果当前 <see langword="true" /> 表示枚举，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10729,7 +10729,7 @@ GetType(Array).IsAssignableFrom(type)
       <Docs>
         <param name="value">要测试的值。</param>
         <summary>返回一个值，该值指示当前的枚举类型中是否存在指定的值。</summary>
-        <returns><see langword="true" /> （如果指定的值是当前枚举类型的成员）；否则为 <see langword="false" />。</returns>
+        <returns>如果指定的值是当前枚举类型的成员，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">当前类型不是一个枚举。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
@@ -10768,7 +10768,7 @@ GetType(Array).IsAssignableFrom(type)
       <Docs>
         <param name="other">要测试是否与当前类型等效的 COM 类型。</param>
         <summary>确定两个 COM 类型是否具有相同的标识，以及是否符合类型等效的条件。</summary>
-        <returns><see langword="true" /> （如果 COM 类型等效）；否则为 <see langword="false" />。 如果一个类型位于为执行加载的程序集中，而另一个类型位于已加载到仅限反射上下文的程序集中，则此方法也返回 <see langword="false" />。</returns>
+        <returns>如果 COM 类型等效，则为 <see langword="true" />；否则为 <see langword="false" />。 如果一个类型位于为执行加载的程序集中，而另一个类型位于已加载到仅限反射上下文的程序集中，则此方法也返回 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10816,7 +10816,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取指示当前类型的字段是否放置在显式指定的偏移量处的值。</summary>
-        <value><see langword="true" /> 如果<see cref="P:System.Type.Attributes" />当前类型的属性包括<see cref="F:System.Reflection.TypeAttributes.ExplicitLayout" />; 否则为<see langword="false" />。</value>
+        <value>如果当前类型的 <see langword="true" /> 属性包括 <see cref="P:System.Type.Attributes" />，则为 <see cref="F:System.Reflection.TypeAttributes.ExplicitLayout" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10910,7 +10910,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前 <see cref="T:System.Type" /> 是否表示泛型类型或方法的定义中的类型参数。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />对象表示的类型参数的泛型类型定义或泛型方法定义; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 对象表示泛型类型定义或泛型方法定义的类型参数，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11004,12 +11004,12 @@ GetType(Array).IsAssignableFrom(type)
   
 |示例|固定协定|  
 |-------------|----------------|  
-|`Derived(Of V)`<br /><br /> `Derived<V>`|对于此类型：<br /><br /> <xref:System.Type.IsGenericType%2A> 是`true`。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`true`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`。|  
-|`Base(Of String, V)`<br /><br /> `Base<String,V>`<br /><br /> `Base<String^,V>`|对于此类型：<br /><br /> <xref:System.Type.IsGenericType%2A> 是`true`。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`false`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`。|  
-|`Dim d() As Derived(Of Integer)`<br /><br /> `Derived<int>[] d;`<br /><br /> `array<Derived<int>^>^ d;`|变量的类型为`d`:<br /><br /> <xref:System.Type.IsGenericType%2A> 是`false`因为`d`是一个数组。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`false`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`false`。|  
-|`T``U`，和`V`（不管它们出现）|<xref:System.Type.IsGenericParameter%2A> 是`true`。<br /><br /> <xref:System.Type.IsGenericType%2A> 是`false`因为没有方法来约束泛型类型的类型参数。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`false`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`因为`T`， `U`，和`V`本身是泛型类型参数。 这并不意味着更高版本分配给他们的类型参数有关的任何信息。|  
-|字段的类型 `F`|<xref:System.Type.IsGenericType%2A> 是`true`。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`false`因为类型已分配给的类型参数`G`。 请注意，这相当于在调用<xref:System.Type.MakeGenericType%2A>方法。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`因为字段的类型`F`有为开放式构造的类型的类型参数。 构造的类型是开放类型由于其类型参数 (即， `Base`) 是泛型类型定义。 这说明了递归性质<xref:System.Type.IsGenericType%2A>属性。|  
-|嵌套的类 `Nested`|<xref:System.Type.IsGenericType%2A> 是`true`，即使`Nested`类具有其自己的任何泛型类型参数，因为它嵌套在泛型类型。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`true`。 也就是说，可以调用<xref:System.Type.MakeGenericType%2A>方法并提供封闭类型的类型参数`Derived`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`因为封闭类型`Derived`，具有泛型类型参数。 这说明了递归性质<xref:System.Type.ContainsGenericParameters%2A>属性。|  
+|`Derived(Of V)`<br /><br /> `Derived<V>`|对于此类型：<br /><br /> <xref:System.Type.IsGenericType%2A> 为 `true`。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 为 `true`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 为 `true`。|  
+|`Base(Of String, V)`<br /><br /> `Base<String,V>`<br /><br /> `Base<String^,V>`|对于此类型：<br /><br /> <xref:System.Type.IsGenericType%2A> 为 `true`。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 为 `false`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 为 `true`。|  
+|`Dim d() As Derived(Of Integer)`<br /><br /> `Derived<int>[] d;`<br /><br /> `array<Derived<int>^>^ d;`|变量的类型为`d`:<br /><br /> <xref:System.Type.IsGenericType%2A> 是`false`因为`d`是一个数组。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 为 `false`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 为 `false`。|  
+|`T``U`，和`V`（不管它们出现）|<xref:System.Type.IsGenericParameter%2A> 为 `true`。<br /><br /> <xref:System.Type.IsGenericType%2A> 是`false`因为没有方法来约束泛型类型的类型参数。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 为 `false`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`因为`T`， `U`，和`V`本身是泛型类型参数。 这并不意味着更高版本分配给他们的类型参数有关的任何信息。|  
+|字段的类型 `F`|<xref:System.Type.IsGenericType%2A> 为 `true`。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 是`false`因为类型已分配给的类型参数`G`。 请注意，这相当于在调用<xref:System.Type.MakeGenericType%2A>方法。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`因为字段的类型`F`有为开放式构造的类型的类型参数。 构造的类型是开放类型由于其类型参数 (即， `Base`) 是泛型类型定义。 这说明了递归性质<xref:System.Type.IsGenericType%2A>属性。|  
+|嵌套的类 `Nested`|<xref:System.Type.IsGenericType%2A> 是`true`，即使`Nested`类具有其自己的任何泛型类型参数，因为它嵌套在泛型类型。<br /><br /> <xref:System.Type.IsGenericTypeDefinition%2A> 为 `true`。 也就是说，可以调用<xref:System.Type.MakeGenericType%2A>方法并提供封闭类型的类型参数`Derived`。<br /><br /> <xref:System.Type.ContainsGenericParameters%2A> 是`true`因为封闭类型`Derived`，具有泛型类型参数。 这说明了递归性质<xref:System.Type.ContainsGenericParameters%2A>属性。|  
   
    
   
@@ -11057,7 +11057,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前 <see cref="T:System.Type" /> 是否表示可以用来构造其他泛型类型的泛型类型定义。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />对象表示泛型类型定义; 否则为<see langword="false" />。</value>
+        <value>如果此 <see langword="true" /> 对象表示泛型类型定义，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11146,7 +11146,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Type" /> 是否应用了 <see cref="T:System.Runtime.InteropServices.ComImportAttribute" /> 属性，如果应用了该属性，则表示它是从 COM 类型库导入的。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />已<see cref="T:System.Runtime.InteropServices.ComImportAttribute" />; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 具有 <see cref="T:System.Type" />，则为 <see cref="T:System.Runtime.InteropServices.ComImportAttribute" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11202,7 +11202,7 @@ GetType(Array).IsAssignableFrom(type)
       <Docs>
         <param name="o">要与当前类型进行比较的对象。</param>
         <summary>确定指定的对象是否是当前 <see cref="T:System.Type" /> 的实例。</summary>
-        <returns><see langword="true" /> （如果当前 <see langword="Type" /> 位于由 <paramref name="o" /> 表示的对象的继承层次结构，或者如果当前 <see langword="Type" /> 是 <paramref name="o" /> 实现的接口）。 <see langword="false" /> （如果不属于其中任一种情况：如果 <paramref name="o" /> 为 <see langword="null" />，或者当前 <see langword="Type" /> 为开放式泛型类型（即 <see cref="P:System.Type.ContainsGenericParameters" /> 返回 <see langword="true" />））。</returns>
+        <returns>如果满足下列任一条件，则为 <see langword="true" />：当前 <see langword="Type" /> 位于由 <paramref name="o" /> 表示的对象的继承层次结构中；当前 <see langword="Type" /> 是 <paramref name="o" /> 实现的接口。 如果不属于其中任一种情况，<paramref name="o" /> 为 <see langword="null" />，或者当前 <see langword="Type" /> 为开放式泛型类型（即 <see cref="P:System.Type.ContainsGenericParameters" /> 返回 <see langword="true" />），则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11263,7 +11263,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是一个接口；即，不是类或值类型。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是一个接口; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是接口，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11323,7 +11323,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取指示当前类型的字段是否按顺序（定义顺序或发送到元数据的顺序）放置的值。</summary>
-        <value><see langword="true" /> 如果<see cref="P:System.Type.Attributes" />当前类型的属性包括<see cref="F:System.Reflection.TypeAttributes.SequentialLayout" />; 否则为<see langword="false" />。</value>
+        <value>如果当前类型的 <see langword="true" /> 属性包括 <see cref="P:System.Type.Attributes" />，则为 <see cref="F:System.Reflection.TypeAttributes.SequentialLayout" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11391,7 +11391,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Type" /> 是否按引用进行封送。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />由引用封送; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是由引用封送的，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11438,7 +11438,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>实现 <see cref="P:System.Type.IsMarshalByRef" /> 属性并确定 <see cref="T:System.Type" /> 是否按引用来进行封送。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 是由引用封送的）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 是由引用封送的，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11497,7 +11497,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个指示当前 <see cref="T:System.Type" /> 对象是否表示其定义嵌套在另一个类型的定义之内的类型的值。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />嵌套在另一个类型内; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 嵌套在另一个类型内，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11558,7 +11558,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是嵌套的并且只能在它自己的程序集内可见。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />嵌套和仅在它自己的程序集内可见; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是嵌套的并且仅在它自己的程序集中可见，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11613,7 +11613,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是嵌套的并且只对同时属于自己家族和自己程序集的类可见。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />嵌套和只对属于它自己的家族和自己程序集的类可见; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 是嵌套的并且只对同时属于它自己的家族和它自己的程序集的类可见，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11623,7 +11623,7 @@ GetType(Array).IsAssignableFrom(type)
  <xref:System.Reflection.TypeAttributes.VisibilityMask?displayProperty=nameWithType> 选择可见性属性。  
   
 > [!NOTE]
->  C# 和 Visual Basic 语言不包括允许你定义仅对受保护的类型在其自身程序集中可见的嵌套的类型的语义。 `protected internal` 中的可见性C#并`Protected Friend`在 Visual Basic 中的可见性定义可见受保护的类型，在同一程序集中的类型中可见的嵌套的类型。  
+>  C# 和 Visual Basic 语言不包括允许你定义仅对受保护的类型在其自身程序集中可见的嵌套的类型的语义。 `protected internal` C# 中的可见性和`Protected Friend`在 Visual Basic 中的可见性定义可见受保护的类型，在同一程序集中的类型中可见的嵌套的类型。  
   
  一个<xref:System.Type>对象的系列被定义为所有对象的相同<xref:System.Type>和子类型。  
   
@@ -11673,7 +11673,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是嵌套的并且只能在它自己的家族内可见。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />嵌套和仅在它自己的家族内可见; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是嵌套的并且仅在它自己的家族中可见，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11730,7 +11730,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是嵌套的并且只对属于它自己的家族或属于它自己的程序集的类可见。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />嵌套和只对属于它自己的家族或属于它自己的程序集的类可见; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是嵌套的并且只对属于它自己的家族或属于它自己的程序集的类可见，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11789,7 +11789,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否是嵌套的并声明为私有。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是嵌套的并且声明为私有; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是嵌套的并声明为私有，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11849,7 +11849,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示类是否是嵌套的并且声明为公共的。</summary>
-        <value><see langword="true" /> 如果此类是嵌套的并且声明为公共;否则为<see langword="false" />。</value>
+        <value>如果类是嵌套的并且声明为公共的，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11904,7 +11904,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Type" /> 是否声明为公共类型。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />未声明为公共类型且不嵌套的类型; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 未声明为公共类型且不是嵌套类型，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11978,7 +11978,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否为指针。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />为指针; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 是指针，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12032,7 +12032,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>在派生类中重写时，实现 <see cref="P:System.Type.IsPointer" /> 属性并确定 <see cref="T:System.Type" /> 是否为指针。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 是指针）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see cref="T:System.Type" /> 是指针，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Type.IsPointer" />
       </Docs>
@@ -12070,7 +12070,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否为基元类型之一。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是基元类型之一; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 为基元类型之一，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12136,7 +12136,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>在派生类中重写时，实现 <see cref="P:System.Type.IsPrimitive" /> 属性并确定 <see cref="T:System.Type" /> 是否为基元类型之一。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 为基元类型之一）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 为基元类型之一，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12207,7 +12207,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Type" /> 是否声明为公共类型。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />声明为公共的和不是嵌套的类型; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 声明为公共类型且不是嵌套类型，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12267,7 +12267,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示 <see cref="T:System.Type" /> 是否声明为密封的。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />被声明为密封的; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 被声明为密封的，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12316,7 +12316,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前的类型在当前信任级别上是安全关键的还是安全可靠关键的，并因此可以执行关键操作。</summary>
-        <value><see langword="true" /> 如果当前类型在当前信任级别; 是安全关键或安全-可靠-关键<see langword="false" />如果它是透明的。</value>
+        <value>如果当前类型在当前信任级别上是安全关键的或安全可靠关键的，则为 <see langword="true" />；如果它是透明的，则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12372,7 +12372,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前类型在当前信任级别上是否是安全可靠关键的；即它是否可以执行关键操作并可以由透明代码访问。</summary>
-        <value><see langword="true" /> 如果当前类型在当前信任级别; 是安全-可靠-关键<see langword="false" />如果它是安全关键或透明。</value>
+        <value>如果当前类型在当前信任级别上是安全可靠关键的，则为 <see langword="true" />；如果它是安全关键的或透明的，则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12428,7 +12428,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前类型在当前信任级别上是否是透明的而无法执行关键操作。</summary>
-        <value><see langword="true" /> 如果类型在当前信任级别; 是安全透明的否则为<see langword="false" />。</value>
+        <value>如果该类型在当前信任级别上是安全透明的，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12483,7 +12483,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否为可序列化的。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是可序列化; 否则为<see langword="false" />。</value>
+        <value>如果 <see cref="T:System.Type" /> 是可序列化的，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12571,7 +12571,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示该类型是否具有需要特殊处理的名称。</summary>
-        <value><see langword="true" /> 如果该类型具有需要特殊处理; 的名称否则为<see langword="false" />。</value>
+        <value>如果该类型具有需要特殊处理的名称，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12629,7 +12629,7 @@ GetType(Array).IsAssignableFrom(type)
       <Docs>
         <param name="c">要与当前类型进行比较的类型。</param>
         <summary>确定当前 <see cref="T:System.Type" /> 是否派生自指定的 <see cref="T:System.Type" />。</summary>
-        <returns><see langword="true" /> （如果当前 <see langword="Type" /> 派生自 <paramref name="c" />）；否则为 <see langword="false" />。 如果 <see langword="false" /> 和当前 <paramref name="c" /> 相等，此方法也返回 <see langword="Type" />。</returns>
+        <returns>如果当前 <see langword="true" /> 派生于 <see langword="Type" />，则为 <paramref name="c" />；否则为 <see langword="false" />。 如果 <see langword="false" /> 和当前 <paramref name="c" /> 相等，此方法也返回 <see langword="Type" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12761,7 +12761,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否为 <see langword="UnicodeClass" /> 选择了字符串格式属性 <see cref="T:System.Type" />。</summary>
-        <value><see langword="true" /> 如果字符串格式属性<see langword="UnicodeClass" />选择了<see cref="T:System.Type" />; 否则为<see langword="false" />。</value>
+        <value>如果为 <see langword="true" /> 选择了字符串格式属性 <see langword="UnicodeClass" />，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12812,7 +12812,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个值，通过该值指示 <see cref="T:System.Type" /> 是否为值类型。</summary>
-        <value><see langword="true" /> 如果<see cref="T:System.Type" />是值类型; 否则为<see langword="false" />。</value>
+        <value>如果 <see langword="true" /> 是值类型，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12879,7 +12879,7 @@ GetType(Array).IsAssignableFrom(type)
       <Parameters />
       <Docs>
         <summary>实现 <see cref="P:System.Type.IsValueType" /> 属性并确定 <see cref="T:System.Type" /> 是否是值类型；即，它不是值类或接口。</summary>
-        <returns><see langword="true" /> （如果 <see cref="T:System.Type" /> 是值类型）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 是值类型，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -12958,7 +12958,7 @@ GetType(Array).IsAssignableFrom(type)
       </ReturnValue>
       <Docs>
         <summary>获取一个指示 <see cref="T:System.Type" /> 是否可由程序集之外的代码访问的值。</summary>
-        <value><see langword="true" /> 如果当前<see cref="T:System.Type" />是公共类型或公共嵌套类型从而使所有封闭类型都公共; 否则为<see langword="false" />。</value>
+        <value>如果当前 <see langword="true" /> 是公共类型或公共嵌套类型从而使所有封闭类型都是公共类型，则为 <see cref="T:System.Type" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -13112,7 +13112,7 @@ GetType(Array).IsAssignableFrom(type)
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IndexOutOfRangeException"><paramref name="rank" /> 之间的时间间隔无效。 例如，0 或负数。</exception>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="rank" /> 无效。 例如，0 或负数。</exception>
         <exception cref="T:System.NotSupportedException">基类不支持调用的方法。</exception>
         <exception cref="T:System.TypeLoadException">当前的类型是 <see cref="T:System.TypedReference" />。  
   
@@ -13386,7 +13386,7 @@ GetType(Array).IsAssignableFrom(type)
 <paramref name="typeArguments" /> 的所有元素都不满足为当前泛型类型的相应类型参数指定的约束。  
   
 - 或 - 
- <paramref name="typeArguments" /> 包含一个元素，该元素是指针类型（<see cref="P:System.Type.IsPointer" /> 返回 <see langword="true" />）、by-ref 类型（<see cref="P:System.Type.IsByRef" /> 返回 <see langword="true" />）或 <see cref="T:System.Void" />。</exception>
+ <paramref name="typeArguments" /> 包含一个元素，该元素是一个指针类型（<see cref="P:System.Type.IsPointer" /> 返回 <see langword="true" />）、by-ref 类型（<see cref="P:System.Type.IsByRef" /> 返回 <see langword="true" />）或 <see cref="T:System.Void" />。</exception>
         <exception cref="T:System.NotSupportedException">基类不支持调用的方法。 派生类必须提供一个实现。</exception>
         <altmember cref="P:System.Type.IsGenericTypeDefinition" />
         <altmember cref="M:System.Type.GetGenericTypeDefinition" />
@@ -13767,7 +13767,7 @@ GetType(Array).IsAssignableFrom(type)
         <param name="left">要比较的第一个对象。</param>
         <param name="right">要比较的第二个对象。</param>
         <summary>指示两个 <see cref="T:System.Type" /> 对象是否相等。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="left" /> 等于 <paramref name="right" />）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 等于 <paramref name="left" />，则为 <paramref name="right" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -13810,7 +13810,7 @@ GetType(Array).IsAssignableFrom(type)
         <param name="left">要比较的第一个对象。</param>
         <param name="right">要比较的第二个对象。</param>
         <summary>指示两个 <see cref="T:System.Type" /> 对象是否不相等。</summary>
-        <returns><see langword="true" /> （如果 <paramref name="left" /> 不等于 <paramref name="right" />）；否则为 <see langword="false" />。</returns>
+        <returns>如果 <see langword="true" /> 不等于 <paramref name="left" />，则为 <paramref name="right" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -13903,8 +13903,8 @@ GetType(Array).IsAssignableFrom(type)
       </Parameters>
       <Docs>
         <param name="typeName">要获取的 <see cref="T:System.Type" /> 的程序集限定名称。</param>
-        <param name="throwIfNotFound"><see langword="true" /> 则会在找不到该类型时引发 <see cref="T:System.TypeLoadException" />；如果为 <see langword="false" />，则在找不到该类型时返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
-        <param name="ignoreCase"><see langword="true" /> （对 <paramref name="typeName" /> 执行的搜索不区分大小写）；对 <paramref name="typeName" /> 执行的搜索区分大小写，则为 <see langword="false" />。</param>
+        <param name="throwIfNotFound">如果为 <see langword="true" />，则会在找不到该类型时引发 <see cref="T:System.TypeLoadException" />；如果为 <see langword="false" />，则在找不到该类型时返回 <see langword="null" />。 指定 <see langword="false" /> 还会取消某些其他异常条件，但并不取消所有条件。 请参见“异常”部分。</param>
+        <param name="ignoreCase">如果为 <see langword="true" />，则执行不区分大小写的 <paramref name="typeName" /> 搜索；如果为 <see langword="false" />，则执行区分大小写的 <paramref name="typeName" /> 搜索。</param>
         <summary>获取具有指定名称的 <see cref="T:System.Type" />，指定是否执行区分大小写的搜索，以及在找不到类型时是否引发异常。 该类型只为反射加载，而不为执行加载。</summary>
         <returns>具有指定名称的类型（如果找到的话）；否则为 <see langword="null" />。 如果找不到该类型，则 <paramref name="throwIfNotFound" /> 参数指定是返回 <see langword="null" /> 还是引发异常。 在某些情况下，将引发异常，而不考虑 <paramref name="throwIfNotFound" /> 的值。 请参见“异常”部分。</returns>
         <remarks>
@@ -13926,19 +13926,19 @@ GetType(Array).IsAssignableFrom(type)
         <exception cref="T:System.TypeLoadException"><paramref name="throwIfNotFound" /> 是 <see langword="true" />，且找不到该类型。  
   
 - 或 - 
- <paramref name="throwIfNotFound" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 包含嵌入的选项卡等无效字符。 
+ <paramref name="throwIfNotFound" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 包含无效字符，例如嵌入的制表符。 
 - 或 - 
- <paramref name="throwIfNotFound" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 为空字符串。  
+ <paramref name="throwIfNotFound" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 为空字符串。  
   
 - 或 - 
- <paramref name="throwIfNotFound" /> 为 <see langword="true" /> 且 <paramref name="typeName" /> 表示大小无效的数组类型。  
+ <paramref name="throwIfNotFound" /> 的值为 <see langword="true" />，且 <paramref name="typeName" /> 表示大小无效的数组类型。  
   
 - 或 - 
- <paramref name="typeName" /> 表示 <see cref="T:System.TypedReference" /> 对象的数组。</exception>
+ <paramref name="typeName" /> 表示 <see cref="T:System.TypedReference" /> 对象数组。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="typeName" /> 不包括程序集名称。  
   
 - 或 - 
- <paramref name="throwIfNotFound" /> 是 <see langword="true" /> 且 <paramref name="typeName" /> 包含无效的语法（例如 "MyType[,*,]"）。  
+ <paramref name="throwIfNotFound" /> 为 <see langword="true" />，且 <paramref name="typeName" /> 包含无效的语法（例如 "MyType[,*,]"）。  
   
 - 或 - 
  <paramref name="typeName" /> 表示将指针类型、<see langword="ByRef" /> 类型或 <see cref="T:System.Void" /> 作为其类型参数之一的泛型类型。  
@@ -13948,7 +13948,7 @@ GetType(Array).IsAssignableFrom(type)
   
 - 或 - 
  <paramref name="typeName" /> 表示泛型类型，并且其类型参数之一不满足相应类型参数的约束。</exception>
-        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwIfNotFound" /> 为 <see langword="true" /> 且未找到程序集或程序集的某个依赖项。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="throwIfNotFound" /> 的值为 <see langword="true" />，且未找到程序集或程序集的某个依赖项。</exception>
         <exception cref="T:System.IO.FileLoadException">找到了程序集或其依赖项之一，但无法加载它们。</exception>
         <exception cref="T:System.BadImageFormatException">程序集或其依赖项之一无效。  
   

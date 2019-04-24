@@ -1,5 +1,5 @@
 <Type Name="GC" FullName="System.GC">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="be23d111dc399e846c969bd517a2458710d1f961" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58719941" /></Metadata><TypeSignature Language="C#" Value="public static class GC" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3235407965db44270835119fed0cc7298c9157af" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/17/2019" /><Meta Name="ms.locfileid" Value="59676671" /></Metadata><TypeSignature Language="C#" Value="public static class GC" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit GC extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.GC" />
   <TypeSignature Language="VB.NET" Value="Public Class GC" />
@@ -60,7 +60,7 @@
   
  除了托管的内存分配，垃圾回收器的实现不维护有关资源持有的对象，如文件句柄或数据库连接的信息。 当类型使用该类型的实例将被回收之前，必须释放的非托管的资源时，该类型可以实现终结器。  
   
- 在大多数情况下，终结器实现通过重写<xref:System.Object.Finalize%2A?displayProperty=nameWithType>方法; 但是，C# 或 c + + 编写的类型实现的编译器将转换为的重写的析构函数<xref:System.Object.Finalize%2A?displayProperty=nameWithType>。 在大多数情况下，如果对象具有一个终结器，垃圾回收器会调用它之前释放对象。 但是，垃圾回收器不需要在所有情况下; 调用终结器例如，<xref:System.GC.SuppressFinalize%2A>方法显式会被调用对象的终结器。 此外，垃圾回收器不需要使用特定的线程来完成对象，或保证的相互引用，但适用于垃圾回收的对象调用终结器的顺序。  
+ 在大多数情况下，终结器实现通过重写<xref:System.Object.Finalize%2A?displayProperty=nameWithType>方法; 但是，在编写的类型C#或C++实现析构函数，哪些编译器将转换为的重写<xref:System.Object.Finalize%2A?displayProperty=nameWithType>。 在大多数情况下，如果对象具有一个终结器，垃圾回收器会调用它之前释放对象。 但是，垃圾回收器不需要在所有情况下; 调用终结器例如，<xref:System.GC.SuppressFinalize%2A>方法显式会被调用对象的终结器。 此外，垃圾回收器不需要使用特定的线程来完成对象，或保证的相互引用，但适用于垃圾回收的对象调用终结器的顺序。  
   
  在其中必须在特定时间释放资源的情况下，类可以实现<xref:System.IDisposable>接口，其中包含<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>执行资源管理和清理任务的方法。 类实现<xref:System.IDisposable.Dispose%2A>必须指定，作为它们的类协定中，如果类使用者调用方法来清理对象。 垃圾回收器不会默认情况下，调用<xref:System.IDisposable.Dispose%2A>方法; 但是，实现<xref:System.IDisposable.Dispose%2A>方法调用中方法<xref:System.GC>类自定义的垃圾回收器终止行为。  
   
@@ -977,7 +977,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 用途<xref:System.GC.KeepAlive%2A>方法是确保对面临风险的过早地被垃圾回收器回收对象的引用是否存在。 常见的方案可能会发生这种情况是在托管的代码或数据，在存在对该对象不引用，但仍在使用该对象处于非托管代码如 Win32 Api，非托管 Dll，或使用 COM 的方法  
+ 用途<xref:System.GC.KeepAlive%2A>方法是确保对面临风险的过早地被垃圾回收器回收对象的引用是否存在。 常见的方案可能会发生这种情况是在中的托管的代码或数据，存在对该对象不引用，但仍在使用该对象处于非托管代码如 Windows Api，非托管 Dll，或使用 COM 的方法  
   
  此方法引用`obj`参数，从而使该对象进行垃圾回收不符合条件从例程开始到点，按执行顺序，调用此方法。 在结束时，不，范围的起始处的说明此方法的代码位置`obj`必须可用。  
   

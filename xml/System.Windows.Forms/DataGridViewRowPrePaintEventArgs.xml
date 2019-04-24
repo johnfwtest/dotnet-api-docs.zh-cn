@@ -1,5 +1,5 @@
 <Type Name="DataGridViewRowPrePaintEventArgs" FullName="System.Windows.Forms.DataGridViewRowPrePaintEventArgs">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="59ba6079b5217706675a9061a7cf42bfd3833d83" /><Meta Name="ms.sourcegitcommit" Value="6089a30c0522e6f43256523e82e94b2ccedfb55b" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/04/2019" /><Meta Name="ms.locfileid" Value="59017169" /></Metadata><TypeSignature Language="C#" Value="public class DataGridViewRowPrePaintEventArgs : System.ComponentModel.HandledEventArgs" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="59ba6079b5217706675a9061a7cf42bfd3833d83" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="59017169" /></Metadata><TypeSignature Language="C#" Value="public class DataGridViewRowPrePaintEventArgs : System.ComponentModel.HandledEventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowPrePaintEventArgs extends System.ComponentModel.HandledEventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowPrePaintEventArgs" />
   <TypeSignature Language="VB.NET" Value="Public Class DataGridViewRowPrePaintEventArgs&#xA;Inherits HandledEventArgs" />
@@ -69,8 +69,8 @@
         <param name="rowState">用于指定行的状态的 <see cref="T:System.Windows.Forms.DataGridViewElementStates" /> 值的按位组合。</param>
         <param name="errorText">与行关联的错误消息。</param>
         <param name="inheritedRowStyle">一个包含有关行的格式设置和样式信息的 <see cref="T:System.Windows.Forms.DataGridViewCellStyle" />。</param>
-        <param name="isFirstDisplayedRow"><see langword="true" /> （如果指示当前行是否是 <see cref="T:System.Windows.Forms.DataGridView" /> 中当前显示的第一行）；否则为 <see langword="false" />。</param>
-        <param name="isLastVisibleRow"><see langword="true" /> （如果指示当前行是否是已将 <see cref="P:System.Windows.Forms.DataGridViewRow.Visible" /> 属性设置为 <see langword="true" /> 的 <see cref="T:System.Windows.Forms.DataGridView" /> 中的最后一行）；否则为 <see langword="false" />。</param>
+        <param name="isFirstDisplayedRow">若要指示当前行是 <see cref="T:System.Windows.Forms.DataGridView" /> 中当前显示的第一行，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="isLastVisibleRow">若要指示当前行是 <see cref="T:System.Windows.Forms.DataGridView" />（已将 <see cref="P:System.Windows.Forms.DataGridViewRow.Visible" /> 属性设置为 <see langword="true" />）中的最后一行，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>初始化 <see cref="T:System.Windows.Forms.DataGridViewRowPrePaintEventArgs" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="dataGridView" /> 为 <see langword="null" />。  
@@ -159,7 +159,7 @@
       </Parameters>
       <Docs>
         <param name="bounds">一个指定聚焦区域的 <see cref="T:System.Drawing.Rectangle" />。</param>
-        <param name="cellsPaintSelectionBackground"><see langword="true" /> （如果使用 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 属性的 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" /> 属性确定聚焦框的颜色）；如果使用 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 的 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" /> 属性，则为 <see langword="false" />。</param>
+        <param name="cellsPaintSelectionBackground">若为 <see langword="true" />，则使用 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" /> 属性的 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 属性确定聚焦框的颜色；若为 <see langword="false" />，则使用 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" /> 的 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 属性。</param>
         <summary>围绕指定的边界绘制聚焦框。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -177,7 +177,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPrePaintEventArgs.RowIndex" /> 小于 0 或大于 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPrePaintEventArgs.RowIndex" /> 小于零或大于将 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减一得到的值。</exception>
         <altmember cref="T:System.Windows.Forms.DataGridView" />
         <altmember cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" />
         <altmember cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" />
@@ -350,7 +350,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个指示当前行是否为 <see cref="T:System.Windows.Forms.DataGridView" /> 中当前显示的第一行的值。</summary>
-        <value><see langword="true" /> 如果所绘制的行当前是在显示的第一行<see cref="T:System.Windows.Forms.DataGridView" />; 否则为<see langword="false" />。</value>
+        <value>如果所绘制的行是 <see cref="T:System.Windows.Forms.DataGridView" /> 中当前显示的第一行，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -390,7 +390,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个指示当前行是否为 <see cref="T:System.Windows.Forms.DataGridView" /> 中最后一个可见行的值。</summary>
-        <value><see langword="true" /> 如果所绘制的行当前是中的最后一行<see cref="T:System.Windows.Forms.DataGridView" />，其<see cref="P:System.Windows.Forms.DataGridViewRow.Visible" />属性设置为<see langword="true" />; 否则为<see langword="false" />。</value>
+        <value>如果所绘制的行当前是 <see cref="T:System.Windows.Forms.DataGridView" />（已将 <see cref="P:System.Windows.Forms.DataGridViewRow.Visible" /> 属性设置为 <see langword="true" />）中的最后一行，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -432,7 +432,7 @@
         <param name="paintParts">用于指定要绘制的部分的 <see cref="T:System.Windows.Forms.DataGridViewPaintParts" /> 值的按位组合。</param>
         <summary>为指定边界中的区域绘制指定的单元格部分。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于 0 或大于 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于零或大于将 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减一得到的值。</exception>
         <altmember cref="T:System.Windows.Forms.DataGridView" />
       </Docs>
     </Member>
@@ -458,7 +458,7 @@
       </Parameters>
       <Docs>
         <param name="clipBounds">一个指定要绘制的 <see cref="T:System.Drawing.Rectangle" /> 区域的 <see cref="T:System.Windows.Forms.DataGridView" />。</param>
-        <param name="cellsPaintSelectionBackground"><see langword="true" /> （如果使用 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 的 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" /> 属性的颜色绘制指定边界的背景）；如果使用 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 的 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" /> 属性的颜色绘制指定边界的背景，则为 <see langword="false" />。</param>
+        <param name="cellsPaintSelectionBackground"><see langword="true" /> 用于使用 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" /> 的 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 属性的颜色绘制指定边界的背景；<see langword="false" /> 用于使用 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" /> 的 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 属性的颜色绘制指定边界的背景。</param>
         <summary>为指定边界中的区域绘制单元格背景。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -468,7 +468,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于 0 或大于 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于零或大于将 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减一得到的值。</exception>
         <altmember cref="T:System.Windows.Forms.DataGridView" />
         <altmember cref="T:System.Windows.Forms.DataGridViewRow" />
         <altmember cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" />
@@ -499,7 +499,7 @@
         <param name="clipBounds">一个指定要绘制的 <see cref="T:System.Drawing.Rectangle" /> 区域的 <see cref="T:System.Windows.Forms.DataGridView" />。</param>
         <summary>为指定边界中的区域绘制单元格内容。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于 0 或大于 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于零或大于将 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减一得到的值。</exception>
         <altmember cref="T:System.Windows.Forms.DataGridView" />
       </Docs>
     </Member>
@@ -532,7 +532,7 @@
         <Parameter Name="paintSelectionBackground" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="paintSelectionBackground"><see langword="true" /> （如果使用 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 的 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" /> 属性的颜色绘制行标头）；如果使用 <see cref="P:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle" /> 属性的 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" /> 的颜色绘制行标头，则为 <see langword="false" />。</param>
+        <param name="paintSelectionBackground">若为 <see langword="true" />，则使用 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" /> 的 <see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" /> 属性的颜色绘制行标头；若为 <see langword="false" />，则使用 <see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" /> 的 <see cref="P:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle" /> 属性的颜色绘制行标头。</param>
         <summary>绘制当前 <see cref="T:System.Windows.Forms.DataGridViewRow" /> 的整个行标头。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -542,7 +542,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于 0 或大于 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于零或大于将 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减一得到的值。</exception>
         <altmember cref="T:System.Windows.Forms.DataGridView" />
         <altmember cref="T:System.Windows.Forms.DataGridViewRow" />
         <altmember cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" />
@@ -572,7 +572,7 @@
         <param name="paintParts">用于指定要绘制的部分的 <see cref="T:System.Windows.Forms.DataGridViewPaintParts" /> 值的按位组合。</param>
         <summary>绘制当前行的行标头的指定部分。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于 0 或大于 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减 1。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" /> 小于零或大于将 <see cref="T:System.Windows.Forms.DataGridView" /> 控件中的行数减一得到的值。</exception>
         <altmember cref="T:System.Windows.Forms.DataGridView" />
       </Docs>
     </Member>
