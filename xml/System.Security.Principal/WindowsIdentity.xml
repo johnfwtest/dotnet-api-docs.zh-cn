@@ -1,5 +1,5 @@
 <Type Name="WindowsIdentity" FullName="System.Security.Principal.WindowsIdentity">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="17b8b26738016fa92d704187ea261846143e3b08" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57955902" /></Metadata><TypeSignature Language="C#" Value="public class WindowsIdentity : System.Security.Claims.ClaimsIdentity, IDisposable, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c26672d01e1299bb7555943d63dc4bf899a1ea86" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/17/2019" /><Meta Name="ms.locfileid" Value="59676632" /></Metadata><TypeSignature Language="C#" Value="public class WindowsIdentity : System.Security.Claims.ClaimsIdentity, IDisposable, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WindowsIdentity extends System.Security.Claims.ClaimsIdentity implements class System.IDisposable, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable, class System.Security.Principal.IIdentity" />
   <TypeSignature Language="DocId" Value="T:System.Security.Principal.WindowsIdentity" />
   <TypeSignature Language="VB.NET" Value="Public Class WindowsIdentity&#xA;Inherits ClaimsIdentity&#xA;Implements IDeserializationCallback, IDisposable, ISerializable" />
@@ -116,14 +116,14 @@
 ## Remarks  
  下表显示的实例的初始属性值<xref:System.Security.Principal.WindowsIdentity>。  
   
-|属性|初始值|  
+|Property|初始值|  
 |--------------|-------------------|  
 |<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>|`Negotiate`|  
 |<xref:System.Security.Principal.WindowsAccountType>|`Normal`|  
 |<xref:System.Security.Principal.WindowsIdentity.IsAuthenticated%2A>|`false`|  
   
 > [!NOTE]
->  可以检索所表示的令牌`userToken`通过调用非托管的代码如 Win32 API`LogonUser`函数。 请务必发布`userToken`通过调用 Win32 API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
+>  可以检索所表示的令牌`userToken`通过调用非托管的代码如 Windows API`LogonUser`函数。 请务必发布`userToken`通过调用 Windows API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
   
  ]]></format>
         </remarks>
@@ -205,7 +205,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- UPN 采用格式*用户名*@*domainname*.com，换而言之，电子邮件地址。 在中标识的 UPN`sUserPrincipalName`用于检索该用户通过 Win32 API 的令牌`LsaLogonUser`函数。 反过来，该令牌用于标识用户。 可能会因为无法使用所提供的 UPN 登录返回异常。  
+ UPN 采用格式*用户名*@*domainname*.com，换而言之，电子邮件地址。 在中标识的 UPN`sUserPrincipalName`用于检索该用户通过 Windows API 的令牌`LsaLogonUser`函数。 反过来，该令牌用于标识用户。 可能会因为无法使用所提供的 UPN 登录返回异常。  
   
 > [!NOTE]
 >  此构造函数用于仅在已加入到 Windows Server 2003 或更高版本的域的计算机上。 对于早期的域类型引发异常。 此限制是因为，此构造函数使用[KERB_S4U_LOGON 结构](https://go.microsoft.com/fwlink/?LinkId=143533)，最初在 Windows Server 2003 中引入。  
@@ -267,7 +267,7 @@
 ## Remarks  
  下表显示的实例的初始属性值<xref:System.Security.Principal.WindowsIdentity>。  
   
-|属性|初始值|  
+|Property|初始值|  
 |--------------|-------------------|  
 |<xref:System.Security.Principal.WindowsAccountType>|`Normal`|  
 |<xref:System.Security.Principal.WindowsIdentity.IsAuthenticated%2A>|`false`|  
@@ -275,7 +275,7 @@
  值`type`参数用于设置<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>参数。 如果`type`是`null`，安全系统组<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>到`Negotiate`Windows Vista 和更高版本的 Windows 操作系统和到上`Kerberos`早期版本的 Windows 操作系统上。 安全系统不使用此值;它是仅用于提供信息。  
   
 > [!NOTE]
->  可以检索所表示的令牌`userToken`通过调用非托管的代码如 Win32 API`LogonUser`函数。 请务必发布`userToken`通过调用 Win32 API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
+>  可以检索所表示的令牌`userToken`通过调用非托管的代码如 Windows API`LogonUser`函数。 请务必发布`userToken`通过调用 Windows API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
   
    
   
@@ -386,7 +386,7 @@
 ## Remarks  
  值`type`参数用于设置<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>参数。 如果`type`是`null`，安全系统组<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>到`Negotiate`Windows Vista 和更高版本的 Windows 操作系统和到上`Kerberos`早期版本的 Windows 操作系统上。 安全系统不使用此值;它是仅用于提供信息。  
   
- 在中标识的 UPN`sUserPrincipalName`用于检索该用户通过 Win32 API 的令牌`LsaLogonUser`函数。 反过来，该令牌用于标识用户。 可能会因为无法使用所提供的 UPN 登录返回异常。  
+ 在中标识的 UPN`sUserPrincipalName`用于检索该用户通过 Windows API 的令牌`LsaLogonUser`函数。 反过来，该令牌用于标识用户。 可能会因为无法使用所提供的 UPN 登录返回异常。  
   
 > [!NOTE]
 >  此构造函数用于仅在已加入到 Windows Server 2003 或更高版本的域的计算机上。 对于早期的域类型引发异常。 此限制是因为，此构造函数使用[KERB_S4U_LOGON 结构](https://go.microsoft.com/fwlink/?LinkId=143533)，最初在 Windows Server 2003 中引入。  
@@ -448,14 +448,14 @@
 ## Remarks  
  下表显示的实例的初始属性值<xref:System.Security.Principal.WindowsIdentity>。  
   
-|属性|初始值|  
+|Property|初始值|  
 |--------------|-------------------|  
 |<xref:System.Security.Principal.WindowsIdentity.IsAuthenticated%2A>|`false`|  
   
  值`type`参数用于设置<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>参数。 如果`type`是`null`，安全系统组<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>到`Negotiate`Windows Vista 和更高版本的 Windows 操作系统和到上`Kerberos`早期版本的 Windows 操作系统上。 安全系统不使用此值;它是仅用于提供信息。  
   
 > [!NOTE]
->  可以检索所表示的令牌`userToken`通过调用非托管的代码如 Win32 API`LogonUser`函数。 请务必发布`userToken`通过调用 Win32 API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
+>  可以检索所表示的令牌`userToken`通过调用非托管的代码如 Windows API`LogonUser`函数。 请务必发布`userToken`通过调用 Windows API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
   
    
   
@@ -521,7 +521,7 @@
 ## Remarks  
  值`type`参数用于设置<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>参数。 如果`type`是`null`，安全系统组<xref:System.Security.Principal.WindowsIdentity.AuthenticationType%2A>到`Negotiate`Windows Vista 和更高版本的 Windows 操作系统和到上`Kerberos`早期版本的 Windows 操作系统上。 安全系统不使用此值;它是仅用于提供信息。  
   
- 可以检索所表示的令牌`userToken`通过调用非托管的代码如 Win32 API`LogonUser`函数。 请务必发布`userToken`通过调用 Win32 API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
+ 可以检索所表示的令牌`userToken`通过调用非托管的代码如 Windows API`LogonUser`函数。 请务必发布`userToken`通过调用 Windows API`CloseHandle`函数。 调用非托管的代码的详细信息，请参阅[使用非托管 DLL 函数](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)。  
   
    
   
@@ -1245,7 +1245,7 @@
         <Parameter Name="userToken" Type="System.IntPtr" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="userToken">Windows 帐户标记的句柄。 通常，通过调用非托管代码（如调用 Win32 API <see langword="LogonUser" /> 函数）来检索此标记。</param>
+        <param name="userToken">Windows 帐户标记的句柄。 通常，通过调用非托管代码（如调用 Windows API <see langword="LogonUser" /> 函数）来检索此令牌。</param>
         <summary>模拟指定用户标记表示的用户。</summary>
         <returns>表示模拟之前 Windows 用户的对象，该对象可以用于恢复为原始用户的上下文。</returns>
         <remarks>
