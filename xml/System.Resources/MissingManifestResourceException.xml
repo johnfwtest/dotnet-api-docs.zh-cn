@@ -1,5 +1,5 @@
 <Type Name="MissingManifestResourceException" FullName="System.Resources.MissingManifestResourceException">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="63e31ce8d6b9bdb6b04ee7f8385509e1e97d1b3d" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58693653" /></Metadata><TypeSignature Language="C#" Value="public class MissingManifestResourceException : SystemException" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3817675c390e5ff08a8070a6aac53ea73cfb4316" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558297" /></Metadata><TypeSignature Language="C#" Value="public class MissingManifestResourceException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MissingManifestResourceException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.Resources.MissingManifestResourceException" />
   <TypeSignature Language="VB.NET" Value="Public Class MissingManifestResourceException&#xA;Inherits SystemException" />
@@ -43,14 +43,15 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>主程序集不包含非特定区域性的资源和适当的附属程序集缺少时引发的异常。</summary>
+    <summary>如果主程序集不包含非特定区域性的资源，并且缺少适当的附属程序集引发的异常。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
   
-## <a name="desktop-apps"></a>桌面应用程序  
- 在桌面应用中，<xref:System.Resources.MissingManifestResourceException>检索资源的尝试会失败，因为无法从特定程序集加载的资源集的非特定区域性时引发。 尽管当您尝试检索特定资源时引发异常，但它被因未能加载资源集而不是故障以查找的资源。  
+## <a name="net-apps"></a>.NET 应用程序  
+
+在.NET Framework 和.NET Core 应用中，<xref:System.Resources.MissingManifestResourceException>检索资源的尝试会失败，因为无法从特定程序集加载的资源集的非特定区域性时引发。 尽管当您尝试检索特定资源时引发异常，但它被因未能加载资源集而不是故障以查找的资源。  
   
 > [!NOTE]
 >  有关其他信息，请参阅中的"处理 MissingManifestResourceException 异常"部分<xref:System.Resources.ResourceManager>类主题。  
@@ -77,12 +78,13 @@
 > [!NOTE]
 >  我们建议包括一组非特定资源在主程序集中，因此如果附属程序集是不可用，您的应用程序不会失败。  
   
-## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] 应用程序  
- 与桌面应用程序，该部署中附属程序集的本地化的资源并通常将非特定区域性的资源存储在主程序集中，不同[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]应用部署多个区域性，在单个包括非特定区域性的资源包资源索引 (.pri) 文件。 因此，在[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]应用程序中，如果找不到首选区域性的资源，<xref:System.Resources.MissingManifestResourceException>引发在以下条件之一：  
+## <a name="universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 应用程序 
+
+UWP 应用中部署多个区域性，在单个包资源索引 (.pri) 文件中包括非特定区域性的资源。 因此，在 UWP 应用中，如果找不到首选区域性的资源，<xref:System.Resources.MissingManifestResourceException>引发在以下条件之一：  
   
--   应用程序不包括.pri 文件或无法打开.pri 文件。  
+- 应用程序不包括的.pri 文件，或无法打开.pri 文件。  
   
--   应用的.pri 文件不包含设置为给定的根名称的资源。  
+- 应用的.pri 文件不包含设置为给定的根名称的资源。  
   
  ]]></format>
     </remarks>

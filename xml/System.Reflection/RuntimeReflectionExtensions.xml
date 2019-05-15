@@ -1,5 +1,5 @@
 <Type Name="RuntimeReflectionExtensions" FullName="System.Reflection.RuntimeReflectionExtensions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="ffaf7f58536fe0c7bde06471ea1cc141b8ced496" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58699813" /></Metadata><TypeSignature Language="C#" Value="public static class RuntimeReflectionExtensions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="5ec8d53d6e1cfcc108425d84e1f029104658202c" /><Meta Name="ms.sourcegitcommit" Value="0b4deef443af9fe6334aa34b8a17190223bf0486" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/14/2019" /><Meta Name="ms.locfileid" Value="65609440" /></Metadata><TypeSignature Language="C#" Value="public static class RuntimeReflectionExtensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit RuntimeReflectionExtensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.RuntimeReflectionExtensions" />
   <TypeSignature Language="VB.NET" Value="Public Module RuntimeReflectionExtensions" />
@@ -29,7 +29,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>提供检索有关运行时类型的信息的方法。</summary>
+    <summary>提供可在运行时检索类型相关信息的方法。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -68,8 +68,8 @@
       </Parameters>
       <Docs>
         <param name="del">要检查的委托。</param>
-        <summary>获取指示指定委托表示的方法的对象。</summary>
-        <returns>表示该方法的对象。</returns>
+        <summary>获取一个对象，表示指定的委托所表示的方法。</summary>
+        <returns>一个对象，表示的方法。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="del" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.MemberAccessException">调用方不能访问由委托表示的方法（例如，在方法为私有方法的情况下）。</exception>
@@ -110,9 +110,9 @@
         <Parameter Name="method" Type="System.Reflection.MethodInfo" RefType="this" />
       </Parameters>
       <Docs>
-        <param name="method">关于检索信息的方法。</param>
-        <summary>检索表示在此方法最先声明的直接或间接类上的指定方法的对象。</summary>
-        <returns>表示在基类中指定的方法的初始声明的对象。</returns>
+        <param name="method">要检索其信息的方法。</param>
+        <summary>检索表示直接或间接基类方法最先声明上的指定的方法的对象。</summary>
+        <returns>表示在基类上的指定的方法的初始声明的对象。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="method" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.Reflection.MethodInfo.GetBaseDefinition" />
@@ -152,14 +152,14 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="type">包含该事件的类型。</param>
+        <param name="type">包含事件的类型。</param>
         <param name="name">事件的名称。</param>
-        <summary>检索一个表示指定事件的对象。</summary>
-        <returns>表示指定事件的对象，若未找到该事件则为 <see langword="null" />。</returns>
+        <summary>检索表示指定的事件的对象。</summary>
+        <returns>一个对象，表示指定的事件，或<see langword="null" />如果找不到该事件。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。
 
-- 或 -
+或
 
 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.Type.GetEvent(System.String)" />
@@ -198,9 +198,9 @@
         <Parameter Name="type" Type="System.Type" RefType="this" />
       </Parameters>
       <Docs>
-        <param name="type">包含该事件的类型。</param>
-        <summary>检索表示指定类型定义的所有事件的集合。</summary>
-        <returns>指定类型的事件集合。</returns>
+        <param name="type">包含的事件类型。</param>
+        <summary>检索表示指定类型上定义的所有事件的集合。</summary>
+        <returns>指定类型的事件的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -249,12 +249,12 @@
       <Docs>
         <param name="type">包含字段的类型。</param>
         <param name="name">字段的名称。</param>
-        <summary>检索表示指定字段的对象。</summary>
-        <returns>表示指定字段的对象，若未找到该字段则为 <see langword="null" />。</returns>
+        <summary>检索表示指定的字段的对象。</summary>
+        <returns>一个对象，表示指定的字段或<see langword="null" />找不到字段。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。
 
-- 或 -
+或
 
 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.Type.GetField(System.String)" />
@@ -294,8 +294,8 @@
       </Parameters>
       <Docs>
         <param name="type">包含字段的类型。</param>
-        <summary>检索表示指定类型定义的所有字段的集合。</summary>
-        <returns>指定类型的字段集合。</returns>
+        <summary>检索表示指定类型上定义的所有字段的集合。</summary>
+        <returns>指定类型的字段的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -344,31 +344,31 @@
       <Docs>
         <param name="typeInfo">要检索其映射的类型。</param>
         <param name="interfaceType">要检索其映射的接口。</param>
-        <summary>返回指定类型和指定接口的接口映射。</summary>
-        <returns>表示指定接口和类型的接口映射的对象。</returns>
+        <summary>返回指定的类型和指定的接口的接口映射。</summary>
+        <returns>一个对象，表示指定的接口和类型的接口映射。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="typeInfo" /> 为 <see langword="null" />。
         
-- 或 -
+或
 
 <paramref name="interfaceType" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="typeInfo" /> 未实现 <paramref name="interfaceType" />。
 
-- 或 -
+或
 
 <paramref name="interfaceType" /> 不引用接口。
 
-- 或 -
+或
 
 <paramref name="typeInfo" /> 或 <paramref name="interfaceType" /> 为开放式泛型类型。
 
-- 或 -
+或
 
 <paramref name="interfaceType" /> 是一个泛型接口，而 <paramref name="typeInfo" /> 是一个数组类型。</exception>
         <exception cref="T:System.InvalidOperationException"><paramref name="typeInfo" /> 表示泛型类型参数。</exception>
         <exception cref="T:System.NotSupportedException"><paramref name="typeInfo" /> 是尚未调用其 <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> 方法的 <see cref="T:System.Reflection.Emit.TypeBuilder" /> 接口。
 
-- 或 -
+或
 
 基类不支持调用的方法。 派生类必须提供一个实现。</exception>
         <altmember cref="M:System.Type.GetInterfaceMap(System.Type)" />
@@ -412,12 +412,12 @@
         <param name="type">包含方法的类型。</param>
         <param name="name">方法的名称。</param>
         <param name="parameters">包含方法的参数的数组。</param>
-        <summary>检索表示指定方法的对象。</summary>
-        <returns>表示指定方法的对象，若未找到该方法则为 <see langword="null" />。</returns>
+        <summary>检索表示指定的方法的对象。</summary>
+        <returns>一个对象，表示指定的方法，或<see langword="null" />如果找不到该方法。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。
 
-- 或 -
+或
 
 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.AmbiguousMatchException">找到了多个具有指定名称的方法。</exception>
@@ -458,8 +458,8 @@
       </Parameters>
       <Docs>
         <param name="type">包含方法的类型。</param>
-        <summary>检索表示指定类型定义的所有方法的集合。</summary>
-        <returns>指定类型的方法集合。</returns>
+        <summary>检索表示指定类型上定义的所有方法的集合。</summary>
+        <returns>指定类型的方法的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -506,8 +506,8 @@
       </Parameters>
       <Docs>
         <param name="type">包含属性的类型。</param>
-        <summary>检索表示指定类型定义的所有属性的集合。</summary>
-        <returns>指定类型的属性集合。</returns>
+        <summary>检索表示指定类型上定义的所有属性的集合。</summary>
+        <returns>指定类型的属性的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -517,7 +517,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。</exception>
-        <altmember cref="M:System.Type.GetProperties(System.Reflection.BindingFlags" />
+        <altmember cref="M:System.Type.GetProperties(System.Reflection.BindingFlags)" />
       </Docs>
     </Member>
     <Member MemberName="GetRuntimeProperty">
@@ -554,14 +554,14 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="type">包含该属性的类型。</param>
+        <param name="type">包含属性的类型。</param>
         <param name="name">属性的名称。</param>
-        <summary>检索表示指定属性的对象。</summary>
-        <returns>表示指定属性的对象，若未找到该属性则为 <see langword="null" />。</returns>
+        <summary>检索表示指定的属性的对象。</summary>
+        <returns>一个对象，表示指定的属性，或<see langword="null" />如果找不到该属性。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。
 
-- 或 -
+或
 
 <paramref name="name" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="type" /> 不是 <see langword="RuntimeType" />。</exception>

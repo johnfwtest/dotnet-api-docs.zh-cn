@@ -1,5 +1,5 @@
 <Type Name="TypeDescriptionProvider" FullName="System.ComponentModel.TypeDescriptionProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b88ec9c085b8e59f0db7b40277a6be8ed9929825" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58717050" /></Metadata><TypeSignature Language="C#" Value="public abstract class TypeDescriptionProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ca1aa60f7485f80f21130a2d69cd85c00fd950b0" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558624" /></Metadata><TypeSignature Language="C#" Value="public abstract class TypeDescriptionProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TypeDescriptionProvider extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.TypeDescriptionProvider" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class TypeDescriptionProvider" />
@@ -27,7 +27,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>向 <see cref="T:System.ComponentModel.TypeDescriptor" /> 提供补充元数据。</summary>
+    <summary>提供补充元数据到<see cref="T:System.ComponentModel.TypeDescriptor" />。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -42,9 +42,7 @@
   
  <xref:System.ComponentModel.TypeDescriptionProvider>类依赖于在构造期间提供的相同类型的父对象。 这允许派生的类<xref:System.ComponentModel.CustomTypeDescriptor>有选择地重写方法。  
   
- 实例<xref:System.ComponentModel.TypeDescriptionProvider>仅基于需求的自定义类型信息对性能影响降至最低。  
-  
- 此类不能被继承。  
+ 实例<xref:System.ComponentModel.TypeDescriptionProvider>仅基于需求的自定义类型信息对性能影响降至最低。
   
  ]]></format>
     </remarks>
@@ -142,7 +140,7 @@
       </Parameters>
       <Docs>
         <param name="parent">父类型说明提供程序。</param>
-        <summary>使用父类型说明提供程序初始化 <see cref="T:System.ComponentModel.TypeDescriptionProvider" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.ComponentModel.TypeDescriptionProvider" />类使用的父类型说明提供程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -199,12 +197,12 @@
         <Parameter Name="args" Type="System.Object[]" />
       </Parameters>
       <Docs>
-        <param name="provider">可选的服务提供程序。</param>
-        <param name="objectType">要创建的对象的类型。 此参数决不能为 <see langword="null" />。</param>
-        <param name="argTypes">可选的类型数组，其中的类型表示要传递给对象的构造函数的参数类型。 此数组可为 <see langword="null" /> 或长度为零。</param>
+        <param name="provider">一个可选的服务提供程序。</param>
+        <param name="objectType">要创建的对象的类型。 此参数是永远不会<see langword="null" />。</param>
+        <param name="argTypes">表示要传递给对象的构造函数的参数类型的类型的可选数组。 此数组可为<see langword="null" />或长度为零。</param>
         <param name="args">要传递给对象的构造函数的可选参数值数组。</param>
         <summary>创建可替换为另一种数据类型的对象。</summary>
-        <returns>替代用 <see cref="T:System.Object" />。</returns>
+        <returns>替换<see cref="T:System.Object" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -251,9 +249,9 @@
         <Parameter Name="instance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="instance">要获取与其对应的缓存的对象。</param>
-        <summary>获取每个对象均对应有的缓存，此缓存可作为键/值对的 <see cref="T:System.Collections.IDictionary" /> 进行访问。</summary>
-        <returns>如果提供的对象支持缓存，则为 <see cref="T:System.Collections.IDictionary" />；否则为 <see langword="null" />。</returns>
+        <param name="instance">要为其获取缓存对象。</param>
+        <summary>获取作为所访问的每个对象缓存<see cref="T:System.Collections.IDictionary" />的键/值对。</summary>
+        <returns><see cref="T:System.Collections.IDictionary" />如果所提供的对象支持缓存; 否则为<see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -300,9 +298,9 @@
         <Parameter Name="instance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="instance">要为其获取扩展类型说明符的对象。</param>
-        <summary>为给定的对象获取扩展的自定义类型说明符。</summary>
-        <returns>可以为对象提供扩展元数据的 <see cref="T:System.ComponentModel.ICustomTypeDescriptor" />。</returns>
+        <param name="instance">要为其获取扩展的类型说明符对象。</param>
+        <summary>获取给定对象的扩展的自定义类型描述符。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />可以为该对象提供扩展元数据。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -348,9 +346,9 @@
         <Parameter Name="instance" Type="System.Object" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="instance">要为其获取扩展程序提供程序的对象。</param>
+        <param name="instance">要获取的扩展程序提供程序的对象。</param>
         <summary>获取指定对象的扩展程序提供程序。</summary>
-        <returns><paramref name="instance" /> 的扩展程序提供程序的数组。</returns>
+        <returns>扩展程序提供程序的数组<paramref name="instance" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="instance" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -388,7 +386,7 @@
       </Parameters>
       <Docs>
         <param name="component">指定的组件。</param>
-        <summary>获取指定的组件的名称，如果指定的组件没有名称，则为 <see langword="null" />。</summary>
+        <summary>获取指定组件的名称或<see langword="null" />如果组件没有名称。</summary>
         <returns>指定组件的名称。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="component" /> 为 <see langword="null" />。</exception>
@@ -401,7 +399,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>针对某个对象执行正常反射。</summary>
+        <summary>针对执行正常反射对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetReflectionType">
@@ -436,9 +434,9 @@
         <Parameter Name="instance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="instance">类型的实例（不应为 <see langword="null" />）。</param>
-        <summary>针对给定对象执行正常反射。</summary>
-        <returns>此 <paramref name="instance" /> 的反射的类型。</returns>
+        <param name="instance">类型的实例 (不应为<see langword="null" />)。</param>
+        <summary>执行正常反射与给定的对象。</summary>
+        <returns>为此反射的类型<paramref name="instance" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -490,9 +488,9 @@
         <Parameter Name="objectType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="objectType">要为其检索 <see cref="T:System.Reflection.IReflect" /> 的对象的类型。</param>
-        <summary>针对某个类型执行正常反射。</summary>
-        <returns>此 <paramref name="objectType" /> 的反射的类型。</returns>
+        <param name="objectType">要检索的对象的类型<see cref="T:System.Reflection.IReflect" />。</param>
+        <summary>针对执行正常反射类型。</summary>
+        <returns>为此反射的类型<paramref name="objectType" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -540,10 +538,10 @@
         <Parameter Name="instance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="objectType">要为其检索 <see cref="T:System.Reflection.IReflect" /> 的对象的类型。</param>
+        <param name="objectType">要检索的对象的类型<see cref="T:System.Reflection.IReflect" />。</param>
         <param name="instance">该类型的实例。 可以为 <see langword="null" />。</param>
-        <summary>针对具有给定类型的给定对象执行正常反射。</summary>
-        <returns>此 <paramref name="objectType" /> 的反射的类型。</returns>
+        <summary>执行正常反射与给定的对象具有给定类型。</summary>
+        <returns>为此反射的类型<paramref name="objectType" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -587,9 +585,9 @@
         <Parameter Name="reflectionType" Type="System.Type" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="reflectionType">要转换为其运行时等效项的类型。</param>
-        <summary>将反射类型转换为运行时类型。</summary>
-        <returns>一个 <see cref="T:System.Type" />，表示 <paramref name="reflectionType" /> 的运行时等效项。</returns>
+        <param name="reflectionType">要将转换为其等效的运行时的类型。</param>
+        <summary>将运行时类型转换为的反射类型。</summary>
+        <returns>一个<see cref="T:System.Type" />，它表示的运行时等效项<paramref name="reflectionType" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -608,7 +606,7 @@
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取给定类型或对象的自定义类型说明符。</summary>
+        <summary>获取给定的类型或对象的自定义类型说明符。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetTypeDescriptor">
@@ -643,9 +641,9 @@
         <Parameter Name="instance" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="instance">该类型的实例。 如果没有向 <see cref="T:System.ComponentModel.TypeDescriptor" /> 传递任何实例，则可以是 <see langword="null" />。</param>
-        <summary>获取给定对象的自定义类型说明符。</summary>
-        <returns>可以为该类型提供元数据的 <see cref="T:System.ComponentModel.ICustomTypeDescriptor" />。</returns>
+        <param name="instance">该类型的实例。 可以是<see langword="null" />如果任何实例不传递给<see cref="T:System.ComponentModel.TypeDescriptor" />。</param>
+        <summary>获取给定对象的自定义类型描述符。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />可以为该类型提供元数据。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="instance" /> 为 <see langword="null" />。</exception>
         <altmember cref="M:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor(System.Object)" />
@@ -689,8 +687,8 @@
       </Parameters>
       <Docs>
         <param name="objectType">要为其检索类型说明符的对象的类型。</param>
-        <summary>获取给定类型的自定义类型说明符。</summary>
-        <returns>可以为该类型提供元数据的 <see cref="T:System.ComponentModel.ICustomTypeDescriptor" />。</returns>
+        <summary>获取给定类型的自定义类型描述符。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />可以为该类型提供元数据。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor(System.Object)" />
       </Docs>
@@ -729,9 +727,9 @@
       </Parameters>
       <Docs>
         <param name="objectType">要为其检索类型说明符的对象的类型。</param>
-        <param name="instance">该类型的实例。 如果没有向 <see cref="T:System.ComponentModel.TypeDescriptor" /> 传递任何实例，则可以是 <see langword="null" />。</param>
-        <summary>获取给定类型和对象的自定义类型说明符。</summary>
-        <returns>可以为该类型提供元数据的 <see cref="T:System.ComponentModel.ICustomTypeDescriptor" />。</returns>
+        <param name="instance">该类型的实例。 可以是<see langword="null" />如果任何实例不传递给<see cref="T:System.ComponentModel.TypeDescriptor" />。</param>
+        <summary>获取给定的类型和对象的自定义类型说明符。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />可以为该类型提供元数据。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -776,7 +774,7 @@
       <Docs>
         <param name="type">要测试兼容性的类型。</param>
         <summary>获取一个值，该值指示指定的类型是否与类型说明及其类型说明提供程序链兼容。</summary>
-        <returns>如果 <paramref name="type" /> 与类型说明及其类型说明提供程序链兼容，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果<paramref name="type" />与类型说明及其类型说明提供程序链兼容; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="type" /> 为 <see langword="null" />。</exception>
       </Docs>

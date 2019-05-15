@@ -1,5 +1,5 @@
 <Type Name="AttributedModelServices" FullName="System.ComponentModel.Composition.AttributedModelServices">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="61b688d3bc70fa3d576f16ab2096ebf100916ec6" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58554303" /></Metadata><TypeSignature Language="C#" Value="public static class AttributedModelServices" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0a3da4fe8dfde7a4eba370a01a6f344fc41c2302" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65156622" /></Metadata><TypeSignature Language="C#" Value="public static class AttributedModelServices" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AttributedModelServices extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.AttributedModelServices" />
   <TypeSignature Language="VB.NET" Value="Public Module AttributedModelServices" />
@@ -15,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>包含可将 MEF 特性化的编程模型与组合一起使用的帮助器方法。</summary>
+    <summary>包含帮助器方法中使用 MEF 特性化编程模型的组合。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -26,7 +26,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>从指定的值创建一个部件，并将该部件添加到一个组合批。</summary>
+        <summary>从指定的值创建一个部件并将其添加到一个组合批。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddExportedValue&lt;T&gt;">
@@ -56,7 +56,7 @@
         <typeparam name="T">新部件的类型。</typeparam>
         <param name="batch">要添加到的批。</param>
         <param name="exportedValue">要相加的值。</param>
-        <summary>从指定的值创建一个部件，并将该部件添加到指定的批。</summary>
+        <summary>从指定的值创建一个部件并将其添加到指定的批。</summary>
         <returns>新部件。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -88,9 +88,9 @@
       <Docs>
         <typeparam name="T">新部件的类型。</typeparam>
         <param name="batch">要添加到的批。</param>
-        <param name="contractName">导出的协定名称。</param>
+        <param name="contractName">导出协定名称。</param>
         <param name="exportedValue">要相加的值。</param>
-        <summary>从指定的值创建一个部件，并将该部件添加到具有指定协定名称的指定批。</summary>
+        <summary>从指定的值创建一个部件并将其添加到具有指定的协定名称指定的批处理。</summary>
         <returns>新部件。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -118,7 +118,7 @@
       <Docs>
         <param name="batch">要添加到的批。</param>
         <param name="attributedPart">要添加的对象。</param>
-        <summary>从指定的特性化对象创建一个可组合部件，并将该部件添加到指定的组合批。</summary>
+        <summary>从指定的特性化对象，创建一个可组合部件，并将其添加到指定的组合批。</summary>
         <returns>新部件。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -130,7 +130,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>从指定的对象创建一个部件，并将该部件与指定的组合容器组合在一起。</summary>
+        <summary>从指定的对象创建一个部件，并组合该部件与指定的组合容器。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ComposeExportedValue&lt;T&gt;">
@@ -160,7 +160,7 @@
         <typeparam name="T">新部件的类型。</typeparam>
         <param name="container">要在其中执行组合的组合容器。</param>
         <param name="exportedValue">要组合的值。</param>
-        <summary>从指定的值创建一个部件，并在指定的组合容器中组合该部件。</summary>
+        <summary>从指定的值创建一个部件和指定的组合容器中组合该部件。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,9 +191,9 @@
       <Docs>
         <typeparam name="T">新部件的类型。</typeparam>
         <param name="container">要在其中执行组合的组合容器。</param>
-        <param name="contractName">要在其下导出部件的协定名称。</param>
+        <param name="contractName">要下导出部件的协定名称。</param>
         <param name="exportedValue">要组合的值。</param>
-        <summary>从指定协定名称下的指定对象创建一个部件，并在指定的组合容器中组合该部件。</summary>
+        <summary>从指定的协定名称下的指定对象创建一个部件和指定的组合容器中组合该部件。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,8 +225,8 @@
       </Parameters>
       <Docs>
         <param name="container">要在其中执行组合的组合容器。</param>
-        <param name="attributedParts">要组合的特性化对象的数组。</param>
-        <summary>从特性化对象的数组创建可组合部件，并在指定的组合容器中组合这些部件。</summary>
+        <param name="attributedParts">特性化对象构成的数组。</param>
+        <summary>从特性化对象的数组创建的可组合部件，并在指定的组合容器中组合它们。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -237,7 +237,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>创建可组合部件。</summary>
+        <summary>创建一个可组合部件。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CreatePart">
@@ -260,7 +260,7 @@
         <Parameter Name="attributedPart" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="attributedPart">特性化对象。</param>
+        <param name="attributedPart">特性化的对象。</param>
         <summary>从指定的特性化对象创建一个可组合部件。</summary>
         <returns>创建的部件。</returns>
         <remarks>To be added.</remarks>
@@ -288,8 +288,8 @@
       </Parameters>
       <Docs>
         <param name="partDefinition">新部件定义。</param>
-        <param name="attributedPart">特性化对象。</param>
-        <summary>通过指定的部件定义，从指定的特性化对象创建一个可组合部件。</summary>
+        <param name="attributedPart">特性化的对象。</param>
+        <summary>从指定的特性化对象，使用指定的部件定义创建一个可组合部件。</summary>
         <returns>创建的部件。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -314,9 +314,9 @@
         <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" Index="1" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="attributedPart">特性化对象。</param>
-        <param name="reflectionContext">用于部件的反射上下文。</param>
-        <summary>通过指定的反射上下文，从指定的特性化对象创建一个可组合部件。</summary>
+        <param name="attributedPart">特性化的对象。</param>
+        <param name="reflectionContext">反射上下文的部分。</param>
+        <summary>从指定的特性化对象，使用指定相对反射上下文中创建一个可组合部件。</summary>
         <returns>创建的部件。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="reflectionContext" /> 为 <see langword="null" />。</exception>
@@ -329,7 +329,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>使用指定类型和源创建部件定义。</summary>
+        <summary>使用指定的类型和源创建部件定义。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CreatePartDefinition">
@@ -354,8 +354,8 @@
       <Docs>
         <param name="type">定义的类型。</param>
         <param name="origin">定义的源。</param>
-        <summary>使用指定类型和源创建部件定义。</summary>
-        <returns>新部件定义。</returns>
+        <summary>使用指定的类型和源创建部件定义。</summary>
+        <returns>新的部件定义。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -382,9 +382,9 @@
       <Docs>
         <param name="type">定义的类型。</param>
         <param name="origin">定义的源。</param>
-        <param name="ensureIsDiscoverable">一个值，指示新定义是否应是可发现的。</param>
-        <summary>使用指定类型和源创建部件定义。</summary>
-        <returns>新部件定义。</returns>
+        <param name="ensureIsDiscoverable">一个值，该值指示应可发现新的定义。</param>
+        <summary>使用指定的类型和源创建部件定义。</summary>
+        <returns>新的部件定义。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -411,8 +411,8 @@
       <Docs>
         <param name="part">要搜索的部件。</param>
         <param name="contractType">协定类型。</param>
-        <summary>返回指示指定的部分是否包含与指定协定类型相匹配的导出的值。</summary>
-        <returns>如果 <paramref name="part" /> 包含与 <paramref name="contractType" /> 匹配的导出定义，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示指定的部分是否包含与指定的协定类型相匹配的导出。</summary>
+        <returns><see langword="true" /> 如果<paramref name="part" />包含匹配的导出定义<paramref name="contractType" />; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -441,8 +441,8 @@
       <Docs>
         <typeparam name="T">协定类型。</typeparam>
         <param name="part">要搜索的部件。</param>
-        <summary>返回指示指定的部分是否包含与指定协定类型相匹配的导出的值。</summary>
-        <returns>如果 <paramref name="part" /> 包含类型 <paramref name="T" /> 的导出定义，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示指定的部分是否包含与指定的协定类型相匹配的导出。</summary>
+        <returns><see langword="true" /> 如果<paramref name="part" />包含类型的导出定义<paramref name="T" />; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -472,7 +472,7 @@
       <Docs>
         <param name="type">要使用的类型。</param>
         <summary>获取指定类型的规范协定名称。</summary>
-        <returns>从指定类型创建的协定名称。</returns>
+        <returns>创建从指定类型的协定名称。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -499,10 +499,10 @@
         <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
       </Parameters>
       <Docs>
-        <typeparam name="TMetadataView">要获取的元数据视图对象的类型。</typeparam>
+        <typeparam name="TMetadataView">若要获取的元数据视图对象的类型。</typeparam>
         <param name="metadata">松散元数据的集合。</param>
         <summary>从松散元数据的字典中获取元数据视图对象。</summary>
-        <returns>包含指定元数据的元数据视图。</returns>
+        <returns>包含指定的元数据的元数据视图。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -513,7 +513,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取一个方法或类型的唯一标识符。</summary>
+        <summary>获取方法或类型的唯一标识符。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetTypeIdentity">
@@ -538,7 +538,7 @@
       <Docs>
         <param name="method">要检查的方法。</param>
         <summary>获取指定方法的唯一标识符。</summary>
-        <returns>该方法的唯一标识符。</returns>
+        <returns>方法的唯一标识符。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -563,7 +563,7 @@
       <Docs>
         <param name="type">要检查的类型。</param>
         <summary>获取指定类型的唯一标识符。</summary>
-        <returns>该类型的唯一标识符。</returns>
+        <returns>类型的唯一标识符。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -600,8 +600,8 @@
       <Docs>
         <param name="part">要搜索的部件。</param>
         <param name="contractType">协定类型。</param>
-        <summary>返回指示指定的部分是否包含与指定协定类型相匹配的导入的值。</summary>
-        <returns>如果 <paramref name="part" /> 包含与 <paramref name="contractType" /> 匹配的导入定义，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示指定的部分是否包含与指定的协定类型相匹配的导入。</summary>
+        <returns><see langword="true" /> 如果<paramref name="part" />包含匹配的导入定义<paramref name="contractType" />; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -629,8 +629,8 @@
         <param name="part">要搜索的部件。</param>
         <param name="contractType">协定类型。</param>
         <param name="importCardinality">导入基数。</param>
-        <summary>返回指示指定的部分是否包含与指定协定类型和导入基数相匹配的导入的值。</summary>
-        <returns>如果 <paramref name="part" /> 包含与 <paramref name="contractType" /> 和 <paramref name="importCardinality" /> 匹配的导入定义，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示指定的部分是否包含与指定的协定相匹配的导入类型和导入基数。</summary>
+        <returns><see langword="true" /> 如果<paramref name="part" />包含匹配的导入定义<paramref name="contractType" />并<paramref name="importCardinality" />; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -659,8 +659,8 @@
       <Docs>
         <typeparam name="T">协定类型。</typeparam>
         <param name="part">要搜索的部件。</param>
-        <summary>返回指示指定的部分是否包含与指定协定类型相匹配的导入的值。</summary>
-        <returns>如果 <paramref name="part" /> 包含类型 <paramref name="T" /> 的导入定义，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示指定的部分是否包含与指定的协定类型相匹配的导入。</summary>
+        <returns><see langword="true" /> 如果<paramref name="part" />包含类型的导入定义<paramref name="T" />; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -690,8 +690,8 @@
         <typeparam name="T">协定类型。</typeparam>
         <param name="part">要搜索的部件。</param>
         <param name="importCardinality">导入基数。</param>
-        <summary>返回指示指定的部分是否包含与指定协定类型和导入基数相匹配的导入的值。</summary>
-        <returns>如果 <paramref name="part" /> 包含具有指定的导入基数类型 <paramref name="T" /> 的导入定义，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示指定的部分是否包含与指定的协定相匹配的导入类型和导入基数。</summary>
+        <returns><see langword="true" /> 如果<paramref name="part" />包含类型的导入定义<paramref name="T" />的具有指定的导入的基数; 否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -702,7 +702,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>组合一个指定的部分。</summary>
+        <summary>组合指定的部件。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SatisfyImportsOnce">
@@ -726,10 +726,10 @@
         <Parameter Name="attributedPart" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="compositionService">要使用的组合服务。</param>
+        <param name="compositionService">若要使用的复合服务。</param>
         <param name="attributedPart">要组合的部件。</param>
         <summary>通过使用指定的组合服务并禁用重新组合来组合指定的部件。</summary>
-        <returns>已组合的部件。</returns>
+        <returns>组合的部件。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -738,6 +738,9 @@
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="compositionService" /> 或 <paramref name="attributedPart" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">在组合期间出错。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" /> 包含发生的错误的集合。</exception>
+        <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.ComponentModel.Composition.ICompositionService" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="SatisfyImportsOnce">
@@ -761,13 +764,15 @@
         <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="compositionService">要使用的组合服务。</param>
+        <param name="compositionService">若要使用的复合服务。</param>
         <param name="attributedPart">要组合的部件。</param>
-        <param name="reflectionContext">用于部件的反射上下文。</param>
-        <summary>通过使用指定的组合服务并禁用重新组合及使用指定的反射上下文来组合指定的部件。</summary>
-        <returns>已组合的部件。</returns>
+        <param name="reflectionContext">反射上下文的部分。</param>
+        <summary>通过使用指定的组合服务并禁用重新组合，并使用指定相对反射上下文来组合指定的部件。</summary>
+        <returns>组合的部件。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="reflectionContext" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">在组合期间出错。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" /> 包含发生的错误的集合。</exception>
+        <exception cref="T:System.ObjectDisposedException">已释放了 <see cref="T:System.ComponentModel.Composition.ICompositionService" />。</exception>
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 <Type Name="ClipboardProxy" FullName="Microsoft.VisualBasic.MyServices.ClipboardProxy">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3c42748cc064807cb74956de455bd5fc9564eec9" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55338408" /></Metadata><TypeSignature Language="C#" Value="public class ClipboardProxy" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="53f2de6d34efc093261edfe0040e83cd24faf3e1" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65135815" /></Metadata><TypeSignature Language="C#" Value="public class ClipboardProxy" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ClipboardProxy extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.MyServices.ClipboardProxy" />
   <TypeSignature Language="VB.NET" Value="Public Class ClipboardProxy" />
@@ -9,6 +9,10 @@
     <AssemblyName>Microsoft.VisualBasic</AssemblyName>
     <AssemblyVersion>8.0.0.0</AssemblyVersion>
     <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+    <AssemblyVersion>10.0.4.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -33,7 +37,7 @@
   
  类必须可序列化，才能将其放到剪贴板上。 请参阅[序列化](https://msdn.microsoft.com/library/f7570c09-7db5-44f2-983a-e8859caeb0d5)有关详细信息。  
   
- 远程访问剪贴板时<xref:System.Threading.ThreadStateException>引发除非访问线程在 STA （单线程单元） 模式下运行。 若要解决此问题，请设置`ThreadApartmentState`到`STA`。 有关详情，请参阅<xref:System.STAThreadAttribute>。  
+ 远程访问剪贴板时<xref:System.Threading.ThreadStateException>引发除非访问线程在 STA （单线程单元） 模式下运行。 若要解决此问题，请设置`ThreadApartmentState`到`STA`。 有关详细信息，请参阅 <xref:System.STAThreadAttribute>。  
   
  有关详细信息，请参阅[将数据存储到剪贴板以及从剪贴板读取](~/docs/visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)。  
   
@@ -45,9 +49,9 @@
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -78,6 +82,9 @@
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -98,9 +105,9 @@
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -135,13 +142,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
         <summary>指示剪贴板是否包含音频数据。</summary>
-        <returns>如果剪贴板上存储有音频数据，则为 <see langword="True" />，否则为 <see langword="False" />。</returns>
+        <returns><see langword="True" /> 如果音频数据存储在剪贴板上;，否则为<see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -155,9 +165,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -190,16 +200,19 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="format"><see langword="String" />。 要检查的自定义格式的名称。 必需。</param>
         <summary>指示剪贴板是否包含指定的自定义格式的数据。</summary>
-        <returns>如果剪贴板上存储有指定的自定义格式的数据，则为 <see langword="True" />，否则为 <see langword="False" />。</returns>
+        <returns><see langword="True" /> 如果指定的自定义格式的数据存储在剪贴板上;，否则为<see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -214,9 +227,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -253,13 +266,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个 <see langword="Boolean" />，该值指示剪贴板是否包含文件下拉列表。</summary>
-        <returns>如果剪贴板中存储有文件下拉列表，为 <see langword="True" />；否则为 <see langword="False" />。</returns>
+        <summary>返回<see langword="Boolean" />，该值指示剪贴板是否包含文件放置列表。</summary>
+        <returns><see langword="True" /> 如果有文件下拉列表将存储在剪贴板上;否则为<see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -274,9 +290,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -311,13 +327,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个 <see langword="Boolean" />，该值指示剪贴板上是否存储有图像。</summary>
-        <returns>如果剪贴板上存储有图像，则为 <see langword="True" />，否则为 <see langword="False" />。</returns>
+        <summary>返回<see langword="Boolean" />，该值指示是否将映像存储在剪贴板上。</summary>
+        <returns><see langword="True" /> 如果图像存储在剪贴板上;，否则为<see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -331,9 +350,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -361,7 +380,7 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>确定剪贴板上是否有文本。</summary>
+        <summary>确定剪贴板上是否存在文本。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ContainsText">
@@ -377,13 +396,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>确定剪贴板上是否有文本。</summary>
-        <returns>如果剪贴板包含文本，则为 <see langword="True" />；否则为 <see langword="False" />。</returns>
+        <summary>确定剪贴板上是否存在文本。</summary>
+        <returns><see langword="True" /> 如果剪贴板包含文本;否则为<see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -398,9 +420,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -434,16 +456,19 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" />。 如果指定，则标识要检查的文本格式。 必需。</param>
-        <summary>确定剪贴板上是否有文本。</summary>
-        <returns>如果剪贴板包含文本，则为 <see langword="True" />；否则为 <see langword="False" />。</returns>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" />。 如果指定，标识要检查的哪些文本格式。 必需。</param>
+        <summary>确定剪贴板上是否存在文本。</summary>
+        <returns><see langword="True" /> 如果剪贴板包含文本;否则为<see langword="False" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -458,9 +483,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -494,13 +519,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索剪贴板上的音频流。</summary>
-        <returns>一个包含音频数据的 <see cref="T:System.IO.Stream" /> 对象；如果剪贴板不包含任何音频数据，则为 <see langword="Nothing" />。</returns>
+        <summary>从剪贴板检索的音频流。</summary>
+        <returns>一个<see cref="T:System.IO.Stream" />对象，其中包含音频数据或<see langword="Nothing" />如果剪贴板不包含任何音频数据。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -514,9 +542,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -550,16 +578,19 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="format"><see langword="String" />。 数据格式的名称。 必需。</param>
-        <summary>检索剪贴板上的自定义格式的数据。</summary>
-        <returns>一个表示剪贴板数据的 <see langword="Object" />；如果剪贴板中包含的数据都不是指定的格式，也无法转换为该格式，则为 <see langword="Nothing" />。</returns>
+        <summary>从剪贴板中检索自定义格式的数据。</summary>
+        <returns><see langword="Object" />表示剪贴板数据或<see langword="Nothing" />如果剪贴板不包含指定格式或可转换为该格式的任何数据。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -573,9 +604,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -612,8 +643,11 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -622,8 +656,8 @@ My.Computer.Clipboard.Clear()
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索剪贴板上形式为 <see cref="T:System.Windows.Forms.IDataObject" /> 的数据。</summary>
-        <returns>一个表示剪贴板中当前的数据的 <see cref="T:System.Windows.Forms.IDataObject" /> 对象；如果剪贴板中没有数据，则为 <see langword="Nothing" />。</returns>
+        <summary>从剪贴板上形式检索数据<see cref="T:System.Windows.Forms.IDataObject" />。</summary>
+        <returns><see cref="T:System.Windows.Forms.IDataObject" />对象，表示当前在剪贴板上的数据或<see langword="Nothing" />如果剪贴板上没有任何数据。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -638,9 +672,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -678,13 +712,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>从剪贴板上检索表示文件名的字符串的集合。</summary>
-        <returns>包含文件名的 <see cref="T:System.Collections.Specialized.StringCollection" />；如果剪贴板中不包含任何格式为 <see cref="F:System.Windows.Forms.DataFormats.FileDrop" /> 或可转换为该格式的数据，则为 <see langword="Nothing" />。</returns>
+        <summary>检索表示剪贴板中的文件的名称的字符串的集合。</summary>
+        <returns>一个<see cref="T:System.Collections.Specialized.StringCollection" />包含文件的名称或<see langword="Nothing" />如果剪贴板不包含任何数据，则<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />或可以转换为该格式的格式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -701,9 +738,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -739,13 +776,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Image</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索剪贴板上的图像。</summary>
-        <returns>表示剪贴板图像数据的 <see cref="T:System.Drawing.Image" />；如果剪贴板中不包含任何 <see cref="F:System.Windows.Forms.DataFormats.Bitmap" /> 格式或可转换成该格式的数据，则为 <see langword="Nothing" />。</returns>
+        <summary>从剪贴板检索的图像。</summary>
+        <returns><see cref="T:System.Drawing.Image" />表示剪贴板图像数据或<see langword="Nothing" />如果剪贴板不包含任何数据，则<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />或可以转换为该格式的格式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -759,9 +799,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -790,7 +830,7 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>检索剪贴板上的文本。</summary>
+        <summary>从剪贴板中检索文本。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetText">
@@ -806,13 +846,16 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索剪贴板上的文本。</summary>
-        <returns>剪贴板文本数据；如果剪贴板不包含 <see cref="F:System.Windows.Forms.DataFormats.Text" /> 或 <see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" /> 格式的数据（取决于操作系统），则为空字符串。</returns>
+        <summary>从剪贴板中检索文本。</summary>
+        <returns>剪贴板文本数据; 如果剪贴板不包含中的数据为空字符串<see cref="F:System.Windows.Forms.DataFormats.Text" />或<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />格式，具体取决于操作系统。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -827,9 +870,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -865,16 +908,19 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" />。 如果指定，则标识应检索的文本格式。 默认值为 <see cref="F:System.Windows.Forms.TextDataFormat.CommaSeparatedValue" />。 必需。</param>
-        <summary>检索剪贴板上的文本。</summary>
-        <returns>剪贴板文本数据；如果剪贴板中不包含指定格式的数据，则为空字符串。</returns>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" />。 如果指定，标识应检索的文本格式。 默认值为 <see cref="F:System.Windows.Forms.TextDataFormat.CommaSeparatedValue" />。 必需。</param>
+        <summary>从剪贴板中检索文本。</summary>
+        <returns>剪贴板文本数据或如果剪贴板不包含指定格式的数据为空字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -889,9 +935,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -936,11 +982,14 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="audioBytes" Type="System.Byte[]" />
+        <Parameter Name="audioBytes" Type="System.Byte[]" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="audioBytes"><see langword="Byte" /> 数组。 要写入剪贴板的音频数据。 必需。</param>
@@ -961,9 +1010,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -998,14 +1047,17 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="audioStream" Type="System.IO.Stream" />
+        <Parameter Name="audioStream" Type="System.IO.Stream" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="audioStream"><see cref="T:System.IO.Stream" />。要写入剪贴板的音频数据。 必需。</param>
+        <param name="audioStream"><see cref="T:System.IO.Stream" /> 要写入剪贴板的音频数据。 必需。</param>
         <summary>将音频数据写入剪贴板。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1023,9 +1075,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -1060,17 +1112,20 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="format" Type="System.String" />
-        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="format" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="data" Type="System.Object" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="format"><see langword="String" />。 数据的格式。 必需。</param>
-        <param name="data"><see langword="Object" />。 要写入剪贴板的数据对象。 必需。</param>
-        <summary>将自定义格式的数据写入剪贴板。</summary>
+        <param name="data"><see langword="Object" />。 要写入剪贴板数据对象。 必需。</param>
+        <summary>自定义格式将数据写入剪贴板。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1087,9 +1142,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -1126,8 +1181,11 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <Attributes>
-        <Attribute>
+        <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
         </Attribute>
       </Attributes>
@@ -1135,11 +1193,11 @@ My.Computer.Clipboard.Clear()
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="data" Type="System.Windows.Forms.DataObject" />
+        <Parameter Name="data" Type="System.Windows.Forms.DataObject" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="data"><see cref="T:System.Windows.Forms.DataObject" />。 要写入剪贴板的数据对象。 必需。</param>
-        <summary>将 <see cref="T:System.Windows.Forms.DataObject" /> 写入剪贴板。</summary>
+        <param name="data"><see cref="T:System.Windows.Forms.DataObject" />。 要写入剪贴板数据对象。 必需。</param>
+        <summary>写入<see cref="T:System.Windows.Forms.DataObject" />到剪贴板。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1157,9 +1215,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -1196,15 +1254,18 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" />
+        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="filePaths"><see cref="T:System.Collections.Specialized.StringCollection" />。 文件名列表。 必需。</param>
-        <summary>将表示文件路径的字符串的集合写入剪贴板。</summary>
+        <param name="filePaths"><see cref="T:System.Collections.Specialized.StringCollection" />。 文件名称的列表。 必需。</param>
+        <summary>将写入到剪贴板表示文件路径的字符串的集合。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1222,9 +1283,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -1256,11 +1317,14 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="image" Type="System.Drawing.Image" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="image"><see cref="T:System.Drawing.Image" />。 要写入的图像。 必需。</param>
@@ -1281,9 +1345,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -1328,11 +1392,14 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="text" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="text"><see langword="String" />。 要写入的文本。 必需。</param>
@@ -1356,9 +1423,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   
@@ -1394,16 +1461,19 @@ My.Computer.Clipboard.Clear()
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
         <AssemblyVersion>10.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Core</AssemblyName>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="text" Type="System.String" />
-        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+        <Parameter Name="text" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
         <param name="text"><see langword="String" />。 要写入的文本。 必需。</param>
-        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" />。 写入文本时要使用的格式。 默认值为 <see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />。 必需。</param>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" />。 要写入文本时要使用的格式。 默认值为 <see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />。 必需。</param>
         <summary>将文本写入剪贴板。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1424,9 +1494,9 @@ My.Computer.Clipboard.Clear()
 |类库|**是**|  
 |控制台应用程序|**是**|  
 |Windows 控件库|**是**|  
-|Web 控件库|No|  
+|Web 控件库|否|  
 |Windows 服务|**是**|  
-|网站|No|  
+|网站|否|  
   
    
   

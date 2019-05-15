@@ -1,5 +1,5 @@
 <Type Name="XPathNavigator" FullName="System.Xml.XPath.XPathNavigator">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="629918de83bd4cc99e2ce9907cc40c0100e5e63a" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58715006" /></Metadata><TypeSignature Language="C#" Value="public abstract class XPathNavigator : System.Xml.XPath.XPathItem, ICloneable, System.Xml.IXmlNamespaceResolver, System.Xml.XPath.IXPathNavigable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="838450b7a84742df798c20a8a9bbd2dec3f348b3" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558787" /></Metadata><TypeSignature Language="C#" Value="public abstract class XPathNavigator : System.Xml.XPath.XPathItem, ICloneable, System.Xml.IXmlNamespaceResolver, System.Xml.XPath.IXPathNavigable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XPathNavigator extends System.Xml.XPath.XPathItem implements class System.ICloneable, class System.Xml.IXmlNamespaceResolver, class System.Xml.XPath.IXPathNavigable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XPath.XPathNavigator" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XPathNavigator&#xA;Inherits XPathItem&#xA;Implements ICloneable, IXmlNamespaceResolver, IXPathNavigable" />
@@ -262,7 +262,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位的当前节点既不是根节点也不是元素节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所定位至的当前节点不是根节点或不是一个元素节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -361,10 +361,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">XML 数据字符串参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位的当前节点既不是根节点也不是元素节点。</exception>
+        <exception cref="T:System.ArgumentNullException">XML 数据字符串参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所定位至的当前节点不是根节点或不是一个元素节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException">XML 数据字符串参数不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 数据字符串参数的格式不正确。</exception>
       </Docs>
     </Member>
     <Member MemberName="AppendChild">
@@ -402,7 +402,7 @@
         <Parameter Name="newChild" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newChild">一个定位在新的子节点的 XML 数据上的 <see cref="T:System.Xml.XmlReader" /> 对象。</param>
+        <param name="newChild">一个 <see cref="T:System.Xml.XmlReader" /> 对象，它定位在新子节点的 XML 数据上。</param>
         <summary>使用指定的 <see cref="T:System.Xml.XmlReader" /> 对象的 XML 内容在当前节点的子节点列表的末尾创建一个新的子节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -462,11 +462,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或者已关闭。</exception>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位的当前节点既不是根节点也不是元素节点。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或已关闭。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所定位至的当前节点不是根节点或不是一个元素节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容的格式不标准。</exception>
       </Docs>
     </Member>
     <Member MemberName="AppendChild">
@@ -504,7 +504,7 @@
         <Parameter Name="newChild" Type="System.Xml.XPath.XPathNavigator" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newChild">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在要作为新的子节点添加的节点上。</param>
+        <param name="newChild">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在将作为新的子节点添加的节点上。</param>
         <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中的节点在当前节点的子节点列表的末尾创建一个新的子节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -564,8 +564,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位的当前节点既不是根节点也不是元素节点。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所定位至的当前节点不是根节点或不是一个元素节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -607,10 +607,10 @@
         <Parameter Name="value" Type="System.String" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">新的子元素节点的命名空间前缀（如果有）。</param>
-        <param name="localName">新的子元素节点的本地名称（如果有）。</param>
-        <param name="namespaceURI">新的子元素节点的命名空间 URI（如果有）。 <see cref="F:System.String.Empty" /> 与 <see langword="null" /> 等效。</param>
-        <param name="value">新的子元素节点的值。 如果传递了 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，则将创建一个空元素。</param>
+        <param name="prefix">新的子元素节点（如果有）的命名空间前缀。</param>
+        <param name="localName">新的子元素节点（如果有）的本地名称。</param>
+        <param name="namespaceURI">新的子元素节点（如果有）的命名空间 URI。 <see cref="F:System.String.Empty" /> 和 <see langword="null" /> 等效。</param>
+        <param name="value">新的子元素节点的值。 如果传递 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，将创建一个空元素。</param>
         <summary>使用通过指定值指定的命名空间前缀、本地名称和命名空间 URI 在当前节点的子节点列表的末尾创建一个新的子元素节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -678,7 +678,7 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位的当前节点既不是根节点也不是元素节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所定位至的当前节点不是根节点或不是一个元素节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -716,7 +716,7 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取当前节点的基 URI。</summary>
-        <value>从中加载节点的位置；如果没有值，则为 <see cref="F:System.String.Empty" />。</value>
+        <value>从中加载节点，该位置或<see cref="F:System.String.Empty" />是否存在任何值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -857,10 +857,10 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
         <Parameter Name="validationEventHandler" Type="System.Xml.Schema.ValidationEventHandler" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchemaSet" />，包含用于验证 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中包含的 XML 数据的架构。</param>
-        <param name="validationEventHandler">接收有关架构验证警告和错误消息的 <see cref="T:System.Xml.Schema.ValidationEventHandler" />。</param>
-        <summary>验证 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中的 XML 数据是否符合所提供的 XML 架构定义语言 (XSD) 架构。</summary>
-        <returns>如果未出现架构验证错误，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchemaSet" />包含用于验证中包含的 XML 数据的架构<see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <param name="validationEventHandler"><see cref="T:System.Xml.Schema.ValidationEventHandler" />接收有关架构验证警告和错误。</param>
+        <summary>验证中的 XML 数据<see cref="T:System.Xml.XPath.XPathNavigator" />符合所提供的 XML 架构定义语言 (XSD) 架构。</summary>
+        <returns><see langword="true" /> 如果未发生任何架构验证错误;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -878,9 +878,9 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.Schema.XmlSchemaValidationException">出现架构验证错误，并且未指定任何 <see cref="T:System.Xml.Schema.ValidationEventHandler" /> 处理验证错误。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位在不是元素、特性或根节点的节点上，或者不存在用于执行验证的类型信息。</exception>
-        <exception cref="T:System.ArgumentException">当 <see cref="M:System.Xml.XPath.XPathNavigator.CheckValidity(System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler)" /> 定位在 XML 数据的根节点上时，使用 <see cref="T:System.Xml.Schema.XmlSchemaSet" /> 参数调用 <see cref="T:System.Xml.XPath.XPathNavigator" /> 方法。</exception>
+        <exception cref="T:System.Xml.Schema.XmlSchemaValidationException">出现架构验证错误，并且不<see cref="T:System.Xml.Schema.ValidationEventHandler" />指定来处理验证错误。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" />是定位在节点上的不是元素、 属性或根节点或不存在类型信息来执行验证。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="M:System.Xml.XPath.XPathNavigator.CheckValidity(System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler)" />方法调用时使用<see cref="T:System.Xml.Schema.XmlSchemaSet" />参数时<see cref="T:System.Xml.XPath.XPathNavigator" />已没有定位在 XML 数据的根节点上。</exception>
       </Docs>
     </Member>
     <Member MemberName="Clone">
@@ -1009,8 +1009,8 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
       </Parameters>
       <Docs>
         <param name="nav">要针对其进行比较的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
-        <summary>将当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置与指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置进行比较。</summary>
-        <returns><see cref="T:System.Xml.XmlNodeOrder" /> 值，表示两个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象的相对位置。</returns>
+        <summary>将当前的位置进行比较<see cref="T:System.Xml.XPath.XPathNavigator" />的位置与<see cref="T:System.Xml.XPath.XPathNavigator" />指定。</summary>
+        <returns><see cref="T:System.Xml.XmlNodeOrder" />值，该值表示两个的相对位置<see cref="T:System.Xml.XPath.XPathNavigator" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1022,7 +1022,7 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
 |<xref:System.Xml.XmlNodeOrder.Before>|当前节点的这<xref:System.Xml.XPath.XPathNavigator>所提供的当前节点之前<xref:System.Xml.XPath.XPathNavigator>。|  
 |<xref:System.Xml.XmlNodeOrder.After>|当前节点的这<xref:System.Xml.XPath.XPathNavigator>是所提供的当前节点之后<xref:System.Xml.XPath.XPathNavigator>。|  
 |<xref:System.Xml.XmlNodeOrder.Same>|这两个<xref:System.Xml.XPath.XPathNavigator>对象定位在同一个节点上。|  
-|<xref:System.Xml.XmlNodeOrder.Unknown>|节点位置不能按文档顺序确定相对于彼此或`null`指定为<xref:System.Xml.XPath.XPathNavigator>参数。 如果两个节点驻留在不同的树中，则可能发生这种情况。|  
+|<xref:System.Xml.XmlNodeOrder.Unknown>|节点位置不能按文档顺序确定相对于彼此或`null`指定为<xref:System.Xml.XPath.XPathNavigator>参数。 如果两个节点驻留在不同的树中，这可能发生。|  
   
  <xref:System.Xml.XPath.XPathNavigator.ComparePosition%2A>方法的行为是依赖于<xref:System.Xml.XPath.XPathNodeType><xref:System.Xml.XPath.XPathNavigator>当前所处。 在比较 XML 文档中的节点时，以下规则适用：  
   
@@ -1082,8 +1082,8 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
       </Parameters>
       <Docs>
         <param name="xpath">表示 XPath 表达式的字符串。</param>
-        <summary>编译一个表示 XPath 表达式的字符串，并返回 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</summary>
-        <returns>表示 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</returns>
+        <summary>编译一个表示 XPath 表达式的字符串，并返回<see cref="T:System.Xml.XPath.XPathExpression" />对象。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathExpression" />表示 XPath 表达式的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1102,7 +1102,7 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="xpath" /> 参数包含一个无效的 XPath 表达式。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="xpath" />参数包含无效的 XPath 表达式。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 表达式无效。</exception>
       </Docs>
     </Member>
@@ -1144,9 +1144,9 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
         <Parameter Name="value" Type="System.String" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">新的属性节点的命名空间前缀（如果有）。</param>
+        <param name="prefix">新的属性节点（如果有）的命名空间前缀。</param>
         <param name="localName">新的属性节点的本地名称，该名称不能是 <see cref="F:System.String.Empty" /> 或 <see langword="null" />。</param>
-        <param name="namespaceURI">新的属性节点的命名空间 URI（如果有）。</param>
+        <param name="namespaceURI">新的属性节点（如果有）的命名空间 URI。</param>
         <param name="value">新的属性节点的值。 如果传递了 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，则将创建一个空属性节点。</param>
         <summary>使用通过指定值指定的命名空间前缀、本地名称和命名空间 URI 在当前元素节点上创建一个属性节点。</summary>
         <remarks>
@@ -1250,7 +1250,7 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于在当前元素上创建一个新属性。</summary>
+        <summary>返回 <see cref="T:System.Xml.XmlWriter" /> 对象，用于在当前元素上创建新属性。</summary>
         <returns><see cref="T:System.Xml.XmlWriter" /> 对象，用于在当前元素上创建新属性。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1359,8 +1359,8 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的一个副本。</summary>
-        <returns>此 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 副本。</returns>
+        <summary>返回的一个副本<see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathNavigator" />这份<see cref="T:System.Xml.XPath.XPathNavigator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1460,7 +1460,7 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
         </remarks>
         <exception cref="T:System.ArgumentNullException">指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.InvalidOperationException">所指定的要删除的最后一个节点不是当前节点的有效同级节点。</exception>
+        <exception cref="T:System.InvalidOperationException">指定的要删除的最后一个节点不是当前节点的有效同级节点。</exception>
       </Docs>
     </Member>
     <Member MemberName="DeleteSelf">
@@ -1557,7 +1557,7 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 位于无法删除的节点（如根节点或命名空间节点）上。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位在不能删除的节点上，例如根节点或命名空间节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -2034,7 +2034,7 @@ nav.Evaluate(expr);
         <param name="localName">属性的本地名称。 <paramref name="localName" /> 区分大小写。</param>
         <param name="namespaceURI">属性的命名空间 URI。</param>
         <summary>获取具有指定本地名称和命名空间 URI 的属性的值。</summary>
-        <returns>一个 <see cref="T:System.String" />，它包含指定属性的值；否则，如果没有找到匹配的属性或者 <see cref="F:System.String.Empty" /> 没有定位在元素节点上，则为 <see cref="T:System.Xml.XPath.XPathNavigator" />。</returns>
+        <returns>一个<see cref="T:System.String" />，其中包含指定的特性; 的值<see cref="F:System.String.Empty" />如果未找到匹配的属性，或如果<see cref="T:System.Xml.XPath.XPathNavigator" />没有定位在元素节点上。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2089,7 +2089,7 @@ nav.Evaluate(expr);
       <Docs>
         <param name="name">命名空间节点的本地名称。</param>
         <summary>返回与所指定本地名称对应的命名空间节点的值。</summary>
-        <returns>一个 <see cref="T:System.String" />，包含命名空间节点的值；否则，如果没有找到匹配的命名空间节点，或者 <see cref="F:System.String.Empty" /> 没有定位在元素节点上，则为 <see cref="T:System.Xml.XPath.XPathNavigator" />。</returns>
+        <returns>一个<see cref="T:System.String" />，其中包含命名空间节点; 的值<see cref="F:System.String.Empty" />如果未找到匹配的命名空间节点，或如果<see cref="T:System.Xml.XPath.XPathNavigator" />没有定位在元素节点上。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2145,9 +2145,9 @@ nav.Evaluate(expr);
         <Parameter Name="scope" Type="System.Xml.XmlNamespaceScope" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="scope">一个 <see cref="T:System.Xml.XmlNamespaceScope" /> 值，该值指定要返回的命名空间。</param>
+        <param name="scope"><see cref="T:System.Xml.XmlNamespaceScope" />值，该值指定要返回的命名空间。</param>
         <summary>返回当前节点的范围内命名空间。</summary>
-        <returns>以前缀作为关键字的命名空间名称的 <see cref="T:System.Collections.Generic.IDictionary`2" /> 集合。</returns>
+        <returns><see cref="T:System.Collections.Generic.IDictionary`2" />前缀作为关键字的命名空间名称的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2156,8 +2156,8 @@ nav.Evaluate(expr);
   
 |XmlNamespaceScope 值|返回的命名空间|  
 |-----------------------------|-------------------------|  
-|<xref:System.Xml.XmlNamespaceScope.All>|在当前节点范围内定义的所有命名空间。 这包括`xmlns:xml`始终隐式声明的命名空间。 未定义返回的命名空间的顺序。|  
-|<xref:System.Xml.XmlNamespaceScope.ExcludeXml>|在当前节点范围内定义的所有命名空间不包括`xmlns:xml`始终隐式声明的命名空间。 未定义返回的命名空间的顺序。|  
+|<xref:System.Xml.XmlNamespaceScope.All>|在当前节点的范围内定义的所有命名空间。 这包括`xmlns:xml`始终隐式声明的命名空间。 未定义的顺序返回的命名空间。|  
+|<xref:System.Xml.XmlNamespaceScope.ExcludeXml>|在当前节点范围内定义的所有命名空间不包括`xmlns:xml`始终隐式声明的命名空间。 未定义的顺序返回的命名空间。|  
 |<xref:System.Xml.XmlNamespaceScope.Local>|在当前节点本地定义的所有命名空间。|  
   
  ]]></format>
@@ -2240,7 +2240,7 @@ nav.Evaluate(expr);
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示当前节点是否有任何子节点。</summary>
-        <value>如果当前节点具有任何子节点，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果当前节点具有任何子节点;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2295,7 +2295,7 @@ nav.Evaluate(expr);
       </ReturnValue>
       <Docs>
         <summary>获取或设置表示当前节点的子节点标记。</summary>
-        <value>一个 <see cref="T:System.String" />，包含当前节点的子节点标记。</value>
+        <value>一个 <see cref="T:System.String" />，包含当前节点的子节点的标记。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2348,7 +2348,7 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">不能设置 <see cref="P:System.Xml.XPath.XPathNavigator.InnerXml" /> 属性。</exception>
+        <exception cref="T:System.InvalidOperationException">无法设置 <see cref="P:System.Xml.XPath.XPathNavigator.InnerXml" /> 属性。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="InsertAfter">
@@ -2393,8 +2393,8 @@ nav.Evaluate(expr);
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于在当前选定的节点之后创建一个新的同级节点。</summary>
-        <returns>一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于在当前选定的节点之后创建一个新的同级节点。</returns>
+        <summary>返回一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于在当前所选节点的后面创建一个新的同级节点。</summary>
+        <returns>一个 <see cref="T:System.Xml.XmlWriter" /> 对象，它用于在当前所选节点的后面创建一个新的同级节点。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2451,7 +2451,7 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入新的同级节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入一个新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -2548,10 +2548,10 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">XML 字符串参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入新的同级节点。</exception>
+        <exception cref="T:System.ArgumentNullException">XML 字符串参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入一个新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException">XML 字符串参数不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 字符串参数的格式不正确。</exception>
       </Docs>
     </Member>
     <Member MemberName="InsertAfter">
@@ -2589,8 +2589,8 @@ nav.Evaluate(expr);
         <Parameter Name="newSibling" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newSibling">一个定位在新的同级节点的 XML 数据上的 <see cref="T:System.Xml.XmlReader" /> 对象。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XmlReader" /> 对象的 XML 内容在当前选定的节点之后创建一个新的同级节点。</summary>
+        <param name="newSibling">一个 <see cref="T:System.Xml.XmlReader" /> 对象，它置于新同级节点的 XML 数据上。</param>
+        <summary>使用指定的 <see cref="T:System.Xml.XmlReader" /> 对象的 XML 内容，在当前所选节点之后创建一个新的同级节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2647,11 +2647,11 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或者已关闭。</exception>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入新的同级节点。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或已关闭。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入一个新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容的格式不标准。</exception>
       </Docs>
     </Member>
     <Member MemberName="InsertAfter">
@@ -2689,7 +2689,7 @@ nav.Evaluate(expr);
         <Parameter Name="newSibling" Type="System.Xml.XPath.XPathNavigator" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newSibling">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象被定位在将作为新的同级节点添加的节点上。</param>
+        <param name="newSibling">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在将作为新的同级节点添加的节点上。</param>
         <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象中的节点在当前选定的节点之后创建一个新的同级节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2747,8 +2747,8 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入新的同级节点。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入一个新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -2794,8 +2794,8 @@ nav.Evaluate(expr);
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于在当前选定的节点之前创建一个新的同级节点。</summary>
-        <returns>一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于在当前选定的节点之前创建一个新的同级节点。</returns>
+        <summary>返回 <see cref="T:System.Xml.XmlWriter" /> 对象，它用于在当前所选节点的前面创建一个新的同级节点。</summary>
+        <returns>一个 <see cref="T:System.Xml.XmlWriter" /> 对象，它用于在当前所选节点的前面创建一个新的同级节点。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2852,7 +2852,7 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之前插入新的同级节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点的前面插入新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -2949,10 +2949,10 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">XML 字符串参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之前插入新的同级节点。</exception>
+        <exception cref="T:System.ArgumentNullException">XML 字符串参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点的前面插入新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException">XML 字符串参数不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 字符串参数的格式不正确。</exception>
       </Docs>
     </Member>
     <Member MemberName="InsertBefore">
@@ -2990,8 +2990,8 @@ nav.Evaluate(expr);
         <Parameter Name="newSibling" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newSibling">一个定位在新的同级节点的 XML 数据上的 <see cref="T:System.Xml.XmlReader" /> 对象。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XmlReader" /> 对象的 XML 内容在当前选定的节点之前创建一个新的同级节点。</summary>
+        <param name="newSibling">一个 <see cref="T:System.Xml.XmlReader" /> 对象，它置于新同级节点的 XML 数据上。</param>
+        <summary>使用 <see cref="T:System.Xml.XmlReader" /> 对象指定的 XML 内容在当前选定的节点之前创建一个新的同级节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3048,11 +3048,11 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或者已关闭。</exception>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之前插入新的同级节点。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或已关闭。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点的前面插入新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容的格式不标准。</exception>
       </Docs>
     </Member>
     <Member MemberName="InsertBefore">
@@ -3090,7 +3090,7 @@ nav.Evaluate(expr);
         <Parameter Name="newSibling" Type="System.Xml.XPath.XPathNavigator" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newSibling">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象被定位在将作为新的同级节点添加的节点上。</param>
+        <param name="newSibling">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在将作为新的同级节点添加的节点上。</param>
         <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中的节点在当前选定的节点之前创建一个新的同级节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3148,8 +3148,8 @@ nav.Evaluate(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之前插入新的同级节点。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点的前面插入新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -3191,10 +3191,10 @@ nav.Evaluate(expr);
         <Parameter Name="value" Type="System.String" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">新的子元素的命名空间前缀（如果有）。</param>
-        <param name="localName">新的子元素的本地名称（如果有）。</param>
-        <param name="namespaceURI">新的子元素的命名空间 URI（如果有）。 <see cref="F:System.String.Empty" /> 与 <see langword="null" /> 等效。</param>
-        <param name="value">新的子元素的值。 如果传递了 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，则将创建一个空元素。</param>
+        <param name="prefix">新的子元素（如果有）的命名空间前缀。</param>
+        <param name="localName">新的子元素（如果有）的本地名称。</param>
+        <param name="namespaceURI">新的子元素（如果有）的命名空间 URI。 <see cref="F:System.String.Empty" /> 和 <see langword="null" /> 是等效的。</param>
+        <param name="value">新的子元素的值。 如果传递 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，将创建一个空元素。</param>
         <summary>使用通过指定值指定的命名空间前缀、本地名称和命名空间 URI 在当前节点之后创建一个新的同级元素。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3260,7 +3260,7 @@ navigator.InsertElementAfter(navigator.Prefix, "pages", LookupNamespaceURI(navig
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入新的同级节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之后插入一个新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -3302,10 +3302,10 @@ navigator.InsertElementAfter(navigator.Prefix, "pages", LookupNamespaceURI(navig
         <Parameter Name="value" Type="System.String" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">新的子元素的命名空间前缀（如果有）。</param>
-        <param name="localName">新的子元素的本地名称（如果有）。</param>
-        <param name="namespaceURI">新的子元素的命名空间 URI（如果有）。 <see cref="F:System.String.Empty" /> 与 <see langword="null" /> 等效。</param>
-        <param name="value">新的子元素的值。 如果传递了 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，则将创建一个空元素。</param>
+        <param name="prefix">新的子元素（如果有）的命名空间前缀。</param>
+        <param name="localName">新的子元素（如果有）的本地名称。</param>
+        <param name="namespaceURI">新的子元素（如果有）的命名空间 URI。 <see cref="F:System.String.Empty" /> 和 <see langword="null" /> 是等效的。</param>
+        <param name="value">新的子元素的值。 如果传递 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，将创建一个空元素。</param>
         <summary>使用通过指定值指定的命名空间前缀、本地名称和命名空间 URI 在当前节点之前创建一个新的同级元素。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3371,7 +3371,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点之前插入新的同级节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不允许在当前节点的前面插入新的同级节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -3411,9 +3411,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="nav" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="nav">要与此 <see cref="T:System.Xml.XPath.XPathNavigator" /> 进行比较的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
-        <summary>确定指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 是否是当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的子代。</summary>
-        <returns>如果指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 是当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的子代，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="nav"><see cref="T:System.Xml.XPath.XPathNavigator" />要与此比较<see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <summary>确定是否指定<see cref="T:System.Xml.XPath.XPathNavigator" />是当前的后代<see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
+        <returns><see langword="true" /> 如果指定<see cref="T:System.Xml.XPath.XPathNavigator" />是当前的后代<see cref="T:System.Xml.XPath.XPathNavigator" />; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3468,7 +3468,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取一个值，该值指示当前节点是否是一个没有结束元素标记的空元素。</summary>
-        <value>如果当前节点为一个空元素，则为 <see langword="true" />；否则，为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果当前节点是一个空元素;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3558,9 +3558,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="other" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="other">要与此 <see cref="T:System.Xml.XPath.XPathNavigator" /> 进行比较的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
-        <summary>当在派生类中被重写时，确定当前的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 是否位于与指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 相同的位置。</summary>
-        <returns>如果这两个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象具有相同的位置，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="other"><see cref="T:System.Xml.XPath.XPathNavigator" />要与此比较<see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <summary>当在派生类中重写，确定是否当前<see cref="T:System.Xml.XPath.XPathNavigator" />位于相同位置与指定<see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
+        <returns><see langword="true" /> 如果两个<see cref="T:System.Xml.XPath.XPathNavigator" />对象具有相同的位置; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3611,8 +3611,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取当前节点的不带命名空间前缀的 <see cref="P:System.Xml.XPath.XPathNavigator.Name" />。</summary>
-        <value>一个 <see cref="T:System.String" />，包含当前节点的本地名称；否则，如果当前节点没有名称（如文本节点或注释节点），则为 <see cref="F:System.String.Empty" />。</value>
+        <summary>在派生类中被重写时，获取当前节点的 <see cref="P:System.Xml.XPath.XPathNavigator.Name" />（不带任何命名空间前缀）。</summary>
+        <value>包含当前节点本地名称的 <see cref="T:System.String" />；如果当前节点没有名称（例如，文本或注释节点），则为 <see cref="F:System.String.Empty" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3715,9 +3715,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="prefix" Type="System.String" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">要解析其命名空间 URI 的前缀。 若要匹配默认命名空间，请传递 <see cref="F:System.String.Empty" />。</param>
+        <param name="prefix">要解析其命名空间 URI 的前缀。 若要匹配默认命名空间，传递<see cref="F:System.String.Empty" />。</param>
         <summary>获取指定前缀的命名空间 URI。</summary>
-        <returns>一个 <see cref="T:System.String" />，它含有分配给指定的命名空间前缀的命名空间 URI；如果没有为指定的前缀分配任何命名空间 URI，则为 <see langword="null" />。 返回的 <see cref="T:System.String" /> 是原子化的。</returns>
+        <returns>一个<see cref="T:System.String" />，其中包含命名空间 URI 分配给指定; 的命名空间前缀<see langword="null" />如果没有命名空间 URI 分配给指定的前缀。 <see cref="T:System.String" />返回原子化。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3776,7 +3776,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="namespaceURI">要为前缀解析的命名空间 URI。</param>
         <summary>获取为指定的命名空间 URI 声明的前缀。</summary>
-        <returns>一个 <see cref="T:System.String" />，它包含分配给指定的命名空间 URI 的命名空间前缀；如果没有向指定的命名空间 URI 分配任何前缀，则为 <see cref="F:System.String.Empty" />。 返回的 <see cref="T:System.String" /> 是原子化的。</returns>
+        <returns>一个<see cref="T:System.String" />，其中包含命名空间前缀分配给命名空间 URI; 否则为<see cref="F:System.String.Empty" />如果没有前缀分配给指定 URI 的命名空间。 <see cref="T:System.String" />返回原子化。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3796,7 +3796,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>确定当前节点是否与指定的 <see cref="N:System.Xml.XPath" /> 表达式匹配。</summary>
+        <summary>确定当前节点是否匹配指定<see cref="N:System.Xml.XPath" />表达式。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Matches">
@@ -3837,7 +3837,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="xpath">XPath 表达式。</param>
         <summary>确定当前节点是否与指定的 XPath 表达式匹配。</summary>
-        <returns>如果当前节点与指定的 XPath 表达式匹配，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果当前节点与匹配指定的 XPath 表达式;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3891,9 +3891,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="expr" Type="System.Xml.XPath.XPathExpression" />
       </Parameters>
       <Docs>
-        <param name="expr">包含已编译的 XPath 表达式的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
-        <summary>确定当前节点是否匹配指定的 <see cref="T:System.Xml.XPath.XPathExpression" />。</summary>
-        <returns>如果当前节点与 <see cref="T:System.Xml.XPath.XPathExpression" /> 相匹配，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="expr">一个 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象，它包含已编译的 XPath 表达式。</param>
+        <summary>确定当前节点是否匹配所指定的 <see cref="T:System.Xml.XPath.XPathExpression" />。</summary>
+        <returns>如果当前节点匹配 <see cref="T:System.Xml.XPath.XPathExpression" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3984,9 +3984,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="other" Type="System.Xml.XPath.XPathNavigator" />
       </Parameters>
       <Docs>
-        <param name="other">在要移动到其上的节点上定位的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到与指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 相同的位置。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到与指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 相同的位置，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <param name="other"><see cref="T:System.Xml.XPath.XPathNavigator" />定位你想要将移动到的节点上。</param>
+        <summary>当在派生类中重写时移动<see cref="T:System.Xml.XPath.XPathNavigator" />到与指定的同一位置<see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到与指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 相同的位置，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4037,9 +4037,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </Parameters>
       <Docs>
         <param name="localName">属性的本地名称。</param>
-        <param name="namespaceURI">属性的命名空间 URI；对于空命名空间，为 <see langword="null" />。</param>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到具有匹配的本地名称和命名空间 URI 的属性上。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到此属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <param name="namespaceURI">命名空间 URI 的属性;<see langword="null" />空命名空间。</param>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到具有匹配的本地名称和命名空间 URI 的属性。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到此属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4063,7 +4063,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到指定的子节点。</summary>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到指定的子节点。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="MoveToChild">
@@ -4101,9 +4101,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="type" Type="System.Xml.XPath.XPathNodeType" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="type">要移动到的子节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</param>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到指定的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的子节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到此子节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <param name="type"><see cref="T:System.Xml.XPath.XPathNodeType" />要将移动到的子节点。</param>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />的子节点到<see cref="T:System.Xml.XPath.XPathNodeType" />指定。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到此子节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4160,8 +4160,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="localName">要移动到的子节点的本地名称。</param>
         <param name="namespaceURI">要移动到的子节点的命名空间 URI。</param>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到具有指定的本地名称和命名空间 URI 的子节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到此子节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到具有的本地名称和命名空间 URI 指定的子节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到此子节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4207,9 +4207,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Parameters />
       <Docs>
         <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移至当前节点的第一个同级节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的第一个同级节点，则为 <see langword="true" />；如果没有第一个同级节点，或者 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则为 <see langword="false" />。 如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 已定位在第一个同级节点上，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 将返回 <see langword="true" />，且不移动其位置。  
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的第一个同级节点，则为 <see langword="true" />；如果没有第一个同级节点，或者 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则为 <see langword="false" />。 如果<see cref="T:System.Xml.XPath.XPathNavigator" />已定位在第一个同级节点上,<see cref="T:System.Xml.XPath.XPathNavigator" />将返回<see langword="true" />且不移动其位置。  
   
-如果 <see cref="M:System.Xml.XPath.XPathNavigator.MoveToFirst" /> 因没有第一个同级节点而返回 <see langword="false" />，或者 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置保持不变。</returns>
+如果<see cref="M:System.Xml.XPath.XPathNavigator.MoveToFirst" />将返回<see langword="false" />原因是没有第一个同级节点，或者如果<see cref="T:System.Xml.XPath.XPathNavigator" />当前定位在属性上，位置<see cref="T:System.Xml.XPath.XPathNavigator" />保持不变。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Xml.XPath.XPathNavigator.MoveToNext" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.MoveToPrevious" />
@@ -4249,8 +4249,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的第一个属性。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的第一个属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的第一个属性。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的第一个属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4345,8 +4345,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的第一个子节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的第一个子节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>当在派生类中重写时移动<see cref="T:System.Xml.XPath.XPathNavigator" />到当前节点的第一个子节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的第一个子节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4372,7 +4372,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的第一个命名空间节点。</summary>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到当前节点的第一个命名空间节点。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="MoveToFirstNamespace">
@@ -4414,8 +4414,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的第一个命名空间节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到第一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到当前节点的第一个命名空间节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到第一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4473,9 +4473,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="namespaceScope" Type="System.Xml.XPath.XPathNamespaceScope" />
       </Parameters>
       <Docs>
-        <param name="namespaceScope">描述命名空间范围的 <see cref="T:System.Xml.XPath.XPathNamespaceScope" /> 值。</param>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到与指定的 <see cref="T:System.Xml.XPath.XPathNamespaceScope" /> 匹配的第一个命名空间节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到第一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <param name="namespaceScope"><see cref="T:System.Xml.XPath.XPathNamespaceScope" />描述命名空间范围的值。</param>
+        <summary>当在派生类中重写时移动<see cref="T:System.Xml.XPath.XPathNavigator" />相匹配的第一个命名空间节点到<see cref="T:System.Xml.XPath.XPathNamespaceScope" />指定。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到第一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4562,8 +4562,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="type" Type="System.Xml.XPath.XPathNodeType" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="type">元素的 <see cref="T:System.Xml.XPath.XPathNodeType" />。 <see cref="T:System.Xml.XPath.XPathNodeType" /> 不能是 <see cref="F:System.Xml.XPath.XPathNodeType.Attribute" /> 或 <see cref="F:System.Xml.XPath.XPathNodeType.Namespace" />。</param>
-        <summary>按文档顺序将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到下一个属于指定 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的元素。</summary>
+        <param name="type">元素的 <see cref="T:System.Xml.XPath.XPathNodeType" />。 <see cref="T:System.Xml.XPath.XPathNodeType" /> 不能为 <see cref="F:System.Xml.XPath.XPathNodeType.Attribute" /> 或 <see cref="F:System.Xml.XPath.XPathNodeType.Namespace" />。</param>
+        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到按文档顺序指定的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的以下元素。</summary>
         <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功移动，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4663,7 +4663,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <summary>按文档顺序将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到具有指定的本地名称和命名空间 URI 的元素。</summary>
+        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到按文档顺序指定了其本地名称或命名空间 URI 的元素。</summary>
         <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功移动，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4754,8 +4754,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </Parameters>
       <Docs>
         <param name="type">元素的 <see cref="T:System.Xml.XPath.XPathNodeType" />。 <see cref="T:System.Xml.XPath.XPathNodeType" /> 不能是 <see cref="F:System.Xml.XPath.XPathNodeType.Attribute" /> 或 <see cref="F:System.Xml.XPath.XPathNodeType.Namespace" />。</param>
-        <param name="end"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，在搜索下一个元素时该对象定位在当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 不会越过的元素边界上。</param>
-        <summary>按文档顺序将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到指定边界内下一个属于指定 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的元素。</summary>
+        <param name="end"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在搜索下一个元素时当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 不会越过的元素边界上。</param>
+        <summary>按文档顺序将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到指定边界内的指定 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的下一个元素。</summary>
         <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功移动，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4857,7 +4857,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <param name="end"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，在搜索下一个元素时该对象定位在当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 不会越过的元素边界上。</param>
+        <param name="end"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在搜索下一个元素时当前 <see cref="T:System.Xml.XPath.XPathNavigator" /> 不会越过的元素边界上。</param>
         <summary>按文档顺序将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到指定的边界内具有指定的本地名称和命名空间 URI 的元素。</summary>
         <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功移动，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -4957,7 +4957,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="id">一个 <see cref="T:System.String" />，表示要移动到的节点的 <c>ID</c> 值。</param>
         <summary>当在派生类中重写时，移动到具有 <c>ID</c> 类型的属性并且属性值与指定的 <see cref="T:System.String" /> 匹配的节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功移动，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则导航器的位置未更改。</returns>
+        <returns><see langword="true" /> 如果<see cref="T:System.Xml.XPath.XPathNavigator" />成功移动; 否则为<see langword="false" />。 如果<see langword="false" />，导航器的位置保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5009,8 +5009,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </Parameters>
       <Docs>
         <param name="name">命名空间节点的命名空间前缀。</param>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到具有指定的命名空间前缀的命名空间节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功移动到指定的命名空间，则为 <see langword="true" />；如果没有找到匹配的命名空间节点，或者 <see cref="T:System.Xml.XPath.XPathNavigator" /> 没有定位在元素节点上，则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到具有指定的命名空间前缀的命名空间节点。</summary>
+        <returns><see langword="true" /> 如果<see cref="T:System.Xml.XPath.XPathNavigator" />成功地移动到指定的命名空间;<see langword="false" />如果未找到匹配的命名空间节点，或如果<see cref="T:System.Xml.XPath.XPathNavigator" />没有定位在元素节点上。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5073,8 +5073,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的下一个同级节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个同级节点，则为 <see langword="true" />；如果没有其他同级节点，或者，<see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>当在派生类中重写时，会将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动至当前节点的下一个同级节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个同级节点，则为 <see langword="true" />；如果没有更多同级节点或如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前位于属性节点上，则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5159,9 +5159,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="type" Type="System.Xml.XPath.XPathNodeType" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="type">要移动到的同级节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</param>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点中与指定的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 匹配的下一个同级节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个同级节点，则为 <see langword="true" />；如果没有其他同级节点，或者，<see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <param name="type"><see cref="T:System.Xml.XPath.XPathNodeType" />将移动到的同级节点。</param>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />相匹配的当前节点的下一个同级节点到<see cref="T:System.Xml.XPath.XPathNodeType" />指定。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个同级节点，则为 <see langword="true" />；如果没有更多同级节点或如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前位于属性节点上，则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5220,8 +5220,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="localName">要移动到的下一个同级节点的本地名称。</param>
         <param name="namespaceURI">要移动到的下一个同级节点的命名空间 URI。</param>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到下一个具有指定的本地名称和命名空间 URI 的同级节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个同级节点，则为 <see langword="true" />；如果没有其他同级节点，或者如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />具有本地名称和命名空间 URI 指定的下一个同级节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个同级节点，则为 <see langword="true" />；如果没有其他同级节点，或者如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在属性节点上，则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -5260,7 +5260,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Parameters />
       <Docs>
         <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到下一个属性。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个属性，则为 <see langword="true" />；如果没有其他属性，则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个属性，则为 <see langword="true" />；如果没有其他属性，则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5327,7 +5327,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到下一个命名空间节点。</summary>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到下一步的命名空间节点。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="MoveToNextNamespace">
@@ -5369,8 +5369,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到下一个命名空间节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到下一步的命名空间节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5428,9 +5428,9 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="namespaceScope" Type="System.Xml.XPath.XPathNamespaceScope" />
       </Parameters>
       <Docs>
-        <param name="namespaceScope">描述命名空间范围的 <see cref="T:System.Xml.XPath.XPathNamespaceScope" /> 值。</param>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到与指定的 <see cref="T:System.Xml.XPath.XPathNamespaceScope" /> 匹配的下一个命名空间节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <param name="namespaceScope"><see cref="T:System.Xml.XPath.XPathNamespaceScope" />描述命名空间范围的值。</param>
+        <summary>当在派生类中重写时移动<see cref="T:System.Xml.XPath.XPathNavigator" />到下一个命名空间节点匹配<see cref="T:System.Xml.XPath.XPathNamespaceScope" />指定。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到下一个命名空间节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5486,8 +5486,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的父节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的父节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>当在派生类中重写时移动<see cref="T:System.Xml.XPath.XPathNavigator" />到当前节点的父节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到当前节点的父节点，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5551,8 +5551,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点的上一个同级节点。</summary>
-        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到上一个同级节点，则为 <see langword="true" />；如果没有上一个同级节点，或者如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在某个属性节点上，则为 <see langword="false" />。 如果为 <see langword="false" />，则 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置不变。</returns>
+        <summary>当在派生类中重写时移动<see cref="T:System.Xml.XPath.XPathNavigator" />到当前节点的上一个同级节点。</summary>
+        <returns>如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 成功地移动到上一个同级节点，则为 <see langword="true" />；如果没有上一个同级节点，或者如果 <see cref="T:System.Xml.XPath.XPathNavigator" /> 当前定位在某个属性节点上，则为 <see langword="false" />。 如果 <see langword="false" />，<see cref="T:System.Xml.XPath.XPathNavigator" /> 的位置将保持不变。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Xml.XPath.XPathNavigator.MoveToNext" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.MoveToFirst" />
@@ -5592,7 +5592,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将 <see cref="T:System.Xml.XPath.XPathNavigator" /> 移动到当前节点所属的根节点。</summary>
+        <summary>将移动<see cref="T:System.Xml.XPath.XPathNavigator" />到当前节点所属的根节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5642,7 +5642,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取当前节点的限定名。</summary>
-        <value>一个 <see cref="T:System.String" />，包含当前节点的限定 <see cref="P:System.Xml.XPath.XPathNavigator.Name" />；否则，如果当前节点没有名称（如文本或注释节点），则为 <see cref="F:System.String.Empty" />。</value>
+        <value>一个 <see cref="T:System.String" />，包含当前节点的限定 <see cref="P:System.Xml.XPath.XPathNavigator.Name" />；如果当前节点没有名称（例如，文本或注释节点），则为 <see cref="F:System.String.Empty" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5741,7 +5741,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取当前节点的命名空间 URI。</summary>
-        <value>一个 <see cref="T:System.String" />，包含当前节点的命名空间 URI；否则，如果当前节点没有命名空间 URI，则为 <see cref="F:System.String.Empty" />。</value>
+        <value>一个 <see cref="T:System.String" />，它包含当前节点的命名空间 URI；如果当前节点没有命名空间 URI，则为 <see cref="F:System.String.Empty" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5833,8 +5833,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <ReturnType>System.Xml.XmlNameTable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取 <see cref="T:System.Xml.XmlNameTable" /> 的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
-        <value>一个 <see cref="T:System.Xml.XmlNameTable" /> 对象，它使您能够获取 XML 文档中 <see cref="T:System.String" /> 的原子化版本。</value>
+        <summary>当在派生类中重写时获取<see cref="T:System.Xml.XmlNameTable" />的<see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
+        <value><see cref="T:System.Xml.XmlNameTable" />对象，它使你能够获取的原子化的版本<see cref="T:System.String" />XML 文档中。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5883,8 +5883,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <ReturnType>System.Collections.IEqualityComparer</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个用于 <see cref="T:System.Collections.IEqualityComparer" /> 对象的相等比较的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
-        <value>一个用于 <see cref="T:System.Collections.IEqualityComparer" /> 对象的相等比较的 <see cref="T:System.Xml.XPath.XPathNavigator" />。</value>
+        <summary>获取 <see cref="T:System.Collections.IEqualityComparer" />，它用于 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象的相等比较。</summary>
+        <value>一个 <see cref="T:System.Collections.IEqualityComparer" />，它用于 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象的相等比较。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5970,8 +5970,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <ReturnType>System.Xml.XPath.XPathNodeType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取当前节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</summary>
-        <value>表示当前节点的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 值之一。</value>
+        <summary>当在派生类中重写时，获取当前节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</summary>
+        <value>表示当前节点其中一个 <see cref="T:System.Xml.XPath.XPathNodeType" /> 值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6146,7 +6146,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Docs>
         <summary>当在派生类中被重写时，获取与当前节点关联的命名空间前缀。</summary>
-        <value>一个 <see cref="T:System.String" />，包含与当前节点关联的命名空间前缀。</value>
+        <value>一个 <see cref="T:System.String" />它包含与当前节点关联的命名空间前缀。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6301,7 +6301,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">放置 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的当前节点不允许预置新的子节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所位于的当前节点不允许在其前面预置新的子节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -6400,10 +6400,10 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">XML 字符串参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">放置 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的当前节点不允许预置新的子节点。</exception>
+        <exception cref="T:System.ArgumentNullException">XML 字符串参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所在的当前节点不允许预置新的子节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException">XML 字符串参数不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 字符串参数的格式不正确。</exception>
       </Docs>
     </Member>
     <Member MemberName="PrependChild">
@@ -6441,8 +6441,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="newChild" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newChild">一个定位在新的子节点的 XML 数据上的 <see cref="T:System.Xml.XmlReader" /> 对象。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XmlReader" /> 对象的 XML 内容在当前节点的子节点列表的开始处创建一个新的子节点。</summary>
+        <param name="newChild">一个 <see cref="T:System.Xml.XmlReader" /> 对象，它定位在新子节点的 XML 数据上。</param>
+        <summary>使用指定的 <see cref="T:System.Xml.XmlReader" /> 对象的 XML 内容，在当前节点的子节点列表的开始处创建一个新的子节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6501,11 +6501,11 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或者已关闭。</exception>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">放置 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的当前节点不允许预置新的子节点。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或已关闭。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所位于的当前节点不允许在其前面预置新的子节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容的格式不标准。</exception>
       </Docs>
     </Member>
     <Member MemberName="PrependChild">
@@ -6543,7 +6543,7 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="newChild" Type="System.Xml.XPath.XPathNavigator" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newChild">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在要作为新的子节点添加的节点上。</param>
+        <param name="newChild">一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象定位在将作为新的子节点添加的节点上。</param>
         <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象中的节点在当前节点的子节点列表的开始处创建一个新的子节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6603,8 +6603,8 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">放置 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的当前节点不允许预置新的子节点。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所位于的当前节点不允许在其前面预置新的子节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -6646,11 +6646,11 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="value" Type="System.String" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">新的子元素的命名空间前缀（如果有）。</param>
-        <param name="localName">新的子元素的本地名称（如果有）。</param>
-        <param name="namespaceURI">新的子元素的命名空间 URI（如果有）。 <see cref="F:System.String.Empty" /> 与 <see langword="null" /> 等效。</param>
-        <param name="value">新的子元素的值。 如果传递了 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，则将创建一个空元素。</param>
-        <summary>使用通过指定值指定的命名空间前缀、本地名称和命名空间 URI 在当前节点的子节点列表的开始处创建一个新的子节点。</summary>
+        <param name="prefix">新的子元素（如果有）的命名空间前缀。</param>
+        <param name="localName">新的子元素（如果有）的本地名称。</param>
+        <param name="namespaceURI">新的子元素（如果有）的命名空间 URI。 <see cref="F:System.String.Empty" /> 和 <see langword="null" /> 是等效的。</param>
+        <param name="value">新的子元素的值。 如果传递 <see cref="F:System.String.Empty" /> 或 <see langword="null" />，将创建一个空元素。</param>
+        <summary>使用通过指定值指定的命名空间前缀、本地名称和命名空间 URI 在当前节点的子节点列表的开始处创建一个新的子元素。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6717,7 +6717,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">放置 <see cref="T:System.Xml.XPath.XPathNavigator" /> 的当前节点不允许预置新的子节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 所位于的当前节点不允许在其前面预置新的子节点。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -6754,8 +6754,8 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个 <see cref="T:System.Xml.XmlReader" /> 对象，该对象包含当前节点及其子节点。</summary>
-        <returns>一个 <see cref="T:System.Xml.XmlReader" /> 对象，该对象包含当前节点及其子节点。</returns>
+        <summary>返回 <see cref="T:System.Xml.XmlReader" /> 对象，该对象包含当前节点及其子节点。</summary>
+        <returns><see cref="T:System.Xml.XmlReader" /> 对象，该对象包含当前节点及其子节点。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6818,7 +6818,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 未定位在元素节点或根节点上。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不会在元素节点或根节点上进行定位。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReplaceRange">
@@ -6856,7 +6856,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="lastSiblingToReplace" Type="System.Xml.XPath.XPathNavigator" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="lastSiblingToReplace">一个 <see cref="T:System.Xml.XPath.XPathNavigator" />，它定位在要替换的范围中的最后一个同级节点上。</param>
+        <param name="lastSiblingToReplace">一个 <see cref="T:System.Xml.XPath.XPathNavigator" />，它定位在要替换的范围内的最后一个同级节点上。</param>
         <summary>替换从当前节点到指定节点之间的一组同级节点。</summary>
         <returns>一个 <see cref="T:System.Xml.XmlWriter" /> 对象，该对象用于指定替换范围。</returns>
         <remarks>
@@ -7021,10 +7021,10 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">XML 字符串参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不定位在元素、文本、处理指令或注释节点。</exception>
+        <exception cref="T:System.ArgumentNullException">XML 字符串参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 未定位于元素、文本、处理指令或注释节点上。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException">XML 字符串参数不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 字符串参数的格式不正确。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReplaceSelf">
@@ -7062,7 +7062,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="newNode" Type="System.Xml.XmlReader" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newNode">一个 <see cref="T:System.Xml.XmlReader" />，该对象定位在新节点的 XML 数据上。</param>
+        <param name="newNode">位于新节点的 XML 数据上的 <see cref="T:System.Xml.XmlReader" /> 对象。</param>
         <summary>将当前节点替换为指定的 <see cref="T:System.Xml.XmlReader" /> 对象的内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7122,11 +7122,11 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或者已关闭。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XmlReader" /> 对象处于错误状态或已关闭。</exception>
         <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不定位在元素、文本、处理指令或注释节点。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不位于元素、文本、处理指令或注释节点上。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XmlReader" /> 对象参数的 XML 内容的格式不标准。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReplaceSelf">
@@ -7164,7 +7164,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
         <Parameter Name="newNode" Type="System.Xml.XPath.XPathNavigator" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="newNode">一个定位在新节点上的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象。</param>
+        <param name="newNode">在新节点上定位的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象。</param>
         <summary>将当前节点替换为指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象的内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7224,10 +7224,10 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不定位在元素、文本、处理指令或注释节点。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数是 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不位于元素、文本、处理指令或注释节点上。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
-        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数的 XML 内容不是格式良好的。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象参数的 XML 内容的格式不标准。</exception>
       </Docs>
     </Member>
     <Member MemberName="SchemaInfo">
@@ -7262,7 +7262,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
       </ReturnValue>
       <Docs>
         <summary>获取作为架构验证结果分配给当前节点的架构信息。</summary>
-        <value>一个 <see cref="T:System.Xml.Schema.IXmlSchemaInfo" /> 对象，包含当前节点的架构信息。</value>
+        <value><see cref="T:System.Xml.Schema.IXmlSchemaInfo" />对象，其中包含当前节点的架构信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7320,7 +7320,7 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
       <Docs>
         <param name="xpath">表示 XPath 表达式的 <see cref="T:System.String" />。</param>
         <summary>使用指定的 XPath 表达式选择节点集。</summary>
-        <returns>指向选定节点集的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <returns>指向所选节点集的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7391,7 +7391,7 @@ while (iterator.MoveNext())
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">XPath 表达式中包含错误，或者它的返回类型不是节点集。</exception>
+        <exception cref="T:System.ArgumentException">XPath 表达式包含错误或其返回类型不是节点集。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 表达式无效。</exception>
         <altmember cref="M:System.Xml.XmlNode.SelectNodes(System.String)" />
         <altmember cref="M:System.Xml.XmlNode.SelectSingleNode(System.String)" />
@@ -7438,7 +7438,7 @@ while (iterator.MoveNext())
       <Docs>
         <param name="expr">包含已编译的 XPath 查询的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
         <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathExpression" /> 来选择节点集。</summary>
-        <returns>指向选定节点集的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <returns>指向所选节点集的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7553,7 +7553,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">XPath 表达式中包含错误，或者它的返回类型不是节点集。</exception>
+        <exception cref="T:System.ArgumentException">XPath 表达式包含错误或其返回类型不是节点集。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 表达式无效。</exception>
         <altmember cref="M:System.Xml.XmlNode.SelectNodes(System.String)" />
         <altmember cref="M:System.Xml.XmlNode.SelectSingleNode(System.String)" />
@@ -7600,8 +7600,8 @@ XPathNodeIterator ni = nav.Select(expr);
       <Docs>
         <param name="xpath">表示 XPath 表达式的 <see cref="T:System.String" />。</param>
         <param name="resolver">用于解析命名空间前缀的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象。</param>
-        <summary>通过指定的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象使用指定的 XPath 表达式来选择节点集，以解析命名空间前缀。</summary>
-        <returns>指向选定节点集的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <summary>使用指定的 XPath 表达式与指定用来解析命名空间前缀的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象选择节点集。</summary>
+        <returns>指向所选节点集的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7647,7 +7647,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">XPath 表达式中包含错误，或者它的返回类型不是节点集。</exception>
+        <exception cref="T:System.ArgumentException">XPath 表达式包含错误或其返回类型不是节点集。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 表达式无效。</exception>
       </Docs>
     </Member>
@@ -7657,7 +7657,7 @@ XPathNodeIterator ni = nav.Select(expr);
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>选择当前节点中与选择条件匹配的所有上级节点。</summary>
+        <summary>选择当前节点中与选择条件匹配的所有祖先节点。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SelectAncestors">
@@ -7697,10 +7697,10 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="matchSelf" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="type">上级节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</param>
-        <param name="matchSelf">如果要在所选内容中包括上下文节点，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>选择当前节点中具有匹配的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的所有上级节点。</summary>
-        <returns>一个包含选定节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。 返回的节点的顺序与文档顺序相反。</returns>
+        <param name="type"><see cref="T:System.Xml.XPath.XPathNodeType" />祖先节点。</param>
+        <param name="matchSelf">若要在所选内容上包含上下文节点，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <summary>选择所有祖先节点的当前节点具有匹配的<see cref="T:System.Xml.XPath.XPathNodeType" />。</summary>
+        <returns>一个包含所选节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。 返回的节点的顺序与文档顺序相反。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7757,11 +7757,11 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="matchSelf" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="name">上级节点的本地名称。</param>
-        <param name="namespaceURI">上级节点的命名空间 URI。</param>
-        <param name="matchSelf">如果要在所选内容中包括上下文节点，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>选择当前节点中具有指定的本地名称和命名空间 URI 的所有上级节点。</summary>
-        <returns>一个包含选定节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。 返回的节点的顺序与文档顺序相反。</returns>
+        <param name="name">祖先节点的本地名称。</param>
+        <param name="namespaceURI">祖先节点的命名空间 URI。</param>
+        <param name="matchSelf">若要在所选内容上包含上下文节点，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <summary>选择当前节点中具有指定的本地名称和命名空间 URI 的所有祖先节点。</summary>
+        <returns>一个包含所选节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。 返回的节点的顺序与文档顺序相反。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7814,7 +7814,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see langword="null" /> 不能作为参数传递。</exception>
+        <exception cref="T:System.ArgumentNullException">无法将 <see langword="null" /> 作为一个参数进行传递。</exception>
         <altmember cref="M:System.Xml.XPath.XPathNavigator.SelectChildren(System.Xml.XPath.XPathNodeType)" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.SelectDescendants(System.Xml.XPath.XPathNodeType,System.Boolean)" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.Select(System.Xml.XPath.XPathExpression)" />
@@ -7865,9 +7865,9 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="type" Type="System.Xml.XPath.XPathNodeType" />
       </Parameters>
       <Docs>
-        <param name="type">子节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</param>
-        <summary>选择当前节点中具有匹配的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的所有子节点。</summary>
-        <returns>一个包含选定节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <param name="type"><see cref="T:System.Xml.XPath.XPathNodeType" />的子节点。</param>
+        <summary>选择当前节点的所有有相匹配的子节点<see cref="T:System.Xml.XPath.XPathNodeType" />。</summary>
+        <returns>一个包含所选节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7926,7 +7926,7 @@ XPathNodeIterator ni = nav.Select(expr);
         <param name="name">子节点的本地名称。</param>
         <param name="namespaceURI">子节点的命名空间 URI。</param>
         <summary>选择当前节点中具有指定的本地名称和命名空间 URI 的所有子节点。</summary>
-        <returns>一个包含选定节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <returns>一个包含所选节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7942,7 +7942,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see langword="null" /> 不能作为参数传递。</exception>
+        <exception cref="T:System.ArgumentNullException">无法将 <see langword="null" /> 作为一个参数进行传递。</exception>
         <altmember cref="M:System.Xml.XPath.XPathNavigator.SelectAncestors(System.Xml.XPath.XPathNodeType,System.Boolean)" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.SelectDescendants(System.Xml.XPath.XPathNodeType,System.Boolean)" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.Select(System.Xml.XPath.XPathExpression)" />
@@ -7994,10 +7994,10 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="matchSelf" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="type">子代节点的 <see cref="T:System.Xml.XPath.XPathNodeType" />。</param>
-        <param name="matchSelf">如果要在所选内容中包括上下文节点，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>选择当前节点中具有匹配的 <see cref="T:System.Xml.XPath.XPathNodeType" /> 的所有子代节点。</summary>
-        <returns>一个包含选定节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <param name="type"><see cref="T:System.Xml.XPath.XPathNodeType" />的子代节点。</param>
+        <param name="matchSelf"><see langword="true" /> 若要在所选内容; 中包括上下文节点否则为<see langword="false" />。</param>
+        <summary>选择当前节点的具有匹配的所有子代节点<see cref="T:System.Xml.XPath.XPathNodeType" />。</summary>
+        <returns>一个包含所选节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8055,10 +8055,10 @@ XPathNodeIterator ni = nav.Select(expr);
       </Parameters>
       <Docs>
         <param name="name">子代节点的本地名称。</param>
-        <param name="namespaceURI">子代节点的命名空间 URI。</param>
-        <param name="matchSelf">如果要在所选内容中包括上下文节点，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="namespaceURI">命名空间 URI 的子代节点。</param>
+        <param name="matchSelf"><see langword="true" /> 若要在所选内容; 中包括上下文节点否则为<see langword="false" />。</param>
         <summary>选择当前节点中具有指定的本地名称和命名空间 URI 的所有子代节点。</summary>
-        <returns>一个包含选定节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
+        <returns>一个包含所选节点的 <see cref="T:System.Xml.XPath.XPathNodeIterator" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8076,7 +8076,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see langword="null" /> 不能作为参数传递。</exception>
+        <exception cref="T:System.ArgumentNullException">无法将 <see langword="null" /> 作为一个参数进行传递。</exception>
         <altmember cref="M:System.Xml.XPath.XPathNavigator.SelectAncestors(System.Xml.XPath.XPathNodeType,System.Boolean)" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.SelectChildren(System.Xml.XPath.XPathNodeType)" />
         <altmember cref="M:System.Xml.XPath.XPathNavigator.Select(System.Xml.XPath.XPathExpression)" />
@@ -8088,7 +8088,7 @@ XPathNodeIterator ni = nav.Select(expr);
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>选择 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中的单个节点。</summary>
+        <summary>选择单个节点中的<see cref="T:System.Xml.XPath.XPathNavigator" />。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SelectSingleNode">
@@ -8127,8 +8127,8 @@ XPathNodeIterator ni = nav.Select(expr);
       </Parameters>
       <Docs>
         <param name="xpath">表示 XPath 表达式的 <see cref="T:System.String" />。</param>
-        <summary>使用指定的 XPath 查询选择 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中的单个节点。</summary>
-        <returns>一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象包含指定的 XPath 查询的第一个匹配节点；否则，如果没有查询结果，则为 <see langword="null" />。</returns>
+        <summary>使用指定的 XPath 查询在 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中选择单个节点。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，其中包含指定的 XPath 查询的第一个匹配节点；如果没有查询结果，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8179,7 +8179,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">XPath 查询中出错，或者 XPath 表达式的返回类型不是节点。</exception>
+        <exception cref="T:System.ArgumentException">在 XPath 查询中遇到了错误或 XPath 表达式的返回类型不是一个节点。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 查询无效。</exception>
       </Docs>
     </Member>
@@ -8219,8 +8219,8 @@ XPathNodeIterator ni = nav.Select(expr);
       </Parameters>
       <Docs>
         <param name="expression">包含已编译的 XPath 查询的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象在 <see cref="T:System.Xml.XPath.XPathExpression" /> 中选择单个节点。</summary>
-        <returns>一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象包含指定的 XPath 查询的第一个匹配节点；否则，如果没有查询结果，则为 <see langword="null" />。</returns>
+        <summary>使用指定的 <see cref="T:System.Xml.XPath.XPathExpression" /> 对象在 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中选择单个节点。</summary>
+        <returns>一个包含指定 XPath 查询的第一个匹配节点的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象；如果没有查询结果，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8271,7 +8271,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">XPath 查询中出错，或者 XPath 表达式的返回类型不是节点。</exception>
+        <exception cref="T:System.ArgumentException">在 XPath 查询中遇到了错误或 XPath 表达式的返回类型不是一个节点。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 查询无效。</exception>
       </Docs>
     </Member>
@@ -8312,9 +8312,9 @@ XPathNodeIterator ni = nav.Select(expr);
       </Parameters>
       <Docs>
         <param name="xpath">表示 XPath 表达式的 <see cref="T:System.String" />。</param>
-        <param name="resolver">一个 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象，该对象用于解析 XPath 查询中的命名空间前缀。</param>
-        <summary>通过指定的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象使用指定的 XPath 查询在 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 中选择单个节点，以解析命名空间前缀。</summary>
-        <returns>一个 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象，该对象包含指定的 XPath 查询的第一个匹配节点；否则，如果没有查询结果，则为 <see langword="null" />。</returns>
+        <param name="resolver"><see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象用于解析 XPath 查询中的命名空间前缀。</param>
+        <summary>通过指定的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象使用指定的 XPath 查询在 <see cref="T:System.Xml.XPath.XPathNavigator" /> 中选择单个节点，以解析命名空间前缀。</summary>
+        <returns>一个包含指定 XPath 查询的第一个匹配节点的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象；如果没有查询结果，则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8368,7 +8368,7 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">XPath 查询中出错，或者 XPath 表达式的返回类型不是节点。</exception>
+        <exception cref="T:System.ArgumentException">在 XPath 查询中遇到了错误或 XPath 表达式的返回类型不是一个节点。</exception>
         <exception cref="T:System.Xml.XPath.XPathException">XPath 查询无效。</exception>
       </Docs>
     </Member>
@@ -8407,8 +8407,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="typedValue" Type="System.Object" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="typedValue">节点的新类型值。</param>
-        <summary>设置当前节点的类型值。</summary>
+        <param name="typedValue">节点的新类型化值。</param>
+        <summary>设置当前节点的类型化值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8461,9 +8461,9 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持指定对象的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">指定值不可以为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 未定位在元素或特性节点上。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持指定的对象类型。</exception>
+        <exception cref="T:System.ArgumentNullException">指定的值不能为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 未定位在元素或属性节点上。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -8557,8 +8557,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">该值参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 定位在根节点或命名空间节点上，或者指定的值无效。</exception>
+        <exception cref="T:System.ArgumentNullException">值参数为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 位于根节点（即命名空间节点）上，或指定的值无效。</exception>
         <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XPath.XPathNavigator" /> 不支持编辑。</exception>
       </Docs>
     </Member>
@@ -8602,13 +8602,13 @@ XPathNodeIterator ni = nav.Select(expr);
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建 <see cref="T:System.Xml.XPath.XPathNavigator" /> 对象的新副本。</summary>
+        <summary>创建的新副本<see cref="T:System.Xml.XPath.XPathNavigator" />对象。</summary>
         <returns><see cref="T:System.Xml.XPath.XPathNavigator" /> 对象的新副本。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Xml.XPath.XPathNavigator> 实例强制转换为 <xref:System.ICloneable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Xml.XPath.XPathNavigator> 实例被强制转换为 <xref:System.ICloneable> 接口时使用。  
   
  有关此成员的说明，请参见 <xref:System.Xml.XPath.XPathNavigator.Clone%2A?displayProperty=nameWithType>。  
   
@@ -8651,7 +8651,7 @@ XPathNodeIterator ni = nav.Select(expr);
       <Parameters />
       <Docs>
         <summary>获取当前节点的文本值。</summary>
-        <returns>包含当前节点文本值的 <see langword="string" />。</returns>
+        <returns>一个<see langword="string" />，其中包含当前节点的文本值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8764,7 +8764,7 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>由在存储区上提供“虚拟化”XML 视图的 <see cref="T:System.Xml.XPath.XPathNavigator" /> 实现使用，以提供对基础对象的访问。</summary>
+        <summary>由<see cref="T:System.Xml.XPath.XPathNavigator" />实现提供"虚拟化"XML 查看一段的存储，以提供对基础对象的访问权限。</summary>
         <value>默认值为 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -8781,6 +8781,36 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XPath.XPathNavigator.Value" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride ReadOnly Property Value As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract property System::String ^ Value { System::String ^ get(); };" />
+      <MemberSignature Language="F#" Value="member this.Value : string" Usage="System.Xml.XPath.XPathNavigator.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>1.0.5000.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>当在派生类中重写时获取的项的字符串值。</summary>
+        <value>项的字符串值。</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ValueAs">
@@ -8819,10 +8849,10 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" Index="1" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="returnType">返回当前节点值时所采用的 <see cref="T:System.Type" />。</param>
+        <param name="returnType"><see cref="T:System.Type" />返回当前节点的值。</param>
         <param name="nsResolver">用于解析命名空间前缀的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象。</param>
-        <summary>获取当前节点的指定 <see cref="T:System.Type" /> 形式的值，以使用指定的 <see cref="T:System.Xml.IXmlNamespaceResolver" /> 对象解析命名空间前缀。</summary>
-        <returns>以要求的 <see cref="T:System.Type" /> 形式表示的当前节点值。</returns>
+        <summary>获取当前节点的值作为<see cref="T:System.Type" />使用的指定<see cref="T:System.Xml.IXmlNamespaceResolver" />以解析命名空间前缀的对象。</summary>
+        <returns>作为当前节点的值<see cref="T:System.Type" />请求。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8833,8 +8863,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">当前节点值的目标类型的格式不正确。</exception>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">当前节点的值不是目标类型的正确格式。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="ValueAsBoolean">
@@ -8869,8 +8899,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前节点的 <see cref="T:System.Boolean" /> 类型的值。</summary>
-        <value>当前节点的 <see cref="T:System.Boolean" /> 类型的值。</value>
+        <summary>获取当前节点的值作为<see cref="T:System.Boolean" />。</summary>
+        <value>当前节点的值作为<see cref="T:System.Boolean" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8901,8 +8931,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">当前节点的字符串值不能转换为 <see cref="T:System.Boolean" />。</exception>
-        <exception cref="T:System.InvalidCastException">尝试到 <see cref="T:System.Boolean" /> 的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">当前节点的字符串值无法转换为<see cref="T:System.Boolean" />。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换为<see cref="T:System.Boolean" />无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="ValueAsDateTime">
@@ -8937,8 +8967,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.DateTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前节点的 <see cref="T:System.DateTime" /> 类型的值。</summary>
-        <value>当前节点的 <see cref="T:System.DateTime" /> 类型的值。</value>
+        <summary>获取当前节点的值作为<see cref="T:System.DateTime" />。</summary>
+        <value>当前节点的值作为<see cref="T:System.DateTime" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8954,8 +8984,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">当前节点的字符串值不能转换为 <see cref="T:System.DateTime" />。</exception>
-        <exception cref="T:System.InvalidCastException">尝试到 <see cref="T:System.DateTime" /> 的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">当前节点的字符串值无法转换为<see cref="T:System.DateTime" />。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换为<see cref="T:System.DateTime" />无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="ValueAsDouble">
@@ -8990,8 +9020,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前节点的 <see cref="T:System.Double" /> 类型的值。</summary>
-        <value>当前节点的 <see cref="T:System.Double" /> 类型的值。</value>
+        <summary>获取当前节点的值作为<see cref="T:System.Double" />。</summary>
+        <value>当前节点的值作为<see cref="T:System.Double" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9007,8 +9037,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">当前节点的字符串值不能转换为 <see cref="T:System.Double" />。</exception>
-        <exception cref="T:System.InvalidCastException">尝试到 <see cref="T:System.Double" /> 的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">当前节点的字符串值无法转换为<see cref="T:System.Double" />。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换为<see cref="T:System.Double" />无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="ValueAsInt">
@@ -9043,8 +9073,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前节点的 <see cref="T:System.Int32" /> 类型的值。</summary>
-        <value>当前节点的 <see cref="T:System.Int32" /> 类型的值。</value>
+        <summary>获取当前节点的值作为<see cref="T:System.Int32" />。</summary>
+        <value>当前节点的值作为<see cref="T:System.Int32" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9060,8 +9090,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">当前节点的字符串值不能转换为 <see cref="T:System.Int32" />。</exception>
-        <exception cref="T:System.InvalidCastException">尝试到 <see cref="T:System.Int32" /> 的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">当前节点的字符串值无法转换为<see cref="T:System.Int32" />。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换为<see cref="T:System.Int32" />无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="ValueAsLong">
@@ -9096,8 +9126,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.Int64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前节点的 <see cref="T:System.Int64" /> 类型的值。</summary>
-        <value>当前节点的 <see cref="T:System.Int64" /> 类型的值。</value>
+        <summary>获取当前节点的值作为<see cref="T:System.Int64" />。</summary>
+        <value>当前节点的值作为<see cref="T:System.Int64" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9113,8 +9143,8 @@ XPathNodeIterator ni = nav.Select(expr);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">当前节点的字符串值不能转换为 <see cref="T:System.Int64" />。</exception>
-        <exception cref="T:System.InvalidCastException">尝试到 <see cref="T:System.Int64" /> 的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">当前节点的字符串值无法转换为<see cref="T:System.Int64" />。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换为<see cref="T:System.Int64" />无效。</exception>
       </Docs>
     </Member>
     <Member MemberName="ValueType">
@@ -9278,8 +9308,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <Parameter Name="writer" Type="System.Xml.XmlWriter" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="writer">要流向的 <see cref="T:System.Xml.XmlWriter" /> 对象。</param>
-        <summary>使当前节点及其子节点流向指定的 <see cref="T:System.Xml.XmlWriter" /> 对象。</summary>
+        <param name="writer">要流式传输至的 <see cref="T:System.Xml.XmlWriter" /> 对象。</param>
+        <summary>将当前节点及其子节点流式传输到指定的 <see cref="T:System.Xml.XmlWriter" /> 对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9431,8 +9461,8 @@ XPathNodeIterator ni = nav.Select(expr);
         <ReturnType>System.Xml.Schema.XmlSchemaType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前节点的 <see cref="T:System.Xml.Schema.XmlSchemaType" /> 信息。</summary>
-        <value>一个 <see cref="T:System.Xml.Schema.XmlSchemaType" /> 对象；默认值为 <see langword="null" />。</value>
+        <summary>获取<see cref="T:System.Xml.Schema.XmlSchemaType" />当前节点的信息。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaType" />对象; 默认值是<see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
