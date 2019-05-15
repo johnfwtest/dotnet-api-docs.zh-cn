@@ -1,5 +1,5 @@
 <Type Name="DesignerCommandSet" FullName="System.ComponentModel.Design.DesignerCommandSet">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4adb099c40193cf7d8656f75421f67aa1921b8d4" /><Meta Name="ms.sourcegitcommit" Value="adc8598fd19d91438cacaa8fa7ce613e28c8218e" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="12/11/2018" /><Meta Name="ms.locfileid" Value="53224691" /></Metadata><TypeSignature Language="C#" Value="public class DesignerCommandSet" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a405422a207e37689c636c8d575209f169d1025c" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65003343" /></Metadata><TypeSignature Language="C#" Value="public class DesignerCommandSet" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerCommandSet extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerCommandSet" />
   <TypeSignature Language="VB.NET" Value="Public Class DesignerCommandSet" />
@@ -10,12 +10,16 @@
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>表示设计时工具的基类（不是从 <see cref="T:System.ComponentModel.Design.ComponentDesigner" /> 派生的），它提供智能标记或设计器谓词能力。</summary>
+    <summary>表示设计时工具，不是派生自的基类<see cref="T:System.ComponentModel.Design.ComponentDesigner" />，用于提供智能标记或设计器谓词能力。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -27,7 +31,7 @@
 |公共成员|描述|  
 |-------------------|-----------------|  
 |<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>|返回的智能标记或与设计的组件关联的设计器谓词的集合。 基实现返回`null`。|  
-|<xref:System.ComponentModel.Design.DesignerCommandSet.ActionLists%2A>|获取与设计的组件关联的所有智能标记的集合。 只需调用基实现<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>。|  
+|<xref:System.ComponentModel.Design.DesignerCommandSet.ActionLists%2A>|获取与设计的组件相关联的所有智能标记的集合。 只需调用基实现<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>。|  
 |<xref:System.ComponentModel.Design.DesignerCommandSet.Verbs%2A>|获取与设计的组件关联的所有设计器谓词的集合。 只需调用基实现<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>。|  
   
  一个<xref:System.ComponentModel.Design.DesignerCommandSet>应添加为特定于站点的服务。 外部，此类型的服务，首先应查询来发现智能标记和设计器谓词的功能。 如果找不到此服务，则<xref:System.ComponentModel.Design.IDesigner.Verbs%2A?displayProperty=nameWithType>应改用属性。 此过程提供的路径向后兼容性。  
@@ -49,6 +53,10 @@
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -82,12 +90,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与设计的组件关联的所有智能标记的集合。</summary>
-        <value>包含关联的设计的组件的智能标记的 <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <summary>获取与设计的组件相关联的所有智能标记的集合。</summary>
+        <value>一个<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />包含关联的设计组件的智能标记。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -114,6 +126,10 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ICollection</ReturnType>
       </ReturnValue>
@@ -121,9 +137,9 @@
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">要返回的集合的类型，指示 <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" /> 或 <see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />。</param>
+        <param name="name">要返回集合的类型，表示<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />或<see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />。</param>
         <summary>返回命令对象的集合。</summary>
-        <returns>包含命令对象的指定类型（<see cref="T:System.ComponentModel.Design.DesignerActionList" /> 或 <see cref="T:System.ComponentModel.Design.DesignerVerb" />）的集合。 此基实现总是返回 <see langword="null" />。</returns>
+        <returns>包含命令对象的指定类型（<see cref="T:System.ComponentModel.Design.DesignerActionList" /> 或 <see cref="T:System.ComponentModel.Design.DesignerVerb" />）的集合。 基实现始终返回<see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -156,12 +172,16 @@
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.Design.DesignerVerbCollection</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>获取与设计的组件关联的所有设计器谓词的集合。</summary>
-        <value>包含关联的设计组件的设计器谓词的 <see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />。</value>
+        <value>一个<see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />，其中包含关联的设计组件的设计器谓词。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
