@@ -1,5 +1,5 @@
 <Type Name="SoapHttpClientProtocol" FullName="System.Web.Services.Protocols.SoapHttpClientProtocol">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0b4c2f60749e3bf223380bbd56ad58f05a00d89a" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58738574" /></Metadata><TypeSignature Language="C#" Value="public class SoapHttpClientProtocol : System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3bd6853edcd153b523c50a5a724fe6928c71f027" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65006579" /></Metadata><TypeSignature Language="C#" Value="public class SoapHttpClientProtocol : System.Web.Services.Protocols.HttpWebClientProtocol" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapHttpClientProtocol extends System.Web.Services.Protocols.HttpWebClientProtocol" />
   <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHttpClientProtocol" />
   <TypeSignature Language="VB.NET" Value="Public Class SoapHttpClientProtocol&#xA;Inherits HttpWebClientProtocol" />
@@ -22,7 +22,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>指定当使用 SOAP 时客户端代理从其中派生的类。</summary>
+    <summary>指定当使用 SOAP 代理从其中派生的类客户端。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -99,12 +99,12 @@
         <Parameter Name="asyncState" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="methodName">正调用 <see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" /> 方法的派生类中的 XML Web services 方法的名称。</param>
-        <param name="parameters">对象的数组，包含要传递给 XML Web services 的参数。 数组中值的顺序与派生类的调用方法中的参数顺序对应。</param>
-        <param name="callback">异步调用完成时要调用的委托。 如果 <paramref name="callback" /> 为 <see langword="null" />，则不调用委托。</param>
-        <param name="asyncState">调用方提供的额外信息。</param>
-        <summary>开始使用 SOAP 异步调用 XML Web services 方法。</summary>
-        <returns><see cref="T:System.IAsyncResult" />，传递给 <see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke(System.IAsyncResult)" /> 方法以从远程方法调用中获取返回值。</returns>
+        <param name="methodName">正在调用的派生类中的 XML Web 服务方法的名称<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />方法。</param>
+        <param name="parameters">包含要传递给 XML Web 服务的参数的对象的数组。 在派生类调用方法的参数顺序对应的数组中值的顺序。</param>
+        <param name="callback">要异步调用完成时调用的委托。 如果<paramref name="callback" />是<see langword="null" />，没有调用该委托。</param>
+        <param name="asyncState">由调用方提供的额外信息。</param>
+        <summary>开始异步调用 XML Web 服务方法使用 SOAP。</summary>
+        <returns><see cref="T:System.IAsyncResult" />传递给<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke(System.IAsyncResult)" />方法以从远程方法调用中获取返回值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -134,8 +134,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.Services.Protocols.SoapException">请求到达了服务器计算机，但未被成功处理。</exception>
-        <exception cref="T:System.InvalidOperationException">请求对对象的当前状态无效。</exception>
+        <exception cref="T:System.Web.Services.Protocols.SoapException">请求到达服务器计算机，但未成功处理。</exception>
+        <exception cref="T:System.InvalidOperationException">请求没有有效的对象的当前状态。</exception>
         <exception cref="T:System.Net.WebException">访问网络时出错。</exception>
         <altmember cref="T:System.IAsyncResult" />
         <altmember cref="T:System.AsyncCallback" />
@@ -164,7 +164,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>动态绑定到 <see cref="P:System.Web.Services.Protocols.WebClientProtocol.Url" /> 处的发现文档中描述的 XML Web services。</summary>
+        <summary>动态绑定到 XML Web 服务上的发现文档中所述<see cref="P:System.Web.Services.Protocols.WebClientProtocol.Url" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -192,10 +192,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Exception">未能在 <see cref="P:System.Web.Services.Protocols.WebClientProtocol.Url" /> 处的发现文档中找到代理类中定义的绑定。
+        <exception cref="T:System.Exception">在发现文档中找不到代理类中定义的绑定<see cref="P:System.Web.Services.Protocols.WebClientProtocol.Url" />。
 
-- 或 - 
-代理类没有定义绑定。</exception>
+或 
+代理类没有定义的绑定。</exception>
         <altmember cref="T:System.Web.Services.WebServiceBindingAttribute" />
         <related type="Article" href="https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/fxx6cfx2(v=vs.100)">XML Web services 发现</related>
       </Docs>
@@ -222,9 +222,9 @@
         <Parameter Name="asyncResult" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="asyncResult">从 <see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" /> 方法返回的 <see cref="T:System.IAsyncResult" />。</param>
-        <summary>结束使用 SOAP 异步调用 XML Web services 方法。</summary>
-        <returns>包含派生类方法的返回值、所有引用或 <see langword="out" /> 参数的对象数组。</returns>
+        <param name="asyncResult">从 <see cref="T:System.IAsyncResult" /> 方法返回的 <see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />。</param>
+        <summary>结束使用 SOAP 的 XML Web 服务方法的异步调用。</summary>
+        <returns>一个对象数组，其中包含返回值和任何引用或<see langword="out" />派生的类方法的参数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -250,9 +250,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="asyncResult" /> 不是 <see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" /> 方法的返回值。</exception>
-        <exception cref="T:System.Web.Services.Protocols.SoapException">请求到达了服务器计算机，但未被成功处理。</exception>
-        <exception cref="T:System.InvalidOperationException">请求对对象的当前状态无效。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="asyncResult" /> 不是从返回的值<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />方法。</exception>
+        <exception cref="T:System.Web.Services.Protocols.SoapException">请求到达服务器计算机，但未成功处理。</exception>
+        <exception cref="T:System.InvalidOperationException">请求没有有效的对象的当前状态。</exception>
         <exception cref="T:System.Net.WebException">访问网络时出错。</exception>
         <altmember cref="T:System.IAsyncResult" />
         <altmember cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />
@@ -281,10 +281,10 @@
         <Parameter Name="bufferSize" Type="System.Int32" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="message"><see cref="T:System.Web.Services.Protocols.SoapClientMessage" />，提供 <see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" /> 来初始化 <see cref="T:System.Xml.XmlReader" />。</param>
-        <param name="bufferSize"><see cref="T:System.IO.StreamReader" /> 使用的 <see cref="T:System.Xml.XmlReader" /> 的初始缓冲区大小。</param>
-        <summary>返回一个用 <see cref="T:System.Xml.XmlReader" /> 参数的 <see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" /> 属性初始化的 <see cref="T:System.Web.Services.Protocols.SoapClientMessage" />。</summary>
-        <returns>用 <paramref name="message" /> 参数的 <see cref="T:System.Xml.XmlReader" /> 属性初始化的 <see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />。</returns>
+        <param name="message">一个<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />，它提供<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />初始化<see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="bufferSize">初始缓冲区大小<see cref="T:System.IO.StreamReader" />由<see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>返回<see cref="T:System.Xml.XmlReader" />使用初始化<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />属性的<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />参数。</summary>
+        <returns>一个<see cref="T:System.Xml.XmlReader" />使用初始化<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />属性的<paramref name="message" />参数。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -309,9 +309,9 @@
         <Parameter Name="uri" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="uri"><see cref="T:System.Uri" /> 在创建 <see cref="T:System.Net.WebRequest" /> 时使用。</param>
+        <param name="uri"><see cref="T:System.Uri" />创建时要使用<see cref="T:System.Net.WebRequest" />。</param>
         <summary>为指定的 <paramref name="uri" /> 创建 <see cref="T:System.Net.WebRequest" />。</summary>
-        <returns>指定 URI 的 <see cref="T:System.Net.WebRequest" />。</returns>
+        <returns><see cref="T:System.Net.WebRequest" />为指定的 URI。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -350,10 +350,10 @@
         <Parameter Name="bufferSize" Type="System.Int32" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="message"><see cref="T:System.Web.Services.Protocols.SoapClientMessage" />，提供 <see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" /> 来初始化 <see cref="T:System.Xml.XmlWriter" />。</param>
-        <param name="bufferSize"><see cref="T:System.IO.StreamWriter" /> 使用的 <see cref="T:System.Xml.XmlWriter" /> 的初始缓冲区大小。</param>
-        <summary>返回用 <see cref="T:System.Xml.XmlWriter" /> 参数的 <see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" /> 属性初始化的 <see cref="T:System.Web.Services.Protocols.SoapClientMessage" />。</summary>
-        <returns>用 <paramref name="message" /> 参数的 <see cref="T:System.Xml.XmlWriter" /> 属性初始化的 <see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />。</returns>
+        <param name="message">一个<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />，它提供<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />初始化<see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="bufferSize">初始缓冲区大小<see cref="T:System.IO.StreamWriter" />由<see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary>返回<see cref="T:System.Xml.XmlWriter" />使用初始化<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />属性的<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />参数。</summary>
+        <returns>一个<see cref="T:System.Xml.XmlWriter" />使用初始化<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />属性的<paramref name="message" />参数。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -369,7 +369,7 @@
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; cli::array &lt;System::Object ^&gt; ^ Invoke(System::String ^ method_name, cli::array &lt;System::Object ^&gt; ^ parameters);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(System.String,System.Object[])" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberSignature Language="F#" Value="member this.Invoke : string * obj[] -&gt; obj[]" Usage="soapHttpClientProtocol.Invoke (method_name, parameters)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="member this.Invoke : string * obj[] -&gt; obj[]" Usage="soapHttpClientProtocol.Invoke (method_name, parameters)" FrameworkAlternate="xamarinandroid-7.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="member this.Invoke : string * obj[] -&gt; obj[]" Usage="soapHttpClientProtocol.Invoke (method_name, parameters)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -387,11 +387,11 @@
         <Parameter Name="parameters" Type="System.Object[]" Index="1" />
       </Parameters>
       <Docs>
-        <param name="methodName">XML Web services 方法的名称。</param>
-        <param name="method_name">XML Web services 方法的名称。</param>
-        <param name="parameters">包含要传递给 XML Web services 的参数的对象数组。 数组中值的顺序与派生类的调用方法中的参数顺序对应。</param>
-        <summary>使用 SOAP 同步调用 XML Web services 方法。</summary>
-        <returns>包含派生类方法的返回值、所有 <see langword="reference" /> 或 <see langword="out" /> 参数的对象数组。</returns>
+        <param name="methodName">XML Web 服务方法的名称。</param>
+        <param name="method_name">XML Web 服务方法的名称。</param>
+        <param name="parameters">对象数组，其中包含要传递给 XML Web 服务的参数。 在派生类调用方法的参数顺序对应的数组中值的顺序。</param>
+        <summary>调用 XML Web 服务方法使用 SOAP 同步。</summary>
+        <returns>返回值和所有包含对象的数组<see langword="reference" />或<see langword="out" />派生的类方法的参数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -417,8 +417,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.Services.Protocols.SoapException">请求到达了服务器计算机，但未被成功处理。</exception>
-        <exception cref="T:System.InvalidOperationException">请求对对象的当前状态无效。</exception>
+        <exception cref="T:System.Web.Services.Protocols.SoapException">请求到达服务器计算机，但未成功处理。</exception>
+        <exception cref="T:System.InvalidOperationException">请求没有有效的对象的当前状态。</exception>
         <exception cref="T:System.Net.WebException">访问网络时出错。</exception>
         <altmember cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />
         <altmember cref="T:System.Web.Services.Protocols.WebClientProtocol" />
@@ -431,7 +431,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>异步调用指定的方法。</summary>
+        <summary>以异步方式调用指定的方法。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="InvokeAsync">
@@ -460,7 +460,7 @@
         <param name="methodName">要调用的方法的名称。</param>
         <param name="parameters">要传递给该方法的参数。</param>
         <param name="callback">当方法调用完成后调用的委托。</param>
-        <summary>异步调用指定的方法。</summary>
+        <summary>以异步方式调用指定的方法。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -491,8 +491,8 @@
         <param name="methodName">要调用的方法的名称。</param>
         <param name="parameters">要传递给该方法的参数。</param>
         <param name="callback">当方法调用完成后调用的委托。</param>
-        <param name="userState">用于将状态信息传入 <paramref name="callback" /> 委托的对象。</param>
-        <summary>异步调用指定的方法。</summary>
+        <param name="userState">用于将状态信息传入的对象<paramref name="callback" />委托。</param>
+        <summary>以异步方式调用指定的方法。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -522,7 +522,7 @@
         <ReturnType>System.Web.Services.Protocols.SoapProtocolVersion</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置用于对 XML Web services 修改的 SOAP 请求的 SOAP 协议版本。</summary>
+        <summary>获取或设置用于对 XML Web 服务发出 SOAP 请求的 SOAP 协议的版本。</summary>
         <value><see cref="T:System.Web.Services.Protocols.SoapProtocolVersion" /> 值之一。 默认值为 <see cref="F:System.Web.Services.Protocols.SoapProtocolVersion.Soap11" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

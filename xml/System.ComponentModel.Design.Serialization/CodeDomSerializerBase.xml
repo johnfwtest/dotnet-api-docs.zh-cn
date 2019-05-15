@@ -1,5 +1,5 @@
 <Type Name="CodeDomSerializerBase" FullName="System.ComponentModel.Design.Serialization.CodeDomSerializerBase">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="26522032eb3fc90eb34852a67f75bfc0e4831695" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57916551" /></Metadata><TypeSignature Language="C#" Value="public abstract class CodeDomSerializerBase" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e8fafe903ea356f455d9ef04bb1c96af52e6901f" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65003024" /></Metadata><TypeSignature Language="C#" Value="public abstract class CodeDomSerializerBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeDomSerializerBase extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class CodeDomSerializerBase" />
@@ -22,12 +22,9 @@
     <Attribute>
       <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netcore-3.0">
-      <AttributeName>System.CLSCompliant(false)</AttributeName>
-    </Attribute>
   </Attributes>
   <Docs>
-    <summary>为 <see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" /> 类提供基类。</summary>
+    <summary>提供了基类的类<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />类。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -58,21 +55,22 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
-        <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
-        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="name">从表达式生成的对象的名称。 如果不需要命名该对象，可以为 <see langword="null" />。</param>
-        <param name="expression">要解释的 <see cref="T:System.CodeDom.CodeExpression" />。</param>
-        <summary>将给定表达式反序列化为内存中的对象。</summary>
-        <returns>从 <paramref name="expression" /> 的解释生成的对象。</returns>
+        <param name="name">从表达式生成的对象的名称。 可以是<see langword="null" />如果不需要命名该对象。</param>
+        <param name="expression"><see cref="T:System.CodeDom.CodeExpression" />来解释。</param>
+        <summary>反序列化到内存中对象的给定的表达式。</summary>
+        <returns>从的解释生成的对象<paramref name="expression" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -128,10 +126,10 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="type">要返回的实例的 <see cref="T:System.Type" />。</param>
-        <param name="parameters">要传递给 <paramref name="type" /> 的构造函数的参数。</param>
-        <param name="name">反序列化的对象的名称。</param>
-        <param name="addToContainer">要将该对象添加到设计容器，则为 <see langword="true" />；否则为 <see langword="false" />。 该对象必须实现 <see cref="T:System.ComponentModel.IComponent" /> 才能使此功能生效。</param>
+        <param name="type"><see cref="T:System.Type" />要返回的实例。</param>
+        <param name="parameters">要传递给构造函数的参数<paramref name="type" />。</param>
+        <param name="name">反序列化对象的名称。</param>
+        <param name="addToContainer"><see langword="true" /> 若要将此对象添加到设计容器;否则为<see langword="false" />。 该对象必须实现 <see cref="T:System.ComponentModel.IComponent" /> 才能使此功能生效。</param>
         <summary>返回给定类型的实例。</summary>
         <returns><paramref name="type" /> 的一个实例。</returns>
         <remarks>
@@ -174,8 +172,8 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="value">要从其中对属性进行反序列化的对象。</param>
-        <param name="filter">筛选将反序列化哪些属性的 <see cref="T:System.Attribute" /> 数组。</param>
+        <param name="value">是要进行反序列化属性的对象。</param>
+        <param name="filter"><see cref="T:System.Attribute" />筛选将反序列化哪些属性的数组。</param>
         <summary>在给定对象上将属性从固定区域性资源包反序列化。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -219,8 +217,8 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="statement">要反序列化的 <see cref="T:System.CodeDom.CodeStatement" />。</param>
-        <summary>通过解释并执行 CodeDOM 语句反序列化语句。</summary>
+        <param name="statement"><see cref="T:System.CodeDom.CodeStatement" />要反序列化。</param>
+        <summary>通过解释并执行 CodeDOM 语句反序列语句。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -261,8 +259,8 @@
       <Docs>
         <param name="manager">序列化管理器。</param>
         <param name="type">目标类型。</param>
-        <summary>获取项目目标 .NET Framework 版本中定义的特性的集合。</summary>
-        <returns>项目目标 .NET Framework 版本中定义的特性的集合。</returns>
+        <summary>获取项目的目标版本的.NET framework 中定义的特性的集合。</summary>
+        <returns>项目的目标版本的.NET framework 中定义的特性集合。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -292,8 +290,8 @@
       <Docs>
         <param name="manager">序列化管理器。</param>
         <param name="instance">目标类型的对象。</param>
-        <summary>获取项目目标 .NET Framework 版本中定义的特性的集合。</summary>
-        <returns>项目目标 .NET Framework 版本中定义的特性的集合。</returns>
+        <summary>获取项目的目标版本的.NET framework 中定义的特性的集合。</summary>
+        <returns>项目的目标版本的.NET framework 中定义的特性集合。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -324,9 +322,9 @@
       <Docs>
         <param name="manager">序列化管理器。</param>
         <param name="instance">目标类型的对象。</param>
-        <param name="attributes">要传递给目标 .NET Framework 版本的特性的数组。</param>
-        <summary>获取项目的 .NET Framework 的目标版本中定义的事件的集合。</summary>
-        <returns>项目的 .NET Framework 的目标版本中定义的事件的集合。</returns>
+        <param name="attributes">要传递给.NET Framework 的目标版本的属性的数组。</param>
+        <summary>获取项目的目标版本的.NET framework 中定义的事件的集合。</summary>
+        <returns>定义项目的目标版本的.NET framework 中的事件的集合。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -356,7 +354,7 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="value">要为其获取表达式的对象。</param>
+        <param name="value">为其获取表达式的对象。</param>
         <summary>返回给定对象的表达式。</summary>
         <returns>表示 <paramref name="value" /> 的 <see cref="T:System.CodeDom.CodeExpression" />，或者，如果没有 <paramref name="value" /> 的现有表达式，则为 <see langword="null" />。</returns>
         <remarks>
@@ -410,9 +408,9 @@
       <Docs>
         <param name="manager">序列化管理器。</param>
         <param name="instance">目标类型的对象。</param>
-        <param name="attributes">要传递给目标 .NET Framework 版本的特性的数组。</param>
-        <summary>获取项目的 .NET Framework 的目标版本中定义的属性的集合。</summary>
-        <returns>项目的 .NET Framework 的目标版本中定义的属性的集合。</returns>
+        <param name="attributes">要传递给.NET Framework 的目标版本的属性的数组。</param>
+        <summary>获取项目的目标版本的.NET framework 中定义的属性的集合。</summary>
+        <returns>属性的.NET framework 的项目的目标版本中定义的集合。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -440,9 +438,9 @@
       </Parameters>
       <Docs>
         <param name="manager">序列化管理器。</param>
-        <param name="type">要从中使用元数据的类型。</param>
+        <param name="type">要使用元数据的类型。</param>
         <summary>获取从类型元数据生成的反射类型。</summary>
-        <returns>从 <paramref name="type" /> 的元数据生成的反射类型。</returns>
+        <returns>生成的元数据的反射类型<paramref name="type" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -478,9 +476,9 @@
       </Parameters>
       <Docs>
         <param name="manager">序列化管理器。</param>
-        <param name="instance">要从中使用元数据的对象。</param>
+        <param name="instance">要使用元数据的对象。</param>
         <summary>获取从对象元数据生成的反射类型。</summary>
-        <returns>从 <paramref name="object" /> 的元数据生成的反射类型。</returns>
+        <returns>生成的元数据的反射类型<paramref name="object" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -497,7 +495,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>定位给定对象值或类型的序列化程序。</summary>
+        <summary>定位给定的对象值或类型的序列化程序。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetSerializer">
@@ -526,9 +524,9 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="value">指定要检索的序列化程序的对象。</param>
-        <summary>定位给定对象值的序列化程序。</summary>
-        <returns>适合于 <paramref name="value" /> 的 <see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />。</returns>
+        <param name="value">对象，该对象指定要检索的序列化程序。</param>
+        <summary>定位给定的对象值的序列化程序。</summary>
+        <returns>一个<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />适用于<paramref name="value" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -568,9 +566,9 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="valueType">指定要检索的序列化程序的 <see cref="T:System.Type" />。</param>
-        <summary>定位给定类型的序列化程序。</summary>
-        <returns>适合于 <paramref name="valueType" /> 的 <see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />。</returns>
+        <param name="valueType"><see cref="T:System.Type" />指定要检索的序列化程序。</param>
+        <summary>查找给定类型的序列化程序。</summary>
+        <returns>一个<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />适用于<paramref name="valueType" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -609,9 +607,9 @@
       </Parameters>
       <Docs>
         <param name="provider">类型说明提供程序服务。</param>
-        <param name="instance">如果 <paramref name="provider" /> 为 <see langword="null" />，则为一个可从中派生类型说明提供程序服务的对象。</param>
-        <summary>获取 <see cref="T:System.ComponentModel.TypeDescriptionProvider" />，它可在类型筛选中用来识别 .NET Framework 的目标版本。</summary>
-        <returns>一个可识别 .NET Framework 的类型说明提供程序。</returns>
+        <param name="instance">从其类型说明提供程序服务可以从中派生的对象，如果<paramref name="provider" />是<see langword="null" />。</param>
+        <summary>获取<see cref="T:System.ComponentModel.TypeDescriptionProvider" />这就是知道.NET Framework 中，在类型筛选操作中使用的目标版本。</summary>
+        <returns>可识别.NET Framework 的类型说明提供程序。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -641,9 +639,9 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="value">将检索其名称的对象。</param>
+        <param name="value">将为其检索名称的对象。</param>
         <summary>返回给定对象的唯一名称。</summary>
-        <returns><paramref name="value" /> 的唯一名称。</returns>
+        <returns>唯一名称<paramref name="value" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -664,7 +662,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回一个值，指示给定对象是否已序列化。</summary>
+        <summary>返回一个值，该值指示是否已序列化给定的对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsSerialized">
@@ -698,9 +696,9 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="value">要为上面的序列化测试的对象。</param>
-        <summary>返回一个值，指示给定对象是否已序列化。</summary>
-        <returns>如果已序列化 <paramref name="value" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="value">要测试其上面的序列化的对象。</param>
+        <summary>返回一个值，该值指示是否已序列化给定的对象。</summary>
+        <returns><see langword="true" /> 如果<paramref name="value" />已序列化; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -741,10 +739,10 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="value">要为上面的序列化测试的对象。</param>
-        <param name="honorPreset">要包含预设表达式，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>返回一个值，指示给定对象是否已序列化，也可以考虑预设表达式。</summary>
-        <returns>如果已序列化 <paramref name="value" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="value">要测试其上面的序列化的对象。</param>
+        <param name="honorPreset"><see langword="true" /> 要包含预设的表达式;否则为<see langword="false" />。</param>
+        <summary>返回一个值，该值指示是否已序列化给定的对象，也可以考虑预设的表达式。</summary>
+        <returns><see langword="true" /> 如果<paramref name="value" />已序列化; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -786,9 +784,9 @@
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
         <param name="value">要序列化的对象。</param>
-        <param name="isComplete">如果已完全序列化 <paramref name="value" />，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="isComplete"><see langword="true" /> 如果<paramref name="value" />完全序列化; 否则为<see langword="false" />。</param>
         <summary>返回一个表示给定对象的创建的表达式。</summary>
-        <returns>表示 <paramref name="value" /> 的创建的表达式。</returns>
+        <returns>一个表达式，表示创建<paramref name="value" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1091,9 +1089,9 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="resourceName"><paramref name="value" /> 将被序列化到的资源包的名称。</param>
+        <param name="resourceName">在其中的资源包的名称<paramref name="value" />将序列化。</param>
         <param name="value">要序列化的对象。</param>
-        <summary>将给定对象序列化为使用给定资源名称的资源包。</summary>
+        <summary>给定的对象序列化为使用给定的资源名称的资源包。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1139,9 +1137,9 @@
       </Parameters>
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
-        <param name="resourceName"><paramref name="value" /> 将被序列化到的资源包的名称。</param>
+        <param name="resourceName">在其中的资源包的名称<paramref name="value" />将序列化。</param>
         <param name="value">要序列化的对象。</param>
-        <summary>将给定对象序列化为使用给定资源名称的资源包。</summary>
+        <summary>给定的对象序列化为使用给定的资源名称的资源包。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1185,8 +1183,8 @@
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
         <param name="value">要序列化的对象。 可以为 <see langword="null" />。</param>
-        <summary>将给定对象序列化为表达式。</summary>
-        <returns>如果 <paramref name="value" /> 可以序列化，则为 <see cref="T:System.CodeDom.CodeExpression" /> 对象；否则为 <see langword="null" />。</returns>
+        <summary>给定的对象序列化为表达式。</summary>
+        <returns>一个<see cref="T:System.CodeDom.CodeExpression" />对象，如果<paramref name="value" />可以是序列化; 否则为<see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1228,7 +1226,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将对象序列化为表达式。</summary>
+        <summary>一个对象序列化为表达式。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SerializeToResourceExpression">
@@ -1263,8 +1261,8 @@
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
         <param name="value">要序列化的对象。</param>
-        <summary>将给定对象序列化为表达式。</summary>
-        <returns>将 <paramref name="value" /> 作为序列化的表达式包含在内的 <see cref="T:System.CodeDom.CodeExpression" />。</returns>
+        <summary>给定的对象序列化为表达式。</summary>
+        <returns>一个<see cref="T:System.CodeDom.CodeExpression" />包含<paramref name="value" />作为序列化的表达式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1315,9 +1313,9 @@
       <Docs>
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
         <param name="value">要序列化的对象。</param>
-        <param name="ensureInvariant">要序列化为固定区域性，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>将给定对象序列化为适合于固定区域性的表达式。</summary>
-        <returns>将 <paramref name="value" /> 作为序列化的表达式包含在内的 <see cref="T:System.CodeDom.CodeExpression" />。</returns>
+        <param name="ensureInvariant"><see langword="true" /> 将序列化为固定区域性;否则为<see langword="false" />。</param>
+        <summary>给定的对象序列化为适合于固定区域性的表达式。</summary>
+        <returns>一个<see cref="T:System.CodeDom.CodeExpression" />包含<paramref name="value" />作为序列化的表达式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1420,8 +1418,8 @@
         <param name="manager">用于序列化的 <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />。</param>
         <param name="value">要序列化的对象。</param>
         <param name="expression">要与 <paramref name="value" /> 相关联的 <see cref="T:System.CodeDom.CodeExpression" />。</param>
-        <param name="isPreset">要指定预设表达式，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>将对象与表达式关联，并选择指定预设表达式。</summary>
+        <param name="isPreset"><see langword="true" /> 若要指定预设的表达式;否则为<see langword="false" />。</param>
+        <summary>将一个对象相关联的表达式，可以选择指定预设的表达式。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
