@@ -1,5 +1,5 @@
 <Type Name="XmlNodeReader" FullName="System.Xml.XmlNodeReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e3a9886bb77d23df1f283ca94224ff63cde790a5" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58698718" /></Metadata><TypeSignature Language="C#" Value="public class XmlNodeReader : System.Xml.XmlReader, System.Xml.IXmlNamespaceResolver" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f29cca5d08a83972780e6b9ee75004eaf89e8e5b" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64996520" /></Metadata><TypeSignature Language="C#" Value="public class XmlNodeReader : System.Xml.XmlReader, System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNodeReader extends System.Xml.XmlReader implements class System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlNodeReader" />
   <TypeSignature Language="VB.NET" Value="Public Class XmlNodeReader&#xA;Inherits XmlReader&#xA;Implements IXmlNamespaceResolver" />
@@ -31,7 +31,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>表示提供对 <see cref="T:System.Xml.XmlNode" /> 中的 XML 数据进行快速、非缓存的只进访问的读取器。</summary>
+    <summary>表示提供快速、 非缓存只进访问中的 XML 数据的读取器<see cref="T:System.Xml.XmlNode" />。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -95,8 +95,8 @@
         <Parameter Name="node" Type="System.Xml.XmlNode" />
       </Parameters>
       <Docs>
-        <param name="node">要读取的 <see langword="XmlNode" />。</param>
-        <summary>使用指定的 <see cref="T:System.Xml.XmlNode" /> 创建 <see langword="XmlNodeReader" /> 类的实例。</summary>
+        <param name="node"><see langword="XmlNode" />你想要读取。</param>
+        <summary>创建的实例<see langword="XmlNodeReader" />类使用指定<see cref="T:System.Xml.XmlNode" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -518,7 +518,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" /> 参数小于 0 或大于等于 <see cref="P:System.Xml.XmlNodeReader.AttributeCount" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" />参数是小于 0 或大于或等于<see cref="P:System.Xml.XmlNodeReader.AttributeCount" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetAttribute">
@@ -733,7 +733,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示当前节点是否可以具有 <see cref="P:System.Xml.XmlNodeReader.Value" />。</summary>
+        <summary>获取一个值，该值指示当前节点是否可以具有<see cref="P:System.Xml.XmlNodeReader.Value" />。</summary>
         <value>如果读取器当前定位在的节点可以具有 <see langword="Value" />，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -752,7 +752,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 |`Comment`|注释的内容。|  
 |`DocumentType`|内部子集。|  
 |`ProcessingInstruction`|全部内容（不包括指令目标）。|  
-|`SignificantWhitespace`|混合内容模型中标记之间的空白。|  
+|`SignificantWhitespace`|混合内容模型中标记之间的空白区域。|  
 |`Text`|文本节点的内容。|  
 |`Whitespace`|标记之间的空白。|  
 |`XmlDeclaration`|声明的内容。|  
@@ -915,8 +915,39 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 
 ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" /> 参数小于 0 或大于等于 <see cref="P:System.Xml.XmlNodeReader.AttributeCount" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" />参数是小于 0 或大于或等于<see cref="P:System.Xml.XmlNodeReader.AttributeCount" />。</exception>
         <altmember cref="Overload:System.Xml.XmlNodeReader.GetAttribute" />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override string this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeReader.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Overrides ReadOnly Property Item(name As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ default[System::String ^] { System::String ^ get(System::String ^ name); };" />
+      <MemberSignature Language="F#" Value="member this.Item(string) : string" Usage="System.Xml.XmlNodeReader.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>1.0.5000.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" Index="0" FrameworkAlternate="netframework-1.1" />
+      </Parameters>
+      <Docs>
+        <param name="name">To be added.</param>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Item">
@@ -1141,7 +1172,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" /> 参数小于 0 或大于等于 <see cref="P:System.Xml.XmlReader.AttributeCount" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" />参数是小于 0 或大于或等于<see cref="P:System.Xml.XmlReader.AttributeCount" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="MoveToAttribute">
@@ -1442,7 +1473,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 返回的名称取决于节点的 <see cref="P:System.Xml.XmlNodeReader.NodeType" />。 下列节点类型返回所列的值。 所有其他节点类型返回空字符串。  
   
  <list type="table"><listheader><term> 节点类型 
- </term><description> name 
+ </term><description> 名称 
  </description></listheader><item><term><see langword="Attribute" /></term><description> 属性名。  
   
  </description></item><item><term><see langword="DocumentType" /></term><description> 文档类型名称。  
@@ -1453,7 +1484,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  </description></item><item><term><see langword="ProcessingInstruction" /></term><description> 处理指令的目标。  
   
- </description></item><item><term><see langword="XmlDeclaration" /></term><description> 字符串 <see langword="xml" />。  
+ </description></item><item><term><see langword="XmlDeclaration" /></term><description> 文本字符串<see langword="xml" />。  
   
  </description></item></list></value>
         <remarks>
@@ -1911,7 +1942,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlNodeReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
         <altmember cref="M:System.Xml.XmlNodeReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="M:System.Xml.XmlNodeReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
@@ -1979,7 +2010,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlNodeReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
         <altmember cref="M:System.Xml.XmlNodeReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="M:System.Xml.XmlNodeReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
@@ -2049,9 +2080,9 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不是元素节点。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
-        <exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.Xml.XmlException">该元素包含混合的内容。</exception>
+        <exception cref="T:System.FormatException">无法将内容转换为请求的类型。</exception>
         <altmember cref="M:System.Xml.XmlNodeReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="M:System.Xml.XmlNodeReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
@@ -2121,9 +2152,9 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不是元素节点。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
-        <exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.Xml.XmlException">该元素包含混合的内容。</exception>
+        <exception cref="T:System.FormatException">无法将内容转换为请求的类型。</exception>
         <altmember cref="M:System.Xml.XmlNodeReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="M:System.Xml.XmlNodeReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
@@ -2290,7 +2321,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">读取器不是定位在 <see langword="EntityReference" /> 节点上。</exception>
+        <exception cref="T:System.InvalidOperationException">读取器未定位在上<see langword="EntityReference" />节点。</exception>
       </Docs>
     </Member>
     <Member MemberName="SchemaInfo">
@@ -2322,7 +2353,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       </ReturnValue>
       <Docs>
         <summary>获取已分配给当前节点的架构信息。</summary>
-        <value>一个包含当前节点的架构信息的 <see cref="T:System.Xml.Schema.IXmlSchemaInfo" /> 对象。</value>
+        <value><see cref="T:System.Xml.Schema.IXmlSchemaInfo" />对象，其中包含当前节点的架构信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2443,12 +2474,12 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <Docs>
         <param name="scope"><see cref="T:System.Xml.XmlNamespaceScope" /> 对象。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />。</summary>
-        <returns>包含范围内命名空间的 <see cref="T:System.Collections.IDictionary" /> 对象。</returns>
+        <returns><see cref="T:System.Collections.IDictionary" /> 包含位于作用域的命名空间的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Xml.XmlNodeReader> 实例强制转换为 <xref:System.Xml.IXmlNamespaceResolver> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Xml.XmlNodeReader> 实例被强制转换为 <xref:System.Xml.IXmlNamespaceResolver> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -2487,14 +2518,14 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <Parameter Name="prefix" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="prefix">包含命名空间前缀的 <see cref="T:System.String" />。</param>
+        <param name="prefix"><see cref="T:System.String" /> 包含命名空间前缀。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)" />。</summary>
-        <returns>包含命名空间名称的 <see cref="T:System.String" />。</returns>
+        <returns><see cref="T:System.String" /> 包含命名空间名称。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Xml.XmlNodeReader> 实例强制转换为 <xref:System.Xml.IXmlNamespaceResolver> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Xml.XmlNodeReader> 实例被强制转换为 <xref:System.Xml.IXmlNamespaceResolver> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -2533,14 +2564,14 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <Parameter Name="namespaceName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="namespaceName">标识命名空间的 <see cref="T:System.String" /> 对象。</param>
+        <param name="namespaceName"><see cref="T:System.String" /> 标识命名空间的对象。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)" />。</summary>
-        <returns>包含命名空间前缀的 <see cref="T:System.String" /> 对象。</returns>
+        <returns><see cref="T:System.String" /> 包含命名空间前缀的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Xml.XmlNodeReader> 实例强制转换为 <xref:System.Xml.IXmlNamespaceResolver> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Xml.XmlNodeReader> 实例被强制转换为 <xref:System.Xml.IXmlNamespaceResolver> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -2590,7 +2621,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  </description></item><item><term><see langword="ProcessingInstruction" /></term><description> 全部内容（不包括指令目标）。  
   
- </description></item><item><term><see langword="SignificantWhitespace" /></term><description> 混合内容模型中标记之间的空白。  
+ </description></item><item><term><see langword="SignificantWhitespace" /></term><description> 混合内容模型中标记之间的空白区域。  
   
  </description></item><item><term><see langword="Text" /></term><description> 文本节点的内容。  
   
