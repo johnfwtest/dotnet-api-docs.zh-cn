@@ -1,5 +1,5 @@
 <Type Name="Queryable" FullName="System.Linq.Queryable">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a8423ce1903ddbaaeae227c8258f59898b6fd30b" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58749883" /></Metadata><TypeSignature Language="C#" Value="public static class Queryable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="fbdcf4cf9c5738a869ff7c8e13d2562640a97eb1" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65006732" /></Metadata><TypeSignature Language="C#" Value="public static class Queryable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Queryable extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Linq.Queryable" />
   <TypeSignature Language="VB.NET" Value="Public Module Queryable" />
@@ -26,7 +26,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>提供一组用于查询实现 <see cref="T:System.Linq.IQueryable`1" /> 的数据结构的 <see langword="static" />（在 Visual Basic 中为 <see langword="Shared" />）方法。</summary>
+    <summary>提供了一套<see langword="static" />(<see langword="Shared" />在 Visual Basic 中) 用于查询实现的方法<see cref="T:System.Linq.IQueryable`1" />。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -291,9 +291,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要测试其元素是否满足条件的序列。</param>
+        <param name="source">若要测试的条件的元素的序列。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
-        <summary>确定序列中的所有元素是否都满足条件。</summary>
+        <summary>确定是否对序列的所有元素都满足条件。</summary>
         <returns>如果源序列中的每个元素都通过指定谓词中的测试，或者序列为空，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -330,7 +330,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>确定 <see cref="T:System.Linq.IQueryable`1" /> 序列中的任何元素是否都存在或满足条件。</summary>
+        <summary>确定是否有任何元素的<see cref="T:System.Linq.IQueryable`1" />序列存在或满足条件。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Any&lt;TSource&gt;">
@@ -368,7 +368,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要检查是否为空的序列。</param>
+        <param name="source">要检查为空的序列。</param>
         <summary>确定序列是否包含任何元素。</summary>
         <returns>如果源序列包含任何元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -433,7 +433,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要测试其元素是否满足条件的序列。</param>
+        <param name="source">若要测试的条件的元素的序列。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
         <summary>确定序列中的任何元素是否都满足条件。</summary>
         <returns>如果源序列中的任何元素都通过指定谓词中的测试，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
@@ -530,8 +530,8 @@
       </Parameters>
       <Docs>
         <param name="source">要转换的序列。</param>
-        <summary>将 <see cref="T:System.Collections.IEnumerable" /> 转换为 <see cref="T:System.Linq.IQueryable" />。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable" />，表示输入序列。</returns>
+        <summary>将转换<see cref="T:System.Collections.IEnumerable" />到<see cref="T:System.Linq.IQueryable" />。</summary>
+        <returns><see cref="T:System.Linq.IQueryable" /> ，表示输入的序列。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -542,7 +542,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="source" /> 未为某些 <paramref name="T" /> 实现 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="source" /> 不实现<see cref="T:System.Collections.Generic.IEnumerable`1" />对于某些<paramref name="T" />。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -582,8 +582,8 @@
       <Docs>
         <typeparam name="TElement"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要转换的序列。</param>
-        <summary>将泛型 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 转换为泛型 <see cref="T:System.Linq.IQueryable`1" />。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，表示输入序列。</returns>
+        <summary>将转换泛型<see cref="T:System.Collections.Generic.IEnumerable`1" />为泛型<see cref="T:System.Linq.IQueryable`1" />。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，表示输入的序列。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1221,8 +1221,8 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">用于计算平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Decimal" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的平均值<see cref="T:System.Decimal" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>值序列的平均值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1287,8 +1287,8 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Double" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的平均值<see cref="T:System.Double" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>值序列的平均值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1353,8 +1353,8 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Int32" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的平均值<see cref="T:System.Int32" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>值序列的平均值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1417,8 +1417,8 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Int64" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的平均值<see cref="T:System.Int64" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>值序列的平均值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1483,9 +1483,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Decimal" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
-        <returns>值序列的平均值；如果 <paramref name="source" /> 序列为空或仅包含 <see langword="null" /> 值，则为 <see langword="null" />。</returns>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的平均值<see cref="T:System.Decimal" />通过调用投影函数对输入序列中的每个元素的值。</summary>
+        <returns>值序列的平均值或<see langword="null" />如果<paramref name="source" />序列为空或仅包含<see langword="null" />值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1548,9 +1548,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Double" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
-        <returns>值序列的平均值；如果 <paramref name="source" /> 序列为空或仅包含 <see langword="null" /> 值，则为 <see langword="null" />。</returns>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的平均值<see cref="T:System.Double" />通过调用投影函数对输入序列中的每个元素的值。</summary>
+        <returns>值序列的平均值或<see langword="null" />如果<paramref name="source" />序列为空或仅包含<see langword="null" />值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1613,9 +1613,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Int32" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
-        <returns>值序列的平均值；如果 <paramref name="source" /> 序列为空或仅包含 <see langword="null" /> 值，则为 <see langword="null" />。</returns>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的平均值<see cref="T:System.Int32" />通过调用投影函数对输入序列中的每个元素的值。</summary>
+        <returns>值序列的平均值或<see langword="null" />如果<paramref name="source" />序列为空或仅包含<see langword="null" />值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1678,9 +1678,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Int64" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
-        <returns>值序列的平均值；如果 <paramref name="source" /> 序列为空或仅包含 <see langword="null" /> 值，则为 <see langword="null" />。</returns>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的平均值<see cref="T:System.Int64" />通过调用投影函数对输入序列中的每个元素的值。</summary>
+        <returns>值序列的平均值或<see langword="null" />如果<paramref name="source" />序列为空或仅包含<see langword="null" />值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1743,9 +1743,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Single" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
-        <returns>值序列的平均值；如果 <paramref name="source" /> 序列为空或仅包含 <see langword="null" /> 值，则为 <see langword="null" />。</returns>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的平均值<see cref="T:System.Single" />通过调用投影函数对输入序列中的每个元素的值。</summary>
+        <returns>值序列的平均值或<see langword="null" />如果<paramref name="source" />序列为空或仅包含<see langword="null" />值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1808,8 +1808,8 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要计算其平均值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Single" /> 值序列的平均值，该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的平均值<see cref="T:System.Single" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>值序列的平均值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1871,8 +1871,8 @@
         <Parameter Name="source" Type="System.Linq.IQueryable" RefType="this" />
       </Parameters>
       <Docs>
-        <typeparam name="TResult"><paramref name="source" /> 中的元素要转换成的类型。</typeparam>
-        <param name="source">包含要转换的元素的 <see cref="T:System.Linq.IQueryable" />。</param>
+        <typeparam name="TResult">要转换的元素的类型<paramref name="source" />到。</typeparam>
+        <param name="source"><see cref="T:System.Linq.IQueryable" />包含要转换的元素。</param>
         <summary>将 <see cref="T:System.Linq.IQueryable" /> 的元素转换为指定的类型。</summary>
         <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其中包含已转换为指定类型的源序列的每个元素。</returns>
         <remarks>
@@ -1965,7 +1965,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>确定 <see cref="T:System.Linq.IQueryable`1" /> 是否包含指定的元素。</summary>
+        <summary>确定是否<see cref="T:System.Linq.IQueryable`1" />包含指定的元素。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Contains&lt;TSource&gt;">
@@ -2004,10 +2004,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要在其中定位 <paramref name="item" /> 的 <see cref="T:System.Linq.IQueryable`1" />。</param>
-        <param name="item">要在序列中定位的对象。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />要在其中查找<paramref name="item" />。</param>
+        <param name="item">要查找序列中的对象。</param>
         <summary>通过使用默认的相等比较器确定序列是否包含指定的元素。</summary>
-        <returns>如果输入序列包含具有指定值的元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果输入的序列包含具有指定的值; 的元素否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2066,11 +2066,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要在其中定位 <paramref name="item" /> 的 <see cref="T:System.Linq.IQueryable`1" />。</param>
-        <param name="item">要在序列中定位的对象。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />要在其中查找<paramref name="item" />。</param>
+        <param name="item">要查找序列中的对象。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 确定序列是否包含指定的元素。</summary>
-        <returns>如果输入序列包含具有指定值的元素，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果输入的序列包含具有指定的值; 的元素否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2129,7 +2129,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">包含要计数的元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />包含要计数的元素。</param>
         <summary>返回序列中的元素数量。</summary>
         <returns>输入序列中的元素数量。</returns>
         <remarks>
@@ -2192,8 +2192,8 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">包含要进行计数的元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
-        <summary>返回指定序列中满足条件的元素数量。</summary>
-        <returns>序列中满足谓词函数的条件的元素数量。</returns>
+        <summary>返回指定序列中满足条件的元素数。</summary>
+        <returns>序列中满足谓词函数中的条件中的元素数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2225,7 +2225,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回序列中的元素，如果序列为空，则返回具有默认值的单一实例集合。</summary>
+        <summary>如果序列为空序列或默认值单一实例集合中返回的元素。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="DefaultIfEmpty&lt;TSource&gt;">
@@ -2263,9 +2263,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">用于在序列为空的情况下返回默认值的 <see cref="T:System.Linq.IQueryable`1" />。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />要返回的默认值，如果为空。</param>
         <summary>返回指定序列中的元素；如果序列为空，则返回单一实例集合中的类型参数的默认值。</summary>
-        <returns>用于在 <paramref name="TSource" /> 为空的情况下包含 <see langword="default" />(<paramref name="source" />) 的 <see cref="T:System.Linq.IQueryable`1" />；否则为 <paramref name="source" />。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含<see langword="default" />(<paramref name="TSource" />) 如果<paramref name="source" />空; 否则为<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2323,7 +2323,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">用于在序列为空的情况下返回指定值的 <see cref="T:System.Linq.IQueryable`1" />。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />返回为指定的值，如果为空。</param>
         <param name="defaultValue">序列为空时要返回的值。</param>
         <summary>返回指定序列中的元素；如果序列为空，则返回单一实例集合中的指定值。</summary>
         <returns>如果 <paramref name="source" /> 为空，则为包含 <paramref name="defaultValue" /> 的 <see cref="T:System.Linq.IQueryable`1" />；否则为 <paramref name="source" />。</returns>
@@ -2393,9 +2393,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要从中删除重复项的 <see cref="T:System.Linq.IQueryable`1" />。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />要从中删除重复项。</param>
         <summary>通过使用默认的相等比较器对值进行比较，返回序列中的非重复元素。</summary>
-        <returns>包含 <paramref name="source" /> 中的非重复元素的 <see cref="T:System.Linq.IQueryable`1" />。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含非重复元素的<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2453,10 +2453,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要从中删除重复项的 <see cref="T:System.Linq.IQueryable`1" />。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable`1" />要从中删除重复项。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对值进行比较，返回序列中的非重复元素。</summary>
-        <returns>包含 <paramref name="source" /> 中的非重复元素的 <see cref="T:System.Linq.IQueryable`1" />。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含非重复元素的<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2509,7 +2509,7 @@
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="index">要检索的从零开始的元素索引。</param>
         <summary>返回序列中指定索引处的元素。</summary>
-        <returns><paramref name="source" /> 中指定位置处的元素。</returns>
+        <returns>中的指定位置处的元素<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2639,10 +2639,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">一个 <see cref="T:System.Linq.IQueryable`1" />，将返回其不在 <paramref name="source2" /> 中的元素。</param>
-        <param name="source2">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其也出现在第一个序列中的元素将不会出现在返回的序列中。</param>
+        <param name="source1"><see cref="T:System.Linq.IQueryable`1" />不在其元素<paramref name="source2" />将返回。</param>
+        <param name="source2"><see cref="T:System.Collections.Generic.IEnumerable`1" />同时出现在第一个序列的元素不会出现在返回的序列。</param>
         <summary>通过使用默认的相等比较器对值进行比较，生成两个序列的差集。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含两个序列的差集。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含两个序列的差集。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2701,11 +2701,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">一个 <see cref="T:System.Linq.IQueryable`1" />，将返回其不在 <paramref name="source2" /> 中的元素。</param>
-        <param name="source2">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其也出现在第一个序列中的元素将不会出现在返回的序列中。</param>
+        <param name="source1"><see cref="T:System.Linq.IQueryable`1" />不在其元素<paramref name="source2" />将返回。</param>
+        <param name="source2"><see cref="T:System.Collections.Generic.IEnumerable`1" />同时出现在第一个序列的元素不会出现在返回的序列。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对值进行比较，生成两个序列的差集。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含两个序列的差集。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含两个序列的差集。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2766,7 +2766,7 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要返回其第一个元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <summary>返回序列中的第一个元素。</summary>
-        <returns><paramref name="source" /> 中的第一个元素。</returns>
+        <returns>中的第一个元素<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2827,8 +2827,8 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
-        <summary>返回序列中满足指定条件的第一个元素。</summary>
-        <returns>通过 <paramref name="source" /> 中测试的 <paramref name="predicate" /> 中的第一个元素。</returns>
+        <summary>返回序列中满足指定的条件的第一个元素。</summary>
+        <returns>中的第一个元素<paramref name="source" />中的测试<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2852,7 +2852,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">元素均不满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 源序列为空。</exception>
       </Docs>
     </Member>
@@ -2970,7 +2970,7 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
-        <summary>返回序列中满足指定条件的第一个元素，如果未找到这样的元素，则返回默认值。</summary>
+        <summary>返回序列中满足指定的条件或默认值，如果不找到任何此类元素的第一个元素。</summary>
         <returns>如果 <paramref name="source" /> 为空或没有元素通过 <paramref name="predicate" /> 指定的测试，则为 <c>default</c>(<paramref name="TSource" />)，否则为 <paramref name="source" /> 中通过 <paramref name="predicate" /> 指定的测试的第一个元素。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3042,7 +3042,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <summary>根据指定的键选择器函数对序列中的元素进行分组。</summary>
@@ -3108,7 +3108,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
@@ -3168,8 +3168,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
-        <typeparam name="TElement">每个 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">在每个元素的类型<see cref="T:System.Linq.IGrouping`2" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="elementSelector">用于将每个源元素映射到 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的函数。</param>
@@ -3238,13 +3238,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
-        <typeparam name="TElement">每个 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">在每个元素的类型<see cref="T:System.Linq.IGrouping`2" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="elementSelector">用于将每个源元素映射到 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
-        <summary>对序列中的元素进行分组并且通过使用指定的函数对每组中的元素进行投影。 通过使用指定的比较器对键值进行比较。</summary>
+        <summary>对序列的元素进行分组，并通过使用指定的函数为每个组的元素进行投影。 通过使用指定的比较器，键值进行比较。</summary>
         <returns>C# 中的 <c>IQueryable&lt;IGrouping&lt;TKey, TElement&gt;&gt;</c> 或 Visual Basic 中的 <c>IQueryable(Of IGrouping(Of TKey, TElement))</c>，其中的每个 <see cref="T:System.Linq.IGrouping`2" /> 均包含一个类型为 <paramref name="TElement" /> 的对象序列和键。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3300,8 +3300,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="resultSelector">用于从每个组中创建结果值的函数。</param>
@@ -3370,13 +3370,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="resultSelector">用于从每个组中创建结果值的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
-        <summary>根据指定的键选择器函数对序列中的元素进行分组，并且从每个组及其键中创建结果值。 通过使用指定的比较器对键进行比较。</summary>
+        <summary>根据指定的键选择器函数对序列中的元素进行分组，并且从每个组及其键中创建结果值。 通过使用指定的比较器，键进行比较。</summary>
         <returns>一个 <c>T:System.Linq.IQueryable`1</c>，它具有 <paramref name="TResult" /> 的类型参数，并且其中每个元素都表示对一个组及其键的投影。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3434,9 +3434,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
-        <typeparam name="TElement">每个 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">在每个元素的类型<see cref="T:System.Linq.IGrouping`2" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="elementSelector">用于将每个源元素映射到 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的函数。</param>
@@ -3508,15 +3508,15 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
-        <typeparam name="TElement">每个 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">在中表示的函数返回的键类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">在每个元素的类型<see cref="T:System.Linq.IGrouping`2" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="elementSelector">用于将每个源元素映射到 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的函数。</param>
         <param name="resultSelector">用于从每个组中创建结果值的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
-        <summary>根据指定的键选择器函数对序列中的元素进行分组，并且从每个组及其键中创建结果值。 通过使用指定的比较器对键进行比较，并且通过使用指定的函数对每个组的元素进行投影。</summary>
+        <summary>根据指定的键选择器函数对序列中的元素进行分组，并且从每个组及其键中创建结果值。 通过使用指定比较器对键进行比较，并通过使用指定的函数的每个组的元素进行投影。</summary>
         <returns>一个 <c>T:System.Linq.IQueryable`1</c>，它具有 <paramref name="TResult" /> 的类型参数，并且其中每个元素都表示对一个组及其键的投影。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3594,7 +3594,7 @@
         <param name="innerKeySelector">用于从第二个序列的每个元素提取联接键的函数。</param>
         <param name="resultSelector">用于从第一个序列的元素和第二个序列的匹配元素集合中创建结果元素的函数。</param>
         <summary>基于键值等同性对两个序列的元素进行关联，并对结果进行分组。 使用默认的相等比较器对键进行比较。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含通过对两个序列执行已分组的联接而获得的 <paramref name="TResult" /> 类型的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含类型的元素<paramref name="TResult" />通过对两个序列执行分组的联接获得的。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3669,9 +3669,9 @@
         <param name="outerKeySelector">用于从第一个序列的每个元素提取联接键的函数。</param>
         <param name="innerKeySelector">用于从第二个序列的每个元素提取联接键的函数。</param>
         <param name="resultSelector">用于从第一个序列的元素和第二个序列的匹配元素集合中创建结果元素的函数。</param>
-        <param name="comparer">用于对键进行哈希处理和比较的比较器。</param>
+        <param name="comparer">哈希和比较键比较器。</param>
         <summary>基于键值等同性对两个序列的元素进行关联，并对结果进行分组。 使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对键进行比较。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含通过对两个序列执行已分组的联接而获得的 <paramref name="TResult" /> 类型的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含类型的元素<paramref name="TResult" />通过对两个序列执行分组的联接获得的。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3733,8 +3733,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">一个序列，将返回其也出现在 <paramref name="source2" /> 中的非重复元素。</param>
-        <param name="source2">一个序列，将返回其也在第一个序列中出现的非重复元素。</param>
+        <param name="source1">也会显示在其非重复元素的序列<paramref name="source2" />返回。</param>
+        <param name="source2">返回其也出现在第一个序列中的非重复元素序列。</param>
         <summary>通过使用默认的相等比较器对值进行比较，生成两个序列的交集。</summary>
         <returns>一个包含两个序列的交集的序列。</returns>
         <remarks>
@@ -3795,11 +3795,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">一个 <see cref="T:System.Linq.IQueryable`1" />，将返回其也出现在 <paramref name="source2" /> 中的非重复元素。</param>
-        <param name="source2">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，将返回其也出现在第一个序列中的非重复元素。</param>
+        <param name="source1"><see cref="T:System.Linq.IQueryable`1" />也会显示在其非重复元素<paramref name="source2" />返回。</param>
+        <param name="source2"><see cref="T:System.Collections.Generic.IEnumerable`1" />返回其也出现在第一个序列中的非重复元素。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对值进行比较，生成两个序列的交集。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，它包含两个序列的交集。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含两个序列的交集。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3874,7 +3874,7 @@
         <param name="innerKeySelector">用于从第二个序列的每个元素提取联接键的函数。</param>
         <param name="resultSelector">用于从两个匹配元素创建结果元素的函数。</param>
         <summary>基于匹配键对两个序列的元素进行关联。 使用默认的相等比较器对键进行比较。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，具有通过对两个序列执行内部联接而获得的 <paramref name="TResult" /> 类型的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />具有类型的元素<paramref name="TResult" />通过对两个序列执行内部联接获得的。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3951,7 +3951,7 @@
         <param name="resultSelector">用于从两个匹配元素创建结果元素的函数。</param>
         <param name="comparer">用于对键进行哈希处理和比较的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>基于匹配键对两个序列的元素进行关联。 使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对键进行比较。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，具有通过对两个序列执行内部联接而获得的 <paramref name="TResult" /> 类型的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />具有类型的元素<paramref name="TResult" />通过对两个序列执行内部联接获得的。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4014,7 +4014,7 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要返回其最后一个元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <summary>返回序列中的最后一个元素。</summary>
-        <returns>位于 <paramref name="source" /> 中最后位置处的值。</returns>
+        <returns>中的最后一个位置处的值<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4076,7 +4076,7 @@
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
         <summary>返回序列中满足指定条件的最后一个元素。</summary>
-        <returns><paramref name="source" /> 中的最后一个元素，它通过了由 <paramref name="predicate" /> 指定的测试。</returns>
+        <returns>中的最后一个元素<paramref name="source" />所指定的测试<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4100,7 +4100,7 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">元素均不满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 源序列为空。</exception>
       </Docs>
     </Member>
@@ -4150,7 +4150,7 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要返回其最后一个元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
-        <summary>返回序列中的最后一个元素，如果序列中不包含任何元素，则返回默认值。</summary>
+        <summary>如果序列不包含任何元素序列或默认值中返回的最后一个元素。</summary>
         <returns>如果 <paramref name="source" /> 为空，则为 <c>default</c>(<paramref name="TSource" />)；否则为 <paramref name="source" /> 中的最后一个元素。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4250,7 +4250,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回一个 <see cref="T:System.Int64" />，表示序列中的元素的数量。</summary>
+        <summary>返回<see cref="T:System.Int64" />，表示序列中的元素数。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="LongCount&lt;TSource&gt;">
@@ -4351,8 +4351,8 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">包含要进行计数的元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
-        <summary>返回一个 <see cref="T:System.Int64" />，它表示序列中满足条件的元素数量。</summary>
-        <returns><paramref name="source" /> 中满足谓词函数的条件的元素数量。</returns>
+        <summary>返回<see cref="T:System.Int64" />，表示序列中满足条件的元素数。</summary>
+        <returns>中的元素数<paramref name="source" />满足谓词函数中的条件。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4412,8 +4412,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要确定最大值的值序列。</param>
-        <summary>返回泛型 <see cref="T:System.Linq.IQueryable`1" /> 中的最大值。</summary>
+        <param name="source">要确定的最大的值序列。</param>
+        <summary>返回泛型中的最大值<see cref="T:System.Linq.IQueryable`1" />。</summary>
         <returns>序列中的最大值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4473,10 +4473,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult">由 <paramref name="selector" /> 表示的函数返回的值类型。</typeparam>
-        <param name="source">要确定最大值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>对泛型 <see cref="T:System.Linq.IQueryable`1" /> 的每个元素调用投影函数，并返回最大结果值。</summary>
+        <typeparam name="TResult">表示由函数返回的值的类型<paramref name="selector" />。</typeparam>
+        <param name="source">要确定的最大的值序列。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>调用泛型的每个元素的投影函数<see cref="T:System.Linq.IQueryable`1" />并返回最大结果值。</summary>
         <returns>序列中的最大值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4536,8 +4536,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">要确定最小值的值序列。</param>
-        <summary>返回泛型 <see cref="T:System.Linq.IQueryable`1" /> 中的最小值。</summary>
+        <param name="source">要确定的最小值的值序列。</param>
+        <summary>返回泛型的最小值<see cref="T:System.Linq.IQueryable`1" />。</summary>
         <returns>序列中的最小值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4597,10 +4597,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult">由 <paramref name="selector" /> 表示的函数返回的值类型。</typeparam>
-        <param name="source">要确定最小值的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>对泛型 <see cref="T:System.Linq.IQueryable`1" /> 的每个元素调用投影函数，并返回最小结果值。</summary>
+        <typeparam name="TResult">表示由函数返回的值的类型<paramref name="selector" />。</typeparam>
+        <param name="source">要确定的最小值的值序列。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>调用泛型的每个元素的投影函数<see cref="T:System.Linq.IQueryable`1" />，并返回最小结果值。</summary>
         <returns>序列中的最小值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4660,9 +4660,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TResult">筛选序列元素所根据的类型。</typeparam>
-        <param name="source">要对其元素进行筛选的 <see cref="T:System.Linq.IQueryable" />。</param>
+        <param name="source"><see cref="T:System.Linq.IQueryable" />其元素进行筛选。</param>
         <summary>根据指定类型筛选 <see cref="T:System.Linq.IQueryable" /> 的元素。</summary>
-        <returns>一个集合，包含 <paramref name="source" /> 中的类型为 <paramref name="TResult" /> 的元素。</returns>
+        <returns>包含中的元素的集合<paramref name="source" />具有类型<paramref name="TResult" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4731,7 +4731,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">由表示该函数返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <summary>根据键按升序对序列的元素进行排序。</summary>
@@ -4797,7 +4797,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">由表示该函数返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -4865,7 +4865,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">由表示该函数返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <summary>根据键按降序对序列的元素进行排序。</summary>
@@ -4923,7 +4923,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">由表示该函数返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -5027,7 +5027,7 @@
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要反转的值序列。</param>
         <summary>反转序列中元素的顺序。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素以相反顺序对应于输入序列的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素以相反顺序对应于输入序列。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5096,11 +5096,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult">由 <paramref name="selector" /> 表示的函数返回的值类型。</typeparam>
+        <typeparam name="TResult">表示由函数返回的值的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个要投影的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
         <summary>通过合并元素的索引，将序列的每个元素投影到新窗体中。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素为对 <paramref name="source" /> 的每个元素调用投影函数的结果。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素是调用的每个元素的投影函数的结果<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5161,11 +5161,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult">由 <paramref name="selector" /> 表示的函数返回的值类型。</typeparam>
+        <typeparam name="TResult">表示由函数返回的值的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个要投影的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
         <summary>将序列中的每个元素投影到新表单。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素为对 <paramref name="source" /> 的每个元素调用投影函数的结果。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素是调用的每个元素的投影函数的结果<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5196,7 +5196,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将序列的每个元素投影到一个 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 并将结果序列组合为一个 <see cref="T:System.Linq.IQueryable`1" /> 类型的序列。</summary>
+        <summary>对序列中的每个元素投影<see cref="T:System.Collections.Generic.IEnumerable`1" />，并将结果序列合并为一个序列类型的组合<see cref="T:System.Linq.IQueryable`1" />。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SelectMany&lt;TSource,TResult&gt;">
@@ -5236,11 +5236,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult">由 <paramref name="selector" /> 表示的函数返回的序列中的元素的类型。</typeparam>
+        <typeparam name="TResult">表示由函数返回的序列的元素的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个要投影的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>将序列的每个元素投影到一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，并将结果序列组合为一个序列。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素是对输入序列的每个元素调用一对多投影函数的结果。</returns>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>对序列中的每个元素投影<see cref="T:System.Collections.Generic.IEnumerable`1" />，并将结果序列合并为一个序列的组合。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素是调用对输入序列中的每个元素的一对多投影函数的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5301,11 +5301,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult">由 <paramref name="selector" /> 表示的函数返回的序列中的元素的类型。</typeparam>
+        <typeparam name="TResult">表示由函数返回的序列的元素的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个要投影的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数；此函数的第二个参数表示源元素的索引。</param>
-        <summary>将序列的每个元素投影到一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，并将结果序列组合为一个序列。 每个源元素的索引用于该元素的投影表。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素是对输入序列的每个元素调用一对多投影函数的结果。</returns>
+        <param name="selector">要应用于每个元素; 的投影函数此函数的第二个参数表示源元素的索引。</param>
+        <summary>对序列中的每个元素投影<see cref="T:System.Collections.Generic.IEnumerable`1" />，并将结果序列合并为一个序列的组合。 每个源元素的索引用于该元素的投影表。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素是调用对输入序列中的每个元素的一对多投影函数的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5368,13 +5368,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TCollection">由 <paramref name="collectionSelector" /> 表示的函数收集的中间元素类型。</typeparam>
-        <typeparam name="TResult">结果序列的元素的类型。</typeparam>
+        <typeparam name="TCollection">所表示的函数收集的中间元素的类型<paramref name="collectionSelector" />。</typeparam>
+        <typeparam name="TResult">生成序列中的元素的类型。</typeparam>
         <param name="source">一个要投影的值序列。</param>
-        <param name="collectionSelector">一个应用于输入序列的每个元素的投影函数。</param>
-        <param name="resultSelector">一个应用于每个中间序列的每个元素的投影函数。</param>
-        <summary>将序列的每个元素投影到一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，并对其中的每个元素调用结果选择器函数。 每个中间序列的结果值都组合为一个一维序列，并将其返回。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素是通过对 <paramref name="collectionSelector" /> 的每个元素调用一对多投影函数 <paramref name="source" />，然后将这些序列元素的每一个及其对应的 <paramref name="source" /> 元素映射到结果元素中的结果。</returns>
+        <param name="collectionSelector">要应用于输入序列中的每个元素投影函数。</param>
+        <param name="resultSelector">要应用于每个中间序列的每个元素投影函数。</param>
+        <summary>对序列中的每个元素投影<see cref="T:System.Collections.Generic.IEnumerable`1" />和其中调用结果选择器函数对每个元素。 每个中间序列的计算结果是合并到一个一维序列，并返回。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素是调用-一对多投影函数的结果<paramref name="collectionSelector" />的每个元素<paramref name="source" />然后将这些序列元素和其对应的每个映射<paramref name="source" />到一个结果元素的元素.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5437,13 +5437,13 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TCollection">由 <paramref name="collectionSelector" /> 表示的函数收集的中间元素类型。</typeparam>
-        <typeparam name="TResult">结果序列的元素的类型。</typeparam>
+        <typeparam name="TCollection">所表示的函数收集的中间元素的类型<paramref name="collectionSelector" />。</typeparam>
+        <typeparam name="TResult">生成序列中的元素的类型。</typeparam>
         <param name="source">一个要投影的值序列。</param>
-        <param name="collectionSelector">要应用于输入序列的每个元素的投影函数；此函数的第二个参数表示源元素的索引。</param>
-        <param name="resultSelector">一个应用于每个中间序列的每个元素的投影函数。</param>
-        <summary>将序列中的每个元素投影到一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，它合并了生成它的源元素的索引。 对每个中间序列的每个元素调用结果选择器函数，并且将结果值合并为一个一维序列，并将其返回。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，其元素是通过对 <paramref name="collectionSelector" /> 的每个元素调用一对多投影函数 <paramref name="source" />，然后将这些序列元素的每一个及其对应的 <paramref name="source" /> 元素映射到结果元素中的结果。</returns>
+        <param name="collectionSelector">要应用于输入序列; 中的每个元素的投影函数此函数的第二个参数表示源元素的索引。</param>
+        <param name="resultSelector">要应用于每个中间序列的每个元素投影函数。</param>
+        <summary>对序列中的每个元素投影<see cref="T:System.Collections.Generic.IEnumerable`1" />包含生成它的源元素的索引。 每个中间序列的每个元素调用结果选择器函数和生成的值合并到一个一维序列，并返回。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" />其元素是调用-一对多投影函数的结果<paramref name="collectionSelector" />的每个元素<paramref name="source" />然后将这些序列元素和其对应的每个映射<paramref name="source" />到一个结果元素的元素.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5505,10 +5505,10 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">一个 <see cref="T:System.Linq.IQueryable`1" />，其元素用于与 <paramref name="source2" /> 中的元素进行比较。</param>
-        <param name="source2">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其元素用于与第一个序列中的元素进行比较。</param>
-        <summary>通过使用默认的相等比较器比较元素以确定两个序列是否相等。</summary>
-        <returns>如果两个源序列的长度相等并且它们的对应元素也相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="source1"><see cref="T:System.Linq.IQueryable`1" />其元素进行比较的<paramref name="source2" />。</param>
+        <param name="source2"><see cref="T:System.Collections.Generic.IEnumerable`1" />其元素进行比较的第一个序列。</param>
+        <summary>确定两个序列是否使用默认相等比较器用于比较元素相等。</summary>
+        <returns><see langword="true" /> 如果两个源序列的长度相等，且其相应元素相等，则为否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5572,11 +5572,11 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">一个 <see cref="T:System.Linq.IQueryable`1" />，其元素用于与 <paramref name="source2" /> 中的元素进行比较。</param>
-        <param name="source2">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其元素用于与第一个序列中的元素进行比较。</param>
+        <param name="source1"><see cref="T:System.Linq.IQueryable`1" />其元素进行比较的<paramref name="source2" />。</param>
+        <param name="source2"><see cref="T:System.Collections.Generic.IEnumerable`1" />其元素进行比较的第一个序列。</param>
         <param name="comparer">用于比较元素的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
-        <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 比较元素以确定两个序列是否相等。</summary>
-        <returns>如果两个源序列的长度相等并且它们的对应元素也相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>确定两个序列是否使用指定的相等<see cref="T:System.Collections.Generic.IEqualityComparer`1" />用于比较元素。</summary>
+        <returns><see langword="true" /> 如果两个源序列的长度相等，且其相应元素相等，则为否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5699,7 +5699,7 @@
         <param name="source">要从中返回单个元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试元素是否满足条件的函数。</param>
         <summary>返回序列中满足指定条件的唯一元素；如果有多个这样的元素存在，则会引发异常。</summary>
-        <returns>满足 <paramref name="predicate" /> 中条件的输入序列中的单个元素。</returns>
+        <returns>输入序列中满足条件中的单个元素<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5723,10 +5723,10 @@
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">元素均不满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 多个元素满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 源序列为空。</exception>
       </Docs>
     </Member>
@@ -5737,7 +5737,7 @@
         <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回序列中单个特定元素，如果未找到这样的元素，则返回默认值。</summary>
+        <summary>如果不找到任何此类元素，则返回一个特定元素序列，或默认值。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="SingleOrDefault&lt;TSource&gt;">
@@ -5910,7 +5910,7 @@
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="count">返回剩余元素前要跳过的元素数量。</param>
         <summary>跳过序列中指定数量的元素，然后返回剩余的元素。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含输入序列中指定索引后出现的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，包含输入序列中指定索引后出现的元素。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6019,7 +6019,7 @@
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
         <summary>如果指定的条件为 true，则跳过序列中的元素，然后返回剩余的元素。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含从未通过 <paramref name="source" /> 指定测试的线性系列中的第一个元素开始的 <paramref name="predicate" /> 中的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />包含中的元素<paramref name="source" />通过指定的测试未通过的线性系列中的第一个元素开始<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6080,9 +6080,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要从中返回元素的 <see cref="T:System.Linq.IQueryable`1" />。</param>
-        <param name="predicate">用于测试每个元素是否满足条件的函数；此函数的第二个参数表示源元素的索引。</param>
+        <param name="predicate">用于测试条件; 每个元素的函数此函数的第二个参数表示源元素的索引。</param>
         <summary>如果指定的条件为 true，则跳过序列中的元素，然后返回剩余的元素。 将在谓词函数的逻辑中使用元素的索引。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含从未通过 <paramref name="source" /> 指定测试的线性系列中的第一个元素开始的 <paramref name="predicate" /> 中的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />包含中的元素<paramref name="source" />通过指定的测试未通过的线性系列中的第一个元素开始<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6724,9 +6724,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Decimal" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的总和<see cref="T:System.Decimal" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6790,9 +6790,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Double" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的总和<see cref="T:System.Double" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6855,9 +6855,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Int32" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的总和<see cref="T:System.Int32" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6921,9 +6921,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Int64" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的总和<see cref="T:System.Int64" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6987,9 +6987,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Decimal" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的总和<see cref="T:System.Decimal" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7053,9 +7053,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Double" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的总和<see cref="T:System.Double" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7118,9 +7118,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Int32" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的总和<see cref="T:System.Int32" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7184,9 +7184,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Int64" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的总和<see cref="T:System.Int64" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7250,9 +7250,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算可以为 null 的 <see cref="T:System.Single" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算可以为 null 的序列的总和<see cref="T:System.Single" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7315,9 +7315,9 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <param name="source">一个 <paramref name="TSource" /> 类型的值序列。</param>
-        <param name="selector">要应用于每个元素的投影函数。</param>
-        <summary>计算 <see cref="T:System.Single" /> 值序列之和，而该序列是通过对输入序列中的每个元素调用投影函数而获得的。</summary>
+        <param name="source">类型的值序列<paramref name="TSource" />。</param>
+        <param name="selector">要应用于每个元素投影函数。</param>
+        <summary>计算的序列的总和<see cref="T:System.Single" />通过调用投影函数对输入序列中的每个元素的值。</summary>
         <returns>投影值的总和。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7383,7 +7383,7 @@
         <param name="source">要从其返回元素的序列。</param>
         <param name="count">要返回的元素数量。</param>
         <summary>从序列的开头返回指定数量的相邻元素。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含从 <paramref name="source" /> 开始处的指定数量的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含指定的数量的开始处的元素<paramref name="source" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7492,7 +7492,7 @@
         <param name="source">要从其返回元素的序列。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
         <summary>只要指定的条件为 true，就会返回序列的元素。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含不再通过由 <paramref name="predicate" /> 指定测试的元素之前出现的输入序列中的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />包含由指定测试的元素之前出现的输入序列中的元素<paramref name="predicate" />不再能够通过。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7553,9 +7553,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要从其返回元素的序列。</param>
-        <param name="predicate">用于测试每个元素是否满足条件的函数；此函数的第二个参数表示源序列中元素的索引。</param>
+        <param name="predicate">用于测试条件; 每个元素的函数该函数的第二个参数表示源序列中元素的索引。</param>
         <summary>只要指定的条件为 true，就会返回序列的元素。 将在谓词函数的逻辑中使用元素的索引。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含不再通过由 <paramref name="predicate" /> 指定测试的元素之前出现的输入序列中的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" />包含由指定测试的元素之前出现的输入序列中的元素<paramref name="predicate" />不再能够通过。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7626,7 +7626,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">表示由函数返回的键类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedQueryable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <summary>根据某个键按升序对序列中的元素执行后续排序。</summary>
@@ -7692,7 +7692,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">表示由函数返回的键类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedQueryable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -7760,7 +7760,7 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 表示的函数返回的键类型。</typeparam>
+        <typeparam name="TKey">表示由函数返回的键类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedQueryable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <summary>根据某个键按降序对序列中的元素执行后续排序。</summary>
@@ -7818,12 +7818,12 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey">由 <paramref name="keySelector" /> 函数返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />函数。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedQueryable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
         <summary>使用指定的比较器按降序对序列中的元素执行后续排序。</summary>
-        <returns>一个集合，其中的元素是根据某个键按降序进行排序的。</returns>
+        <returns>一个集合，其元素以根据某个键按降序排序。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7893,8 +7893,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">非重复元素组成合并运算的第一组的一个序列。</param>
-        <param name="source2">非重复元素组成合并运算的第二组的一个序列。</param>
+        <param name="source1">非重复元素构成 union 运算的第一个序列。</param>
+        <param name="source2">非重复元素构成 union 运算的第二个序列。</param>
         <summary>通过使用默认的相等比较器，生成两个序列的并集。</summary>
         <returns>一个 包含两个输入序列中的非重复元素的 <see cref="T:System.Linq.IQueryable`1" />。</returns>
         <remarks>
@@ -7955,8 +7955,8 @@
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="source1">非重复元素组成合并运算的第一组的一个序列。</param>
-        <param name="source2">非重复元素组成合并运算的第二组的一个序列。</param>
+        <param name="source1">非重复元素构成 union 运算的第一个序列。</param>
+        <param name="source2">非重复元素构成 union 运算的第二个序列。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 生成两个序列的并集。</summary>
         <returns>一个 包含两个输入序列中的非重复元素的 <see cref="T:System.Linq.IQueryable`1" />。</returns>
@@ -8022,7 +8022,7 @@
         <param name="source">要筛选的 <see cref="T:System.Linq.IQueryable`1" />。</param>
         <param name="predicate">用于测试每个元素是否满足条件的函数。</param>
         <summary>基于谓词筛选值序列。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含满足由 <paramref name="predicate" /> 指定的条件的输入序列中的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含输入序列中满足指定的条件的元素<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8083,9 +8083,9 @@
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
         <param name="source">要筛选的 <see cref="T:System.Linq.IQueryable`1" />。</param>
-        <param name="predicate">用于测试每个元素是否满足条件的函数；此函数的第二个参数表示源序列中元素的索引。</param>
+        <param name="predicate">用于测试条件; 每个元素的函数该函数的第二个参数表示源序列中元素的索引。</param>
         <summary>基于谓词筛选值序列。 将在谓词函数的逻辑中使用每个元素的索引。</summary>
-        <returns>一个 <see cref="T:System.Linq.IQueryable`1" />，包含满足由 <paramref name="predicate" /> 指定的条件的输入序列中的元素。</returns>
+        <returns><see cref="T:System.Linq.IQueryable`1" /> ，其中包含输入序列中满足指定的条件的元素<paramref name="predicate" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8107,6 +8107,50 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Zip&lt;TFirst,TSecond&gt;">
+      <MemberSignature Language="C#" Value="public static System.Linq.IQueryable&lt;ValueTuple&lt;TFirst,TSecond&gt;&gt; Zip&lt;TFirst,TSecond&gt; (this System.Linq.IQueryable&lt;TFirst&gt; source1, System.Collections.Generic.IEnumerable&lt;TSecond&gt; source2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Linq.IQueryable`1&lt;valuetype System.ValueTuple`2&lt;!!TFirst, !!TSecond&gt;&gt; Zip&lt;TFirst, TSecond&gt;(class System.Linq.IQueryable`1&lt;!!TFirst&gt; source1, class System.Collections.Generic.IEnumerable`1&lt;!!TSecond&gt; source2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Queryable.Zip``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``1})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function Zip(Of TFirst, TSecond) (source1 As IQueryable(Of TFirst), source2 As IEnumerable(Of TSecond)) As IQueryable(Of ValueTuple(Of TFirst, TSecond))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TFirst, typename TSecond&gt;&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static System::Linq::IQueryable&lt;ValueTuple&lt;TFirst, TSecond&gt;&gt; ^ Zip(System::Linq::IQueryable&lt;TFirst&gt; ^ source1, System::Collections::Generic::IEnumerable&lt;TSecond&gt; ^ source2);" />
+      <MemberSignature Language="F#" Value="static member Zip : System.Linq.IQueryable&lt;'First&gt; * seq&lt;'Second&gt; -&gt; System.Linq.IQueryable&lt;ValueTuple&lt;'First, 'Second&gt;&gt;" Usage="System.Linq.Queryable.Zip (source1, source2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Queryable</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable&lt;System.ValueTuple&lt;TFirst,TSecond&gt;&gt;</ReturnType>
+        <Attributes>
+          <Attribute FrameworkAlternate="netcore-3.0">
+            <AttributeName>System.Runtime.CompilerServices.TupleElementNames(new System.String[] { "First", "Second" })</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TFirst" />
+        <TypeParameter Name="TSecond" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source1" Type="System.Linq.IQueryable&lt;TFirst&gt;" RefType="this" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="source2" Type="System.Collections.Generic.IEnumerable&lt;TSecond&gt;" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TFirst">To be added.</typeparam>
+        <typeparam name="TSecond">To be added.</typeparam>
+        <param name="source1">To be added.</param>
+        <param name="source2">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Zip&lt;TFirst,TSecond,TResult&gt;">

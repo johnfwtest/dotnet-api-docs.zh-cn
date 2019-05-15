@@ -1,5 +1,5 @@
 <Type Name="SaveFileDialog" FullName="System.Windows.Forms.SaveFileDialog">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="19996a178f77bd065ec00509d6411b4c181f11fd" /><Meta Name="ms.sourcegitcommit" Value="756d085f27705e86604f1bba5f2086ee23761acf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="01/30/2019" /><Meta Name="ms.locfileid" Value="55352110" /></Metadata><TypeSignature Language="C#" Value="public sealed class SaveFileDialog : System.Windows.Forms.FileDialog" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="8a759b3fb1ed1acab2045b86f221ba5d873bb77a" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65005460" /></Metadata><TypeSignature Language="C#" Value="public sealed class SaveFileDialog : System.Windows.Forms.FileDialog" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SaveFileDialog extends System.Windows.Forms.FileDialog" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SaveFileDialog" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SaveFileDialog&#xA;Inherits FileDialog" />
@@ -16,7 +16,7 @@
   </Base>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.SaveFileDialogDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1">
@@ -105,8 +105,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示如果用户指定不存在的文件，对话框是否提示用户允许创建该文件。</summary>
-        <value>在用户指定的文件名不存在的情况下，如果在创建该文件之前对话框对用户进行提示，则为 <see langword="true" />；如果对话框不征得用户许可就自动创建一个对话框，则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示对话框是否提示用户提供许可以创建一个文件，如果用户指定不存在的文件。</summary>
+        <value><see langword="true" /> 如果对话框的创建文件，如果用户指定不存在; 的文件名称前提示用户<see langword="false" />如果对话框的自动创建新的文件而不提示用户提供权限。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -121,7 +121,7 @@
   
  ]]></format>
         </remarks>
-        <permission cref="T:System.Security.Permissions.FileIOPermission">若要设置的属性。 关联枚举：<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">若要设置的属性。 关联枚举： <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />。</permission>
       </Docs>
     </Member>
     <Member MemberName="OpenFile">
@@ -143,7 +143,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>打开用户选定的具有读/写权限的文件。</summary>
+        <summary>由用户选择的读/写权限打开的文件。</summary>
         <returns>用户选定的读/写文件。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -164,7 +164,7 @@
   
  ]]></format>
         </remarks>
-        <permission cref="T:System.Security.Permissions.FileDialogPermission">若要保存的文件。 关联枚举：<see cref="F:System.Security.Permissions.FileDialogPermissionAccess.Save" />。</permission>
+        <permission cref="T:System.Security.Permissions.FileDialogPermission">若要保存的文件。 关联枚举： <see cref="F:System.Security.Permissions.FileDialogPermissionAccess.Save" />。</permission>
         <altmember cref="T:System.IO.Stream" />
       </Docs>
     </Member>
@@ -191,8 +191,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示如果用户指定的文件名已存在，<see langword="Save As" /> 对话框是否显示警告。</summary>
-        <value>在用户指定的文件名存在的情况下，如果在覆盖该文件之前对话框对用户进行提示，则为 <see langword="true" />；如果对话框不征得用户许可就自动覆盖现有文件，则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示是否<see langword="Save As" />对话框显示一条警告，如果用户指定的文件名已存在。</summary>
+        <value><see langword="true" /> 如果对话框的覆盖现有文件，如果用户指定的文件名已存在; 前提示用户<see langword="false" />如果对话框的自动将覆盖现有文件，而不提示用户提供权限。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -207,7 +207,7 @@
   
  ]]></format>
         </remarks>
-        <permission cref="T:System.Security.Permissions.FileIOPermission">若要设置的属性。 关联枚举：<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">若要设置的属性。 关联枚举： <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />。</permission>
       </Docs>
     </Member>
     <Member MemberName="Reset">

@@ -1,5 +1,5 @@
 <Type Name="OleDbTransaction" FullName="System.Data.OleDb.OleDbTransaction">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="36b9c11c5693676af6cc15af10c0deda5fbfb4a4" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57915303" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbTransaction : System.Data.Common.DbTransaction" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f7ce5ba8a0645387fdc7d790346e2883c7a8dfb7" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65006420" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbTransaction : System.Data.Common.DbTransaction" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbTransaction extends System.Data.Common.DbTransaction" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbTransaction" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbTransaction&#xA;Inherits DbTransaction" />
@@ -96,7 +96,7 @@
       </Parameters>
       <Docs>
         <param name="isolevel">要用于该事务的隔离级别。</param>
-        <summary>启动嵌套的数据库事务，并为新事务指定要使用的隔离级别。</summary>
+        <summary>启动嵌套的数据库事务，并指定要用于新事务的隔离级别。</summary>
         <returns>嵌套的数据库事务。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -144,7 +144,7 @@
         <exception cref="T:System.Exception">在尝试提交事务时出错。</exception>
         <exception cref="T:System.InvalidOperationException">已提交或回滚事务。  
   
-- 或 - 
+或 
 连接已断开。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/f46570de-9e50-4fe6-8710-a8c31fa8569b">执行事务</related>
       </Docs>
@@ -167,7 +167,7 @@
         <ReturnType>System.Data.OleDb.OleDbConnection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与该事务关联的 <see cref="T:System.Data.OleDb.OleDbConnection" /> 对象，或者如果该事务不再有效，则为 <see langword="null" />。</summary>
+        <summary>获取<see cref="T:System.Data.OleDb.OleDbConnection" />与事务相关联的对象或<see langword="null" />如果该事务不再有效。</summary>
         <value>与事务关联的 <see cref="T:System.Data.OleDb.OleDbConnection" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -197,8 +197,8 @@
         <ReturnType>System.Data.Common.DbConnection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取或设置此 <see cref="T:System.Data.Common.DbConnection" /> 使用的 <see cref="T:System.Data.Common.DbCommand" />。</summary>
+        <value>与数据源的连接。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,9 +222,10 @@
         <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="disposing">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
+        <summary>释放非托管的资源使用情况和 （可选） 释放托管的资源。</summary>
         <remarks>To be added.</remarks>
+        <forInternalUseOnly />
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -244,7 +245,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>在垃圾回收将某一对象回收前允许该对象尝试释放资源并执行其他清理操作。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -318,7 +319,7 @@
         <exception cref="T:System.Exception">在尝试提交事务时出错。</exception>
         <exception cref="T:System.InvalidOperationException">已提交或回滚事务。  
   
-- 或 - 
+或 
 连接已断开。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/f46570de-9e50-4fe6-8710-a8c31fa8569b">执行事务</related>
       </Docs>

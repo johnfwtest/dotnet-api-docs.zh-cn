@@ -1,5 +1,5 @@
 <Type Name="HwndHost" FullName="System.Windows.Interop.HwndHost">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="8a93df1af54bdba47b7ad18036807edba799999f" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57918891" /></Metadata><TypeSignature Language="C#" Value="public abstract class HwndHost : System.Windows.FrameworkElement, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="edd93e5f7864da0ebab307f0656e4a1a460fcb79" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64994550" /></Metadata><TypeSignature Language="C#" Value="public abstract class HwndHost : System.Windows.FrameworkElement, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract HwndHost extends System.Windows.FrameworkElement implements class System.IDisposable, class System.Windows.Interop.IKeyboardInputSink, class System.Windows.Interop.IWin32Window" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Interop.HwndHost" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class HwndHost&#xA;Inherits FrameworkElement&#xA;Implements IDisposable, IKeyboardInputSink, IWin32Window" />
@@ -52,7 +52,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -92,7 +92,7 @@
       </Parameters>
       <Docs>
         <param name="hwndParent">父窗口的窗口句柄。</param>
-        <summary>在派生类中重写时，会创建要承载的窗口。</summary>
+        <summary>当在派生类中重写，将创建要承载的窗口。</summary>
         <returns>要创建的子 [!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)] 窗口的句柄。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -132,7 +132,7 @@
       </Parameters>
       <Docs>
         <param name="hwnd">包含窗口句柄的结构。</param>
-        <summary>在派生类中重写时，会损坏所承载的窗口。</summary>
+        <summary>如果在派生类中重写，将销毁所承载的窗口。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -217,10 +217,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
         </Attribute>
       </Attributes>
@@ -231,7 +231,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">如果从显式释放器调用，则设置为 <see langword="true" />。否则设置为 <see langword="false" />。</param>
+        <param name="disposing">设置为<see langword="true" />如果从显式释放器调用和<see langword="false" />否则为。</param>
         <summary>立即释放该对象可能持有的任何系统资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -309,7 +309,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在垃圾回收器损坏对象之前执行最后的清理工作。</summary>
+        <summary>垃圾回收器销毁对象之前执行最后的清理工作。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -337,7 +337,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>get: System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -364,10 +364,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
         </Attribute>
       </Attributes>
@@ -377,7 +377,7 @@
       <Parameters />
       <Docs>
         <summary>获取一个值，该值指示接收器或其所包含的组件之一是否具有焦点。</summary>
-        <returns>如果接收器或其所包含的组件之一具有焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果接收器或其所包含的组件之一具有焦点，则否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin" />
       </Docs>
@@ -396,10 +396,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
         </Attribute>
       </Attributes>
@@ -410,9 +410,9 @@
         <Parameter Name="constraint" Type="System.Windows.Size" />
       </Parameters>
       <Docs>
-        <param name="constraint"><see cref="T:System.Windows.Interop.HwndHost" /> 对象的大小。</param>
-        <summary>按照布局引擎操作的要求，返回 <see cref="T:System.Windows.Interop.HwndHost" /> 对象所表示的窗口的大小。</summary>
-        <returns><see cref="T:System.Windows.Interop.HwndHost" /> 对象的大小。</returns>
+        <param name="constraint">大小<see cref="T:System.Windows.Interop.HwndHost" />对象。</param>
+        <summary>返回由表示的窗口的大小<see cref="T:System.Windows.Interop.HwndHost" />对象，如由布局引擎操作请求。</summary>
+        <returns>大小<see cref="T:System.Windows.Interop.HwndHost" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -443,10 +443,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>add: System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>remove: System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -454,7 +454,7 @@
         <ReturnType>System.Windows.Interop.HwndSourceHook</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>适用于所承载的窗口接收的每条未处理的消息。</summary>
+        <summary>所承载的窗口收到的每个未处理的消息，会发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -486,7 +486,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>为 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 创建一个 <see cref="T:System.Windows.Interop.HwndHost" />。</summary>
+        <summary>创建<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />为<see cref="T:System.Windows.Interop.HwndHost" />。</summary>
         <returns>特定于类型的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 实现。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -513,7 +513,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -545,10 +545,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
         </Attribute>
       </Attributes>
@@ -589,10 +589,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
         </Attribute>
       </Attributes>
@@ -632,7 +632,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -646,7 +646,7 @@
       <Docs>
         <param name="msg">助记键和关联数据的消息。</param>
         <param name="modifiers">修改键。</param>
-        <summary>调用此接收器的助记键（访问键）之一时调用。</summary>
+        <summary>调用此接收器的助记键 （访问键） 之一时调用。</summary>
         <returns>始终返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
@@ -666,7 +666,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -705,7 +705,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -716,9 +716,9 @@
         <Parameter Name="sink" Type="System.Windows.Interop.IKeyboardInputSink" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="sink">所包含组件的 <see cref="T:System.Windows.Interop.IKeyboardInputSink" /> 接收器。</param>
-        <summary>注册所包含组件的 <see cref="T:System.Windows.Interop.IKeyboardInputSink" /> 接口。</summary>
-        <returns>所包含组件的 <see cref="T:System.Windows.Interop.IKeyboardInputSite" /> 站点。</returns>
+        <param name="sink"><see cref="T:System.Windows.Interop.IKeyboardInputSink" />所包含组件的接收器。</param>
+        <summary>注册<see cref="T:System.Windows.Interop.IKeyboardInputSink" />包含组件的接口。</summary>
+        <returns><see cref="T:System.Windows.Interop.IKeyboardInputSite" />所包含组件的站点。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(System.Windows.Interop.IKeyboardInputSink)" />
       </Docs>
@@ -752,12 +752,12 @@
       <Parameters />
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin" />。</summary>
-        <returns>如果接收器或其所包含的组件之一具有焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果接收器或其所包含的组件之一具有焦点，则否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -780,7 +780,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>set: System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -789,12 +789,12 @@
       </ReturnValue>
       <Docs>
         <summary>有关此成员的说明，请参见 <see cref="P:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />。</summary>
-        <value>对容器的 <see cref="T:System.Windows.Interop.IKeyboardInputSite" /> 接口的引用。</value>
+        <value>对容器的引用<see cref="T:System.Windows.Interop.IKeyboardInputSite" />接口。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -819,7 +819,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -834,7 +834,7 @@
         <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
       </Parameters>
       <Docs>
-        <param name="msg">助记键和关联数据的消息。 请勿修改此消息结构。 仅由于性能原因，通过引用来传递此消息。</param>
+        <param name="msg">助记键和关联数据的消息。 不要修改此消息结构。 它是通过出于性能原因仅引用进行传递。</param>
         <param name="modifiers">修改键。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />。</summary>
         <returns>如果消息已处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
@@ -842,7 +842,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -864,7 +864,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -878,14 +878,14 @@
         <Parameter Name="sink" Type="System.Windows.Interop.IKeyboardInputSink" />
       </Parameters>
       <Docs>
-        <param name="sink">所包含组件的 <see cref="T:System.Windows.Interop.IKeyboardInputSink" /> 接收器。</param>
+        <param name="sink"><see cref="T:System.Windows.Interop.IKeyboardInputSink" />所包含组件的接收器。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(System.Windows.Interop.IKeyboardInputSink)" />。</summary>
-        <returns>所包含组件的 <see cref="T:System.Windows.Interop.IKeyboardInputSite" /> 站点。</returns>
+        <returns><see cref="T:System.Windows.Interop.IKeyboardInputSite" />所包含组件的站点。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -919,14 +919,14 @@
         <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
       </Parameters>
       <Docs>
-        <param name="request">指定是将焦点设置到第一个制表位，还是设置到最后一个制表位。</param>
+        <param name="request">指定是否应将焦点设置到第一项或最后一个制表位。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.TabInto(System.Windows.Input.TraversalRequest)" />。</summary>
-        <returns>如果已按要求对焦点进行了设置，则为 <see langword="true" />；如果没有制表位，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果焦点已设为，请求;<see langword="false" />，如果没有制表位。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -949,7 +949,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -964,15 +964,15 @@
         <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
       </Parameters>
       <Docs>
-        <param name="msg">消息及关联数据。 请勿修改此结构。 仅由于性能原因，通过引用来传递此消息。</param>
+        <param name="msg">消息和相关联的数据。 不要修改此结构。 它是通过出于性能原因仅引用进行传递。</param>
         <param name="modifiers">修改键。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />。</summary>
-        <returns>如果方法实现对该消息进行了处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果消息已由该方法的实现;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -995,7 +995,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.0">
@@ -1010,15 +1010,15 @@
         <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
       </Parameters>
       <Docs>
-        <param name="msg">消息及关联数据。 请勿修改此结构。 仅由于性能原因，通过引用来传递此消息。</param>
+        <param name="msg">消息和相关联的数据。 不要修改此结构。 它是通过出于性能原因仅引用进行传递。</param>
         <param name="modifiers">修改键。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Interop.IKeyboardInputSink.TranslateChar(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />。</summary>
-        <returns>如果消息已处理并且不应调用 <see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果消息已处理，并<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />被调用; 否则为不应为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Interop.HwndHost> 实例被强制转换为 <xref:System.Windows.Interop.IKeyboardInputSink> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1043,8 +1043,8 @@
         <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" Index="0" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="request">指定是将焦点设置到第一个制表位，还是设置到最后一个制表位。</param>
-        <summary>在接收器的第一个制表位或最后一个制表位上设置焦点。</summary>
+        <param name="request">指定是否应将焦点设置到第一项或最后一个制表位。</param>
+        <summary>将焦点设置在第一个制表位或接收器的最后一个制表位。</summary>
         <returns>始终返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Interop.IKeyboardInputSink.TabInto(System.Windows.Input.TraversalRequest)" />
@@ -1063,7 +1063,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1075,9 +1075,9 @@
         <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="msg">消息及关联数据。 请勿修改此结构。 仅由于性能原因，通过引用来传递此消息。</param>
+        <param name="msg">消息和相关联的数据。 不要修改此结构。 它是通过出于性能原因仅引用进行传递。</param>
         <param name="modifiers">修改键。</param>
-        <summary>在 keydown 消息级处理键盘输入。</summary>
+        <summary>处理键盘输入在 keydown 消息级。</summary>
         <returns>始终返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
@@ -1096,7 +1096,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1108,9 +1108,9 @@
         <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" Index="1" FrameworkAlternate="netcore-3.0;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="msg">消息及关联数据。 请勿修改此结构。 仅由于性能原因，通过引用来传递此消息。</param>
+        <param name="msg">消息和相关联的数据。 不要修改此结构。 它是通过出于性能原因仅引用进行传递。</param>
         <param name="modifiers">修改键。</param>
-        <summary>在调用 <see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" /> 方法之前处理 WM_CHAR、WM_SYSCHAR、WM_DEADCHAR 和 WM_SYSDEADCHAR 输入消息。</summary>
+        <summary>处理 WM_CHAR、 WM_SYSCHAR、 WM_DEADCHAR 和 WM_SYSDEADCHAR 输入的消息之前<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />调用方法。</summary>
         <returns>始终返回 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Windows.Interop.IKeyboardInputSink.TranslateChar(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
@@ -1130,7 +1130,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1139,7 +1139,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>更新子窗口的大小、可见性和位置以反映元素的当前状态。</summary>
+        <summary>更新子窗口的大小、 可见性和位置以反映元素的当前状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1166,7 +1166,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1182,11 +1182,11 @@
       </Parameters>
       <Docs>
         <param name="hwnd">所承载的窗口的窗口句柄。</param>
-        <param name="msg">引发操作的消息。</param>
-        <param name="wParam">可能与处理消息有关的信息。 它通常用于存储小段信息，如标志。</param>
-        <param name="lParam">可能与处理消息有关的信息。 它通常用于引用对象。</param>
-        <param name="handled">是否应将所得事件标记为已处理。</param>
-        <summary>在派生类中重写时，访问承载的子窗口的窗口进程（句柄）。</summary>
+        <param name="msg">要对其执行操作的消息。</param>
+        <param name="wParam">可能与处理消息相关的信息。 这通常用于存储小段信息，如标志。</param>
+        <param name="lParam">可能与处理消息相关的信息。 这通常用于引用的对象。</param>
+        <param name="handled">是否将标记为已产生的事件处理。</param>
+        <summary>当在派生类中重写，访问承载的子窗口的窗口进程 （句柄）。</summary>
         <returns>子窗口的窗口句柄。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  

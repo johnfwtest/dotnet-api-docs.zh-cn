@@ -1,5 +1,5 @@
 <Type Name="TransactionManager" FullName="System.Transactions.TransactionManager">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d96b9040097775cf23063feb747c2167ca87794c" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58702257" /></Metadata><TypeSignature Language="C#" Value="public static class TransactionManager" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="37189e41e4ff5bc69877a9979e7bb08c513cdf5c" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64996205" /></Metadata><TypeSignature Language="C#" Value="public static class TransactionManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed TransactionManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Transactions.TransactionManager" />
   <TypeSignature Language="VB.NET" Value="Public Class TransactionManager" />
@@ -67,7 +67,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取新事务的默认超时间隔。</summary>
-        <value>指定新事务的超时间隔的 <see cref="T:System.TimeSpan" /> 值。</value>
+        <value>一个<see cref="T:System.TimeSpan" />值，该值指定新事务的超时间隔。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -108,7 +108,7 @@
         <ReturnType>System.Transactions.TransactionStartedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>指示某个分布式事务已启动。</summary>
+        <summary>指示已启动分布式的事务。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -150,7 +150,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置自定义事务工厂。</summary>
-        <value>包含自定义的事务工厂的 <see cref="T:System.Transactions.HostCurrentTransactionCallback" />。</value>
+        <value>一个<see cref="T:System.Transactions.HostCurrentTransactionCallback" />，其中包含自定义事务工厂。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -190,7 +190,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取新事务的默认最大超时间隔。</summary>
-        <value>一个 <see cref="T:System.TimeSpan" /> 值，该值指定在创建新事务时允许的最大超时间隔。</value>
+        <value>一个<see cref="T:System.TimeSpan" />值，该值指定创建新事务时允许的最大超时间隔。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -215,7 +215,7 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RecoveryComplete(Guid manager);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Transactions.TransactionManager.RecoveryComplete(System.Guid)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberSignature Language="F#" Value="static member RecoveryComplete : Guid -&gt; unit" Usage="System.Transactions.TransactionManager.RecoveryComplete manager" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="static member RecoveryComplete : Guid -&gt; unit" Usage="System.Transactions.TransactionManager.RecoveryComplete manager" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="static member RecoveryComplete : Guid -&gt; unit" Usage="System.Transactions.TransactionManager.RecoveryComplete manager" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Transactions</AssemblyName>
@@ -241,9 +241,9 @@
         <Parameter Name="manager" Type="System.Guid" Index="0" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="resourceManagerIdentifier">唯一地标识要恢复的资源的 <see cref="T:System.Guid" />。</param>
-        <param name="manager">唯一地标识要恢复的资源的 <see cref="T:System.Guid" />。</param>
-        <summary>通知事务管理器：从失败中恢复的资源管理器已在所有未解决的事务中完成了重新登记。</summary>
+        <param name="resourceManagerIdentifier">一个<see cref="T:System.Guid" />唯一地标识要恢复的资源。</param>
+        <param name="manager">一个<see cref="T:System.Guid" />唯一地标识要恢复的资源。</param>
+        <summary>通知事务管理器从故障中恢复的资源管理器已完成所有未解决的事务中重新登记。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -272,7 +272,7 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Transactions::Enlistment ^ Reenlist(Guid manager, cli::array &lt;System::Byte&gt; ^ recoveryInfo, System::Transactions::IEnlistmentNotification ^ notification);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Transactions.TransactionManager.Reenlist(System.Guid,System.Byte[],System.Transactions.IEnlistmentNotification)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberSignature Language="F#" Value="static member Reenlist : Guid * byte[] * System.Transactions.IEnlistmentNotification -&gt; System.Transactions.Enlistment" Usage="System.Transactions.TransactionManager.Reenlist (manager, recoveryInfo, notification)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="static member Reenlist : Guid * byte[] * System.Transactions.IEnlistmentNotification -&gt; System.Transactions.Enlistment" Usage="System.Transactions.TransactionManager.Reenlist (manager, recoveryInfo, notification)" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="static member Reenlist : Guid * byte[] * System.Transactions.IEnlistmentNotification -&gt; System.Transactions.Enlistment" Usage="System.Transactions.TransactionManager.Reenlist (manager, recoveryInfo, notification)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Transactions</AssemblyName>
@@ -302,14 +302,14 @@
         <Parameter Name="notification" Type="System.Transactions.IEnlistmentNotification" Index="2" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="resourceManagerIdentifier">唯一地标识资源管理器的 <see cref="T:System.Guid" />。</param>
-        <param name="manager">唯一地标识资源管理器的 <see cref="T:System.Guid" />。</param>
-        <param name="recoveryInformation">包含恢复信息的附加信息。</param>
-        <param name="recoveryInfo">包含恢复信息的附加信息。</param>
-        <param name="enlistmentNotification">实现 <see cref="T:System.Transactions.IEnlistmentNotification" /> 以接收通知的资源对象。</param>
-        <param name="notification">实现 <see cref="T:System.Transactions.IEnlistmentNotification" /> 以接收通知的资源对象。</param>
-        <summary>在事务中重新登记持久参与者。</summary>
-        <returns>描述登记的 <see cref="T:System.Transactions.Enlistment" />。</returns>
+        <param name="resourceManagerIdentifier">一个<see cref="T:System.Guid" />用于唯一标识资源管理器。</param>
+        <param name="manager">一个<see cref="T:System.Guid" />用于唯一标识资源管理器。</param>
+        <param name="recoveryInformation">包含恢复信息的其他信息。</param>
+        <param name="recoveryInfo">包含恢复信息的其他信息。</param>
+        <param name="enlistmentNotification">实现的资源对象<see cref="T:System.Transactions.IEnlistmentNotification" />以接收通知。</param>
+        <param name="notification">实现的资源对象<see cref="T:System.Transactions.IEnlistmentNotification" />以接收通知。</param>
+        <summary>重新登记持久参与者在事务中。</summary>
+        <returns><see cref="T:System.Transactions.Enlistment" />描述登记。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
 
@@ -337,13 +337,13 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="recoveryInformation" /> 无效。  
   
-- 或 - 
-<paramref name="recoveryInformation" /> 中的“事务管理器”信息与已配置的事务管理器不匹配。  
+或 
+事务管理器中的信息<paramref name="recoveryInformation" />与已配置的事务管理器不匹配。  
   
-- 或 - 
- <see cref="N:System.Transactions" /> 未能识别 <paramref name="RecoveryInformation" />。</exception>
-        <exception cref="T:System.InvalidOperationException">已经为指定的 <paramref name="resourceManagerIdentifier" /> 调用 <see cref="M:System.Transactions.TransactionManager.RecoveryComplete(System.Guid)" />。 重新登记被拒绝。</exception>
-        <exception cref="T:System.Transactions.TransactionException"><paramref name="resourceManagerIdentifier" /> 与 <paramref name="recoveryInformation" /> 中的指定恢复信息的内容不匹配。</exception>
+或 
+ <paramref name="RecoveryInformation" /> 不能识别<see cref="N:System.Transactions" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Transactions.TransactionManager.RecoveryComplete(System.Guid)" /> 已调用指定<paramref name="resourceManagerIdentifier" />。 重新登记被拒绝。</exception>
+        <exception cref="T:System.Transactions.TransactionException"><paramref name="resourceManagerIdentifier" />中指定的恢复信息的内容不匹配<paramref name="recoveryInformation" />。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/d342c5c7-da64-4a4c-8e63-b52f4fbf2691">执行恢复</related>
       </Docs>
     </Member>
