@@ -1,5 +1,5 @@
 <Type Name="FileSystemInfo" FullName="System.IO.FileSystemInfo">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7c3b7c44857985d3d4a8cff4fcb66fceff9d3e81" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58695970" /></Metadata><TypeSignature Language="C#" Value="public abstract class FileSystemInfo : MarshalByRefObject, System.Runtime.Serialization.ISerializable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b77a0668f28184d453fcc5c4539319bbcc0bced3" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65136424" /></Metadata><TypeSignature Language="C#" Value="public abstract class FileSystemInfo : MarshalByRefObject, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit FileSystemInfo extends System.MarshalByRefObject implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.IO.FileSystemInfo" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class FileSystemInfo&#xA;Inherits MarshalByRefObject&#xA;Implements ISerializable" />
@@ -80,8 +80,8 @@
     <altmember cref="T:System.IO.FileSystemWatcher" />
     <altmember cref="T:System.IO.DriveInfo" />
     <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-    <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-    <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+    <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+    <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
     <related type="Article" href="~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md">如何：对新建的数据文件进行读取和写入</related>
   </Docs>
   <Members>
@@ -134,8 +134,8 @@
         </remarks>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -179,11 +179,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">指定的 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 为空。</exception>
+        <exception cref="T:System.ArgumentNullException">指定<see cref="T:System.Runtime.Serialization.SerializationInfo" />为 null。</exception>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="Attributes">
@@ -251,7 +251,7 @@
   
  此属性的值是压缩的存档、 目录、 隐藏、 脱机、 只读的系统和临时文件的属性标志的组合。  
   
- 当设置此值时，使用按位 OR 运算符 (`|` C# 中或`Or`在 Visual Basic 中) 要应用多个值。 若要保留中的任何现有值<xref:System.IO.FileSystemInfo.Attributes%2A>属性，包含的值<xref:System.IO.FileSystemInfo.Attributes%2A>在分配中的属性。 例如:  
+ 当设置此值时，使用按位 OR 运算符 (`|` C# 中或`Or`在 Visual Basic 中) 要应用多个值。 若要保留中的任何现有值<xref:System.IO.FileSystemInfo.Attributes%2A>属性，包含的值<xref:System.IO.FileSystemInfo.Attributes%2A>在分配中的属性。 例如：  
   
  `exampleFile.Attributes = exampleFile.Attributes | FileAttributes.ReadOnly;`  
   
@@ -271,14 +271,14 @@
         <exception cref="T:System.Security.SecurityException">调用方没有所需权限。</exception>
         <exception cref="T:System.ArgumentException">调用方试图设置无效的文件属性。  
   
-- 或 - 
+或 
 用户尝试设置属性值，但没有写入权限。</exception>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于写入文件和目录。 关联的枚举：<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /> 安全操作： <see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="CreationTime">
@@ -358,15 +358,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效：例如，它位于未映射的驱动器上。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径是无效;例如，它位于未映射的驱动器上。</exception>
         <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows NT 或更高版本。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">调用方试图设置无效的创建时间。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于设置的创建时间。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="CreationTimeUtc">
@@ -442,15 +442,15 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
-        <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效：例如，它位于未映射的驱动器上。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径是无效;例如，它位于未映射的驱动器上。</exception>
         <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows NT 或更高版本。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">调用方试图设置无效的访问时间。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于设置的创建时间。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="Delete">
@@ -487,12 +487,12 @@
       <Docs>
         <summary>删除文件或目录。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效：例如，它位于未映射的驱动器上。</exception>
-        <exception cref="T:System.IO.IOException">对于文件或目录有打开句柄，并且操作系统是 Windows XP 或更早版本。 枚举目录和文件可能会导致此开放句柄出现。 有关详细信息，请参阅[如何：枚举目录和文件](~/docs/standard/io/how-to-enumerate-directories-and-files.md)。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径是无效;例如，它位于未映射的驱动器上。</exception>
+        <exception cref="T:System.IO.IOException">文件或目录中，打开句柄，并且操作系统是 Windows XP 或更早版本。 枚举目录和文件可能会导致此开放句柄出现。 有关详细信息，请参阅[如何：枚举目录和文件](~/docs/standard/io/how-to-enumerate-directories-and-files.md)。</exception>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="Exists">
@@ -538,8 +538,8 @@
         </remarks>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="Extension">
@@ -585,9 +585,9 @@
   
 |若要执行此操作...|请参见本主题中的示例...|  
 |-------------------|--------------------------------------|  
-|创建文本文件。|[如何：向文件写入文本](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
-|写入一个文本文件。|[如何：向文件写入文本](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
-|从文本文件中读取。|[如何：从文件读取文本](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|创建文本文件。|[如何：将文本写入文件](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|写入一个文本文件。|[如何：将文本写入文件](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|从文本文件中读取。|[如何：从文件中读取文本](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
 |检索文件的完全限定的路径。|<xref:System.IO.Path.GetFullPath%2A>|  
 |只检索文件名的路径。|<xref:System.IO.Path.GetFileNameWithoutExtension%2A>|  
 |检索路径中仅目录名称。|<xref:System.IO.Path.GetDirectoryName%2A>|  
@@ -597,8 +597,8 @@
         </remarks>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="FullName">
@@ -663,8 +663,8 @@
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于访问该路径。 关联的枚举： <see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="FullPath">
@@ -706,8 +706,8 @@
 通用 I/O 任务的列表，请参阅[通用 I/O 任务](~/docs/standard/io/common-i-o-tasks.md)。</para></block>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="GetObjectData">
@@ -774,8 +774,8 @@
         <permission cref="T:System.Security.SecurityCriticalAttribute">直接调用方需要完全信任。 不能由部分受信任的或透明的代码使用此成员。</permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="LastAccessTime">
@@ -852,14 +852,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
         <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows NT 或更高版本。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">调用方试图设置无效的访问时间</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于设置上次访问时间。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="LastAccessTimeUtc">
@@ -933,14 +933,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
         <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows NT 或更高版本。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">调用方试图设置无效的访问时间。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">用于设置上次访问时间。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="LastWriteTime">
@@ -1015,14 +1015,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
         <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows NT 或更高版本。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">调用方试图设置无效的写入时间。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">设置上次写入时间。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="LastWriteTimeUtc">
@@ -1094,14 +1094,14 @@
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 不能初始化数据。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="M:System.IO.FileSystemInfo.Refresh" /> 无法初始化数据。</exception>
         <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows NT 或更高版本。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">调用方试图设置无效的写入时间。</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">设置上次写入时间。 关联的枚举： <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="Name">
@@ -1149,8 +1149,8 @@
         </remarks>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="OriginalPath">
@@ -1195,8 +1195,8 @@
         </remarks>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="Refresh">
@@ -1247,11 +1247,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.IO.IOException">设备（如磁盘驱动器）未准备好。</exception>
+        <exception cref="T:System.IO.IOException">例如，磁盘驱动器的设备未就绪。</exception>
         <altmember cref="T:System.IO.FileSystemWatcher" />
         <related type="Article" href="~/docs/standard/io/index.md">文件和流 I/O</related>
-        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件读取文本</related>
-        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：向文件写入文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-read-text-from-a-file.md">如何：从文件中读取文本</related>
+        <related type="Article" href="~/docs/standard/io/how-to-write-text-to-a-file.md">如何：将文本写入文件</related>
       </Docs>
     </Member>
     <Member MemberName="ToString">
@@ -1277,8 +1277,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>返回的原始路径。 使用<see cref="P:System.IO.FileSystemInfo.FullName" />或<see cref="P:System.IO.FileSystemInfo.Name" />的完整路径或文件/目录名称的属性。</summary>
+        <returns>具有的原始路径的字符串。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
