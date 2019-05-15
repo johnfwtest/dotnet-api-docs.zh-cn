@@ -1,5 +1,5 @@
 <Type Name="ComRegisterFunctionAttribute" FullName="System.Runtime.InteropServices.ComRegisterFunctionAttribute">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7e9da725a5a358fe788a4e56b05f1325805df10c" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58743517" /></Metadata><TypeSignature Language="C#" Value="public sealed class ComRegisterFunctionAttribute : Attribute" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="7999f3eea934906fb26325623019fce2b128f1de" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558296" /></Metadata><TypeSignature Language="C#" Value="public sealed class ComRegisterFunctionAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComRegisterFunctionAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComRegisterFunctionAttribute" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ComRegisterFunctionAttribute&#xA;Inherits Attribute" />
@@ -42,9 +42,11 @@
 ## Remarks  
  可以将此特性应用于方法。  
   
- <xref:System.Runtime.InteropServices.ComRegisterFunctionAttribute> 可以添加任意注册代码，以适应的 COM 客户端的要求。 例如，可以更新注册表使用中的注册函数<xref:Microsoft.Win32>命名空间。 如果提供的注册方法，还必须应用<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute?displayProperty=nameWithType>注销方法，以撤消在此注册方法中完成的操作。  
+ `ComRegisterFunctionAttribute` 可以添加任意注册代码，以适应的 COM 客户端的要求。 例如，可以更新注册表使用中的注册函数<xref:Microsoft.Win32>命名空间。 如果提供的注册方法，您还应将应用<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute?displayProperty=nameWithType>注销方法，以撤消在此注册方法中完成的操作。  
   
- 公共语言运行时调用具有此特性的方法，其包含程序集注册 （直接或间接） 使用时[Regasm.exe （程序集注册工具）](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)或通过<xref:System.Runtime.InteropServices.RegistrationServices.RegisterAssembly%2A?displayProperty=nameWithType>方法。  
+**.NET framework:** 公共语言运行时调用具有此特性的方法，其包含程序集注册 （直接或间接） 使用时[Regasm.exe （程序集注册） 工具)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)或通过<xref:System.Runtime.InteropServices.RegistrationServices.RegisterAssembly%2A?displayProperty=nameWithType>方法。  
+
+**.NET core:** 公共语言运行时调用具有此特性的方法，通过在注册时包含的程序集的 COM 主机[RegSvr32.exe 工具](https://docs.microsoft.com/windows-server/administration/windows-commands/regsvr32)。
   
  此特性可以应用仅对具有以下特征的方法：  
   
