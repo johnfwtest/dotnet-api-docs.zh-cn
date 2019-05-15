@@ -1,5 +1,5 @@
 <Type Name="ReservationCollection" FullName="System.IO.Log.ReservationCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="3af3e1a742555f90bf2bf9a58d5acc17efc5ab90" /><Meta Name="ms.sourcegitcommit" Value="723b8a6d92667ba86fcda96190bad3b4a03283b3" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="11/09/2018" /><Meta Name="ms.locfileid" Value="51307955" /></Metadata><TypeSignature Language="C#" Value="public abstract class ReservationCollection : System.Collections.Generic.ICollection&lt;long&gt;, System.Collections.Generic.IEnumerable&lt;long&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0538791316db2eba28cb8bcfa09bf2da24805dea" /><Meta Name="ms.sourcegitcommit" Value="7845f124909a0999a19cc65f40feab5e75cd9b8d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65064890" /></Metadata><TypeSignature Language="C#" Value="public abstract class ReservationCollection : System.Collections.Generic.ICollection&lt;long&gt;, System.Collections.Generic.IEnumerable&lt;long&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ReservationCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;int64&gt;, class System.Collections.Generic.IEnumerable`1&lt;int64&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.IO.Log.ReservationCollection" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ReservationCollection&#xA;Implements ICollection(Of Long), IEnumerable(Of Long)" />
@@ -35,7 +35,7 @@
 ## Remarks  
  此类表示在记录序列中生成的一组预留区域。 向集合中添加项可分配新的预留。 从集合中移除项可释放这些预留。  
   
- 如果应用程序包含以后要写入日志中，但无法立即写入的数据，则会在日志中保留空间。 预留可保证在能够写入数据时将其写入到日志中。 在使用日志时，应用程序通常在封送处理区域中保留一条或多条日志记录。 您必须在追加记录之前保留记录。  
+ 如果应用程序包含以后要写入日志中，但无法立即写入的数据，则会在日志中保留空间。 预留可保证在能够写入数据时将其写入到日志中。 在使用日志时，应用程序通常保留在封送处理区域中的一个或多个日志记录。 您必须在追加记录之前保留记录。  
   
  预留可用于保证可以在提交数据之前完成操作；否则，将回滚更改。 此外，还可以用于在日志中记录“撤消操作”。 在回滚操作期间，如果事务资源管理器 (RM) 中断，RM 必须能够恢复其状态。 通过使用预留区域，RM 可以在使用日志之前在其中预留空间。  
   
