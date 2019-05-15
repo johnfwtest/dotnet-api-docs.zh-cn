@@ -1,5 +1,5 @@
 <Type Name="IToolboxService" FullName="System.Drawing.Design.IToolboxService">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7d00cea0c80c0076d1ac39c18940f73df24dcb73" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56386763" /></Metadata><TypeSignature Language="C#" Value="public interface IToolboxService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="eb4a05b7123fa39d9569524909d16bb48199cb20" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65003711" /></Metadata><TypeSignature Language="C#" Value="public interface IToolboxService" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IToolboxService" />
   <TypeSignature Language="DocId" Value="T:System.Drawing.Design.IToolboxService" />
   <TypeSignature Language="VB.NET" Value="Public Interface IToolboxService" />
@@ -17,18 +17,15 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.Guid("4BACD258-DE64-4048-BC4E-FEDBEF9ACB76")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
-    </Attribute>
-    <Attribute FrameworkAlternate="netcore-3.0">
-      <AttributeName>System.CLSCompliant(false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>提供在开发环境下管理和查询工具箱的方法和属性。</summary>
+    <summary>提供方法和属性来管理和查询中的工具箱中的开发环境。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -102,7 +99,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>为指定的数据格式添加新的工具箱项创建者。</summary>
+        <summary>添加指定的数据格式的新工具箱项创建者。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddCreator">
@@ -131,9 +128,9 @@
         <Parameter Name="format" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="creator"><see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />，它可在调用工具箱项时创建组件。</param>
-        <param name="format">创建者处理的数据格式。</param>
-        <summary>为指定的数据格式添加新的工具箱项创建者。</summary>
+        <param name="creator">一个<see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />调用工具箱项时，可以创建一个组件。</param>
+        <param name="format">创建者处理数据格式。</param>
+        <summary>添加指定的数据格式的新工具箱项创建者。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -172,10 +169,10 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="creator"><see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />，它可在调用工具箱项时创建组件。</param>
-        <param name="format">创建者处理的数据格式。</param>
-        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />，表示与创建者相关联的设计器宿主。</param>
-        <summary>为指定的数据格式和设计器宿主添加新的工具箱项创建者。</summary>
+        <param name="creator">一个<see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />调用工具箱项时，可以创建一个组件。</param>
+        <param name="format">创建者处理数据格式。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />表示设计器宿主能够创建者相关联。</param>
+        <summary>添加指定的数据格式和设计器宿主新工具箱项创建者。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -195,7 +192,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将与项目链接的工具箱项添加到工具箱。</summary>
+        <summary>将项目链接的工具箱项添加到工具箱。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddLinkedToolboxItem">
@@ -223,9 +220,9 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要添加到工具箱中的已链接 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <param name="host">当前设计文档的 <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
-        <summary>将指定的与项目链接的工具箱项添加到工具箱。</summary>
+        <param name="toolboxItem">链接<see cref="T:System.Drawing.Design.ToolboxItem" />将添加到工具箱。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />当前设计文档。</param>
+        <summary>将指定的项目链接的工具箱项添加到工具箱中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -262,10 +259,10 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要添加到工具箱中的已链接 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <param name="category">要添加给工具箱项的工具箱项类别。</param>
-        <param name="host">当前设计文档的 <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
-        <summary>将指定的与项目链接的工具箱项添加到指定类别的工具箱。</summary>
+        <param name="toolboxItem">链接<see cref="T:System.Drawing.Design.ToolboxItem" />将添加到工具箱。</param>
+        <param name="category">要添加到工具箱项的工具箱项类别。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />当前设计文档。</param>
+        <summary>将指定的项目链接的工具箱项添加到指定类别的工具箱。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -282,7 +279,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将指定的工具箱项添加到工具箱中。</summary>
+        <summary>将指定的工具箱项添加到工具箱。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="AddToolboxItem">
@@ -309,8 +306,8 @@
         <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要添加到工具箱中的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <summary>将指定的工具箱项添加到工具箱中。</summary>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />将添加到工具箱。</param>
+        <summary>将指定的工具箱项添加到工具箱。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -339,8 +336,8 @@
         <Parameter Name="category" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要添加到工具箱中的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <param name="category">要将 <see cref="T:System.Drawing.Design.ToolboxItem" /> 添加到其中的工具箱项类别。</param>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />将添加到工具箱。</param>
+        <param name="category">若要添加的工具箱项类别<see cref="T:System.Drawing.Design.ToolboxItem" />到。</param>
         <summary>将指定的工具箱项添加到指定类别的工具箱。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -367,8 +364,8 @@
         <ReturnType>System.Drawing.Design.CategoryNameCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前工具箱中所有工具类别的名称。</summary>
-        <value>包含工具类别的 <see cref="T:System.Drawing.Design.CategoryNameCollection" />。</value>
+        <summary>获取当前在工具箱上的所有工具类别的名称。</summary>
+        <value>一个<see cref="T:System.Drawing.Design.CategoryNameCollection" />包含工具类别。</value>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.Drawing.Design.CategoryNameCollection" />
       </Docs>
@@ -379,7 +376,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>从以序列化形式表示工具箱项的指定对象获取工具箱项。</summary>
+        <summary>从表示序列化的窗体中的工具箱项的指定对象获取工具箱项。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="DeserializeToolboxItem">
@@ -407,9 +404,9 @@
         <Parameter Name="serializedObject" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="serializedObject">包含要检索的 <see cref="T:System.Drawing.Design.ToolboxItem" /> 的对象。</param>
-        <summary>从以序列化形式表示工具箱项的指定对象获取工具箱项。</summary>
-        <returns>从序列化对象创建的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</returns>
+        <param name="serializedObject">包含的对象<see cref="T:System.Drawing.Design.ToolboxItem" />来检索。</param>
+        <summary>从表示序列化的窗体中的工具箱项的指定对象获取工具箱项。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />从序列化对象创建。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -439,10 +436,10 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="serializedObject">包含要检索的 <see cref="T:System.Drawing.Design.ToolboxItem" /> 的对象。</param>
-        <param name="host">要与此 <see cref="T:System.ComponentModel.Design.IDesignerHost" /> 关联的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <summary>使用指定的设计器宿主，从以序列化形式表示工具箱项的指定对象获取工具箱项。</summary>
-        <returns>从反序列化创建的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</returns>
+        <param name="serializedObject">包含的对象<see cref="T:System.Drawing.Design.ToolboxItem" />来检索。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />若要将与此相关联<see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
+        <summary>从表示序列化形式，使用指定的设计器宿主中的工具箱项的指定对象获取工具箱项。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />创建从反序列化。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -479,7 +476,7 @@
       <Parameters />
       <Docs>
         <summary>获取当前选定的工具箱项。</summary>
-        <returns>当前选定的 <see cref="T:System.Drawing.Design.ToolboxItem" />；如果未选定工具箱项，则为 <see langword="null" />。</returns>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />当前选择的或<see langword="null" />如果尚未选择任何工具箱项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -508,9 +505,9 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />，选定工具必须与它关联才能返回。</param>
-        <summary>如果当前选定的工具箱项对于所有设计器可用，或者它支持指定的设计器，则获取它。</summary>
-        <returns>当前选定的 <see cref="T:System.Drawing.Design.ToolboxItem" />；如果当前未选定工具箱项，则为 <see langword="null" />。</returns>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />所选的工具必须与它要返回相关联。</param>
+        <summary>获取当前选定的工具箱项是否可用于所有设计器，或如果支持指定的设计器。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />当前选择的或<see langword="null" />如果当前未不选择任何工具箱项。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -554,7 +551,7 @@
       <Parameters />
       <Docs>
         <summary>从工具箱获取工具箱项的整个集合。</summary>
-        <returns>包含当前工具箱项的 <see cref="T:System.Drawing.Design.ToolboxItemCollection" />。</returns>
+        <returns>一个<see cref="T:System.Drawing.Design.ToolboxItemCollection" />包含当前工具箱项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -583,9 +580,9 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="host">与要检索的工具箱项关联的 <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
-        <summary>从工具箱获取与指定的设计器宿主关联的工具箱项的集合。</summary>
-        <returns>包含与指定设计器宿主关联的当前工具箱项的 <see cref="T:System.Drawing.Design.ToolboxItemCollection" />。</returns>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />与要检索的工具箱项关联。</param>
+        <summary>获取与从工具箱中指定的设计器宿主相关联的工具箱项的集合。</summary>
+        <returns>一个<see cref="T:System.Drawing.Design.ToolboxItemCollection" />，其中包含与指定的设计器宿主关联的当前工具箱项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -614,9 +611,9 @@
         <Parameter Name="category" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="category">要从其中检索所有工具箱项的工具箱项类别。</param>
-        <summary>从与指定类别相匹配的工具箱获取工具箱项的集合。</summary>
-        <returns>包含与指定类别关联的当前工具箱项的 <see cref="T:System.Drawing.Design.ToolboxItemCollection" />。</returns>
+        <param name="category">要检索中的所有工具箱项的工具箱项类别。</param>
+        <summary>从相匹配的指定的类别的工具箱获取工具箱项的集合。</summary>
+        <returns>一个<see cref="T:System.Drawing.Design.ToolboxItemCollection" />，其中包含与指定类别关联的当前工具箱项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -646,10 +643,10 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="category">要从其中检索工具箱项的工具箱项类别。</param>
-        <param name="host">与要检索的工具箱项关联的 <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
-        <summary>从工具箱获取与指定的设计器宿主和类别关联的工具箱项的集合。</summary>
-        <returns>包含与指定的类别和设计器宿主关联的当前工具箱项的 <see cref="T:System.Drawing.Design.ToolboxItemCollection" />。</returns>
+        <param name="category">要检索从工具箱项的工具箱项类别。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />与要检索的工具箱项关联。</param>
+        <summary>获取与指定设计器宿主和从工具箱的类别相关联的工具箱项的集合。</summary>
+        <returns>一个<see cref="T:System.Drawing.Design.ToolboxItemCollection" />，其中包含与指定的类别和设计器宿主相关联的当前工具箱项。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -659,7 +656,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取一个值，该值指示指定的设计器宿主是否可使用表示序列化工具箱项的指定对象。</summary>
+        <summary>获取一个值，该值指定设计器宿主是否可以使用指定的对象表示一个序列化的工具箱项。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsSupported">
@@ -688,10 +685,10 @@
         <Parameter Name="filterAttributes" Type="System.Collections.ICollection" />
       </Parameters>
       <Docs>
-        <param name="serializedObject">包含要检索的 <see cref="T:System.Drawing.Design.ToolboxItem" /> 的对象。</param>
-        <param name="filterAttributes"><see cref="T:System.Collections.ICollection" />，它包含要为其测试序列化对象的特性。</param>
-        <summary>获取一个值，该值指示表示一个序列化工具箱项的指定对象是否与指定特性相匹配。</summary>
-        <returns>如果该对象与指定特性相匹配，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="serializedObject">包含的对象<see cref="T:System.Drawing.Design.ToolboxItem" />来检索。</param>
+        <param name="filterAttributes"><see cref="T:System.Collections.ICollection" /> ，其中包含要测试的序列化的对象的属性。</param>
+        <summary>获取一个值，该值表示序列化的工具箱项的指定的对象是否与指定的特性相匹配。</summary>
+        <returns><see langword="true" /> 如果该对象与指定的特性; 相匹配否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -721,10 +718,10 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="serializedObject">包含要检索的 <see cref="T:System.Drawing.Design.ToolboxItem" /> 的对象。</param>
-        <param name="host">要测试其是否支持 <see cref="T:System.ComponentModel.Design.IDesignerHost" /> 的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <summary>获取一个值，该值指示指定的设计器宿主是否可使用表示序列化工具箱项的指定对象。</summary>
-        <returns>如果指定对象与指定的设计器宿主兼容，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="serializedObject">包含的对象<see cref="T:System.Drawing.Design.ToolboxItem" />来检索。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />若要测试其是否支持<see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
+        <summary>获取一个值，该值指定设计器宿主是否可以使用指定的对象表示一个序列化的工具箱项。</summary>
+        <returns><see langword="true" /> 如果指定的对象是否与指定的设计器宿主; 兼容否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -734,7 +731,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取一个值，该值指示指定对象是否是序列化工具箱项。</summary>
+        <summary>获取一个值，该值指定的对象是否序列化的工具箱项。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="IsToolboxItem">
@@ -763,8 +760,8 @@
       </Parameters>
       <Docs>
         <param name="serializedObject">要检查的对象。</param>
-        <summary>获取一个值，该值指示指定对象是否是序列化工具箱项。</summary>
-        <returns>如果该对象包含工具箱项对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>获取一个值，该值指定的对象是否序列化的工具箱项。</summary>
+        <returns><see langword="true" /> 如果此对象包含工具箱项对象;否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -795,9 +792,9 @@
       </Parameters>
       <Docs>
         <param name="serializedObject">要检查的对象。</param>
-        <param name="host">正在发出此请求的 <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
-        <summary>获取一个值，指示在使用指定的设计器宿主时，指定对象是否是序列化工具箱项。</summary>
-        <returns>如果该对象包含工具箱项对象，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />正在发出此请求。</param>
+        <summary>获取一个值，该值指定的对象是否序列化的工具箱项，使用指定的设计器宿主。</summary>
+        <returns><see langword="true" /> 如果此对象包含工具箱项对象;否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -869,8 +866,8 @@
         <Parameter Name="format" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="format">要移除的创建者的数据格式。</param>
-        <summary>移除以前添加的指定数据格式的工具箱项创建者。</summary>
+        <param name="format">要删除的创建者的数据格式。</param>
+        <summary>移除以前添加的工具箱项创建者的指定的数据格式。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -900,9 +897,9 @@
         <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
       </Parameters>
       <Docs>
-        <param name="format">要移除的创建者的数据格式。</param>
-        <param name="host">与要移除的创建者关联的 <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
-        <summary>移除以前添加的与指定数据格式和指定设计器宿主相关联的工具箱创建者。</summary>
+        <param name="format">要删除的创建者的数据格式。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />要删除的创建者与该键相关联。</param>
+        <summary>移除以前添加的工具箱创建者与指定的数据格式和指定设计器宿主相关联。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -939,7 +936,7 @@
         <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要从工具箱中移除的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />若要从工具箱中删除。</param>
         <summary>从工具箱中移除指定的工具箱项。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -969,8 +966,8 @@
         <Parameter Name="category" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要从工具箱中移除的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <param name="category">要从其中移除 <see cref="T:System.Drawing.Design.ToolboxItem" /> 的工具箱项的类别。</param>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />若要从工具箱中删除。</param>
+        <param name="category">若要删除的工具箱项类别<see cref="T:System.Drawing.Design.ToolboxItem" />从。</param>
         <summary>从工具箱中移除指定的工具箱项。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -997,7 +994,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置当前从工具箱中选定的工具类别的名称。</summary>
+        <summary>获取或设置当前选定的工具类别的名称从工具箱。</summary>
         <value>当前选定类别的名称。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1025,7 +1022,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>通知工具箱服务，选定工具已被使用。</summary>
+        <summary>通知工具箱服务所选的工具已被使用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1054,8 +1051,8 @@
       </Parameters>
       <Docs>
         <param name="toolboxItem">要序列化的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
-        <summary>获取表示指定的工具箱项的可序列化对象。</summary>
-        <returns>表示指定 <see cref="T:System.Drawing.Design.ToolboxItem" /> 的对象。</returns>
+        <summary>获取一个表示指定的工具箱项的可序列化对象。</summary>
+        <returns>一个对象，表示指定<see cref="T:System.Drawing.Design.ToolboxItem" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1089,8 +1086,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前应用程序的光标设置为表示当前选定工具的光标。</summary>
-        <returns>如果光标由当前选定的工具设置，则为 <see langword="true" />；如果未选定任何工具且光标被设置为标准的 Windows 光标，则为 <see langword="false" />。</returns>
+        <summary>将当前应用程序的光标设置为表示当前选定的工具的光标。</summary>
+        <returns><see langword="true" /> 如果光标由当前选定的工具，设置<see langword="false" />如果未选定任何工具且光标将设置为标准的 windows 光标。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1125,7 +1122,7 @@
         <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
       </Parameters>
       <Docs>
-        <param name="toolboxItem">要选择的 <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />选择。</param>
         <summary>选择指定的工具箱项。</summary>
         <remarks>To be added.</remarks>
       </Docs>

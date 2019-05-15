@@ -1,5 +1,5 @@
 <Type Name="ControlBindingsCollection" FullName="System.Windows.Forms.ControlBindingsCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="47802a39ea45f4e6a52218770e5fe2669de89e88" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57924276" /></Metadata><TypeSignature Language="C#" Value="public class ControlBindingsCollection : System.Windows.Forms.BindingsCollection" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="41ba9414e66eefb37af8cf53b9d8471246dd0973" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65005900" /></Metadata><TypeSignature Language="C#" Value="public class ControlBindingsCollection : System.Windows.Forms.BindingsCollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlBindingsCollection extends System.Windows.Forms.BindingsCollection" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ControlBindingsCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class ControlBindingsCollection&#xA;Inherits BindingsCollection" />
@@ -19,7 +19,7 @@
     <Attribute>
       <AttributeName>System.ComponentModel.DefaultEvent("CollectionChanged")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.ComponentModel.Editor("System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
@@ -141,11 +141,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> 为 null。</exception>
-        <exception cref="T:System.ArgumentException">控件属性已绑定到数据。
+        <exception cref="T:System.ArgumentException">控件属性是已绑定到数据。
 
-- 或 -
+或
 
-<see cref="T:System.Windows.Forms.Binding" /> 未指定 <see cref="P:System.Windows.Forms.Binding.DataSource" /> 的有效列。</exception>
+<see cref="T:System.Windows.Forms.Binding" />未指定的有效列<see cref="P:System.Windows.Forms.Binding.DataSource" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -196,11 +196,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.Exception"><paramref name="propertyName" /> 已绑定到数据。
+        <exception cref="T:System.Exception"><paramref name="propertyName" />是已绑定到数据。
 
-- 或 -
+或
 
-<paramref name="dataMember" /> 未指定 <paramref name="dataSource" /> 的有效成员。</exception>
+<paramref name="dataMember" />未指定的有效成员<paramref name="dataSource" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -233,11 +233,11 @@
         <summary>用指定的控件属性名称、数据源、数据成员以及有关格式设置是否启用的信息创建绑定，并将该绑定添加到集合中。</summary>
         <returns>新创建的 <see cref="T:System.Windows.Forms.Binding" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">在该控件中不存在由 <paramref name="propertyName" /> 给出的属性。  
+        <exception cref="T:System.ArgumentException">给定的属性<paramref name="propertyName" />控件上不存在。  
   
-- 或 - 
-给定的属性为只读属性。</exception>
-        <exception cref="T:System.Exception">如果禁用格式设置，且 <paramref name="propertyName" /> 既不是有效的控件属性，也不是空字符串 ("")。</exception>
+或 
+给定的属性是只读的属性。</exception>
+        <exception cref="T:System.Exception">如果禁用格式设置和<paramref name="propertyName" />既不有效控件属性，也不为空字符串 ("")。</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -279,13 +279,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">由 <paramref name="propertyName" /> 给出的属性在该控件上不存在或者为只读。  
+        <exception cref="T:System.ArgumentException">给定的属性<paramref name="propertyName" />控件上不存在或为只读。  
   
-- 或 - 
-数据源中不存在指定的数据成员。  
+或 
+指定的数据成员不存在对数据源。  
   
-- 或 - 
-指定的数据源、数据成员或控件属性与集合中的另一个绑定相关联。</exception>
+或 
+数据源、 数据成员或控件属性指定与集合中的另一个绑定相关联。</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -329,13 +329,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">由 <paramref name="propertyName" /> 给出的属性在该控件上不存在或者为只读。  
+        <exception cref="T:System.ArgumentException">给定的属性<paramref name="propertyName" />控件上不存在或为只读。  
   
-- 或 - 
-数据源中不存在指定的数据成员。  
+或 
+指定的数据成员不存在对数据源。  
   
-- 或 - 
-指定的数据源、数据成员或控件属性与集合中的另一个绑定相关联。</exception>
+或 
+数据源、 数据成员或控件属性指定与集合中的另一个绑定相关联。</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -386,13 +386,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">由 <paramref name="propertyName" /> 给出的属性在该控件上不存在或者为只读。  
+        <exception cref="T:System.ArgumentException">给定的属性<paramref name="propertyName" />控件上不存在或为只读。  
   
-- 或 - 
-数据源中不存在指定的数据成员。  
+或 
+指定的数据成员不存在对数据源。  
   
-- 或 - 
-指定的数据源、数据成员或控件属性与集合中的另一个绑定相关联。</exception>
+或 
+数据源、 数据成员或控件属性指定与集合中的另一个绑定相关联。</exception>
       </Docs>
     </Member>
     <Member MemberName="Add">
@@ -440,13 +440,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">由 <paramref name="propertyName" /> 给出的属性在该控件上不存在或者为只读。  
+        <exception cref="T:System.ArgumentException">给定的属性<paramref name="propertyName" />控件上不存在或为只读。  
   
-- 或 - 
-数据源中不存在指定的数据成员。  
+或 
+指定的数据成员不存在对数据源。  
   
-- 或 - 
-指定的数据源、数据成员或控件属性与集合中的另一个绑定相关联。</exception>
+或 
+数据源、 数据成员或控件属性指定与集合中的另一个绑定相关联。</exception>
       </Docs>
     </Member>
     <Member MemberName="AddCore">
@@ -762,7 +762,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 值小于 0 或大于集合中的绑定数。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />值小于 0，或大于集合中的绑定数。</exception>
       </Docs>
     </Member>
     <Member MemberName="RemoveCore">
@@ -789,7 +789,7 @@
         <param name="dataBinding">要从该集合中移除的 <see cref="T:System.Windows.Forms.Binding" />。</param>
         <summary>从集合中移除指定的绑定。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">该绑定属于另一个 <see cref="T:System.Windows.Forms.ControlBindingsCollection" />。</exception>
+        <exception cref="T:System.ArgumentException">该绑定属于另一个<see cref="T:System.Windows.Forms.ControlBindingsCollection" />。</exception>
       </Docs>
     </Member>
   </Members>

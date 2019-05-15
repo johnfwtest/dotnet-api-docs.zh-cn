@@ -1,5 +1,5 @@
 <Type Name="Control+ControlCollection" FullName="System.Windows.Forms.Control+ControlCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="69f423558c1f46274f0c64b5bbc8a544833ac6b6" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57922485" /></Metadata><TypeSignature Language="C#" Value="public class Control.ControlCollection : System.Windows.Forms.Layout.ArrangedElementCollection, ICloneable, System.Collections.IList" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="23574b81bf50c05dfa0451fe18ff996cba9c6b20" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65005919" /></Metadata><TypeSignature Language="C#" Value="public class Control.ControlCollection : System.Windows.Forms.Layout.ArrangedElementCollection, ICloneable, System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit Control/ControlCollection extends System.Windows.Forms.Layout.ArrangedElementCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Control.ControlCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class Control.ControlCollection&#xA;Inherits ArrangedElementCollection&#xA;Implements ICloneable, IList" />
@@ -33,7 +33,7 @@
     <Attribute>
       <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-1.1">
@@ -83,7 +83,7 @@
         <Parameter Name="owner" Type="System.Windows.Forms.Control" />
       </Parameters>
       <Docs>
-        <param name="owner"><see cref="T:System.Windows.Forms.Control" />，它表示拥有控件集合的控件。</param>
+        <param name="owner">一个<see cref="T:System.Windows.Forms.Control" />表示拥有控件集合的控件。</param>
         <summary>初始化 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Windows.Forms.Control.Controls" />
@@ -110,8 +110,8 @@
         <Parameter Name="value" Type="System.Windows.Forms.Control" />
       </Parameters>
       <Docs>
-        <param name="value">要添加到控件集合的 <see cref="T:System.Windows.Forms.Control" />。</param>
-        <summary>将指定的控件添加到控件集合中。</summary>
+        <param name="value"><see cref="T:System.Windows.Forms.Control" />要添加到控件集合。</param>
+        <summary>将指定的控件添加到控件集合。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -136,8 +136,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Exception">指定的控件是顶级控件，或者如果将该控件添加到控件集合中，将导致循环控件引用。</exception>
-        <exception cref="T:System.ArgumentException">分配到 <paramref name="value" /> 参数的对象不是 <see cref="T:System.Windows.Forms.Control" />。</exception>
+        <exception cref="T:System.Exception">指定的控件为顶级控件，否则如果将此控件添加到控件集合，将导致循环控件引用。</exception>
+        <exception cref="T:System.ArgumentException">分配给的对象<paramref name="value" />参数不是<see cref="T:System.Windows.Forms.Control" />。</exception>
         <block subset="none" type="overrides"><para>重写时<see cref="M:System.Windows.Forms.Control.ControlCollection.Add(System.Windows.Forms.Control)" />在派生类中，请务必调用基类的<see cref="M:System.Windows.Forms.Control.ControlCollection.Add(System.Windows.Forms.Control)" />方法，以确保该控件添加到集合。</para></block>
         <altmember cref="M:System.Windows.Forms.Control.ControlCollection.Remove(System.Windows.Forms.Control)" />
         <altmember cref="M:System.Windows.Forms.Control.ControlCollection.RemoveAt(System.Int32)" />
@@ -171,7 +171,7 @@
       </Parameters>
       <Docs>
         <param name="controls">要添加到集合中的 <see cref="T:System.Windows.Forms.Control" /> 对象的数组。</param>
-        <summary>将控件对象数组添加到集合中。</summary>
+        <summary>向集合添加控制对象的数组。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -268,8 +268,8 @@
       </Parameters>
       <Docs>
         <param name="control">要在集合中查找的 <see cref="T:System.Windows.Forms.Control" />。</param>
-        <summary>确定指定控件是否为集合的成员。</summary>
-        <returns>如果 <see cref="T:System.Windows.Forms.Control" /> 是集合的成员，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>确定指定的控件是否为集合的成员。</summary>
+        <returns><see langword="true" /> 如果<see cref="T:System.Windows.Forms.Control" />是集合的成员; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -311,8 +311,8 @@
       </Parameters>
       <Docs>
         <param name="key">要在 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 中定位的键。</param>
-        <summary>确定 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 是否包含具有指定键的项。</summary>
-        <returns>如果 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 包含具有指定键的项，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>确定是否<see cref="T:System.Windows.Forms.Control.ControlCollection" />包含具有指定键的项。</summary>
+        <returns><see langword="true" /> 如果<see cref="T:System.Windows.Forms.Control.ControlCollection" />包含具有指定的项; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -423,9 +423,9 @@
       </Parameters>
       <Docs>
         <param name="key">要在 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 中定位的键。</param>
-        <param name="searchAllChildren">如果搜索所有子控件，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>根据控件的 <see cref="P:System.Windows.Forms.Control.Name" /> 属性搜索控件并生成由所有匹配项组成的数组。</summary>
-        <returns>包含匹配控件的 <see cref="T:System.Windows.Forms.Control" /> 类型数组。</returns>
+        <param name="searchAllChildren"><see langword="true" /> 若要搜索的所有子控件;否则为<see langword="false" />。</param>
+        <summary>搜索控件通过其<see cref="P:System.Windows.Forms.Control.Name" />属性，并生成匹配的所有控件的数组。</summary>
+        <returns>类型的数组<see cref="T:System.Windows.Forms.Control" />包含匹配控件。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException"><paramref name="key" /> 为 <see langword="null" /> 或为空字符串 ("")。</exception>
       </Docs>
@@ -465,9 +465,9 @@
         <Parameter Name="child" Type="System.Windows.Forms.Control" />
       </Parameters>
       <Docs>
-        <param name="child">要在控件集合中搜索的 <see cref="T:System.Windows.Forms.Control" />。</param>
-        <summary>检索控件集合内的指定子控件的索引。</summary>
-        <returns>从零开始的索引值，它表示指定的子控件在控件集合中的位置。</returns>
+        <param name="child"><see cref="T:System.Windows.Forms.Control" />在控件集合中搜索。</param>
+        <summary>检索控件集合内指定的子控件的索引。</summary>
+        <returns>一个从零开始的索引值，该值表示控件集合内指定的子控件的位置。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -502,10 +502,10 @@
         <Parameter Name="throwException" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="child">要在控件集合中搜索的 <see cref="T:System.Windows.Forms.Control" />。</param>
-        <param name="throwException">如果 <paramref name="child" /> 参数中指定的 <see cref="T:System.Windows.Forms.Control" /> 不是 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 中的控件即引发异常，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
-        <summary>检索控件集合内的指定子控件的索引，并且如果指定控件不在控件集合内，也可能引发异常。</summary>
-        <returns>一个从零开始的索引值，它表示指定的子控件在控件集合中的位置；如果在 <see cref="T:System.Windows.Forms.Control" /> 中未找到指定的 <see cref="T:System.Windows.Forms.Control.ControlCollection" />，则索引值为 -1。</returns>
+        <param name="child"><see cref="T:System.Windows.Forms.Control" />在控件集合中搜索。</param>
+        <param name="throwException"><see langword="true" /> 如果引发异常<see cref="T:System.Windows.Forms.Control" />中指定<paramref name="child" />参数不是中的控件<see cref="T:System.Windows.Forms.Control.ControlCollection" />; 否则为<see langword="false" />。</param>
+        <summary>检索控件集合内指定的子控件的索引，并根据需要引发异常，如果指定的控件不在控件集合内。</summary>
+        <returns>一个表示控件集合; 内指定的子控件的位置的从零开始的索引值否则为则为-1 指定<see cref="T:System.Windows.Forms.Control" />中找不到<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -545,7 +545,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索对用于循环访问 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 的枚举数对象的引用。</summary>
+        <summary>检索用于循环访问的枚举器对象的引用<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</summary>
         <returns>一个 <see cref="T:System.Collections.IEnumerator" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -593,8 +593,8 @@
       </Parameters>
       <Docs>
         <param name="control">要在集合中查找的 <see cref="T:System.Windows.Forms.Control" />。</param>
-        <summary>检索控件集合中指定控件的索引。</summary>
-        <returns>一个从零开始的索引值，它表示 <see cref="T:System.Windows.Forms.Control" /> 中的指定 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 的位置。</returns>
+        <summary>检索控件集合中指定的控件的索引。</summary>
+        <returns>一个从零开始的索引值，表示指定的位置<see cref="T:System.Windows.Forms.Control" />在<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -627,7 +627,7 @@
       <Docs>
         <param name="key">要搜索的控件的名称。</param>
         <summary>检索指定项在集合中的第一个匹配项的索引。</summary>
-        <returns>具有指定名称的控件在集合中的第一个匹配项的从零开始的索引。</returns>
+        <returns>具有指定名称在集合中的控件的第一个匹配项的从零开始的索引。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -672,7 +672,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示集合中的一个 <see cref="T:System.Windows.Forms.Control" />。</summary>
+        <summary>指示<see cref="T:System.Windows.Forms.Control" />集合中。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="Item">
@@ -696,9 +696,9 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">要从控件集合中检索的控件索引。</param>
-        <summary>指示位于集合中指定索引位置的 <see cref="T:System.Windows.Forms.Control" />。</summary>
-        <value>位于控件集合内指定索引位置的 <see cref="T:System.Windows.Forms.Control" />。</value>
+        <param name="index">要从控件集合中检索的控件的索引。</param>
+        <summary>指示<see cref="T:System.Windows.Forms.Control" />指定索引处集合中的位置。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />控件集合内指定的索引位置处。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -707,7 +707,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 值小于零或者大于等于集合中控件的数量。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />值是小于零或大于或等于集合中的控件数。</exception>
         <altmember cref="P:System.Windows.Forms.Control.Controls" />
       </Docs>
     </Member>
@@ -732,8 +732,8 @@
       </Parameters>
       <Docs>
         <param name="key">要从控件集合中检索的控件的名称。</param>
-        <summary>指示集合中具有指定键的一个 <see cref="T:System.Windows.Forms.Control" />。</summary>
-        <value><see cref="T:System.Windows.Forms.Control" /> 中具有指定键的 <see cref="T:System.Windows.Forms.Control.ControlCollection" />。</value>
+        <summary>指示<see cref="T:System.Windows.Forms.Control" />与集合中指定的键。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />内的指定键与<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -766,8 +766,8 @@
         <ReturnType>System.Windows.Forms.Control</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取拥有此 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 的控件。</summary>
-        <value>拥有此 <see cref="T:System.Windows.Forms.Control" /> 的 <see cref="T:System.Windows.Forms.Control.ControlCollection" />。</value>
+        <summary>获取拥有此控件<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />拥有这<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -845,8 +845,8 @@
         <Parameter Name="index" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="index">要移除的 <see cref="T:System.Windows.Forms.Control" /> 的索引值。</param>
-        <summary>在指定的索引位置从控件集合移除控件。</summary>
+        <param name="index">索引值<see cref="T:System.Windows.Forms.Control" />删除。</param>
+        <summary>从控件集合中指定索引位置处移除控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -893,7 +893,7 @@
         <Parameter Name="key" Type="System.String" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="key">要移除的子控件的名称。</param>
+        <param name="key">若要删除的子控件的名称。</param>
         <summary>移除具有指定键的子控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -933,8 +933,8 @@
       </Parameters>
       <Docs>
         <param name="child">要搜索的 <paramref name="child" /><see cref="T:System.Windows.Forms.Control" />。</param>
-        <param name="newIndex">控件的新索引值。</param>
-        <summary>将集合中的指定子控件的索引设置为指定的索引值。</summary>
+        <param name="newIndex">控件的新的索引值。</param>
+        <summary>设置为指定的索引值集合中的指定的子控件的索引。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -943,7 +943,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="child" /> 控件不在 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 中。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="child" />控件不在<see cref="T:System.Windows.Forms.Control.ControlCollection" />。</exception>
         <altmember cref="M:System.Windows.Forms.Control.ControlCollection.GetChildIndex(System.Windows.Forms.Control)" />
       </Docs>
     </Member>
@@ -977,7 +977,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例强制转换为 <xref:System.Collections.IList> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例被强制转换为 <xref:System.Collections.IList> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1012,7 +1012,7 @@
           <format type="text/markdown"><![CDATA[
 
  ## Remarks  
-此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例强制转换为 <xref:System.Collections.IList> 接口时使用。
+此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例被强制转换为 <xref:System.Collections.IList> 接口时使用。
 
 ]]></format>
         </remarks>
@@ -1042,11 +1042,11 @@
       <Docs>
         <param name="control">要在 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 中定位的对象。</param>
         <summary>有关此成员的说明，请参见 <see cref="M:System.Collections.IList.IndexOf(System.Object)" />。</summary>
-        <returns>如果在 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 中找到，则为 <paramref name="control" /> 的索引；否则为 -1。</returns>
+        <returns>索引<paramref name="control" />如果在中找到<see cref="T:System.Windows.Forms.Control.ControlCollection" />; 否则为-1。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[
  ## Remarks  
-此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例强制转换为 <xref:System.Collections.IList> 接口时使用。
+此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例被强制转换为 <xref:System.Collections.IList> 接口时使用。
 
 ]]></format>
         </remarks>
@@ -1081,7 +1081,7 @@
         <remarks>
           <format type="text/markdown"><![CDATA[
  ## Remarks  
-此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例强制转换为 <xref:System.Collections.IList> 接口时使用。
+此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例被强制转换为 <xref:System.Collections.IList> 接口时使用。
 
 ]]></format>
         </remarks>
@@ -1117,7 +1117,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例强制转换为 <xref:System.Collections.IList> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例被强制转换为 <xref:System.Collections.IList> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -1151,7 +1151,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例强制转换为 <xref:System.ICloneable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Forms.Control.ControlCollection> 实例被强制转换为 <xref:System.ICloneable> 接口时使用。  
   
  ]]></format>
         </remarks>

@@ -1,5 +1,5 @@
 <Type Name="MouseDevice" FullName="System.Windows.Input.MouseDevice">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="240feec19fb5898639bdf4d014f15a9c4e6a6c7f" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56386399" /></Metadata><TypeSignature Language="C#" Value="public abstract class MouseDevice : System.Windows.Input.InputDevice" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0259e220afa353dd480bf29695d37ac2575b7cbc" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65004722" /></Metadata><TypeSignature Language="C#" Value="public abstract class MouseDevice : System.Windows.Input.InputDevice" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MouseDevice extends System.Windows.Input.InputDevice" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseDevice" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class MouseDevice&#xA;Inherits InputDevice" />
@@ -43,7 +43,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>get: System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -51,7 +51,7 @@
         <ReturnType>System.Windows.PresentationSource</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取报告此设备的输入的 <see cref="T:System.Windows.PresentationSource" />。</summary>
+        <summary>获取<see cref="T:System.Windows.PresentationSource" />报告此设备的输入。</summary>
         <value>此设备的输入源。</value>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">用于获取活动的源。  关联的枚举：  <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
@@ -106,7 +106,7 @@
       </Parameters>
       <Docs>
         <param name="element">要捕获鼠标的元素。</param>
-        <summary>将鼠标事件捕获到指定元素。</summary>
+        <summary>捕获到指定的元素的鼠标事件。</summary>
         <returns>如果元素能够捕获鼠标，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -122,7 +122,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><paramref name="element" /> 不是 <see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="element" /> 不是<see cref="T:System.Windows.UIElement" />或<see cref="T:System.Windows.ContentElement" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Capture">
@@ -138,7 +138,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -166,7 +166,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><paramref name="element" /> 不是 <see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="element" /> 不是<see cref="T:System.Windows.UIElement" />或<see cref="T:System.Windows.ContentElement" />。</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="captureMode" /> 不是有效的 <see cref="T:System.Windows.Input.CaptureMode" />。</exception>
       </Docs>
     </Member>
@@ -192,8 +192,8 @@
         <ReturnType>System.Windows.IInputElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取由鼠标捕获的 <see cref="T:System.Windows.IInputElement" />。</summary>
-        <value>鼠标捕获的元素。</value>
+        <summary>获取<see cref="T:System.Windows.IInputElement" />鼠标捕获。</summary>
+        <value>捕获鼠标的元素。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -226,7 +226,7 @@
         <ReturnType>System.Windows.IInputElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取鼠标指针正好悬停的元素。</summary>
+        <summary>获取鼠标指针位于正上方的元素。</summary>
         <value>鼠标指针悬停的元素。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -262,7 +262,7 @@
       </Parameters>
       <Docs>
         <param name="mouseButton">被查询的按钮。</param>
-        <summary>获取指定鼠标按钮的状态。</summary>
+        <summary>获取指定的鼠标按钮的状态。</summary>
         <returns>按钮的状态。</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -273,7 +273,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>计算鼠标指针的位置（采用客户端坐标）。</summary>
+        <summary>计算在客户端坐标中鼠标指针的位置。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="GetClientPosition">
@@ -290,10 +290,10 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
         </Attribute>
       </Attributes>
@@ -302,8 +302,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>计算鼠标指针的位置（采用客户端坐标）。</summary>
-        <returns>鼠标指针的位置（采用客户端坐标）。</returns>
+        <summary>计算在客户端坐标中鼠标指针的位置。</summary>
+        <returns>客户端坐标中鼠标指针的位置。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -326,9 +326,9 @@
         <Parameter Name="presentationSource" Type="System.Windows.PresentationSource" />
       </Parameters>
       <Docs>
-        <param name="presentationSource">要在其中获取鼠标位置的源。</param>
-        <summary>计算鼠标指针在指定 <see cref="T:System.Windows.PresentationSource" /> 中的位置（采用客户端坐标）。</summary>
-        <returns>鼠标指针在指定 <see cref="T:System.Windows.PresentationSource" /> 中的位置（采用客户端坐标）。</returns>
+        <param name="presentationSource">在其中获取鼠标指针位置的源。</param>
+        <summary>计算指定客户端坐标中鼠标指针的位置<see cref="T:System.Windows.PresentationSource" />。</summary>
+        <returns>指定客户端坐标中鼠标指针的位置<see cref="T:System.Windows.PresentationSource" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -346,7 +346,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -357,7 +357,7 @@
         <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
       </Parameters>
       <Docs>
-        <param name="relativeTo">要在其中计算鼠标位置的参考框架。</param>
+        <param name="relativeTo">参考框架在其中计算鼠标位置。</param>
         <summary>获取与指定元素相对的鼠标位置。</summary>
         <returns>与参数 <paramref name="relativeTo" /> 相对的鼠标位置。</returns>
         <remarks>
@@ -368,7 +368,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><paramref name="relativeTo" /> 为 <see langword="null" />，或不为 <see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="relativeTo" /> 是<see langword="null" />或者不是<see cref="T:System.Windows.UIElement" />或<see cref="T:System.Windows.ContentElement" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetScreenPosition">
@@ -444,7 +444,7 @@
         <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取此鼠标设备鼠标中键的状态。</summary>
+        <summary>此鼠标设备鼠标中键的状态。</summary>
         <value>按钮的状态。</value>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.Windows.Input.MouseButtonEventArgs" />
@@ -473,7 +473,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置整个应用程序的光标。</summary>
-        <value>如果没有设置 <see cref="P:System.Windows.Input.MouseDevice.OverrideCursor" />，则为重写光标或 <see langword="null" />。</value>
+        <value>为重写光标或<see langword="null" />如果<see cref="P:System.Windows.Input.MouseDevice.OverrideCursor" />未设置。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -528,7 +528,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -540,8 +540,8 @@
       </Parameters>
       <Docs>
         <param name="cursor">要将鼠标指针设置为的光标。</param>
-        <summary>将鼠标指针设置为指定的 <see cref="T:System.Windows.Input.Cursor" /></summary>
-        <returns>如果设置鼠标光标，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>设置为指定的鼠标指针 <see cref="T:System.Windows.Input.Cursor" /></summary>
+        <returns><see langword="true" /> 如果设置鼠标光标;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -566,7 +566,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -575,7 +575,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>强制鼠标重新同步。</summary>
+        <summary>强制同步鼠标重新。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -608,7 +608,7 @@
         <ReturnType>System.Windows.IInputElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取要将此鼠标设备的输入发送到的 <see cref="T:System.Windows.IInputElement" />。</summary>
+        <summary>获取<see cref="T:System.Windows.IInputElement" />此鼠标设备的输入发送到的。</summary>
         <value>接收输入的元素。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -664,7 +664,7 @@
         <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取此鼠标设备第一个扩展按钮的状态。</summary>
+        <summary>获取此鼠标设备上的第一个扩展按钮的状态。</summary>
         <value>按钮的状态。</value>
         <remarks>To be added.</remarks>
       </Docs>
