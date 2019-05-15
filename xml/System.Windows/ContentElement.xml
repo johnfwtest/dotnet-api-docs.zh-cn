@@ -1,5 +1,5 @@
 <Type Name="ContentElement" FullName="System.Windows.ContentElement">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="a68320bca7e14d4668f64f0875ce1d09eaddacd9" /><Meta Name="ms.sourcegitcommit" Value="635a1dbdc9cbcf7f7c258ac9ffa0314ed734da90" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/10/2019" /><Meta Name="ms.locfileid" Value="59472256" /></Metadata><TypeSignature Language="C#" Value="public class ContentElement : System.Windows.DependencyObject, System.Windows.IInputElement, System.Windows.Media.Animation.IAnimatable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f414ea08984adb4625dff8e31e567084a0cfa2a2" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65009178" /></Metadata><TypeSignature Language="C#" Value="public class ContentElement : System.Windows.DependencyObject, System.Windows.IInputElement, System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ContentElement extends System.Windows.DependencyObject implements class System.Windows.IInputElement, class System.Windows.Media.Animation.IAnimatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.ContentElement" />
   <TypeSignature Language="VB.NET" Value="Public Class ContentElement&#xA;Inherits DependencyObject&#xA;Implements IAnimatable, IInputElement" />
@@ -147,7 +147,7 @@
       <Docs>
         <param name="routedEvent">要处理的路由事件的标识符。</param>
         <param name="handler">对处理程序实现的引用。</param>
-        <param name="handledEventsToo"><see langword="true" /> 将按以下方式注册处理程序：即使路由事件在其事件数据中标记为已处理，也会调用处理程序；如果为 <see langword="false" />，则使用默认条件注册处理程序，即当路由事件被标记为已处理时，将不调用处理程序。  
+        <param name="handledEventsToo">如果为 <see langword="true" />，则将按以下方式注册处理程序：即使路由事件在其事件数据中标记为已处理，也会调用处理程序；如果为 <see langword="false" />，则使用默认条件注册处理程序，即当路由事件被标记为已处理时，将不调用处理程序。  
   
 默认值为 <see langword="false" />。  
   
@@ -198,9 +198,9 @@
         <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
       </Parameters>
       <Docs>
-        <param name="route">要向其添加处理程序的事件路由。</param>
-        <param name="e">用于添加处理程序的事件数据。 此方法使用参数的 <see cref="P:System.Windows.RoutedEventArgs.RoutedEvent" /> 属性来创建处理程序。</param>
-        <summary>将处理程序添加到当前 <see cref="T:System.Windows.EventRoute" /> 事件处理程序集合的指定 <see cref="T:System.Windows.ContentElement" /> 中。</summary>
+        <param name="route">处理程序添加到事件路由。</param>
+        <param name="e">用于添加处理程序事件数据。 此方法使用<see cref="P:System.Windows.RoutedEventArgs.RoutedEvent" />参数来创建处理程序属性。</param>
+        <summary>将处理程序添加到指定<see cref="T:System.Windows.EventRoute" />当前<see cref="T:System.Windows.ContentElement" />事件处理程序集合。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -228,8 +228,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示此元素是否可用作拖放操作的目标。</summary>
-        <value><see langword="true" /> 如果此元素可用作拖放操作; 的目标否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示此元素能否用作拖放操作的目标。</summary>
+        <value>如果此元素可用作拖放操作的目标，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -244,7 +244,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.AllowDropProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
    
   
@@ -274,7 +274,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.AllowDrop" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.AllowDrop" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -383,7 +383,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示在此元素上是否至少捕获了一次触摸。</summary>
+        <summary>获取一个值，该值指示是否在此元素上捕获至少一次触摸设备。</summary>
         <value><see langword="true" /> 如果至少一次触摸，捕获到此元素;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -404,7 +404,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesCaptured" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesCaptured" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -429,7 +429,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示在此元素或其可视化树中的任何子元素上是否至少捕获了一次触摸。</summary>
+        <summary>获取一个值，该值指示此元素或其可视化树中任何子元素是否捕获至少一次触摸设备。</summary>
         <value><see langword="true" /> 如果至少一次触摸，捕获到此元素或其可视化树; 中的任何子元素否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -450,7 +450,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesCapturedWithin" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesCapturedWithin" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -470,7 +470,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示在此元素上是否至少按下了一次触摸设备。</summary>
+        <summary>获取一个值，该值指示此元素上是否按下至少一次触摸设备。</summary>
         <value><see langword="true" /> 如果此元素，则上按下至少一次触摸设备否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -491,7 +491,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesDirectlyOver" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesDirectlyOver" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -516,7 +516,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示在此元素或其可视化树中的任何子元素上是否至少按下了一次触摸设备。</summary>
+        <summary>获取一个值，该值指示在此元素或其可视化树中的任何子元素是否按下至少一次触摸设备。</summary>
         <value><see langword="true" /> 如果此元素或其可视化树; 中的任何子元素上按下至少一次触摸设备否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -537,7 +537,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesOver" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.AreAnyTouchesOver" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -547,7 +547,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>为此元素的指定要进行动画处理的属性启动动画。</summary>
+        <summary>此元素上启动动画，以指定的动画属性。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="BeginAnimation">
@@ -579,9 +579,9 @@
         <Parameter Name="animation" Type="System.Windows.Media.Animation.AnimationTimeline" />
       </Parameters>
       <Docs>
-        <param name="dp">要进行动画处理的属性，它被指定为依赖项属性标识符。</param>
-        <param name="animation">要启动的动画的时间线。</param>
-        <summary>为此元素的指定要进行动画处理的属性启动动画。</summary>
+        <param name="dp">属性进行动画处理，它被指定为依赖项属性标识符。</param>
+        <param name="animation">要启动的动画时间线。</param>
+        <summary>此元素上启动动画，以指定的动画属性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -620,10 +620,10 @@
         <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
       </Parameters>
       <Docs>
-        <param name="dp">要进行动画处理的属性，它被指定为依赖项属性标识符。</param>
-        <param name="animation">要应用的动画的时间线。</param>
-        <param name="handoffBehavior">一个枚举值，用来指定新动画如何与已在影响属性值的任何当前（正在运行的）动画进行交互。</param>
-        <summary>为此元素的指定要进行动画处理的属性启动特定的动画，并可以指定当该属性已有正在运行的动画时所要执行的操作。</summary>
+        <param name="dp">属性进行动画处理，它被指定为依赖项属性标识符。</param>
+        <param name="animation">要应用的动画时间线。</param>
+        <param name="handoffBehavior">指定新动画如何与已在影响属性值的任何当前 （正在运行） 动画进行交互的枚举值。</param>
+        <summary>启动指定的动画属性，在此元素，并且可以选择指定的内容特定的动画会造成该属性已有正在运行的动画。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -659,8 +659,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>尝试将鼠标强制捕获到此元素。</summary>
-        <returns><see langword="true" /> 如果成功捕获了鼠标；否则为 <see langword="false" />。</returns>
+        <summary>尝试强制鼠标捕获到此元素。</summary>
+        <returns><see langword="true" /> 如果成功捕获了鼠标;，否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -707,8 +707,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>尝试将触笔强制捕获到此元素。</summary>
-        <returns><see langword="true" /> 如果成功捕获了触笔；否则为 <see langword="false" />。</returns>
+        <summary>尝试强制触笔捕获到此元素。</summary>
+        <returns><see langword="true" /> 如果成功捕获了触笔;，否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -746,8 +746,8 @@
       </Parameters>
       <Docs>
         <param name="touchDevice">要捕获的设备。</param>
-        <summary>尝试将触摸屏输入强制捕获到此元素。</summary>
-        <returns><see langword="true" /> 如果将指定触摸屏输入捕获到此元素；否则为 <see langword="false" />。</returns>
+        <summary>尝试强制将触摸屏输入捕获到此元素。</summary>
+        <returns><see langword="true" /> 如果指定触摸屏输入捕获到此元素;，否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -786,8 +786,8 @@
         <ReturnType>System.Windows.Input.CommandBindingCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与此元素关联的 <see cref="T:System.Windows.Input.CommandBinding" /> 对象的集合。</summary>
-        <value>所有 <see cref="T:System.Windows.Input.CommandBinding" /> 对象的集合。</value>
+        <summary>获取一系列<see cref="T:System.Windows.Input.CommandBinding" />与此元素关联的对象。</summary>
+        <value>所有的集合<see cref="T:System.Windows.Input.CommandBinding" />对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1133,8 +1133,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>尝试将焦点设定到此元素上。</summary>
-        <returns><see langword="true" /> 如果键盘焦点可设定到此元素上；如果此方法调用未强制设置焦点，则为 <see langword="false" />。</returns>
+        <summary>尝试将焦点设置到此元素。</summary>
+        <returns><see langword="true" /> 如果键盘焦点可设定到此元素;<see langword="false" />如果此方法调用未强制焦点。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1184,7 +1184,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示元素能否得到焦点。</summary>
-        <value><see langword="true" /> 如果该元素是可获得焦点;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果元素能得到焦点，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1200,7 +1200,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.FocusableProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
 ## <a name="notes-to-inheritors"></a>继承者说明
 
@@ -1269,7 +1269,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.Focusable" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.Focusable" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1296,7 +1296,7 @@
         <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
       </Parameters>
       <Docs>
-        <param name="dp">要检查 .的依赖项属性。</param>
+        <param name="dp">要选中的依赖属性。</param>
         <summary>为此元素上的指定属性返回基属性值，忽略任何可能来自正在运行或已停止的动画的动画值。</summary>
         <returns>就像没有动画被附加到指定的依赖属性一样的属性值。</returns>
         <remarks>
@@ -1328,8 +1328,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在派生类中重写时，如果不存在可视父级，则返回其他[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] 父级。</summary>
-        <returns>如果派生类的实现具有要报告的替代父级连接，则为一个对象。</returns>
+        <summary>当在派生类中重写时将返回一种替代方法[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]父此元素，如果不存在可视父级。</summary>
+        <returns>一个对象，如果派生类的实现具有到报表的替代父级连接。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1745,7 +1745,7 @@
         <ReturnType>System.EventHandler&lt;System.Windows.Input.TouchEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素上捕获触摸屏输入时发生。</summary>
+        <summary>此元素上捕获触摸屏输入时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1758,7 +1758,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.GotTouchCaptureEvent>|  
 |路由策略|浮升|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   重写<xref:System.Windows.ContentElement.OnGotTouchCapture%2A>实现类处理此事件在派生类中。  
   
@@ -1806,7 +1806,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示此元素是否具有任何进行动画处理的属性。</summary>
+        <summary>获取一个值，该值指示此元素是否具有任何经过动画处理的属性。</summary>
         <value><see langword="true" /> 如果此元素具有附加到任何其属性，动画否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1888,8 +1888,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否在[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] 中启用了此元素。</summary>
-        <value><see langword="true" /> 如果启用了该元素;否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示是否在启用此元素[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]。</summary>
+        <value>如果启用此元素，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1901,7 +1901,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsEnabledProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
    
   
@@ -1931,7 +1931,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsEnabled" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsEnabled" />此元素的更改的属性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1959,8 +1959,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值成为派生类中 <see cref="P:System.Windows.ContentElement.IsEnabled" /> 的返回值。</summary>
-        <value><see langword="true" /> 如果启用了该元素;否则为<see langword="false" />。</value>
+        <summary>获取一个值，将成为的返回值<see cref="P:System.Windows.ContentElement.IsEnabled" />在派生类中。</summary>
+        <value>如果启用此元素，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
 
@@ -1989,7 +1989,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsEnabled" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsEnabled" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2011,7 +2011,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值确定此元素是否具有逻辑焦点。</summary>
-        <value><see langword="true" /> 如果此元素具有逻辑焦点;否则为<see langword="false" />。</value>
+        <value>如果此元素具有逻辑焦点，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2024,7 +2024,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsFocusedProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
    
   
@@ -2055,7 +2055,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsFocused" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsFocused" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2076,8 +2076,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否启用一个输入法系统（如[!INCLUDE[TLA#tla_ime](~/includes/tlasharptla-ime-md.md)]），以便用于处理此元素的输入。</summary>
-        <value><see langword="true" /> 如果输入的法处于活动状态;否则为<see langword="false" />。 基础附加属性的默认值是<see langword="true" />; 但是，此值会在运行时的输入法状态的影响。</value>
+        <summary>获取一个值，该值指示是否启用输入法系统（如 [!INCLUDE[TLA#tla_ime](~/includes/tlasharptla-ime-md.md)]）来处理此元素的输入。</summary>
+        <value>如果输入法处于活动状态，则为 <see langword="true" />；否则为 <see langword="false" />。 基础附加属性的默认值是<see langword="true" />; 但是，此值会在运行时的输入法状态的影响。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2113,8 +2113,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示此元素是否具有键盘焦点。</summary>
-        <value><see langword="true" /> 如果此元素具有键盘焦点，则否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取一个值，该值表示此元素是否具有键盘焦点。</summary>
+        <value>如果此元素具有键盘焦点，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2126,7 +2126,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsKeyboardFocusedProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2151,7 +2151,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsKeyboardFocused" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsKeyboardFocused" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2179,7 +2179,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsKeyboardFocused" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsKeyboardFocused" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2208,8 +2208,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示键盘焦点是否位于元素或子元素内的任意位置。</summary>
-        <value><see langword="true" /> 如果键盘焦点位于元素或其子元素;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否键盘焦点位于任何位置的元素或子元素。</summary>
+        <value>如果键盘焦点在元素或其子元素上，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2224,7 +2224,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsKeyboardFocusWithinProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2247,7 +2247,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="E:System.Windows.ContentElement.IsKeyboardFocusWithinChanged" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="E:System.Windows.ContentElement.IsKeyboardFocusWithinChanged" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2276,7 +2276,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsKeyboardFocusWithin" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsKeyboardFocusWithin" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2300,8 +2300,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示此元素是否捕获了鼠标。</summary>
-        <value><see langword="true" /> 如果元素具有鼠标捕获，则为否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示此元素是否捕获鼠标。</summary>
+        <value>如果元素具有鼠标捕获，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2314,7 +2314,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsMouseCapturedProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
    
   
@@ -2348,7 +2348,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsMouseCaptured" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsMouseCaptured" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2376,7 +2376,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseCaptured" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseCaptured" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2403,7 +2403,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值确定此元素或其元素树中的子元素是否有鼠标捕获。</summary>
-        <value><see langword="true" /> 如果此元素或包含的元素具有鼠标捕获;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果此元素或包含的元素具有鼠标捕获，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2415,7 +2415,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsMouseCaptureWithinProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2440,7 +2440,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="F:System.Windows.ContentElement.IsMouseCaptureWithinProperty" /> 值更改时发生。</summary>
+        <summary>发生时的值<see cref="F:System.Windows.ContentElement.IsMouseCaptureWithinProperty" />此元素上的更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2468,7 +2468,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseCaptureWithin" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2498,7 +2498,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示在考虑元素组合的情况下，鼠标指针的位置是否与命中测试结果相对应。</summary>
-        <value><see langword="true" /> 如果鼠标指针位于与命中测试; 位于同一元素结果否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果鼠标指针位于与命中测试相同的元素结果上，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2513,7 +2513,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsMouseDirectlyOverProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2538,7 +2538,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsMouseDirectlyOver" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsMouseDirectlyOver" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2566,7 +2566,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseDirectlyOver" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseDirectlyOver" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2595,8 +2595,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示鼠标指针是否位于此元素（包括可视子元素或其控件组合）上。</summary>
-        <value><see langword="true" /> 如果鼠标指针位于元素或其子元素;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示鼠标指针是否位于此元素 （包括可视子元素或其控件组合）。</summary>
+        <value>如果鼠标指针位于该元素或其子元素上方，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2611,7 +2611,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsMouseOverProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
    
   
@@ -2641,7 +2641,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseOver" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsMouseOver" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2666,7 +2666,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示是否将触笔捕获到此元素。</summary>
-        <value><see langword="true" /> 如果元素具有触笔捕获，则为否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果元素具有触笔捕获，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2679,7 +2679,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsStylusCapturedProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2705,7 +2705,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsStylusCaptured" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsStylusCaptured" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2733,7 +2733,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusCaptured" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusCaptured" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2759,7 +2759,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值确定此元素（包括子元素和控件组合）是否具有触笔捕获。</summary>
+        <summary>获取一个值，确定是否包括子元素和控件组合此元素具有触笔捕获。</summary>
         <value><see langword="true" /> 如果触笔捕获保存在此元素中;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2773,7 +2773,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsStylusCaptureWithinProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2796,7 +2796,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsStylusCaptureWithin" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsStylusCaptureWithin" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2824,7 +2824,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusCaptureWithin" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusCaptureWithin" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2854,7 +2854,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示在考虑元素组合的情况下，触笔的位置是否与命中测试结果相对应。</summary>
-        <value><see langword="true" /> 如果触笔与命中测试; 位于同一元素上否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value>如果触笔与命中测试位于同一元素上，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2873,7 +2873,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsStylusDirectlyOverProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2897,7 +2897,7 @@
         <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素的 <see cref="P:System.Windows.ContentElement.IsStylusDirectlyOver" /> 属性值更改时发生。</summary>
+        <summary>发生时的值<see cref="P:System.Windows.ContentElement.IsStylusDirectlyOver" />此元素上的属性更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2925,7 +2925,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusDirectlyOver" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusDirectlyOver" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2954,7 +2954,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示触笔是否位于此元素（包括可视子元素）上。</summary>
+        <summary>获取一个值，该值指示触笔是否位于此元素 （包括可视子元素）。</summary>
         <value><see langword="true" /> 如果触笔位于元素或其子元素;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2970,7 +2970,7 @@
 |||  
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.IsStylusOverProperty>|  
-|元数据属性设置为 `true`|无|  
+|元数据属性设置为 `true`|None|  
   
  ]]></format>
         </remarks>
@@ -2993,7 +2993,7 @@
         <ReturnType>System.Windows.DependencyProperty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusOver" /> 依赖属性。</summary>
+        <summary>标识 <see cref="P:System.Windows.ContentElement.IsStylusOver" /> 依赖项属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -3474,7 +3474,7 @@
         <ReturnType>System.EventHandler&lt;System.Windows.Input.TouchEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在此元素失去触摸屏输入捕获时发生。</summary>
+        <summary>当此元素失去触摸屏输入捕获时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3487,7 +3487,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.LostTouchCaptureEvent>|  
 |路由策略|浮升|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   重写<xref:System.Windows.ContentElement.OnLostTouchCapture%2A>实现类处理此事件在派生类中。  
   
@@ -4321,9 +4321,9 @@
         <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
       </Parameters>
       <Docs>
-        <param name="request">一个遍历请求，其中包含一个属性，该属性指示以现有 Tab 键顺序遍历的模式或视觉移动的方向。</param>
-        <summary>尝试将焦点从此元素移到其他元素。 移动焦点的方向由指导方向指定，该方向在此元素的可视父级的组织结构中解释。</summary>
-        <returns><see langword="true" /> 如果执行了请求的遍历；否则为 <see langword="false" />。</returns>
+        <param name="request">一个遍历请求，其中包含一个属性，指示是在现有 tab 键顺序或一个方向移动以可视方式遍历的模式。</param>
+        <summary>尝试将焦点从此元素移到另一个元素。 要将焦点移动的方向由指导方向，解释此元素的可视父级组织内指定。</summary>
+        <returns><see langword="true" /> 如果执行了请求的遍历;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4353,7 +4353,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>为 [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] 基础结构返回特定于类的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 实现。</summary>
+        <summary>返回类特定于<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />实现[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]基础结构。</summary>
         <returns>特定于类型的 <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 实现。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4365,7 +4365,7 @@
  所有<xref:System.Windows.ContentElement>派生的类应实现此方法以提供其自己特定于<xref:System.Windows.Automation.Peers.AutomationPeer>WPF 基础结构的实现。 有关实现此模式的详细信息，请参阅<xref:System.Windows.Automation.Peers.AutomationPeer>。
 
  ]]></format>
-        </remarks>        
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="OnDragEnter">
@@ -4730,7 +4730,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素上捕获触摸屏输入时发生的 <see cref="E:System.Windows.ContentElement.GotTouchCapture" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.GotTouchCapture" />路由到此元素上捕获触摸屏输入时发生的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5256,7 +5256,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素失去触摸屏输入捕获时发生的 <see cref="E:System.Windows.ContentElement.LostTouchCapture" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.LostTouchCapture" />路由此元素失去触摸屏输入捕获时发生的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6705,7 +6705,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在触摸屏输入按下此元素时发生的 <see cref="E:System.Windows.ContentElement.PreviewTouchDown" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.PreviewTouchDown" />路由触摸屏输入按下此元素时发生的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6736,7 +6736,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素内部移动触摸屏输入时发生的 <see cref="E:System.Windows.ContentElement.PreviewTouchMove" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.PreviewTouchMove" />路由在此元素内部移动触摸屏输入时发生的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6767,7 +6767,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素内部释放触摸屏输入时发生的 <see cref="E:System.Windows.ContentElement.PreviewTouchUp" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.PreviewTouchUp" />路由的事件在此元素内部释放触摸屏输入时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7312,7 +7312,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素内按下触摸屏输入时发生的 <see cref="E:System.Windows.ContentElement.TouchDown" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.TouchDown" />路由到此元素内按下触摸屏输入时发生的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7343,7 +7343,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在触摸屏输入从此元素边界外部移动到其内部时发生的 <see cref="E:System.Windows.ContentElement.TouchEnter" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.TouchEnter" />路由从移动触摸屏输入时发生的事件外部更改到此元素的边界内。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7374,7 +7374,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在触摸屏输入从此元素边界内部移动到其外部时发生的 <see cref="E:System.Windows.ContentElement.TouchLeave" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.TouchLeave" />路由从移动触摸屏输入时发生的事件内部更改到此元素的边界之外。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7405,7 +7405,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素内部移动触摸屏输入时发生的 <see cref="E:System.Windows.ContentElement.TouchMove" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.TouchMove" />路由在此元素内部移动触摸屏输入时发生的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7436,7 +7436,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.Windows.Input.TouchEventArgs" />。</param>
-        <summary>为在此元素内部释放触摸屏输入时发生的 <see cref="E:System.Windows.ContentElement.TouchUp" /> 路由事件提供类处理。</summary>
+        <summary>提供类处理<see cref="E:System.Windows.ContentElement.TouchUp" />路由的事件在此元素内部释放触摸屏输入时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7467,9 +7467,9 @@
         <Parameter Name="direction" Type="System.Windows.Input.FocusNavigationDirection" />
       </Parameters>
       <Docs>
-        <param name="direction">请求的焦点遍历的方向。</param>
-        <summary>当在派生类中重写时，返回将按指定焦点遍历方向接收焦点的元素，而不用实际将焦点移至该元素。</summary>
-        <returns>如果实际调用了 <see cref="M:System.Windows.ContentElement.MoveFocus(System.Windows.Input.TraversalRequest)" />，则为接收焦点的元素。</returns>
+        <param name="direction">请求的焦点遍历方向。</param>
+        <summary>当在派生类中重写时返回而不实际将焦点移到该元素将接收指定的焦点遍历方向的焦点的元素。</summary>
+        <returns>元素，则为接收焦点，如果<see cref="M:System.Windows.ContentElement.MoveFocus(System.Windows.Input.TraversalRequest)" />实际调用了。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -9629,7 +9629,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.PreviewTouchDownEvent>|  
 |路由策略|隧道|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   相应的浮升事件是<xref:System.Windows.ContentElement.TouchDown>。  
   
@@ -9691,7 +9691,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.PreviewTouchMoveEvent>|  
 |路由策略|隧道|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   相应的浮升事件是<xref:System.Windows.ContentElement.TouchMove>。  
   
@@ -9750,7 +9750,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.PreviewTouchUpEvent>|  
 |路由策略|隧道|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   相应的浮升事件是<xref:System.Windows.ContentElement.TouchUp>。  
   
@@ -9991,7 +9991,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>从此元素中释放所有捕获的触摸设备。</summary>
+        <summary>释放此元素中的所有捕获的触摸设备。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -10016,7 +10016,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>如果此元素具有鼠标捕获，则释放该捕获。</summary>
+        <summary>如果此元素具有捕获鼠标捕获，则释放。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10057,7 +10057,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>如果此元素具有触笔设备捕获，则释放该捕获。</summary>
+        <summary>如果此元素具有捕获触笔设备捕获，则释放。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10087,8 +10087,8 @@
       </Parameters>
       <Docs>
         <param name="touchDevice">要释放的设备。</param>
-        <summary>尝试从此元素释放指定触摸设备。</summary>
-        <returns><see langword="true" /> 如果释放了触摸设备；否则为 <see langword="false" />。</returns>
+        <summary>尝试释放指定触摸屏输入从此元素设备。</summary>
+        <returns><see langword="true" /> 如果释放了触摸设备;否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="touchDevice" /> 为 <see langword="null" />。</exception>
       </Docs>
@@ -10116,7 +10116,7 @@
         <Parameter Name="handler" Type="System.Delegate" />
       </Parameters>
       <Docs>
-        <param name="routedEvent">要附加处理程序的路由事件的标识符。</param>
+        <param name="routedEvent">附加处理程序的路由事件的标识符。</param>
         <param name="handler">要从此元素的事件处理程序集合中删除的特定处理程序实现。</param>
         <summary>从此元素中删除指定的路由事件处理程序。</summary>
         <remarks>
@@ -10161,8 +10161,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回序列化进程是否应在此类的实例上序列化 <see cref="P:System.Windows.ContentElement.CommandBindings" /> 属性的内容。</summary>
-        <returns><see langword="true" /> 如果应当序列化 <see cref="P:System.Windows.ContentElement.CommandBindings" /> 属性值；否则为 <see langword="false" />。</returns>
+        <summary>返回序列化进程是否应序列化的内容<see cref="P:System.Windows.ContentElement.CommandBindings" />此类的实例上的属性。</summary>
+        <returns>如果应当序列化 <see cref="P:System.Windows.ContentElement.CommandBindings" /> 属性值，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -10200,8 +10200,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回序列化进程是否应在此类的实例上序列化 <see cref="P:System.Windows.ContentElement.InputBindings" /> 属性的内容。</summary>
-        <returns><see langword="true" /> 如果应当序列化 <see cref="P:System.Windows.ContentElement.InputBindings" /> 属性值；否则为 <see langword="false" />。</returns>
+        <summary>返回序列化进程是否应序列化的内容<see cref="P:System.Windows.ContentElement.InputBindings" />此类的实例上的属性。</summary>
+        <returns>如果应当序列化 <see cref="P:System.Windows.ContentElement.InputBindings" /> 属性值，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11176,7 +11176,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.TouchDownEvent>|  
 |路由策略|浮升|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   相应的隧道事件是<xref:System.Windows.ContentElement.PreviewTouchDown>。  
   
@@ -11225,7 +11225,7 @@
         <ReturnType>System.EventHandler&lt;System.Windows.Input.TouchEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在触摸屏输入从此元素边界外部移动到其内部时发生。</summary>
+        <summary>从移动触摸屏输入时发生外部更改到此元素的边界内。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11239,7 +11239,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.TouchEnterEvent>|  
 |路由策略|直接|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   重写<xref:System.Windows.ContentElement.OnTouchEnter%2A>实现类处理此事件在派生类中。  
   
@@ -11283,8 +11283,8 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Input.TouchDevice&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在此元素上捕获的所有触摸设备。</summary>
-        <value>在此元素上捕获的 <see cref="T:System.Windows.Input.TouchDevice" /> 对象的枚举。</value>
+        <summary>获取此元素上捕获的所有触摸设备。</summary>
+        <value>枚举<see cref="T:System.Windows.Input.TouchDevice" />捕获到此元素的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -11304,8 +11304,8 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Input.TouchDevice&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在此元素或其可视化树中的任何子元素上捕获的所有触摸设备。</summary>
-        <value>在此元素或其可视化树中的任何子元素上捕获的 <see cref="T:System.Windows.Input.TouchDevice" /> 对象的枚举。</value>
+        <summary>获取其可视化树中捕获到此元素的所有触摸设备或任何子元素。</summary>
+        <value>枚举<see cref="T:System.Windows.Input.TouchDevice" />捕获到此元素或其可视化树中的任何子元素的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -11326,7 +11326,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取此元素上的所有触摸设备。</summary>
-        <value>位于此元素上的 <see cref="T:System.Windows.Input.TouchDevice" /> 对象的枚举。</value>
+        <value>枚举<see cref="T:System.Windows.Input.TouchDevice" />位于此元素上的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -11346,8 +11346,8 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Input.TouchDevice&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在此元素或其可视化树中的任何子元素上的所有触摸设备。</summary>
-        <value>在此元素或其可视化树中的任何子元素上的 <see cref="T:System.Windows.Input.TouchDevice" /> 对象的枚举。</value>
+        <summary>获取其可视化树中此元素上的所有触摸设备或任何子元素。</summary>
+        <value>枚举<see cref="T:System.Windows.Input.TouchDevice" />在此元素或其可视化树中的任何子元素的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -11367,7 +11367,7 @@
         <ReturnType>System.EventHandler&lt;System.Windows.Input.TouchEventArgs&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在触摸屏输入从此元素边界内部移动到其外部时发生。</summary>
+        <summary>从移动触摸屏输入时发生内部更改到此元素的边界之外。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -11380,7 +11380,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.TouchLeaveEvent>|  
 |路由策略|直接|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   重写<xref:System.Windows.ContentElement.OnTouchLeave%2A>实现类处理此事件在派生类中。  
   
@@ -11437,7 +11437,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.TouchMoveEvent>|  
 |路由策略|浮升|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   相应的隧道事件是<xref:System.Windows.ContentElement.PreviewTouchMove>。  
   
@@ -11496,7 +11496,7 @@
 |-|-|  
 |标识符字段|<xref:System.Windows.ContentElement.TouchUpEvent>|  
 |路由策略|浮升|  
-|委托|<xref:System.EventHandler%601> 属于类型 <xref:System.Windows.Input.TouchEventArgs>。|  
+|委托|<xref:System.EventHandler%601>类型<xref:System.Windows.Input.TouchEventArgs>。|  
   
 -   相应的隧道事件是<xref:System.Windows.ContentElement.PreviewTouchUp>。  
   
