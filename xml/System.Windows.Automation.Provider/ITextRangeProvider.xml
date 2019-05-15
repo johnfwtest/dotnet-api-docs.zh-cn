@@ -1,5 +1,5 @@
 <Type Name="ITextRangeProvider" FullName="System.Windows.Automation.Provider.ITextRangeProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="fe41e917f101eab7e7e9a0b1a3d3ae56aabf98db" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56367608" /></Metadata><TypeSignature Language="C#" Value="public interface ITextRangeProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="86b3fa97aa346591419b18aa93b7764b7859fb28" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65012480" /></Metadata><TypeSignature Language="C#" Value="public interface ITextRangeProvider" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITextRangeProvider" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.ITextRangeProvider" />
   <TypeSignature Language="VB.NET" Value="Public Interface ITextRangeProvider" />
@@ -12,13 +12,13 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.Guid("5347ad7b-c355-46f8-aff5-909033582f63")</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
     </Attribute>
   </Attributes>
@@ -71,7 +71,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">如果文本提供程序不支持选择多个不连续的文本范围（即，<see cref="P:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection" /> 的值必须为 <see langword="Multiple" />）。</exception>
+        <exception cref="T:System.InvalidOperationException">如果文本提供程序不支持多个不连续的选择 (即<see cref="P:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection" />的值必须<see langword="Multiple" />)。</exception>
       </Docs>
     </Member>
     <Member MemberName="Clone">
@@ -128,7 +128,7 @@
         <summary>返回一个值，该值指出文本范围的跨度（<see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> 端点到 <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> 端点）是否与另一个文本范围相同。</summary>
         <returns>如果两个文本范围的跨度相同，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">如果进行比较的范围不是来自同一个文本提供程序。</exception>
+        <exception cref="T:System.ArgumentException">如果进行比较的范围不是来自同一文本提供程序。</exception>
       </Docs>
     </Member>
     <Member MemberName="CompareEndpoints">
@@ -163,7 +163,7 @@
   
 如果调用方的端点在文本中比目标端点后出现，则返回一个正值。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException">如果 <paramref name="targetRange" /> 来自不同的文本提供程序。</exception>
+        <exception cref="T:System.ArgumentException">如果<paramref name="targetRange" />来自不同的文本提供程序。</exception>
       </Docs>
     </Member>
     <Member MemberName="ExpandToEnclosingUnit">
@@ -257,7 +257,7 @@
       </Parameters>
       <Docs>
         <param name="attribute">要搜索的特性。</param>
-        <param name="value">要搜索的属性值。 此值必须与为特性指定的类型匹配。</param>
+        <param name="value">要搜索的特性值。 此值必须与为特性指定的类型匹配。</param>
         <param name="backward">如果应该返回最后一个匹配的文本范围而不是第一个，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
         <summary>返回具有指定特性值的文本范围子集。</summary>
         <returns>具有匹配特性和特性值的文本范围；否则为 null（在 Visual Basic 中为 <see langword="Nothing" />）。</returns>
@@ -663,7 +663,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">如果文本提供程序不支持选择多个不连续的文本范围（例如，<see cref="P:System.Windows.Automation.TextPattern.SupportedTextSelection" /> 的值必须为 <see langword="Multiple" />）。</exception>
+        <exception cref="T:System.InvalidOperationException">如果文本提供程序不支持多个不连续的选择 (例如，<see cref="P:System.Windows.Automation.TextPattern.SupportedTextSelection" />的值必须<see langword="Multiple" />)。</exception>
       </Docs>
     </Member>
     <Member MemberName="ScrollIntoView">

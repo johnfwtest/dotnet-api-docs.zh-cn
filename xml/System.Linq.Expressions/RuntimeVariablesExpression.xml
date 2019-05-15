@@ -1,5 +1,5 @@
 <Type Name="RuntimeVariablesExpression" FullName="System.Linq.Expressions.RuntimeVariablesExpression">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="173c1d50087a694b18c05c540d3e0ab9c18d42af" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58685178" /></Metadata><TypeSignature Language="C#" Value="public sealed class RuntimeVariablesExpression : System.Linq.Expressions.Expression" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b52d69c668c2e092c23f00b908e1d22a422edb66" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65136385" /></Metadata><TypeSignature Language="C#" Value="public sealed class RuntimeVariablesExpression : System.Linq.Expressions.Expression" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RuntimeVariablesExpression extends System.Linq.Expressions.Expression" />
   <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.RuntimeVariablesExpression" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RuntimeVariablesExpression&#xA;Inherits Expression" />
@@ -33,7 +33,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>一个为变量提供运行时读/写权限的表达式。</summary>
+    <summary>一个表达式，提供变量的运行时读/写权限。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -77,9 +77,9 @@
         <Parameter Name="visitor" Type="System.Linq.Expressions.ExpressionVisitor" />
       </Parameters>
       <Docs>
-        <param name="visitor">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="visitor">对此节点进行访问的访问者。</param>
+        <summary>调度到此节点类型的特定 Visit 方法。</summary>
+        <returns>对此节点访问的结果。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -113,7 +113,7 @@
         <ReturnType>System.Linq.Expressions.ExpressionType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>返回此 Expression 的节点类型。 扩展节点应在重写此方法时返回 <see cref="F:System.Linq.Expressions.ExpressionType.Extension" />。</summary>
+        <summary>返回此节点类型表达式。 重写此方法时，扩展节点应返回 <see cref="F:System.Linq.Expressions.ExpressionType.Extension" />。</summary>
         <value>该表达式的 <see cref="T:System.Linq.Expressions.ExpressionType" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -187,8 +187,8 @@
       </Parameters>
       <Docs>
         <param name="variables">结果的 <see cref="P:System.Linq.Expressions.RuntimeVariablesExpression.Variables" /> 属性。</param>
-        <summary>创建一个与此表达式类似的新表达式，但使用所提供的子级。 如果所有子级都相同，则将返回此表达式。</summary>
-        <returns>此表达式（如果未更改任何子级），或带有更新的子级的表达式。</returns>
+        <summary>创建一个新的表达式，它类似于此表达式，但使用所提供的子级。 如果所有子级均相同，它将返回此表达式。</summary>
+        <returns>如果子级未更改，则为此表达式；否则为具有已更新子级的表达式。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -227,8 +227,8 @@
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Linq.Expressions.ParameterExpression&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>为其提供运行时访问权限的变量或参数。</summary>
-        <value>包含将为其提供运行时访问权限的参数的只读集合。</value>
+        <summary>变量或参数为其提供运行时的访问。</summary>
+        <value>包含将提供运行时访问的参数的只读集合。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
