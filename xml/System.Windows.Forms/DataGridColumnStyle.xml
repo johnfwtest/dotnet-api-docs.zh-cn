@@ -1,5 +1,5 @@
 <Type Name="DataGridColumnStyle" FullName="System.Windows.Forms.DataGridColumnStyle">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="e4e9104467138934e0d78bcca7730651a4d15807" /><Meta Name="ms.sourcegitcommit" Value="7461f9e28c2f184bd1596e6f07c25a3f34984516" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/28/2019" /><Meta Name="ms.locfileid" Value="58562363" /></Metadata><TypeSignature Language="C#" Value="public abstract class DataGridColumnStyle : System.ComponentModel.Component, System.Windows.Forms.IDataGridColumnStyleEditingNotificationService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a7aca9dff420f6829c2ffc9db9683a69277b8aa4" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65005885" /></Metadata><TypeSignature Language="C#" Value="public abstract class DataGridColumnStyle : System.ComponentModel.Component, System.Windows.Forms.IDataGridColumnStyleEditingNotificationService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataGridColumnStyle extends System.ComponentModel.Component implements class System.Windows.Forms.IDataGridColumnStyleEditingNotificationService" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridColumnStyle" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class DataGridColumnStyle&#xA;Inherits Component&#xA;Implements IDataGridColumnStyleEditingNotificationService" />
@@ -113,7 +113,7 @@
 ## Remarks  
  创建的实例时<xref:System.Windows.Forms.DataGridColumnStyle>，下列属性进行初始化。  
   
-|Property|默认值|  
+|属性|默认值|  
 |--------------|-------------------|  
 |<xref:System.Windows.Forms.DataGridColumnStyle.Alignment%2A>|`HorizontalAlignment.Left`|  
 |<xref:System.Windows.Forms.DataGridColumnStyle.DataGridTableStyle%2A>|`null`|  
@@ -158,7 +158,7 @@
   
  创建的实例时<xref:System.Windows.Forms.DataGridColumnStyle>，初始化以下的读/写属性。  
   
-|Property|初始值|  
+|属性|初始值|  
 |--------------|-------------------|  
 |<xref:System.Windows.Forms.DataGridColumnStyle.Alignment%2A>|`HorizontalAlignment.Left`|  
 |<xref:System.Windows.Forms.DataGridColumnStyle.DataGridTableStyle%2A>|`null`|  
@@ -364,7 +364,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ApplicationException">该列的 <see cref="T:System.ComponentModel.PropertyDescriptor" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ApplicationException"><see cref="T:System.ComponentModel.PropertyDescriptor" />为此列<see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="ColumnStartedEditing">
@@ -610,7 +610,7 @@
         <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" /> 的 <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
         <param name="rowNum">要编辑的行的行号。</param>
         <param name="bounds">外围 <see cref="T:System.Drawing.Rectangle" />，控件将被放置在其中。</param>
-        <param name="readOnly">指示列是否为只读的值。 如果此值为只读，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="readOnly">一个值，该值指示列是否只读的。 <see langword="true" /> 如果值为只读的;否则为<see langword="false" />。</param>
         <summary>准备单元格以便进行编辑。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -663,7 +663,7 @@
         <param name="displayText">控件中将显示的文本。</param>
         <param name="rowNum">此列中所编辑的行的行号。</param>
         <param name="bounds"><see cref="T:System.Drawing.Rectangle" />，控件将被放置在其中。</param>
-        <param name="readOnly">指示列是否为只读的值。 如果此值为只读，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="readOnly">一个值，该值指示列是否只读的。 <see langword="true" /> 如果值为只读的;否则为<see langword="false" />。</param>
         <param name="instantText">控件中将显示的文本。</param>
         <summary>使用指定的 <see cref="T:System.Windows.Forms.CurrencyManager" />、行号和 <see cref="T:System.Drawing.Rectangle" /> 参数准备单元格以便进行编辑。</summary>
         <remarks>
@@ -722,9 +722,9 @@
         <param name="displayText">控件中将显示的文本。</param>
         <param name="rowNum">此列中所编辑的行的行号。</param>
         <param name="bounds"><see cref="T:System.Drawing.Rectangle" />，控件将被放置在其中。</param>
-        <param name="readOnly">指示列是否为只读的值。 如果此值为只读，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="readOnly">一个值，该值指示列是否只读的。 <see langword="true" /> 如果值为只读的;否则为<see langword="false" />。</param>
         <param name="instantText">控件中将显示的文本。</param>
-        <param name="cellIsVisible">指示该单元格是否可见的值。 如果该单元格可见，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="cellIsVisible">指示该单元格是否可见的值。 <see langword="true" /> 如果该单元格可见，则否则为<see langword="false" />。</param>
         <summary>当在派生类中被重写时，将准备一个将要进行编辑的单元格。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -878,7 +878,7 @@
         <param name="source">包含数据的 <see cref="T:System.Windows.Forms.CurrencyManager" />。</param>
         <param name="rowNum">包含数据的行的行号。</param>
         <summary>获取指定 <see cref="T:System.Windows.Forms.CurrencyManager" /> 中指定行内的值。</summary>
-        <returns>包含该值的 <see cref="T:System.Object" /> 对象。</returns>
+        <returns>包含该值的 <see cref="T:System.Object" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -887,7 +887,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ApplicationException">此 <see cref="T:System.Data.DataColumn" /> 的 <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> 尚未设置。</exception>
+        <exception cref="T:System.ApplicationException"><see cref="T:System.Data.DataColumn" />此<see cref="T:System.Windows.Forms.DataGridColumnStyle" />尚未设置。</exception>
         <altmember cref="M:System.Windows.Forms.DataGridColumnStyle.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)" />
       </Docs>
     </Member>
@@ -1181,7 +1181,7 @@
         <Attribute FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
         </Attribute>
-        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataGridColumnStyleMappingNameEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
         </Attribute>
         <Attribute>
@@ -1411,7 +1411,7 @@
         <param name="bounds">要在其中绘画的外围 <see cref="T:System.Drawing.Rectangle" />。</param>
         <param name="source">该列所属的 <see cref="T:System.Windows.Forms.CurrencyManager" /> 控件的 <see cref="T:System.Windows.Forms.DataGrid" />。</param>
         <param name="rowNum">所引用的基础数据中的行号。</param>
-        <param name="alignToRight">一个值，它指示该列的内容是否为右对齐。 如果内容应为右对齐，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="alignToRight">一个值，该值指示是否对齐到右侧的列的内容。 <see langword="true" /> 如果内容应对齐到右侧;否则为<see langword="false" />。</param>
         <summary>在派生类中被重写时，将绘制具有指定 <see cref="T:System.Windows.Forms.DataGridColumnStyle" />、<see cref="T:System.Drawing.Graphics" />、<see cref="T:System.Drawing.Rectangle" />、行号和对齐方式的 <see cref="T:System.Windows.Forms.CurrencyManager" />。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1454,7 +1454,7 @@
         <param name="rowNum">所引用的基础数据表中的行号。</param>
         <param name="backBrush">用于绘制背景色的 <see cref="T:System.Drawing.Brush" />。</param>
         <param name="foreBrush">用于绘制前景色的 <see cref="T:System.Drawing.Color" />。</param>
-        <param name="alignToRight">一个值，它指示内容是否为右对齐。 如果内容为右对齐，则为 <see langword="true" />；否则为 <see langword="false" />。</param>
+        <param name="alignToRight">一个值，该值指示是否将内容向右对齐。 <see langword="true" /> 如果内容右对齐，否则， <see langword="false" />。</param>
         <summary>绘制具有指定 <see cref="T:System.Windows.Forms.DataGridColumnStyle" />、<see cref="T:System.Drawing.Graphics" />、<see cref="T:System.Drawing.Rectangle" />、行号、背景色、前景色和对齐方式的 <see cref="T:System.Windows.Forms.CurrencyManager" />。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1743,7 +1743,7 @@
         <param name="value">要设置的值。</param>
         <summary>用来自指定 <see cref="T:System.Windows.Forms.CurrencyManager" /> 的值设置指定行中的值。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ArgumentException"><see cref="T:System.Windows.Forms.CurrencyManager" /> 对象的 <see cref="P:System.Windows.Forms.BindingManagerBase.Position" /> 与 <paramref name="rowNum" /> 不匹配。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Windows.Forms.CurrencyManager" />对象的<see cref="P:System.Windows.Forms.BindingManagerBase.Position" />不符<paramref name="rowNum" />。</exception>
         <altmember cref="M:System.Windows.Forms.DataGridColumnStyle.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)" />
       </Docs>
     </Member>

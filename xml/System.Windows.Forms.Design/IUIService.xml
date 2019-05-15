@@ -1,5 +1,5 @@
 <Type Name="IUIService" FullName="System.Windows.Forms.Design.IUIService">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="c11b6bd5e38fc77cacf97133a505d64b72426c78" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56393549" /></Metadata><TypeSignature Language="C#" Value="public interface IUIService" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c3412136addae4e243bbb20a814ed3f67e96a3ea" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65006082" /></Metadata><TypeSignature Language="C#" Value="public interface IUIService" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUIService" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.IUIService" />
   <TypeSignature Language="VB.NET" Value="Public Interface IUIService" />
@@ -13,12 +13,12 @@
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.Guid("06A9C74B-5E32-4561-BE73-381B37869F4F")</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>启用与开发环境对象（正在承载设计器）的用户界面的交互。</summary>
+    <summary>启用与用户界面的交互托管的设计器的开发环境对象。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -59,9 +59,9 @@
         <Parameter Name="component" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="component">要检查其是否支持显示 <see cref="T:System.Windows.Forms.Design.ComponentEditorForm" /> 的组件。</param>
-        <summary>指示该组件是否可显示 <see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />。</summary>
-        <returns>如果指定的组件可以显示组件编辑器窗体，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="component">要检查是否用于显示的受支持的组件<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />。</param>
+        <summary>指示组件是否可以显示<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />。</summary>
+        <returns><see langword="true" /> 如果指定的组件可以显示组件编辑器窗体;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -94,8 +94,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取在显示对话框时应该用作所有者的窗口。</summary>
-        <returns><see cref="T:System.Windows.Forms.IWin32Window" />，指示窗口拥有任何子对话框。</returns>
+        <summary>获取显示对话框时应该用作所有者的窗口。</summary>
+        <returns><see cref="T:System.Windows.Forms.IWin32Window" /> ，该值指示窗口拥有任何子对话框。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -125,7 +125,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>设置指示 UI 已更改的标志。</summary>
+        <summary>设置一个标志，指示 UI 已更改。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -158,10 +158,10 @@
         <Parameter Name="parent" Type="System.Windows.Forms.IWin32Window" />
       </Parameters>
       <Docs>
-        <param name="component">要为其显示 <see cref="T:System.Windows.Forms.Design.ComponentEditorForm" /> 的组件。</param>
-        <param name="parent">要成为任何对话框的父级的 <see cref="T:System.Windows.Forms.IWin32Window" />。</param>
-        <summary>尝试显示组件的 <see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />。</summary>
-        <returns>如果此尝试成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="component">要显示其组件<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />。</param>
+        <param name="parent"><see cref="T:System.Windows.Forms.IWin32Window" />父项为任何对话框。</param>
+        <summary>尝试显示<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />的组件。</summary>
+        <returns><see langword="true" /> 如果尝试不成功，则否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -172,7 +172,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">组件不支持组件编辑器。</exception>
+        <exception cref="T:System.ArgumentException">该组件不支持组件编辑器。</exception>
         <altmember cref="M:System.Windows.Forms.Design.IUIService.CanShowComponentEditor(System.Object)" />
       </Docs>
     </Member>
@@ -197,8 +197,8 @@
       </Parameters>
       <Docs>
         <param name="form">要显示的 <see cref="T:System.Windows.Forms.Form" />。</param>
-        <summary>尝试在对话框中显示指定的窗体。</summary>
-        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 值之一，指示由对话框返回的结果代码。</returns>
+        <summary>尝试在对话框中显示指定窗体。</summary>
+        <returns>其中一个<see cref="T:System.Windows.Forms.DialogResult" />值，该值指示由对话框返回的结果代码。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -245,7 +245,7 @@
       </Parameters>
       <Docs>
         <param name="ex">要显示的 <see cref="T:System.Exception" />。</param>
-        <summary>在消息框中显示指定的异常和有关该异常的信息。</summary>
+        <summary>在消息框中显示指定的异常和异常有关的信息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -312,8 +312,8 @@
       </Parameters>
       <Docs>
         <param name="ex">要显示的 <see cref="T:System.Exception" />。</param>
-        <param name="message">要显示的消息，提供异常相关信息。</param>
-        <summary>在消息框中显示指定的异常和有关该异常的信息。</summary>
+        <param name="message">要显示的消息，提供有关异常的信息。</param>
+        <summary>在消息框中显示指定的异常和异常有关的信息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -363,7 +363,7 @@
         <Parameter Name="message" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="message">要显示的消息。</param>
+        <param name="message">要显示的消息</param>
         <summary>在消息框中显示指定的消息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -407,8 +407,8 @@
       </Parameters>
       <Docs>
         <param name="message">要显示的消息。</param>
-        <param name="caption">消息框的标题。</param>
-        <summary>用指定的标题在消息框中显示指定的消息。</summary>
+        <param name="caption">消息框标题。</param>
+        <summary>在具有指定标题的消息框中显示指定的消息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -452,10 +452,10 @@
       </Parameters>
       <Docs>
         <param name="message">要显示的消息。</param>
-        <param name="caption">用于对话框的标题。</param>
-        <param name="buttons"><see cref="T:System.Windows.Forms.MessageBoxButtons" /> 值之一：<see cref="F:System.Windows.Forms.MessageBoxButtons.OK" />、<see cref="F:System.Windows.Forms.MessageBoxButtons.OKCancel" />、<see cref="F:System.Windows.Forms.MessageBoxButtons.YesNo" /> 或 <see cref="F:System.Windows.Forms.MessageBoxButtons.YesNoCancel" />。</param>
-        <summary>用指定的标题和要在对话框上放置的按钮在消息框中显示指定的消息。</summary>
-        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 值之一，指示由对话框返回的结果代码。</returns>
+        <param name="caption">对话框标题。</param>
+        <param name="buttons">之一<see cref="T:System.Windows.Forms.MessageBoxButtons" />值： <see cref="F:System.Windows.Forms.MessageBoxButtons.OK" />， <see cref="F:System.Windows.Forms.MessageBoxButtons.OKCancel" />， <see cref="F:System.Windows.Forms.MessageBoxButtons.YesNo" />，或<see cref="F:System.Windows.Forms.MessageBoxButtons.YesNoCancel" />。</param>
+        <summary>显示消息框具有指定的标题和按钮放置在对话框中指定的消息。</summary>
+        <returns>其中一个<see cref="T:System.Windows.Forms.DialogResult" />值，该值指示由对话框返回的结果代码。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -498,9 +498,9 @@
         <Parameter Name="toolWindow" Type="System.Guid" />
       </Parameters>
       <Docs>
-        <param name="toolWindow">工具窗口的 <see cref="T:System.Guid" /> 标识符。 它可以是自定义的 <see cref="T:System.Guid" />，或来自 <see cref="T:System.ComponentModel.Design.StandardToolWindows" /> 的预定义值之一。</param>
+        <param name="toolWindow">一个<see cref="T:System.Guid" />工具窗口的标识符。 这可以是自定义<see cref="T:System.Guid" />或从预定义的值之一<see cref="T:System.ComponentModel.Design.StandardToolWindows" />。</param>
         <summary>显示指定的工具窗口。</summary>
-        <returns>如果成功显示了工具窗口，则为 <see langword="true" />；如果未能显示或找到工具窗口，则为 <see langword="false" />。</returns>
+        <returns><see langword="true" /> 如果成功显示工具窗口;<see langword="false" />如果它无法显示或找到。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -534,8 +534,8 @@
         <ReturnType>System.Collections.IDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取特定于宿主环境的样式集合。</summary>
-        <value>包含样式设置的 <see cref="T:System.Collections.IDictionary" />。</value>
+        <summary>获取特定于宿主环境的样式的集合。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />包含样式设置。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

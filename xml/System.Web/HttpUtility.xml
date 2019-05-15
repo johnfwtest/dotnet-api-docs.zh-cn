@@ -1,5 +1,5 @@
 <Type Name="HttpUtility" FullName="System.Web.HttpUtility">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="29aae6dd0671f06354891596b41ab3239adac15d" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58681455" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpUtility" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dfaab1a32d9983337432abc046919d0252feb586" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65013601" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpUtility" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpUtility extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpUtility" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpUtility" />
@@ -31,7 +31,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>提供用于在处理 Web 请求时编码和解码 URL 的方法。 此类不能被继承。</summary>
+    <summary>提供在处理 Web 请求时用于编码和解码 URL 的方法。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -497,7 +497,7 @@
       <Docs>
         <param name="s">要编码的字符串</param>
         <param name="output"><see cref="T:System.IO.TextWriter" /> 输出流。</param>
-        <summary>将字符串转换为 HTML 编码的字符串并将输出作为 <see cref="T:System.IO.TextWriter" /> 输出流返回。</summary>
+        <summary>将字符串转换为 HTML 编码的字符串，并以 <see cref="T:System.IO.TextWriter" /> 输出流的形式返回输出。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -622,7 +622,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将一个查询字符串分析成一个 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</summary>
+        <summary>将查询字符串解析为 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ParseQueryString">
@@ -661,7 +661,7 @@
       </Parameters>
       <Docs>
         <param name="query">要分析的查询字符串。</param>
-        <summary>使用 <see cref="T:System.Collections.Specialized.NameValueCollection" /> 编码将查询字符串分析成一个 <see cref="P:System.Text.Encoding.UTF8" />。</summary>
+        <summary>使用 <see cref="P:System.Text.Encoding.UTF8" /> 编码将查询字符串分析成一个 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</summary>
         <returns>查询参数和值的 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -723,7 +723,7 @@
       <Docs>
         <param name="query">要分析的查询字符串。</param>
         <param name="encoding">要使用的 <see cref="T:System.Text.Encoding" />。</param>
-        <summary>使用指定的 <see cref="T:System.Collections.Specialized.NameValueCollection" /> 将查询字符串分析成一个 <see cref="T:System.Text.Encoding" />。</summary>
+        <summary>使用指定的 <see cref="T:System.Text.Encoding" /> 将查询字符串分析成一个 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</summary>
         <returns>查询参数和值的 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -738,7 +738,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="query" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="encoding" /> 为 <see langword="null" />。</exception>
         <altmember cref="T:System.Text.Encoding" />
       </Docs>
@@ -749,7 +749,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将已经为在 URL 中传输而编码的字符串转换为解码的字符串。  
+        <summary>将已编码用于 URL 传输的字符串转换为解码的字符串。  
   
 若要对 Web 应用程序之外的值进行编码或解码，请使用 <see cref="T:System.Net.WebUtility" /> 类。</summary>
       </Docs>
@@ -791,7 +791,7 @@
       </Parameters>
       <Docs>
         <param name="str">要解码的字符串。</param>
-        <summary>将已经为在 URL 中传输而编码的字符串转换为解码的字符串。</summary>
+        <summary>将已编码用于 URL 传输的字符串转换为解码的字符串。</summary>
         <returns>已解码的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -844,8 +844,8 @@
       </Parameters>
       <Docs>
         <param name="bytes">要解码的字节数组。</param>
-        <param name="e">指定解码方法的 <see cref="T:System.Text.Encoding" />。</param>
-        <summary>使用指定的解码对象将 URL 编码的字节数组转换为已解码的字符串。</summary>
+        <param name="e">指定解码方案的 <see cref="T:System.Text.Encoding" />。</param>
+        <summary>使用指定的解码对象将 URL 编码的字节数组转换为解码的字符串。</summary>
         <returns>已解码的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -872,7 +872,7 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ UrlDecode(System::String ^ s, System::Text::Encoding ^ e);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpUtility.UrlDecode(System.String,System.Text.Encoding)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberSignature Language="F#" Value="static member UrlDecode : string * System.Text.Encoding -&gt; string" Usage="System.Web.HttpUtility.UrlDecode (s, e)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="static member UrlDecode : string * System.Text.Encoding -&gt; string" Usage="System.Web.HttpUtility.UrlDecode (s, e)" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="static member UrlDecode : string * System.Text.Encoding -&gt; string" Usage="System.Web.HttpUtility.UrlDecode (s, e)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -906,8 +906,8 @@
       <Docs>
         <param name="str">要解码的字符串。</param>
         <param name="s">要解码的字符串。</param>
-        <param name="e">指定解码方法的 <see cref="T:System.Text.Encoding" />。</param>
-        <summary>使用指定的编码对象将 URL 编码的字符串转换为已解码的字符串。</summary>
+        <param name="e">指定解码方案的 <see cref="T:System.Text.Encoding" />。</param>
+        <summary>使用指定的编码对象将 URL 编码的字符串转换为解码的字符串。</summary>
         <returns>已解码的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -964,8 +964,8 @@
         <param name="bytes">要解码的字节数组。</param>
         <param name="offset">字节中开始解码的位置。</param>
         <param name="count">要解码的字节数。</param>
-        <param name="e">指定解码方法的 <see cref="T:System.Text.Encoding" /> 对象。</param>
-        <summary>使用指定的编码对象，从数组中的指定位置开始到指定的字节数为止，将 URL 编码的字节数组转换为已解码的字符串。</summary>
+        <param name="e">指定解码方案的 <see cref="T:System.Text.Encoding" /> 对象。</param>
+        <summary>使用指定的编码对象将 URL 编码字节数据转换为已解码的字符串，从数组中的指定位置开始，直到指定的字节数。</summary>
         <returns>已解码的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -977,10 +977,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> 为 <see langword="null" />，但 <paramref name="count" /> 不等于 <see langword="0" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> 为 <see langword="null" />，但是 <paramref name="count" /> 不等于 <see langword="0" />。 </exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 <see langword="0" /> 或大于 <paramref name="bytes" /> 数组的长度。  
   
-- 或 - 
+或 
  <paramref name="count" /> 小于 <see langword="0" />，或 <paramref name="count" /> + <paramref name="offset" /> 大于 <paramref name="bytes" /> 数组的长度。</exception>
         <altmember cref="M:System.Web.HttpUtility.UrlEncode(System.String)" />
       </Docs>
@@ -1033,7 +1033,7 @@
       </Parameters>
       <Docs>
         <param name="bytes">要解码的字节数组。</param>
-        <summary>将 URL 编码的字节数组转换为已解码的字节数组。</summary>
+        <summary>将 URL 编码的字节数组转换为解码后的字节数组。</summary>
         <returns>一个已解码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1085,7 +1085,7 @@
       </Parameters>
       <Docs>
         <param name="str">要解码的字符串。</param>
-        <summary>将 URL 编码的字符串转换为已解码的字节数组。</summary>
+        <summary>将 URL 编码的字符串转换为解码的字节数组。</summary>
         <returns>一个已解码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1138,7 +1138,7 @@
       </Parameters>
       <Docs>
         <param name="str">要解码的字符串。</param>
-        <param name="e">指定解码方法的 <see cref="T:System.Text.Encoding" /> 对象。</param>
+        <param name="e">指定解码方案的 <see cref="T:System.Text.Encoding" /> 对象。</param>
         <summary>使用指定的解码对象将 URL 编码的字符串转换为已解码的字节数组。</summary>
         <returns>一个已解码的字节数组。</returns>
         <remarks>
@@ -1207,10 +1207,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> 为 <see langword="null" />，但 <paramref name="count" /> 不等于 <see langword="0" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> 为 <see langword="null" />，但是 <paramref name="count" /> 不等于 <see langword="0" />。 </exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 <see langword="0" /> 或大于 <paramref name="bytes" /> 数组的长度。  
   
-- 或 - 
+或 
  <paramref name="count" /> 小于 <see langword="0" />，或 <paramref name="count" /> + <paramref name="offset" /> 大于 <paramref name="bytes" /> 数组的长度。</exception>
         <altmember cref="M:System.Web.HttpUtility.UrlEncodeToBytes(System.String)" />
       </Docs>
@@ -1221,7 +1221,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>对 URL 字符串进行编码。 这些方法重载可用于对整个 URL（包括查询字符串值）进行编码。  
+        <summary>对 URL 字符串进行编码。 可以使用这些方法重载来编码整个 URL，包括查询字符串的值。  
   
 若要对 Web 应用程序之外的值进行编码或解码，请使用 <see cref="T:System.Net.WebUtility" /> 类。</summary>
       </Docs>
@@ -1377,9 +1377,9 @@
       </Parameters>
       <Docs>
         <param name="bytes">要编码的字节数组。</param>
-        <param name="offset">字节数组中开始编码的位置。</param>
+        <param name="offset">从其开始编码的字节数组中的位置。</param>
         <param name="count">要编码的字节数。</param>
-        <summary>从数组的指定位置开始到指定的字节数为止，将字节数组转换为 URL 编码的字符串。</summary>
+        <summary>从数组中指定位置开始，按照指定字节数量，将字节数组转换为 URL 编码的字符串。</summary>
         <returns>已编码的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1407,7 +1407,7 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ UrlEncode(System::String ^ s, System::Text::Encoding ^ Enc);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpUtility.UrlEncode(System.String,System.Text.Encoding)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberSignature Language="F#" Value="static member UrlEncode : string * System.Text.Encoding -&gt; string" Usage="System.Web.HttpUtility.UrlEncode (s, Enc)" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="static member UrlEncode : string * System.Text.Encoding -&gt; string" Usage="System.Web.HttpUtility.UrlEncode (s, Enc)" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="static member UrlEncode : string * System.Text.Encoding -&gt; string" Usage="System.Web.HttpUtility.UrlEncode (s, Enc)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1444,7 +1444,7 @@
         <param name="s">要编码的文本。</param>
         <param name="e">指定编码方案的 <see cref="T:System.Text.Encoding" /> 对象。</param>
         <param name="Enc">指定编码方案的 <see cref="T:System.Text.Encoding" /> 对象。</param>
-        <summary>使用指定的编码对象对 URL 字符串进行编码。</summary>
+        <summary>使用指定的编码对象，对 URL 字符串进行编码。</summary>
         <returns>已编码的字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1509,7 +1509,7 @@
       <Docs>
         <param name="bytes">要编码的字节数组。</param>
         <summary>将字节数组转换为 URL 编码的字节数组。</summary>
-        <returns>一个已编码的字节数组。</returns>
+        <returns>编码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1562,7 +1562,7 @@
       <Docs>
         <param name="str">要编码的字符串。</param>
         <summary>将字符串转换为 URL 编码的字节数组。</summary>
-        <returns>一个已编码的字节数组。</returns>
+        <returns>编码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1617,7 +1617,7 @@
         <param name="str">要编码的字符串</param>
         <param name="e">指定编码方案的 <see cref="T:System.Text.Encoding" />。</param>
         <summary>使用指定的编码对象将字符串转换为 URL 编码的字节数组。</summary>
-        <returns>一个已编码的字节数组。</returns>
+        <returns>编码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1671,10 +1671,10 @@
       </Parameters>
       <Docs>
         <param name="bytes">要编码的字节数组。</param>
-        <param name="offset">字节数组中开始编码的位置。</param>
+        <param name="offset">从其开始编码的字节数组中的位置。</param>
         <param name="count">要编码的字节数。</param>
-        <summary>从数组中的指定位置开始一直到指定的字节数为止，将字节数组转换为 URL 编码的字节数组。</summary>
-        <returns>一个已编码的字节数组。</returns>
+        <summary>将字节数组转换为 URL 编码的字节数组，从数组中指定位置开始，以指定字节数继续。</summary>
+        <returns>编码的字节数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1685,10 +1685,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> 为 <see langword="null" />，但 <paramref name="count" /> 不等于 <see langword="0" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bytes" /> 为 <see langword="null" />，但是 <paramref name="count" /> 不等于 <see langword="0" />。 </exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" /> 小于 <see langword="0" /> 或大于 <paramref name="bytes" /> 数组的长度。  
   
-- 或 - 
+或 
  <paramref name="count" /> 小于 <see langword="0" />，或 <paramref name="count" /> + <paramref name="offset" /> 大于 <paramref name="bytes" /> 数组的长度。</exception>
         <altmember cref="M:System.Web.HttpUtility.UrlDecodeToBytes(System.String)" />
         <related type="Article" href="https://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b">如何：防止通过应用 HTML 编码为字符串的 Web 应用程序中的脚本攻击</related>
@@ -1737,7 +1737,7 @@
       <Docs>
         <param name="str">要转换的字符串。</param>
         <summary>将字符串转换为 Unicode 字符串。</summary>
-        <returns>以 %<paramref name="UnicodeValue" /> 表示法表示的 Unicode 字符串。</returns>
+        <returns>采用 %<paramref name="UnicodeValue" /> 表示法的 Unicode 字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1816,7 +1816,7 @@
       <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ UrlPathEncode(System::String ^ s);" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpUtility.UrlPathEncode(System.String)" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberSignature Language="F#" Value="static member UrlPathEncode : string -&gt; string" Usage="System.Web.HttpUtility.UrlPathEncode s" FrameworkAlternate="xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="static member UrlPathEncode : string -&gt; string" Usage="System.Web.HttpUtility.UrlPathEncode s" FrameworkAlternate="xamarinandroid-7.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-2.0" />
+      <MemberSignature Language="F#" Value="static member UrlPathEncode : string -&gt; string" Usage="System.Web.HttpUtility.UrlPathEncode s" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1850,7 +1850,7 @@
         <param name="str">要编码的文本。</param>
         <param name="s">要编码的文本。</param>
         <summary>请勿使用；仅适用于浏览器兼容性。 请使用 <see cref="M:System.Web.HttpUtility.UrlEncode(System.String)" />。</summary>
-        <returns>编码文本。</returns>
+        <returns>编码的文本。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

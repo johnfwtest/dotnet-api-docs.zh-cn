@@ -1,5 +1,5 @@
 <Type Name="ListControl" FullName="System.Web.UI.WebControls.ListControl">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d9c9f5d0bf6093e85954ed5f5d4642ecaa800ddb" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57960233" /></Metadata><TypeSignature Language="C#" Value="public abstract class ListControl : System.Web.UI.WebControls.DataBoundControl, System.Web.UI.IEditableTextControl" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3a7b4e5f2a636fbe9b836e0e6c8b060533f0d4bc" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65014086" /></Metadata><TypeSignature Language="C#" Value="public abstract class ListControl : System.Web.UI.WebControls.DataBoundControl, System.Web.UI.IEditableTextControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ListControl extends System.Web.UI.WebControls.DataBoundControl implements class System.Web.UI.IEditableTextControl, class System.Web.UI.ITextControl" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListControl" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class ListControl&#xA;Inherits DataBoundControl&#xA;Implements IEditableTextControl" />
@@ -181,7 +181,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否在绑定数据之前清除列表项。</summary>
+        <summary>获取或设置指示是否在绑定数据之前清除列表项的值。</summary>
         <value>如果不在绑定数据之前清除列表项，则为 <see langword="true" />；如果在执行数据绑定之前清除项集合，则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -191,7 +191,7 @@
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
    
   
@@ -244,7 +244,7 @@
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
    
   
@@ -297,7 +297,7 @@
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
  ]]></format>
         </remarks>
@@ -358,9 +358,17 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置特定的表中<see cref="P:System.Web.UI.WebControls.ListControl.DataSource" />要绑定到控件。</summary>
+        <value>一个字符串，指定的表中<see cref="P:System.Web.UI.WebControls.ListControl.DataSource" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+  
+## Remarks  
+
+如果<xref:System.Web.UI.WebControls.ListControl.DataSource>包含多个表，请使用此属性指定要绑定到控件的确切表。
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DataSource">
@@ -390,9 +398,19 @@
         <ReturnType>System.Object</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置填充列表控件项的数据源。</summary>
+        <value>用于填充列表控件提供数据的数据源。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+  
+## Remarks  
+
+此属性用于指定要填充列表控件的数据源。
+
+中的项<xref:System.Web.UI.WebControls.ListControl.Items>集合初始化从<xref:System.Web.UI.WebControls.ListControl.DataTextField>和<xref:System.Web.UI.WebControls.ListControl.DataValueField>。
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DataTextField">
@@ -431,7 +449,7 @@
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
    
   
@@ -530,7 +548,7 @@
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
  ]]></format>
         </remarks>
@@ -573,7 +591,7 @@
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
    
   
@@ -665,7 +683,7 @@
         <Parameter Name="savedState" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="savedState">一个 <see cref="T:System.Object" />，表示从 <see cref="T:System.Web.UI.WebControls.ListControl" /> 派生的控件的状态。</param>
+        <param name="savedState">表示从 <see cref="T:System.Web.UI.WebControls.ListControl" /> 派生的控件的状态的 <see cref="T:System.Object" />。</param>
         <summary>加载以前保存的 <see cref="T:System.Web.UI.WebControls.DetailsView" /> 控件的视图状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -769,7 +787,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>引发 <see cref="E:System.Web.UI.WebControls.ListControl.SelectedIndexChanged" /> 事件。 这使您可以为事件提供自定义处理程序。</summary>
+        <summary>引发 <see cref="E:System.Web.UI.WebControls.ListControl.SelectedIndexChanged" /> 事件。 这使你可以为事件提供自定义处理程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -864,8 +882,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" /> 的已缓存的值超出了范围。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" /> 和 <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" /> 的已缓存的值不匹配。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">缓存的值的<see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />不在范围。</exception>
+        <exception cref="T:System.ArgumentException">已缓存的值<see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />和<see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" />不匹配。</exception>
         <altmember cref="T:System.Collections.IEnumerable" />
       </Docs>
     </Member>
@@ -892,7 +910,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Web.UI.WebControls.ListControl.PerformSelect%2A>方法调用<xref:System.Web.UI.WebControls.ListControl.PerformDataBinding%2A>方法检索数据以将数据绑定到数据绑定控件的元素之后。 有关详情，请参阅<xref:System.Web.UI.WebControls.DataBoundControl.PerformSelect%2A?displayProperty=nameWithType>。  
+ <xref:System.Web.UI.WebControls.ListControl.PerformSelect%2A>方法调用<xref:System.Web.UI.WebControls.ListControl.PerformDataBinding%2A>方法检索数据以将数据绑定到数据绑定控件的元素之后。 有关详细信息，请参阅 <xref:System.Web.UI.WebControls.DataBoundControl.PerformSelect%2A?displayProperty=nameWithType>。  
   
  ]]></format>
         </remarks>
@@ -922,7 +940,7 @@
         <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" /> 表示用于向网页写入内容的输出流。</param>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />，表示用于向网页写入内容的输出流。</param>
         <summary>呈现 <see cref="T:System.Web.UI.WebControls.ListControl" /> 控件中的项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -955,7 +973,7 @@
       <Parameters />
       <Docs>
         <summary>保存从 <see cref="T:System.Web.UI.WebControls.ListControl" /> 派生的控件及其包含的项的当前视图状态。</summary>
-        <returns>一个 <see cref="T:System.Object" />，它包含已保存的 <see cref="T:System.Web.UI.WebControls.ListControl" /> 控件的状态。</returns>
+        <returns>它包含已保存的 <see cref="T:System.Web.UI.WebControls.ListControl" /> 控件的状态的 <see cref="T:System.Object" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1006,7 +1024,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置列表中选定项的最低序号索引。</summary>
-        <value>列表中选定项的最低序号索引。 默认值是 -1，表示未选定任何项。</value>
+        <value>列表中选定项的最低序号索引。 默认值为 -1，指示未选定任何内容。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1015,7 +1033,7 @@
   
  值<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>属性专门不保存在回发。 还原回发使用<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>属性。 例如，如果<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>属性为 4，在回发时，<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>属性设置为的索引<xref:System.Web.UI.WebControls.ListItem>对象，它具有<xref:System.Web.UI.WebControls.ListItem.Value%2A>4 的属性。 如果多个<xref:System.Web.UI.WebControls.ListItem>对象具有<xref:System.Web.UI.WebControls.ListItem.Value%2A>属性为 4 中的第一项<xref:System.Web.UI.WebControls.ListControl.Items%2A>选择集合。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
    
   
@@ -1027,7 +1045,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">在呈现列表时，该索引已被设置为小于 -1 或大于、等于列表中项数的值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引设置为小于-1 或大于或等于列表在时间上的项目数呈现列表。</exception>
         <altmember cref="T:System.Web.UI.WebControls.CheckBoxList" />
       </Docs>
     </Member>
@@ -1173,7 +1191,7 @@
   
  <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>还可以使用属性可以通过设置项的值与列表控件中选择的项。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
  当所选的值不在可用值列表中，执行回发，则<xref:System.ArgumentOutOfRangeException>引发异常。 下面的示例演示如何在回发发生之前捕获的无效值：  
   
@@ -1204,7 +1222,7 @@ if(DropDownList1.Items.FindByValue("2") != null) {
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">选定值是不在可用值列表中，视图状态或其他状态已加载（已执行回发）。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">所选值不在列表中的可用值和视图状态或其他状态已加载 （已执行回发）。</exception>
         <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedItem" />
         <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />
         <altmember cref="P:System.Web.UI.WebControls.ListControl.DataValueField" />
@@ -1234,7 +1252,7 @@ if(DropDownList1.Items.FindByValue("2") != null) {
       </Parameters>
       <Docs>
         <param name="selectedIndex"><see cref="P:System.Web.UI.WebControls.ListControl.Items" /> 集合中的选定项的索引。</param>
-        <summary>发送页面之后，设置 <see cref="P:System.Web.UI.WebControls.ListItem.Selected" /> 控件的 <see cref="T:System.Web.UI.WebControls.ListItem" /> 属性。</summary>
+        <summary>发送页面之后，设置 <see cref="T:System.Web.UI.WebControls.ListItem" /> 控件的 <see cref="P:System.Web.UI.WebControls.ListItem.Selected" /> 属性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1262,8 +1280,8 @@ if(DropDownList1.Items.FindByValue("2") != null) {
         <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取 <see cref="T:System.Web.UI.HtmlTextWriterTag" /> 控件的 <see cref="T:System.Web.UI.WebControls.ListControl" /> 值。</summary>
-        <value><see cref="T:System.Web.UI.HtmlTextWriterTag" /> 控件的 <see cref="T:System.Web.UI.WebControls.ListControl" /> 值。</value>
+        <summary>获取 <see cref="T:System.Web.UI.WebControls.ListControl" /> 控件的 <see cref="T:System.Web.UI.HtmlTextWriterTag" /> 值。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListControl" /> 控件的 <see cref="T:System.Web.UI.HtmlTextWriterTag" /> 值。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1329,7 +1347,7 @@ if(DropDownList1.Items.FindByValue("2") != null) {
   
  控件开发人员可以重写<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>属性以支持与不相关的功能<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>属性。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
  ]]></format>
         </remarks>
@@ -1434,8 +1452,8 @@ if(DropDownList1.Items.FindByValue("2") != null) {
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置控件组，当从 <see cref="T:System.Web.UI.WebControls.ListControl" /> 类派生的控件回发到服务器时，将导致对该组控件进行验证。</summary>
-        <value>控件组，在派生的 <see cref="T:System.Web.UI.WebControls.ListControl" /> 回发到服务器时，导致对该组控件进行验证。 默认值为空字符串("")。</value>
+        <summary>获取或设置控件组，当从 <see cref="T:System.Web.UI.WebControls.ListControl" /> 类派生的控件回发到服务器时，将引发对该控件组的验证。</summary>
+        <value>控件组，在派生的 <see cref="T:System.Web.UI.WebControls.ListControl" /> 回发到服务器时，将引发对该控件组的验证。 默认值为空字符串("")。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1446,7 +1464,7 @@ if(DropDownList1.Items.FindByValue("2") != null) {
   
  此属性的值存储在视图状态。  
   
- 无法通过主题或样式表主题设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
+ 主题或样式表主题不能设置此属性。 有关详细信息，请参阅<xref:System.Web.UI.ThemeableAttribute>并[ASP.NET 主题和外观](https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)。  
   
  ]]></format>
         </remarks>

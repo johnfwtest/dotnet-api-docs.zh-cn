@@ -1,5 +1,5 @@
 <Type Name="Object" FullName="System.Object">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="cfdf20f498b9446fa1ef100b01c36257161f0c6c" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58875068" /></Metadata><TypeSignature Language="C#" Value="public class Object" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="15ef89d63d4f8560fd7744c5e10171b0b38c88e4" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65009545" /></Metadata><TypeSignature Language="C#" Value="public class Object" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit object" />
   <TypeSignature Language="DocId" Value="T:System.Object" />
   <TypeSignature Language="VB.NET" Value="Public Class Object" />
@@ -370,7 +370,7 @@
         <param name="objA">要比较的第一个对象。</param>
         <param name="objB">要比较的第二个对象。</param>
         <summary>确定指定的对象实例是否被视为相等。</summary>
-        <returns>如果认为对象相等，则为 <see langword="true" />；否则为 <see langword="false" />。 如果 <paramref name="objA" /> 和 <paramref name="objB" /> 均为 null，此方法返回 <see langword="true" />。</returns>
+        <returns>如果对象被视为相等，则为 <see langword="true" />，否则为 <see langword="false" />。 如果 <paramref name="objA" /> 和 <paramref name="objB" /> 均为 null，此方法返回 <see langword="true" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -499,9 +499,9 @@
 >   
 >  VisualC++还提供用于实现其自己的语法<xref:System.Object.Finalize%2A>方法。 有关详细信息，请参阅的"析构函数和终结器"部分[如何：定义和使用类和结构 (C++/CLI)](https://msdn.microsoft.com/library/1c03cb0d-1459-4b5e-af65-97d6b3094fd7)。  
   
- 垃圾回收是不确定的因为您不知道准确地说当垃圾回收器执行终止。 释放资源立即，您还可以选择实现 [dispose 模式](~/docs/standard/garbage-collection/implementing-dispose.md) 和<xref:System.IDisposable>接口。 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>实现可由使用者类的释放非托管的资源，并且你可以使用<xref:System.Object.Finalize%2A>方法来释放非托管的资源的事件中<xref:System.IDisposable.Dispose%2A>不会调用方法。  
+ 垃圾回收是不确定的因为您不知道准确地说当垃圾回收器执行终止。 释放资源立即，您还可以选择实现[释放模式](~/docs/standard/garbage-collection/implementing-dispose.md)和<xref:System.IDisposable>接口。 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>实现可由使用者类的释放非托管的资源，并且你可以使用<xref:System.Object.Finalize%2A>方法来释放非托管的资源的事件中<xref:System.IDisposable.Dispose%2A>不会调用方法。  
   
- <xref:System.Object.Finalize%2A> 后它已清除垃圾回收期间，可以执行几乎任何操作，包括复活 （亦即，使该对象可访问再次） 的对象。 但是，该对象能够仅重新一次;<xref:System.Object.Finalize%2A>垃圾回收期间不能在来恢复对象上调用。 一个操作的实现<xref:System.Object.Finalize%2A>应永远不会采取： 它应永远不会引发异常。 如果从调用的方法引发的任何异常<xref:System.Object.Finalize%2A>处理方法<xref:System.Object.Finalize%2A>方法中，运行时假定<xref:System.Object.Finalize%2A>方法返回，并继续调用<xref:System.Object.Finalize%2A>其他对象的方法。 
+ <xref:System.Object.Finalize%2A> 后它已清除垃圾回收期间，可以执行几乎任何操作，包括复活 （亦即，使该对象可访问再次） 的对象。 但是，该对象能够仅重新一次;<xref:System.Object.Finalize%2A>垃圾回收期间不能在来恢复对象上调用。
   
 <a name="SafeHandle"></a>   
 ## <a name="the-safehandle-alternative"></a>SafeHandle 备用方法  
@@ -1021,8 +1021,8 @@
 |类|n/a|n/a|  
 |结构|是 (<xref:System.ValueType.ToString%2A?displayProperty=nameWithType>)|Object.tostring （） 相同|  
 |枚举|是 (<xref:System.Enum.ToString?displayProperty=nameWithType>)|成员名称|  
-|接口|No|n/a|  
-|委托|No|n/a|  
+|接口|否|n/a|  
+|委托|否|n/a|  
   
  重写，请参阅备注继承者部分以了解更多信息<xref:System.Object.ToString%2A>。  
   

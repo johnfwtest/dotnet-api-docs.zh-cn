@@ -1,5 +1,5 @@
 <Type Name="DataflowBlockOptions" FullName="System.Threading.Tasks.Dataflow.DataflowBlockOptions">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4badb8c31306559517de9848d0e79cf6f4e5d7aa" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56385918" /></Metadata><TypeSignature Language="C#" Value="public class DataflowBlockOptions" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f5058518554abab212d46b69b70a8922cec3b250" /><Meta Name="ms.sourcegitcommit" Value="7845f124909a0999a19cc65f40feab5e75cd9b8d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65064748" /></Metadata><TypeSignature Language="C#" Value="public class DataflowBlockOptions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataflowBlockOptions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.DataflowBlockOptions" />
   <TypeSignature Language="VB.NET" Value="Public Class DataflowBlockOptions" />
@@ -24,7 +24,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>提供选项，用于配置数据流块执行的过程。</summary>
+    <summary>提供选项，用于配置数据流块执行的处理。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -92,8 +92,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置可由块缓存的最大消息数量。</summary>
-        <value>最大消息数。 默认值为 -1，表示无限数量的消息。</value>
+        <summary>获取或设置的最大可能由块缓存的消息数。</summary>
+        <value>最大消息数。 默认值为-1，表示无限的数量的消息。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,9 +143,17 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>获取或设置一个值，指示是否应上的消息块的处理强制按序的处理。</summary>
+        <value><see langword="true" /> 如果应强制执行按序的处理;否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+默认情况下，数据流块强制执行消息的处理顺序。 这意味着，类似于块<xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>将确保消息将按相同顺序输入顺序，输出，即使代码块，使用的并行和一条消息 N 处理完成后 （块将对后续消息 N + 1 的处理请重新排列要维护顺序将这些结果提供给使用者之前输入的结果）。  一些块可能会允许这是宽松的但是。  设置<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.EnsureOrdered>为 false 指示块后，可能放宽此排序，如果能够执行此操作。  这会很有用，如果进行处理的结果立即可用是比维护输入对输出排序更重要。
+
+]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="MaxMessagesPerTask">
@@ -169,8 +177,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置每任务可处理的最大消息数量。</summary>
-        <value>最大消息数。 默认值为 -1，表示无限数量的消息。</value>
+        <summary>获取或设置的最大可能每个任务处理的消息数。</summary>
+        <value>最大消息数。 默认值为-1，表示无限的数量的消息。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,8 +203,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置查询块的名称时要使用的格式字符串。</summary>
-        <value>当用名称查询一个程序块时使用的格式字符串。</value>
+        <summary>获取或设置要为其名称查询一个程序块时使用的格式字符串。</summary>
+        <value>要为其名称查询一个程序块时使用的格式字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -228,7 +236,7 @@
         <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置要用于该安排任务进度的 <see cref="T:System.Threading.Tasks.TaskScheduler" />。</summary>
+        <summary>获取或设置<see cref="T:System.Threading.Tasks.TaskScheduler" />要用于计划任务。</summary>
         <value>任务计划程序。</value>
         <remarks>To be added.</remarks>
       </Docs>

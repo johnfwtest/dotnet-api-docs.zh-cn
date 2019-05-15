@@ -1,5 +1,5 @@
 <Type Name="DynamicObject" FullName="System.Dynamic.DynamicObject">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="403111ea96a944cbf2b6adc84b6c3caf3ed6e344" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58686815" /></Metadata><TypeSignature Language="C#" Value="public class DynamicObject : System.Dynamic.IDynamicMetaObjectProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="441ffdca4dc64bd1fee3aff7e839255c64f79d34" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65003621" /></Metadata><TypeSignature Language="C#" Value="public class DynamicObject : System.Dynamic.IDynamicMetaObjectProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit DynamicObject extends System.Object implements class System.Dynamic.IDynamicMetaObjectProvider" />
   <TypeSignature Language="DocId" Value="T:System.Dynamic.DynamicObject" />
   <TypeSignature Language="VB.NET" Value="Public Class DynamicObject&#xA;Implements IDynamicMetaObjectProvider" />
@@ -38,7 +38,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>提供用于指定运行时的动态行为的基类。 必须继承此类；不能直接实例化此类。</summary>
+    <summary>提供用于在运行时指定动态行为的基类。 必须继承此类；不能直接对其进行实例化。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -127,7 +127,7 @@ Dim sampleObject As Object = New SampleDynamicObject()
       </Attributes>
       <Parameters />
       <Docs>
-        <summary>使派生的类型可以初始化 <see cref="T:System.Dynamic.DynamicObject" /> 类型的新实例。</summary>
+        <summary>使派生的类型来初始化的新实例<see cref="T:System.Dynamic.DynamicObject" />类型。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -193,7 +193,7 @@ Dim sampleObject As Object = New SampleDynamicObject()
       <Parameters />
       <Docs>
         <summary>返回所有动态成员名称的枚举。</summary>
-        <returns>一个包含动态成员名称的序列。</returns>
+        <returns>包含动态成员名称的序列。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -241,9 +241,9 @@ Dim sampleObject As Object = New SampleDynamicObject()
         <Parameter Name="parameter" Type="System.Linq.Expressions.Expression" />
       </Parameters>
       <Docs>
-        <param name="parameter">表示要调度到动态虚方法的 <see cref="T:System.Dynamic.DynamicMetaObject" /> 的表达式。</param>
-        <summary>提供调度到动态虚方法的 <see cref="T:System.Dynamic.DynamicMetaObject" />。 可以将该对象封装到另一个 <see cref="T:System.Dynamic.DynamicMetaObject" /> 中，以便为各个不同操作提供自定义行为。 此方法支持语言实现器的动态语言运行时基础结构，不应从代码直接使用。</summary>
-        <returns><see cref="T:System.Dynamic.DynamicMetaObject" /> 类型的对象。</returns>
+        <param name="parameter">表示的表达式<see cref="T:System.Dynamic.DynamicMetaObject" />要调度到动态虚方法。</param>
+        <summary>提供了<see cref="T:System.Dynamic.DynamicMetaObject" />调度到动态虚方法。 可以将该对象封装到另一个<see cref="T:System.Dynamic.DynamicMetaObject" />以便为单个操作提供自定义行为。 此方法支持的语言实现者动态语言运行时基础结构，它不适合在代码中直接使用。</summary>
+        <returns>对象<see cref="T:System.Dynamic.DynamicMetaObject" />类型。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -284,15 +284,15 @@ Dim sampleObject As Object = New SampleDynamicObject()
       </Parameters>
       <Docs>
         <param name="binder">提供有关二元运算的信息。 <c>binder.Operation</c> 属性返回 <see cref="T:System.Linq.Expressions.ExpressionType" /> 对象。 例如，对于 <c>sum = first + second</c> 语句（其中，<c>first</c> 和 <c>second</c> 派生自 <see langword="DynamicObject" /> 类），<c>binder.Operation</c> 返回 <c>ExpressionType.Add</c>。</param>
-        <param name="arg">二元运算的右操作数。 例如，对于 <c>sum = first + second</c> 语句（其中 <c>first</c> 和 <c>second</c> 派生自 <see langword="DynamicObject" /> 类），<paramref name="arg" /> 等于 <c>second</c>。</param>
+        <param name="arg">对于二元运算的右操作数。 例如，对于 <c>sum = first + second</c> 语句（其中 <c>first</c> 和 <c>second</c> 派生自 <see langword="DynamicObject" /> 类），<paramref name="arg" /> 等于 <c>second</c>。</param>
         <param name="result">二元运算的结果。</param>
-        <summary>提供二元运算的实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为诸如加法和乘法这样的运算指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供有关二元运算的实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以指定动态行为为诸如加法和乘法操作。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定如何为动态对象执行二进制操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定如何为动态对象执行二进制操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  当您使用二元运算，例如加法或乘法，调用此方法。 例如，如果<xref:System.Dynamic.DynamicObject.TryBinaryOperation%2A>重写方法，它将自动调用语句，例如`sum = first + second`或`multiply = first*second`，其中`first`派生自`DynamicObject`类。  
   
@@ -387,15 +387,15 @@ Dim sampleObject As Object = New SampleDynamicObject()
         <Parameter Name="result" Type="System.Object" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="binder">提供有关转换运算的信息。 <c>binder.Type</c> 属性提供必须将对象转换为的类型。 例如，对于 C# 中的 <c>(String)sampleObject</c> 语句（在 Visual Basic 中为 <c>CType(sampleObject, Type)</c>，其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Type</c> 返回 <see cref="T:System.String" /> 类型。 <c>binder.Explicit</c> 属性提供有关所发生转换的类型的信息。 对于显式转换，它返回 <see langword="true" />；对于隐式转换，它返回 <see langword="false" />。</param>
+        <param name="binder">提供有关转换操作的信息。 <c>binder.Type</c> 属性提供必须将对象转换为的类型。 例如，对于 C# 中的 <c>(String)sampleObject</c> 语句（在 Visual Basic 中为 <c>CType(sampleObject, Type)</c>，其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Type</c> 返回 <see cref="T:System.String" /> 类型。 <c>binder.Explicit</c> 属性提供有关所发生转换的类型的信息。 它将返回<see langword="true" />显式转换和<see langword="false" />隐式转换。</param>
         <param name="result">类型转换运算的结果。</param>
-        <summary>提供类型转换运算的实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为将某个对象从一种类型转换为另一种类型的运算指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供的类型实现的转换运算。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以从一种类型的对象转换为另一个操作为指定动态行为。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何执行类型转换为动态对象。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何执行类型转换为动态对象。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  在 C# 中，如果重写此方法，它是自动调用时具有的显式或隐式转换，如下面的代码示例中所示。  
   
@@ -468,15 +468,15 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
       </Parameters>
       <Docs>
         <param name="binder">提供有关初始化操作的信息。</param>
-        <param name="args">初始化期间传递给对象的参数。 例如，对于 <c>new SampleType(100)</c>（其中 <c>SampleType</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类型），<c>args[0]</c> 等于 100。</param>
+        <param name="args">在初始化期间传递给对象的参数。 例如，对于 <c>new SampleType(100)</c>（其中 <c>SampleType</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类型），<c>args[0]</c> 等于 100。</param>
         <param name="result">初始化的结果。</param>
-        <summary>为初始化动态对象的新实例的操作提供实现。 不应将此方法用于 C# 或 Visual Basic。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供用于初始化动态对象的新实例的操作实现。 此方法不适合在 C# 或 Visual Basic 中使用。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何初始化动态对象的新实例。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何初始化动态对象的新实例。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  C# 和 Visual Basic 编译器永远不会发出代码以使用此方法，因为它们不支持第一类的类型。 此方法适用于通过使用类似的语法支持动态对象的初始化的语言`dynamic new`。  
   
@@ -520,14 +520,14 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
       </Parameters>
       <Docs>
         <param name="binder">提供有关删除的信息。</param>
-        <param name="indexes">要删除的索引。</param>
-        <summary>为按索引删除对象的操作提供实现。 不应将此方法用于 C# 或 Visual Basic。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <param name="indexes">要删除索引。</param>
+        <summary>提供的按索引删除对象的操作的实现。 此方法不适合在 C# 或 Visual Basic 中使用。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何删除具有指定的索引的值。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何删除具有指定的索引的值。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  C# 和 Visual Basic 编译器永远不会发出代码以使用此方法，因为它们不支持这种操作。 此方法适用于支持按索引，如删除对象的语法的语言`del sampleObject[1,2]`Python 中。  
   
@@ -570,13 +570,13 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
       </Parameters>
       <Docs>
         <param name="binder">提供有关删除的信息。</param>
-        <summary>为删除对象成员的操作提供实现。 不应将此方法用于 C# 或 Visual Basic。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供删除对象成员的操作的实现。 此方法不适合在 C# 或 Visual Basic 中使用。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何删除对象成员。 时未重写此方法，该语言的运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何删除对象成员。 时未重写此方法，该语言的运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  C# 和 Visual Basic 编译器永远不会发出代码以使用此方法，因为它们不支持这种操作。 此方法适用于语言的支持用于删除成员，如语法`del sampleObject.SampleMember`Python 中。  
   
@@ -620,16 +620,16 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
         <Parameter Name="result" Type="System.Object" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="binder">提供有关该操作的信息。</param>
-        <param name="indexes">该操作中使用的索引。 例如，对于 C# 中的 <c>sampleObject[3]</c> 操作（在 Visual Basic 中为 <c>sampleObject(3)</c>，其中 <c>sampleObject</c> 派生自 <see langword="DynamicObject" /> 类），<c>indexes[0]</c> 等于 3。</param>
+        <param name="binder">提供有关操作的信息。</param>
+        <param name="indexes">在操作中使用索引。 例如，对于 C# 中的 <c>sampleObject[3]</c> 操作（在 Visual Basic 中为 <c>sampleObject(3)</c>，其中 <c>sampleObject</c> 派生自 <see langword="DynamicObject" /> 类），<c>indexes[0]</c> 等于 3。</param>
         <param name="result">索引操作的结果。</param>
-        <summary>为按索引获取值的操作提供实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为索引操作指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发运行时异常。）</returns>
+        <summary>提供的按索引获取一个值的操作的实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法来为索引操作指定动态行为。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定如何按索引获取值应执行的动态对象。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定如何按索引获取值应执行的动态对象。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，运行时异常引发。）  
   
  如果重写此方法，它则会自动调用具有等操作`sampleObject[3]`C# 中或`sampleObject(3)`在 Visual Basic 何处`sampleObject`派生自<xref:System.Dynamic.DynamicObject>类。  
   
@@ -682,15 +682,15 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
         <Parameter Name="result" Type="System.Object" RefType="out" />
       </Parameters>
       <Docs>
-        <param name="binder">提供有关调用了动态操作的对象的信息。 <c>binder.Name</c> 属性提供针对其执行动态操作的成员的名称。 例如，对于<c>Console.WriteLine(sampleObject.SampleProperty)</c> 语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Name</c> 返回“SampleProperty”。 <c>binder.IgnoreCase</c> 属性指定成员名称是否区分大小写。</param>
-        <param name="result">获取操作的结果。 例如，如果为某个属性调用该方法，则可以为 <paramref name="result" /> 指派该属性值。</param>
-        <summary>为获取成员值的操作提供实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为诸如获取属性值这样的操作指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发运行时异常。）</returns>
+        <param name="binder">提供有关调用动态操作的对象信息。 <c>binder.Name</c> 属性提供针对其执行动态操作的成员的名称。 例如，对于<c>Console.WriteLine(sampleObject.SampleProperty)</c> 语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Name</c> 返回“SampleProperty”。 <c>binder.IgnoreCase</c> 属性指定成员名称是否区分大小写。</param>
+        <param name="result">获取操作的结果。 例如，如果为属性调用方法，则可以分配到的属性值<paramref name="result" />。</param>
+        <summary>提供用于获取成员值的操作实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以指定动态行为的操作，如获取属性的值。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行操作用于获取成员值。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行操作用于获取成员值。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，运行时异常引发。）  
   
  当有这样的语句时调用此方法`Console.WriteLine(sampleObject.SampleProperty)`，其中`sampleObject`是派生自的类的实例<xref:System.Dynamic.DynamicObject>类。  
   
@@ -749,13 +749,13 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
         <param name="binder">提供有关调用操作的信息。</param>
         <param name="args">调用操作期间传递给对象的参数。 例如，对于 <c>sampleObject(100)</c> 操作（其中 <c>sampleObject</c> 派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类），<c>args[0]</c> 等于 100。</param>
         <param name="result">对象调用的结果。</param>
-        <summary>为调用对象的操作提供实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为诸如调用对象或委托这样的操作指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供的调用的对象的操作的实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以指定动态行为的操作，如调用对象或委托。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （大多数情况下，特定于语言的运行时异常引发。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行调用的对象的操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行调用的对象的操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，运行时异常引发。）  
   
  如果重写此方法，它则会自动调用具有等操作`sampleObject(100)`，其中`sampleObject`派生自<xref:System.Dynamic.DynamicObject>类。  
   
@@ -813,13 +813,13 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
         <param name="binder">提供有关动态操作的信息。 <c>binder.Name</c> 属性提供针对其执行动态操作的成员的名称。 例如，对于 <c>sampleObject.SampleMethod(100)</c>语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Name</c> 返回“SampleMethod”。 <c>binder.IgnoreCase</c> 属性指定成员名称是否区分大小写。</param>
         <param name="args">调用操作期间传递给对象成员的参数。 例如，对于 <c>sampleObject.SampleMethod(100)</c>语句（其中 <c>sampleObject</c> 派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类），<c>args[0]</c> 等于 100。</param>
         <param name="result">成员调用的结果。</param>
-        <summary>为调用成员的操作提供实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为诸如调用方法这样的操作指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供的用于调用成员操作的实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以指定动态行为的操作，如调用方法。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行调用对象成员的操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行调用对象成员的操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  如果重写此方法，它会自动被调用时执行等操作`sampleObject.SampleMethod(100)`，其中`sampleObject`派生自`DynamicObject`类。  
   
@@ -877,16 +877,16 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="binder">提供有关该操作的信息。</param>
-        <param name="indexes">该操作中使用的索引。 例如，对于 C# 中的 <c>sampleObject[3] = 10</c>操作（Visual Basic 中为 <c>sampleObject(3) = 10</c>，其中 <c>sampleObject</c> 派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类），<c>indexes[0]</c> 等于 3。</param>
-        <param name="value">要为具有指定索引的对象设置的值。 例如，对于 C# 中的 <c>sampleObject[3] = 10</c> 操作（Visual Basic 中为 <c>sampleObject(3) = 10</c>），其中 <c>sampleObject</c> 派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类，<paramref name="value" /> 等于 10。</param>
-        <summary>为按索引设置值的操作提供实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为按指定索引访问对象的操作指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <param name="binder">提供有关操作的信息。</param>
+        <param name="indexes">在操作中使用索引。 例如，对于 C# 中的 <c>sampleObject[3] = 10</c>操作（Visual Basic 中为 <c>sampleObject(3) = 10</c>，其中 <c>sampleObject</c> 派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类），<c>indexes[0]</c> 等于 3。</param>
+        <param name="value">要设置为具有指定的索引的对象的值。 例如，对于 C# 中的 <c>sampleObject[3] = 10</c> 操作（Visual Basic 中为 <c>sampleObject(3) = 10</c>），其中 <c>sampleObject</c> 派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类，<paramref name="value" /> 等于 10。</param>
+        <summary>提供的按索引设置值的操作的实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以通过指定索引访问对象的操作为指定动态行为。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （大多数情况下，特定于语言的运行时异常引发。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行按索引访问的对象的操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行按索引访问的对象的操作。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  如果重写此方法，它则会自动调用具有等操作`sampleObject[3] = 10`C# 中或`sampleObject(3) = 10`在 Visual Basic 何处`sampleObject`派生自<xref:System.Dynamic.DynamicObject>类。  
   
@@ -939,15 +939,15 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="binder">提供有关调用了动态操作的对象的信息。 <c>binder.Name</c> 属性提供将该值分配到的成员的名称。 例如，对于 <c>sampleObject.SampleProperty = "Test"</c> 语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Name</c> 返回“SampleProperty”。 <c>binder.IgnoreCase</c> 属性指定成员名称是否区分大小写。</param>
-        <param name="value">要为成员设置的值。 例如，对于 <c>sampleObject.SampleProperty = "Test"</c> 语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<paramref name="value" /> 为 "Test"。</param>
-        <summary>为设置成员值的操作提供实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为诸如设置属性值这样的操作指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <param name="binder">提供有关调用动态操作的对象信息。 <c>binder.Name</c> 属性提供将该值分配到的成员的名称。 例如，对于 <c>sampleObject.SampleProperty = "Test"</c> 语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<c>binder.Name</c> 返回“SampleProperty”。 <c>binder.IgnoreCase</c> 属性指定成员名称是否区分大小写。</param>
+        <param name="value">要设置到成员的值。 例如，对于 <c>sampleObject.SampleProperty = "Test"</c> 语句（其中 <c>sampleObject</c> 是派生自 <see cref="T:System.Dynamic.DynamicObject" /> 类的类的实例），<paramref name="value" /> 为 "Test"。</param>
+        <summary>提供用于设置成员值的操作实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以指定动态行为的操作，如设置属性的值。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行操作，将值设置为成员。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法，以指定应如何为动态对象执行操作，将值设置为成员。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  当有这样的语句时调用此方法`sampleObject.SampleProperty = "Test"`，其中`sampleObject`是派生自的类的实例<xref:System.Dynamic.DynamicObject>类。  
   
@@ -1004,13 +1004,13 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
       <Docs>
         <param name="binder">提供有关一元运算的信息。 <c>binder.Operation</c> 属性返回 <see cref="T:System.Linq.Expressions.ExpressionType" /> 对象。 例如，对于 <c>negativeNumber = -number</c> 语句（其中 <c>number</c> 派生自 <see langword="DynamicObject" /> 类），<c>binder.Operation</c> 返回“Negate”。</param>
         <param name="result">一元运算的结果。</param>
-        <summary>提供一元运算的实现。 从 <see cref="T:System.Dynamic.DynamicObject" /> 类派生的类可以重写此方法，以便为诸如求反、递增、递减这样的运算指定动态行为。</summary>
-        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回 <see langword="false" />，则该语言的运行时联编程序将决定行为。 （大多数情况下，将引发语言特定的运行时异常。）</returns>
+        <summary>提供一元运算的实现。 类派生自<see cref="T:System.Dynamic.DynamicObject" />类可以重写此方法以指定动态行为的操作，例如求反、 递增，或递减。</summary>
+        <returns>如果操作成功，则为 <see langword="true" />；否则为 <see langword="false" />。 如果此方法返回<see langword="false" />，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何为动态对象执行一元运算。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （大多数情况下，将引发语言特定的运行时异常。）  
+ 类派生自<xref:System.Dynamic.DynamicObject>类可以重写此方法以指定应如何为动态对象执行一元运算。 如果方法没有覆盖，语言运行时联编程序确定的行为。 （在大多数情况下，特定于语言的运行时异常引发。）  
   
  一元求反、 递增，如操作或减少时，调用此方法。 例如，如果<xref:System.Dynamic.DynamicObject.TryUnaryOperation%2A>重写方法，语句，例如自动调用此方法`negativeNumber = -number`，其中`number`派生自<xref:System.Dynamic.DynamicObject>类。  
   

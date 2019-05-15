@@ -1,5 +1,5 @@
 <Type Name="OleDbCommandBuilder" FullName="System.Data.OleDb.OleDbCommandBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4314116908eced88ab91eef62aa6bf505f261450" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57913977" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbCommandBuilder : System.Data.Common.DbCommandBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="2fb0be02eae9b4252fb84672f220080c2c9a6f1b" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65006469" /></Metadata><TypeSignature Language="C#" Value="public sealed class OleDbCommandBuilder : System.Data.Common.DbCommandBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbCommandBuilder extends System.Data.Common.DbCommandBuilder" />
   <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbCommandBuilder" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OleDbCommandBuilder&#xA;Inherits DbCommandBuilder" />
@@ -17,7 +17,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>自动生成用于协调对 <see cref="T:System.Data.DataSet" /> 的更改与关联数据库的单表命令。 此类不能被继承。</summary>
+    <summary>自动生成用于协调对所做更改的单表命令<see cref="T:System.Data.DataSet" />与关联数据库。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -94,7 +94,7 @@
       </Parameters>
       <Docs>
         <param name="adapter">一个 <see cref="T:System.Data.OleDb.OleDbDataAdapter" />。</param>
-        <summary>使用关联的 <see cref="T:System.Data.OleDb.OleDbCommandBuilder" /> 对象初始化 <see cref="T:System.Data.OleDb.OleDbDataAdapter" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.Data.OleDb.OleDbCommandBuilder" />类与关联的<see cref="T:System.Data.OleDb.OleDbDataAdapter" />对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -164,8 +164,8 @@
         <ReturnType>System.Data.OleDb.OleDbDataAdapter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置为其自动生成 SQL 语句的 <see cref="T:System.Data.OleDb.OleDbDataAdapter" /> 对象。</summary>
-        <value><see cref="T:System.Data.OleDb.OleDbDataAdapter" /> 对象。</value>
+        <summary>获取或设置<see cref="T:System.Data.OleDb.OleDbDataAdapter" />对于哪些 SQL 语句会自动生成的对象。</summary>
+        <value>一个 <see cref="T:System.Data.OleDb.OleDbDataAdapter" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -200,8 +200,8 @@
         <Parameter Name="command" Type="System.Data.OleDb.OleDbCommand" />
       </Parameters>
       <Docs>
-        <param name="command">引用将从其中导出参数信息的存储过程的 <see cref="T:System.Data.OleDb.OleDbCommand" />。 将派生参数添加到 <see cref="P:System.Data.OleDb.OleDbCommand.Parameters" /> 的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 集合中。</param>
-        <summary>从在 <see cref="T:System.Data.OleDb.OleDbCommand" /> 中指定的存储过程中检索参数信息并填充指定的 <see cref="P:System.Data.OleDb.OleDbCommand.Parameters" /> 对象的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 集合。</summary>
+        <param name="command"><see cref="T:System.Data.OleDb.OleDbCommand" />引用存储的过程是派生参数信息。 派生的参数添加到<see cref="P:System.Data.OleDb.OleDbCommand.Parameters" />的集合<see cref="T:System.Data.OleDb.OleDbCommand" />。</param>
+        <summary>从在指定的存储过程检索参数信息<see cref="T:System.Data.OleDb.OleDbCommand" />，并填充<see cref="P:System.Data.OleDb.OleDbCommand.Parameters" />指定的集合<see cref="T:System.Data.OleDb.OleDbCommand" />对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -216,7 +216,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">基础 OLE DB 提供程序不支持返回存储过程参数信息，命令文本不是有效的存储过程名称，或者指定的 <see cref="P:System.Data.OleDb.OleDbCommand.CommandType" /> 不是 <see langword="StoredProcedure" />。</exception>
+        <exception cref="T:System.InvalidOperationException">基础 OLE DB 访问接口不支持返回存储的过程参数信息，命令文本不是有效的存储的过程名称，或<see cref="P:System.Data.OleDb.OleDbCommand.CommandType" />指定不是<see langword="StoredProcedure" />。</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
       </Docs>
     </Member>
@@ -250,7 +250,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取在数据源中执行删除操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行删除操作的数据源所需的对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -285,8 +285,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取在数据源中执行删除操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
-        <returns>自动生成的、执行删除操作所需的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</returns>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行删除操作的数据源所需的对象。</summary>
+        <returns>自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行删除操作所需的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -322,9 +322,9 @@
         <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则如有可能，将生成与列名相匹配的参数名称。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
-        <summary>获取在数据源中执行删除操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
-        <returns>自动生成的、执行删除操作所需的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</returns>
+        <param name="useColumnsForParameterNames">如果<see langword="true" />，它是否可以生成与列名相匹配的参数名称。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行删除操作的数据源所需的对象。</summary>
+        <returns>自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行删除操作所需的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -354,7 +354,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取在数据源中执行插入操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行插入操作的数据源所需的对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -389,8 +389,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取在数据源中执行插入操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
-        <returns>自动生成的、执行插入操作所需的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</returns>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行插入操作的数据源所需的对象。</summary>
+        <returns>自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行插入操作所需的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -426,9 +426,9 @@
         <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则如有可能，将生成与列名相匹配的参数名称。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
-        <summary>获取在数据源中执行插入操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
-        <returns>自动生成的、执行插入操作所需的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</returns>
+        <param name="useColumnsForParameterNames">如果<see langword="true" />，它是否可以生成与列名相匹配的参数名称。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行插入操作的数据源所需的对象。</summary>
+        <returns>自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行插入操作所需的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -536,7 +536,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取在数据源中执行更新操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行数据源的更新所需的对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -571,8 +571,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取在数据源中执行更新操作所需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</summary>
-        <returns>自动生成的、执行更新所需的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</returns>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行数据源的更新所需的对象。</summary>
+        <returns>自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行更新所需的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -608,9 +608,9 @@
         <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="useColumnsForParameterNames">如果为 <see langword="true" />，则如有可能，将生成与列名相匹配的参数名称。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
-        <summary>获取对数据源执行更新操作所必需的自动生成的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象，可选择使用列作为参数名。</summary>
-        <returns>自动生成的、执行更新所需的 <see cref="T:System.Data.OleDb.OleDbCommand" /> 对象。</returns>
+        <param name="useColumnsForParameterNames">如果<see langword="true" />，它是否可以生成与列名相匹配的参数名称。 如果为 <see langword="false" />，则生成 <c>@p1</c>、<c>@p2</c>，以此类推。</param>
+        <summary>获取自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行数据源，可以选择使用列作为参数名的更新所需的对象。</summary>
+        <returns>自动生成<see cref="T:System.Data.OleDb.OleDbCommand" />执行更新所需的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -640,7 +640,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>给定了具有正确的目录大小写设置且不带引号的标识符时，返回该标识符的正确的带引号形式。 这包括正确地转义该标识符中的任何嵌入引号。</summary>
+        <summary>指定在正确的目录的情况下不带引号的标识符，则会返回正确引用该标识符的形式。 这包括正确地转义该标识符中的任何嵌入的引号。</summary>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
       </Docs>
     </MemberGroup>
@@ -664,9 +664,9 @@
         <Parameter Name="unquotedIdentifier" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="unquotedIdentifier">不带引号的原始标识符。</param>
-        <summary>给定了具有正确的目录大小写设置且不带引号的标识符时，返回该标识符的正确的带引号形式。 这包括正确地转义该标识符中的任何嵌入引号。</summary>
-        <returns>带引号的标识符版本。 标识符内的嵌入引号被正确地转义。</returns>
+        <param name="unquotedIdentifier">原始的未加引号的标识符。</param>
+        <summary>指定在正确的目录的情况下不带引号的标识符，则会返回正确引用该标识符的形式。 这包括正确地转义该标识符中的任何嵌入的引号。</summary>
+        <returns>带引号的标识符的版本。 标识符中嵌入的引号被正确地转义。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
       </Docs>
@@ -692,10 +692,10 @@
         <Parameter Name="connection" Type="System.Data.OleDb.OleDbConnection" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="unquotedIdentifier">要以带引号的形式返回的不带引号的标识符。</param>
-        <param name="connection">当连接是通过时，会导致托管包装从获取 OLE DB 提供程序的引号字符，调用 SQLGetInfo 、、（SQL_IDENTIFIER_QUOTE_CHAR）。 如果连接未通过时，使用从 <see cref="P:System.Data.Common.DbCommandBuilder.QuotePrefix" /> 和 <see cref="P:System.Data.Common.DbCommandBuilder.QuoteSuffix" />的值中引用该字符串。</param>
-        <summary>给定了具有正确的目录大小写设置且不带引号的标识符时，返回该标识符的正确的带引号形式。 这包括正确地转义该标识符中的任何嵌入引号。</summary>
-        <returns>带引号的标识符版本。 标识符内的嵌入引号被正确地转义。</returns>
+        <param name="unquotedIdentifier">要返回带引号的形式的不带引号的标识符。</param>
+        <param name="connection">如果连接通过，将导致托管的包装从 OLE DB 访问接口获取引号字符。 当连接未通过时，使用来自引用该字符串<see cref="P:System.Data.Common.DbCommandBuilder.QuotePrefix" />和<see cref="P:System.Data.Common.DbCommandBuilder.QuoteSuffix" />。</param>
+        <summary>指定在正确的目录的情况下不带引号的标识符，则会返回正确引用该标识符的形式。 这包括正确地转义该标识符中的任何嵌入的引号。</summary>
+        <returns>带引号的标识符的版本。 标识符中嵌入的引号被正确地转义。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
       </Docs>
@@ -727,8 +727,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取或设置指定其名称包含空格或保留的标记等字符的数据库对象 （例如，表或列） 时使用的开始字符。</summary>
+        <value>起始字符或要使用的字符。 默认值为一个空字符串。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -759,8 +759,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>获取或设置结束字符或字符指定其名称包含空格或保留的标记等字符的数据库对象 （例如，表或列） 时使用。</summary>
+        <value>结束字符或要使用的字符。 默认值为一个空字符串。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -781,7 +781,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>清除与此相关的命令<see cref="T:System.Data.OleDb.OleDbCommandBuilder" />。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -816,7 +816,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>给定了带引号的标识符时，返回该标识符的正确的不带引号的形式。 这包括正确地取消转义该标识符中的任何嵌入引号。</summary>
+        <summary>指定带引号的标识符，则会返回该标识符的正确不带引号的形式。 这包括正确地取消转义任何嵌入引号标识符中。</summary>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
       </Docs>
     </MemberGroup>
@@ -840,8 +840,8 @@
         <Parameter Name="quotedIdentifier" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="quotedIdentifier">其嵌入引号将被移除的标识符。</param>
-        <summary>给定了带引号的标识符时，返回该标识符的正确的不带引号的形式。 这包括正确地取消转义该标识符中的任何嵌入引号。</summary>
+        <param name="quotedIdentifier">将已删除其嵌入的引号的标识符。</param>
+        <summary>指定带引号的标识符，则会返回该标识符的正确不带引号的形式。 这包括正确地取消转义任何嵌入引号标识符中。</summary>
         <returns>不带引号的标识符，其嵌入引号被正确地取消转义。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
@@ -868,9 +868,9 @@
         <Parameter Name="connection" Type="System.Data.OleDb.OleDbConnection" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="quotedIdentifier">其嵌入引号将被移除的标识符。</param>
+        <param name="quotedIdentifier">将已删除其嵌入的引号的标识符。</param>
         <param name="connection"><see cref="T:System.Data.OleDb.OleDbConnection" /></param>
-        <summary>给定了带引号的标识符时，返回该标识符的正确的不带引号的形式。 这包括正确地取消转义该标识符中的任何嵌入引号。</summary>
+        <summary>指定带引号的标识符，则会返回该标识符的正确不带引号的形式。 这包括正确地取消转义任何嵌入引号标识符中。</summary>
         <returns>不带引号的标识符，其嵌入引号被正确地取消转义。</returns>
         <remarks>To be added.</remarks>
         <related type="Article" href="https://msdn.microsoft.com/library/6e3fb8b5-373b-4f9e-ab03-a22693df8e91">自动生成命令</related>
