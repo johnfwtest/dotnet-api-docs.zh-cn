@@ -1,5 +1,5 @@
 <Type Name="RijndaelManaged" FullName="System.Security.Cryptography.RijndaelManaged">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="abecb72e70d2588c23f96a36567595e2807535c7" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="58874206" /></Metadata><TypeSignature Language="C#" Value="public sealed class RijndaelManaged : System.Security.Cryptography.Rijndael" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="3afb7279f8fc37a77052b09c1f15b30e56831648" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64997373" /></Metadata><TypeSignature Language="C#" Value="public sealed class RijndaelManaged : System.Security.Cryptography.Rijndael" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RijndaelManaged extends System.Security.Cryptography.Rijndael" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RijndaelManaged" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RijndaelManaged&#xA;Inherits Rijndael" />
@@ -35,7 +35,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>访问 <see cref="T:System.Security.Cryptography.Rijndael" /> 算法的托管版本。 此类不能被继承。</summary>
+    <summary>访问的托管的版本<see cref="T:System.Security.Cryptography.Rijndael" />算法。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -127,11 +127,14 @@
       <Docs>
         <summary>获取或设置加密操作的块大小（以位为单位）。</summary>
         <value>块大小，以位为单位的加密操作。 默认值为 128 位。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  在.NET Framework 中，Rijndael 的有效的块大小值是 128、 192 和 256 位。 在.NET Core 中的块大小为 Rijndael 只能是 128 位。 请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSize?displayProperty=nameWithType>有关块大小的详细信息。    
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <MemberGroup MemberName="CreateDecryptor">
@@ -206,10 +209,10 @@
         <Parameter Name="rgbIV" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="rgbKey">用于对称算法的机密密钥。 密钥大小必须为 128、192 或 256 位。</param>
-        <param name="rgbIV">将用于对称算法的 IV。</param>
-        <summary>使用指定的 <see cref="T:System.Security.Cryptography.Rijndael" /> 和初始化向量（<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />）创建对称 <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" /> 解密器对象。</summary>
-        <returns>对称 <see cref="T:System.Security.Cryptography.Rijndael" /> 解密器对象。</returns>
+        <param name="rgbKey">要用于对称算法的密钥。 密钥大小必须为 128、192 或 256 位。</param>
+        <param name="rgbIV">要用于对称算法的 IV。</param>
+        <summary>创建对称<see cref="T:System.Security.Cryptography.Rijndael" />解密器对象与指定<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />和初始化向量 (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />)。</summary>
+        <returns>对称<see cref="T:System.Security.Cryptography.Rijndael" />解密器对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -231,9 +234,9 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="rgbKey" /> 参数为 <see langword="null" />。  
   
-- 或 - 
+或 
 <paramref name="rgbIV" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" /> 属性的值不是 <see cref="F:System.Security.Cryptography.CipherMode.ECB" />、<see cref="F:System.Security.Cryptography.CipherMode.CBC" /> 或 <see cref="F:System.Security.Cryptography.CipherMode.CFB" />。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">值<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" />属性不是<see cref="F:System.Security.Cryptography.CipherMode.ECB" />， <see cref="F:System.Security.Cryptography.CipherMode.CBC" />，或<see cref="F:System.Security.Cryptography.CipherMode.CFB" />。</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
     </Member>
@@ -300,10 +303,10 @@
         <Parameter Name="rgbIV" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="rgbKey">用于对称算法的机密密钥。 密钥大小必须为 128、192 或 256 位。</param>
-        <param name="rgbIV">将用于对称算法的 IV。</param>
-        <summary>使用指定的 <see cref="T:System.Security.Cryptography.Rijndael" /> 和初始化向量（<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />）创建对称 <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" /> 加密器对象。</summary>
-        <returns>对称 <see cref="T:System.Security.Cryptography.Rijndael" /> 加密器对象。</returns>
+        <param name="rgbKey">要用于对称算法的密钥。 密钥大小必须为 128、192 或 256 位。</param>
+        <param name="rgbIV">要用于对称算法的 IV。</param>
+        <summary>创建对称<see cref="T:System.Security.Cryptography.Rijndael" />具有指定的加密器对象<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />和初始化向量 (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />)。</summary>
+        <returns>对称<see cref="T:System.Security.Cryptography.Rijndael" />加密器对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -325,9 +328,9 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="rgbKey" /> 参数为 <see langword="null" />。  
   
-- 或 - 
+或 
 <paramref name="rgbIV" /> 参数为 <see langword="null" />。</exception>
-        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" /> 属性的值不是 <see cref="F:System.Security.Cryptography.CipherMode.ECB" />、<see cref="F:System.Security.Cryptography.CipherMode.CBC" /> 或 <see cref="F:System.Security.Cryptography.CipherMode.CFB" />。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">值<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" />属性不是<see cref="F:System.Security.Cryptography.CipherMode.ECB" />， <see cref="F:System.Security.Cryptography.CipherMode.CBC" />，或<see cref="F:System.Security.Cryptography.CipherMode.CFB" />。</exception>
         <related type="Article" href="~/docs/standard/security/cryptographic-services.md">加密服务</related>
       </Docs>
     </Member>
@@ -393,7 +396,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>生成用于该算法的随机初始化向量（<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />）。</summary>
+        <summary>生成的随机初始化向量 (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) 要用于该算法。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -442,7 +445,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>生成用于该算法的随机 <see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />。</summary>
+        <summary>生成一个随机<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />要用于该算法。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -485,13 +488,16 @@
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置用于对称算法的初始化向量 (IV)。</summary>
+        <summary>获取或设置的初始化向量 (IV) 用于对称算法。</summary>
         <value>初始化向量 (IV) 用于对称算法。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.IV?displayProperty=nameWithType>有关初始化向量的详细信息。  
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Key">
@@ -520,11 +526,14 @@
       <Docs>
         <summary>获取或设置用于对称算法的密钥。</summary>
         <value>用于对称算法密钥。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.Key?displayProperty=nameWithType>有关机密密钥的详细信息。  
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="KeySize">
@@ -551,13 +560,16 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置用于对称算法的密钥大小（以位为单位）。</summary>
+        <summary>获取或设置大小，以位为单位，用于对称算法的机密密钥。</summary>
         <value>以位为单位，用于对称算法的密钥大小。 默认值为 256 位。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  Rijndael 的有效密钥大小是 128、 192 和 256 位。  
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LegalKeySizes">
@@ -586,11 +598,14 @@
       <Docs>
         <summary>获取对称算法支持的密钥大小（以位为单位）。</summary>
         <value>密钥的大小，以位为单位的对称算法支持。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  Rijndael 的有效密钥大小是 128、 192 和 256 位。  
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Mode">
@@ -619,11 +634,14 @@
       <Docs>
         <summary>获取或设置对称算法的运算模式。</summary>
         <value>对称算法的运算模式。 默认值为 <see cref="F:System.Security.Cryptography.CipherMode.CBC" />。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  请参阅<xref:System.Security.Cryptography.CipherMode>枚举为特定模式的描述。  
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Padding">
@@ -652,11 +670,14 @@
       <Docs>
         <summary>获取或设置对称算法中使用的填充模式。</summary>
         <value>对称算法中使用的填充模式。 默认值为 <see cref="F:System.Security.Cryptography.PaddingMode.PKCS7" />。</value>
-        <remarks><format type="text/markdown"><![CDATA[  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  请参阅<xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType>填充有关详细信息的属性。  
- ]]></format></remarks>
+
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>
