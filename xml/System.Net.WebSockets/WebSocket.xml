@@ -1,5 +1,5 @@
 <Type Name="WebSocket" FullName="System.Net.WebSockets.WebSocket">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0c85ff3155323e1db39d44046c0731b0366d8a5a" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58740774" /></Metadata><TypeSignature Language="C#" Value="public abstract class WebSocket : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9c1c5108774100f002bf12c340681bbe55c54915" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558547" /></Metadata><TypeSignature Language="C#" Value="public abstract class WebSocket : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebSocket extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.WebSockets.WebSocket" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class WebSocket&#xA;Implements IDisposable" />
@@ -30,7 +30,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>在 WebSocket 升级完成后， WebSocket 类允许应用程序发送并接收数据。</summary>
+    <summary>WebSocket 类允许应用程序在 WebSocket 升级完成后发送和接收数据。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -136,9 +136,9 @@
       </Parameters>
       <Docs>
         <param name="closeStatus">指示关闭 WebSocket 连接的原因。</param>
-        <param name="statusDescription">指定一个可读的解释为连接关闭的原因。</param>
-        <param name="cancellationToken">标记可用于传播取消操作的通知。</param>
-        <summary>使用在 <see href="http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-06">WebSocket 协议规范</see>第 7 节中定义的关闭握手关闭作为异步操作的 WebSocket 连接。</summary>
+        <param name="statusDescription">指定人类可读的说明，解释关闭连接的原因。</param>
+        <param name="cancellationToken">可用于传播有关应取消操作的通知的令牌。</param>
+        <summary>使用在 <see href="https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-06">WebSocket 协议规范</see>第 7 节中定义的关闭握手关闭作为异步操作的 WebSocket 连接。</summary>
         <returns>表示异步操作的任务对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -146,7 +146,7 @@
 ## Remarks  
  不会阻止此操作。 返回<xref:System.Threading.Tasks.Task>WebSocket 关闭后，将完成对象。  
   
- 此方法关闭 WebSocket 连接使用中定义的关闭握手[WebSocket 协议规范](http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-06)第 7 节。  
+ 此方法关闭 WebSocket 连接使用中定义的关闭握手[WebSocket 协议规范](https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-06)第 7 节。  
   
  ]]></format>
         </remarks>
@@ -185,9 +185,9 @@
       </Parameters>
       <Docs>
         <param name="closeStatus">指示关闭 WebSocket 连接的原因。</param>
-        <param name="statusDescription">允许应用程序指定一个可读的解释为连接关闭的原因。</param>
-        <param name="cancellationToken">标记可用于传播取消操作的通知。</param>
-        <summary>启动或完成 <see href="http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-06">WebSocket 协议规范第 7 节</see>中定义的关闭握手。</summary>
+        <param name="statusDescription">允许应用程序指定一个用户易懂的解释作为连接关闭的原因。</param>
+        <param name="cancellationToken">可用于传播有关应取消操作的通知的令牌。</param>
+        <summary>启动或完成 <see href="https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-06">WebSocket 协议规范第 7 节</see>中定义的关闭握手。</summary>
         <returns>表示异步操作的任务对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -227,7 +227,7 @@
         <ReturnType>System.Nullable&lt;System.Net.WebSockets.WebSocketCloseStatus&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>指示远程终结点初始关闭握手的原因。</summary>
+        <summary>指示远程终结点启动关闭握手的原因。</summary>
         <value>返回 <see cref="T:System.Net.WebSockets.WebSocketCloseStatus" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -267,7 +267,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>允许该远程终结点描述连接已关闭的原因。</summary>
+        <summary>允许远程终结点描述关闭该连接的原因。</summary>
         <value>返回 <see cref="T:System.String" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -400,12 +400,12 @@
         <Parameter Name="keepAliveInterval" Type="System.TimeSpan" Index="3" FrameworkAlternate="netcore-2.1;netcore-2.2;netcore-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="stream">To be added.</param>
-        <param name="isServer">To be added.</param>
-        <param name="subProtocol">To be added.</param>
-        <param name="keepAliveInterval">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="stream">用于连接的流。</param>
+        <param name="isServer"><see langword="true" /> 若要指示它是服务器端的连接;<see langword="false" />如果它是客户端。</param>
+        <param name="subProtocol">议定时创建连接时所使用的子协议。</param>
+        <param name="keepAliveInterval">保持活动状态的时间间隔，若要使用，或<see cref="F:System.Threading.Timeout.InfiniteTimeSpan" />禁用 keep-alive。</param>
+        <summary>创建一个新<see cref="T:System.Net.WebSockets.WebSocket" />对指定的流，它表示 web 套接字连接进行操作的对象。</summary>
+        <returns>新的 web 套接字。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -519,7 +519,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>用于清理 ASP.NET 和自我托管实现的非托管资源。</summary>
+        <summary>用于清理 ASP.NET 和自承载实现的非托管资源。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
