@@ -1,5 +1,5 @@
 <Type Name="ReaderWriterLockSlim" FullName="System.Threading.ReaderWriterLockSlim">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="0fee7c4885e8d1b579011bb73bd7952ec0ae6dc1" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58696272" /></Metadata><TypeSignature Language="C#" Value="public class ReaderWriterLockSlim : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ba249b86c9e38696438690262b884a5bac97ef6b" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65155813" /></Metadata><TypeSignature Language="C#" Value="public class ReaderWriterLockSlim : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReaderWriterLockSlim extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ReaderWriterLockSlim" />
   <TypeSignature Language="VB.NET" Value="Public Class ReaderWriterLockSlim&#xA;Implements IDisposable" />
@@ -226,7 +226,7 @@
   
  该示例包含将添加到缓存、 从缓存中删除和从缓存中读取的简单方法。 为了演示超时，该示例包含仅当它可以指定超时内执行此操作将添加到缓存的方法。  
   
- 为了演示可升级模式，该示例包括检索与键关联的值的方法，并将其与新值进行比较。 如果值保持不变，该方法将返回状态指示没有变化。 没有值找到的密钥，将插入键/值对。 如果值已更改，将其更新。 可升级模式允许从读取访问权限来写入访问权限，根据需要而无需导致死锁升级的线程。  
+ 为了演示可升级模式，该示例包括检索与键关联的值的方法，并将其与新值进行比较。 如果值保持不变，该方法将返回状态指示没有变化。 如果键不找到任何值，则插入键/值对。 如果值已更改，将其更新。 可升级模式允许从读取访问权限来写入访问权限，根据需要而无需导致死锁升级的线程。  
   
  该示例包含嵌套的枚举，用于指定演示了可升级模式的方法的返回值。  
   
@@ -280,7 +280,7 @@
       </Parameters>
       <Docs>
         <param name="recursionPolicy">枚举值之一，用于指定锁定递归策略。</param>
-        <summary>初始化 <see cref="T:System.Threading.ReaderWriterLockSlim" /> 类的新实例，从而指定锁定递归策略。</summary>
+        <summary>在指定锁定递归策略的情况下初始化 <see cref="T:System.Threading.ReaderWriterLockSlim" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -430,10 +430,10 @@
         </remarks>
         <exception cref="T:System.Threading.SynchronizationLockException"><see cref="P:System.Threading.ReaderWriterLockSlim.WaitingReadCount" /> 大于零。  
   
-- 或 - 
+或 
  <see cref="P:System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount" /> 大于零。  
   
-- 或 - 
+或 
  <see cref="P:System.Threading.ReaderWriterLockSlim.WaitingWriteCount" /> 大于零。</exception>
       </Docs>
     </Member>
@@ -500,11 +500,11 @@
         </remarks>
         <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，并且当前线程在已持有读取锁定时已尝试获取读取锁定。  
   
-- 或 - 
+或 
 <see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，并且当前线程在已持有写入锁定时已尝试获取读取锁定。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限值很大，因此应用程序应该不会遇到此异常。</exception>
+或 
+递归数将超出该计数器的容量。 此限值很大，因此应用程序应该不会遇到此异常。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -575,13 +575,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入任意模式的锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入锁在任何模式下。  
   
-- 或 - 
-当前线程已进入读取模式，因此尝试进入可升级模式将有可能导致死锁。  
+或 
+当前线程已进入读取的模式，因此尝试进入可升级模式将导致死锁的可能性。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -642,13 +642,13 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入任意模式的锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入锁在任何模式下。  
   
-- 或 - 
+或 
 当前线程已进入读取模式且尚无写锁定，因此尝试进入写入模式锁定状态将有可能导致死锁。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -706,7 +706,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.SynchronizationLockException">当前线程未进入读取模式锁定状态。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">当前线程未进入锁在读取模式下。</exception>
       </Docs>
     </Member>
     <Member MemberName="ExitUpgradeableReadLock">
@@ -769,7 +769,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.SynchronizationLockException">当前线程未进入可升级模式锁定状态。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">当前线程不具有进入可升级模式的锁定。</exception>
       </Docs>
     </Member>
     <Member MemberName="ExitWriteLock">
@@ -826,7 +826,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.SynchronizationLockException">当前线程未进入写入模式锁定状态。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">当前线程不具有进入写入模式的锁定。</exception>
       </Docs>
     </Member>
     <Member MemberName="IsReadLockHeld">
@@ -1205,7 +1205,7 @@
         <Parameter Name="millisecondsTimeout" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="millisecondsTimeout">等待的毫秒数；或为 -1 (<see cref="F:System.Threading.Timeout.Infinite" />)，表示无限期等待。</param>
+        <param name="millisecondsTimeout">等待的毫秒数，或为 -1 (<see cref="F:System.Threading.Timeout.Infinite" />)，表示无限期等待。</param>
         <summary>尝试进入读取模式锁定状态，可以选择整数超时时间。</summary>
         <returns>如果调用线程已进入读取模式，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -1225,11 +1225,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入该锁。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 的值为负，但不等于 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，这是唯一允许使用的负值。</exception>
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">值<paramref name="millisecondsTimeout" />为负，但不等于<see cref="F:System.Threading.Timeout.Infinite" />(-1)，这是唯一允许的值为负。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -1286,14 +1286,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入该锁。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值为负，但不等于 -1 毫秒，这是唯一允许使用的负值。  
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">值<paramref name="timeout" />为负，但不等于-1 毫秒，这是唯一允许的值为负。  
   
-- 或 - 
-<paramref name="timeout" /> 的值大于 <see cref="F:System.Int32.MaxValue" /> 毫秒。</exception>
+或 
+值<paramref name="timeout" />大于<see cref="F:System.Int32.MaxValue" />毫秒为单位。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -1341,7 +1341,7 @@
         <Parameter Name="millisecondsTimeout" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="millisecondsTimeout">等待的毫秒数；或为 -1 (<see cref="F:System.Threading.Timeout.Infinite" />)，表示无限期等待。</param>
+        <param name="millisecondsTimeout">等待的毫秒数，或为 -1 (<see cref="F:System.Threading.Timeout.Infinite" />)，表示无限期等待。</param>
         <summary>尝试进入可升级模式锁定状态，可以选择超时时间。</summary>
         <returns>如果调用线程已进入可升级模式，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -1361,14 +1361,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入该锁。  
   
-- 或 - 
-初始状态下，当前线程进入读取模式锁定状态，因此尝试进入可升级模式将有可能导致死锁。  
+或 
+当前线程的锁最初进入读取模式，并因此尝试进入可升级模式将导致死锁的可能性。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 的值为负，但不等于 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，这是唯一允许使用的负值。</exception>
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">值<paramref name="millisecondsTimeout" />为负，但不等于<see cref="F:System.Threading.Timeout.Infinite" />(-1)，这是唯一允许的值为负。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -1425,17 +1425,17 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入该锁。  
   
-- 或 - 
-初始状态下，当前线程进入读取模式锁定状态，因此尝试进入可升级模式将有可能导致死锁。  
+或 
+当前线程的锁最初进入读取模式，并因此尝试进入可升级模式将导致死锁的可能性。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值为负，但不等于 -1 毫秒，这是唯一允许使用的负值。  
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">值<paramref name="timeout" />为负，但不等于-1 毫秒，这是唯一允许的值为负。  
   
-- 或 - 
-<paramref name="timeout" /> 的值大于 <see cref="F:System.Int32.MaxValue" /> 毫秒。</exception>
+或 
+值<paramref name="timeout" />大于<see cref="F:System.Int32.MaxValue" />毫秒为单位。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -1483,7 +1483,7 @@
         <Parameter Name="millisecondsTimeout" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="millisecondsTimeout">等待的毫秒数；或为 -1 (<see cref="F:System.Threading.Timeout.Infinite" />)，表示无限期等待。</param>
+        <param name="millisecondsTimeout">等待的毫秒数，或为 -1 (<see cref="F:System.Threading.Timeout.Infinite" />)，表示无限期等待。</param>
         <summary>尝试进入写入模式锁定状态，可以选择超时时间。</summary>
         <returns>如果调用线程已进入写入模式，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
@@ -1513,14 +1513,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入该锁。  
   
-- 或 - 
-初始状态下，当前线程进入读取模式锁定状态，因此尝试进入写入模式将有可能导致死锁。  
+或 
+当前线程的锁最初进入读取模式，并因此尝试进入写入模式将导致死锁的可能性。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout" /> 的值为负，但不等于 <see cref="F:System.Threading.Timeout.Infinite" /> (-1)，这是唯一允许使用的负值。</exception>
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">值<paramref name="millisecondsTimeout" />为负，但不等于<see cref="F:System.Threading.Timeout.Infinite" />(-1)，这是唯一允许的值为负。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>
@@ -1573,17 +1573,17 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" /> 属性为 <see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />，而且当前线程已进入锁定状态。  
+        <exception cref="T:System.Threading.LockRecursionException"><see cref="P:System.Threading.ReaderWriterLockSlim.RecursionPolicy" />属性是<see cref="F:System.Threading.LockRecursionPolicy.NoRecursion" />而且当前线程已进入该锁。  
   
-- 或 - 
-初始状态下，当前线程进入读取模式锁定状态，因此尝试进入写入模式将有可能导致死锁。  
+或 
+当前线程的锁最初进入读取模式，并因此尝试进入写入模式将导致死锁的可能性。  
   
-- 或 - 
-递归数将超出计数器的容量。 此限制数值很大，因此任何情况下应用程序都不应遇到此情况。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> 的值为负，但不等于 -1 毫秒，这是唯一允许使用的负值。  
+或 
+递归数将超出该计数器的容量。 因此很大的应用程序应永远不会遇到此限制。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">值<paramref name="timeout" />为负，但不等于-1 毫秒，这是唯一允许的值为负。  
   
-- 或 - 
-<paramref name="timeout" /> 的值大于 <see cref="F:System.Int32.MaxValue" /> 毫秒。</exception>
+或 
+值<paramref name="timeout" />大于<see cref="F:System.Int32.MaxValue" />毫秒为单位。</exception>
         <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.ReaderWriterLockSlim" /> 对象已释放。</exception>
       </Docs>
     </Member>

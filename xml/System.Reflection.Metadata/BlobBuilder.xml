@@ -1,5 +1,5 @@
 <Type Name="BlobBuilder" FullName="System.Reflection.Metadata.BlobBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="d66229860e3f5e8b2f9a4ff085bb3410b5550d1a" /><Meta Name="ms.sourcegitcommit" Value="434f60616a9793fa8436744549fc856e94f7a648" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="08/25/2018" /><Meta Name="ms.locfileid" Value="39959077" /></Metadata><TypeSignature Language="C#" Value="public class BlobBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="ea2a4628800ba0921240de267cdda967425075df" /><Meta Name="ms.sourcegitcommit" Value="7555c040bd7cb677d117ddf03e647aa7bf625bfc" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/08/2019" /><Meta Name="ms.locfileid" Value="65440116" /></Metadata><TypeSignature Language="C#" Value="public class BlobBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BlobBuilder extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.Metadata.BlobBuilder" />
   <TypeSignature Language="VB.NET" Value="Public Class BlobBuilder" />
@@ -10,6 +10,7 @@
     <AssemblyVersion>1.4.1.0</AssemblyVersion>
     <AssemblyVersion>1.4.2.0</AssemblyVersion>
     <AssemblyVersion>1.4.3.0</AssemblyVersion>
+    <AssemblyVersion>1.4.4.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -37,9 +38,10 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="capacity" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="capacity">To be added.</param>
@@ -60,17 +62,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="alignment" Type="System.Int32" />
+        <Parameter Name="alignment" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="alignment">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="AllocateChunk">
@@ -86,12 +90,13 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Metadata.BlobBuilder</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="minimalSize" Type="System.Int32" />
+        <Parameter Name="minimalSize" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="minimalSize">To be added.</param>
@@ -113,6 +118,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -136,6 +142,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -159,18 +166,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="other" Type="System.Reflection.Metadata.BlobBuilder" />
+        <Parameter Name="other" Type="System.Reflection.Metadata.BlobBuilder" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="other">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <param name="other">一个<see cref="T:System.Reflection.Metadata.BlobBuilder" />实例要使用此比较。</param>
+        <summary>将使用另一个此编写器的当前内容进行比较。</summary>
+        <returns><see langword="true" /> 如果相等，则，否则为<see langword="false" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">内容不可用;已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="Count">
@@ -186,6 +195,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -209,6 +219,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -232,6 +243,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -255,6 +267,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -278,15 +291,17 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Metadata.BlobBuilder+Blobs</ReturnType>
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>返回表示内容生成器的所有 blob 的序列。</summary>
+        <returns>Blob 的序列。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">内容不可用;已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="LinkPrefix">
@@ -302,17 +317,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="prefix" Type="System.Reflection.Metadata.BlobBuilder" />
+        <Parameter Name="prefix" Type="System.Reflection.Metadata.BlobBuilder" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="prefix">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="prefix" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="LinkSuffix">
@@ -328,17 +346,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="suffix" Type="System.Reflection.Metadata.BlobBuilder" />
+        <Parameter Name="suffix" Type="System.Reflection.Metadata.BlobBuilder" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="suffix">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="suffix" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="PadTo">
@@ -354,17 +375,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="position" Type="System.Int32" />
+        <Parameter Name="position" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="position">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReserveBytes">
@@ -380,18 +403,21 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.Metadata.Blob</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="byteCount">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>保留字节的连续块。</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="byteCount" /> 为负数。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToArray">
@@ -407,6 +433,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
@@ -416,6 +443,7 @@
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">内容不可用;已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToArray">
@@ -431,13 +459,14 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="start" Type="System.Int32" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="start" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="start">To be added.</param>
@@ -445,6 +474,8 @@
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定的范围<paramref name="start" />和<paramref name="byteCount" />缓冲区内容的边界。</exception>
+        <exception cref="T:System.InvalidOperationException">内容不可用;已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToImmutableArray">
@@ -460,6 +491,7 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Immutable.ImmutableArray&lt;System.Byte&gt;</ReturnType>
@@ -469,6 +501,7 @@
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">内容不可用;已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="ToImmutableArray">
@@ -484,13 +517,14 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Immutable.ImmutableArray&lt;System.Byte&gt;</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="start" Type="System.Int32" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="start" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="start">To be added.</param>
@@ -498,6 +532,8 @@
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定的范围<paramref name="start" />和<paramref name="byteCount" />缓冲区内容的边界。</exception>
+        <exception cref="T:System.InvalidOperationException">内容不可用;已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="TryWriteBytes">
@@ -513,20 +549,24 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.IO.Stream" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="source" Type="System.IO.Stream" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="source">To be added.</param>
         <param name="byteCount">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <summary>尝试将一个字节序列写入到生成器。 返回值指示已成功写入的字节数。</summary>
+        <returns>已成功从写入的字节数<paramref name="source" />。</returns>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="byteCount" /> 为负数。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBoolean">
@@ -542,17 +582,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">要写入的值。</param>
+        <summary>写入<see cref="T:System.Boolean" />到生成器的值。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteByte">
@@ -568,17 +610,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Byte" />
+        <Parameter Name="value" Type="System.Byte" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">要写入的值。</param>
+        <summary>写入<see cref="T:System.Byte" />到生成器的值。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBytes">
@@ -594,17 +638,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="buffer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="buffer">要写入的字节数组。</param>
+        <summary>将字节数组的内容写入到生成器。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBytes">
@@ -620,17 +667,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Collections.Immutable.ImmutableArray&lt;System.Byte&gt;" />
+        <Parameter Name="buffer" Type="System.Collections.Immutable.ImmutableArray&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="buffer">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="buffer">要写入的数组。</param>
+        <summary>一个不可变的字节数组的内容写入到生成器。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBytes">
@@ -646,19 +696,22 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Byte" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Byte" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <param name="byteCount">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="byteCount">出现次数<paramref name="value" />编写。</param>
+        <summary>将指定的数量的匹配项的一个字节值写入到生成器。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="byteCount" /> 为负数。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBytes">
@@ -673,19 +726,23 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte*" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte*" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
-        <param name="byteCount">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="byteCount">要写入的字节数。</param>
+        <summary>向生成器从缓冲区写入指定的字节数。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="byteCount" /> 为负数。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBytes">
@@ -701,21 +758,25 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Byte[]" />
-        <Parameter Name="start" Type="System.Int32" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="start" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="2" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
         <param name="start">To be added.</param>
-        <param name="byteCount">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="byteCount">要写入的字节数。</param>
+        <summary>写入指定的字节数组到生成器中指定索引处开始的字节数。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定的范围<paramref name="start" />并<paramref name="byteCount" />的边界的<paramref name="buffer" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteBytes">
@@ -731,21 +792,25 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="buffer" Type="System.Collections.Immutable.ImmutableArray&lt;System.Byte&gt;" />
-        <Parameter Name="start" Type="System.Int32" />
-        <Parameter Name="byteCount" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Collections.Immutable.ImmutableArray&lt;System.Byte&gt;" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="start" Type="System.Int32" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="byteCount" Type="System.Int32" Index="2" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="buffer">To be added.</param>
         <param name="start">To be added.</param>
-        <param name="byteCount">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="byteCount">要写入的字节数。</param>
+        <summary>写入指定的生成器的不可变数组的指定索引处开始的字节数。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定的范围<paramref name="start" />并<paramref name="byteCount" />的边界的<paramref name="buffer" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteCompressedInteger">
@@ -761,17 +826,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">要写入的值。</param>
+        <summary>实现压缩编码由 ECMA-335-II 章 23.2 定义的无符号的整数：Blob 和签名。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" /> 不能表示为压缩的无符号整数。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteCompressedSignedInteger">
@@ -787,17 +855,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">要写入的值。</param>
+        <summary>实现压缩带符号的整数定义的 ECMA-335-II 章 23.2 编码方式：Blob 和签名。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" /> 不能表示为一个压缩的有符号整数。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteConstant">
@@ -813,17 +884,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">要写入的常量值。</param>
+        <summary>将一个常量值 （请参阅 ECMA-335 第 II 部分 22.9） 在当前位置。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> 不是类型的常量。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写;它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteContentTo">
@@ -839,17 +913,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.IO.Stream" />
+        <Parameter Name="destination" Type="System.IO.Stream" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">内容不可用，已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteContentTo">
@@ -865,17 +942,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Reflection.Metadata.BlobBuilder" />
+        <Parameter Name="destination" Type="System.Reflection.Metadata.BlobBuilder" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">内容不可用，已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteContentTo">
@@ -891,17 +971,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Reflection.Metadata.BlobWriter" RefType="ref" />
+        <Parameter Name="destination" Type="System.Reflection.Metadata.BlobWriter" RefType="ref" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="destination">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> 是默认值 (<see cref="T:System.Reflection.Metadata.BlobWriter" />)。</exception>
+        <exception cref="T:System.InvalidOperationException">内容不可用，已使用另一个链接生成器。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteDateTime">
@@ -917,17 +1000,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.DateTime" />
+        <Parameter Name="value" Type="System.DateTime" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteDecimal">
@@ -943,17 +1028,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Decimal" />
+        <Parameter Name="value" Type="System.Decimal" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteDouble">
@@ -969,17 +1056,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="value" Type="System.Double" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteGuid">
@@ -995,17 +1084,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Guid" />
+        <Parameter Name="value" Type="System.Guid" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteInt16">
@@ -1021,17 +1112,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int16" />
+        <Parameter Name="value" Type="System.Int16" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteInt16BE">
@@ -1047,17 +1140,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int16" />
+        <Parameter Name="value" Type="System.Int16" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteInt32">
@@ -1073,17 +1168,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteInt32BE">
@@ -1099,17 +1196,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteInt64">
@@ -1125,17 +1224,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Int64" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteReference">
@@ -1151,19 +1252,21 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="reference" Type="System.Int32" />
-        <Parameter Name="isSmall" Type="System.Boolean" />
+        <Parameter Name="reference" Type="System.Int32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="isSmall" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="reference">To be added.</param>
-        <param name="isSmall">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="reference">堆偏移量或表的行号。</param>
+        <param name="isSmall"><see langword="true" /> 将编码为一个 16 位整数; 的引用<see langword="false" />将编码为一个 32 位整数。</param>
+        <summary>编写到堆 （堆偏移量） 或表 （行号） 的引用。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteSByte">
@@ -1179,17 +1282,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.SByte" />
+        <Parameter Name="value" Type="System.SByte" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteSerializedString">
@@ -1205,17 +1310,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>将字符串中 SerString 写入设置的格式 （请参阅 ECMA-335-II 23.3 自定义属性）。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteSingle">
@@ -1231,17 +1338,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Single" />
+        <Parameter Name="value" Type="System.Single" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUInt16">
@@ -1257,17 +1366,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.UInt16" />
+        <Parameter Name="value" Type="System.UInt16" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUInt16BE">
@@ -1283,17 +1394,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.UInt16" />
+        <Parameter Name="value" Type="System.UInt16" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUInt32">
@@ -1309,17 +1422,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.UInt32" />
+        <Parameter Name="value" Type="System.UInt32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUInt32BE">
@@ -1335,17 +1450,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.UInt32" />
+        <Parameter Name="value" Type="System.UInt32" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUInt64">
@@ -1361,17 +1478,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.UInt64" />
+        <Parameter Name="value" Type="System.UInt64" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUserString">
@@ -1387,17 +1506,19 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>将字符串写入用户字符串 (#US) 堆格式 (请参阅 ECMA-335-II 24.2.4 #US 和 #Blob 堆)。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUTF16">
@@ -1413,17 +1534,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Char[]" />
+        <Parameter Name="value" Type="System.Char[]" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>将写入位于当前位置的 UTF16 (小 endian) 经过编码的字符数组。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUTF16">
@@ -1439,17 +1563,20 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
         <param name="value">To be added.</param>
-        <summary>To be added.</summary>
+        <summary>将写入位于当前位置的 UTF16 (小 endian) 编码的字符串。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteUTF8">
@@ -1464,19 +1591,22 @@
         <AssemblyVersion>1.4.1.0</AssemblyVersion>
         <AssemblyVersion>1.4.2.0</AssemblyVersion>
         <AssemblyVersion>1.4.3.0</AssemblyVersion>
+        <AssemblyVersion>1.4.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.String" />
-        <Parameter Name="allowUnpairedSurrogates" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
+        <Parameter Name="allowUnpairedSurrogates" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <param name="allowUnpairedSurrogates">To be added.</param>
-        <summary>To be added.</summary>
+        <param name="value">常量值。</param>
+        <param name="allowUnpairedSurrogates"><see langword="true" /> 要编码为指定; 不成对的代理<see langword="false" />它们替换为 U + FFFD 字符。</param>
+        <summary>将当前位置的 UTF8 编码的字符串。</summary>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException">生成器不是可写，它已与另一个链接。</exception>
       </Docs>
     </Member>
   </Members>
