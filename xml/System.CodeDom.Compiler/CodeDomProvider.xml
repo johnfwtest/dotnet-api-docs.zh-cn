@@ -1,5 +1,5 @@
 <Type Name="CodeDomProvider" FullName="System.CodeDom.Compiler.CodeDomProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6a5cbc748c27e04d813a6551133350a431e76e76" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58732762" /></Metadata><TypeSignature Language="C#" Value="public abstract class CodeDomProvider : System.ComponentModel.Component" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="10d65c2c6acb521c573e2db518ec80d92ba50400" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65002887" /></Metadata><TypeSignature Language="C#" Value="public abstract class CodeDomProvider : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeDomProvider extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CodeDomProvider" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class CodeDomProvider&#xA;Inherits Component" />
@@ -30,12 +30,12 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>为 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现提供基类。 此类为抽象类。</summary>
+    <summary>提供了基类的类<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />实现。 此类为抽象类。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 一个<xref:System.CodeDom.Compiler.CodeDomProvider>可以用于创建和检索的代码生成器和代码编译器的实例。 代码生成器可用于以特定的语言生成代码，而代码编译器可用于将代码编译为程序集。  
+ 一个<xref:System.CodeDom.Compiler.CodeDomProvider>可以用于创建和检索的代码生成器和代码编译器的实例。 代码生成器可以用于采用特定语言生成代码和代码编译器可用于将代码编译为程序集。  
   
 > [!NOTE]
 >  在[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]的方法可在代码生成器和代码编译器可以直接从代码提供程序。 不需要调用<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>或<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>若要访问的方法，以及这些方法被标记为已过时。 这适用于预先存在的以及新的代码提供程序实现。  
@@ -136,10 +136,10 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="options">一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> 对象，它指示编译的设置。</param>
-        <param name="compilationUnits"><see cref="T:System.CodeDom.CodeCompileUnit" /> 类型数组，指示要编译的代码。</param>
-        <summary>基于包含在 <see cref="N:System.CodeDom" /> 对象的指定数组中的 <see cref="T:System.CodeDom.CodeCompileUnit" /> 树，使用指定的编译器设置编译程序集。</summary>
-        <returns>一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" /> 对象，它指示编译的结果。</returns>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CompilerParameters" />对象，它指示编译的设置。</param>
+        <param name="compilationUnits">类型的数组<see cref="T:System.CodeDom.CodeCompileUnit" />，该值指示要编译的代码。</param>
+        <summary>基于程序集编译成<see cref="N:System.CodeDom" />树中指定的数组包含<see cref="T:System.CodeDom.CodeCompileUnit" />对象，使用指定的编译器设置。</summary>
+        <returns>一个<see cref="T:System.CodeDom.Compiler.CompilerResults" />对象，它指示编译的结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -150,7 +150,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />与使用代码编译器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码编译器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.CodeDom.Compiler.CompilerParameters" />
         <altmember cref="T:System.CodeDom.CodeCompileUnit" />
@@ -190,10 +190,10 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="options">一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> 对象，它指示编译的设置。</param>
-        <param name="fileNames">要编译的文件名称的数组。</param>
-        <summary>从包含在指定文件中的源代码，使用指定的编译器设置编译程序集。</summary>
-        <returns>指示编译结果的 <see cref="T:System.CodeDom.Compiler.CompilerResults" /> 对象。</returns>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CompilerParameters" />对象，它指示编译的设置。</param>
+        <param name="fileNames">要编译的文件的名称的数组。</param>
+        <summary>使用指定的编译器设置从源代码中指定的文件，包含程序集编译成。</summary>
+        <returns>一个<see cref="T:System.CodeDom.Compiler.CompilerResults" />对象，它指示编译结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -204,7 +204,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />与使用代码编译器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码编译器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.CodeDom.Compiler.CompilerParameters" />
         <altmember cref="T:System.CodeDom.Compiler.CompilerResults" />
@@ -243,10 +243,10 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="options">一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" /> 对象，它指示此编译的编译器设置。</param>
-        <param name="sources">要编译的源代码字符串的数组。</param>
-        <summary>从包含源代码的字符串的指定数组，使用指定的编译器设置编译程序集。</summary>
-        <returns>指示编译结果的 <see cref="T:System.CodeDom.Compiler.CompilerResults" /> 对象。</returns>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CompilerParameters" />对象，它指示此编译的编译器设置。</param>
+        <param name="sources">若要编译的源代码字符串的数组。</param>
+        <summary>将编译指定的字符串包含源代码，使用指定的编译器设置数组中的程序集。</summary>
+        <returns>一个<see cref="T:System.CodeDom.Compiler.CompilerResults" />对象，它指示编译结果。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -257,7 +257,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />与使用代码编译器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码编译器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.CodeDom.Compiler.CompilerParameters" />
         <altmember cref="T:System.CodeDom.Compiler.CompilerResults" />
@@ -296,8 +296,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在派生类中重写时，创建一个新的代码编译器。</summary>
-        <returns><see cref="T:System.CodeDom.Compiler.ICodeCompiler" />，可用于编译基于 <see cref="N:System.CodeDom" /> 的源代码表示形式。</returns>
+        <summary>当在派生类中重写，创建新的代码编译器。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeCompiler" /> ，可用于编译的<see cref="N:System.CodeDom" />基于源代码表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -335,9 +335,9 @@
         <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">要为其创建转义标识符的字符串。</param>
-        <summary>创建指定值的转义标识符。</summary>
-        <returns>值的转义标识符。</returns>
+        <param name="value">要为其创建转义的标识符字符串。</param>
+        <summary>创建指定的值的转义的标识符。</summary>
+        <returns>转义的标识符的值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -349,7 +349,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
       </Docs>
     </Member>
@@ -359,7 +359,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在派生类中重写时，创建一个新的代码生成器。</summary>
+        <summary>当在派生类中重写时创建新的代码生成器。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CreateGenerator">
@@ -395,8 +395,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在派生类中重写时，创建一个新的代码生成器。</summary>
-        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />，可用于生成基于 <see cref="N:System.CodeDom" /> 的源代码表示形式。</returns>
+        <summary>当在派生类中重写时创建新的代码生成器。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />可用于生成<see cref="N:System.CodeDom" />基于源代码表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -440,9 +440,9 @@
         <Parameter Name="output" Type="System.IO.TextWriter" />
       </Parameters>
       <Docs>
-        <param name="output">用于输出的 <see cref="T:System.IO.TextWriter" />。</param>
-        <summary>在派生类中重写时，使用指定的 <see cref="T:System.IO.TextWriter" /> 创建新的代码生成器以用于输出。</summary>
-        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />，可用于生成基于 <see cref="N:System.CodeDom" /> 的源代码表示形式。</returns>
+        <param name="output">一个<see cref="T:System.IO.TextWriter" />使用到输出。</param>
+        <summary>当在派生类中重写时创建新的代码生成器使用指定<see cref="T:System.IO.TextWriter" />输出。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />可用于生成<see cref="N:System.CodeDom" />基于源代码表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -489,9 +489,9 @@
         <Parameter Name="fileName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="fileName">要输出到的文件名。</param>
-        <summary>在派生类中重写时，使用指定文件名创建新的代码生成器以用于输出。</summary>
-        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />，可用于生成基于 <see cref="N:System.CodeDom" /> 的源代码表示形式。</returns>
+        <param name="fileName">要输出到的文件名称。</param>
+        <summary>当在派生类中重写时创建新的代码生成器使用指定的文件名的输出。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />可用于生成<see cref="N:System.CodeDom" />基于源代码表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -538,8 +538,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在派生类中重写时，创建一个新的代码分析器。</summary>
-        <returns><see cref="T:System.CodeDom.Compiler.ICodeParser" />，可用于分析源代码。 此基实现总是返回 <see langword="null" />。</returns>
+        <summary>当在派生类中重写，创建一个新的代码分析器。</summary>
+        <returns><see cref="T:System.CodeDom.Compiler.ICodeParser" />可用于分析源代码。 基实现始终返回<see langword="null" />。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -549,7 +549,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>获取指定语言的 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实例。</summary>
+        <summary>获取<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />指定语言的实例。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="CreateProvider">
@@ -584,8 +584,8 @@
       </Parameters>
       <Docs>
         <param name="language">语言名称。</param>
-        <summary>获取指定语言的 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实例。</summary>
-        <returns>为指定语言名称实现的 CodeDOM 提供程序。</returns>
+        <summary>获取<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />指定语言的实例。</summary>
+        <returns>CodeDOM 提供程序为指定的语言名称实现。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -619,7 +619,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="language" /> 在此计算机上没有已配置的提供程序。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="language" />不具有此计算机上配置的提供程序。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="language" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
@@ -658,9 +658,9 @@
       </Parameters>
       <Docs>
         <param name="language">语言名称。</param>
-        <param name="providerOptions">来自配置文件的提供程序选项的集合。</param>
-        <summary>获取指定的语言和提供程序选项的 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实例。</summary>
-        <returns>为指定语言名称和选项实现的 CodeDOM 提供程序。</returns>
+        <param name="providerOptions">从配置文件的提供程序选项的集合。</param>
+        <summary>获取<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />针对指定的语言和提供程序选项的实例。</summary>
+        <returns>CodeDOM 提供程序为指定的语言名称和选项实现。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -711,9 +711,9 @@
         <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">要为其生成有效标识符的字符串。</param>
-        <summary>为指定的值创建有效标识符。</summary>
-        <returns>指定值的有效标识符。</returns>
+        <param name="value">要为其生成有效的标识符字符串。</param>
+        <summary>创建指定的值的有效标识符。</summary>
+        <returns>指定的值是有效的标识符。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -725,7 +725,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
       </Docs>
     </Member>
@@ -758,8 +758,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取用于当前语言的源代码文件的默认文件扩展名。</summary>
-        <value>与当前语言的源文件扩展名相对应的文件扩展名。 此基实现总是返回 <see cref="F:System.String.Empty" />。</value>
+        <summary>获取默认文件扩展名用于中的当前语言的源代码文件。</summary>
+        <value>文件扩展名的当前语言的源文件扩展名相对应。 基实现始终返回<see cref="F:System.String.Empty" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -807,10 +807,10 @@
         <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="compileUnit">要为其生成代码的 <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
-        <param name="writer">输出代码将被发送到的 <see cref="T:System.IO.TextWriter" />。</param>
-        <param name="options"><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，指示用于生成代码的选项。</param>
-        <summary>为指定的代码文档对象模型 (CodeDOM) 编译单元生成代码，并使用指定的选项将代码发送到指定的文本编写器。</summary>
+        <param name="compileUnit">一个<see cref="T:System.CodeDom.CodeCompileUnit" />要为其生成代码。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />输出代码将被发送到。</param>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，该值指示要用于生成代码的选项。</param>
+        <summary>为指定代码文档对象模型 (CodeDOM) 编译单元生成代码并将其发送到指定的文本编写器，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -830,7 +830,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.IO.TextWriter" />
         <altmember cref="T:System.CodeDom.CodeExpression" />
@@ -865,10 +865,10 @@
         <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="expression">一个 <see cref="T:System.CodeDom.CodeExpression" /> 对象，指示要为其生成代码的表达式。</param>
-        <param name="writer">输出代码将被发送到的 <see cref="T:System.IO.TextWriter" />。</param>
-        <param name="options"><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，指示用于生成代码的选项。</param>
-        <summary>为指定的代码文档对象模型 (CodeDOM) 表达式生成代码，并使用指定的选项将代码发送到指定的文本编写器。</summary>
+        <param name="expression">一个<see cref="T:System.CodeDom.CodeExpression" />对象，它指示要为其生成代码的表达式。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />代码发送到哪个输出。</param>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，该值指示要用于生成代码的选项。</param>
+        <summary>为指定的代码文档对象模型 (CodeDOM) 表达式生成代码并将其发送到指定的文本编写器，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -879,7 +879,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.IO.TextWriter" />
         <altmember cref="T:System.CodeDom.CodeExpression" />
@@ -914,10 +914,10 @@
         <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="member">一个 <see cref="T:System.CodeDom.CodeTypeMember" /> 对象，指示要为其生成代码的成员。</param>
-        <param name="writer">输出代码将被发送到的 <see cref="T:System.IO.TextWriter" />。</param>
-        <param name="options"><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，指示用于生成代码的选项。</param>
-        <summary>为指定的代码文档对象模型 (CodeDOM) 成员声明生成代码，并使用指定的选项将代码发送到指定的文本编写器。</summary>
+        <param name="member">一个<see cref="T:System.CodeDom.CodeTypeMember" />对象，它指示要为其生成代码的成员。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />代码发送到哪个输出。</param>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，该值指示要用于生成代码的选项。</param>
+        <summary>为指定代码文档对象模型 (CodeDOM) 成员声明生成代码并将其发送到指定的文本编写器，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -934,7 +934,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法不会在派生类中被重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法不被派生类中重写。</exception>
         <altmember cref="T:System.IO.TextWriter" />
         <altmember cref="T:System.CodeDom.CodeTypeMember" />
         <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
@@ -967,10 +967,10 @@
         <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="codeNamespace">一个 <see cref="T:System.CodeDom.CodeNamespace" /> 对象，指示要为其生成代码的命名空间。</param>
-        <param name="writer">输出代码将被发送到的 <see cref="T:System.IO.TextWriter" />。</param>
-        <param name="options"><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，指示用于生成代码的选项。</param>
-        <summary>为指定的代码文档对象模型 (CodeDOM) 命名空间生成代码，并使用指定的选项将代码发送到指定的文本编写器。</summary>
+        <param name="codeNamespace">一个<see cref="T:System.CodeDom.CodeNamespace" />对象，它指示要为其生成代码的命名空间。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />代码发送到哪个输出。</param>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，该值指示要用于生成代码的选项。</param>
+        <summary>为指定的代码文档对象模型 (CodeDOM) 命名空间生成代码并将其发送到指定的文本编写器，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -981,7 +981,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.IO.TextWriter" />
         <altmember cref="T:System.CodeDom.CodeNamespace" />
@@ -1016,10 +1016,10 @@
         <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="statement"><see cref="T:System.CodeDom.CodeStatement" />，包含要为其生成代码的 CodeDOM 元素。</param>
-        <param name="writer">输出代码将被发送到的 <see cref="T:System.IO.TextWriter" />。</param>
-        <param name="options"><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，指示用于生成代码的选项。</param>
-        <summary>为指定的代码文档对象模型 (CodeDOM) 语句生成代码，并使用指定的选项将代码发送到指定的文本编写器。</summary>
+        <param name="statement">一个<see cref="T:System.CodeDom.CodeStatement" />包含要为其生成代码的 CodeDOM 元素。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />代码发送到哪个输出。</param>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，该值指示要用于生成代码的选项。</param>
+        <summary>为指定的代码文档对象模型 (CodeDOM) 语句生成代码并将其发送到指定的文本编写器，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1030,7 +1030,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.IO.TextWriter" />
         <altmember cref="T:System.CodeDom.CodeStatement" />
@@ -1065,10 +1065,10 @@
         <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" Index="2" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="codeType">一个 <see cref="T:System.CodeDom.CodeTypeDeclaration" /> 对象，指示要为其生成代码的类型。</param>
-        <param name="writer">输出代码将被发送到的 <see cref="T:System.IO.TextWriter" />。</param>
-        <param name="options"><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，指示用于生成代码的选项。</param>
-        <summary>为指定的代码文档对象模型 (CodeDOM) 类型声明生成代码，并使用指定的选项将代码发送到指定的文本编写器。</summary>
+        <param name="codeType">一个<see cref="T:System.CodeDom.CodeTypeDeclaration" />对象，它指示要为其生成代码的类型。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />代码发送到哪个输出。</param>
+        <param name="options">一个<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />，该值指示要用于生成代码的选项。</param>
+        <summary>为指定代码文档对象模型 (CodeDOM) 类型声明生成代码并将其发送到指定的文本编写器，使用指定的选项。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1079,7 +1079,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.IO.TextWriter" />
         <altmember cref="T:System.CodeDom.CodeTypeDeclaration" />
@@ -1115,8 +1115,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回此计算机的语言提供程序和编译器配置设置。</summary>
-        <returns>一个 <see cref="T:System.CodeDom.Compiler.CompilerInfo" /> 类型的数组，表示所有配置的 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现的设置。</returns>
+        <summary>返回此计算机的提供程序和编译器配置设置的语言。</summary>
+        <returns>类型的数组<see cref="T:System.CodeDom.Compiler.CompilerInfo" />表示的所有配置设置<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />实现。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1175,8 +1175,8 @@
       </Parameters>
       <Docs>
         <param name="language">语言名称。</param>
-        <summary>返回指定语言的语言提供程序和编译器配置设置。</summary>
-        <returns>一个 <see cref="T:System.CodeDom.Compiler.CompilerInfo" /> 对象，由已配置的 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现的设置填充。</returns>
+        <summary>返回指定的语言的提供程序和编译器配置设置的语言。</summary>
+        <returns>一个<see cref="T:System.CodeDom.Compiler.CompilerInfo" />对象使用的已配置的设置填充<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />实现。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1200,7 +1200,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Configuration.ConfigurationException"><paramref name="language" /> 在此计算机上没有已配置的提供程序。</exception>
+        <exception cref="T:System.Configuration.ConfigurationException"><paramref name="language" />不具有此计算机上配置的提供程序。</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="language" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
@@ -1236,8 +1236,8 @@
       </Parameters>
       <Docs>
         <param name="type">要为其检索类型转换器的对象类型。</param>
-        <summary>获取指定数据类型的 <see cref="T:System.ComponentModel.TypeConverter" />。</summary>
-        <returns>指定类型的 <see cref="T:System.ComponentModel.TypeConverter" />；如果无法找到指定类型的 <see cref="T:System.ComponentModel.TypeConverter" />，则为 <see langword="null" />。</returns>
+        <summary>获取<see cref="T:System.ComponentModel.TypeConverter" />为指定的数据类型。</summary>
+        <returns>一个<see cref="T:System.ComponentModel.TypeConverter" />指定的类型，或<see langword="null" />如果<see cref="T:System.ComponentModel.TypeConverter" />无法找到指定的类型。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1281,8 +1281,8 @@
       </Parameters>
       <Docs>
         <param name="extension">文件扩展名。</param>
-        <summary>返回与指定文件扩展名关联的语言名称，如 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 编译器配置节中所配置的那样。</summary>
-        <returns>与文件扩展名关联的语言名称，如 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 编译器配置设置中所配置的那样。</returns>
+        <summary>返回与指定的文件扩展名，关联的语言名称，如中所配置<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />编译器配置节。</summary>
+        <returns>关联文件扩展名，如中所配置的语言名称<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />编译器配置设置。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1306,7 +1306,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Configuration.ConfigurationException"><paramref name="extension" /> 在此计算机上没有已配置的语言提供程序。</exception>
+        <exception cref="T:System.Configuration.ConfigurationException"><paramref name="extension" />不具有此计算机上配置的语言提供程序。</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="extension" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限。</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">对于直接调用方的完全信任。 此成员不能由部分信任的代码使用。</permission>
@@ -1341,9 +1341,9 @@
         <Parameter Name="type" Type="System.CodeDom.CodeTypeReference" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="type">指示返回类型的 <see cref="T:System.CodeDom.CodeTypeReference" />。</param>
-        <summary>获取由指定的 <see cref="T:System.CodeDom.CodeTypeReference" /> 指示的类型。</summary>
-        <returns>指定类型的文本表示形式，针对此代码生成器生成代码时所用的语言进行了格式设置。 例如，在 Visual Basic 中，为 <see cref="T:System.CodeDom.CodeTypeReference" /> 类型传入 <see cref="T:System.Int32" /> 将返回“Integer”。</returns>
+        <param name="type">一个<see cref="T:System.CodeDom.CodeTypeReference" />，该值指示要返回的类型。</param>
+        <summary>获取指示指定的类型<see cref="T:System.CodeDom.CodeTypeReference" />。</summary>
+        <returns>此代码生成器生成代码的语言格式的文本表示形式指定的类型。 在 Visual Basic 中，例如，传入<see cref="T:System.CodeDom.CodeTypeReference" />为<see cref="T:System.Int32" />类型将返回"Integer"。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1354,7 +1354,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
       </Docs>
     </Member>
@@ -1390,8 +1390,8 @@
       </Parameters>
       <Docs>
         <param name="extension">文件扩展名。</param>
-        <summary>测试文件扩展名是否在计算机上配置了关联的 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现。</summary>
-        <returns>如果为指定的文件扩展名配置了 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
+        <summary>测试是否都有一个关联的文件扩展名<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />在计算机上配置的实现。</summary>
+        <returns><see langword="true" /> 如果<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />实现是已配置为指定的文件扩展名; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1451,8 +1451,8 @@
       </Parameters>
       <Docs>
         <param name="language">语言名称。</param>
-        <summary>测试某语言是否已在计算机上配置了 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现。</summary>
-        <returns>如果为指定语言配置了 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> 实现，则为 <see langword="true" />；否则，为 <see langword="false" />。</returns>
+        <summary>测试某语言是否已<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />在计算机上配置的实现。</summary>
+        <returns><see langword="true" /> 如果<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />实现是已配置为指定的语言; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1505,9 +1505,9 @@
         <Parameter Name="value" Type="System.String" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="value">要验证为一个有效标识符的值。</param>
-        <summary>返回一个值，该值指示指定的值是否是当前语言的有效标识符。</summary>
-        <returns>如果 <paramref name="value" /> 参数是有效标识符，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="value">要验证为有效的标识符的值。</param>
+        <summary>返回一个值，该值指示指定的值是否为当前语言的有效标识符。</summary>
+        <returns><see langword="true" /> 如果<paramref name="value" />参数是有效的标识符; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1519,7 +1519,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>重写时<see cref="M:System.CodeDom.Compiler.CodeDomProvider.IsValidIdentifier(System.String)" />派生类中设计此方法应返回<see langword="true" />才值适用的语言规则，并不与关键字冲突。  
   
 如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
@@ -1580,9 +1580,9 @@
         <Parameter Name="codeStream" Type="System.IO.TextReader" Index="0" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="codeStream">用于读取待分析代码的 <see cref="T:System.IO.TextReader" /> 对象。</param>
-        <summary>将从指定文本流读取的代码编译进 <see cref="T:System.CodeDom.CodeCompileUnit" />。</summary>
-        <returns><see cref="T:System.CodeDom.CodeCompileUnit" />，包含已分析代码的表示形式。</returns>
+        <param name="codeStream">一个<see cref="T:System.IO.TextReader" />用于读取待分析代码的对象。</param>
+        <summary>将从到指定的文本流中读取的代码编译<see cref="T:System.CodeDom.CodeCompileUnit" />。</summary>
+        <returns>一个<see cref="T:System.CodeDom.CodeCompileUnit" />，其中包含已分析的代码的表示形式。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1593,7 +1593,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建一个分析器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" />与预先存在的提供程序使用代码分析程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeParser" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码分析器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.CodeDom.CodeCompileUnit" />
         <altmember cref="T:System.IO.TextReader" />
@@ -1608,7 +1608,7 @@
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Supports(System.CodeDom.Compiler.GeneratorSupport)" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="VB.NET" Value="Public Overridable Function Supports (supports As GeneratorSupport) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Supports(System::CodeDom::Compiler::GeneratorSupport supports);" FrameworkAlternate="xamarinmac-3.0" />
-      <MemberSignature Language="F#" Value="abstract member Supports : System.CodeDom.Compiler.GeneratorSupport -&gt; bool&#xA;override this.Supports : System.CodeDom.Compiler.GeneratorSupport -&gt; bool" Usage="codeDomProvider.Supports generatorSupport" FrameworkAlternate="netframework-1.1;dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;netcore-2.0;netcore-2.1;netcore-2.2;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member Supports : System.CodeDom.Compiler.GeneratorSupport -&gt; bool&#xA;override this.Supports : System.CodeDom.Compiler.GeneratorSupport -&gt; bool" Usage="codeDomProvider.Supports generatorSupport" FrameworkAlternate="netframework-1.1;netcore-3.0" />
       <MemberSignature Language="VB.NET" Value="Public Overridable Function Supports (supports As GeneratorSupport) As Boolean" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="F#" Value="abstract member Supports : System.CodeDom.Compiler.GeneratorSupport -&gt; bool&#xA;override this.Supports : System.CodeDom.Compiler.GeneratorSupport -&gt; bool" Usage="codeDomProvider.Supports supports" FrameworkAlternate="xamarinmac-3.0" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Supports(System.CodeDom.Compiler.GeneratorSupport)" FrameworkAlternate="xamarinmac-3.0" />
@@ -1632,10 +1632,10 @@
         <Parameter Name="supports" Type="System.CodeDom.Compiler.GeneratorSupport" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="generatorSupport">一个 <see cref="T:System.CodeDom.Compiler.GeneratorSupport" /> 对象，指示要验证的代码生成支持类型。</param>
+        <param name="generatorSupport">一个<see cref="T:System.CodeDom.Compiler.GeneratorSupport" />对象，它指示的代码生成支持，若要验证的类型。</param>
         <param name="supports">To be added.</param>
-        <summary>返回一个值，该值指示是否提供了指定的代码生成支持。</summary>
-        <returns>如果提供了指定的代码生成支持，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>提供返回值，该值指示是否支持指定的代码生成。</summary>
+        <returns><see langword="true" /> 如果指定的代码生成支持，提供;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1647,7 +1647,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotImplementedException">此方法和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> 方法均不在派生类中重写。</exception>
+        <exception cref="T:System.NotImplementedException">此方法都不也不<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />派生类中重写方法。</exception>
         <block subset="none" type="overrides"><para>如果重写此方法，必须不调用基类的相应的方法。 基类方法使用过时的派生类中创建的生成器<see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />与使用代码生成器的预先存在的提供程序的兼容性的方法。 基类方法然后调用中的等效方法<see cref="T:System.CodeDom.Compiler.ICodeGenerator" />实现来执行此功能。 将获取<see cref="T:System.NotImplementedException" />如果不使用代码生成器的代码提供调用基类方法。</para></block>
         <altmember cref="T:System.CodeDom.Compiler.GeneratorSupport" />
       </Docs>

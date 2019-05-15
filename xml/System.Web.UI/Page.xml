@@ -1,5 +1,5 @@
 <Type Name="Page" FullName="System.Web.UI.Page">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="259c5b548e972415628fbfb6cbd4405d0df5dad8" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58714018" /></Metadata><TypeSignature Language="C#" Value="public class Page : System.Web.UI.TemplateControl, System.Web.IHttpHandler" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f7da855dd9e065dcf1c6b12f1f0f4be59707e9e4" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64994962" /></Metadata><TypeSignature Language="C#" Value="public class Page : System.Web.UI.TemplateControl, System.Web.IHttpHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Page extends System.Web.UI.TemplateControl implements class System.Web.IHttpHandler" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.Page" />
   <TypeSignature Language="VB.NET" Value="Public Class Page&#xA;Inherits TemplateControl&#xA;Implements IHttpHandler" />
@@ -49,7 +49,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>表示从 ASP.NET Web 应用程序的宿主服务器请求的 .aspx 文件（又称为 Web 窗体页）。</summary>
+    <summary>表示一个从托管 ASP.NET Web 应用程序的服务器请求的 .aspx 文件（也称为 Web 窗体页）。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -148,9 +148,9 @@
       <Docs>
         <param name="templateName">要添加的内容模板的名称。</param>
         <param name="template">内容模板</param>
-        <summary>在页初始化过程中调用，用于创建传递给母版页的内容（来自内容控件）的集合，前提是当前页或母版页引用母版页。</summary>
+        <summary>若要创建传递给母版页的内容 （来自内容控件） 的集合，如果当前页或母版页引用母版页的页面初始化过程中调用。</summary>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.Web.HttpException">已存在相同名称的内容模板。</exception>
+        <exception cref="T:System.Web.HttpException">已存在具有相同名称的内容模板。</exception>
         <altmember cref="T:System.Web.UI.MasterPage" />
         <altmember cref="T:System.Web.UI.WebControls.Content" />
         <related type="Article" href="https://msdn.microsoft.com/library/4e53eedf-8304-4e7a-aed1-691a2623b28b">ASP.NET 主机页面概述</related>
@@ -162,7 +162,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>为异步页注册开始和结束事件处理程序委托。</summary>
+        <summary>注册开始和结束事件处理程序委托的异步页面。</summary>
         <altmember cref="T:System.Web.UI.MasterPage" />
         <altmember cref="T:System.Web.UI.WebControls.Content" />
         <related type="Article" href="https://msdn.microsoft.com/library/4e53eedf-8304-4e7a-aed1-691a2623b28b">ASP.NET 主机页面概述</related>
@@ -194,9 +194,9 @@
         <Parameter Name="endHandler" Type="System.Web.EndEventHandler" Index="1" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" /> 方法的委托。</param>
-        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" /> 方法的委托。</param>
-        <summary>为异步页注册不需要状态信息的开始和结束事件处理程序委托。</summary>
+        <param name="beginHandler">委托<see cref="T:System.Web.BeginEventHandler" />方法。</param>
+        <param name="endHandler">委托<see cref="T:System.Web.EndEventHandler" />方法。</param>
+        <summary>注册不需要为异步页的状态信息的开始和结束事件处理程序委托。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -224,10 +224,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see langword="&lt;async&gt;" /> 页指令没有设置为 <see langword="true" />。  
+        <exception cref="T:System.InvalidOperationException"><see langword="&lt;async&gt;" /> Page 指令未设置为<see langword="true" />。  
   
-- 或 - 
-<see cref="M:System.Web.UI.Page.AddOnPreRenderCompleteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" /> 方法在 <see cref="E:System.Web.UI.Control.PreRender" /> 事件之后调用。</exception>
+或 
+<see cref="M:System.Web.UI.Page.AddOnPreRenderCompleteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />方法之后调用<see cref="E:System.Web.UI.Control.PreRender" />事件。</exception>
         <exception cref="T:System.ArgumentNullException"><see cref="P:System.Web.UI.PageAsyncTask.BeginHandler" /> 或 <see cref="P:System.Web.UI.PageAsyncTask.EndHandler" /> 为 <see langword="null" />。</exception>
         <altmember cref="T:System.Web.UI.MasterPage" />
         <altmember cref="T:System.Web.UI.WebControls.Content" />
@@ -256,8 +256,8 @@
         <Parameter Name="state" Type="System.Object" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" /> 方法的委托。</param>
-        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" /> 方法的委托。</param>
+        <param name="beginHandler">委托<see cref="T:System.Web.BeginEventHandler" />方法。</param>
+        <param name="endHandler">委托<see cref="T:System.Web.EndEventHandler" />方法。</param>
         <param name="state">一个包含事件处理程序的状态信息的对象。</param>
         <summary>为异步页注册开始和结束事件处理程序委托。</summary>
         <remarks>
@@ -287,10 +287,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see langword="&lt;async&gt;" /> 页指令没有设置为 <see langword="true" />。  
+        <exception cref="T:System.InvalidOperationException"><see langword="&lt;async&gt;" /> Page 指令未设置为<see langword="true" />。  
   
-- 或 - 
-<see cref="M:System.Web.UI.Page.AddOnPreRenderCompleteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" /> 方法在 <see cref="E:System.Web.UI.Control.PreRender" /> 事件之后调用。</exception>
+或 
+<see cref="M:System.Web.UI.Page.AddOnPreRenderCompleteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />方法之后调用<see cref="E:System.Web.UI.Control.PreRender" />事件。</exception>
         <exception cref="T:System.ArgumentNullException"><see cref="P:System.Web.UI.PageAsyncTask.BeginHandler" /> 或 <see cref="P:System.Web.UI.PageAsyncTask.EndHandler" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
@@ -319,8 +319,8 @@
         <Parameter Name="virtualFileDependencies" Type="System.Object" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="virtualFileDependencies">一个包含文件名列表的 <see cref="T:System.Object" />。</param>
-        <summary>添加组成当前页的依赖文件的列表。 此方法由 ASP.NET 页框架在内部使用，不应从代码直接使用。</summary>
+        <param name="virtualFileDependencies"><see cref="T:System.Object" />包含文件名的列表。</param>
+        <summary>添加组成当前页的依赖文件的列表。 此方法由 ASP.NET 页面框架在内部使用和不应在代码中直接使用。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -361,7 +361,7 @@
       </ReturnValue>
       <Docs>
         <summary>为当前 Web 请求获取 <see cref="T:System.Web.HttpApplicationState" /> 对象。</summary>
-        <value><see cref="T:System.Web.HttpApplicationState" /> 类中的当前数据。</value>
+        <value>中的当前数据<see cref="T:System.Web.HttpApplicationState" />类。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -402,11 +402,11 @@
         <Parameter Name="extraData" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="context">一个具有关于当前请求的信息的 <see cref="T:System.Web.HttpContext" />。</param>
+        <param name="context"><see cref="T:System.Web.HttpContext" />有关当前请求的信息。</param>
         <param name="cb">回调方法。</param>
-        <param name="extraData">使用与 ASP 请求相同的方式处理请求所需的任何额外数据。</param>
-        <summary>启动对 Active Server Page (ASP) 资源的请求。 提供此方法是为了与旧式 ASP 应用程序兼容。</summary>
-        <returns><see cref="T:System.IAsyncResult" /> 对象。</returns>
+        <param name="extraData">使用与 ASP 请求相同的方式处理请求所需任何额外数据。</param>
+        <summary>启动对 Active Server Page (ASP) 资源的请求。 与旧式 ASP 应用程序的兼容性提供此方法。</summary>
+        <returns>一个 <see cref="T:System.IAsyncResult" /> 对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -443,8 +443,8 @@
         <Parameter Name="result" Type="System.IAsyncResult" />
       </Parameters>
       <Docs>
-        <param name="result">由该请求生成的 ASP 页。</param>
-        <summary>终止对 Active Server Page (ASP) 资源的请求。 提供此方法是为了与旧式 ASP 应用程序兼容。</summary>
+        <param name="result">生成请求的 ASP 页。</param>
+        <summary>终止对 Active Server Page (ASP) 资源的请求。 与旧式 ASP 应用程序的兼容性提供此方法。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -484,8 +484,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置一个值，它指示页是否可在单线程单元 (STA) 线程上执行。</summary>
-        <value>如果页支持 Active Server Pages (ASP)，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>设置一个值，该值指示页可以在单线程单元 (STA) 线程上执行。</summary>
+        <value><see langword="true" /> 如果页支持 Active Server Pages (ASP) 代码;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -526,8 +526,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置一个指示对页进行同步还是异步处理的值。</summary>
-        <value>如果异步处理页，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>设置一个值，该值指示是否同步或异步处理页。</summary>
+        <value><see langword="true" /> 如果以异步方式; 处理页否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -567,8 +567,8 @@
         <Parameter Name="extraData" Type="System.Object" Index="2" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="context">该请求的 <see cref="T:System.Web.HttpContext" />。</param>
-        <param name="callback">用于通知处理完成时间的回调方法。</param>
+        <param name="context"><see cref="T:System.Web.HttpContext" />请求。</param>
+        <param name="callback">要在过程完成时通知的回调方法。</param>
         <param name="extraData">异步方法的状态数据。</param>
         <summary>开始处理异步页请求。</summary>
         <returns>引用该异步请求的 <see cref="T:System.IAsyncResult" />。</returns>
@@ -600,7 +600,7 @@
         <Parameter Name="result" Type="System.IAsyncResult" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="result">一个引用挂起的异步请求的 <see cref="T:System.IAsyncResult" />。</param>
+        <param name="result"><see cref="T:System.IAsyncResult" />引用挂起的异步请求。</param>
         <summary>结束处理异步页请求。</summary>
         <remarks>To be added.</remarks>
       </Docs>
@@ -633,8 +633,8 @@
         <ReturnType>System.TimeSpan</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，它指示处理异步任务时使用的超时间隔。</summary>
-        <value>一个 <see cref="T:System.TimeSpan" />，包含完成异步任务所允许的时间间隔。 默认时间间隔为 45 秒。</value>
+        <summary>获取或设置一个值，该值在处理异步任务时使用的超时间隔。</summary>
+        <value>一个<see cref="T:System.TimeSpan" />，其中包含的异步任务完成的允许的时间间隔。 默认时间间隔为 45 秒。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -687,8 +687,8 @@
         <ReturnType>System.Web.UI.Control</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置页中用于执行回发的控件。</summary>
-        <value>用于执行回发的控件。</value>
+        <summary>获取或设置用于执行回发的页面中的控件。</summary>
+        <value>用于执行回发控件。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -721,8 +721,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置指示是否对页输出进行缓冲处理的值。</summary>
-        <value>如果对页输出进行缓冲处理，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>设置一个值，该值指示是否缓冲页面输出。</summary>
+        <value><see langword="true" /> 如果页输出进行缓冲处理;，否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -762,8 +762,8 @@
         <ReturnType>System.Web.Caching.Cache</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与该页驻留的应用程序关联的 <see cref="T:System.Web.Caching.Cache" /> 对象。</summary>
-        <value>与该页的应用程序关联的 <see cref="T:System.Web.Caching.Cache" />。</value>
+        <summary>获取<see cref="T:System.Web.Caching.Cache" />与该页驻留在其中应用程序关联的对象。</summary>
+        <value><see cref="T:System.Web.Caching.Cache" />与页面的应用程序关联。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -780,7 +780,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">未创建 <see cref="T:System.Web.Caching.Cache" /> 的实例。</exception>
+        <exception cref="T:System.Web.HttpException">实例<see cref="T:System.Web.Caching.Cache" />未创建。</exception>
         <altmember cref="T:System.Web.Caching.Cache" />
         <related type="Article" href="https://msdn.microsoft.com/library/206f977d-7860-4d20-bdd5-c3b3d8479f3d(v=vs.100)">缓存应用程序数据</related>
         <related type="Article" href="https://msdn.microsoft.com/library/5ec28012-4972-4dc3-b3e8-9d20401fe11d">在 ASP.NET 中缓存简介</related>
@@ -803,8 +803,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取请求的 URL 的查询字符串部分。</summary>
-        <value>请求的 URL 的查询字符串部分。</value>
+        <summary>获取所请求的 URL 的查询字符串部分。</summary>
+        <value>所请求的 URL 查询字符串部分。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -832,7 +832,7 @@
         <ReturnType>System.Web.UI.ClientScriptManager</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取用于管理脚本、注册脚本和向页添加脚本的 <see cref="T:System.Web.UI.ClientScriptManager" /> 对象。</summary>
+        <summary>获取<see cref="T:System.Web.UI.ClientScriptManager" />对象，用于管理、 注册，并将脚本添加到页。</summary>
         <value>一个 <see cref="T:System.Web.UI.ClientScriptManager" /> 对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -884,8 +884,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值使您得以重写对浏览器功能的自动检测，并指定针对特定的浏览器客户端页的呈现方式。</summary>
-        <value><see cref="T:System.String" />，指定要重写的浏览器功能。</value>
+        <summary>获取或设置一个值，使您可以重写的浏览器功能自动检测并指定如何将在页面呈现的特定浏览器客户端。</summary>
+        <value>一个<see cref="T:System.String" />，它指定你想要重写的浏览器功能。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -955,8 +955,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置当前 <see cref="T:System.Web.UI.Page" /> 的代码页标识符。</summary>
-        <value>一个表示当前 <see cref="T:System.Web.UI.Page" /> 的代码页标识符的整数。</value>
+        <summary>设置当前的代码页标识符<see cref="T:System.Web.UI.Page" />。</summary>
+        <value>一个整数，表示当前的代码页标识符<see cref="T:System.Web.UI.Page" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -997,7 +997,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置与页关联的 <see cref="T:System.Web.HttpResponse" /> 对象的 HTTP MIME 类型。</summary>
+        <summary>设置的 HTTP MIME 类型<see cref="T:System.Web.HttpResponse" />与页关联的对象。</summary>
         <value>与当前页关联的 HTTP MIME 类型。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1033,8 +1033,8 @@
         <ReturnType>System.Web.HttpContext</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与该页关联的 <see cref="T:System.Web.HttpContext" /> 对象。</summary>
-        <value><see cref="T:System.Web.HttpContext" /> 对象，它包含与当前页关联的信息。</value>
+        <summary>获取<see cref="T:System.Web.HttpContext" />与页关联的对象。</summary>
+        <value><see cref="T:System.Web.HttpContext" />对象，其中包含与当前页关联的信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1082,7 +1082,7 @@
       <Docs>
         <param name="tw">用于创建 <see cref="T:System.IO.TextWriter" /> 的 <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
         <summary>创建 <see cref="T:System.Web.UI.HtmlTextWriter" /> 对象以呈现该页的内容。</summary>
-        <returns><see cref="T:System.Web.UI.HtmlTextWriter" /> 或 <see cref="T:System.Web.UI.Html32TextWriter" />。</returns>
+        <returns><see cref="T:System.Web.UI.HtmlTextWriter" />或<see cref="T:System.Web.UI.Html32TextWriter" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1128,9 +1128,9 @@
       </Parameters>
       <Docs>
         <param name="tw">用于创建 <see cref="T:System.IO.TextWriter" /> 的 <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
-        <param name="writerType">要创建的文本编写器的类型。</param>
-        <summary>创建指定的 <see cref="T:System.Web.UI.HtmlTextWriter" /> 对象以呈现该页的内容。</summary>
-        <returns>一个呈现页内容的 <see cref="T:System.Web.UI.HtmlTextWriter" />。</returns>
+        <param name="writerType">若要创建的文本编写器的类型。</param>
+        <summary>创建指定<see cref="T:System.Web.UI.HtmlTextWriter" />对象以呈现页面的内容。</summary>
+        <returns><see cref="T:System.Web.UI.HtmlTextWriter" />呈现页的内容。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1139,7 +1139,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException"><paramref name="writerType" /> 参数被设置为无效值。</exception>
+        <exception cref="T:System.Web.HttpException"><paramref name="writerType" />参数设置为无效的类型。</exception>
         <altmember cref="T:System.Web.UI.HtmlTextWriter" />
         <altmember cref="M:System.Web.UI.Page.CreateHtmlTextWriter(System.IO.TextWriter)" />
       </Docs>
@@ -1176,8 +1176,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置与页关联的 <see cref="T:System.Threading.Thread" /> 对象的区域性 ID。</summary>
-        <value>一个有效的区域性 ID。</value>
+        <summary>设置的区域性 ID<see cref="T:System.Threading.Thread" />与页关联的对象。</summary>
+        <value>一个有效的区域性 id。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1217,7 +1217,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>执行 RAD 设计器所需的 <see cref="T:System.Web.UI.Page" /> 类的实例的任何初始化。 此方法仅在设计时使用。</summary>
+        <summary>执行的实例的任何初始化<see cref="T:System.Web.UI.Page" />RAD 设计器所需的类。 只能在设计时使用此方法。</summary>
         <remarks>To be added.</remarks>
         <altmember cref="M:System.Web.UI.UserControl.DesignerInitialize" />
         <related type="Article" href="https://msdn.microsoft.com/library/4881917b-628f-4689-b872-472e4f8a4e3a">设计时体系结构</related>
@@ -1247,8 +1247,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回使用 POST 或 GET 命令回发到页的数据的 <see cref="T:System.Collections.Specialized.NameValueCollection" />。</summary>
-        <returns>包含窗体数据的 <see cref="T:System.Collections.Specialized.NameValueCollection" /> 对象。 如果回发使用 POST 命令，则从 <see cref="P:System.Web.UI.Page.Context" /> 对象返回窗体信息。 如果回发使用 GET 命令，则返回查询字符串信息。 如果是第一次请求该页，则返回 <see langword="null" />。</returns>
+        <summary>返回<see cref="T:System.Collections.Specialized.NameValueCollection" />使用 POST 或 GET 命令的页面回发数据。</summary>
+        <returns>包含窗体数据的 <see cref="T:System.Collections.Specialized.NameValueCollection" /> 对象。 如果回发使用 POST 命令，从返回的窗体信息<see cref="P:System.Web.UI.Page.Context" />对象。 如果回发使用 GET 命令，则返回的查询字符串信息。 如果第一次请求该页<see langword="null" />返回。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1283,8 +1283,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回使用 POST 或 GET 命令发送到该页的名称/值数据集合，而不执行 ASP.NET 在该请求的请求验证。</summary>
-        <returns>包含未验证的窗体数据的对象。</returns>
+        <summary>为使用 POST 或 GET 命令，而不执行 ASP.NET 请求验证请求的页面返回已发布的数据的名称值的集合。</summary>
+        <returns>一个包含未经验证的表单数据的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1329,8 +1329,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示页面验证回发事件，还是验证回调事件。</summary>
-        <value><see langword="true" />（如果该页验证回发和回调事件）； 否则为 <see langword="false" />。默认值是 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示页是否验证回发和回调事件。</summary>
+        <value><see langword="true" /> 如果该页验证回发和回调事件;否则为<see langword="false" />。默认值是<see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1346,7 +1346,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.EnableEventValidation" /> 属性是在初始化页后设置的。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.EnableEventValidation" />初始化页后设置属性。</exception>
         <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String)" />
         <altmember cref="T:System.Web.UI.SupportsEventValidationAttribute" />
         <related type="Article" href="https://msdn.microsoft.com/library/fa2aa14d-a461-492e-9a79-c990904613ef">验证 ASP.NET 控件</related>
@@ -1375,8 +1375,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示当前页请求结束时该页是否保持其视图状态以及它包含的任何服务器控件的视图状态。</summary>
-        <value>如果该页保持其视图状态，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示该页保持其视图状态，并且任何服务器的视图状态控制它包含当前页面请求结束时。</summary>
+        <value><see langword="true" /> 如果该页保持其视图状态;否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1434,8 +1434,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示从客户端回发页时，ASP.NET 是否应在页的视图状态下检查消息身份验证代码 (MAC)。</summary>
-        <value>如果应对视图状态进行 MAC 检查和编码，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示 ASP.NET 是否应检查消息身份验证代码 (MAC) 页的视图状态中，从客户端回发页面时。</summary>
+        <value><see langword="true" /> 如果应对视图状态进行 MAC 检查和编码;否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1487,8 +1487,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置错误页，在发生未处理的页异常的事件时请求浏览器将被重定向到该页。</summary>
-        <value>浏览器被重定向到的错误页。</value>
+        <summary>获取或设置请求的浏览器将重定向到发生未处理的页异常时的错误页。</summary>
+        <value>将浏览器重定向到错误页。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1519,7 +1519,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>开始执行异步任务。</summary>
+        <summary>开始一个异步任务的执行。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1543,7 +1543,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">异步任务中有异常。</exception>
+        <exception cref="T:System.Web.HttpException">没有异步任务中的异常。</exception>
         <altmember cref="M:System.Web.UI.Page.RegisterAsyncTask(System.Web.UI.PageAsyncTask)" />
         <altmember cref="T:System.Web.UI.PageAsyncTask" />
         <altmember cref="M:System.Web.UI.Page.ProcessRequest(System.Web.HttpContext)" />
@@ -1575,8 +1575,8 @@
         <ReturnType>System.Collections.ArrayList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置当前的 <see cref="T:System.Web.HttpResponse" /> 对象所依赖的文件的数组。</summary>
-        <value>当前的 <see cref="T:System.Web.HttpResponse" /> 对象所依赖的文件的数组。</value>
+        <summary>设置文件的数组的当前<see cref="T:System.Web.HttpResponse" />对象所依赖。</summary>
+        <value>文件的数组的当前<see cref="T:System.Web.HttpResponse" />对象所依赖。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1612,7 +1612,7 @@
       </Parameters>
       <Docs>
         <param name="id">要查找的控件的标识符。</param>
-        <summary>在页命名容器中搜索带指定标识符的服务器控件。</summary>
+        <summary>搜索具有指定标识符的服务器控件在页命名容器。</summary>
         <returns>指定的控件，如果指定的控件不存在则为 <see langword="null" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1656,7 +1656,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取页的 HTML 窗体。</summary>
-        <value>与页关联的 <see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> 对象。</value>
+        <value><see cref="T:System.Web.UI.HtmlControls.HtmlForm" />与页关联的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1686,7 +1686,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在页生成过程中根据页的声明性特性初始化控件树。</summary>
+        <summary>基于页面的声明性页生成过程中初始化控件树。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1716,10 +1716,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>获取位于数据绑定上下文堆栈顶部的数据项。</summary>
-        <returns>位于数据绑定上下文堆栈顶部的对象。</returns>
+        <summary>获取数据绑定上下文堆栈顶部的数据项。</summary>
+        <returns>在数据绑定上下文堆栈顶部的对象。</returns>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.InvalidOperationException">没有用于该页的数据绑定上下文。</exception>
+        <exception cref="T:System.InvalidOperationException">没有数据绑定上下文的页。</exception>
       </Docs>
     </Member>
     <Member MemberName="GetPostBackClientEvent">
@@ -1818,7 +1818,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>返回一个可以在客户端事件中使用的字符串，以便回发到服务器。 此方法已被否决。 请改用 <see cref="Overload:System.Web.UI.ClientScriptManager.GetPostBackEventReference" /> 类中的 <see cref="T:System.Web.UI.ClientScriptManager" /> 方法。</summary>
+        <summary>返回一个可以在客户端事件中使用的字符串，以便回发到服务器。 此方法已被否决。 使用<see cref="Overload:System.Web.UI.ClientScriptManager.GetPostBackEventReference" />中的方法<see cref="T:System.Web.UI.ClientScriptManager" />类。</summary>
         <altmember cref="T:System.Web.UI.ClientScriptManager" />
         <altmember cref="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String)" />
       </Docs>
@@ -1851,14 +1851,14 @@
         <Parameter Name="control" Type="System.Web.UI.Control" />
       </Parameters>
       <Docs>
-        <param name="control">要在服务器上处理回发的服务器控件。</param>
+        <param name="control">要处理回发的服务器上的服务器控件。</param>
         <summary>返回一个可以在客户端事件中使用的字符串，以便回发到服务器。 由指定的 <see cref="T:System.Web.UI.Control" /> 对象定义的字符串。</summary>
         <returns>一个字符串，将其视为客户端脚本时，将启动回发。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法已被否决。 请改用 <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A> 类中的 <xref:System.Web.UI.ClientScriptManager> 方法。  
+ 此方法已被否决。 使用<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>中的方法<xref:System.Web.UI.ClientScriptManager>类。  
   
    
   
@@ -1908,7 +1908,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此方法已被否决。 请改用 <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A> 类中的 <xref:System.Web.UI.ClientScriptManager> 方法。  
+ 此方法已被否决。 使用<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>中的方法<xref:System.Web.UI.ClientScriptManager>类。  
   
    
   
@@ -1945,8 +1945,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检索由运行时生成的 <see cref="T:System.Web.UI.Page" /> 对象生成的哈希代码。 这种哈希代码对于 <see cref="T:System.Web.UI.Page" /> 对象的控件层次结构是唯一的。</summary>
-        <returns>运行时生成的哈希代码。 默认值为 0。</returns>
+        <summary>检索由生成的哈希代码<see cref="T:System.Web.UI.Page" />在生成的对象的运行时间。 此哈希代码是唯一的<see cref="T:System.Web.UI.Page" />对象的控件层次结构。</summary>
+        <returns>在运行时生成的哈希代码。 默认值为 0。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1977,9 +1977,9 @@
         <Parameter Name="validationGroup" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="validationGroup">要返回的验证组，或 <see langword="null" /> 以返回默认验证组。</param>
-        <summary>返回指定验证组的控件验证程序的集合。</summary>
-        <returns>一个 <see cref="T:System.Web.UI.ValidatorCollection" />，它包含指定验证组的控件验证程序。</returns>
+        <param name="validationGroup">若要返回的验证组或<see langword="null" />返回默认验证组。</param>
+        <summary>返回指定的验证组的控件验证程序的集合。</summary>
+        <returns>一个<see cref="T:System.Web.UI.ValidatorCollection" />，其中包含指定的验证组的控件验证程序。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2028,8 +2028,8 @@
       </Parameters>
       <Docs>
         <param name="virtualFileDependencies">虚拟文件位置的字符串数组。</param>
-        <summary>返回与虚拟文件位置列表对应的物理文件名列表。</summary>
-        <returns>包含物理文件位置列表的对象。</returns>
+        <summary>返回到虚拟文件位置的列表相对应的物理文件名称的列表。</summary>
+        <returns>一个包含物理文件位置的列表对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2068,8 +2068,8 @@
         <ReturnType>System.Web.UI.HtmlControls.HtmlHead</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在页声明中用 <see langword="head" /> 定义了 <see langword="runat=server" /> 元素的情况下获取页的文档标头。</summary>
-        <value>包含标头的 <see cref="T:System.Web.UI.HtmlControls.HtmlHead" />。</value>
+        <summary>如果获取页的文档标头<see langword="head" />元素定义具有<see langword="runat=server" />页声明中。</summary>
+        <value><see cref="T:System.Web.UI.HtmlControls.HtmlHead" />包含标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2119,8 +2119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置 <see cref="T:System.Web.UI.Page" /> 类的特定实例的标识符。</summary>
-        <value><see cref="T:System.Web.UI.Page" /> 类的实例的标识符。 默认值为“_Page”。</value>
+        <summary>获取或设置的特定实例的标识符<see cref="T:System.Web.UI.Page" />类。</summary>
+        <value>实例的标识符<see cref="T:System.Web.UI.Page" />类。 默认值为 _Page。</value>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Web.UI.Page.IdSeparator" />
       </Docs>
@@ -2153,8 +2153,8 @@
         <ReturnType>System.Char</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在为页上的控件构造唯一 ID 时用于分隔控件标识符的字符串。</summary>
-        <value>用于分隔控件标识符的字符。 默认值由呈现页的 <see cref="T:System.Web.UI.Adapters.PageAdapter" /> 实例设置。 <see cref="P:System.Web.UI.Page.IdSeparator" /> 是服务器端字段，不应修改。</value>
+        <summary>获取用于分隔控件标识符，生成的唯一 ID 的页上的控件时的字符。</summary>
+        <value>用于分隔控件标识符的字符。 默认设置<see cref="T:System.Web.UI.Adapters.PageAdapter" />呈现页面的实例。 <see cref="P:System.Web.UI.Page.IdSeparator" />是服务器端字段，不应修改。</value>
         <remarks>To be added.</remarks>
         <altmember cref="P:System.Web.UI.Page.ID" />
       </Docs>
@@ -2216,7 +2216,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>为页的当前线程设置 <see cref="P:System.Web.UI.Page.Culture" /> 和 <see cref="P:System.Web.UI.Page.UICulture" />。</summary>
+        <summary>集<see cref="P:System.Web.UI.Page.Culture" />和<see cref="P:System.Web.UI.Page.UICulture" />页的当前线程。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2277,8 +2277,8 @@
         <Parameter Name="cacheSettings" Type="System.Web.UI.OutputCacheParameters" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="cacheSettings">一个包含缓存设置的 <see cref="T:System.Web.UI.OutputCacheParameters" />。</param>
-        <summary>根据 <see cref="T:System.Web.UI.OutputCacheParameters" /> 对象初始化当前页请求的输出缓存。</summary>
+        <param name="cacheSettings"><see cref="T:System.Web.UI.OutputCacheParameters" /> ，其中包含的缓存设置。</param>
+        <summary>初始化当前页请求的输出缓存基于<see cref="T:System.Web.UI.OutputCacheParameters" />对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2287,9 +2287,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">未找到缓存配置文件。  
+        <exception cref="T:System.Web.HttpException">找不到缓存配置文件。  
   
-- 或 - 
+或 
 缺少指令或配置设置配置文件特性。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">输出缓存设置位置无效。</exception>
         <altmember cref="T:System.Web.HttpCachePolicy" />
@@ -2333,7 +2333,7 @@
         <param name="varyByHeader">以分号分隔的标头列表，来自输出缓存的内容因标头而异。</param>
         <param name="varyByCustom"><see langword="Vary" /> HTTP 标头。</param>
         <param name="location"><see cref="T:System.Web.UI.OutputCacheLocation" /> 值之一。</param>
-        <param name="varyByParam">通过 GET 或 POST 方法收到的以分号分隔的参数列表，来自输出缓存的内容因参数而异。</param>
+        <param name="varyByParam">接收来自输出缓存的内容将因的 GET 或 POST 方法的参数之间用分号分隔列表。</param>
         <summary>初始化当前页面请求的输出缓存。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2343,7 +2343,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">为 <paramref name="location" /> 指定的值无效。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">无效的值指定为<paramref name="location" />。</exception>
         <altmember cref="T:System.Web.HttpCachePolicy" />
         <related type="Article" href="https://msdn.microsoft.com/library/e9666a1b-88df-4931-af0b-a754fc65660b(v=vs.100)">缓存 ASP.NET 页面</related>
       </Docs>
@@ -2383,7 +2383,7 @@
         <param name="varyByHeader">以分号分隔的标头列表，来自输出缓存的内容因标头而异。</param>
         <param name="varyByCustom"><see langword="Vary" /> HTTP 标头。</param>
         <param name="location"><see cref="T:System.Web.UI.OutputCacheLocation" /> 值之一。</param>
-        <param name="varyByParam">通过 GET 或 POST 方法收到的以分号分隔的参数列表，来自输出缓存的内容因参数而异。</param>
+        <param name="varyByParam">接收来自输出缓存的内容将因的 GET 或 POST 方法的参数之间用分号分隔列表。</param>
         <summary>初始化当前页面请求的输出缓存。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2393,7 +2393,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">为 <paramref name="location" /> 指定的值无效。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">无效的值指定为<paramref name="location" />。</exception>
         <altmember cref="T:System.Web.HttpCachePolicy" />
         <related type="Article" href="https://msdn.microsoft.com/library/e9666a1b-88df-4931-af0b-a754fc65660b(v=vs.100)">缓存 ASP.NET 页面</related>
       </Docs>
@@ -2420,8 +2420,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否异步处理页。</summary>
-        <value>如果页处于异步模式，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否以异步方式处理页。</summary>
+        <value><see langword="true" /> 如果页处于异步模式;否则为<see langword="false" />;</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2461,7 +2461,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示页请求是否是回调的结果。</summary>
-        <value>如果页请求是回调的结果，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果页请求是回调; 的结果否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2502,9 +2502,9 @@
         <Parameter Name="key" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="key">要搜索的客户端脚本的字符串关键字。</param>
-        <summary>确定具有指定关键字的客户端脚本块是否已向页注册。</summary>
-        <returns>如果注册了该脚本块，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="key">要搜索的客户端脚本的字符串键。</param>
+        <summary>确定是否已向页注册客户端脚本块与指定的键。</summary>
+        <returns><see langword="true" /> 如果注册了该脚本块;，否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2554,8 +2554,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示跨页回发中是否涉及该页。</summary>
-        <value>如果该页参与跨页请求，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示页是否涉及跨页回发中。</summary>
+        <value><see langword="true" /> 如果该页参与跨页请求;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2595,8 +2595,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示页是第一次呈现还是为了响应回发而加载。</summary>
-        <value>如果是为响应客户端回发而加载该页，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否呈现第一次或响应回发而加载页。</summary>
+        <value><see langword="true" /> 如果页面加载中响应客户端回发;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2636,8 +2636,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示页中执行回发的控件是否经过注册。</summary>
-        <value>如果该控件经过注册，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否已注册执行回发的页面中的控件。</summary>
+        <value><see langword="true" /> 如果控件具有已注册;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -2670,7 +2670,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示 <see cref="T:System.Web.UI.Page" /> 对象是否可重用。</summary>
+        <summary>获取一个值，该值指示是否<see cref="T:System.Web.UI.Page" />对象可以重复使用。</summary>
         <value>在所有情况下均为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.Web.IHttpHandler" />
@@ -2705,8 +2705,8 @@
         <Parameter Name="key" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="key">要搜索的启动脚本的字符串关键字。</param>
-        <summary>确定 <see cref="T:System.Web.UI.Page" /> 对象是否注册了客户端启动脚本。</summary>
+        <param name="key">要搜索的启动脚本的字符串键。</param>
+        <summary>确定是否注册客户端启动脚本<see cref="T:System.Web.UI.Page" />对象。</summary>
         <returns>如果注册了启动脚本，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2756,7 +2756,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个值，该值指示页验证是否成功。</summary>
-        <value>如果页验证成功，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果页验证成功，则否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2775,7 +2775,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.UI.Page.IsValid" /> 属性在发生验证之前调用。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.UI.Page.IsValid" />发生验证之前调用属性。</exception>
         <altmember cref="P:System.Web.UI.Page.Validators" />
         <altmember cref="T:System.Web.UI.ValidatorCollection" />
         <altmember cref="M:System.Web.UI.Page.Validate" />
@@ -2805,7 +2805,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取存储在页上下文中的对象的列表。</summary>
-        <value>对包含存储在页上下文中的对象的 <see cref="T:System.Collections.IDictionary" /> 的引用。</value>
+        <value>对引用<see cref="T:System.Collections.IDictionary" />包含存储在页上下文中的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2847,8 +2847,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置与页关联的 <see cref="T:System.Threading.Thread" /> 对象的区域设置标识符。</summary>
-        <value>要传递给 <see cref="T:System.Threading.Thread" /> 的区域设置标识符。</value>
+        <summary>设置的区域设置标识符<see cref="T:System.Threading.Thread" />与页关联的对象。</summary>
+        <value>要传递到的区域设置标识符<see cref="T:System.Threading.Thread" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2884,7 +2884,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在页生命周期的加载阶段结束时发生。</summary>
+        <summary>在页面的生命周期的加载阶段结束时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2925,7 +2925,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将所有保存的视图状态信息加载到 <see cref="T:System.Web.UI.Page" /> 对象。</summary>
+        <summary>将任何保存的视图状态信息加载到 <see cref="T:System.Web.UI.Page" /> 对象。</summary>
         <returns>保存的视图状态。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2971,7 +2971,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示回发后是否将用户返回到客户端浏览器中的同一位置。 此属性替换已过时的 <see cref="P:System.Web.UI.Page.SmartNavigation" /> 属性。</summary>
+        <summary>获取或设置一个值，该值指示是否在回发后将用户返回到客户端浏览器中的同一位置。 此属性取代了已过时的 <see cref="P:System.Web.UI.Page.SmartNavigation" /> 属性。</summary>
         <value>如果应保持客户端位置，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3008,9 +3008,9 @@
         <Parameter Name="virtualPath" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="virtualPath">表示虚拟路径的 <see cref="T:System.String" />。</param>
-        <summary>检索虚拟路径（绝对的或相对的）或应用程序相关的路径映射到的物理路径。</summary>
-        <returns>与虚拟路径或应用程序相关的路径关联的物理路径。</returns>
+        <param name="virtualPath">一个<see cref="T:System.String" />表示虚拟路径。</param>
+        <summary>检索虚拟路径，绝对或相对的或应用程序相对路径将映射到的物理路径。</summary>
+        <returns>与虚拟路径或应用程序相对路径关联的物理路径。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3058,7 +3058,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取确定页的整体外观的母版页。</summary>
-        <value>如果存在，则为与此页相关联的 <see cref="T:System.Web.UI.MasterPage" />；否则为 <see langword="null" />。</value>
+        <value><see cref="T:System.Web.UI.MasterPage" />与此页上，如果存在相关联; 否则为<see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3096,7 +3096,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置母版页的虚拟路径。</summary>
-        <value>母版页面的虚拟路径。</value>
+        <value>主页面虚拟路径。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3107,11 +3107,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.MasterPageFile" /> 属性在 <see cref="E:System.Web.UI.Page.PreInit" /> 事件完成后进行设置。</exception>
-        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.UI.Page.MasterPageFile" /> 属性中指定的文件不存在。  
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.MasterPageFile" />属性设置后<see cref="E:System.Web.UI.Page.PreInit" />事件已完成。</exception>
+        <exception cref="T:System.Web.HttpException">中指定的文件<see cref="P:System.Web.UI.Page.MasterPageFile" />属性不存在。  
   
-- 或 - 
-页中没有作为顶级控件的 <see cref="T:System.Web.UI.WebControls.Content" /> 控件。</exception>
+或 
+页没有<see cref="T:System.Web.UI.WebControls.Content" />控件为顶级控件。</exception>
         <altmember cref="P:System.Web.UI.Page.Master" />
         <related type="Article" href="https://msdn.microsoft.com/library/4e53eedf-8304-4e7a-aed1-691a2623b28b">了解母版页</related>
       </Docs>
@@ -3147,8 +3147,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置页状态字段的最大长度。</summary>
-        <value>页的状态字段的最大长度（以字节为单位）。 默认值为 -1。</value>
+        <summary>获取或设置页面的状态字段的最大长度。</summary>
+        <value>最大长度，以字节为单位的页面的状态字段。 默认值为 -1。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3161,8 +3161,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Page.MaxPageStateFieldLength" /> 属性不等于 -1 或正数。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.MaxPageStateFieldLength" /> 属性是在初始化页后设置的。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Page.MaxPageStateFieldLength" />属性不等于-1 或正数。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.MaxPageStateFieldLength" />初始化页后设置属性。</exception>
       </Docs>
     </Member>
     <Member MemberName="MetaDescription">
@@ -3192,8 +3192,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置“描述”<see langword="meta" /> 元素的内容。</summary>
-        <value>“描述”<see langword="meta" /> 元素的内容。</value>
+        <summary>获取或设置内容的"描述"<see langword="meta" />元素。</summary>
+        <value>"Description"的内容<see langword="meta" />元素。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3213,7 +3213,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">页面没有标题控件（<see langword="head" /> 特性设置为“server”的 <see langword="runat" /> 元素）</exception>
+        <exception cref="T:System.InvalidOperationException">页面没有标题控件 (<see langword="head" />具有元素<see langword="runat" />属性设置为"server")。</exception>
         <altmember cref="P:System.Web.UI.Page.MetaKeywords" />
       </Docs>
     </Member>
@@ -3244,8 +3244,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置“关键字”<see langword="meta" /> 元素的内容。</summary>
-        <value>“关键字”<see langword="meta" /> 元素的内容。</value>
+        <summary>获取或设置内容的"关键字"<see langword="meta" />元素。</summary>
+        <value>"关键字"的内容<see langword="meta" />元素。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3265,7 +3265,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">页面没有标题控件（<see langword="head" /> 特性设置为“server”的 <see langword="runat" /> 元素）</exception>
+        <exception cref="T:System.InvalidOperationException">页面没有标题控件 (<see langword="head" />具有元素<see langword="runat" />属性设置为"server")。</exception>
         <altmember cref="P:System.Web.UI.Page.MetaDescription" />
       </Docs>
     </Member>
@@ -3285,8 +3285,8 @@
         <ReturnType>System.Web.ModelBinding.ModelBindingExecutionContext</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取模型绑定器的执行上下文。</summary>
-        <value>模型绑定器执行上下文。 如果模型绑定的执行上下文是 <see langword="null" />，则声称一个新的模型绑定上下文并将其返回。</value>
+        <summary>获取模型绑定执行上下文。</summary>
+        <value>模型绑定执行上下文。 如果模型绑定执行上下文是<see langword="null" />，一个新的其中一个创建并返回。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -3306,7 +3306,7 @@
         <ReturnType>System.Web.ModelBinding.ModelStateDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取包含模型状态和模型绑定验证状态的模型状态字典对象。</summary>
+        <summary>获取包含的模型和模型绑定验证状态的模型状态字典对象。</summary>
         <value>模型状态字典对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3339,7 +3339,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>引发 <see cref="E:System.Web.UI.Control.Init" /> 事件以对页进行初始化。</summary>
+        <summary>引发<see cref="E:System.Web.UI.Control.Init" />事件来初始化页。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3378,7 +3378,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>在页初始化后引发 <see cref="E:System.Web.UI.Page.InitComplete" /> 事件。</summary>
+        <summary>引发<see cref="E:System.Web.UI.Page.InitComplete" />页初始化后的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3417,7 +3417,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>在页加载阶段结束时引发 <see cref="E:System.Web.UI.Page.LoadComplete" /> 事件。</summary>
+        <summary>引发<see cref="E:System.Web.UI.Page.LoadComplete" />页加载阶段结束时的事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3493,7 +3493,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>在回发数据已加载到页服务器控件之后但在 <see cref="E:System.Web.UI.Page.PreLoad" /> 事件之前，引发 <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> 事件。</summary>
+        <summary>将引发<see cref="E:System.Web.UI.Page.PreLoad" />事件后回发数据加载到页服务器控件之前<see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" />事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3532,7 +3532,7 @@
       </Parameters>
       <Docs>
         <param name="e">包含事件数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>在 <see cref="E:System.Web.UI.Page.PreRenderComplete" /> 事件之后但在呈现页之前引发 <see cref="M:System.Web.UI.Page.OnPreRenderComplete(System.EventArgs)" /> 事件。</summary>
+        <summary>将引发<see cref="E:System.Web.UI.Page.PreRenderComplete" />事件之后<see cref="M:System.Web.UI.Page.OnPreRenderComplete(System.EventArgs)" />事件之前呈现页面。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3570,8 +3570,8 @@
         <Parameter Name="e" Type="System.EventArgs" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="e">一个包含事件数据的 <see cref="T:System.EventArgs" /> 对象。</param>
-        <summary>在已将页状态保存到持久性介质中之后引发 <see cref="E:System.Web.UI.Page.SaveStateComplete" /> 事件。</summary>
+        <param name="e">一个<see cref="T:System.EventArgs" />对象，其中包含事件数据。</param>
+        <summary>引发<see cref="E:System.Web.UI.Page.SaveStateComplete" />事件后已将页状态保存到持久性介质中。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3607,8 +3607,8 @@
         <ReturnType>System.Web.UI.Adapters.PageAdapter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取为特定的请求浏览器呈现页的适配器。</summary>
-        <value>呈现页的 <see cref="T:System.Web.UI.Adapters.PageAdapter" />。</value>
+        <summary>获取呈现特定请求的浏览器的页的适配器。</summary>
+        <value><see cref="T:System.Web.UI.Adapters.PageAdapter" />呈现页。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3638,8 +3638,8 @@
         <ReturnType>System.Web.UI.PageStatePersister</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与该页关联的 <see cref="T:System.Web.UI.PageStatePersister" /> 对象。</summary>
-        <value>与该页关联的 <see cref="T:System.Web.UI.PageStatePersister" />。</value>
+        <summary>获取<see cref="T:System.Web.UI.PageStatePersister" />与页关联的对象。</summary>
+        <value>一个<see cref="T:System.Web.UI.PageStatePersister" />与页关联。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3676,7 +3676,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>一个定义呈现的页中的 EVENTARGUMENT 隐藏字段的字符串。</summary>
+        <summary>一个字符串，呈现的页中定义的 EVENTARGUMENT 隐藏的字段。</summary>
         <remarks>To be added.</remarks>
         <altmember cref="F:System.Web.UI.Page.postEventSourceID" />
       </Docs>
@@ -3704,7 +3704,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>一个定义呈现的页中的 EVENTTARGET 隐藏字段的字符串。</summary>
+        <summary>一个字符串，呈现的页中定义的 EVENTTARGET 隐藏的字段。</summary>
         <remarks>To be added.</remarks>
         <altmember cref="F:System.Web.UI.Page.postEventArgumentID" />
       </Docs>
@@ -3766,7 +3766,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在页 <see cref="E:System.Web.UI.Control.Load" /> 事件之前发生。</summary>
+        <summary>在页前发生<see cref="E:System.Web.UI.Control.Load" />事件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3803,7 +3803,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在呈现页内容之前发生。</summary>
+        <summary>呈现页内容之前发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3848,7 +3848,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取向当前页传输控件的页。</summary>
-        <value>表示向当前页传输控件的页的 <see cref="T:System.Web.UI.Page" />。</value>
+        <value><see cref="T:System.Web.UI.Page" />表示向当前页传输控件的页。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3870,10 +3870,10 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">不允许当前用户访问上一页。  
+        <exception cref="T:System.InvalidOperationException">当前用户不被允许访问前一页。  
   
-- 或 - 
-ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.NET 检查访问权限时，它假定该 URL 是一个文件的实际路径。 因为这与使用路由的 URL 时情况不同，该检查将失败。</exception>
+或 
+ASP.NET 路由正在使用中前, 一页的 URL 是路由的 URL。 当 ASP.NET 检查访问权限时，它假定 URL 到文件的实际路径。 由于这不是与路由的 URL 的情况，检查会失败。</exception>
       </Docs>
     </Member>
     <Member MemberName="ProcessRequest">
@@ -3905,8 +3905,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <Parameter Name="context" Type="System.Web.HttpContext" />
       </Parameters>
       <Docs>
-        <param name="context">一个 <see cref="T:System.Web.HttpContext" /> 对象，它提供对用于为 HTTP 请求提供服务的内部服务器对象（如 <see cref="P:System.Web.HttpContext.Request" />、<see cref="P:System.Web.HttpContext.Response" />、<see cref="P:System.Web.HttpContext.Session" />）的引用。</param>
-        <summary>设置 <see cref="T:System.Web.UI.Page" /> 对象的内部服务器对象，如 <see cref="P:System.Web.UI.Page.Context" />、<see cref="P:System.Web.UI.Page.Request" />、<see cref="P:System.Web.UI.Page.Response" /> 和 <see cref="P:System.Web.UI.Page.Application" /> 属性。</summary>
+        <param name="context"><see cref="T:System.Web.HttpContext" />提供对内部服务器对象的引用的对象 (例如， <see cref="P:System.Web.HttpContext.Request" />， <see cref="P:System.Web.HttpContext.Response" />，和<see cref="P:System.Web.HttpContext.Session" />) 用于服务 HTTP 请求。</param>
+        <summary>设置的内部服务器对象<see cref="T:System.Web.UI.Page" />对象，例如<see cref="P:System.Web.UI.Page.Context" />， <see cref="P:System.Web.UI.Page.Request" />， <see cref="P:System.Web.UI.Page.Response" />，和<see cref="P:System.Web.UI.Page.Application" />属性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4002,9 +4002,9 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <Parameter Name="arrayValue" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="arrayName">要在其中声明该值的数组的名称。</param>
-        <param name="arrayValue">要放置在数组中的值。</param>
-        <summary>声明一个值，该值在页呈现时声明为 ECMAScript 数组声明。</summary>
+        <param name="arrayName">在其中声明该值的数组的名称。</param>
+        <param name="arrayValue">要置于数组中的值。</param>
+        <summary>声明了一个呈现页时被声明为 ECMAScript 数组声明的值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4046,7 +4046,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <Parameter Name="task" Type="System.Web.UI.PageAsyncTask" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="task">一个定义异步任务的 <see cref="T:System.Web.UI.PageAsyncTask" />。</param>
+        <param name="task">一个<see cref="T:System.Web.UI.PageAsyncTask" />定义异步任务。</param>
         <summary>向页注册新的异步任务。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4069,7 +4069,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">异步任务为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentNullException">在异步任务<see langword="null" />。</exception>
         <altmember cref="M:System.Web.UI.Page.ExecuteRegisteredAsyncTasks" />
         <altmember cref="T:System.Web.UI.PageAsyncTask" />
       </Docs>
@@ -4106,7 +4106,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       <Docs>
         <param name="key">标识脚本块的唯一键。</param>
         <param name="script">发送到客户端的脚本的内容。</param>
-        <summary>向响应发出客户端脚本块。</summary>
+        <summary>发出到响应的客户端脚本块。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4120,7 +4120,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
 > [!NOTE]
 >  请记住，以便它将不会呈现请求的浏览器不支持脚本包括您的脚本周围 HTML 注释标记。  
   
- <xref:System.Web.UI.Page.RegisterClientScriptBlock%2A> 方法已弃用。 请改用 <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A> 类中的 <xref:System.Web.UI.ClientScriptManager> 方法。  
+ <xref:System.Web.UI.Page.RegisterClientScriptBlock%2A> 方法已弃用。 使用<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>中的方法<xref:System.Web.UI.ClientScriptManager>类。  
   
    
   
@@ -4166,7 +4166,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       <Docs>
         <param name="hiddenFieldName">要呈现的隐藏字段的唯一名称。</param>
         <param name="hiddenFieldInitialValue">要以隐藏形式发出的值。</param>
-        <summary>使服务器控件能够在窗体上自动注册隐藏字段。 呈现 <see cref="T:System.Web.UI.Page" /> 服务器控件时，将该字段发送到 <see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> 对象。</summary>
+        <summary>使服务器控件为自动注册隐藏的字段在窗体上。 该字段将被发送到<see cref="T:System.Web.UI.Page" />对象时<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />呈现服务器控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4221,7 +4221,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       <Docs>
         <param name="key">标识脚本块的唯一键。</param>
         <param name="script">要发送到客户端的客户端脚本。</param>
-        <summary>使页能够访问客户端 <see langword="OnSubmit" /> 事件。 脚本应该是注册在其他地方的对客户端代码的函数调用。</summary>
+        <summary>使页能够访问客户端<see langword="OnSubmit" />事件。 脚本应该是注册在其他地方的客户端代码的函数调用。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4269,7 +4269,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </Parameters>
       <Docs>
         <param name="control">要注册的控件。</param>
-        <summary>将控件注册为具有持久性控件状态的控件。</summary>
+        <summary>将控件注册为必须保留其控件状态。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4286,8 +4286,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">要注册的控件为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.UI.Page.RegisterRequiresControlState(System.Web.UI.Control)" /> 方法只能在 <see cref="E:System.Web.UI.Control.PreRender" /> 事件期间或之前调用。</exception>
+        <exception cref="T:System.ArgumentException">要注册的控件是<see langword="null" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.UI.Page.RegisterRequiresControlState(System.Web.UI.Control)" />仅之前或期间，可以调用方法<see cref="E:System.Web.UI.Control.PreRender" />事件。</exception>
         <altmember cref="M:System.Web.UI.Page.RequiresControlState(System.Web.UI.Control)" />
       </Docs>
     </Member>
@@ -4317,7 +4317,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </Parameters>
       <Docs>
         <param name="control">要注册的控件。</param>
-        <summary>将控件注册为要求在页回发至服务器时进行回发处理的控件。</summary>
+        <summary>将控件注册为需要回发处理页面回发到服务器时。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4339,7 +4339,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">要注册的控件不实现 <see cref="T:System.Web.UI.IPostBackDataHandler" /> 接口。</exception>
+        <exception cref="T:System.Web.HttpException">要注册的控件不实现<see cref="T:System.Web.UI.IPostBackDataHandler" />接口。</exception>
         <altmember cref="P:System.Web.UI.Page.IsPostBack" />
         <altmember cref="T:System.Web.UI.IPostBackDataHandler" />
         <related type="Article" href="https://msdn.microsoft.com/library/7949d756-1a79-464e-891f-904b1cfc7991">ASP.NET 页面生命周期简介</related>
@@ -4373,7 +4373,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </Parameters>
       <Docs>
         <param name="control">要注册的控件。</param>
-        <summary>将 ASP.NET 服务器控件注册为需要在 <see cref="T:System.Web.UI.Page" /> 对象上处理控件时引发事件的控件。</summary>
+        <summary>将 ASP.NET 服务器控件注册为需要上处理控件时引发的事件<see cref="T:System.Web.UI.Page" />对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4411,7 +4411,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>向页将控件注册为需要视图状态加密的控件。</summary>
+        <summary>作为一种需要视图状态加密向页注册控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4468,8 +4468,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </Parameters>
       <Docs>
         <param name="key">标识脚本块的唯一键。</param>
-        <param name="script">要发送到客户端的脚本的内容。</param>
-        <summary>在页响应中发出客户端脚本块。</summary>
+        <param name="script">将发送到客户端的脚本的内容。</param>
+        <summary>发出页面响应中的客户端脚本块。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4483,7 +4483,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
 > [!NOTE]
 >  请记住，以便它将不会呈现请求的浏览器不支持脚本包括您的脚本周围 HTML 注释标记。  
   
- <xref:System.Web.UI.Page.RegisterStartupScript%2A> 方法已弃用。 请改用 <xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A> 类中的 <xref:System.Web.UI.ClientScriptManager> 方法。  
+ <xref:System.Web.UI.Page.RegisterStartupScript%2A> 方法已弃用。 使用<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>中的方法<xref:System.Web.UI.ClientScriptManager>类。  
   
    
   
@@ -4522,7 +4522,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>如果调用，则保持页视图状态。</summary>
+        <summary>如果调用将导致页视图状态保持不变。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4563,8 +4563,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="writer">接收页内容的 <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
-        <summary>初始化 <see cref="T:System.Web.UI.HtmlTextWriter" /> 对象并调用 <see cref="T:System.Web.UI.Page" /> 的子控件进行呈现。</summary>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />接收页内容。</param>
+        <summary>初始化<see cref="T:System.Web.UI.HtmlTextWriter" />对象并调用的子控件<see cref="T:System.Web.UI.Page" />来呈现。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4607,7 +4607,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
       </ReturnValue>
       <Docs>
         <summary>获取所请求的页面的 <see cref="T:System.Web.HttpRequest" /> 对象。</summary>
-        <value>当前与该页关联的 <see cref="T:System.Web.HttpRequest" />。</value>
+        <value>当前<see cref="T:System.Web.HttpRequest" />与页关联。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4624,7 +4624,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.HttpRequest" /> 对象不可用时发生。</exception>
+        <exception cref="T:System.Web.HttpException">发生时<see cref="T:System.Web.HttpRequest" />对象不可用。</exception>
         <altmember cref="T:System.Web.HttpException" />
         <altmember cref="T:System.Web.HttpRequest" />
         <altmember cref="T:System.Web.HttpResponse" />
@@ -4649,9 +4649,9 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <Parameter Name="control" Type="System.Web.UI.Control" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="control">用于检查控件状态要求的 <see cref="T:System.Web.UI.Control" />。</param>
-        <summary>确定是否注册指定的 <see cref="T:System.Web.UI.Control" /> 对象以参与控件状态管理。</summary>
-        <returns>如果指定的 <see cref="T:System.Web.UI.Control" /> 需要控件状态，则为 <see langword="true" />；否则为 <see langword="false" /></returns>
+        <param name="control"><see cref="T:System.Web.UI.Control" />检查控件状态要求。</param>
+        <summary>确定是否指定<see cref="T:System.Web.UI.Control" />注册对象以参与控件状态管理。</summary>
+        <returns><see langword="true" /> 如果指定<see cref="T:System.Web.UI.Control" />需要控件状态; 否则为 <see langword="false" /></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4694,8 +4694,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <ReturnType>System.Web.HttpResponse</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与该 <see cref="T:System.Web.HttpResponse" /> 对象关联的 <see cref="T:System.Web.UI.Page" /> 对象。 使用此对象，可以将 HTTP 响应数据发送到客户端，并包含此响应的相关信息。</summary>
-        <value>当前与该页关联的 <see cref="T:System.Web.HttpResponse" />。</value>
+        <summary>获取与 <see cref="T:System.Web.UI.Page" /> 对象关联的 <see cref="T:System.Web.HttpResponse" /> 对象。 使用此对象，可以将 HTTP 响应数据发送到客户端，并包含此响应的相关信息。</summary>
+        <value>当前<see cref="T:System.Web.HttpResponse" />与页关联。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4707,7 +4707,7 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.HttpResponse" /> 对象不可用。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.HttpResponse" />对象不可用。</exception>
         <altmember cref="T:System.Web.HttpResponse" />
       </Docs>
     </Member>
@@ -4740,8 +4740,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置当前的 <see cref="T:System.Web.HttpResponse" /> 对象的编码语言。</summary>
-        <value>包含当前的 <see cref="T:System.Web.HttpResponse" /> 的编码语言的字符串。</value>
+        <summary>设置当前的编码语言<see cref="T:System.Web.HttpResponse" />对象。</summary>
+        <value>一个字符串，包含当前的编码语言<see cref="T:System.Web.HttpResponse" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4776,8 +4776,8 @@ ASP.NET 路由正在使用，并且前一页的 URL 是路由的 URL。 当 ASP.
         <ReturnType>System.Web.Routing.RouteData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前 <see cref="P:System.Web.Routing.RequestContext.RouteData" /> 实例的 <see cref="T:System.Web.Routing.RequestContext" /> 值。</summary>
-        <value>当前 <see cref="P:System.Web.Routing.RequestContext.RouteData" /> 实例的 <see cref="T:System.Web.Routing.RequestContext" /> 值。</value>
+        <summary>获取<see cref="P:System.Web.Routing.RequestContext.RouteData" />的当前值<see cref="T:System.Web.Routing.RequestContext" />实例。</summary>
+        <value><see cref="P:System.Web.Routing.RequestContext.RouteData" />的当前值<see cref="T:System.Web.Routing.RequestContext" />实例。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4809,12 +4809,12 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       <MemberSignature Language="DocId" Value="M:System.Web.UI.Page.SavePageStateToPersistenceMedium(System.Object)" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="VB.NET" Value="Protected Overridable Sub SavePageStateToPersistenceMedium (viewState As Object)" FrameworkAlternate="netframework-1.1" />
       <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void SavePageStateToPersistenceMedium(System::Object ^ viewState);" FrameworkAlternate="netframework-1.1" />
-      <MemberSignature Language="F#" Value="abstract member SavePageStateToPersistenceMedium : obj -&gt; unit&#xA;override this.SavePageStateToPersistenceMedium : obj -&gt; unit" Usage="page.SavePageStateToPersistenceMedium viewState" FrameworkAlternate="netframework-2.0" />
+      <MemberSignature Language="F#" Value="abstract member SavePageStateToPersistenceMedium : obj -&gt; unit&#xA;override this.SavePageStateToPersistenceMedium : obj -&gt; unit" Usage="page.SavePageStateToPersistenceMedium viewState" FrameworkAlternate="netframework-2.0;netframework-1.1;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="C#" Value="protected internal virtual void SavePageStateToPersistenceMedium (object state);" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SavePageStateToPersistenceMedium(object state) cil managed" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub SavePageStateToPersistenceMedium (state As Object)" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void SavePageStateToPersistenceMedium(System::Object ^ state);" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
-      <MemberSignature Language="F#" Value="abstract member SavePageStateToPersistenceMedium : obj -&gt; unit&#xA;override this.SavePageStateToPersistenceMedium : obj -&gt; unit" Usage="page.SavePageStateToPersistenceMedium state" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
+      <MemberSignature Language="F#" Value="abstract member SavePageStateToPersistenceMedium : obj -&gt; unit&#xA;override this.SavePageStateToPersistenceMedium : obj -&gt; unit" Usage="page.SavePageStateToPersistenceMedium state" FrameworkAlternate="netframework-2.0" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.Page.SavePageStateToPersistenceMedium(System.Object)" FrameworkAlternate="netframework-2.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
@@ -4838,7 +4838,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       <Docs>
         <param name="state">要在其中存储视图状态信息的 <see cref="T:System.Object" />。</param>
         <param name="viewState">要在其中存储视图状态信息的 <see cref="T:System.Object" />。</param>
-        <summary>保存页的所有视图状态信息和控件状态信息。</summary>
+        <summary>保存页的任何视图状态和控件状态信息。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4880,7 +4880,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在页已完成对页和页上控件的所有视图状态和控件状态信息的保存后发生。</summary>
+        <summary>之后，在页已完成保存所有视图状态和控件状态信息，页和页上的控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4926,8 +4926,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Web.HttpServerUtility</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取 <see langword="Server" /> 对象，它是 <see cref="T:System.Web.HttpServerUtility" /> 类的实例。</summary>
-        <value>当前与该页关联的 <see langword="Server" /> 对象。</value>
+        <summary>获取<see langword="Server" />对象，它是实例的<see cref="T:System.Web.HttpServerUtility" />类。</summary>
+        <value>当前<see langword="Server" />与页关联的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4973,8 +4973,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Web.SessionState.HttpSessionState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取 ASP.NET 提供的当前 <see langword="Session" /> 对象。</summary>
-        <value>当前会话状态数据。</value>
+        <summary>获取当前<see langword="Session" />由 ASP.NET 提供的对象。</summary>
+        <value>当前的会话状态数据。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4991,7 +4991,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">将会话信息设置为 <see langword="null" /> 时发生。</exception>
+        <exception cref="T:System.Web.HttpException">会话信息设置为发生<see langword="null" />。</exception>
         <altmember cref="T:System.Web.HttpException" />
       </Docs>
     </Member>
@@ -5024,7 +5024,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <Parameter Name="clientID" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="clientID">要将焦点设置到的控件的 ID。</param>
+        <param name="clientID">要将焦点设置到该控件的 ID。</param>
         <summary>将浏览器焦点设置为具有指定标识符的控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5049,10 +5049,10 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="clientID" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.UI.Page.SetFocus(System.String)" /> 在控件不是 Web 窗体页的一部分时调用。  
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.UI.Page.SetFocus(System.String)" /> 该控件不是 Web 窗体页的一部分时调用。  
   
-- 或 - 
- <see cref="M:System.Web.UI.Page.SetFocus(System.String)" /> 是在 <see cref="E:System.Web.UI.Control.PreRender" /> 事件后调用的。</exception>
+或 
+ <see cref="M:System.Web.UI.Page.SetFocus(System.String)" /> 后，会调用<see cref="E:System.Web.UI.Control.PreRender" />事件。</exception>
       </Docs>
     </Member>
     <Member MemberName="SetFocus">
@@ -5099,10 +5099,10 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="control" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.UI.Page.SetFocus(System.Web.UI.Control)" /> 在控件不是 Web 窗体页的一部分时调用。  
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.UI.Page.SetFocus(System.Web.UI.Control)" /> 该控件不是 Web 窗体页的一部分时调用。  
   
-- 或 - 
- <see cref="M:System.Web.UI.Page.SetFocus(System.Web.UI.Control)" /> 是在 <see cref="E:System.Web.UI.Control.PreRender" /> 事件后调用的。</exception>
+或 
+ <see cref="M:System.Web.UI.Page.SetFocus(System.Web.UI.Control)" /> 后，会调用<see cref="E:System.Web.UI.Control.PreRender" />事件。</exception>
       </Docs>
     </Member>
     <Member MemberName="SkipFormActionValidation">
@@ -5135,8 +5135,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示是否已对查询字符串字段进行验证。</summary>
-        <value>如果应跳过查询字符串验证（不应验证查询字符串），则为 <see langword="true" />；如果将查询字符串作为普通发生，则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，指示是否验证查询字符串值。</summary>
+        <value><see langword="true" /> 如果应跳过查询字符串验证 （应验证查询字符串;）否则为<see langword="false" />如果查询字符串验证应采取作为普通发生。 默认值为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -5229,8 +5229,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置页面生命周期早期适用于页面的主题的名称。</summary>
-        <value>页面生命周期早期适用于页面的主题的名称。</value>
+        <summary>获取或设置在页生命周期早期适用于页主题的名称。</summary>
+        <value>在页生命周期早期适用于页主题的名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5247,8 +5247,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">尝试在调用 <see cref="P:System.Web.UI.Page.StyleSheetTheme" /> 方法后设置 <see cref="M:System.Web.UI.Page.FrameworkInitialize" /> 属性。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Page.StyleSheetTheme" /> 被设置为无效的主题名称。 如果调用 <see cref="M:System.Web.UI.Page.FrameworkInitialize" /> 方法借助的是属性 setter，则会引发异常。</exception>
+        <exception cref="T:System.InvalidOperationException">尝试设置<see cref="P:System.Web.UI.Page.StyleSheetTheme" />属性后的<see cref="M:System.Web.UI.Page.FrameworkInitialize" />调用方法。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Page.StyleSheetTheme" /> 设置为无效的主题名称。 将引发此异常<see cref="M:System.Web.UI.Page.FrameworkInitialize" />调用方法时，不是由属性 setter。</exception>
         <altmember cref="P:System.Web.UI.Page.Theme" />
         <related type="Article" href="https://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3">ASP.NET 主题和外观概述</related>
       </Docs>
@@ -5303,8 +5303,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">尝试在 <see cref="P:System.Web.UI.Page.Theme" /> 已发生后设置 <see cref="E:System.Web.UI.Page.PreInit" /> 属性。</exception>
-        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Page.Theme" /> 被设置为无效的主题名称。</exception>
+        <exception cref="T:System.InvalidOperationException">尝试设置<see cref="P:System.Web.UI.Page.Theme" />后<see cref="E:System.Web.UI.Page.PreInit" />事件已发生。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Page.Theme" /> 设置为无效的主题名称。</exception>
         <altmember cref="P:System.Web.UI.Page.StyleSheetTheme" />
         <related type="Article" href="https://msdn.microsoft.com/library/02eed7c3-01e8-4e20-8358-df47dbd4f148">以编程方式应用 ASP.NET 主题</related>
       </Docs>
@@ -5350,7 +5350,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.Title" /> 属性要求页上有标头控件。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.Page.Title" />属性要求页上的标头控件。</exception>
         <altmember cref="T:System.Web.UI.HtmlControls.HtmlTitle" />
       </Docs>
     </Member>
@@ -5381,7 +5381,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       </ReturnValue>
       <Docs>
         <summary>为当前 Web 请求获取 <see cref="T:System.Web.TraceContext" /> 对象。</summary>
-        <value>来自当前 Web 请求的 <see cref="T:System.Web.TraceContext" /> 对象的数据。</value>
+        <value>从数据<see cref="T:System.Web.TraceContext" />当前 Web 请求的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5433,8 +5433,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置一个值，该值指示是否为 <see cref="T:System.Web.UI.Page" /> 对象启用跟踪。</summary>
-        <value>如果为该页启用跟踪，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>设置一个值，该值指示是否为启用了跟踪<see cref="T:System.Web.UI.Page" />对象。</summary>
+        <value><see langword="true" /> 如果页; 启用跟踪否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5478,8 +5478,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Web.TraceMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置跟踪语句在页中的显示模式。</summary>
-        <value><see cref="T:System.Web.TraceMode" /> 枚举成员之一。</value>
+        <summary>设置跟踪语句的页显示的模式。</summary>
+        <value>其中一个<see cref="T:System.Web.TraceMode" />枚举成员。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5523,8 +5523,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置该页的事务支持的级别。</summary>
-        <value>表示 <see cref="T:System.EnterpriseServices.TransactionOption" /> 枚举成员之一的整数。</value>
+        <summary>设置页面事务级别的支持。</summary>
+        <value>一个整数，表示之一<see cref="T:System.EnterpriseServices.TransactionOption" />枚举成员。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5541,7 +5541,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>使用来自值提供程序的值更新指定的模型实例。</summary>
+        <summary>更新使用来自值提供程序的值指定的模型实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5580,8 +5580,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       <Docs>
         <typeparam name="TModel">模型的类型。</typeparam>
         <param name="model">模型。</param>
-        <summary>使用来自数据绑定控制的值更新指定的模型实例。</summary>
-        <returns>如果模型绑定成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>更新指定的模型实例使用的数据绑定控件中的值。</summary>
+        <returns><see langword="true" /> 如果模型绑定成功;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5624,8 +5624,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <typeparam name="TModel">模型的类型。</typeparam>
         <param name="model">模型。</param>
         <param name="valueProvider">值提供程序。</param>
-        <summary>使用来自指定值提供程序的值更新模型实例。</summary>
-        <returns>如果模型绑定成功，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>更新模型实例使用指定的值提供程序中的值。</summary>
+        <returns><see langword="true" /> 如果模型绑定成功;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5668,8 +5668,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>设置与页关联的 <see cref="T:System.Threading.Thread" /> 对象的用户界面 (UI) ID。</summary>
-        <value>用户界面 ID。</value>
+        <summary>设置的用户界面 (UI) ID<see cref="T:System.Threading.Thread" />与页关联的对象。</summary>
+        <value>用户界面 id。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5702,7 +5702,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       </ReturnValue>
       <Docs>
         <summary>获取要追加到用于缓存浏览器的文件路径的唯一后缀。</summary>
-        <value>要追加到文件路径的唯一后缀。 默认值为“__ufps=”加上一个唯一的 6 位数字。</value>
+        <value>独特的后缀追加到的文件路径。 默认值为"__ufps ="加上一个唯一的 6 位数字。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5734,8 +5734,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Web.UI.UnobtrusiveValidationMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示不显眼的 JavaScript 是否用于客户端验证。</summary>
-        <value>如果要使用入式 JavaScript，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，指示是否将非介入式 JavaScript 用于客户端验证。</summary>
+        <value><see langword="true" /> 如果使用非介入式 JavaScript;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -5763,7 +5763,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <Parameter Name="control" Type="System.Web.UI.Control" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="control">要停止其控件状态的持久性的 <see cref="T:System.Web.UI.Control" />。</param>
+        <param name="control"><see cref="T:System.Web.UI.Control" />为要停止其持久性控件状态。</param>
         <summary>停止指定控件的控件状态的持久性。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -5787,7 +5787,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>使用来自值提供程序的值更新指定的模型实例。</summary>
+        <summary>更新使用来自值提供程序的值指定的模型实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5826,7 +5826,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       <Docs>
         <typeparam name="TModel">模型的类型。</typeparam>
         <param name="model">模型。</param>
-        <summary>使用来自数据绑定控制的值更新指定的模型实例。</summary>
+        <summary>更新指定的模型实例使用的数据绑定控件中的值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5869,7 +5869,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <typeparam name="TModel">模型的类型。</typeparam>
         <param name="model">模型。</param>
         <param name="valueProvider">值提供程序。</param>
-        <summary>使用来自指定值提供程序的值更新指定的模型实例。</summary>
+        <summary>更新指定的模型实例使用指定的值提供程序中的值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5907,7 +5907,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       </ReturnValue>
       <Docs>
         <summary>获取有关发出页请求的用户的信息。</summary>
-        <value>表示发出页请求的用户的 <see cref="T:System.Security.Principal.IPrincipal" />。</value>
+        <value><see cref="T:System.Security.Principal.IPrincipal" /> ，表示发出页请求的用户。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5936,7 +5936,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>指示该页上包含的所有验证控件验证指派给它们的信息。</summary>
+        <summary>指示包含要验证其已分配的信息的页面上的所有验证控件。</summary>
         <altmember cref="T:System.Web.UI.ValidatorCollection" />
         <altmember cref="P:System.Web.UI.Page.Validators" />
         <altmember cref="P:System.Web.UI.Page.IsValid" />
@@ -5961,7 +5961,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>指示该页上包含的所有验证控件验证指派给它们的信息。</summary>
+        <summary>指示包含要验证其已分配的信息的页面上的所有验证控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6014,8 +6014,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <Parameter Name="validationGroup" Type="System.String" Index="0" FrameworkAlternate="netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="validationGroup">要验证的控件的验证组名。</param>
-        <summary>指示指定验证组中的验证控件验证指派给它们的信息。</summary>
+        <param name="validationGroup">要验证的控件的验证组名称。</param>
+        <summary>指示要验证其已分配的信息的指定的验证组中的验证控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6071,8 +6071,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Web.UI.ValidateRequestMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示页面是否检查来自浏览器的客户端输入是否具有潜在危险值的值。</summary>
-        <value>指示页面是否检查客户输入的值。 默认值为 <see cref="F:System.Web.UI.ValidateRequestMode.Enabled" />。</value>
+        <summary>获取或设置一个值，指示页面是否检查来自浏览器具有潜在危险值的客户端输入。</summary>
+        <value>一个值，指示页面是否检查客户端输入。 默认值为 <see cref="F:System.Web.UI.ValidateRequestMode.Enabled" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6110,7 +6110,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Web.UI.ValidatorCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取请求的页上包含的全部验证控件的集合。</summary>
+        <summary>获取包含请求的页上的所有验证控件的集合。</summary>
         <value>验证控件的集合。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6152,8 +6152,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <Parameter Name="control" Type="System.Web.UI.Control" />
       </Parameters>
       <Docs>
-        <param name="control">必须位于 <see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> 控件中的 ASP.NET 服务器控件。</param>
-        <summary>确认在运行时为指定的 ASP.NET 服务器控件呈现 <see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> 控件。</summary>
+        <param name="control">在所需的 ASP.NET 服务器控件<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />控件。</param>
+        <summary>确认<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />在运行时为指定的 ASP.NET 服务器控件呈现控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6174,8 +6174,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">指定的服务器控件在运行时不包含在 <see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> 服务器控件的开始和结束标记之间。</exception>
-        <exception cref="T:System.ArgumentNullException">要验证的控件为 <see langword="null" />。</exception>
+        <exception cref="T:System.Web.HttpException">指定的服务器控件不包含开始和结束标记之间<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />服务器控件在运行时。</exception>
+        <exception cref="T:System.ArgumentNullException">要验证的控件是<see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="ViewStateEncryptionMode">
@@ -6248,7 +6248,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">设置的值不是 <see cref="T:System.Web.UI.ViewStateEncryptionMode" /> 枚举的成员。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">设置的值不是成员的<see cref="T:System.Web.UI.ViewStateEncryptionMode" />枚举。</exception>
         <exception cref="T:System.InvalidOperationException">仅可在页生命周期中的页 <see langword="PreRender" /> 阶段之前或期间设置 <see cref="P:System.Web.UI.Page.ViewStateEncryptionMode" /> 属性。</exception>
         <altmember cref="T:System.Web.UI.ViewStateEncryptionMode" />
       </Docs>
@@ -6279,7 +6279,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>将一个标识符分配给与当前页关联的视图状态变量中的单个用户。</summary>
+        <summary>将标识符分配给单个用户与当前页关联的视图状态变量中。</summary>
         <value>单个用户的标识符。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -6294,7 +6294,7 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">在页处理期间，对 <see cref="P:System.Web.UI.Page.ViewStateUserKey" /> 属性的访问太迟。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.UI.Page.ViewStateUserKey" />属性的访问太迟在页处理过程。</exception>
         <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=163557">充分利用 ASP.NET 内置功能来防范 Web 攻击</related>
       </Docs>
     </Member>
@@ -6324,8 +6324,8 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置指示是否呈现 <see cref="T:System.Web.UI.Page" /> 对象的值。</summary>
-        <value>如果将呈现 <see cref="T:System.Web.UI.Page" />，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <summary>获取或设置一个值，该值指示是否<see cref="T:System.Web.UI.Page" />呈现对象。</summary>
+        <value><see langword="true" /> 如果<see cref="T:System.Web.UI.Page" />呈现; 否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
