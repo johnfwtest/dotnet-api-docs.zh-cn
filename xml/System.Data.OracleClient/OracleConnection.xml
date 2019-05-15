@@ -1,5 +1,5 @@
 <Type Name="OracleConnection" FullName="System.Data.OracleClient.OracleConnection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="4011092cd662efc13521bdeebd5dcd667b04b7df" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57954056" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleConnection : System.Data.Common.DbConnection, ICloneable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c07425099182ad5eb47309872d99e0f5d0bf600d" /><Meta Name="ms.sourcegitcommit" Value="cb4a1b695ae3cbb5d99ef8c39b476d40c35f42a2" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/28/2019" /><Meta Name="ms.locfileid" Value="64766306" /></Metadata><TypeSignature Language="C#" Value="public sealed class OracleConnection : System.Data.Common.DbConnection, ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleConnection extends System.Data.Common.DbConnection implements class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleConnection" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OracleConnection&#xA;Inherits DbConnection&#xA;Implements ICloneable" />
@@ -29,7 +29,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>表示一个到数据库的打开的连接。 此类不能被继承。</summary>
+    <summary>表示与数据库的打开连接。 此类不能被继承。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -119,7 +119,7 @@
       </Parameters>
       <Docs>
         <param name="connectionString">用于打开数据库的连接。</param>
-        <summary>使用指定的连接字符串初始化 <see cref="T:System.Data.OracleClient.OracleConnection" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.Data.OracleClient.OracleConnection" />类与指定的连接字符串。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -164,7 +164,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>在数据库中开始一个事务。</summary>
+        <summary>开始在数据库事务。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="BeginTransaction">
@@ -186,7 +186,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在数据库中开始一个事务。</summary>
+        <summary>开始在数据库事务。</summary>
         <returns>表示新事务的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -235,8 +235,8 @@
         <Parameter Name="il" Type="System.Data.IsolationLevel" />
       </Parameters>
       <Docs>
-        <param name="il">该连接的事务隔离级别。</param>
-        <summary>使用指定的 <see cref="T:System.Data.IsolationLevel" /> 值在数据库中开始一个事务。</summary>
+        <param name="il">此连接的事务隔离级别。</param>
+        <summary>在具有指定数据库开始一个事务<see cref="T:System.Data.IsolationLevel" />值。</summary>
         <returns>表示新事务的对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -440,7 +440,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置用于打开 Oracle 数据库的字符串。</summary>
-        <value>包含设置（如服务器名称等）的 Oracle 连接字符串需要建立初始连接。 默认值为空字符串 ("")。</value>
+        <value>Oracle 连接字符串，包括设置，如服务器名称，需要建立初始连接。 默认值为空字符串 ("")。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -477,9 +477,9 @@
   
  下表列出了中的值的有效名称<xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>。  
   
-|name|默认|描述|  
+|名称|默认|描述|  
 |----------|-------------|-----------------|  
-|“数据源”<br /><br /> - 或 -<br /><br /> 服务器||要连接到的 Oracle 实例的名称或网络地址。|  
+|“数据源”<br /><br /> 或<br /><br /> 服务器||要连接到的 Oracle 实例的名称或网络地址。|  
 |Integrated Security|false|该连接是否或不是安全的连接。<br /><br /> 可识别的值为`true`（强烈推荐）， `false`， `yes`，和`no`。|  
 |Password||记录的 Oracle 帐户的密码。 若要维护高级别的安全性，强烈建议您改为使用集成安全性关键字。|  
 |Persist Security Info|false|如果设置为`false`或`no`（强烈推荐），如密码的安全敏感信息不返回作为连接的一部分，如果连接是打开的或者一直处于一种开放<xref:System.Data.OracleClient.OracleConnection.State%2A>。 重置连接字符串将重置所有连接字符串值，包括密码。<br /><br /> 已识别的值为 `true`、`false`、`yes` 和 `no`。|  
@@ -488,7 +488,7 @@
   
  下表列出了连接池内的值的有效名称<xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>。  
   
-|name|默认|描述|  
+|名称|默认|描述|  
 |----------|-------------|-----------------|  
 |连接生存期|0|连接返回到池中后，创建时间将与当前时间进行比较，如果时间跨度（秒）超过 `Connection Lifetime` 指定的值，该连接将被破坏。 在聚集配置中可以使用它来强制在运行服务器和刚联机的服务器之间达到负载平衡。<br /><br /> 零值会导致池的连接具有最大连接超时。|  
 |Enlist|'true'|当`true`或`yes`，池进程会自动登记在创建线程的当前事务上下文中的连接。<br /><br /> 已识别的值为 `true`、`false`、`yes` 和 `no`。|  
@@ -535,7 +535,7 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取在建立连接时终止尝试并生成错误之前所等待的时间。</summary>
+        <summary>获取等待建立的连接终止尝试并生成错误之前的时间。</summary>
         <value>等待连接打开所需的时间（以秒为单位）。 默认值为 15 秒。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -570,8 +570,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>创建并返回一个与该 <see cref="T:System.Data.OracleClient.OracleCommand" /> 关联的 <see cref="T:System.Data.OracleClient.OracleConnection" /> 对象。</summary>
-        <returns><see cref="T:System.Data.OracleClient.OracleCommand" /> 对象。</returns>
+        <summary>创建并返回<see cref="T:System.Data.OracleClient.OracleCommand" />对象与关联<see cref="T:System.Data.OracleClient.OracleConnection" />。</summary>
+        <returns>一个 <see cref="T:System.Data.OracleClient.OracleCommand" /> 对象。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -665,8 +665,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取要连接的 Oracle 服务器的名称。</summary>
-        <value>要连接的 Oracle 服务器的名称。 默认值为空字符串 ("")。</value>
+        <summary>获取要连接到的 Oracle 服务器的名称。</summary>
+        <value>要连接到 Oracle 服务器的名称。 默认值为空字符串 ("")。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -959,7 +959,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>使用 <see cref="P:System.Data.OracleClient.OracleConnection.ConnectionString" /> 指定的属性设置打开一个到数据库的连接。</summary>
+        <summary>使用指定的属性设置打开到数据库的连接<see cref="P:System.Data.OracleClient.OracleConnection.ConnectionString" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1001,7 +1001,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取包含客户端所连接到的服务器的版本的字符串。</summary>
+        <summary>获取一个包含客户端连接到服务器的版本字符串。</summary>
         <value>连接的服务器的版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1088,7 +1088,7 @@
         <ReturnType>System.Data.StateChangeEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
+        <summary>当连接的状态更改时发生。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1234,7 +1234,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Data.OracleClient.OracleConnection> 实例强制转换为 <xref:System.ICloneable> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Data.OracleClient.OracleConnection> 实例被强制转换为 <xref:System.ICloneable> 接口时使用。  
   
  ]]></format>
         </remarks>
