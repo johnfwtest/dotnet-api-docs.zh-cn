@@ -1,5 +1,5 @@
 <Type Name="StaticExtension" FullName="System.Windows.Markup.StaticExtension">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="88aa8d74574a8671d7abe9a5e3cb60e63bdfcbca" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57955460" /></Metadata><TypeSignature Language="C#" Value="public class StaticExtension : System.Windows.Markup.MarkupExtension" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="c6c2c4c1b0fb1502c3d0ee2c5cd71fbb187892d6" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64994645" /></Metadata><TypeSignature Language="C#" Value="public class StaticExtension : System.Windows.Markup.MarkupExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StaticExtension extends System.Windows.Markup.MarkupExtension" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.StaticExtension" />
   <TypeSignature Language="VB.NET" Value="Public Class StaticExtension&#xA;Inherits MarkupExtension" />
@@ -24,7 +24,7 @@
     <Attribute FrameworkAlternate="netframework-4.8;netcore-3.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2">
       <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.StaticExtensionConverter))</AttributeName>
     </Attribute>
-    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationFramework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
     </Attribute>
     <Attribute FrameworkAlternate="netframework-4.8;netcore-3.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2">
@@ -107,7 +107,7 @@
         <Parameter Name="member" Type="System.String" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="member">标识要引用的成员的字符串。 此字符串使用格式 <c>prefix:typeName.fieldOrPropertyName</c>。 <c>prefix</c> 是 XAML 命名空间的映射前缀，并且仅用于未映射到默认 XAML 命名空间的引用静态值。</param>
+        <param name="member">用于标识要引用的成员的字符串。 此字符串使用格式 <c>prefix:typeName.fieldOrPropertyName</c>。 <c>prefix</c> 是 XAML 命名空间的映射前缀，并且仅用于未映射到默认 XAML 命名空间的引用静态值。</param>
         <summary>使用提供的 <paramref name="member" /> 字符串初始化 <see cref="T:System.Windows.Markup.StaticExtension" /> 类的新实例。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -153,7 +153,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置用于根据服务提供的类型解析程序解析静态字段或属性的成员名称字符串。</summary>
-        <value>标识要引用的成员的字符串。</value>
+        <value>用于标识要引用的成员的字符串。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -201,8 +201,8 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置用于定义要返回的静态成员的 <see cref="T:System.Type" />。</summary>
-        <value>用于定义要返回的静态成员的 <see cref="T:System.Type" />。</value>
+        <summary>获取或设置<see cref="T:System.Type" />，它定义要返回的静态成员。</summary>
+        <value><see cref="T:System.Type" /> ，它定义要返回的静态成员。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -244,9 +244,9 @@
         <Parameter Name="serviceProvider" Type="System.IServiceProvider" Index="0" FrameworkAlternate="netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="serviceProvider">可为标记扩展提供服务的对象。 服务提供程序应提供实现类型解析程序 (<see cref="T:System.Windows.Markup.IXamlTypeResolver" />) 的服务。</param>
-        <summary>返回一个要在此扩展所应用到的属性上设置的对象值。 对于 <see cref="T:System.Windows.Markup.StaticExtension" />，返回值是为所请求的静态成员计算的静态值。</summary>
-        <returns>要在应用扩展的属性上设置的静态值。</returns>
+        <param name="serviceProvider">可为标记扩展提供服务的对象。 服务提供商应提供可实现类型解析程序 (<see cref="T:System.Windows.Markup.IXamlTypeResolver" />) 的服务。</param>
+        <summary>返回一个要在应用此扩展的属性上设置的对象值。 对于 <see cref="T:System.Windows.Markup.StaticExtension" />，返回值是针对请求的静态成员所计算的静态值。</summary>
+        <returns>要在应用了扩展的属性上设置的静态值。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -259,12 +259,12 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">扩展的 <paramref name="member" /> 值在求值时为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="member" /> 字符串的某部分未进行正确分析 
-- 或 - 
+        <exception cref="T:System.InvalidOperationException">计算时，扩展的 <paramref name="member" /> 值为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="member" /> 字符串的某部分未进行正确分析。 
+或 
  <paramref name="serviceProvider" /> 没有为 <see cref="T:System.Windows.Markup.IXamlTypeResolver" /> 提供服务  
   
-- 或 - 
+或 
  <paramref name="member" /> 值未解析为静态成员。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="serviceProvider" /> 为 <see langword="null" />。</exception>
       </Docs>
