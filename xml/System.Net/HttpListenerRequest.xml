@@ -1,5 +1,5 @@
 <Type Name="HttpListenerRequest" FullName="System.Net.HttpListenerRequest">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7121ea733b1306868bd3111e0fe52b94622831bc" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58714694" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListenerRequest" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9b9d6bee92e508314a7a572464c67f943df2bdae" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558526" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListenerRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListenerRequest extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerRequest" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpListenerRequest" />
@@ -43,6 +43,7 @@
  下面的代码示例演示如何接收和响应<xref:System.Net.HttpListenerRequest>。  
   
  [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+ [!code-vb[Net_Listener_Basic#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#2)]  
   
  ]]></format>
     </remarks>
@@ -80,7 +81,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取客户端接受的 MIME 类型。</summary>
-        <value>一个 <see cref="T:System.String" /> 数组，该数组包含在请求的 <see langword="Accept" /> 标头中指定的类型名称；如果客户端请求不包括 <see langword="null" /> 标头，则为 <see langword="Accept" />。</value>
+        <value>一个<see cref="T:System.String" />数组，其中包含在请求中指定的类型名称<see langword="Accept" />标头或<see langword="null" />如果客户端请求不包含<see langword="Accept" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -95,6 +96,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -171,7 +173,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个错误代码，该代码标识的问题涉及客户端提供的 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />。</summary>
-        <value>包含 Windows 错误代码的 <see cref="T:System.Int32" /> 值。</value>
+        <value><see cref="T:System.Int32" />值，该值包含 Windows 错误代码。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -225,7 +227,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取可用于随请求发送的数据的内容编码</summary>
-        <value>一个 <see cref="T:System.Text.Encoding" /> 对象，适于 <see cref="P:System.Net.HttpListenerRequest.InputStream" /> 属性中的数据使用。</value>
+        <value><see cref="T:System.Text.Encoding" />适合与中的数据一起使用的对象<see cref="P:System.Net.HttpListenerRequest.InputStream" />属性。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -238,6 +240,7 @@
  下面的代码示例演示了如何使用<xref:System.Net.HttpListenerRequest.ContentEncoding%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+ [!code-vb[Net_Listener_Basic#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#16)]  
   
  ]]></format>
         </remarks>
@@ -275,7 +278,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取包含在请求中的正文数据的长度。</summary>
-        <value>请求的 <see langword="Content-Length" /> 标头中的值。 如果内容长度未知，则此值为 -1。</value>
+        <value>请求中的值<see langword="Content-Length" />标头。 如果不知道的内容长度，则此值为-1。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -290,6 +293,7 @@
  下面的代码示例使用<xref:System.Net.HttpListenerRequest.ContentLength64%2A>属性，同时处理的正文数据。  
   
  [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+ [!code-vb[Net_Listener_Basic#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#16)]  
   
  ]]></format>
         </remarks>
@@ -332,7 +336,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取包含在请求中的正文数据的 MIME 类型。</summary>
-        <value><see cref="T:System.String" />，包含请求的 <see langword="Content-Type" /> 标头的文本。</value>
+        <value>一个<see cref="T:System.String" />，包含请求的文本<see langword="Content-Type" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -349,6 +353,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+ [!code-vb[Net_Listener_Basic#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#16)]  
   
  ]]></format>
         </remarks>
@@ -386,7 +391,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取随请求发送的 Cookie。</summary>
-        <value><see cref="T:System.Net.CookieCollection" /> 包含伴随请求的 Cookie。 如果请求不包含 Cookie，则此属性返回空集合。</value>
+        <value>一个<see cref="T:System.Net.CookieCollection" />，其中包含与请求一起发送的 cookie。 如果请求不包含 cookie，则此属性返回一个空集合。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -399,6 +404,7 @@
  下面的代码示例显示与请求一起发送的 cookie 的值。  
   
  [!code-csharp[Net_Listener_Basic#18](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#18)]  
+ [!code-vb[Net_Listener_Basic#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#18)]  
   
  ]]></format>
         </remarks>
@@ -562,7 +568,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个 <see cref="T:System.Boolean" /> 值，该值指示请求是否有关联的正文数据。</summary>
-        <value>如果请求有关联的正文数据，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果请求有关联的正文数据;，否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -575,6 +581,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+ [!code-vb[Net_Listener_Basic#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#16)]  
   
  ]]></format>
         </remarks>
@@ -612,7 +619,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取在请求中发送的标头名称/值对的集合。</summary>
-        <value><see cref="T:System.Net.WebHeaderCollection" /> 包含的 HTTP 标头包括在请求中。</value>
+        <value>一个<see cref="T:System.Net.WebHeaderCollection" />，其中包含请求中包含的 HTTP 标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -627,6 +634,7 @@
  下面的代码示例显示中的所有信息给定<xref:System.Net.WebHeaderCollection>对象。  
   
  [!code-csharp[Net_Listener_Basic#21](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#21)]  
+ [!code-vb[Net_Listener_Basic#21](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#21)]  
   
  ]]></format>
         </remarks>
@@ -664,7 +672,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取由客户端指定的 HTTP 方法。</summary>
-        <value><see cref="T:System.String" /> 包含的方法用于请求中。</value>
+        <value>一个<see cref="T:System.String" />包含请求中使用的方法。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -677,6 +685,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -714,7 +723,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取包含由客户端发送的正文数据的流。</summary>
-        <value>一个可读的 <see cref="T:System.IO.Stream" /> 对象，该对象包含客户端在请求正文中发送的字节。 如果没有随请求发送任何数据，则此属性返回 <see cref="F:System.IO.Stream.Null" />。</value>
+        <value>可读<see cref="T:System.IO.Stream" />对象，其中包含请求的正文中的客户端发送的字节数。 此属性返回<see cref="F:System.IO.Stream.Null" />如果随请求不发送任何数据。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -730,6 +739,7 @@
  下面的代码示例演示如何使用此属性读取与请求一起发送的数据。  
   
  [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+ [!code-vb[Net_Listener_Basic#16](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#16)]  
   
  ]]></format>
         </remarks>
@@ -773,7 +783,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个 <see cref="T:System.Boolean" /> 值，该值指示发送此请求的客户端是否经过身份验证。</summary>
-        <value>如果客户端已经过身份验证，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果客户端进行身份验证否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -788,6 +798,7 @@
  下面的代码示例显示的值<xref:System.Net.HttpListenerRequest.IsAuthenticated%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -825,7 +836,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取 <see cref="T:System.Boolean" /> 值，该值指示该请求是否来自本地计算机。</summary>
-        <value>如果发出请求的计算机就是提供该请求的 <see cref="T:System.Net.HttpListener" /> 对象所在的计算机，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果同一台计算机上发出的请求<see cref="T:System.Net.HttpListener" />对象，提供请求; 否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -838,6 +849,7 @@
  下面的代码示例演示了如何使用<xref:System.Net.HttpListenerRequest.IsLocal%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -875,7 +887,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个 <see cref="T:System.Boolean" /> 值，该值指示用来发送请求的 TCP 连接是否使用安全套接字层 (SSL) 协议。</summary>
-        <value>如果 TCP 连接使用的是 SSL，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果 TCP 连接使用 SSL;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -888,6 +900,7 @@
  下面的代码示例演示了如何使用<xref:System.Net.HttpListenerRequest.IsSecureConnection%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -931,7 +944,7 @@
         <summary>获取 <see cref="T:System.Boolean" /> 值，该值指示 TCP 连接是否为 WebSocket 请求。</summary>
         <value>返回 <see cref="T:System.Boolean" />。  
   
- 如果 TCP 连接是 WebSocket 请求，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+ <see langword="true" /> 如果 TCP 连接是 WebSocket 请求;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -964,7 +977,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取一个 <see cref="T:System.Boolean" /> 值，该值指示客户端是否请求持久性连接。</summary>
-        <value>如果连接应保持打开状态，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果连接应保持打开状态;否则为<see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -977,6 +990,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -1014,7 +1028,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取请求定向到的服务器 IP 地址和端口号。</summary>
-        <value><see cref="T:System.Net.IPEndPoint" /> 表示请求被发送到的 IP 地址。</value>
+        <value><see cref="T:System.Net.IPEndPoint" />表示将请求发送到的 IP 地址。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1027,6 +1041,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -1069,7 +1084,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取请求客户端使用的 HTTP 版本。</summary>
-        <value><see cref="T:System.Version" /> 用于标识 HTTP 的客户端版本。</value>
+        <value>一个<see cref="T:System.Version" />标识的 HTTP 客户端的版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1082,6 +1097,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -1119,7 +1135,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取包含在请求中的查询字符串。</summary>
-        <value>一个 <see cref="T:System.Collections.Specialized.NameValueCollection" /> 对象，其中包含的查询数据包括在请求 <see cref="P:System.Net.HttpListenerRequest.Url" /> 中。</value>
+        <value>一个<see cref="T:System.Collections.Specialized.NameValueCollection" />对象，其中包含请求中包含的查询数据<see cref="P:System.Net.HttpListenerRequest.Url" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1135,6 +1151,7 @@
  下面的代码示例演示了如何使用<xref:System.Net.HttpListenerRequest.QueryString%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -1177,7 +1194,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取客户端请求的 URL 信息（不包括主机和端口）。</summary>
-        <value><see cref="T:System.String" /> 包含此请求的原始 URL。</value>
+        <value>一个<see cref="T:System.String" />，其中包含此请求的原始 URL。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1192,6 +1209,7 @@
  下面的代码示例演示了如何使用<xref:System.Net.HttpListenerRequest.RawUrl%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#11](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#11)]  
+ [!code-vb[Net_Listener_Basic#11](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#11)]  
   
  ]]></format>
         </remarks>
@@ -1229,7 +1247,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取发出请求的客户端 IP 地址和端口号。</summary>
-        <value><see cref="T:System.Net.IPEndPoint" /> 表示发出请求的 IP 地址和端口号。</value>
+        <value><see cref="T:System.Net.IPEndPoint" />表示发出请求的 IP 地址和端口号。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1237,6 +1255,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+ [!code-vb[Net_Listener_Basic#17](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#17)]  
   
  ]]></format>
         </remarks>
@@ -1279,7 +1298,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取传入 HTTP 请求的请求标识符。</summary>
-        <value><see cref="T:System.Guid" /> 对象，其中包含 HTTP 请求的标识符。</value>
+        <value>一个<see cref="T:System.Guid" />对象，其中包含 HTTP 请求的标识符。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1320,7 +1339,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取客户端通过请求发送的服务提供程序名称 (SPN)。</summary>
-        <value>一个 <see cref="T:System.String" />，它包含客户端通过请求发送的 SPN。</value>
+        <value>一个<see cref="T:System.String" />，其中包含在请求上发送的客户端的 SPN。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1368,7 +1387,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取客户端请求的 <see cref="T:System.Net.TransportContext" />。</summary>
-        <value>客户端请求的 <see cref="T:System.Net.TransportContext" /> 对象。</value>
+        <value>一个<see cref="T:System.Net.TransportContext" />为客户端请求的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1425,7 +1444,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取客户端请求的 <see cref="T:System.Uri" /> 对象。</summary>
-        <value>一个 <see cref="T:System.Uri" /> 对象，用于标识客户端请求的资源。</value>
+        <value>一个<see cref="T:System.Uri" />对象，用于标识客户端请求的资源。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1501,6 +1520,7 @@
  下面的代码示例演示了如何使用<xref:System.Net.HttpListenerRequest.Url%2A>属性。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -1541,7 +1561,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取将使客户端与服务器相关的资源的统一资源标识符 (URI)。</summary>
-        <value><see cref="T:System.Uri" /> 对象，包含请求的 <see cref="F:System.Net.HttpRequestHeader.Referer" /> 标头的文本；如果请求中不包含标头，则为 <see langword="null" />。</value>
+        <value>一个<see cref="T:System.Uri" />对象，其中包含请求的文本<see cref="F:System.Net.HttpRequestHeader.Referer" />标头，或<see langword="null" />如果请求中未包含在标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1560,6 +1580,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -1602,7 +1623,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取客户端提供的用户代理。</summary>
-        <value>一个 <see cref="T:System.String" /> 对象，其中包含请求的 <see langword="User-Agent" /> 标头的文本。</value>
+        <value>一个<see cref="T:System.String" />对象，其中包含请求的文本<see langword="User-Agent" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1619,6 +1640,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -1656,7 +1678,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取请求定向到的服务器 IP 地址和端口号。</summary>
-        <value>包含主机地址信息的 <see cref="T:System.String" />。</value>
+        <value>一个<see cref="T:System.String" />包含主机地址信息。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1669,6 +1691,7 @@
  下面的代码示例显示了此属性的值。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -1711,7 +1734,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取由客户端指定的 DNS 名称和端口号（如果提供了端口号）。</summary>
-        <value>一个 <see cref="T:System.String" /> 值，其中包含请求的 <see langword="Host" /> 标头的文本。</value>
+        <value>一个<see cref="T:System.String" />值，该值包含文本的请求的<see langword="Host" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1728,6 +1751,7 @@
  下面的代码示例演示如何使用此属性。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>
@@ -1765,7 +1789,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取响应的首选自然语言。</summary>
-        <value><see cref="T:System.String" /> 数组，包含请求的 <see cref="F:System.Net.HttpRequestHeader.AcceptLanguage" /> 标头中指定的语言；如果客户端请求不包含 <see cref="F:System.Net.HttpRequestHeader.AcceptLanguage" /> 标头，则为 <see langword="null" />。</value>
+        <value>一个<see cref="T:System.String" />数组，其中包含在请求中指定的语言<see cref="F:System.Net.HttpRequestHeader.AcceptLanguage" />标头或<see langword="null" />如果客户端请求不包含<see cref="F:System.Net.HttpRequestHeader.AcceptLanguage" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1780,6 +1804,7 @@
  下面的代码示例显示从请求的语言`Accept-Language`标头。  
   
  [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+ [!code-vb[Net_Listener_Basic#15](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#15)]  
   
  ]]></format>
         </remarks>

@@ -1,5 +1,5 @@
 <Type Name="Enumerable" FullName="System.Linq.Enumerable">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="dc23e71f580bab4b8ac73241386ef65dbc8c2ea1" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58699780" /></Metadata><TypeSignature Language="C#" Value="public static class Enumerable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="a54bb7a3eb29d2f1e1c35d9d2db6fae87f655b89" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65136410" /></Metadata><TypeSignature Language="C#" Value="public static class Enumerable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Enumerable extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Linq.Enumerable" />
   <TypeSignature Language="VB.NET" Value="Public Module Enumerable" />
@@ -1878,8 +1878,8 @@
         <Parameter Name="source" Type="System.Collections.IEnumerable" RefType="this" />
       </Parameters>
       <Docs>
-        <typeparam name="TResult"><paramref name="source" /> 中的元素要强制转换成的类型。</typeparam>
-        <param name="source">包含要转换成类型 <paramref name="TResult" /> 的元素的 <see cref="T:System.Collections.IEnumerable" />。</param>
+        <typeparam name="TResult">要转换的元素的类型<paramref name="source" />到。</typeparam>
+        <param name="source"><see cref="T:System.Collections.IEnumerable" /> ，其中包含要强制转换为类型的元素<paramref name="TResult" />。</param>
         <summary>将 <see cref="T:System.Collections.IEnumerable" /> 的元素强制转换为指定的类型。</summary>
         <returns>一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其中包含已强制转换为指定类型的源序列的每个元素。</returns>
         <remarks>
@@ -2762,7 +2762,7 @@ Dim doubles = From item As Integer In sequence
       </TypeParameters>
       <Parameters />
       <Docs>
-        <typeparam name="TResult">分配给返回的泛型 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 的类型参数的类型。</typeparam>
+        <typeparam name="TResult">要将分配给返回的泛型类型参数的类型<see cref="T:System.Collections.Generic.IEnumerable`1" />。</typeparam>
         <summary>返回具有指定类型参数的空 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</summary>
         <returns>一个空 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其类型参数为 <paramref name="TResult" />。</returns>
         <remarks>
@@ -2852,7 +2852,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="first">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，将返回其不在 <paramref name="second" /> 中的元素。</param>
+        <param name="first"><see cref="T:System.Collections.Generic.IEnumerable`1" />不在其元素<paramref name="second" />将返回。</param>
         <param name="second">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其中的元素如果同时出现在第一个序列中，则将导致从返回的序列中移除这些元素。</param>
         <summary>通过使用默认的相等比较器对值进行比较，生成两个序列的差集。</summary>
         <returns>包含这两个序列的元素的差集的序列。</returns>
@@ -2923,7 +2923,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="first">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，将返回其不在 <paramref name="second" /> 中的元素。</param>
+        <param name="first"><see cref="T:System.Collections.Generic.IEnumerable`1" />不在其元素<paramref name="second" />将返回。</param>
         <param name="second">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，其中的元素如果同时出现在第一个序列中，则将导致从返回的序列中移除这些元素。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对值进行比较，生成两个序列的差集。</summary>
@@ -3082,7 +3082,7 @@ Dim doubles = From item As Integer In sequence
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">元素均不满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 源序列为空。</exception>
       </Docs>
     </Member>
@@ -3274,7 +3274,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <summary>根据指定的键选择器函数对序列中的元素进行分组。</summary>
@@ -3347,7 +3347,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
@@ -3424,7 +3424,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <typeparam name="TElement"><see cref="T:System.Linq.IGrouping`2" /> 中元素的类型。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
@@ -3508,7 +3508,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <typeparam name="TElement"><see cref="T:System.Linq.IGrouping`2" /> 中元素的类型。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
@@ -3587,8 +3587,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="resultSelector">用于从每个组中创建结果值的函数。</param>
@@ -3656,8 +3656,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="resultSelector">用于从每个组中创建结果值的函数。</param>
@@ -3712,9 +3712,9 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TElement">每个 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">在每个元素的类型<see cref="T:System.Linq.IGrouping`2" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="elementSelector">用于将每个源元素映射到 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的函数。</param>
@@ -3785,9 +3785,9 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TElement">每个 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的类型。</typeparam>
-        <typeparam name="TResult"><paramref name="resultSelector" /> 返回的结果值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">在每个元素的类型<see cref="T:System.Linq.IGrouping`2" />。</typeparam>
+        <typeparam name="TResult">返回的结果值的类型<paramref name="resultSelector" />。</typeparam>
         <param name="source">要对其元素进行分组的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于提取每个元素的键的函数。</param>
         <param name="elementSelector">用于将每个源元素映射到 <see cref="T:System.Linq.IGrouping`2" /> 中的元素的函数。</param>
@@ -4040,7 +4040,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="first">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，将返回其也出现在 <paramref name="second" /> 中的非重复元素。</param>
+        <param name="first"><see cref="T:System.Collections.Generic.IEnumerable`1" />也会显示在其非重复元素<paramref name="second" />将返回。</param>
         <param name="second">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 序列，其中的同时出现在第一个序列中的非重复元素将被返回。</param>
         <summary>通过使用默认的相等比较器对值进行比较，生成两个序列的交集。</summary>
         <returns>包含组成两个序列交集的元素的序列。</returns>
@@ -4121,7 +4121,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="first">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" />，将返回其也出现在 <paramref name="second" /> 中的非重复元素。</param>
+        <param name="first"><see cref="T:System.Collections.Generic.IEnumerable`1" />也会显示在其非重复元素<paramref name="second" />将返回。</param>
         <param name="second">一个 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 序列，其中的同时出现在第一个序列中的非重复元素将被返回。</param>
         <param name="comparer">用于比较值的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 对值进行比较，生成两个序列的交集。</summary>
@@ -4461,7 +4461,7 @@ Dim doubles = From item As Integer In sequence
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">元素均不满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 源序列为空。</exception>
       </Docs>
     </Member>
@@ -5425,6 +5425,7 @@ Dim doubles = From item As Integer In sequence
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException">中的没有任何对象<paramref name="source" />实现<see cref="T:System.IComparable" />或<see cref="T:System.IComparable`1" />接口。</exception>
         <related type="Article" href="~/docs/visual-basic/language-reference/queries/aggregate-clause.md">Aggregate 子句 (Visual Basic)</related>
       </Docs>
     </Member>
@@ -6150,7 +6151,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult"><paramref name="selector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TResult">返回的值的类型<paramref name="selector" />。</typeparam>
         <param name="source">要确定其最大值的值序列。</param>
         <param name="selector">应用于每个元素的转换函数。</param>
         <summary>对序列中的每个元素调用转换函数，并返回最大结果值。</summary>
@@ -6862,6 +6863,7 @@ Dim doubles = From item As Integer In sequence
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 为 <see langword="null" />。</exception>
+        <exception cref="T:System.ArgumentException">中的没有任何对象<paramref name="source" />实现<see cref="T:System.IComparable" />或<see cref="T:System.IComparable`1" />接口。</exception>
         <related type="Article" href="~/docs/visual-basic/language-reference/queries/aggregate-clause.md">Aggregate 子句 (Visual Basic)</related>
       </Docs>
     </Member>
@@ -7587,7 +7589,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult"><paramref name="selector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TResult">返回的值的类型<paramref name="selector" />。</typeparam>
         <param name="source">要确定其最小值的值序列。</param>
         <param name="selector">应用于每个元素的转换函数。</param>
         <summary>对序列中的每个元素调用转换函数，并返回最小结果值。</summary>
@@ -7731,7 +7733,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <summary>根据键按升序对序列的元素进行排序。</summary>
@@ -7812,7 +7814,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -7892,7 +7894,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <summary>根据键按降序对序列的元素进行排序。</summary>
@@ -7967,7 +7969,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个要排序的值序列。</param>
         <param name="keySelector">用于从元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -8125,7 +8127,7 @@ Dim doubles = From item As Integer In sequence
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count" /> 小于 0。  
   
-- 或 - 
+或 
  <paramref name="start" /> + <paramref name="count" /> -1 大于 <see cref="F:System.Int32.MaxValue" />。</exception>
       </Docs>
     </Member>
@@ -8301,7 +8303,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult"><paramref name="selector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TResult">返回的值的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个值序列，要对该序列调用转换函数。</param>
         <param name="selector">一个应用于每个源元素的转换函数；函数的第二个参数表示源元素的索引。</param>
         <summary>通过合并元素的索引，将序列的每个元素投影到新窗体中。</summary>
@@ -8368,7 +8370,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult"><paramref name="selector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TResult">返回的值的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个值序列，要对该序列调用转换函数。</param>
         <param name="selector">应用于每个元素的转换函数。</param>
         <summary>将序列中的每个元素投影到新表单。</summary>
@@ -8448,7 +8450,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult"><paramref name="selector" /> 返回的序列元素的类型。</typeparam>
+        <typeparam name="TResult">返回的序列的元素的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个要投影的值序列。</param>
         <param name="selector">应用于每个元素的转换函数。</param>
         <summary>将序列的每个元素投影到 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 并将结果序列合并为一个序列。</summary>
@@ -8517,7 +8519,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TResult"><paramref name="selector" /> 返回的序列元素的类型。</typeparam>
+        <typeparam name="TResult">返回的序列的元素的类型<paramref name="selector" />。</typeparam>
         <param name="source">一个要投影的值序列。</param>
         <param name="selector">一个应用于每个源元素的转换函数；函数的第二个参数表示源元素的索引。</param>
         <summary>将序列的每个元素投影到 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 并将结果序列合并为一个序列。 每个源元素的索引用于该元素的投影表。</summary>
@@ -8586,8 +8588,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TCollection"><paramref name="collectionSelector" /> 收集的中间元素的类型。</typeparam>
-        <typeparam name="TResult">结果序列的元素的类型。</typeparam>
+        <typeparam name="TCollection">收集的中间元素的类型<paramref name="collectionSelector" />。</typeparam>
+        <typeparam name="TResult">生成序列中的元素的类型。</typeparam>
         <param name="source">一个要投影的值序列。</param>
         <param name="collectionSelector">应用于输入序列的每个元素的转换函数。</param>
         <param name="resultSelector">应用于中间序列的每个元素的转换函数。</param>
@@ -8659,8 +8661,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TCollection"><paramref name="collectionSelector" /> 收集的中间元素的类型。</typeparam>
-        <typeparam name="TResult">结果序列的元素的类型。</typeparam>
+        <typeparam name="TCollection">收集的中间元素的类型<paramref name="collectionSelector" />。</typeparam>
+        <typeparam name="TResult">生成序列中的元素的类型。</typeparam>
         <param name="source">一个要投影的值序列。</param>
         <param name="collectionSelector">一个应用于每个源元素的转换函数；函数的第二个参数表示源元素的索引。</param>
         <param name="resultSelector">应用于中间序列的每个元素的转换函数。</param>
@@ -8733,7 +8735,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="first">一个用于比较 <paramref name="second" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
+        <param name="first"><see cref="T:System.Collections.Generic.IEnumerable`1" />进行比较<paramref name="second" />。</param>
         <param name="second">要与第一个序列进行比较的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <summary>通过使用相应类型的默认相等比较器对序列的元素进行比较，以确定两个序列是否相等。</summary>
         <returns>如果根据相应类型的默认相等比较器，两个源序列的长度相等，且其相应元素相等，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
@@ -8812,7 +8814,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource">输入序列中的元素的类型。</typeparam>
-        <param name="first">一个用于比较 <paramref name="second" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
+        <param name="first"><see cref="T:System.Collections.Generic.IEnumerable`1" />进行比较<paramref name="second" />。</param>
         <param name="second">要与第一个序列进行比较的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="comparer">用于比较元素的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
         <summary>通过使用指定的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> 来比较两个序列的元素，以确定这两个序列是否相等。</summary>
@@ -8916,7 +8918,7 @@ Dim doubles = From item As Integer In sequence
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">输入序列包含多个元素。  
   
-- 或 - 
+或 
 输入序列为空。</exception>
       </Docs>
     </Member>
@@ -8986,10 +8988,10 @@ Dim doubles = From item As Integer In sequence
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">元素均不满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 多个元素满足 <paramref name="predicate" /> 中的条件。  
   
-- 或 - 
+或 
 源序列为空。</exception>
       </Docs>
     </Member>
@@ -11028,7 +11030,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <summary>根据某个键按升序对序列中的元素执行后续排序。</summary>
@@ -11107,7 +11109,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -11185,7 +11187,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <summary>根据某个键按降序对序列中的元素执行后续排序。</summary>
@@ -11258,7 +11260,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">一个包含要排序的元素的 <see cref="T:System.Linq.IOrderedEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IComparer`1" />。</param>
@@ -11405,7 +11407,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Collections.Generic.Dictionary`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <summary>根据指定的键选择器函数，从 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 创建一个 <see cref="T:System.Collections.Generic.Dictionary`2" />。</summary>
@@ -11428,7 +11430,7 @@ Dim doubles = From item As Integer In sequence
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="keySelector" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="keySelector" /> 生成一个 <see langword="null" /> 的键。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="keySelector" /> 为两个元素生成重复键。</exception>
       </Docs>
@@ -11473,7 +11475,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Collections.Generic.Dictionary`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
@@ -11489,7 +11491,7 @@ Dim doubles = From item As Integer In sequence
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="keySelector" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="keySelector" /> 生成一个 <see langword="null" /> 的键。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="keySelector" /> 为两个元素生成重复键。</exception>
       </Docs>
@@ -11540,8 +11542,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TElement"><paramref name="elementSelector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">返回的值的类型<paramref name="elementSelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Collections.Generic.Dictionary`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="elementSelector">用于从每个元素产生结果元素值的转换函数。</param>
@@ -11557,7 +11559,7 @@ Dim doubles = From item As Integer In sequence
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="keySelector" /> 或 <paramref name="elementSelector" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="keySelector" /> 生成一个 <see langword="null" /> 的键。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="keySelector" /> 为两个元素生成重复键。</exception>
       </Docs>
@@ -11604,8 +11606,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TElement"><paramref name="elementSelector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">返回的值的类型<paramref name="elementSelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Collections.Generic.Dictionary`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="elementSelector">用于从每个元素产生结果元素值的转换函数。</param>
@@ -11622,7 +11624,7 @@ Dim doubles = From item As Integer In sequence
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="keySelector" /> 或 <paramref name="elementSelector" /> 为 <see langword="null" />。  
   
-- 或 - 
+或 
  <paramref name="keySelector" /> 生成一个 <see langword="null" /> 的键。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="keySelector" /> 为两个元素生成重复键。</exception>
       </Docs>
@@ -11816,7 +11818,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Linq.Lookup`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <summary>根据指定的键选择器函数，从 <see cref="T:System.Collections.Generic.IEnumerable`1" /> 创建一个 <see cref="T:System.Linq.Lookup`2" />。</summary>
@@ -11874,7 +11876,7 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Linq.Lookup`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="comparer">用于比较键的 <see cref="T:System.Collections.Generic.IEqualityComparer`1" />。</param>
@@ -11934,8 +11936,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TElement"><paramref name="elementSelector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">返回的值的类型<paramref name="elementSelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Linq.Lookup`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="elementSelector">用于从每个元素产生结果元素值的转换函数。</param>
@@ -12004,8 +12006,8 @@ Dim doubles = From item As Integer In sequence
       </Parameters>
       <Docs>
         <typeparam name="TSource"><paramref name="source" /> 的元素类型。</typeparam>
-        <typeparam name="TKey"><paramref name="keySelector" /> 返回的键的类型。</typeparam>
-        <typeparam name="TElement"><paramref name="elementSelector" /> 返回的值的类型。</typeparam>
+        <typeparam name="TKey">返回的键的类型<paramref name="keySelector" />。</typeparam>
+        <typeparam name="TElement">返回的值的类型<paramref name="elementSelector" />。</typeparam>
         <param name="source">要从其创建 <see cref="T:System.Linq.Lookup`2" /> 的 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</param>
         <param name="keySelector">用于从每个元素中提取键的函数。</param>
         <param name="elementSelector">用于从每个元素产生结果元素值的转换函数。</param>
@@ -12336,6 +12338,50 @@ Dim doubles = From item As Integer In sequence
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="source" /> 或 <paramref name="predicate" /> 为 <see langword="null" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Zip&lt;TFirst,TSecond&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;ValueTuple&lt;TFirst,TSecond&gt;&gt; Zip&lt;TFirst,TSecond&gt; (this System.Collections.Generic.IEnumerable&lt;TFirst&gt; first, System.Collections.Generic.IEnumerable&lt;TSecond&gt; second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;valuetype System.ValueTuple`2&lt;!!TFirst, !!TSecond&gt;&gt; Zip&lt;TFirst, TSecond&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TFirst&gt; first, class System.Collections.Generic.IEnumerable`1&lt;!!TSecond&gt; second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Enumerable.Zip``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function Zip(Of TFirst, TSecond) (first As IEnumerable(Of TFirst), second As IEnumerable(Of TSecond)) As IEnumerable(Of ValueTuple(Of TFirst, TSecond))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TFirst, typename TSecond&gt;&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static System::Collections::Generic::IEnumerable&lt;ValueTuple&lt;TFirst, TSecond&gt;&gt; ^ Zip(System::Collections::Generic::IEnumerable&lt;TFirst&gt; ^ first, System::Collections::Generic::IEnumerable&lt;TSecond&gt; ^ second);" />
+      <MemberSignature Language="F#" Value="static member Zip : seq&lt;'First&gt; * seq&lt;'Second&gt; -&gt; seq&lt;ValueTuple&lt;'First, 'Second&gt;&gt;" Usage="System.Linq.Enumerable.Zip (first, second)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.2.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ValueTuple&lt;TFirst,TSecond&gt;&gt;</ReturnType>
+        <Attributes>
+          <Attribute FrameworkAlternate="netcore-3.0">
+            <AttributeName>System.Runtime.CompilerServices.TupleElementNames(new System.String[] { "First", "Second" })</AttributeName>
+          </Attribute>
+        </Attributes>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TFirst" />
+        <TypeParameter Name="TSecond" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="first" Type="System.Collections.Generic.IEnumerable&lt;TFirst&gt;" RefType="this" Index="0" FrameworkAlternate="netcore-3.0" />
+        <Parameter Name="second" Type="System.Collections.Generic.IEnumerable&lt;TSecond&gt;" Index="1" FrameworkAlternate="netcore-3.0" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TFirst">To be added.</typeparam>
+        <typeparam name="TSecond">To be added.</typeparam>
+        <param name="first">To be added.</param>
+        <param name="second">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Zip&lt;TFirst,TSecond,TResult&gt;">

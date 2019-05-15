@@ -1,5 +1,5 @@
 <Type Name="ControlDesigner" FullName="System.Windows.Forms.Design.ControlDesigner">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="dca817abec774959baf373d445734a021760d141" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="59355041" /></Metadata><TypeSignature Language="C#" Value="public class ControlDesigner : System.ComponentModel.Design.ComponentDesigner" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="dd08e6953e367fdde14eadb10cdd95744bed53bc" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65136151" /></Metadata><TypeSignature Language="C#" Value="public class ControlDesigner : System.ComponentModel.Design.ComponentDesigner" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlDesigner extends System.ComponentModel.Design.ComponentDesigner" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.ControlDesigner" />
   <TypeSignature Language="VB.NET" Value="Public Class ControlDesigner&#xA;Inherits ComponentDesigner" />
@@ -19,11 +19,6 @@
     <BaseTypeName>System.ComponentModel.Design.ComponentDesigner</BaseTypeName>
   </Base>
   <Interfaces />
-  <Attributes>
-    <Attribute FrameworkAlternate="netcore-3.0">
-      <AttributeName>System.CLSCompliant(false)</AttributeName>
-    </Attribute>
-  </Attributes>
   <Docs>
     <summary>扩展 <see cref="T:System.Windows.Forms.Control" /> 的设计模式行为。</summary>
     <remarks>
@@ -98,7 +93,7 @@
         <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>为设计器指定可访问对象。</summary>
+        <summary>设计器中指定的辅助功能对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -167,8 +162,8 @@
         <ReturnType>System.Collections.ICollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与设计器所管理的组件关联的组件集合。</summary>
-        <value>与设计器所管理的组件关联的组件。</value>
+        <summary>获取与设计器所管理的组件关联的组件的集合。</summary>
+        <value>与设计器所管理的组件相关联的组件。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -212,8 +207,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置一个值，该值指示调整手柄的分配是否取决于 <see cref="P:System.Windows.Forms.Control.AutoSize" /> 属性的值。</summary>
-        <value>如果调整手柄的分配取决于 <see cref="P:System.Windows.Forms.Control.AutoSize" /> 和 <see langword="true" /> 属性的值，则为 <see langword="AutoSizeMode" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <summary>获取或设置一个值，该值指示是否重设大小手柄的分配取决于值<see cref="P:System.Windows.Forms.Control.AutoSize" />属性。</summary>
+        <value><see langword="true" /> 如果重设大小手柄的分配取决于值<see cref="P:System.Windows.Forms.Control.AutoSize" />并<see langword="AutoSizeMode" />属性; 否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -275,8 +270,8 @@
         <ReturnType>System.Windows.Forms.Design.Behavior.BehaviorService</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>从设计环境获取 <see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />。</summary>
-        <value><see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />，若该服务不可用则为 <see langword="null" />。</value>
+        <summary>获取<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />从设计环境。</summary>
+        <value><see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />，或<see langword="null" />如果服务不可用。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -305,9 +300,9 @@
         <Parameter Name="parentDesigner" Type="System.ComponentModel.Design.IDesigner" />
       </Parameters>
       <Docs>
-        <param name="parentDesigner"><see cref="T:System.ComponentModel.Design.IDesigner" />，它可管理要检查的控件。</param>
-        <summary>指示指定设计器的控件是否可以成为此设计器控件的父级。</summary>
-        <returns>如果由指定设计器管理的控件可以成为由此设计器管理的控件的父级，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="parentDesigner"><see cref="T:System.ComponentModel.Design.IDesigner" />管理要检查的控件。</param>
+        <summary>指示此设计器的控件的设置是否可以为指定的设计器的控件的父级。</summary>
+        <returns><see langword="true" /> 如果由指定设计器管理的控件可以由此设计器; 管理控件的父级否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -344,7 +339,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取设计器正在设计的控件。</summary>
-        <value>设计器正在设计的控件。</value>
+        <value>在设计器正在设计的控件。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -374,7 +369,7 @@
       </Parameters>
       <Docs>
         <param name="m">要处理的 <see cref="T:System.Windows.Forms.Message" />。</param>
-        <summary>提供对 Windows 消息的默认处理。</summary>
+        <summary>提供了默认的 Windows 消息处理。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -414,7 +409,7 @@
       </Parameters>
       <Docs>
         <param name="e">要显示的 <see cref="T:System.Exception" />。</param>
-        <summary>向用户显示有关所指定异常的信息。</summary>
+        <summary>为用户显示有关指定异常的信息。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -443,7 +438,7 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -487,10 +482,10 @@
         <Parameter Name="name" Type="System.String" Index="1" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="child">要为其启用设计模式的子控件。</param>
-        <param name="name">为最终用户公开的 <paramref name="child" /> 名称。</param>
-        <summary>启用子控件的设计时功能。</summary>
-        <returns>如果可以启用子控件的设计时功能，则为 <see langword="true" />；如果宿主基础结构不支持这一功能，则为 <see langword="false" />。</returns>
+        <param name="child">子控件的设计的启用模式。</param>
+        <param name="name">名称<paramref name="child" />为最终用户公开。</param>
+        <summary>启用的设计时功能的子控件。</summary>
+        <returns><see langword="true" /> 如果无法为设计时; 启用子控件的功能<see langword="false" />如果宿主基础结构不支持它。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -531,7 +526,7 @@
         <Parameter Name="value" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="value">要启用对控件的拖放支持，则为 <see langword="true" />；如果该控件不应有拖放支持，则为 <see langword="false" />。 默认值为 <see langword="false" />。</param>
+        <param name="value"><see langword="true" /> 若要启用的控件; 拖放支持<see langword="false" />如果控件不应有拖放支持。 默认值为 <see langword="false" />。</param>
         <summary>启用或禁用对正在设计的控件的拖放支持。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -565,8 +560,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示是否可以在该设计器组件上绘制拖动矩形。</summary>
-        <value>如果可以绘制拖动矩形，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否将可以在此设计器组件上绘制矩形。</summary>
+        <value><see langword="true" /> 如果绘制的拖动矩形可以;否则为<see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -594,9 +589,9 @@
         <Parameter Name="selectionType" Type="System.Windows.Forms.Design.Behavior.GlyphSelectionType" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="selectionType">一个指定选择状态的 <see cref="T:System.Windows.Forms.Design.Behavior.GlyphSelectionType" /> 值。</param>
-        <summary>返回表示此控件的边界的 <see cref="T:System.Windows.Forms.Design.Behavior.ControlBodyGlyph" />。</summary>
-        <returns>表示此控件的边界的 <see cref="T:System.Windows.Forms.Design.Behavior.ControlBodyGlyph" />。</returns>
+        <param name="selectionType">一个<see cref="T:System.Windows.Forms.Design.Behavior.GlyphSelectionType" />值，该值指定选择状态。</param>
+        <summary>返回<see cref="T:System.Windows.Forms.Design.Behavior.ControlBodyGlyph" />表示此控件的边界。</summary>
+        <returns>一个<see cref="T:System.Windows.Forms.Design.Behavior.ControlBodyGlyph" />表示此控件的边界。</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -624,8 +619,8 @@
         <Parameter Name="selectionType" Type="System.Windows.Forms.Design.Behavior.GlyphSelectionType" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="selectionType">一个指定选择状态的 <see cref="T:System.Windows.Forms.Design.Behavior.GlyphSelectionType" /> 值。</param>
-        <summary>获取一个 <see cref="T:System.Windows.Forms.Design.Behavior.Glyph" /> 对象的集合，其中的 Glyph 对象表示标准控件的选择边框和抓取手柄。</summary>
+        <param name="selectionType">一个<see cref="T:System.Windows.Forms.Design.Behavior.GlyphSelectionType" />值，该值指定选择状态。</param>
+        <summary>获取一系列<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />表示选择边框和抓取手柄标准控件的对象。</summary>
         <returns><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" /> 对象的集合。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -667,9 +662,9 @@
         <Parameter Name="point" Type="System.Drawing.Point" />
       </Parameters>
       <Docs>
-        <param name="point"><see cref="T:System.Drawing.Point" />，它指示屏幕坐标中单击鼠标的位置。</param>
-        <summary>指示该控件是否应处理在指定点单击鼠标的操作。</summary>
-        <returns>如果在指定点单击的操作将由该控件处理，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="point">一个<see cref="T:System.Drawing.Point" />，该值指示在其中单击了鼠标，屏幕坐标中的位置。</param>
+        <summary>指示是否应由控件处理指定点处的鼠标单击。</summary>
+        <returns><see langword="true" /> 如果指定点处单击将由该控件中; 处理否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -710,8 +705,8 @@
         <Parameter Name="firstChild" Type="System.Windows.Forms.Control" />
       </Parameters>
       <Docs>
-        <param name="firstChild">要处理的第一个子级 <see cref="T:System.Windows.Forms.Control" />。 此方法可以为控件的子级递归地调用其自身。</param>
-        <summary>将来自指定控件的子控件的消息路由到设计器。</summary>
+        <param name="firstChild">第一个子级<see cref="T:System.Windows.Forms.Control" />到进程。 此方法可能以递归方式调用本身的子级的控件。</param>
+        <summary>将路由到设计器从指定的控件的子控件的消息。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -736,8 +731,8 @@
         <ReturnType>System.ComponentModel.InheritanceAttribute</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取设计器的 <see cref="T:System.ComponentModel.InheritanceAttribute" />。</summary>
-        <value>如果设计器是根设计器，则为 <see cref="F:System.ComponentModel.InheritanceAttribute.Inherited" />；否则，为父设计器的 <see cref="P:System.ComponentModel.Design.ComponentDesigner.InheritanceAttribute" /> 属性值。</value>
+        <summary>获取<see cref="T:System.ComponentModel.InheritanceAttribute" />设计器。</summary>
+        <value><see cref="F:System.ComponentModel.InheritanceAttribute.Inherited" /> 如果在设计器为根设计器;否则为值的父设计器的<see cref="P:System.ComponentModel.Design.ComponentDesigner.InheritanceAttribute" />属性。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -766,8 +761,8 @@
         <Parameter Name="component" Type="System.ComponentModel.IComponent" />
       </Parameters>
       <Docs>
-        <param name="component">要与设计器关联的 <see cref="T:System.ComponentModel.IComponent" />。 此组件必须始终为 <see cref="T:System.Windows.Forms.Control" /> 的一个实例，或从其中派生。</param>
-        <summary>用指定的组件初始化设计器。</summary>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />将使用在设计器相关联。 此组件必须始终是的实例或派生自， <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>初始化具有指定组件的设计器。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -803,7 +798,7 @@
         <Parameter Name="defaultValues" Type="System.Collections.IDictionary" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="defaultValues">要应用于属性的默认值的名称/值字典。 如果未指定默认值，则可能为 <see langword="null" />。</param>
+        <param name="defaultValues">要应用到属性的默认值的名称/值字典。 如果未指定默认值，可能为 <see langword="null" />。</param>
         <summary>重新初始化现有组件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -840,7 +835,7 @@
         <Parameter Name="defaultValues" Type="System.Collections.IDictionary" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="defaultValues">要应用于属性的默认值的名称/值字典。 如果未指定默认值，则可能为 <see langword="null" />。</param>
+        <param name="defaultValues">要应用到属性的默认值的名称/值字典。 如果未指定默认值，可能为 <see langword="null" />。</param>
         <summary>初始化新创建的组件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -873,7 +868,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
+        <summary>初始化该控件的任何非默认值的属性。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -901,9 +896,9 @@
         <Parameter Name="internalControlIndex" Type="System.Int32" Index="0" FrameworkAlternate="netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8" />
       </Parameters>
       <Docs>
-        <param name="internalControlIndex">一个用于选择内部控件设计器的指定索引。 索引是从零开始的。</param>
-        <summary>返回 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 中具有指定索引的内部控件设计器。</summary>
-        <returns>指定索引处的 <see cref="T:System.Windows.Forms.Design.ControlDesigner" />。</returns>
+        <param name="internalControlIndex">若要选择内部控件设计器指定的索引。 此索引是从零开始。</param>
+        <summary>返回具有指定索引中内部控件设计器<see cref="T:System.Windows.Forms.Design.ControlDesigner" />。</summary>
+        <returns>一个<see cref="T:System.Windows.Forms.Design.ControlDesigner" />中指定索引处。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -930,12 +925,13 @@
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Drawing.Point</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>定义一个本地 <see cref="T:System.Drawing.Point" />，它表示无效 <see cref="T:System.Drawing.Point" /> 的值。</summary>
+        <summary>定义一个本地<see cref="T:System.Drawing.Point" />表示无效的值<see cref="T:System.Drawing.Point" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -968,8 +964,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 中内部控件设计器的数目。</summary>
-        <returns><see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 中内部控件设计器的数目。</returns>
+        <summary>返回内部控件设计器中的数<see cref="T:System.Windows.Forms.Design.ControlDesigner" />。</summary>
+        <returns>中内部控件设计器数<see cref="T:System.Windows.Forms.Design.ControlDesigner" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1008,7 +1004,7 @@
       <Docs>
         <param name="x">上下文菜单显示处的 x 坐标。</param>
         <param name="y">上下文菜单显示处的 y 坐标。</param>
-        <summary>显示上下文菜单，并提供在上下文菜单将要显示时执行附加处理的机会。</summary>
+        <summary>显示上下文菜单，并提供执行附加处理的上下文菜单时要显示的机会。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1035,7 +1031,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>提供在创建控件处理程序之后立即执行附加处理的机会。</summary>
+        <summary>提供已创建控件句柄之后立即执行附加处理的机会。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1094,7 +1090,7 @@
       </Parameters>
       <Docs>
         <param name="de">为事件提供数据的 <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
-        <summary>在将拖放对象放置到控件设计器视图上时接收调用。</summary>
+        <summary>拖放对象放置到控件设计器视图上时接收调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1124,7 +1120,7 @@
       </Parameters>
       <Docs>
         <param name="de">为事件提供数据的 <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
-        <summary>在拖放操作进入控件设计器视图时接收调用。</summary>
+        <summary>拖放操作进入控件设计器视图时接收调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1153,8 +1149,8 @@
         <Parameter Name="e" Type="System.EventArgs" />
       </Parameters>
       <Docs>
-        <param name="e">为事件提供数据的 <see cref="T:System.EventArgs" />。</param>
-        <summary>在拖放操作离开控件设计器视图时接收调用。</summary>
+        <param name="e"><see cref="T:System.EventArgs" />为事件提供数据。</param>
+        <summary>拖放操作离开控件设计器视图时接收调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1214,7 +1210,7 @@
       </Parameters>
       <Docs>
         <param name="e">为事件提供数据的 <see cref="T:System.Windows.Forms.GiveFeedbackEventArgs" />。</param>
-        <summary>在进行拖放操作时接收调用，以在拖动操作进行的同时基于鼠标的位置提供可视提示。</summary>
+        <summary>正在提供可视提示在拖动操作正在进行时基于鼠标的位置上拖放操作时接收调用。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1253,7 +1249,7 @@
       <Docs>
         <param name="x">屏幕坐标中鼠标的 x 位置。</param>
         <param name="y">屏幕坐标中鼠标的 y 位置。</param>
-        <summary>当响应在组件上按住鼠标左键不放这一操作时接收调用。</summary>
+        <summary>在组件上按住鼠标左键不响应中接收调用。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1292,8 +1288,8 @@
         <Parameter Name="cancel" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="cancel">要取消拖动，为 <see langword="true" />；要提交拖动，为 <see langword="false" />。</param>
-        <summary>在拖放操作结束时接收调用，以完成或取消此次操作。</summary>
+        <param name="cancel"><see langword="true" /> 若要取消拖动;<see langword="false" />以将其提交。</param>
+        <summary>接收完成或取消该操作的拖放操作结束时调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1325,7 +1321,7 @@
       <Docs>
         <param name="x">屏幕坐标中鼠标的 x 位置。</param>
         <param name="y">屏幕坐标中鼠标的 y 位置。</param>
-        <summary>为拖放操作期间的每一次鼠标移动接收调用。</summary>
+        <summary>拖放操作期间接收鼠标的每个移动的调用。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1388,7 +1384,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>鼠标在控件上悬停后接收调用。</summary>
+        <summary>鼠标悬停在控件后接收调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1444,8 +1440,8 @@
         <Parameter Name="pe" Type="System.Windows.Forms.PaintEventArgs" />
       </Parameters>
       <Docs>
-        <param name="pe"><see cref="T:System.Windows.Forms.PaintEventArgs" />，设计器可以使用它在控件上绘制。</param>
-        <summary>当设计器正在管理的控件绘制了它的图面时接收调用，这样设计器就可以在控件顶部绘制任意附加装饰。</summary>
+        <param name="pe">一个<see cref="T:System.Windows.Forms.PaintEventArgs" />设计器可用于在控件上绘制。</param>
+        <summary>设计器管理的控件具有这样设计器就可以绘制任意附加装饰控件顶部绘制其图面时接收调用。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1504,7 +1500,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>在每次需要设置光标时接收调用。</summary>
+        <summary>接收调用每次需要设置光标。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1536,8 +1532,8 @@
         <ReturnType>System.ComponentModel.IComponent</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 的父组件。</summary>
-        <value><see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 的父组件；否则（没有父组件时）为 <see langword="null" />。</value>
+        <summary>获取父组件<see cref="T:System.Windows.Forms.Design.ControlDesigner" />。</summary>
+        <value>父组件<see cref="T:System.Windows.Forms.Design.ControlDesigner" />; 否则为<see langword="null" />如果没有父组件。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1569,8 +1565,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示在拖动操作期间 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 是否允许按对齐线对齐。</summary>
-        <value>如果在主要拖动控件位于该设计器之上时 <see cref="T:System.Windows.Forms.Design.ControlDesigner" /> 允许在拖动操作期间按对齐线对齐，则为 <see langword="true" />；否则为 <see langword="false" />。</value>
+        <summary>获取一个值，该值指示是否<see cref="T:System.Windows.Forms.Design.ControlDesigner" />将允许在拖动操作期间按对齐线对齐。</summary>
+        <value><see langword="true" /> 如果<see cref="T:System.Windows.Forms.Design.ControlDesigner" />时在主要拖动控件是通过此设计器; 否则为将允许在拖动操作期间按对齐线对齐<see langword="false" />。</value>
         <remarks>To be added.</remarks>
         <block subset="none" type="overrides"><para>默认实现始终返回 <see langword="true" />。</para></block>
       </Docs>
@@ -1600,8 +1596,8 @@
         <Parameter Name="properties" Type="System.Collections.IDictionary" />
       </Parameters>
       <Docs>
-        <param name="properties"><see cref="T:System.Collections.IDictionary" />，包含组件的类的属性。</param>
-        <summary>调整组件通过 <see cref="T:System.ComponentModel.TypeDescriptor" /> 公开的属性集。</summary>
+        <param name="properties"><see cref="T:System.Collections.IDictionary" />包含组件的类的属性。</param>
+        <summary>调整组件通过公开的属性集<see cref="T:System.ComponentModel.TypeDescriptor" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1674,8 +1670,8 @@
         <ReturnType>System.Collections.IList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取表示此控件的重要对齐点的 <see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" /> 对象的列表。</summary>
-        <value>表示此控件的重要对齐点的 <see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" /> 对象的列表。</value>
+        <summary>获取一系列<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />对象表示此控件的重要对齐点。</summary>
+        <value>一系列<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />对象表示此控件的重要对齐点。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1711,8 +1707,8 @@
         <Parameter Name="firstChild" Type="System.Windows.Forms.Control" />
       </Parameters>
       <Docs>
-        <param name="firstChild">要处理的第一个子级 <see cref="T:System.Windows.Forms.Control" />。 此方法可以为控件的子级递归地调用其自身。</param>
-        <summary>将所指定控件的子级的消息路由到每个控件而不是路由到父级设计器。</summary>
+        <param name="firstChild">第一个子级<see cref="T:System.Windows.Forms.Control" />到进程。 此方法可能以递归方式调用本身的子级的控件。</param>
+        <summary>将消息路由的子元素的指定控件的每个控件，而不是父设计器。</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1742,7 +1738,7 @@
       </Parameters>
       <Docs>
         <param name="m">要处理的 <see cref="T:System.Windows.Forms.Message" />。</param>
-        <summary>处理 Windows 消息，并可以选择将其路由到控件。</summary>
+        <summary>处理 Windows 消息，并根据需要将他们路由到该控件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   

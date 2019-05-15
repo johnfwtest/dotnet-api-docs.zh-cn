@@ -1,5 +1,5 @@
 <Type Name="Console" FullName="System.Console">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="adc274b49ccfdd1f304c0c3df06bfc640a563039" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58734890" /></Metadata><TypeSignature Language="C#" Value="public static class Console" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="72ce4517fd7750219f94471b36465a1722c7bd35" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558762" /></Metadata><TypeSignature Language="C#" Value="public static class Console" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed Console extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Console" />
   <TypeSignature Language="VB.NET" Value="Public Class Console" />
@@ -376,9 +376,10 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="frequency" /> 小于 37 或大于 32767 赫兹。  
   
-- 或 - 
+或 
  <paramref name="duration" /> 小于或等于零。</exception>
         <exception cref="T:System.Security.HostProtectionException">在不允许访问控制台的服务器（例如 SQL Server）上执行此方法。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows。</exception>
       </Docs>
     </Member>
     <Member MemberName="BufferHeight">
@@ -439,15 +440,16 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Set 操作中的值小于或等于零。  
+        <exception cref="T:System.ArgumentOutOfRangeException">在设置操作中的值小于或等于零。  
   
-- 或 - 
+或 
 集运算中的值大于或等于 <see cref="F:System.Int16.MaxValue" />。  
   
-- 或 - 
+或 
 Set 操作中的值小于 <see cref="P:System.Console.WindowTop" /> + <see cref="P:System.Console.WindowHeight" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -507,15 +509,16 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowTop" /> + <see cref=
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">Set 操作中的值小于或等于零。  
+        <exception cref="T:System.ArgumentOutOfRangeException">在设置操作中的值小于或等于零。  
   
-- 或 - 
+或 
 集运算中的值大于或等于 <see cref="F:System.Int16.MaxValue" />。  
   
-- 或 - 
+或 
 Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref="P:System.Console.WindowWidth" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -628,6 +631,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <summary>获取一个值，该值指示 Caps Lock 键盘切换键是打开的还是关闭的。</summary>
         <value>如果 Caps Lock 是打开的，则为 <see langword="true" />；如果 Caps Lock 是关闭的，则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">在 Windows 以外的操作系统上调用 get 操作。</exception>
       </Docs>
     </Member>
     <Member MemberName="Clear">
@@ -749,7 +753,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">集运算中的值小于零。  
   
-- 或 - 
+或 
 集运算中的值大于或等于 <see cref="P:System.Console.BufferWidth" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
@@ -815,6 +819,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <exception cref="T:System.ArgumentOutOfRangeException">集运算中指定的值小于 1 或大于 100.</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -871,7 +876,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">集运算中的值小于零。  
   
-- 或 - 
+或 
 集运算中的值大于或等于 <see cref="P:System.Console.BufferHeight" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
@@ -931,6 +936,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">在 Windows 以外的操作系统上调用 get 操作。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -1522,19 +1528,20 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">一个或多个参数小于零。  
   
-- 或 - 
+或 
  <paramref name="sourceLeft" /> 或 <paramref name="targetLeft" /> 大于或等于 <see cref="P:System.Console.BufferWidth" />。  
   
-- 或 - 
+或 
  <paramref name="sourceTop" /> 或 <paramref name="targetTop" /> 大于或等于 <see cref="P:System.Console.BufferHeight" />。  
   
-- 或 - 
+或 
  <paramref name="sourceTop" /> + <paramref name="sourceHeight" /> 大于或等于 <see cref="P:System.Console.BufferHeight" />。  
   
-- 或 - 
+或 
  <paramref name="sourceLeft" /> + <paramref name="sourceWidth" /> 大于或等于 <see cref="P:System.Console.BufferWidth" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -1607,20 +1614,21 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">一个或多个参数小于零。  
   
-- 或 - 
+或 
  <paramref name="sourceLeft" /> 或 <paramref name="targetLeft" /> 大于或等于 <see cref="P:System.Console.BufferWidth" />。  
   
-- 或 - 
+或 
  <paramref name="sourceTop" /> 或 <paramref name="targetTop" /> 大于或等于 <see cref="P:System.Console.BufferHeight" />。  
   
-- 或 - 
+或 
  <paramref name="sourceTop" /> + <paramref name="sourceHeight" /> 大于或等于 <see cref="P:System.Console.BufferHeight" />。  
   
-- 或 - 
+或 
  <paramref name="sourceLeft" /> + <paramref name="sourceWidth" /> 大于或等于 <see cref="P:System.Console.BufferWidth" />。</exception>
         <exception cref="T:System.ArgumentException">一个或两个颜色参数不是 <see cref="T:System.ConsoleColor" /> 枚举的成员。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -1661,6 +1669,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <summary>获取一个值，该值指示 Num Lock 键盘切换键是打开的还是关闭的。</summary>
         <value>如果 Num Lock 是打开的，则为 <see langword="true" />；如果 Num Lock 是关闭的，则为 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">在 Windows 以外的操作系统上调用 get 操作。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="OpenStandardError">
@@ -2580,16 +2589,17 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="height" /> 或 <paramref name="width" /> 小于或等于零。  
   
-- 或 - 
+或 
  <paramref name="height" /> 或 <paramref name="width" /> 大于或等于 <see cref="F:System.Int16.MaxValue" />。  
   
-- 或 - 
+或 
  <paramref name="width" /> 小于 <see cref="P:System.Console.WindowLeft" /> + <see cref="P:System.Console.WindowWidth" />。  
   
-- 或 - 
+或 
  <paramref name="height" /> 小于 <see cref="P:System.Console.WindowTop" /> + <see cref="P:System.Console.WindowHeight" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -2655,10 +2665,10 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="left" /> 或 <paramref name="top" /> 小于零。  
   
-- 或 - 
+或 
  <paramref name="left" /> 大于或等于 <see cref="P:System.Console.BufferWidth" />。  
   
-- 或 - 
+或 
  <paramref name="top" /> 大于或等于 <see cref="P:System.Console.BufferHeight" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
@@ -2843,7 +2853,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
 ## Remarks  
  默认情况下，<xref:System.Console.Out%2A>属性设置为标准输出流。  
   
- 一个<xref:System.IO.StreamWriter>封装<xref:System.IO.FileStream>可用于将输出发送到一个文件。 例如:  
+ 一个<xref:System.IO.StreamWriter>封装<xref:System.IO.FileStream>可用于将输出发送到一个文件。 例如：  
   
  [!code-cpp[System.Console.SetOut#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.console.setout/cpp/source.cpp#1)]
  [!code-csharp[System.Console.SetOut#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.console.setout/cs/source.cs#1)]
@@ -2929,13 +2939,14 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="left" /> 或 <paramref name="top" /> 小于零。  
   
-- 或 - 
+或 
  <paramref name="left" /> + <see cref="P:System.Console.WindowWidth" /> 大于 <see cref="P:System.Console.BufferWidth" />。  
   
-- 或 - 
+或 
  <paramref name="top" /> + <see cref="P:System.Console.WindowHeight" /> 大于 <see cref="P:System.Console.BufferHeight" />。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -2996,13 +3007,14 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="width" /> 或 <paramref name="height" /> 小于或等于零。  
   
-- 或 - 
+或 
  <paramref name="width" /> 加 <see cref="P:System.Console.WindowLeft" /> 或 <paramref name="height" /> 加 <see cref="P:System.Console.WindowTop" /> 大于或等于 <see cref="F:System.Int16.MaxValue" />。  
   
-- 或 - 
+或 
  <paramref name="width" /> 或 <paramref name="height" /> 的值大于当前屏幕分辨率和控制台字体的最大可能的窗口宽度或高度。</exception>
         <exception cref="T:System.Security.SecurityException">用户没有执行此操作的权限。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">当前操作系统不是 Windows。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -3061,6 +3073,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <exception cref="T:System.ArgumentOutOfRangeException">在集运算中，指定的标题长度超过 24500 个字符。</exception>
         <exception cref="T:System.ArgumentNullException">在集运算中，指定的标题是 <see langword="null" />。</exception>
         <exception cref="T:System.IO.IOException">出现 I/O 错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">在 Windows 以外的操作系统上调用 get 操作。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
       </Docs>
     </Member>
@@ -3190,12 +3203,13 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">属性 <see cref="P:System.Console.WindowWidth" /> 的值或属性 <see cref="P:System.Console.WindowHeight" /> 的值小于或等于零。  
   
-- 或 - 
+或 
 属性 <see cref="P:System.Console.WindowHeight" /> 的值加上属性 <see cref="P:System.Console.WindowTop" /> 的值大于或等于 <see cref="F:System.Int16.MaxValue" />。  
   
-- 或 - 
+或 
 <see cref="P:System.Console.WindowWidth" /> 属性的值或 <see cref="P:System.Console.WindowHeight" /> 属性的值大于当前屏幕分辨率和控制台字体的最大可能的窗口宽度或高度。</exception>
         <exception cref="T:System.IO.IOException">读取或写入信息时发生错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
       </Docs>
     </Member>
     <Member MemberName="WindowLeft">
@@ -3262,9 +3276,10 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">在集运算中，要赋予的值小于零。  
   
-- 或 - 
+或 
 赋值之后，<see cref="P:System.Console.WindowLeft" /> 加 <see cref="P:System.Console.WindowWidth" /> 将超过 <see cref="P:System.Console.BufferWidth" />。</exception>
         <exception cref="T:System.IO.IOException">读取或写入信息时发生错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
       </Docs>
     </Member>
     <Member MemberName="WindowTop">
@@ -3327,9 +3342,10 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">在集运算中，要赋予的值小于零。  
   
-- 或 - 
+或 
 赋值之后，<see cref="P:System.Console.WindowTop" /> 加 <see cref="P:System.Console.WindowHeight" /> 将超过 <see cref="P:System.Console.BufferHeight" />。</exception>
         <exception cref="T:System.IO.IOException">读取或写入信息时发生错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
       </Docs>
     </Member>
     <Member MemberName="WindowWidth">
@@ -3392,12 +3408,13 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">属性 <see cref="P:System.Console.WindowWidth" /> 的值或属性 <see cref="P:System.Console.WindowHeight" /> 的值小于或等于零。  
   
-- 或 - 
+或 
 属性 <see cref="P:System.Console.WindowHeight" /> 的值加上属性 <see cref="P:System.Console.WindowTop" /> 的值大于或等于 <see cref="F:System.Int16.MaxValue" />。  
   
-- 或 - 
+或 
 <see cref="P:System.Console.WindowWidth" /> 属性的值或 <see cref="P:System.Console.WindowHeight" /> 属性的值大于当前屏幕分辨率和控制台字体的最大可能的窗口宽度或高度。</exception>
         <exception cref="T:System.IO.IOException">读取或写入信息时发生错误。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">设置操作被调用 Windows 以外的操作系统。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="Write">
@@ -4282,7 +4299,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 或 <paramref name="arg" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 中的格式规范无效。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
-        <block subset="none" type="usage"><para>C + + 代码不调用此方法。 C + + 编译器将解析调用[System.Console.Write](xref:System.Console.Write*) ，包括字符串和四个或多个对象参数的列表作为调用<see cref="M:System.Console.Write(System.String,System.Object,System.Object,System.Object,System.Object)" />。 解析调用[System.Console.Write](xref:System.Console.Write*)字符串和一个对象数组，包含与调用<see cref="M:System.Console.Write(System.String,System.Object)" />。</para></block>
+        <block subset="none" type="usage"><para>此方法不由调用C++代码。 C++编译器解析对调用[System.Console.Write](xref:System.Console.Write*) ，与调用包含一个字符串或一系列四个或多个对象参数<see cref="M:System.Console.Write(System.String,System.Object,System.Object,System.Object,System.Object)" />。 解析调用[System.Console.Write](xref:System.Console.Write*)字符串和一个对象数组，包含与调用<see cref="M:System.Console.Write(System.String,System.Object)" />。</para></block>
         <altmember cref="M:System.Console.Read" />
         <altmember cref="M:System.Console.ReadLine" />
         <altmember cref="M:System.Console.WriteLine" />
@@ -4613,7 +4630,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 中的格式规范无效。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
-        <block subset="none" type="usage"><para>此方法将标有<see langword="vararg" />关键字，这意味着它支持个数可变的参数。 可以从 Visual c + +，调用该方法，但它不能从 C# 或 Visual Basic 代码调用。 C# 和 Visual Basic 编译器解决对调用<see cref="M:System.Console.Write(System.String,System.Object,System.Object,System.Object,System.Object)" />一样调用<see cref="M:System.Console.Write(System.String,System.Object[])" />。</para></block>
+        <block subset="none" type="usage"><para>此方法将标有<see langword="vararg" />关键字，这意味着它支持个数可变的参数。 可以从视觉对象调用方法C++，但它不能从调用C#或 Visual Basic 代码。 C# 和 Visual Basic 编译器解决对调用<see cref="M:System.Console.Write(System.String,System.Object,System.Object,System.Object,System.Object)" />一样调用<see cref="M:System.Console.Write(System.String,System.Object[])" />。</para></block>
         <altmember cref="M:System.Console.Read" />
         <altmember cref="M:System.Console.ReadLine" />
         <altmember cref="M:System.Console.WriteLine" />
@@ -5591,7 +5608,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 或 <paramref name="arg" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 中的格式规范无效。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
-        <block subset="none" type="usage"><para>C + + 代码不调用此方法。 C + + 编译器将解析调用[System.Console.WriteLine](xref:System.Console.WriteLine*) ，包括字符串和四个或多个对象参数的列表作为调用<see cref="M:System.Console.WriteLine(System.String,System.Object,System.Object,System.Object,System.Object)" />。 解析调用[System.Console.WriteLine](xref:System.Console.WriteLine*)字符串和一个对象数组，包含与调用<see cref="M:System.Console.WriteLine(System.String,System.Object)" />。</para></block>
+        <block subset="none" type="usage"><para>此方法不由调用C++代码。 C++编译器解析对调用[System.Console.WriteLine](xref:System.Console.WriteLine*) ，与调用包含一个字符串或一系列四个或多个对象参数<see cref="M:System.Console.WriteLine(System.String,System.Object,System.Object,System.Object,System.Object)" />。 解析调用[System.Console.WriteLine](xref:System.Console.WriteLine*)字符串和一个对象数组，包含与调用<see cref="M:System.Console.WriteLine(System.String,System.Object)" />。</para></block>
         <altmember cref="M:System.Console.Read" />
         <altmember cref="M:System.Console.ReadLine" />
         <altmember cref="M:System.Console.Write(System.String,System.Object)" />
@@ -5928,7 +5945,7 @@ Set 操作中的值小于 <see cref="P:System.Console.WindowLeft" /> + <see cref
         <exception cref="T:System.ArgumentNullException"><paramref name="format" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.FormatException"><paramref name="format" /> 中的格式规范无效。</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">用于修改安全顶级窗口和子窗口。 关联的枚举： <see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" /></permission>
-        <block subset="none" type="usage"><para>此方法将标有<see langword="vararg" />关键字，这意味着它支持个数可变的参数。 可以从 Visual c + +，调用该方法，但它不能从 C# 或 Visual Basic 代码调用。 C# 和 Visual Basic 编译器解决对调用<see cref="M:System.Console.WriteLine(System.String,System.Object,System.Object,System.Object,System.Object)" />一样调用<see cref="M:System.Console.WriteLine(System.String,System.Object[])" />。</para></block>
+        <block subset="none" type="usage"><para>此方法将标有<see langword="vararg" />关键字，这意味着它支持个数可变的参数。 可以从视觉对象调用方法C++，但它不能从调用C#或 Visual Basic 代码。 C# 和 Visual Basic 编译器解决对调用<see cref="M:System.Console.WriteLine(System.String,System.Object,System.Object,System.Object,System.Object)" />一样调用<see cref="M:System.Console.WriteLine(System.String,System.Object[])" />。</para></block>
         <altmember cref="M:System.Console.Read" />
         <altmember cref="M:System.Console.ReadLine" />
         <altmember cref="M:System.Console.Write(System.String,System.Object)" />

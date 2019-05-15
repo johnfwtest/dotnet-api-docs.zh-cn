@@ -1,5 +1,5 @@
 <Type Name="HttpListenerResponse" FullName="System.Net.HttpListenerResponse">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="969261d3be2691434264d6c7aeb8057814afb213" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58688434" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListenerResponse : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="94f98f905aa60636ec876b41f798d6590eeac081" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558478" /></Metadata><TypeSignature Language="C#" Value="public sealed class HttpListenerResponse : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListenerResponse extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerResponse" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpListenerResponse&#xA;Implements IDisposable" />
@@ -123,7 +123,7 @@
       </Parameters>
       <Docs>
         <param name="name">要设置的 HTTP 标头的名称。</param>
-        <param name="value"><paramref name="name" /> 标头的值。</param>
+        <param name="value">值为<paramref name="name" />标头。</param>
         <summary>将指定的标头和值添加到此响应的 HTTP 标头。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -139,13 +139,14 @@
  下面的代码示例演示如何添加使用此属性的标头。  
   
  [!code-csharp[Net_Listener_Basic#26](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#26)]  
+ [!code-vb[Net_Listener_Basic#26](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#26)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 为 <see langword="null" /> 或空字符串 ("")。</exception>
         <exception cref="T:System.ArgumentException">不允许为指定的标头指定值。  
   
-- 或 - 
+或 
  <paramref name="name" /> 或 <paramref name="value" /> 包含无效字符。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" /> 的长度超过 65,535 个字符。</exception>
         <altmember cref="T:System.Net.HttpListener" />
@@ -200,6 +201,7 @@
  下面的代码示例演示如何向响应添加 cookie  
   
  [!code-csharp[Net_Listener_Basic#20](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#20)]  
+ [!code-vb[Net_Listener_Basic#20](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#20)]  
   
  ]]></format>
         </remarks>
@@ -241,8 +243,8 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">要追加 <paramref name="value" /> 的 HTTP 标头的名称。</param>
-        <param name="value">要追加到 <paramref name="name" /> 标头的值。</param>
+        <param name="name">要追加的 HTTP 标头名称<paramref name="value" />到。</param>
+        <param name="value">要追加到的值<paramref name="name" />标头。</param>
         <summary>向随此响应发送的指定 HTTP 标头追加值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -256,10 +258,10 @@
         </remarks>
         <exception cref="T:System.ArgumentException"><paramref name="name" /> 为 <see langword="null" /> 或空字符串 ("")。  
   
-- 或 - 
+或 
 不允许为指定的标头指定值。  
   
-- 或 - 
+或 
  <paramref name="name" /> 或 <paramref name="value" /> 包含无效字符。</exception>
         <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" /> 的长度超过 65,535 个字符。</exception>
         <altmember cref="T:System.Net.HttpListener" />
@@ -377,6 +379,7 @@
  下面的代码示例演示如何调用此方法。  
   
  [!code-csharp[Net_Listener_Basic#24](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#24)]  
+ [!code-vb[Net_Listener_Basic#24](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#24)]  
   
  ]]></format>
         </remarks>
@@ -424,7 +427,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置此响应的 <see cref="P:System.Net.HttpListenerResponse.OutputStream" /> 的 <see cref="T:System.Text.Encoding" />。</summary>
-        <value>适合处理 <see cref="T:System.Text.Encoding" /> 属性中的数据的 <see cref="P:System.Net.HttpListenerResponse.OutputStream" /> 对象，如果没有指定编码，则为 <see langword="null" />。</value>
+        <value><see cref="T:System.Text.Encoding" />适合与中的数据一起使用的对象<see cref="P:System.Net.HttpListenerResponse.OutputStream" />属性，或<see langword="null" />如果没有指定编码。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -480,7 +483,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置响应中包括的正文数据的字节数。</summary>
-        <value>响应的 <see langword="Content-Length" /> 标头的值。</value>
+        <value>值在响应的<see langword="Content-Length" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -495,6 +498,7 @@
  下面的代码示例演示如何设置此属性的值。  
   
  [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+ [!code-vb[Net_Listener_Basic#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#2)]  
   
  ]]></format>
         </remarks>
@@ -535,7 +539,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置返回内容的 MIME 类型。</summary>
-        <value><see cref="T:System.String" /> 实例，包含响应的 <see langword="Content-Type" /> 标头文本。</value>
+        <value>一个<see cref="T:System.String" />实例，它包含响应的文本<see langword="Content-Type" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -588,7 +592,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置随响应返回的 Cookie 集合。</summary>
-        <value><see cref="T:System.Net.CookieCollection" />，包含随响应返回的 Cookie。 如果没有向响应添加任何 Cookie，则该集合为空。</value>
+        <value>一个<see cref="T:System.Net.CookieCollection" />包含随响应返回的 cookie。 如果集合为空任何 cookie 已添加到响应。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -601,6 +605,7 @@
  下面的代码示例检查 cookie 的请求，并返回与响应新的 cookie，如果请求没有。  
   
  [!code-csharp[Net_Listener_Basic#20](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#20)]  
+ [!code-vb[Net_Listener_Basic#20](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#20)]  
   
  ]]></format>
         </remarks>
@@ -711,7 +716,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置服务器返回的标头名称/值对集合。</summary>
-        <value><see cref="T:System.Net.WebHeaderCollection" /> 实例，包含要包括在响应中的所有显式设置的 HTTP 标头。</value>
+        <value>一个<see cref="T:System.Net.WebHeaderCollection" />实例，它包含所有显式设置 HTTP 标头包含在响应中。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -729,6 +734,7 @@
  下面的代码示例演示如何显示中的标头<xref:System.Net.WebHeaderCollection>。  
   
  [!code-csharp[Net_Listener_Basic#23](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#23)]  
+ [!code-vb[Net_Listener_Basic#23](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#23)]  
   
  ]]></format>
         </remarks>
@@ -772,7 +778,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置一个值，该值指示服务器是否请求持久性连接。</summary>
-        <value>如果服务器请求持久性连接，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="true" />。</value>
+        <value><see langword="true" /> 如果服务器请求的持续性连接;，否则为<see langword="false" />。 默认值为 <see langword="true" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -826,7 +832,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取可将响应写入其中的 <see cref="T:System.IO.Stream" /> 对象。</summary>
-        <value>将响应写入其中的 <see cref="T:System.IO.Stream" /> 对象。</value>
+        <value>一个<see cref="T:System.IO.Stream" />对象复制到可写入响应。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -842,6 +848,7 @@
  下面的代码示例演示如何调用此方法。  
   
  [!code-csharp[Net_Listener_Basic#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#3)]  
+ [!code-vb[Net_Listener_Basic#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#3)]  
   
  ]]></format>
         </remarks>
@@ -880,7 +887,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置用于响应的 HTTP 版本。</summary>
-        <value><see cref="T:System.Version" /> 对象，指示响应客户端时使用的 HTTP 版本。 请注意此属性现在已过时。</value>
+        <value>一个<see cref="T:System.Version" />对象，它指示响应客户端时使用的 HTTP 版本。 请注意，此属性现已过时。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -950,6 +957,7 @@
  下面的代码示例演示如何调用此方法。  
   
  [!code-csharp[Net_Listener_Basic#27](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#27)]  
+ [!code-vb[Net_Listener_Basic#27](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#27)]  
   
  ]]></format>
         </remarks>
@@ -987,7 +995,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置此响应中 HTTP <see langword="Location" /> 标头的值。</summary>
-        <value><see cref="T:System.String" />，包含要在 <see langword="Location" /> 标头中发送给客户端的绝对 URL。</value>
+        <value>一个<see cref="T:System.String" />，其中包含要发送到中的客户端的绝对 URL<see langword="Location" />标头。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1003,6 +1011,7 @@
  下面的代码示例演示如何设置此属性。  
   
  [!code-csharp[Net_Listener_Basic#25](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#25)]  
+ [!code-vb[Net_Listener_Basic#25](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#25)]  
   
  ]]></format>
         </remarks>
@@ -1042,7 +1051,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置响应是否使用分块传输编码。</summary>
-        <value>如果响应设置为使用 Chunked 传输编码，则为 <see langword="true" />；否则为 <see langword="false" />。 默认值为 <see langword="false" />。</value>
+        <value><see langword="true" /> 如果响应设置为使用 chunked 的传输编码;否则为<see langword="false" />。 默认值为 <see langword="false" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1097,6 +1106,7 @@
  下面的代码示例演示如何调用此方法。  
   
  [!code-csharp[Net_Listener_Basic#28](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#28)]  
+ [!code-vb[Net_Listener_Basic#28](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#28)]  
   
  ]]></format>
         </remarks>
@@ -1136,7 +1146,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置返回给客户端的 HTTP 状态代码。</summary>
-        <value>为请求的资源指定 HTTP 状态代码的 <see cref="T:System.Int32" /> 值。 默认值为 <see cref="F:System.Net.HttpStatusCode.OK" />，指示服务器成功处理了客户端的请求并将请求的资源包括在响应正文中。</value>
+        <value><see cref="T:System.Int32" />值，该值指定所请求的资源的 HTTP 状态代码。 默认值是<see cref="F:System.Net.HttpStatusCode.OK" />，指示服务器已成功处理客户端的请求，并在响应正文中包含所请求的资源。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1151,6 +1161,7 @@
  下面的代码示例演示如何设置此属性的值。  
   
  [!code-csharp[Net_Listener_Basic#7](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#7)]  
+ [!code-vb[Net_Listener_Basic#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#7)]  
   
  ]]></format>
         </remarks>
@@ -1190,7 +1201,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置返回给客户端的 HTTP 状态代码的文本说明。</summary>
-        <value>返回给客户端的 HTTP 状态代码的文本说明。 默认值为 <see cref="P:System.Net.HttpListenerResponse.StatusCode" /> 属性值的 RFC 2616 说明，如果不存在 RFC 2616 说明，则为空字符串 ("")。</value>
+        <value>返回到客户端的 HTTP 状态代码的文本说明。 默认值是 RFC 2616 说明<see cref="P:System.Net.HttpListenerResponse.StatusCode" />属性值或空字符串 ("") 如果不存在 RFC 2616 说明。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
