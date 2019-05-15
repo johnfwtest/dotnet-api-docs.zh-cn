@@ -1,5 +1,5 @@
 <Type Name="FieldBuilder" FullName="System.Reflection.Emit.FieldBuilder">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="bd943397c521860e9c12981ca5750b44c3b3adea" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58722910" /></Metadata><TypeSignature Language="C#" Value="public sealed class FieldBuilder : System.Reflection.FieldInfo, System.Runtime.InteropServices._FieldBuilder" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="f3ba2e5eb31deaee5c7ffed1b99191c421a4baa4" /><Meta Name="ms.sourcegitcommit" Value="7845f124909a0999a19cc65f40feab5e75cd9b8d" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65064754" /></Metadata><TypeSignature Language="C#" Value="public sealed class FieldBuilder : System.Reflection.FieldInfo, System.Runtime.InteropServices._FieldBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit FieldBuilder extends System.Reflection.FieldInfo implements class System.Runtime.InteropServices._FieldBuilder" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.FieldBuilder" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FieldBuilder&#xA;Inherits FieldInfo&#xA;Implements _FieldBuilder" />
@@ -162,7 +162,7 @@
       </ReturnValue>
       <Docs>
         <summary>指示对声明该字段的类型的 <see cref="T:System.Type" /> 对象的引用。 此属性是只读的。</summary>
-        <value>对声明该字段的类型的 <see cref="T:System.Type" /> 对象的引用。</value>
+        <value>对引用<see cref="T:System.Type" />声明此字段的类型的对象。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,7 +195,7 @@
       </ReturnValue>
       <Docs>
         <summary>指示该字段的内部元数据句柄。 此属性是只读的。</summary>
-        <value>该字段的内部元数据句柄。</value>
+        <value>此字段的内部元数据句柄。</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotSupportedException">不支持此方法。</exception>
       </Docs>
@@ -230,7 +230,7 @@
       </ReturnValue>
       <Docs>
         <summary>指示表示该字段的类型的 <see cref="T:System.Type" /> 对象。 此属性是只读的。</summary>
-        <value><see cref="T:System.Type" /> 对象，表示该字段的类型。</value>
+        <value><see cref="T:System.Type" />对象，表示此字段的类型。</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -275,7 +275,7 @@
         <Parameter Name="inherit" Type="System.Boolean" Index="0" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="inherit">控制来自基类的自定义属性的继承性。</param>
+        <param name="inherit">基类中自定义属性的控件继承。</param>
         <summary>返回为该字段定义的所有自定义属性。</summary>
         <returns>类型 <see cref="T:System.Object" /> 的数组，该类型对象表示由此 <see cref="T:System.Reflection.Emit.FieldBuilder" /> 实例表示的构造函数的所有自定义属性。</returns>
         <remarks>To be added.</remarks>
@@ -314,8 +314,8 @@
         <Parameter Name="inherit" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0;netstandard-2.1" />
       </Parameters>
       <Docs>
-        <param name="attributeType">自定义特性类型。</param>
-        <param name="inherit">控制来自基类的自定义属性的继承性。</param>
+        <param name="attributeType">自定义属性类型。</param>
+        <param name="inherit">基类中自定义属性的控件继承。</param>
         <summary>返回为由给定类型标识的该字段定义的所有自定义属性。</summary>
         <returns>类型 <see cref="T:System.Object" /> 的数组，该类型对象表示由此 <see cref="T:System.Reflection.Emit.FieldBuilder" /> 实例表示的构造函数的所有自定义属性。</returns>
         <remarks>To be added.</remarks>
@@ -437,7 +437,7 @@
       </Parameters>
       <Docs>
         <param name="attributeType">属性的类型。</param>
-        <param name="inherit">控制来自基类的自定义属性的继承性。</param>
+        <param name="inherit">基类中自定义属性的控件继承。</param>
         <summary>指示是否在字段上定义了具有指定类型的属性。</summary>
         <returns>如果该字段上定义了一个或多个 <paramref name="attributeType" /> 实例，则为 <see langword="true" />否则为 <see langword="false" />。</returns>
         <remarks>To be added.</remarks>
@@ -469,7 +469,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取在其中定义包含此字段的类型的模块。</summary>
-        <value><see cref="T:System.Reflection.Module" />，表示在其中定义此字段的动态模块。</value>
+        <value>一个<see cref="T:System.Reflection.Module" />，表示在其中定义此字段的动态模块。</value>
         <remarks>To be added.</remarks>
         <altmember cref="T:System.Reflection.Module" />
       </Docs>
@@ -504,7 +504,7 @@
       </ReturnValue>
       <Docs>
         <summary>指示该字段的名称。 此属性是只读的。</summary>
-        <value>包含该字段的名称的 <see cref="T:System.String" />。</value>
+        <value>一个<see cref="T:System.String" />包含此字段的名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -547,7 +547,7 @@
       </ReturnValue>
       <Docs>
         <summary>指示对从中获取此对象的 <see cref="T:System.Type" /> 对象的引用。 此属性是只读的。</summary>
-        <value>对从中获取该实例的 <see cref="T:System.Type" /> 对象的引用。</value>
+        <value>对引用<see cref="T:System.Type" />从中获取此实例对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -614,10 +614,10 @@
         <exception cref="T:System.InvalidOperationException">已使用 <see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /> 创建包含类型。</exception>
         <exception cref="T:System.ArgumentException">该字段不是受支持类型之一。  
   
-- 或 - 
+或 
 <paramref name="defaultValue" /> 类型与该字段类型不匹配。  
   
-- 或 - 
+或 
 该字段的类型为 <see cref="T:System.Object" /> 或其他引用类型，并且 <paramref name="defaultValue" /> 不是 <see langword="null" />无法将该值分配给引用类型。</exception>
       </Docs>
     </Member>
@@ -789,7 +789,7 @@
         <Parameter Name="unmanagedMarshal" Type="System.Reflection.Emit.UnmanagedMarshal" Index="0" FrameworkAlternate="netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;xamarinandroid-7.1;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="unmanagedMarshal">描述符，指定该字段的本机封送处理。</param>
+        <param name="unmanagedMarshal">描述符，指定此字段的本机封送处理。</param>
         <summary>描述该字段的本机封送处理。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
