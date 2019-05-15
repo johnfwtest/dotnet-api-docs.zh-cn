@@ -1,5 +1,5 @@
 <Type Name="HttpListenerPrefixCollection" FullName="System.Net.HttpListenerPrefixCollection">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="b2beef3207de225ed1deca54029fc49a819bead6" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58721640" /></Metadata><TypeSignature Language="C#" Value="public class HttpListenerPrefixCollection : System.Collections.Generic.ICollection&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;string&gt;" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="24ed896b5097c0293079cbdb27b8273a2e5a3d0f" /><Meta Name="ms.sourcegitcommit" Value="0609891c89ddaa91e4c02970acb00072fcc29baf" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/13/2019" /><Meta Name="ms.locfileid" Value="65558503" /></Metadata><TypeSignature Language="C#" Value="public class HttpListenerPrefixCollection : System.Collections.Generic.ICollection&lt;string&gt;, System.Collections.Generic.IEnumerable&lt;string&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpListenerPrefixCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;string&gt;, class System.Collections.Generic.IEnumerable`1&lt;string&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerPrefixCollection" />
   <TypeSignature Language="VB.NET" Value="Public Class HttpListenerPrefixCollection&#xA;Implements ICollection(Of String), IEnumerable(Of String)" />
@@ -39,7 +39,7 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>表示用于存储 <see cref="T:System.Net.HttpListener" /> 对象的统一资源标识符 (URI) 前缀的集合。</summary>
+    <summary>表示用于存储的统一资源标识符 (URI) 前缀的集合<see cref="T:System.Net.HttpListener" />对象。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -52,6 +52,7 @@
  下面的代码示例将创建<xref:System.Net.HttpListener>，并将添加到用户指定的前缀其<xref:System.Net.HttpListenerPrefixCollection>。  
   
  [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+ [!code-vb[Net_Listener_Basic#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#2)]  
   
  ]]></format>
     </remarks>
@@ -111,13 +112,14 @@
  下面的代码示例将创建<xref:System.Net.HttpListener>，并将添加到用户指定的前缀其<xref:System.Net.HttpListenerPrefixCollection>。  
   
  [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+ [!code-vb[Net_Listener_Basic#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#2)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="uriPrefix" /> 为 <see langword="null" />。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="uriPrefix" /> 不使用 http:// 或 https:// 方案。 这些是仅有的支持 <see cref="T:System.Net.HttpListener" /> 对象的方案。  
   
-- 或 - 
+或 
  <paramref name="uriPrefix" /> 不是格式正确的 URI 前缀。 请确保字符串以 "/" 结尾。</exception>
         <exception cref="T:System.ObjectDisposedException">已关闭与此集合关联的 <see cref="T:System.Net.HttpListener" />。</exception>
         <exception cref="T:System.Net.HttpListenerException">Windows 函数调用失败。 检查异常的 <see cref="P:System.Net.HttpListenerException.ErrorCode" /> 属性以确定导致异常的原因。 如果另一个 <see cref="T:System.Net.HttpListener" /> 已经添加了前缀 <paramref name="uriPrefix" />，将引发此异常。</exception>
@@ -157,7 +159,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>从该集合中移除所有的统一资源标识符 (URI) 前缀。</summary>
+        <summary>从集合中移除所有的统一资源标识符 (URI) 前缀。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -170,6 +172,7 @@
  以下代码示例将删除中的所有前缀<xref:System.Net.HttpListenerPrefixCollection>。  
   
  [!code-csharp[Net_Listener_Basic#6](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#6)]  
+ [!code-vb[Net_Listener_Basic#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#6)]  
   
  ]]></format>
         </remarks>
@@ -213,9 +216,9 @@
         <Parameter Name="uriPrefix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="uriPrefix">一个 <see cref="T:System.String" />，包含要测试的统一资源标识符 (URI) 前缀。</param>
-        <summary>返回一个 <see cref="T:System.Boolean" /> 值，该值指示指定的前缀是否包含在该集合中。</summary>
-        <returns>如果此集合包含由 <paramref name="uriPrefix" /> 指定的前缀，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="uriPrefix">一个<see cref="T:System.String" />，包含要测试的统一资源标识符 (URI) 前缀。</param>
+        <summary>返回<see cref="T:System.Boolean" />值，该值指示集合中是否包含指定的前缀。</summary>
+        <returns><see langword="true" /> 如果此集合包含指定的前缀<paramref name="uriPrefix" />; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -228,6 +231,7 @@
  下面的代码示例检查以查看中的前缀集合是否包含用户指定的前缀<xref:System.Net.HttpListener>。  
   
  [!code-csharp[Net_Listener_Basic#4](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#4)]  
+ [!code-vb[Net_Listener_Basic#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#4)]  
   
  ]]></format>
         </remarks>
@@ -242,7 +246,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>将 <see cref="T:System.Net.HttpListenerPrefixCollection" /> 的内容复制到指定的数组。</summary>
+        <summary>内容复制<see cref="T:System.Net.HttpListenerPrefixCollection" />到指定的数组。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -284,9 +288,9 @@
         <Parameter Name="offset" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="array">接收此集合中的统一资源标识符 (URI) 前缀字符串的一维 <see cref="T:System.Array" />。</param>
+        <param name="array">一维<see cref="T:System.Array" />，它接收此集合中的统一资源标识符 (URI) 前缀字符串。</param>
         <param name="offset"><paramref name="array" /> 中从零开始的索引，从此处开始复制。</param>
-        <summary>将 <see cref="T:System.Net.HttpListenerPrefixCollection" /> 的内容复制到指定的数组。</summary>
+        <summary>内容复制<see cref="T:System.Net.HttpListenerPrefixCollection" />到指定的数组。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -299,11 +303,12 @@
  下面的代码示例将复制中的前缀<xref:System.Net.HttpListenerPrefixCollection>。  
   
  [!code-csharp[Net_Listener_Basic#7](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#7)]  
+ [!code-vb[Net_Listener_Basic#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#7)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="array" /> 具有多个维数。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">此集合包含的元素比 <paramref name="array" /> 中从 <paramref name="offset" /> 开始能存储的元素更多。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" /> 有多个维度。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">此集合包含更多元素不是可以存储在<paramref name="array" />开始<paramref name="offset" />。</exception>
         <exception cref="T:System.ObjectDisposedException">已关闭与此集合关联的 <see cref="T:System.Net.HttpListener" />。</exception>
         <exception cref="T:System.InvalidCastException"><paramref name="array" /> 不能存储字符串值。</exception>
         <altmember cref="T:System.Net.HttpListener" />
@@ -343,7 +348,7 @@
       <Docs>
         <param name="array">接收此集合中统一资源标识符 (URI) 前缀字符串的一维字符串数组。</param>
         <param name="offset"><paramref name="array" /> 中从零开始的索引，从此处开始复制。</param>
-        <summary>将 <see cref="T:System.Net.HttpListenerPrefixCollection" /> 的内容复制到指定的字符串数组。</summary>
+        <summary>内容复制<see cref="T:System.Net.HttpListenerPrefixCollection" />到指定的字符串数组。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -356,11 +361,12 @@
  下面的代码示例将复制中的前缀<xref:System.Net.HttpListenerPrefixCollection>。  
   
  [!code-csharp[Net_Listener_Basic#7](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#7)]  
+ [!code-vb[Net_Listener_Basic#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#7)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException"><paramref name="array" /> 具有多个维数。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">此集合包含的元素比 <paramref name="array" /> 中从 <paramref name="offset" /> 开始能存储的元素更多。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" /> 有多个维度。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">此集合包含更多元素不是可以存储在<paramref name="array" />开始<paramref name="offset" />。</exception>
         <exception cref="T:System.ObjectDisposedException">已关闭与此集合关联的 <see cref="T:System.Net.HttpListener" />。</exception>
         <altmember cref="T:System.Net.HttpListener" />
       </Docs>
@@ -396,8 +402,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取集合中包含的前缀数。</summary>
-        <value>一个 <see cref="T:System.Int32" />，包含此集合中的前缀的数目。</value>
+        <summary>获取集合中包含的前缀的数目。</summary>
+        <value><see cref="T:System.Int32" /> ，其中包含此集合中的前缀的数目。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -405,6 +411,7 @@
  下面的代码示例显示集合中的前缀。  
   
  [!code-csharp[Net_Listener_Basic#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#1)]  
+ [!code-vb[Net_Listener_Basic#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#1)]  
   
  ]]></format>
         </remarks>
@@ -443,8 +450,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个可用于循环访问集合的对象。</summary>
-        <returns>一个对象，它实现了 <see cref="T:System.Collections.IEnumerator" /> 接口，并提供对此集合中的字符串的访问。</returns>
+        <summary>返回可用于循环访问集合的对象。</summary>
+        <returns>一个对象，实现<see cref="T:System.Collections.IEnumerator" />接口，并提供对此集合中的字符串的访问。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -461,6 +468,7 @@
  下面的代码示例演示如何枚举整个集合。 请注意，Visual Basic 和 C# 示例将使用语言特定语句枚举集合而不是检索枚举器。  
   
  [!code-csharp[Net_Listener_Basic#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#1)]  
+ [!code-vb[Net_Listener_Basic#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Net_Listener_Basic/VB/test.vb#1)]  
   
  ]]></format>
         </remarks>
@@ -498,7 +506,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取一个值，该值指示对该集合的访问是否是只读的。</summary>
+        <summary>获取一个值，该值指示对集合的访问是只读的。</summary>
         <value>始终返回 <see langword="false" />。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -578,9 +586,9 @@
         <Parameter Name="uriPrefix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="uriPrefix">包含要移除的 URI 前缀的 <see cref="T:System.String" />。</param>
-        <summary>从由 <see cref="T:System.Net.HttpListener" /> 对象处理的前缀的列表中移除指定的统一资源标识符 (URI)。</summary>
-        <returns>如果在 <see cref="T:System.Net.HttpListenerPrefixCollection" /> 中找到 <paramref name="uriPrefix" /> 并将其移除，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <param name="uriPrefix">一个<see cref="T:System.String" />，其中包含要删除的 URI 前缀。</param>
+        <summary>通过处理的前缀列表中移除指定的统一资源标识符 (URI)<see cref="T:System.Net.HttpListener" />对象。</summary>
+        <returns><see langword="true" /> 如果<paramref name="uriPrefix" />中找到<see cref="T:System.Net.HttpListenerPrefixCollection" />和已删除; 否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -632,8 +640,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回一个可用于循环访问集合的对象。</summary>
-        <returns>一个对象，它实现了 <see cref="T:System.Collections.IEnumerator" /> 接口，并提供对此集合中的字符串的访问。</returns>
+        <summary>返回可用于循环访问集合的对象。</summary>
+        <returns>一个对象，实现<see cref="T:System.Collections.IEnumerator" />接口，并提供对此集合中的字符串的访问。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
