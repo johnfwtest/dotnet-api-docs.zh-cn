@@ -1,5 +1,5 @@
 <Type Name="RoutedCommand" FullName="System.Windows.Input.RoutedCommand">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7bcc65f4670032f76e334bbfdf2d2694cf8291d0" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56397995" /></Metadata><TypeSignature Language="C#" Value="public class RoutedCommand : System.Windows.Input.ICommand" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="6cb4b0887eb9edb341d7337240bcb48e0f262dfe" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65015026" /></Metadata><TypeSignature Language="C#" Value="public class RoutedCommand : System.Windows.Input.ICommand" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RoutedCommand extends System.Object implements class System.Windows.Input.ICommand" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Input.RoutedCommand" />
   <TypeSignature Language="VB.NET" Value="Public Class RoutedCommand&#xA;Implements ICommand" />
@@ -33,7 +33,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>定义一个实现 <see cref="T:System.Windows.Input.ICommand" /> 并通过元素树路由的命令。</summary>
+    <summary>定义一个实现 <see cref="T:System.Windows.Input.ICommand" /> 并在元素树之内进行路由的命令。</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -46,11 +46,11 @@
 ## <a name="xaml-attribute-usage"></a>XAML 属性用法  
  \<*object* *property*="*predefinedCommandName*"/>  
   
-- 或 -
+或
   
  \<*object* *property*="*predefinedClassName*.*predefinedCommandName*"/>  
   
-- 或 -
+或
   
  \<*object* *property*="{ *customClassName*.*customCommandName*}"/>  
   
@@ -131,8 +131,8 @@
         <Parameter Name="ownerType" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="name">序列化的声明名称。</param>
-        <param name="ownerType">注册命令的类型。</param>
+        <param name="name">用于序列化的已声明名称。</param>
+        <param name="ownerType">正在注册命令的类型。</param>
         <summary>使用指定的名称和所有者类型初始化 <see cref="T:System.Windows.Input.RoutedCommand" /> 类的新实例。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 为 <see langword="null" />。</exception>
@@ -162,14 +162,14 @@
         <Parameter Name="inputGestures" Type="System.Windows.Input.InputGestureCollection" />
       </Parameters>
       <Docs>
-        <param name="name">序列化的声明名称。</param>
-        <param name="ownerType">正在注册命令的类型。</param>
-        <param name="inputGestures">与此命令关联的默认输入笔势。</param>
-        <summary>使用指定的名称、所有者类型和笔势集合初始化 <see cref="T:System.Windows.Input.RoutedCommand" /> 类的新实例。</summary>
+        <param name="name">用于序列化的已声明名称。</param>
+        <param name="ownerType">正在注册命令类型。</param>
+        <param name="inputGestures">默认值与此命令关联的输入的笔势。</param>
+        <summary>初始化的新实例<see cref="T:System.Windows.Input.RoutedCommand" />具有指定的名称、 所有者类型和笔势的集合类。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="name" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="name" /> 的长度为零。 
-- 或 - 
+        <exception cref="T:System.ArgumentException">长度<paramref name="name" />为零 
+或 
  <paramref name="ownerType" /> 为 <see langword="null" />。</exception>
         <altmember cref="T:System.Windows.Input.CommandBinding" />
         <altmember cref="T:System.Windows.Input.InputBinding" />
@@ -191,7 +191,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -203,10 +203,10 @@
         <Parameter Name="target" Type="System.Windows.IInputElement" />
       </Parameters>
       <Docs>
-        <param name="parameter">用户定义的数据类型。</param>
+        <param name="parameter">用户定义数据类型。</param>
         <param name="target">命令目标。</param>
-        <summary>确定此 <see cref="T:System.Windows.Input.RoutedCommand" /> 在其当前状态是否可以执行。</summary>
-        <returns>如果可以对当前命令目标执行此命令，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>确定是否这<see cref="T:System.Windows.Input.RoutedCommand" />可以在其当前状态下执行。</summary>
+        <returns><see langword="true" /> 如果该命令可以执行对当前命令目标;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -229,7 +229,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><paramref name="target" /> 不是 <see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="target" /> 不是<see cref="T:System.Windows.UIElement" />或<see cref="T:System.Windows.ContentElement" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="CanExecuteChanged">
@@ -252,7 +252,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当命令管理器检测到对命令源所进行的更改时发生。 这些更改通常影响是否应对当前命令目标执行命令。</summary>
+        <summary>命令管理器检测到对命令源的更改时发生。 这些更改通常影响是否应在当前命令目标上执行该命令。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -291,7 +291,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -303,9 +303,9 @@
         <Parameter Name="target" Type="System.Windows.IInputElement" />
       </Parameters>
       <Docs>
-        <param name="parameter">要传递到处理程序的用户定义的参数。</param>
-        <param name="target">要在其中查找命令处理程序的元素。</param>
-        <summary>对当前命令目标执行 <see cref="T:System.Windows.Input.RoutedCommand" />。</summary>
+        <param name="parameter">用户定义的参数传递给处理程序。</param>
+        <param name="target">从此处开始查找命令处理程序元素。</param>
+        <summary>执行<see cref="T:System.Windows.Input.RoutedCommand" />当前命令目标上。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -326,7 +326,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><paramref name="target" /> 不是 <see cref="T:System.Windows.UIElement" /> 或 <see cref="T:System.Windows.ContentElement" />。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="target" /> 不是<see cref="T:System.Windows.UIElement" />或<see cref="T:System.Windows.ContentElement" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="InputGestures">
@@ -346,8 +346,8 @@
         <ReturnType>System.Windows.Input.InputGestureCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取与此命令关联的 <see cref="T:System.Windows.Input.InputGesture" /> 对象的集合。</summary>
-        <value>输入笔势。</value>
+        <summary>获取集合的<see cref="T:System.Windows.Input.InputGesture" />与此命令关联的对象。</summary>
+        <value>输入的笔势。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -423,7 +423,7 @@
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取使用命令注册的类型。</summary>
+        <summary>获取已注册到该命令的类型。</summary>
         <value>命令所有者的类型。</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -444,7 +444,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -456,13 +456,13 @@
       </Parameters>
       <Docs>
         <param name="parameter">此命令使用的数据。  如果此命令不需要传递数据，则该对象可以设置为 <see langword="null" />。</param>
-        <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)" />。</summary>
-        <returns>如果可以执行此命令，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>有关此成员的说明，请参阅<see cref="M:System.Windows.Input.ICommand.CanExecute(System.Object)" />。</summary>
+        <returns>如果可执行此命令，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Input.RoutedCommand> 实例强制转换为 <xref:System.Windows.Input.ICommand> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Input.RoutedCommand> 实例被强制转换为 <xref:System.Windows.Input.ICommand> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -492,12 +492,12 @@
       </Parameters>
       <Docs>
         <param name="parameter">此命令使用的数据。  如果此命令不需要传递数据，则该对象可以设置为 <see langword="null" />。</param>
-        <summary>有关此成员的说明，请参见 <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />。</summary>
+        <summary>有关此成员的说明，请参阅<see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Input.RoutedCommand> 实例强制转换为 <xref:System.Windows.Input.ICommand> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Input.RoutedCommand> 实例被强制转换为 <xref:System.Windows.Input.ICommand> 接口时使用。  
   
    
   

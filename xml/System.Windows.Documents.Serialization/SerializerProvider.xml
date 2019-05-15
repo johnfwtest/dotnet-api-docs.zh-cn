@@ -1,5 +1,5 @@
 <Type Name="SerializerProvider" FullName="System.Windows.Documents.Serialization.SerializerProvider">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="6d5509ccaedc16f725b64e5935b38c1c6cc5aded" /><Meta Name="ms.sourcegitcommit" Value="0ec122ee5f3681159b8460ab15b409fd6e3d3ae0" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="10/04/2018" /><Meta Name="ms.locfileid" Value="48683567" /></Metadata><TypeSignature Language="C#" Value="public sealed class SerializerProvider" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="91657f507aa0414341dcbcc5b64f770deab8572b" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65016478" /></Metadata><TypeSignature Language="C#" Value="public sealed class SerializerProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializerProvider extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Serialization.SerializerProvider" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SerializerProvider" />
@@ -15,7 +15,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>使用 <see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" /> 和 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" /> 管理具有自己的专用序列化格式的制造商创建的序列化插件。</summary>
+    <summary>管理序列化插件创建的使用<see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />和<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />，由具有其自己的专用序列化格式的制造商。</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -32,7 +32,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -71,7 +71,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -83,10 +83,10 @@
         <Parameter Name="stream" Type="System.IO.Stream" />
       </Parameters>
       <Docs>
-        <param name="serializerDescriptor">包含 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" /> 的序列化信息的 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />。</param>
-        <param name="stream">返回的对象要写入的 <see cref="T:System.IO.Stream" />。</param>
-        <summary>为将使用指定说明符的指定的 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" /> 初始化从抽象 <see cref="T:System.IO.Stream" /> 类派生的对象。</summary>
-        <returns>一个派生自 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" /> 的类的对象。</returns>
+        <param name="serializerDescriptor">一个<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />，它包含序列化信息<see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />。</param>
+        <param name="stream"><see cref="T:System.IO.Stream" />向其中写入返回的对象。</param>
+        <summary>初始化从抽象派生的对象<see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />类指定<see cref="T:System.IO.Stream" />，将使用指定的描述符。</summary>
+        <returns>类的对象派生自<see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -102,11 +102,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">其中一个参数为 Null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="serializerDescriptor" /> 指定版本错误。  
+        <exception cref="T:System.ArgumentNullException">其中一个参数为 null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="serializerDescriptor" />指定版本错误。  
   
 或 
-它没有注册。  
+未注册。  
   
 或 
 找不到程序集文件。  
@@ -137,8 +137,8 @@
         <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Documents.Serialization.SerializerDescriptor&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取安装的插件序列化程序的集合。</summary>
-        <value><see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 对象的 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" /> 已注册。</value>
+        <summary>获取已安装的插件序列化程序的集合。</summary>
+        <value>一个<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />的<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />已注册的对象。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -166,7 +166,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -178,8 +178,8 @@
         <Parameter Name="overwrite" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="serializerDescriptor">用于插件的 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />。</param>
-        <param name="overwrite">如果覆盖同一插件的现有注册，则为 <see langword="true" />，否则为 <see langword="false" />。</param>
+        <param name="serializerDescriptor"><see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />的插件。</param>
+        <param name="overwrite"><see langword="true" /> 若要覆盖同一插件; 的现有注册否则为<see langword="false" />。</param>
         <summary>注册序列化程序插件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -192,7 +192,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="serializerDescriptor" /> 为 null。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="overwrite" /> 为 <see langword="false" /> 并且插件已注册。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="overwrite" /> 是<see langword="false" />和已注册该插件。</exception>
       </Docs>
     </Member>
     <Member MemberName="UnregisterSerializer">
@@ -208,7 +208,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -219,8 +219,8 @@
         <Parameter Name="serializerDescriptor" Type="System.Windows.Documents.Serialization.SerializerDescriptor" />
       </Parameters>
       <Docs>
-        <param name="serializerDescriptor">用于插件的 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />。</param>
-        <summary>从注册表中删除序列化插件。</summary>
+        <param name="serializerDescriptor"><see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />的插件。</param>
+        <summary>从注册表中删除序列化程序插件。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -232,7 +232,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="serializerDescriptor" /> 为 null。</exception>
-        <exception cref="T:System.ArgumentException">未注册插件。 请参阅“备注”。</exception>
+        <exception cref="T:System.ArgumentException">未注册该插件。 请参阅“备注”。</exception>
       </Docs>
     </Member>
   </Members>

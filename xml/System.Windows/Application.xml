@@ -1,5 +1,5 @@
 <Type Name="Application" FullName="System.Windows.Application">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7dfbbc42aa1abd5672a8c1c362365d56d7d2df38" /><Meta Name="ms.sourcegitcommit" Value="bac13a81377b1c4ebf3990e3287a6f1700f73751" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/19/2019" /><Meta Name="ms.locfileid" Value="57928862" /></Metadata><TypeSignature Language="C#" Value="public class Application : System.Windows.Threading.DispatcherObject, System.Windows.Markup.IQueryAmbient" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="49de4dab9ea26712375d19c72600f630203d96ad" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65004155" /></Metadata><TypeSignature Language="C#" Value="public class Application : System.Windows.Threading.DispatcherObject, System.Windows.Markup.IQueryAmbient" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Application extends System.Windows.Threading.DispatcherObject implements class System.Windows.Markup.IQueryAmbient" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Application" />
   <TypeSignature Language="VB.NET" Value="Public Class Application&#xA;Inherits DispatcherObject&#xA;Implements IQueryAmbient" />
@@ -79,7 +79,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -96,7 +96,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">对于每个 <see cref="T:System.Windows.Application" />，都会创建 <see cref="T:System.AppDomain" /> 类的多个实例。</exception>
+        <exception cref="T:System.InvalidOperationException">多个实例的<see cref="T:System.Windows.Application" />类创建每个<see cref="T:System.AppDomain" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="Activated">
@@ -116,7 +116,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当应用程序成为前台应用程序时发生。</summary>
+        <summary>应用程序成为前台应用程序时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -175,8 +175,8 @@
         <ReturnType>System.Windows.Application</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取当前 <see cref="T:System.Windows.Application" /> 的 <see cref="T:System.AppDomain" /> 对象。</summary>
-        <value>当前 <see cref="T:System.Windows.Application" /> 的 <see cref="T:System.AppDomain" /> 对象。</value>
+        <summary>获取<see cref="T:System.Windows.Application" />对象当前<see cref="T:System.AppDomain" />。</summary>
+        <value><see cref="T:System.Windows.Application" />对象当前<see cref="T:System.AppDomain" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -206,7 +206,7 @@
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当应用程序停止作为前台应用程序时发生。</summary>
+        <summary>当应用程序停止作为前台应用程序时出现。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -256,7 +256,7 @@
         <ReturnType>System.Windows.Threading.DispatcherUnhandledExceptionEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在异常由应用程序引发但未进行处理时发生。</summary>
+        <summary>当应用程序引发但未处理异常时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -318,7 +318,7 @@
         <ReturnType>System.Windows.ExitEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>恰好在应用程序关闭之前发生，且无法取消。</summary>
+        <summary>应用程序关闭，且无法取消之前发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -392,9 +392,9 @@
         <Parameter Name="resourceKey" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="resourceKey">要查找的资源名。</param>
+        <param name="resourceKey">要查找的资源的名称。</param>
         <summary>使用指定键搜索 [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] 资源（如 <see cref="T:System.Windows.Style" /> 或 <see cref="T:System.Windows.Media.Brush" />），并在未找到所请求的资源时引发异常（请参阅 [XAML 资源](~/docs/framework/wpf/advanced/xaml-resources.md)）。</summary>
-        <returns>所请求的资源对象。 如果未找到所请求的资源，则引发 <see cref="T:System.Windows.ResourceReferenceKeyNotFoundException" />。</returns>
+        <returns>所请求的资源对象。 如果找不到请求的资源，<see cref="T:System.Windows.ResourceReferenceKeyNotFoundException" />引发。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -439,7 +439,7 @@
         <ReturnType>System.Windows.Navigation.FragmentNavigationEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当应用程序中的导航器开始导航至某个内容片断时发生，如果所需片段位于当前内容中，则导航会立即发生；或者，如果所需片段位于不同内容中，则导航会在加载了源 [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)] 内容之后发生。</summary>
+        <summary>当应用程序中的导航器开始导航至某个内容片断时发生如果所需的片段位于当前内容中或在源之后立即发生导航[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]如果所需的片段位于不同已加载内容内容。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -472,7 +472,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -483,9 +483,9 @@
         <Parameter Name="uriContent" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="uriContent">映射到松散资源的相对 <see cref="T:System.Uri" />。</param>
+        <param name="uriContent">相对<see cref="T:System.Uri" />映射到松散资源。</param>
         <summary>返回位于指定 <see cref="T:System.Uri" /> 的内容数据文件的资源流（请参阅 [WPF 应用程序资源、内容和数据文件](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)）。</summary>
-        <returns>一个 <see cref="T:System.Windows.Resources.StreamResourceInfo" />，包含位于指定 <see cref="T:System.Uri" /> 处的内容数据文件。 如果未找到松散资源，则返回 null。</returns>
+        <returns>一个<see cref="T:System.Windows.Resources.StreamResourceInfo" />，其中包含位于指定的内容数据文件<see cref="T:System.Uri" />。 如果未找到松散资源，则返回 null。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -494,8 +494,8 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">传递给 <see cref="T:System.Uri" /> 的 <see cref="M:System.Windows.Application.GetContentStream(System.Uri)" /> 为 null。</exception>
-        <exception cref="T:System.ArgumentException">传递给 <see cref="T:System.Uri" /> 的 <see cref="M:System.Windows.Application.GetContentStream(System.Uri)" /> 是绝对 <see cref="T:System.Uri" />。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Uri" />传递给<see cref="M:System.Windows.Application.GetContentStream(System.Uri)" />为 null。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Uri" />传递给<see cref="M:System.Windows.Application.GetContentStream(System.Uri)" />是绝对<see cref="T:System.Uri" />。</exception>
         <altmember cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />
         <altmember cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" />
         <altmember cref="Overload:System.Windows.Application.LoadComponent" />
@@ -520,9 +520,9 @@
         <Parameter Name="uri" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="uri"><see cref="T:System.Uri" />，它指定已为其创建 Cookie 的位置。</param>
-        <summary>为由 <see cref="T:System.Uri" /> 指定的位置检索 Cookie。</summary>
-        <returns>如果该 Cookie 存在，则为 <see cref="T:System.String" /> 值；否则会引发 <see cref="T:System.ComponentModel.Win32Exception" />。</returns>
+        <param name="uri"><see cref="T:System.Uri" /> ，它指定为其创建 cookie 的位置。</param>
+        <summary>检索指定的位置的 cookie <see cref="T:System.Uri" />。</summary>
+        <returns>一个<see cref="T:System.String" />值，如果该 cookie 存在; 否则为<see cref="T:System.ComponentModel.Win32Exception" />引发。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -553,7 +553,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -564,9 +564,9 @@
         <Parameter Name="uriRemote" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="uriRemote">映射到源站点的松散资源的 <see cref="T:System.Uri" />。</param>
+        <param name="uriRemote"><see cref="T:System.Uri" /> ，它映射到源站点的松散资源。</param>
         <summary>返回位于指定 <see cref="T:System.Uri" /> 的源站点数据文件的资源流（请参阅 [WPF 应用程序资源、内容和数据文件](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)）。</summary>
-        <returns>一个 <see cref="T:System.Windows.Resources.StreamResourceInfo" />，包含位于指定 <see cref="T:System.Uri" /> 处的源站点数据文件的资源流。 如果未找到松散资源，则返回 <see langword="null" />。</returns>
+        <returns>一个<see cref="T:System.Windows.Resources.StreamResourceInfo" />，其中包含位于指定的源站点数据文件的资源流<see cref="T:System.Uri" />。 如果未找到松散资源，<see langword="null" />返回。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -575,7 +575,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">传递给 <see cref="T:System.Uri" /> 的 <see cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" /> 为 null。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Uri" />传递给<see cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" />为 null。</exception>
         <exception cref="T:System.ArgumentException">传递给 <see cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" /> 的 <see cref="T:System.Uri" /> 不是相对的，或虽然是绝对的但不是 <c>pack://siteoforigin:,,,/</c> 格式。</exception>
         <altmember cref="M:System.Windows.Application.GetContentStream(System.Uri)" />
         <altmember cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />
@@ -596,7 +596,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -607,9 +607,9 @@
         <Parameter Name="uriResource" Type="System.Uri" />
       </Parameters>
       <Docs>
-        <param name="uriResource">映射到嵌入资源的 <see cref="T:System.Uri" />。</param>
+        <param name="uriResource"><see cref="T:System.Uri" /> ，它映射到嵌入的资源。</param>
         <summary>返回位于指定 <see cref="T:System.Uri" /> 的资源数据文件的资源流（请参阅 [WPF 应用程序资源、内容和数据文件](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)）。</summary>
-        <returns>一个 <see cref="T:System.Windows.Resources.StreamResourceInfo" />，包含位于指定 <see cref="T:System.Uri" /> 处的资源数据文件的资源流。</returns>
+        <returns>一个<see cref="T:System.Windows.Resources.StreamResourceInfo" />，其中包含位于指定的资源数据文件的资源流<see cref="T:System.Uri" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -618,9 +618,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">传递给 <see cref="T:System.Uri" /> 的 <see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" /> 为 null。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Uri" />传递给<see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />为 null。</exception>
         <exception cref="T:System.ArgumentException">传递给 <see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" /> 的 <see cref="T:System.Uri" /> 不是相对的，或虽然是绝对的但不是 <c>pack://application:,,,/</c> 格式。</exception>
-        <exception cref="T:System.IO.IOException">传递给 <see cref="T:System.Uri" /> 的 <see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" /> 无法找到。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="T:System.Uri" />传递给<see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />找不到。</exception>
         <altmember cref="M:System.Windows.Application.GetContentStream(System.Uri)" />
         <altmember cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" />
         <altmember cref="Overload:System.Windows.Application.LoadComponent" />
@@ -643,7 +643,7 @@
         <ReturnType>System.Windows.Navigation.LoadCompletedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在已经加载、分析并开始呈现应用程序中的导航器导航到的内容时发生。</summary>
+        <summary>当应用程序中的导航器导航到内容均已加载，分析，并开始呈现时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -671,7 +671,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Docs>
-        <summary>加载位于指定[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] 处的 [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] 文件。</summary>
+        <summary>加载[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]位于指定的文件[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -709,8 +709,8 @@
       </Parameters>
       <Docs>
         <param name="resourceLocator">一个 <see cref="T:System.Uri" />，它映射到相对 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] 文件。</param>
-        <summary>加载位于指定[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] 处的 [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] 文件，并将其转换为由该 [!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] 文件的根元素指定的对象的实例。</summary>
-        <returns>加载的 XAML 文件所指定的根元素的实例。</returns>
+        <summary>加载[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]位于指定的文件[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]，并将其转换为指定的根元素的对象的实例[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]文件。</summary>
+        <returns>加载 XAML 文件中指定的根元素的实例。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -726,7 +726,7 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="resourceLocator" /> 为 null。</exception>
         <exception cref="T:System.ArgumentException"><paramref name="resourceLocator" /> 是绝对 [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]。</exception>
-        <exception cref="T:System.Exception">该文件不是 [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)] 文件。</exception>
+        <exception cref="T:System.Exception">文件不是[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]文件。</exception>
         <altmember cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />
         <altmember cref="M:System.Windows.Application.GetContentStream(System.Uri)" />
         <altmember cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" />
@@ -746,7 +746,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -798,7 +798,7 @@
       </ReturnValue>
       <Docs>
         <summary>获取或设置应用程序的主窗口。</summary>
-        <value>一个指定为应用程序主窗口的 <see cref="T:System.Windows.Window" />。</value>
+        <value>一个<see cref="T:System.Windows.Window" />被指定为应用程序主窗口。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -841,7 +841,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Application.MainWindow" /> 是从浏览器承载的应用程序（如 [!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]）设置的。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Application.MainWindow" /> 从应用程序托管在浏览器中，如设置[!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]。</exception>
         <altmember cref="E:System.Windows.Application.Exit" />
       </Docs>
     </Member>
@@ -862,7 +862,7 @@
         <ReturnType>System.Windows.Navigation.NavigatedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在已经找到应用程序中的导航器要导航到的内容时发生，尽管此时该内容可能尚未完成加载。</summary>
+        <summary>当已找到要导航到应用程序中的导航器的内容，虽然可能未完成加载时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -898,7 +898,7 @@
         <ReturnType>System.Windows.Navigation.NavigatingCancelEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在应用程序中的导航器请求新导航时发生。</summary>
+        <summary>当应用程序中的导航器请求新导航时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -934,7 +934,7 @@
         <ReturnType>System.Windows.Navigation.NavigationFailedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在应用程序中的导航器在导航到所请求内容时出现错误的情况下发生。</summary>
+        <summary>当应用程序中的导航器导航到所请求内容时出现错误时发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -970,7 +970,7 @@
         <ReturnType>System.Windows.Navigation.NavigationProgressEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在由应用程序中的导航器管理的下载过程中定期发生，以提供导航进度信息。</summary>
+        <summary>由应用程序以提供导航进度信息中的导航器的下载过程中定期发生。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1006,7 +1006,7 @@
         <ReturnType>System.Windows.Navigation.NavigationStoppedEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在调用应用程序中的导航器的 <see langword="StopLoading" /> 方法时发生，或者当导航器在当前导航正在进行期间请求了一个新导航时发生。</summary>
+        <summary>发生时<see langword="StopLoading" />调用方法的应用程序中的导航器，或当前导航正在进行时，通过导航器请求新导航时发生时。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1509,8 +1509,8 @@
         <ReturnType>System.Collections.IDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取应用程序范围属性的集合。</summary>
-        <value>一个包含应用程序范围的属性的 <see cref="T:System.Collections.IDictionary" />。</value>
+        <summary>获取应用程序作用域属性的集合。</summary>
+        <value><see cref="T:System.Collections.IDictionary" /> ，它包含应用程序作用域属性。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1559,8 +1559,8 @@
         <ReturnType>System.Reflection.Assembly</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置为 [!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)] 应用程序中的资源提供包[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)] 的 <see cref="T:System.Reflection.Assembly" />。</summary>
-        <value>对为 [!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)] 应用程序中的资源提供包[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)] 的 <see cref="T:System.Reflection.Assembly" /> 的引用。</value>
+        <summary>获取或设置<see cref="T:System.Reflection.Assembly" />提供包[!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)]中的资源[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]应用程序。</summary>
+        <value>对引用<see cref="T:System.Reflection.Assembly" />提供包[!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)]中的资源[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]应用程序。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1592,7 +1592,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)] 应用程序具有入口程序集，或者已设置 <see cref="P:System.Windows.Application.ResourceAssembly" />。</exception>
+        <exception cref="T:System.InvalidOperationException">一个[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]应用程序具有入口程序集，或<see cref="P:System.Windows.Application.ResourceAssembly" />已设置。</exception>
       </Docs>
     </Member>
     <Member MemberName="Resources">
@@ -1620,8 +1620,8 @@
         <ReturnType>System.Windows.ResourceDictionary</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置应用程序范围资源（如样式和画笔）的集合。</summary>
-        <value>一个包含零个或多个应用程序范围资源的 <see cref="T:System.Windows.ResourceDictionary" /> 对象。</value>
+        <summary>获取或设置应用程序范围资源，如样式和画笔的集合。</summary>
+        <value>一个<see cref="T:System.Windows.ResourceDictionary" />对象，其中包含零个或多个应用程序范围资源。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1697,7 +1697,7 @@
       <Parameters />
       <Docs>
         <summary>启动 Windows Presentation Foundation 应用程序。</summary>
-        <returns>在应用程序关闭时，返回给操作系统的 <see cref="T:System.Int32" /> 应用程序退出代码。 默认情况下，该退出代码值为 0。</returns>
+        <returns><see cref="T:System.Int32" />应用程序关闭时返回到操作系统的应用程序退出代码。 默认情况下，退出代码值为 0。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1720,7 +1720,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Windows.Application.Run" /> 是从浏览器承载的应用程序（如 [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]）调用的。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Windows.Application.Run" /> 从浏览器承载的应用程序调用 (例如， [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)])。</exception>
         <altmember cref="M:System.Windows.Application.Run(System.Windows.Window)" />
         <altmember cref="M:System.Windows.Application.Shutdown(System.Int32)" />
         <altmember cref="E:System.Windows.Application.Exit" />
@@ -1739,7 +1739,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1750,9 +1750,9 @@
         <Parameter Name="window" Type="System.Windows.Window" />
       </Parameters>
       <Docs>
-        <param name="window">在应用程序启动时自动打开的 <see cref="T:System.Windows.Window" />。</param>
+        <param name="window">一个<see cref="T:System.Windows.Window" />应用程序启动时自动打开。</param>
         <summary>启动 Windows Presentation Foundation 应用程序并打开指定窗口。</summary>
-        <returns>在应用程序关闭时，返回给操作系统的 <see cref="T:System.Int32" /> 应用程序退出代码。 默认情况下，该退出代码值为 0。</returns>
+        <returns><see cref="T:System.Int32" />应用程序关闭时返回到操作系统的应用程序退出代码。 默认情况下，退出代码值为 0。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1777,7 +1777,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Windows.Application.Run" /> 是从浏览器承载的应用程序（如 [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]）调用的。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Windows.Application.Run" /> 从浏览器承载的应用程序调用 (例如， [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)])。</exception>
         <altmember cref="M:System.Windows.Application.Shutdown" />
         <altmember cref="M:System.Windows.Application.Shutdown(System.Int32)" />
       </Docs>
@@ -1854,9 +1854,9 @@
         <Parameter Name="value" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="uri"><see cref="T:System.Uri" />，它指定应为其创建 Cookie 的位置。</param>
-        <param name="value">包含 Cookie 数据的 <see cref="T:System.String" />。</param>
-        <summary>为由 <see cref="T:System.Uri" /> 指定的位置创建一个 Cookie。</summary>
+        <param name="uri"><see cref="T:System.Uri" /> ，它指定应为其创建 cookie 的位置。</param>
+        <param name="value"><see cref="T:System.String" /> ，其中包含 cookie 数据。</param>
+        <summary>创建指定的位置的 cookie <see cref="T:System.Uri" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1963,7 +1963,7 @@
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
-        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+        <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
           <AttributeName>System.Security.SecurityCritical</AttributeName>
         </Attribute>
       </Attributes>
@@ -1975,7 +1975,7 @@
       </Parameters>
       <Docs>
         <param name="exitCode">应用程序的一个整数退出代码。 默认退出代码为 0。</param>
-        <summary>关闭将指定退出代码返回给操作系统的应用程序。</summary>
+        <summary>关闭指定的退出代码返回给操作系统的应用程序。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2007,7 +2007,7 @@
         <ReturnType>System.Windows.ShutdownMode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取或设置导致调用 <see cref="M:System.Windows.Application.Shutdown" /> 方法的条件。</summary>
+        <summary>获取或设置导致的情况<see cref="M:System.Windows.Application.Shutdown" />要在调用方法。</summary>
         <value>一个 <see cref="T:System.Windows.ShutdownMode" /> 枚举值。 默认值为 <see cref="F:System.Windows.ShutdownMode.OnLastWindowClose" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2055,7 +2055,7 @@
         <ReturnType>System.Windows.StartupEventHandler</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>在调用 <see cref="M:System.Windows.Application.Run" /> 对象的 <see cref="T:System.Windows.Application" /> 方法时发生。</summary>
+        <summary>发生时<see cref="M:System.Windows.Application.Run" />方法的<see cref="T:System.Windows.Application" />调用对象。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2150,7 +2150,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Application.StartupUri" /> 设置为 null 值。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Application.StartupUri" /> 设置值为 null。</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable">
@@ -2175,13 +2175,13 @@
       </Parameters>
       <Docs>
         <param name="propertyName">请求的环境属性的名称。</param>
-        <summary>查询当前范围中是否有指定的环境属性。</summary>
-        <returns>如果有所请求的环境属性，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>查询的当前作用域中指定的环境属性是否可用。</summary>
+        <returns><see langword="true" /> 如果请求的环境属性不可用;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- 此成员是显式的接口成员实现。 它只能在 <xref:System.Windows.Application> 实例强制转换为 <xref:System.Windows.Markup.IQueryAmbient> 接口时使用。  
+ 此成员是显式接口成员的实现。 它只能在 <xref:System.Windows.Application> 实例被强制转换为 <xref:System.Windows.Markup.IQueryAmbient> 接口时使用。  
   
  ]]></format>
         </remarks>
@@ -2208,9 +2208,9 @@
         <Parameter Name="resourceKey" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="resourceKey">要查找的资源名。</param>
-        <summary>搜索指定资源。</summary>
-        <returns>所请求的资源对象。 如果未找到所请求的资源，则返回 null 引用。</returns>
+        <param name="resourceKey">要查找的资源的名称。</param>
+        <summary>搜索指定的资源。</summary>
+        <returns>所请求的资源对象。 如果找不到请求的资源，则返回 null 引用。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2255,8 +2255,8 @@
         <ReturnType>System.Windows.WindowCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取应用程序中的实例化窗口。</summary>
-        <value>一个 <see cref="T:System.Windows.WindowCollection" />，包含对当前 <see cref="T:System.AppDomain" /> 中的所有窗口对象的引用。</value>
+        <summary>获取应用程序中的实例化的窗口。</summary>
+        <value>一个<see cref="T:System.Windows.WindowCollection" />，其中包含对在当前的所有窗口对象的引用<see cref="T:System.AppDomain" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
