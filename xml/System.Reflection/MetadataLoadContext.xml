@@ -1,0 +1,327 @@
+<Type Name="MetadataLoadContext" FullName="System.Reflection.MetadataLoadContext">
+  <Metadata><Meta Name="ms.openlocfilehash" Value="9aaf43973195666dd08ebb47e5dd2fc7f8617f14" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="64996711" /></Metadata><TypeSignature Language="C#" Value="public sealed class MetadataLoadContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MetadataLoadContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.MetadataLoadContext" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class MetadataLoadContext&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MetadataLoadContext sealed : IDisposable" />
+  <TypeSignature Language="F#" Value="type MetadataLoadContext = class&#xA;    interface IDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><span data-ttu-id="645d6-101">表示用于仅检查目的加载的类型对象已关闭的 universe。</span><span class="sxs-lookup"><span data-stu-id="645d6-101">Represents a closed universe of Type objects loaded for inspection-only purposes.</span></span> <span data-ttu-id="645d6-102">每个 MetadataLoadContext 可以有其自己的绑定规则，并且与所有其他 MetadataLoadContexts 隔离。</span><span class="sxs-lookup"><span data-stu-id="645d6-102">Each MetadataLoadContext can have its own binding rules and is isolated from all other MetadataLoadContexts.</span></span></summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+
+## Remarks
+
+<span data-ttu-id="645d6-103">一个`MetadataLoadContext`用作一个字典，其中将绑定到程序集名称<xref:System.Reflection.Assembly>之前加载到上下文或需要要加载的实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-103">A `MetadataLoadContext` serves as a dictionary that binds assembly names to <xref:System.Reflection.Assembly> instances that were previously loaded into the context or need to be loaded.</span></span>
+
+<span data-ttu-id="645d6-104">程序集被严格视为元数据。</span><span class="sxs-lookup"><span data-stu-id="645d6-104">Assemblies are treated strictly as metadata.</span></span> <span data-ttu-id="645d6-105">有加载程序集基于目标平台、 CPU 体系结构或指针大小没有限制。</span><span class="sxs-lookup"><span data-stu-id="645d6-105">There are no restrictions on loading assemblies based on target platform, CPU architecture, or pointer size.</span></span> <span data-ttu-id="645d6-106">没有任何限制指定为核心程序集的程序集 (**mscorlib**)。</span><span class="sxs-lookup"><span data-stu-id="645d6-106">There are no restrictions on the assembly designated as the core assembly (**mscorlib**).</span></span>
+
+]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataLoadContext (System.Reflection.MetadataAssemblyResolver resolver, string coreAssemblyName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.MetadataAssemblyResolver resolver, string coreAssemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.#ctor(System.Reflection.MetadataAssemblyResolver,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (resolver As MetadataAssemblyResolver, Optional coreAssemblyName As String = null)" />
+      <MemberSignature Language="F#" Value="new System.Reflection.MetadataLoadContext : System.Reflection.MetadataAssemblyResolver * string -&gt; System.Reflection.MetadataLoadContext" Usage="new System.Reflection.MetadataLoadContext (resolver, coreAssemblyName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resolver" Type="System.Reflection.MetadataAssemblyResolver" />
+        <Parameter Name="coreAssemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resolver"><span data-ttu-id="645d6-107">一个 <see cref="T:System.Reflection.MetadataAssemblyResolver" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-107">A <see cref="T:System.Reflection.MetadataAssemblyResolver" /> instance.</span></span></param>
+        <param name="coreAssemblyName"><span data-ttu-id="645d6-108">如包含的核心类型的程序集的名称<see cref="T:System.Object" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-108">The name of the assembly that contains the core types such as <see cref="T:System.Object" />.</span></span> <span data-ttu-id="645d6-109">通常情况下，这将是"mscorlib"。</span><span class="sxs-lookup"><span data-stu-id="645d6-109">Typically, this would be "mscorlib".</span></span></param>
+        <summary><span data-ttu-id="645d6-110">创建一个新的 <see cref="T:System.Reflection.MetadataLoadContext" /> 对象。</span><span class="sxs-lookup"><span data-stu-id="645d6-110">Creates a new <see cref="T:System.Reflection.MetadataLoadContext" /> object.</span></span></summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CoreAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly CoreAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly CoreAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MetadataLoadContext.CoreAssembly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CoreAssembly As Assembly" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Reflection::Assembly ^ CoreAssembly { System::Reflection::Assembly ^ get(); };" />
+      <MemberSignature Language="F#" Value="member this.CoreAssembly : System.Reflection.Assembly" Usage="System.Reflection.MetadataLoadContext.CoreAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><span data-ttu-id="645d6-111">获取或设置表示"系统程序集"，如包含已知类型的程序集<see cref="T:System.Int32" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-111">Gets or sets the assembly that denotes the "system assembly" that houses the well-known types such as <see cref="T:System.Int32" />.</span></span></summary>
+        <value><span data-ttu-id="645d6-112">一个 <see cref="T:System.Reflection.Assembly" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-112">An <see cref="T:System.Reflection.Assembly" /> instance.</span></span></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+<span data-ttu-id="645d6-113">因为对这些已知类型的引用中未包含程序集引用，与普通类型使用不同的方式不同于其他程序集视为核心程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-113">The core assembly is treated differently than other assemblies because references to these well-known types do not include the assembly reference, unlike normal types.</span></span>
+            
+<span data-ttu-id="645d6-114">通常情况下，此程序集是名为"mscorlib"或"netstandard"。</span><span class="sxs-lookup"><span data-stu-id="645d6-114">Typically, this assembly is named "mscorlib" or "netstandard".</span></span> <span data-ttu-id="645d6-115">如果找不到核心程序集，值将为`null`，和许多其他反射的方法，包括分析方法签名，将引发异常。</span><span class="sxs-lookup"><span data-stu-id="645d6-115">If the core assembly cannot be found, the value will be `null`, and many other reflection methods, including those that parse method signatures, will throw an exception.</span></span>
+            
+<span data-ttu-id="645d6-116">`CoreAssembly`由传递`coreAssemblyName`参数传递给<xref:System.Reflection.MetadataAssemblyResolver>构造函数<xref:System.Reflection.MetadataAssemblyResolver.Resolve%2A?displayProperty=nameWithType>方法。</span><span class="sxs-lookup"><span data-stu-id="645d6-116">The `CoreAssembly` is determined by passing the `coreAssemblyName` parameter passed to the <xref:System.Reflection.MetadataAssemblyResolver> constructor to the <xref:System.Reflection.MetadataAssemblyResolver.Resolve%2A?displayProperty=nameWithType> method.</span></span>
+
+<span data-ttu-id="645d6-117">如果没有`coreAssemblyName`的构造函数中指定的参数<xref:System.Reflection.MetadataLoadContext>，则使用默认值，包括"mscorlib"、"System.Runtime"和"netstandard"。</span><span class="sxs-lookup"><span data-stu-id="645d6-117">If no `coreAssemblyName` argument was specified in the constructor of <xref:System.Reflection.MetadataLoadContext>, then default values are used, including "mscorlib", "System.Runtime" and "netstandard".</span></span>
+            
+<span data-ttu-id="645d6-118">指定的核心程序集不需要直接包含的核心类型。</span><span class="sxs-lookup"><span data-stu-id="645d6-118">The designated core assembly does not need to contain the core types directly.</span></span> <span data-ttu-id="645d6-119">可以键入将其转发到其他程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-119">It can type forward them to other assemblies.</span></span> <span data-ttu-id="645d6-120">因此，它是完全允许 mscorlib 外观用作指定的核心程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-120">Thus, it is perfectly permissible to use the mscorlib facade as the designated core assembly.</span></span>
+            
+<span data-ttu-id="645d6-121">请注意，<xref:System.Runtime>不是理想核心程序集，因为它将排除其中一些互操作相关伪自定义特性类型如<xref:System.Runtime.InteropServices.DllImportAttribute>。</span><span class="sxs-lookup"><span data-stu-id="645d6-121">Note that <xref:System.Runtime> is not an ideal core assembly because it excludes some of the interop-related pseudo-custom attribute types such as <xref:System.Runtime.InteropServices.DllImportAttribute>.</span></span> <span data-ttu-id="645d6-122">但是，它可以提供具有这些属性不感兴趣。</span><span class="sxs-lookup"><span data-stu-id="645d6-122">However, it can serve if you have no interest in those attributes.</span></span> <span data-ttu-id="645d6-123">CustomAttributes API 将跳过这些属性，如果核心程序集不包含所需的类型。</span><span class="sxs-lookup"><span data-stu-id="645d6-123">The CustomAttributes API will skip those attributes if the core assembly does not include the necessary types.</span></span>
+            
+<span data-ttu-id="645d6-124">核心程序集未加载之前需要。</span><span class="sxs-lookup"><span data-stu-id="645d6-124">The core assembly is not loaded until necessary.</span></span> <span data-ttu-id="645d6-125">以下 Api 不会触发搜索的核心程序集：</span><span class="sxs-lookup"><span data-stu-id="645d6-125">The following APIs do not trigger the search for the core assembly:</span></span>
+
+* <xref:System.Reflection.MetadataLoadContext.LoadFromStream%2A?displayProperty=nameWithType>
+* <xref:System.Reflection.MetadataLoadContext.LoadFromAssemblyPath%2A?displayProperty=nameWithType>
+* <xref:System.Reflection.MetadataLoadContext.LoadFromByteArray%2A?displayProperty=nameWithType>
+* <span data-ttu-id="645d6-126"><System.Reflection.Assembly.GetName%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-126"><System.Reflection.Assembly.GetName%2A?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-127"><System.Reflection.Assembly.FullName?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-127"><System.Reflection.Assembly.FullName?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-128"><System.Reflection.Assembly.GetReferencedAssemblies%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-128"><System.Reflection.Assembly.GetReferencedAssemblies%2A?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-129"><System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-129"><System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-130"><System.Reflection.Assembly.DefinedTypes?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-130"><System.Reflection.Assembly.DefinedTypes?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-131"><System.Reflection.Assembly.GetExportedTypes%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-131"><System.Reflection.Assembly.GetExportedTypes%2A?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-132"><System.Reflection.Assembly.GetForwardedTypes%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-132"><System.Reflection.Assembly.GetForwardedTypes%2A?displayProperty=nameWithType></span></span>
+* <span data-ttu-id="645d6-133"><System.Reflection.Assembly.GetType(System.String,System.Boolean,System.Boolean)?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-133"><System.Reflection.Assembly.GetType(System.String,System.Boolean,System.Boolean)?displayProperty=nameWithType></span></span>
+* <xref:System.Type.Name?displayProperty=nameWithType>
+* <xref:System.Type.FullName?displayProperty=nameWithType>
+* <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType>
+            
+<span data-ttu-id="645d6-134">如果找不到核心程序集，或者如果核心程序集缺少类型，这将影响的行为<xref:System.Reflection.MetadataLoadContext>，如下所示：</span><span class="sxs-lookup"><span data-stu-id="645d6-134">If a core assembly cannot be found or if the core assembly is missing types, this will affect the behavior of the <xref:System.Reflection.MetadataLoadContext> as follows:</span></span>
+            
+* <span data-ttu-id="645d6-135">Api 需要解析签名或 typespecs 并返回结果作为<xref:System.Type>对象将引发异常。</span><span class="sxs-lookup"><span data-stu-id="645d6-135">APIs that need to parse signatures or typespecs and return the results as <xref:System.Type> objects will throw an exception.</span></span> <span data-ttu-id="645d6-136">例如：</span><span class="sxs-lookup"><span data-stu-id="645d6-136">For example:</span></span>
+
+ * <xref:System.Reflection.MethodInfo.ReturnType?displayProperty=nameWithType>
+ * <span data-ttu-id="645d6-137">System.Reflection.MethodBase.GetParameters%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="645d6-137">System.Reflection.MethodBase.GetParameters%2A?displayProperty=nameWithType></span></span>
+ * <xref:System.Type.BaseType?displayProperty-nameWithType>
+ * <xref:System.Type.GetInterfaces%2A?displayProperty=nameWithType>
+            
+* <span data-ttu-id="645d6-138">需要比较类型添加到已知的核心类型的 Api 不会引发异常，并比较的计算结果将为`false`。</span><span class="sxs-lookup"><span data-stu-id="645d6-138">APIs that need to compare types to well-known core types will not throw an exception, and the comparison will evaluate to `false`.</span></span> <span data-ttu-id="645d6-139">例如，如果未指定核心程序集<xref:System.Type.IsPrimitive>将返回`false`的所有内容，甚至是类型名为<xref:System.Int32>。</span><span class="sxs-lookup"><span data-stu-id="645d6-139">For example, if you do not specify a core assembly, <xref:System.Type.IsPrimitive> will return `false` for everything, even types named <xref:System.Int32>.</span></span> <span data-ttu-id="645d6-140">同样，<xref:System.Type.GetTypeCode%2A?displayProperty=nameWithType>将返回<xref:System.TypeCode.Object>内的所有内容。</span><span class="sxs-lookup"><span data-stu-id="645d6-140">Similarly, <xref:System.Type.GetTypeCode%2A?displayProperty=nameWithType> will return <xref:System.TypeCode.Object> for everything.</span></span>
+            
+* <span data-ttu-id="645d6-141">如果元数据实体的伪自定义特性，设置标志的图面和核心程序集不包含伪自定义属性类型、 必要的构造函数或构造函数中，参数类型的任何<xref:System.Reflection.MetadataLoadContext>将不会引发。</span><span class="sxs-lookup"><span data-stu-id="645d6-141">If a metadata entity sets flags that surface as a pseudo-custom attribute, and the core assembly does not contain the pseudo-custom attribute type, the necessary constructor or any of the parameter types of the constructor, the <xref:System.Reflection.MetadataLoadContext> will not throw.</span></span> <span data-ttu-id="645d6-142">它将忽略伪自定义属性从返回的特性列表。</span><span class="sxs-lookup"><span data-stu-id="645d6-142">It will omit the pseudo-custom attribute from the list of returned attributes.</span></span>
+          ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
+      <MemberSignature Language="F#" Value="abstract member Dispose : unit -&gt; unit&#xA;override this.Dispose : unit -&gt; unit" Usage="metadataLoadContext.Dispose " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><span data-ttu-id="645d6-143">释放所有本机资源 （如程序集文件上的文件锁）。</span><span class="sxs-lookup"><span data-stu-id="645d6-143">Releases any native resources (such as file locks on assembly files).</span></span></summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+<span data-ttu-id="645d6-144">在处理后，它不是安全地使用任何<xref:System.Reflection.Assembly>对象的分配<xref:System.Reflection.MetadataLoadContext>或任何反射对象分配由<xref:System.Reflection.Assembly>对象。</span><span class="sxs-lookup"><span data-stu-id="645d6-144">After disposal, it is not safe to use any <xref:System.Reflection.Assembly> objects dispensed by the <xref:System.Reflection.MetadataLoadContext> or any reflection objects dispensed by those <xref:System.Reflection.Assembly> objects.</span></span>
+
+<span data-ttu-id="645d6-145">尽管对象提供<xref:System.Reflection.MetadataLoadContext>努力引发<xref:System.ObjectDisposedException>，这无法保证。</span><span class="sxs-lookup"><span data-stu-id="645d6-145">Though objects provided by the <xref:System.Reflection.MetadataLoadContext> strive to throw an <xref:System.ObjectDisposedException>, this is not guaranteed.</span></span>
+
+<span data-ttu-id="645d6-146">某些 Api 可能会返回固定或以前缓存的数据。</span><span class="sxs-lookup"><span data-stu-id="645d6-146">Some APIs may return fixed or previously cached data.</span></span> <span data-ttu-id="645d6-147">访问对象*期间*<xref:System.Reflection.MetadataLoadContext.Dispose%2A>方法调用可能会导致非托管的访问冲突和故障快速报警。</span><span class="sxs-lookup"><span data-stu-id="645d6-147">Accessing objects *during* a <xref:System.Reflection.MetadataLoadContext.Dispose%2A> method call may result in an unmanaged access violation and failfast.</span></span>
+         ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Reflection.Assembly&gt; GetAssemblies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Reflection.Assembly&gt; GetAssemblies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.GetAssemblies" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAssemblies () As IEnumerable(Of Assembly)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IEnumerable&lt;System::Reflection::Assembly ^&gt; ^ GetAssemblies();" />
+      <MemberSignature Language="F#" Value="member this.GetAssemblies : unit -&gt; seq&lt;System.Reflection.Assembly&gt;" Usage="metadataLoadContext.GetAssemblies " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Reflection.Assembly&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><span data-ttu-id="645d6-148">返回已加载到的程序集的原子快照<see cref="T:System.Reflection.MetadataLoadContext" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-148">Return an atomic snapshot of the assemblies that have been loaded into the <see cref="T:System.Reflection.MetadataLoadContext" />.</span></span></summary>
+        <returns><span data-ttu-id="645d6-149">一个可枚举集合<see xref="T:System.Reflection.Assembly" />对象。</span><span class="sxs-lookup"><span data-stu-id="645d6-149">An enumerable collection of <see xref="T:System.Reflection.Assembly" /> objects.</span></span></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromAssemblyName">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LoadFromAssemblyName (System.Reflection.AssemblyName assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Assembly LoadFromAssemblyName(class System.Reflection.AssemblyName assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.LoadFromAssemblyName(System.Reflection.AssemblyName)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::Assembly ^ LoadFromAssemblyName(System::Reflection::AssemblyName ^ assemblyName);" />
+      <MemberSignature Language="F#" Value="member this.LoadFromAssemblyName : System.Reflection.AssemblyName -&gt; System.Reflection.Assembly" Usage="metadataLoadContext.LoadFromAssemblyName assemblyName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName"><span data-ttu-id="645d6-150">一个 <see cref="T:System.Reflection.AssemblyName" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-150">An <see cref="T:System.Reflection.AssemblyName" /> instance.</span></span></param>
+        <summary><span data-ttu-id="645d6-151">解析为程序集提供的程序集名称。</span><span class="sxs-lookup"><span data-stu-id="645d6-151">Resolves the supplied assembly name to an assembly.</span></span> <span data-ttu-id="645d6-152">如果程序集以前绑定到此名称，则返回该程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-152">If an assembly was previously bound to this name, that assembly is returned.</span></span> <span data-ttu-id="645d6-153">否则为<see cref="T:System.Reflection.MetadataLoadContext" />调用指定<see cref="T:System.Reflection.MetadataAssemblyResolver" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-153">Otherwise, the <see cref="T:System.Reflection.MetadataLoadContext" /> calls the specified <see cref="T:System.Reflection.MetadataAssemblyResolver" />.</span></span></summary>
+        <returns><span data-ttu-id="645d6-154">一个 <see cref="T:System.Reflection.Assembly" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-154">An <see cref="T:System.Reflection.Assembly" /> instance.</span></span></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+## Remarks
+<span data-ttu-id="645d6-155">请注意此方法的行为与匹配的行为<xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName%2A?displayProperty=nameWithType>解决事件但不匹配的行为<xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType>。</span><span class="sxs-lookup"><span data-stu-id="645d6-155">Note that the behavior of this method matches the behavior of the <xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName%2A?displayProperty=nameWithType> resolve event but does not match the behavior of <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="645d6-156">（后者将放弃运行，并且不会引发其解决事件。）</span><span class="sxs-lookup"><span data-stu-id="645d6-156">(The latter gives up without raising its resolve event.)</span></span>
+          ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException"><span data-ttu-id="645d6-157">冲突解决程序返回<see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-157">The resolver returns <see langword="null" />.</span></span></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromAssemblyName">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LoadFromAssemblyName (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Assembly LoadFromAssemblyName(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.LoadFromAssemblyName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function LoadFromAssemblyName (assemblyName As String) As Assembly" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::Assembly ^ LoadFromAssemblyName(System::String ^ assemblyName);" />
+      <MemberSignature Language="F#" Value="member this.LoadFromAssemblyName : string -&gt; System.Reflection.Assembly" Usage="metadataLoadContext.LoadFromAssemblyName assemblyName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName"><span data-ttu-id="645d6-158">一个<see cref="T:System.String" />表示程序集名称。</span><span class="sxs-lookup"><span data-stu-id="645d6-158">A <see cref="T:System.String" /> representing the assembly name.</span></span></param>
+        <summary><span data-ttu-id="645d6-159">解析为程序集提供的程序集名称。</span><span class="sxs-lookup"><span data-stu-id="645d6-159">Resolves the supplied assembly name to an assembly.</span></span> <span data-ttu-id="645d6-160">如果程序集以前绑定到此名称，则返回该程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-160">If an assembly was previously bound to this name, that assembly is returned.</span></span> <span data-ttu-id="645d6-161">否则为<see cref="T:System.Reflection.MetadataLoadContext" />调用指定<see cref="T:System.Reflection.MetadataAssemblyResolver" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-161">Otherwise, the <see cref="T:System.Reflection.MetadataLoadContext" /> calls the specified <see cref="T:System.Reflection.MetadataAssemblyResolver" />.</span></span></summary>
+        <returns><span data-ttu-id="645d6-162">一个 <see cref="T:System.Reflection.Assembly" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-162">An <see cref="T:System.Reflection.Assembly" /> instance.</span></span></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+## Remarks
+<span data-ttu-id="645d6-163">请注意此方法的行为与匹配的行为<xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName%2A?displayProperty=nameWithType>解决事件但不匹配的 < xxref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType > 行为。</span><span class="sxs-lookup"><span data-stu-id="645d6-163">Note that the behavior of this method matches the behavior of <xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName%2A?displayProperty=nameWithType> resolve event but does not match the behavior of <xxref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="645d6-164">（后者将放弃运行，并且不会引发其解决事件。）</span><span class="sxs-lookup"><span data-stu-id="645d6-164">(The latter gives up without raising its resolve event.)</span></span>
+]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException"><span data-ttu-id="645d6-165">冲突解决程序返回<see langword="null" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-165">The resolver returns <see langword="null" />.</span></span></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromAssemblyPath">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LoadFromAssemblyPath (string assemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Assembly LoadFromAssemblyPath(string assemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.LoadFromAssemblyPath(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function LoadFromAssemblyPath (assemblyPath As String) As Assembly" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::Assembly ^ LoadFromAssemblyPath(System::String ^ assemblyPath);" />
+      <MemberSignature Language="F#" Value="member this.LoadFromAssemblyPath : string -&gt; System.Reflection.Assembly" Usage="metadataLoadContext.LoadFromAssemblyPath assemblyPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyPath"><span data-ttu-id="645d6-166">一个<see cref="T:System.String" />表示对程序集的路径。</span><span class="sxs-lookup"><span data-stu-id="645d6-166">A <see cref="T:System.String" /> representing the path to the assembly.</span></span></param>
+        <summary><span data-ttu-id="645d6-167">从磁盘上的特定路径加载程序集并将其程序集名称绑定到它在<see cref="T:System.Reflection.MetadataLoadContext" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-167">Loads an assembly from a specific path on the disk and binds its assembly name to it in the <see cref="T:System.Reflection.MetadataLoadContext" />.</span></span> <span data-ttu-id="645d6-168">如果先前的程序集具有相同名称已被加载到<see cref="T:System.Reflection.MetadataLoadContext" />，将返回先前的程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-168">If a prior assembly with the same name was already loaded into the <see cref="T:System.Reflection.MetadataLoadContext" />, the prior assembly will be returned.</span></span></summary>
+        <returns><span data-ttu-id="645d6-169">一个 <see cref="T:System.Reflection.Assembly" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-169">An <see cref="T:System.Reflection.Assembly" /> instance.</span></span></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.FileLoadException"><span data-ttu-id="645d6-170">两个程序集不具有相同时产生的 Mvid。</span><span class="sxs-lookup"><span data-stu-id="645d6-170">The two assemblies do not have the same Mvid.</span></span></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromByteArray">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LoadFromByteArray (byte[] assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Assembly LoadFromByteArray(unsigned int8[] assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.LoadFromByteArray(System.Byte[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::Assembly ^ LoadFromByteArray(cli::array &lt;System::Byte&gt; ^ assembly);" />
+      <MemberSignature Language="F#" Value="member this.LoadFromByteArray : byte[] -&gt; System.Reflection.Assembly" Usage="metadataLoadContext.LoadFromByteArray assembly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="assembly"><span data-ttu-id="645d6-171">一个<see cref="T:System.Byte[]" />保存程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-171">A <see cref="T:System.Byte[]" /> holding an assembly.</span></span></param>
+        <summary><span data-ttu-id="645d6-172">从字节数组加载程序集并将其程序集名称绑定到它在<see cref="T:System.Reflection.MetadataLoadContext" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-172">Loads an assembly from a byte array and binds its assembly name to it in the <see cref="T:System.Reflection.MetadataLoadContext" />.</span></span> <span data-ttu-id="645d6-173">如果先前的程序集具有相同名称已被加载到<see cref="T:System.Reflection.MetadataLoadContext" />，将返回先前的程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-173">If a prior assembly with the same name was already loaded into the <see cref="T:System.Reflection.MetadataLoadContext" />, the prior assembly will be returned.</span></span></summary>
+        <returns><span data-ttu-id="645d6-174">一个 <see cref="T:System.Reflection.Assembly" /> 实例。</span><span class="sxs-lookup"><span data-stu-id="645d6-174">An <see cref="T:System.Reflection.Assembly" /> instance.</span></span></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.FileLoadException"><span data-ttu-id="645d6-175">两个程序集不具有相同时产生的 Mvid。</span><span class="sxs-lookup"><span data-stu-id="645d6-175">The two assemblies do not have the same Mvid.</span></span></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromStream">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LoadFromStream (System.IO.Stream assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Assembly LoadFromStream(class System.IO.Stream assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MetadataLoadContext.LoadFromStream(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::Assembly ^ LoadFromStream(System::IO::Stream ^ assembly);" />
+      <MemberSignature Language="F#" Value="member this.LoadFromStream : System.IO.Stream -&gt; System.Reflection.Assembly" Usage="metadataLoadContext.LoadFromStream assembly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.MetadataLoadContext</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="assembly"><span data-ttu-id="645d6-176">一个<see cref="T:System.IO.Stream" />保存程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-176">A <see cref="T:System.IO.Stream" /> holding an assembly.</span></span></param>
+        <summary><span data-ttu-id="645d6-177">从流加载程序集并将其程序集名称绑定到它在<see cref="T:System.Reflection.MetadataLoadContext" />。</span><span class="sxs-lookup"><span data-stu-id="645d6-177">Loads an assembly from a stream and binds its assembly name to it in the <see cref="T:System.Reflection.MetadataLoadContext" />.</span></span> <span data-ttu-id="645d6-178">如果先前的程序集具有相同名称已被加载到<see cref="T:System.Reflection.MetadataLoadContext" />，将返回先前的程序集。</span><span class="sxs-lookup"><span data-stu-id="645d6-178">If a prior assembly with the same name was already loaded into the <see cref="T:System.Reflection.MetadataLoadContext" />, the prior assembly will be returned.</span></span></summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+> [!IMPORTANT]
+> <span data-ttu-id="645d6-179"><xref:System.Reflection.MetadataLoadContext>取得所有权的<xref:System.IO.Stream>传入此方法。</span><span class="sxs-lookup"><span data-stu-id="645d6-179">The <xref:System.Reflection.MetadataLoadContext> takes ownership of the <xref:System.IO.Stream> passed into this method.</span></span> <span data-ttu-id="645d6-180">原始所有者必须不改变其位置，释放<xref:System.IO.Stream>，或采用其位置将保持不变。</span><span class="sxs-lookup"><span data-stu-id="645d6-180">The original owner must not mutate its position, dispose the <xref:System.IO.Stream>, or assume that its position will stay unchanged.</span></span>
+
+]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileLoadException"><span data-ttu-id="645d6-181">两个程序集不具有相同时产生的 Mvid。</span><span class="sxs-lookup"><span data-stu-id="645d6-181">The two assemblies do not have the same Mvid.</span></span></exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
