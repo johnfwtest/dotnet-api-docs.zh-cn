@@ -1,5 +1,5 @@
 <Type Name="Claim" FullName="System.Security.Claims.Claim">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="7e441b71ed11368d1a36cebbb07edcedfe50ad88" /><Meta Name="ms.sourcegitcommit" Value="a3e01ec36374fac54a55add0dcc1e754e394abeb" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="03/30/2019" /><Meta Name="ms.locfileid" Value="58706036" /></Metadata><TypeSignature Language="C#" Value="public class Claim" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="b4ec2b206e208664bffb01237947e58200ed9241" /><Meta Name="ms.sourcegitcommit" Value="95e24aee1283af2f120fc5da4b0bdc0712ab698f" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/06/2019" /><Meta Name="ms.locfileid" Value="65156055" /></Metadata><TypeSignature Language="C#" Value="public class Claim" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Claim extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Security.Claims.Claim" />
   <TypeSignature Language="VB.NET" Value="Public Class Claim" />
@@ -164,6 +164,7 @@ if (null != principal)
         <param name="other">安全声明。</param>
         <summary>初始化 <see cref="T:System.Security.Claims.Claim" /> 类的新实例。</summary>
         <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="other" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -200,6 +201,7 @@ if (null != principal)
         <param name="subject">此声明说明的主题。</param>
         <summary>用指定的读取器和使用者初始化 <see cref="T:System.Security.Claims.Claim" /> 类的新实例。</summary>
         <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -236,6 +238,7 @@ if (null != principal)
         <param name="subject">此声明说明的主题。</param>
         <summary>用指定的安全声明和使用者初始化 <see cref="T:System.Security.Claims.Claim" /> 类的新实例。</summary>
         <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="other" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -270,12 +273,12 @@ if (null != principal)
       <Docs>
         <param name="type">声明类型。</param>
         <param name="value">声明值。</param>
-        <summary>初始化指定声称类型和值的 <see cref="T:System.Security.Claims.Claim" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.Security.Claims.Claim" />类具有指定的声明类型和值。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Security.Claims.Claim.Subject%2A> 属性设置为 `null`。 <xref:System.Security.Claims.Claim.Issuer%2A> 和 <xref:System.Security.Claims.Claim.OriginalIssuer%2A> 属性设置为 <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>。 <xref:System.Security.Claims.Claim.ValueType%2A> 属性被设置为 <xref:System.Security.Claims.ClaimValueTypes.String?displayProperty=nameWithType>  
+ <xref:System.Security.Claims.Claim.Subject%2A> 属性设置为 `null`。 <xref:System.Security.Claims.Claim.Issuer%2A> 和 <xref:System.Security.Claims.Claim.OriginalIssuer%2A> 属性设置为 <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>。 <xref:System.Security.Claims.Claim.ValueType%2A>属性设置为 <xref:System.Security.Claims.ClaimValueTypes.String?displayProperty=nameWithType>  
   
  ]]></format>
         </remarks>
@@ -318,7 +321,7 @@ if (null != principal)
         <param name="type">声明类型。</param>
         <param name="value">声明值。</param>
         <param name="valueType">声明值类型。 如果此参数为 <see langword="null" />，则使用 <see cref="F:System.Security.Claims.ClaimValueTypes.String" />。</param>
-        <summary>初始化指定声称类型、值类型和值的 <see cref="T:System.Security.Claims.Claim" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.Security.Claims.Claim" />使用指定的声明类型、 值和值类型的类。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -368,7 +371,7 @@ if (null != principal)
         <param name="value">声明值。</param>
         <param name="valueType">声明值类型。 如果此参数为 <see langword="null" />，则使用 <see cref="F:System.Security.Claims.ClaimValueTypes.String" />。</param>
         <param name="issuer">声明颁发者。 如果此参数为空或为 <see langword="null" />，则使用 <see cref="F:System.Security.Claims.ClaimsIdentity.DefaultIssuer" />。</param>
-        <summary>初始化指定声称类型，值，值类型和颁发者的 <see cref="T:System.Security.Claims.Claim" /> 类的新实例。</summary>
+        <summary>初始化的新实例<see cref="T:System.Security.Claims.Claim" />类与指定的声明类型、 值、 值类型和颁发者。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -521,7 +524,7 @@ if (null != principal)
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回从此对象复制的新 <see cref="T:System.Security.Claims.Claim" /> 对象。 新的声明不具有主题。</summary>
+        <summary>返回从此对象复制的新 <see cref="T:System.Security.Claims.Claim" /> 对象。 新声明没有主题。</summary>
         <returns>新声明对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -565,7 +568,7 @@ if (null != principal)
         <Parameter Name="identity" Type="System.Security.Claims.ClaimsIdentity" />
       </Parameters>
       <Docs>
-        <param name="identity">新声明的期望主题。</param>
+        <param name="identity">预期使用者的新声明。</param>
         <summary>返回从此对象复制的新 <see cref="T:System.Security.Claims.Claim" /> 对象。 新声明的主题设置为指定的 ClaimsIdentity。</summary>
         <returns>新声明对象。</returns>
         <remarks>
@@ -649,7 +652,7 @@ if (null != principal)
       </ReturnValue>
       <Docs>
         <summary>获取声明的颁发者。</summary>
-        <value>引用声明颁发者的名称。</value>
+        <value>一个名称，指声明的颁发者。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -691,8 +694,8 @@ if (null != principal)
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取声明的最初颁发者。</summary>
-        <value>引用声明原始颁发者的名称。</value>
+        <summary>获取声明的原始颁发者。</summary>
+        <value>指声明的原始颁发者名称。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -738,8 +741,8 @@ if (null != principal)
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取包含与此声明关联的附加属性的字典。</summary>
-        <value>包含与声明关联的附加属性的字典。 作为名称-值对表示的属性。</value>
+        <summary>获取一个字典，其中包含与此声明关联的其他属性。</summary>
+        <value>包含与声明关联的其他属性的字典。 属性以名称-值对的形式表示。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -863,7 +866,7 @@ if (null != principal)
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>获取声称的声称类型。</summary>
+        <summary>获取声明的声明类型。</summary>
         <value>声明类型。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1037,6 +1040,7 @@ if (null != principal)
         <param name="userData">要声明的用户数据。</param>
         <summary>将此 <see cref="T:System.Security.Claims.Claim" /> 写入编写器。</summary>
         <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="writer" /> 为 <see langword="null" />。</exception>
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 <Type Name="PrintTicketConverter" FullName="System.Printing.Interop.PrintTicketConverter">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="20c47f5f778fd8541ed1a4a962b5166fbd9d85ba" /><Meta Name="ms.sourcegitcommit" Value="8e213bb5e6801f6e29861ba72664978ad00e34fa" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="02/18/2019" /><Meta Name="ms.locfileid" Value="56355804" /></Metadata><TypeSignature Language="C#" Value="public sealed class PrintTicketConverter : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="0e174ba6fd7d227bf1bbbca10e84ec0d61303f7b" /><Meta Name="ms.sourcegitcommit" Value="2767b5903996fbd7e2b81eda1114dfc9d0d9db63" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/02/2019" /><Meta Name="ms.locfileid" Value="65013807" /></Metadata><TypeSignature Language="C#" Value="public sealed class PrintTicketConverter : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PrintTicketConverter extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Printing.Interop.PrintTicketConverter" />
   <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PrintTicketConverter&#xA;Implements IDisposable" />
@@ -19,7 +19,7 @@
     </Interface>
   </Interfaces>
   <Attributes>
-    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
+    <Attribute FrameworkAlternate="netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netcore-3.0">
       <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
     </Attribute>
   </Attributes>
@@ -53,9 +53,9 @@
         <Parameter Name="clientPrintSchemaVersion" Type="System.Int32" />
       </Parameters>
       <Docs>
-        <param name="deviceName">绑定到新的 <see cref="T:System.Printing.Interop.PrintTicketConverter" /> 实例的打印机的名称。</param>
-        <param name="clientPrintSchemaVersion">要在 <see cref="T:System.Printing.PrintTicket" /> 以及 DEVMODE 转换中使用的打印架构版本。</param>
-        <summary>为指定的打印机初始化 <see cref="T:System.Printing.Interop.PrintTicketConverter" /> 类的一个新实例。</summary>
+        <param name="deviceName">绑定到新的打印机名称<see cref="T:System.Printing.Interop.PrintTicketConverter" />实例。</param>
+        <param name="clientPrintSchemaVersion">要在中使用的打印架构版本<see cref="T:System.Printing.PrintTicket" />以及 DEVMODE 转换。</param>
+        <summary>初始化的新实例<see cref="T:System.Printing.Interop.PrintTicketConverter" />为指定的打印机的类。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -65,8 +65,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="deviceName" /> 为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="clientPrintSchemaVersion" /> 为 0 或更小。</exception>
-        <exception cref="T:System.Printing.PrintQueueException">无法将转换器绑定到 <paramref name="deviceName" />。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="clientPrintSchemaVersion" /> 小于或等于 0。</exception>
+        <exception cref="T:System.Printing.PrintQueueException">转换器无法将绑定到<paramref name="deviceName" />。</exception>
         <related type="ExternalDocumentation" href="https://go.microsoft.com/fwlink/?LinkId=186397">打印架构</related>
       </Docs>
     </Member>
@@ -104,9 +104,9 @@
         <Parameter Name="devMode" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="devMode">一个包含 DEVMODE 结构的 <see cref="T:System.Byte" /> 数组。</param>
+        <param name="devMode">一个<see cref="T:System.Byte" />包含 DEVMODE 结构的数组。</param>
         <summary>将指定的 [DEVMODE](https://go.microsoft.com/fwlink/?LinkId=89844) 结构转换为托管代码 <see cref="T:System.Printing.PrintTicket" />。</summary>
-        <returns>新的托管的 <see cref="T:System.Printing.PrintTicket" />。</returns>
+        <returns>新的托管<see cref="T:System.Printing.PrintTicket" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -119,9 +119,9 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">已释放此 <see cref="T:System.Printing.Interop.PrintTicketConverter" />。</exception>
+        <exception cref="T:System.ObjectDisposedException">这<see cref="T:System.Printing.Interop.PrintTicketConverter" />已被释放。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="devMode" /> 的值为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="devMode" /> 的内容的格式不正确。</exception>
+        <exception cref="T:System.ArgumentException">内容<paramref name="devMode" />格式不正确。</exception>
         <exception cref="T:System.Printing.PrintQueueException">转换失败。</exception>
       </Docs>
     </Member>
@@ -146,8 +146,8 @@
         <Parameter Name="scope" Type="System.Printing.PrintTicketScope" />
       </Parameters>
       <Docs>
-        <param name="devMode">一个包含要转换的 DEVMODE 结构的 <see cref="T:System.Byte" /> 缓冲区。</param>
-        <param name="scope">一个 <see cref="T:System.Printing.PrintTicketScope" /> 值，该值指定新的 <see cref="T:System.Printing.PrintTicket" /> 是适用于一页、一个文档还是整个打印作业。</param>
+        <param name="devMode">一个<see cref="T:System.Byte" />缓冲区，其中包含 DEVMODE 结构将转换。</param>
+        <param name="scope">一个<see cref="T:System.Printing.PrintTicketScope" />值，该值指定是否新<see cref="T:System.Printing.PrintTicket" />应用于页面、 一个文档，还是整个打印作业。</param>
         <summary>将指定的 [DEVMODE](https://go.microsoft.com/fwlink/?LinkId=89844) 结构转换为具有指定范围的托管代码 <see cref="T:System.Printing.PrintTicket" />。</summary>
         <returns>新的 <see cref="T:System.Printing.PrintTicket" />。</returns>
         <remarks>
@@ -160,11 +160,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">已释放此 <see cref="T:System.Printing.Interop.PrintTicketConverter" />。</exception>
-        <exception cref="T:System.ArgumentNullException"><paramref name="devMode" /> 的值为 null（在 Visual Basic 中为 <see langword="Nothing" />）。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="devMode" /> 的内容的格式不正确。</exception>
+        <exception cref="T:System.ObjectDisposedException">这<see cref="T:System.Printing.Interop.PrintTicketConverter" />已被释放。</exception>
+        <exception cref="T:System.ArgumentNullException">值<paramref name="devMode" />为 null (<see langword="Nothing" />在 Visual Basic 中)。</exception>
+        <exception cref="T:System.ArgumentException">内容<paramref name="devMode" />格式不正确。</exception>
         <exception cref="T:System.Printing.PrintQueueException">转换失败。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" /> 不是有效的 <see cref="T:System.Printing.PrintTicketScope" /> 值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" />不是有效<see cref="T:System.Printing.PrintTicketScope" />值。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ConvertPrintTicketToDevMode">
@@ -202,7 +202,7 @@
       </Parameters>
       <Docs>
         <param name="printTicket">要转换的 <see cref="T:System.Printing.PrintTicket" />。</param>
-        <param name="baseType">用于识别是将用户默认值还是将打印机默认值 DEVMODE 作为基 DEVMODE 的一个值。</param>
+        <param name="baseType">标识是否使用用户默认值或打印机默认值 DEVMODE 作为基 DEVMODE 的值。</param>
         <summary>将指定的托管 <see cref="T:System.Printing.PrintTicket" /> 转换为非托管 [DEVMODE](https://go.microsoft.com/fwlink/?LinkId=89844) 结构，该结构基于 <see cref="T:System.Printing.Interop.BaseDevModeType" /> 标识的 [DEVMODE](https://go.microsoft.com/fwlink/?LinkId=89844) 结构。</summary>
         <returns>包含新 <see href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodea">DEVMODE</see> 结构的 <see cref="T:System.Byte" /> 数组。</returns>
         <remarks>
@@ -217,11 +217,11 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">已释放此 <see cref="T:System.Printing.Interop.PrintTicketConverter" />。</exception>
-        <exception cref="T:System.ArgumentNullException"><paramref name="printTicket" /> 的值为 null（在 Visual Basic 中为 <see langword="Nothing" />）。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="printTicket" /> 的内容的格式不正确。</exception>
+        <exception cref="T:System.ObjectDisposedException">这<see cref="T:System.Printing.Interop.PrintTicketConverter" />已被释放。</exception>
+        <exception cref="T:System.ArgumentNullException">值<paramref name="printTicket" />为 null (<see langword="Nothing" />在 Visual Basic 中)。</exception>
+        <exception cref="T:System.ArgumentException">内容<paramref name="printTicket" />格式不正确。</exception>
         <exception cref="T:System.Printing.PrintQueueException">转换失败。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseType" /> 不是有效的 <see cref="T:System.Printing.Interop.BaseDevModeType" /> 值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseType" />不是有效<see cref="T:System.Printing.Interop.BaseDevModeType" />值。</exception>
       </Docs>
     </Member>
     <Member MemberName="ConvertPrintTicketToDevMode">
@@ -246,8 +246,8 @@
       </Parameters>
       <Docs>
         <param name="printTicket">要转换的 <see cref="T:System.Printing.PrintTicket" />。</param>
-        <param name="baseType">用于识别是将用户默认值还是将打印机默认值 DEVMODE 作为基 DEVMODE 的一个值。</param>
-        <param name="scope">一个 <see cref="T:System.Printing.PrintTicketScope" /> 值，该值用于指定 <see cref="T:System.Printing.PrintTicket" /> 转换是应该在一页、一个文档还是整个打印作业中进行。</param>
+        <param name="baseType">标识是否使用用户默认值或打印机默认值 DEVMODE 作为基 DEVMODE 的值。</param>
+        <param name="scope">一个<see cref="T:System.Printing.PrintTicketScope" />值，该值指定是否转换<see cref="T:System.Printing.PrintTicket" />应在范围中的页面、 文档或整个打印作业完成。</param>
         <summary>将含有指定范围的指定托管代码 <see cref="T:System.Printing.PrintTicket" /> 转换为非托管 [DEVMODE](https://go.microsoft.com/fwlink/?LinkId=89844) 结构，该结构基于 <see cref="T:System.Printing.Interop.BaseDevModeType" /> 标识的 [DEVMODE](https://go.microsoft.com/fwlink/?LinkId=89844) 结构。</summary>
         <returns>表示新 <see href="https://docs.microsoft.com/windows/desktop/api/wingdi/ns-wingdi-_devicemodea">DEVMODE</see> 结构的 <see cref="T:System.Byte" /> 缓冲区。</returns>
         <remarks>
@@ -260,14 +260,14 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">已释放此 <see cref="T:System.Printing.Interop.PrintTicketConverter" />。</exception>
-        <exception cref="T:System.ArgumentNullException"><paramref name="printTicket" /> 的值为 null（在 Visual Basic 中为 <see langword="Nothing" />）。</exception>
-        <exception cref="T:System.ArgumentException"><paramref name="printTicket" /> 的内容的格式不正确。</exception>
+        <exception cref="T:System.ObjectDisposedException">这<see cref="T:System.Printing.Interop.PrintTicketConverter" />已被释放。</exception>
+        <exception cref="T:System.ArgumentNullException">值<paramref name="printTicket" />为 null (<see langword="Nothing" />在 Visual Basic 中)。</exception>
+        <exception cref="T:System.ArgumentException">内容<paramref name="printTicket" />格式不正确。</exception>
         <exception cref="T:System.Printing.PrintQueueException">转换失败。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseType" /> 不是有效的 <see cref="T:System.Printing.Interop.BaseDevModeType" /> 值。  
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseType" />不是有效<see cref="T:System.Printing.Interop.BaseDevModeType" />值。  
   
-- 或 - 
-<paramref name="scope" /> 不是有效的 <see cref="T:System.Printing.PrintTicketScope" /> 值。</exception>
+或 
+<paramref name="scope" />不是有效<see cref="T:System.Printing.PrintTicketScope" />值。</exception>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
