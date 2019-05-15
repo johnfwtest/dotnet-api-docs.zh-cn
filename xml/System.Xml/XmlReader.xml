@@ -1,5 +1,5 @@
 <Type Name="XmlReader" FullName="System.Xml.XmlReader">
-  <Metadata><Meta Name="ms.openlocfilehash" Value="90a6a0facff37d5e17e797e128971423207eeb48" /><Meta Name="ms.sourcegitcommit" Value="2dd0eede6edd6dd3d2aa8f79010848658b967609" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="04/18/2019" /><Meta Name="ms.locfileid" Value="59355132" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
+  <Metadata><Meta Name="ms.openlocfilehash" Value="e238900692b43d96b898200bf5e6eec7305dc99f" /><Meta Name="ms.sourcegitcommit" Value="312579b66a6a983587a84f05c419be8fb0df7326" /><Meta Name="ms.translationtype" Value="MT" /><Meta Name="ms.contentlocale" Value="zh-CN" /><Meta Name="ms.lasthandoff" Value="05/09/2019" /><Meta Name="ms.locfileid" Value="65473702" /></Metadata><TypeSignature Language="C#" Value="public abstract class XmlReader : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlReader extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlReader" />
   <TypeSignature Language="VB.NET" Value="Public MustInherit Class XmlReader&#xA;Implements IDisposable" />
@@ -122,7 +122,7 @@
   
 |使用此<xref:System.Xml.XmlReaderSettings>属性|功能|默认|  
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-------------|  
-|<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 属性|启用或禁用以下检查：<br /><br /> 的由定义字符是合法的 XML 字符的范围内[2.2 字符](https://www.w3.org/TR/2006/REC-xml-20060816/#charsets)W3C XML 1.0 建议的部分。<br />的由定义所有 XML 名称都是否有效， [2.3 常用语法构造](https://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name)W3C XML 1.0 建议的部分。<br /><br /> 当此属性设置为`true`（默认值），<xref:System.Xml.XmlException>引发异常，如果 XML 文件中包含非法字符或无效的 XML 名称 （例如，元素名称以数字开头）。|启用了字符和名称检查。<br /><br /> 将 <xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 设置为 `false` 会禁用对字符实体引用的字符检查。 如果读取器正在处理文本数据，始终检查 XML 名称是否有效，而不考虑此设置。 **注意：** 如果存在 DTD，XML 1.0 建议要求文档级别的一致性。 因此，如果读取器配置为支持<xref:System.Xml.ConformanceLevel.Fragment?displayProperty=nameWithType>，但是 XML 数据包含文档类型定义 (DTD)<xref:System.Xml.XmlException>引发。|  
+|<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A> 属性|启用或禁用以下检查：<br /><br /> 的由定义字符是合法的 XML 字符的范围内[2.2 字符](https://www.w3.org/TR/2006/REC-xml-20060816/#charsets)W3C XML 1.0 建议的部分。<br />的由定义所有 XML 名称都是否有效， [2.3 常用语法构造](https://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name)W3C XML 1.0 建议的部分。<br /><br /> 当此属性设置为`true`（默认值），<xref:System.Xml.XmlException>引发异常，如果 XML 文件中包含非法字符或无效的 XML 名称 （例如，元素名称以数字开头）。|启用了字符和名称检查。<br /><br /> 设置<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A>到`false`将关闭对字符实体引用的字符检查。 如果读取器正在处理文本数据，始终检查 XML 名称是否有效，而不考虑此设置。 **注意：** 如果存在 DTD，XML 1.0 建议要求文档级别的一致性。 因此，如果读取器配置为支持<xref:System.Xml.ConformanceLevel.Fragment?displayProperty=nameWithType>，但是 XML 数据包含文档类型定义 (DTD)<xref:System.Xml.XmlException>引发。|  
 |<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A> 属性|选择强制实施的一致性的级别：<br /><br /> -   <xref:System.Xml.ConformanceLevel.Document>. 符合的规则[格式正确的 XML 1.0 文档](https://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed)。<br />-   <xref:System.Xml.ConformanceLevel.Fragment>. 符合格式正确的文档片段，可以随着变化所消耗的规则[外部已分析的实体](https://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities)。<br />-   <xref:System.Xml.ConformanceLevel.Auto>. 符合由读取器决定的级别。<br /><br /> 如果数据不符合规则，<xref:System.Xml.XmlException>引发异常。|<xref:System.Xml.ConformanceLevel.Document>|  
   
 <a name="xmlreader_nodes"></a>   
@@ -157,7 +157,7 @@
 |<xref:System.Xml.XmlReader.ReadElementString%2A> 方法|读取纯文本元素。|  
 |<xref:System.Xml.XmlReader.ReadToDescendant%2A> 方法|使 XML 读取器前进到下一个具有指定的名称的后代 （子） 元素。|  
 |<xref:System.Xml.XmlReader.ReadToNextSibling%2A> 方法|使 XML 读取器前进到具有指定的名称的下一个同级元素。|  
-|<xref:System.Xml.XmlReader.IsEmptyElement%2A> 属性|检查当前元素是否为结束元素标记。 例如:<br /><br /> -   `<item num="123"/>` (<xref:System.Xml.XmlReader.IsEmptyElement%2A>是`true`。)<br />-   `<item num="123"> </item>` (<xref:System.Xml.XmlReader.IsEmptyElement%2A>是`false`，尽管该元素的内容为空。)|  
+|<xref:System.Xml.XmlReader.IsEmptyElement%2A> 属性|检查当前元素是否为结束元素标记。 例如：<br /><br /> -   `<item num="123"/>` (<xref:System.Xml.XmlReader.IsEmptyElement%2A>是`true`。)<br />-   `<item num="123"> </item>` (<xref:System.Xml.XmlReader.IsEmptyElement%2A>是`false`，尽管该元素的内容为空。)|  
   
  读取元素的文本内容的示例，请参阅<xref:System.Xml.XmlReader.ReadString%2A>方法。 下面的示例使用的处理元素`while`循环。  
   
@@ -671,7 +671,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，将 <see cref="P:System.Xml.XmlReader.ReadState" /> 更改为 <see cref="F:System.Xml.ReadState.Closed" />。</summary>
+        <summary>当在派生类中重写时更改<see cref="P:System.Xml.XmlReader.ReadState" />到<see cref="F:System.Xml.ReadState.Closed" />。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -750,7 +750,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
   
 -   设置<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>到<xref:System.Xml.XmlSecureResolver>对象来限制 XML 读取器可以访问的资源。  
   
- - 或 -  
+ 或  
   
 -   设置<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>到`null`以防止打开任何外部资源的 XML 读取器。  
   
@@ -1056,7 +1056,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1122,7 +1122,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1274,7 +1274,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1291,9 +1291,9 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReaderSettings" /> 对象指定的一致性级别与基础读取器的一致性级别不一致。  
+        <exception cref="T:System.InvalidOperationException">如果 <see cref="T:System.Xml.XmlReaderSettings" /> 对象指定的一致性级别与基础读取器一致性级别不一致。  
   
-- 或 - 
+或 
 基础 <see cref="T:System.Xml.XmlReader" /> 处于 <see cref="F:System.Xml.ReadState.Error" /> 或 <see cref="F:System.Xml.ReadState.Closed" /> 状态。</exception>
       </Docs>
     </Member>
@@ -1355,7 +1355,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1427,7 +1427,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1494,7 +1494,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1564,7 +1564,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A> 对象限制 <xref:System.Xml.XmlSecureResolver> 可访问的资源。  
 >   
->  - 或 -  
+>  或  
 >   
 >  -   通过将 <xref:System.Xml.XmlReader> 属性设置为 <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>，不允许 `null` 打开任何外部资源。  
   
@@ -1780,7 +1780,7 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
         <Parameter Name="disposing" Type="System.Boolean" Index="0" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
       </Parameters>
       <Docs>
-        <param name="disposing"><see langword="true" /> 表示释放托管资源和非托管资源；<see langword="false" /> 表示仅释放非托管资源。</param>
+        <param name="disposing">若要释放托管资源和非托管资源，则为 <see langword="true" />；若仅释放非托管资源，则为 <see langword="false" />。</param>
         <summary>释放由 <see cref="T:System.Xml.XmlReader" /> 占用的非托管资源，还可以另外再释放托管资源。</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
@@ -1926,8 +1926,8 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       </Parameters>
       <Docs>
         <param name="name">属性的限定名称。</param>
-        <summary>当在派生类中被重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.Name" /> 的属性的值。</summary>
-        <returns>指定的属性的值。 如果找不到该属性，或者值为 <see langword="String.Empty" />，则返回 <see langword="null" />。</returns>
+        <summary>当在派生类中重写时获取具有指定属性的值<see cref="P:System.Xml.XmlReader.Name" />。</summary>
+        <returns>指定的属性的值。 如果找不到该属性或值为<see langword="String.Empty" />，<see langword="null" />返回。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1988,8 +1988,8 @@ Six Month Review Date:  7/8/2003 12:00:00 AM
       <Docs>
         <param name="name">属性的本地名称。</param>
         <param name="namespaceURI">属性的命名空间 URI。</param>
-        <summary>当在派生类中被重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 的属性的值。</summary>
-        <returns>指定的属性的值。 如果找不到该属性，或者值为 <see langword="String.Empty" />，则返回 <see langword="null" />。 此方法不移动读取器。</returns>
+        <summary>当在派生类中重写时获取具有指定属性的值<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />。</summary>
+        <returns>指定的属性的值。 如果找不到该属性或值为<see langword="String.Empty" />，<see langword="null" />返回。 此方法不移动读取器。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2065,7 +2065,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在这种情况下，将通过消息“异步操作已在进行中”引发 <see cref="T:System.InvalidOperationException" />。
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -2151,8 +2151,8 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取一个值，该值指示当前节点是否可以具有 <see cref="P:System.Xml.XmlReader.Value" />。</summary>
-        <value>如果读取器当前定位在的节点可以具有 <see langword="Value" />，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则节点值为 <see langword="String.Empty" />。</value>
+        <summary>当在派生类中重写时获取一个值，该值指示当前节点是否可以具有<see cref="P:System.Xml.XmlReader.Value" />。</summary>
+        <value>如果读取器当前定位在的节点可以具有 <see langword="Value" />，则为 <see langword="true" />；否则为 <see langword="false" />。 如果<see langword="false" />，该节点具有值为<see langword="String.Empty" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2166,7 +2166,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 |`Comment`|注释的内容。|  
 |`DocumentType`|内部子集。|  
 |`ProcessingInstruction`|全部内容（不包括指令目标）。|  
-|`SignificantWhitespace`|混合内容模型中标记之间的空白。|  
+|`SignificantWhitespace`|混合内容模型中标记之间的空白区域。|  
 |`Text`|文本节点的内容。|  
 |`Whitespace`|标记之间的空白。|  
 |`XmlDeclaration`|声明的内容。|  
@@ -2383,8 +2383,8 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="str">要验证的名称。</param>
-        <summary>返回一个值，该值指示字符串参数是否是有效的 XML 名称。</summary>
-        <returns>如果该名称有效，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示字符串自变量是否是有效的 XML 名称。</summary>
+        <returns><see langword="true" /> 如果名称有效，则为否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2432,8 +2432,8 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="str">要验证的名称标记。</param>
-        <summary>返回一个值，该值指示该字符串参数是否是有效的 XML 名称标记。</summary>
-        <returns>如果它是有效的名称标记，则为 <see langword="true" />；否则为 <see langword="false" />。</returns>
+        <summary>返回一个值，该值指示该字符串自变量是否是有效的 XML 名称标记。</summary>
+        <returns><see langword="true" /> 如果它是有效的名称标记;否则为<see langword="false" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2491,8 +2491,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 并测试当前内容节点是否是开始标记或空元素标记。</summary>
-        <returns>如果 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 找到开始标记或空元素标记，则为 <see langword="true" />；如果找到不同于 <see langword="false" /> 的节点类型，则为 <see langword="XmlNodeType.Element" />。</returns>
+        <summary>调用<see cref="M:System.Xml.XmlReader.MoveToContent" />并测试当前内容节点是否是开始标记或空元素标记。</summary>
+        <returns><see langword="true" /> 如果<see cref="M:System.Xml.XmlReader.MoveToContent" />找到开始标记或空元素标记;<see langword="false" />以外的节点类型如果<see langword="XmlNodeType.Element" />找到。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2513,7 +2513,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。</exception>
+        <exception cref="T:System.Xml.XmlException">输入流中遇到不正确的 XML。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.MoveToContent" />
       </Docs>
@@ -2553,9 +2553,9 @@ public class Sample
         <Parameter Name="name" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="name">与找到的元素的 <see langword="Name" /> 属性匹配的字符串。</param>
-        <summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 并测试当前内容节点是否是开始标记或空元素标记，以及所找到元素的 <see cref="P:System.Xml.XmlReader.Name" /> 属性是否与给定的参数匹配。</summary>
-        <returns>如果生成的节点是一个元素，且 <see langword="true" /> 属性与指定的字符串匹配，则为 <see langword="Name" />。 如果找到 <see langword="false" /> 之外的节点类型，或者元素的 <see langword="XmlNodeType.Element" /> 属性与指定的字符串不匹配，则为 <see langword="Name" />。</returns>
+        <param name="name">匹配的字符串<see langword="Name" />找到的元素的属性。</param>
+        <summary>调用<see cref="M:System.Xml.XmlReader.MoveToContent" />并测试当前内容节点是否是开始标记或空元素标记，以及如果<see cref="P:System.Xml.XmlReader.Name" />找到的元素的属性与给定的参数匹配。</summary>
+        <returns><see langword="true" /> 如果生成的节点是一个元素和<see langword="Name" />属性与指定的字符串匹配。 <see langword="false" /> 如果以外的节点类型<see langword="XmlNodeType.Element" />找或者，如果该元素<see langword="Name" />属性与指定的字符串不匹配。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2572,7 +2572,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。</exception>
+        <exception cref="T:System.Xml.XmlException">输入流中遇到不正确的 XML。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.MoveToContent" />
       </Docs>
@@ -2613,10 +2613,10 @@ public class Sample
         <Parameter Name="ns" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="localname">与找到的元素的 <see langword="LocalName" /> 属性匹配的字符串。</param>
-        <param name="ns">与找到的元素的 <see langword="NamespaceURI" /> 属性匹配的字符串。</param>
-        <summary>调用 <see cref="M:System.Xml.XmlReader.MoveToContent" /> 并测试当前内容节点是否是开始标记或空元素标记，以及所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 属性是否与给定的字符串匹配。</summary>
-        <returns>如果生成的节点是一个元素，则为 <see langword="true" />。 如果找到 <see langword="false" /> 之外的节点类型，或者元素的 <see langword="XmlNodeType.Element" /> 和 <see langword="LocalName" /> 属性与指定的字符串不匹配，则为 <see langword="NamespaceURI" />。</returns>
+        <param name="localname">要匹配的字符串<see langword="LocalName" />找到的元素的属性。</param>
+        <param name="ns">要匹配的字符串<see langword="NamespaceURI" />找到的元素的属性。</param>
+        <summary>调用<see cref="M:System.Xml.XmlReader.MoveToContent" />并测试当前内容节点是否是开始标记或空元素标记，以及如果<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />找到的元素的属性与给定的字符串匹配。</summary>
+        <returns><see langword="true" /> 如果生成的节点是一个元素。 <see langword="false" /> 如果以外的节点类型<see langword="XmlNodeType.Element" />找或者如果<see langword="LocalName" />和<see langword="NamespaceURI" />元素的属性与指定的字符串不匹配。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2625,7 +2625,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。</exception>
+        <exception cref="T:System.Xml.XmlException">输入流中遇到不正确的 XML。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.MoveToContent" />
       </Docs>
@@ -2747,7 +2747,7 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="name">属性的限定名称。</param>
-        <summary>当在派生类中被重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.Name" /> 的属性的值。</summary>
+        <summary>当在派生类中重写时获取具有指定属性的值<see cref="P:System.Xml.XmlReader.Name" />。</summary>
         <value>指定的属性的值。 如果未找到该属性，则返回 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2814,7 +2814,7 @@ public class Sample
       <Docs>
         <param name="name">属性的本地名称。</param>
         <param name="namespaceURI">属性的命名空间 URI。</param>
-        <summary>当在派生类中被重写时，获取具有指定 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 的属性的值。</summary>
+        <summary>当在派生类中重写时获取具有指定属性的值<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />。</summary>
         <value>指定的属性的值。 如果未找到该属性，则返回 <see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3002,7 +3002,7 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">参数为负值。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">参数的值的负值。</exception>
       </Docs>
     </Member>
     <Member MemberName="MoveToAttribute">
@@ -3041,7 +3041,7 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="name">属性的限定名称。</param>
-        <summary>当在派生类中被重写时，移动到具有指定 <see cref="P:System.Xml.XmlReader.Name" /> 的属性。</summary>
+        <summary>当在派生类中重写，将移动到具有指定属性<see cref="P:System.Xml.XmlReader.Name" />。</summary>
         <returns>如果找到了属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则读取器的位置未改变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3093,7 +3093,7 @@ public class Sample
       <Docs>
         <param name="name">属性的本地名称。</param>
         <param name="ns">属性的命名空间 URI。</param>
-        <summary>当在派生类中被重写时，移动到具有指定的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 的属性。</summary>
+        <summary>当在派生类中重写时移动到具有指定的属性<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />。</summary>
         <returns>如果找到了属性，则为 <see langword="true" />；否则为 <see langword="false" />。 如果为 <see langword="false" />，则读取器的位置未改变。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3140,7 +3140,7 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>检查当前节点是否是内容（非空白文本、<see langword="CDATA" />、<see langword="Element" />、<see langword="EndElement" />、<see langword="EntityReference" /> 或 <see langword="EndEntity" />）节点。 如果此节点不是内容节点，则读取器向前跳至下一个内容节点或文件结尾。 它跳过以下类型的节点：<see langword="ProcessingInstruction" />、<see langword="DocumentType" />、<see langword="Comment" />、<see langword="Whitespace" /> 或 <see langword="SignificantWhitespace" />。</summary>
+        <summary>检查当前节点是否是内容 (非空白文本<see langword="CDATA" />， <see langword="Element" />， <see langword="EndElement" />， <see langword="EntityReference" />，或<see langword="EndEntity" />) 节点。 如果此节点不是内容节点，则读取器向前跳至下一个内容节点或文件结尾。 它跳过以下类型的节点：<see langword="ProcessingInstruction" />、<see langword="DocumentType" />、<see langword="Comment" />、<see langword="Whitespace" /> 或 <see langword="SignificantWhitespace" />。</summary>
         <returns>此方法找到的当前节点的 <see cref="P:System.Xml.XmlReader.NodeType" />；如果读取器已到达输入流的末尾，则为 <see langword="XmlNodeType.None" />。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3189,7 +3189,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。</exception>
+        <exception cref="T:System.Xml.XmlException">输入流中遇到不正确的 XML。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -3241,7 +3241,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -3442,7 +3442,7 @@ public class Sample
 返回的名称取决于节点的 <see cref="P:System.Xml.XmlReader.NodeType" />。 下列节点类型返回所列的值。 所有其他节点类型返回空字符串。  
   
  <list type="table"><listheader><term> 节点类型 
- </term><description> name 
+ </term><description> 名称 
  </description></listheader><item><term><see langword="Attribute" /></term><description> 属性名。  
   
  </description></item><item><term><see langword="DocumentType" /></term><description> 文档类型名称。  
@@ -3453,7 +3453,7 @@ public class Sample
   
  </description></item><item><term><see langword="ProcessingInstruction" /></term><description> 处理指令的目标。  
   
- </description></item><item><term><see langword="XmlDeclaration" /></term><description> 字符串 <see langword="xml" />。  
+ </description></item><item><term><see langword="XmlDeclaration" /></term><description> 文本字符串<see langword="xml" />。  
   
  </description></item></list></value>
         <remarks>
@@ -3564,7 +3564,7 @@ public class Sample
         <ReturnType>System.Xml.XmlNameTable</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取与该实现关联的 <see cref="T:System.Xml.XmlNameTable" />。</summary>
+        <summary>当在派生类中重写时获取<see cref="T:System.Xml.XmlNameTable" />与此实现关联。</summary>
         <value><see langword="XmlNameTable" />，它使你能够获取该节点内字符串的原子化版本。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -3834,7 +3834,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -3873,7 +3873,7 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，将属性值解析为一个或多个 <see langword="Text" />、<see langword="EntityReference" /> 或 <see langword="EndEntity" /> 节点。</summary>
+        <summary>当在派生类中重写，将属性值分析为一个或多个<see langword="Text" />， <see langword="EntityReference" />，或<see langword="EndEntity" />节点。</summary>
         <returns>如果有可返回的节点，则为 <see langword="true" />。  
   
  如果进行初始调用时读取器不是定位在属性节点上，或者如果已读取了所有属性值，则为 <see langword="false" />。  
@@ -3989,15 +3989,15 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.FormatException">内容格式不是目标类型的正确格式。</exception>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
+        <exception cref="T:System.FormatException">内容不是目标类型的正确格式。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="returnType" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.InvalidOperationException">当前节点不是所支持的节点类型。 有关详细信息，请参见下表。
+        <exception cref="T:System.InvalidOperationException">当前节点不是受支持的节点类型。 请参阅下表中的详细信息。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.OverflowException">读取 <see langword="Decimal.MaxValue" />。</exception>
+        <exception cref="T:System.OverflowException">读取<see langword="Decimal.MaxValue" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadContentAsAsync">
@@ -4053,7 +4053,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -4124,11 +4124,11 @@ public class Sample
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" />实现不支持此方法。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
@@ -4183,7 +4183,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -4254,11 +4254,11 @@ public class Sample
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不支持 <see cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" />实现不支持此方法。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
         <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
@@ -4301,7 +4301,7 @@ public class Sample
         <param name="buffer">结果文本复制到的缓冲区。 此值不能为 <see langword="null" />。</param>
         <param name="index">缓冲区中的偏移，从这个位置开始将结果复制到缓冲区中。</param>
         <param name="count">要复制到缓冲区的最大字节数。 此方法返回复制的实际字节数。</param>
-        <summary>异步读取内容并返回 <see langword="BinHex" /> 解码的二进制字节。</summary>
+        <summary>异步读取内容并返回<see langword="BinHex" />解码的二进制字节。</summary>
         <returns>写入缓冲区的字节数。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4313,7 +4313,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -4351,8 +4351,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see langword="Boolean" /> 读取。</summary>
-        <returns>作为 <see cref="T:System.Boolean" /> 对象的文本内容。</returns>
+        <summary>作为将当前位置的文本内容读取<see langword="Boolean" />。</summary>
+        <returns>文本内容作为<see cref="T:System.Boolean" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4387,8 +4387,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4421,8 +4421,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.DateTime" /> 对象读取。</summary>
-        <returns>作为 <see cref="T:System.DateTime" /> 对象的文本内容。</returns>
+        <summary>作为将当前位置的文本内容读取<see cref="T:System.DateTime" />对象。</summary>
+        <returns>文本内容作为<see cref="T:System.DateTime" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4448,8 +4448,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4484,8 +4484,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.DateTimeOffset" /> 对象读取。</summary>
-        <returns>作为 <see cref="T:System.DateTimeOffset" /> 对象的文本内容。</returns>
+        <summary>作为将当前位置的文本内容读取<see cref="T:System.DateTimeOffset" />对象。</summary>
+        <returns>文本内容作为<see cref="T:System.DateTimeOffset" />对象。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
@@ -4522,8 +4522,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.Decimal" /> 对象读取。</summary>
-        <returns>作为 <see cref="T:System.Decimal" /> 对象的当前位置的文本内容。</returns>
+        <summary>作为将当前位置的文本内容读取<see cref="T:System.Decimal" />对象。</summary>
+        <returns>作为将当前位置的文本内容<see cref="T:System.Decimal" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4546,8 +4546,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4607,8 +4607,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4668,8 +4668,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4729,8 +4729,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4790,8 +4790,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4827,7 +4827,7 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.Object" /> 读取。</summary>
+        <summary>作为将当前位置的文本内容读取<see cref="T:System.Object" />。</summary>
         <returns>作为最适当的公共语言运行时 (CLR) 对象的文本内容。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4858,8 +4858,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -4899,7 +4899,7 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.Object" /> 对象异步读取。</summary>
+        <summary>作为将当前位置的文本内容以异步方式读取<see cref="T:System.Object" />。</summary>
         <returns>作为最适当的公共语言运行时 (CLR) 对象的文本内容。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -4911,7 +4911,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -4949,8 +4949,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.String" /> 对象读取。</summary>
-        <returns>作为 <see cref="T:System.String" /> 对象的文本内容。</returns>
+        <summary>作为将当前位置的文本内容读取<see cref="T:System.String" />对象。</summary>
+        <returns>文本内容作为<see cref="T:System.String" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -4975,8 +4975,8 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidCastException">试图进行的强制转换无效。</exception>
-        <exception cref="T:System.FormatException">该字符串格式无效。</exception>
+        <exception cref="T:System.InvalidCastException">尝试强制转换无效。</exception>
+        <exception cref="T:System.FormatException">字符串格式无效。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -5011,8 +5011,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>将当前位置的文本内容作为 <see cref="T:System.String" /> 对象异步读取。</summary>
-        <returns>作为 <see cref="T:System.String" /> 对象的文本内容。</returns>
+        <summary>作为将当前位置的文本内容以异步方式读取<see cref="T:System.String" />对象。</summary>
+        <returns>文本内容作为<see cref="T:System.String" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5023,7 +5023,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -5107,17 +5107,17 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.OverflowException">读取 <see langword="Decimal.MaxValue" />。</exception>
+或 
+无法将元素内容转换为请求的类型。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.OverflowException">读取<see langword="Decimal.MaxValue" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAs">
@@ -5175,18 +5175,18 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
-        <exception cref="T:System.OverflowException">读取 <see langword="Decimal.MaxValue" />。</exception>
+或 
+无法将元素内容转换为请求的类型。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
+        <exception cref="T:System.OverflowException">读取<see langword="Decimal.MaxValue" />。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsAsync">
@@ -5241,7 +5241,7 @@ public class Sample
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -5317,13 +5317,13 @@ public class Sample
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不是元素节点。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" />实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
-        <exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
+        <exception cref="T:System.FormatException">无法将内容转换为请求的类型。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
@@ -5377,7 +5377,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -5453,13 +5453,13 @@ public class Sample
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
         <exception cref="T:System.InvalidOperationException">当前节点不是元素节点。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">索引缓冲区或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" />实现不支持此方法。</exception>
         <exception cref="T:System.Xml.XmlException">该元素包含混合内容。</exception>
-        <exception cref="T:System.FormatException">无法将内容转换成请求的类型。</exception>
+        <exception cref="T:System.FormatException">无法将内容转换为请求的类型。</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
@@ -5513,7 +5513,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -5529,7 +5529,7 @@ public class Sample
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>将当前元素值作为 <see cref="T:System.Boolean" /> 对象读取。</summary>
+        <summary>读取当前元素值作为<see cref="T:System.Boolean" />对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadElementContentAsBoolean">
@@ -5564,8 +5564,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.Boolean" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.Boolean" /> 对象的元素内容。</returns>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.Boolean" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.Boolean" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5578,16 +5578,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 <see cref="T:System.Boolean" /> 对象。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+无法将元素内容转换为<see cref="T:System.Boolean" />对象。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsBoolean">
@@ -5627,8 +5627,8 @@ public class Sample
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.Boolean" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.Boolean" /> 对象的元素内容。</returns>
+        <summary>检查指定的本地名称和命名空间 URI 的当前元素的对应项匹配，然后读取当前元素，并返回将内容作为<see cref="T:System.Boolean" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.Boolean" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5641,17 +5641,17 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为请求的类型。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsDateTime">
@@ -5662,7 +5662,7 @@ public class Sample
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.DateTime" /> 对象返回。</summary>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.DateTime" />对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadElementContentAsDateTime">
@@ -5694,8 +5694,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.DateTime" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.DateTime" /> 对象的元素内容。</returns>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.DateTime" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.DateTime" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5723,16 +5723,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 <see cref="T:System.DateTime" /> 对象。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+无法将元素内容转换为<see cref="T:System.DateTime" />对象。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsDateTime">
@@ -5769,8 +5769,8 @@ public class Sample
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.DateTime" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.DateTime" /> 对象的元素内容。</returns>
+        <summary>检查指定的本地名称和命名空间 URI 的当前元素的对应项匹配，然后读取当前元素，并返回将内容作为<see cref="T:System.DateTime" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.DateTime" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5786,17 +5786,17 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为请求的类型。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsDecimal">
@@ -5809,7 +5809,7 @@ public class Sample
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>将当前元素值作为 <see cref="T:System.Decimal" /> 对象读取。</summary>
+        <summary>读取当前元素值作为<see cref="T:System.Decimal" />对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadElementContentAsDecimal">
@@ -5844,8 +5844,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.Decimal" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.Decimal" /> 对象的元素内容。</returns>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.Decimal" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.Decimal" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5858,16 +5858,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 <see cref="T:System.Decimal" />。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+无法将元素内容转换为<see cref="T:System.Decimal" />。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsDecimal">
@@ -5907,8 +5907,8 @@ public class Sample
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.Decimal" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.Decimal" /> 对象的元素内容。</returns>
+        <summary>检查指定的本地名称和命名空间 URI 的当前元素的对应项匹配，然后读取当前元素，并返回将内容作为<see cref="T:System.Decimal" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.Decimal" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -5921,17 +5921,17 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 <see cref="T:System.Decimal" />。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为<see cref="T:System.Decimal" />。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsDouble">
@@ -6005,16 +6005,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
+或 
 无法将元素内容转换为双精度浮点数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsDouble">
@@ -6068,17 +6068,17 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为请求的类型。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsFloat">
@@ -6140,16 +6140,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-元素内容不能转换为单精度浮点数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+无法将元素内容转换为单精度浮点数。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsFloat">
@@ -6203,16 +6203,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-元素内容不能转换为单精度浮点数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为单精度浮点数。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsInt">
@@ -6274,15 +6274,14 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 32 位有符号整数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+不能将元素内容转换为 32 位有符号整数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsInt">
@@ -6336,16 +6335,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 32 位有符号整数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+不能将元素内容转换为 32 位有符号整数。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsLong">
@@ -6419,15 +6418,15 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
+或 
 无法将元素内容转换为 64 位有符号整数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsLong">
@@ -6481,16 +6480,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
+或 
 无法将元素内容转换为 64 位有符号整数。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <MemberGroup MemberName="ReadElementContentAsObject">
@@ -6503,7 +6502,7 @@ public class Sample
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.Object" /> 返回。</summary>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.Object" />。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadElementContentAsObject">
@@ -6538,8 +6537,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.Object" /> 返回。</summary>
-        <returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。 <see cref="P:System.Xml.XmlReader.ValueType" /> 属性确定了适当的 CLR 类型。 如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.Object" />。</summary>
+        <returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。 <see cref="P:System.Xml.XmlReader.ValueType" />属性确定适当的 CLR 类型。 如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6570,15 +6569,15 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+无法将元素内容转换为所请求类型</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsObject">
@@ -6618,8 +6617,8 @@ public class Sample
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.Object" /> 返回。</summary>
-        <returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。 <see cref="P:System.Xml.XmlReader.ValueType" /> 属性确定了适当的 CLR 类型。 如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
+        <summary>检查指定的本地名称和命名空间 URI 的当前元素的对应项匹配，然后读取当前元素，并返回将内容作为<see cref="T:System.Object" />。</summary>
+        <returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。 <see cref="P:System.Xml.XmlReader.ValueType" />属性确定适当的 CLR 类型。 如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6630,16 +6629,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换成请求的类型。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为请求的类型。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsObjectAsync">
@@ -6678,8 +6677,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>异步读取当前元素并将内容作为 <see cref="T:System.Object" /> 返回。</summary>
-        <returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。 <see cref="P:System.Xml.XmlReader.ValueType" /> 属性确定了适当的 CLR 类型。 如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
+        <summary>异步读取当前元素并返回将内容作为<see cref="T:System.Object" />。</summary>
+        <returns>一个最适当类型的装箱的公共语言运行时 (CLR) 对象。 <see cref="P:System.Xml.XmlReader.ValueType" />属性确定适当的 CLR 类型。 如果将内容类型化为列表类型，则此方法返回一个适当类型的装箱对象的数组。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6690,7 +6689,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -6706,7 +6705,7 @@ public class Sample
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.String" /> 对象返回。</summary>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.String" />对象。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadElementContentAsString">
@@ -6741,8 +6740,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>读取当前元素并将内容作为 <see cref="T:System.String" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.String" /> 对象的元素内容。</returns>
+        <summary>读取当前元素并返回将内容作为<see cref="T:System.String" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.String" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6767,16 +6766,16 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 <see cref="T:System.String" /> 对象。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
+或 
+无法将元素内容转换为<see cref="T:System.String" />对象。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsString">
@@ -6816,8 +6815,8 @@ public class Sample
       <Docs>
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
-        <summary>检查指定的本地名称和命名空间 URI 与当前元素的本地名称和命名空间 URI 是否匹配，然后读取当前元素，并将内容作为 <see cref="T:System.String" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.String" /> 对象的元素内容。</returns>
+        <summary>检查指定的本地名称和命名空间 URI 的当前元素的对应项匹配，然后读取当前元素，并返回将内容作为<see cref="T:System.String" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.String" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6840,17 +6839,17 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" /> 未定位在元素上。
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />未定位在元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.Xml.XmlException">当前元素包含子元素。  
   
-- 或 - 
-无法将元素内容转换为 <see cref="T:System.String" /> 对象。</exception>
-        <exception cref="T:System.ArgumentNullException">使用 <see langword="null" /> 参数调用此方法。</exception>
-        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与所读取的当前元素的本地名称和命名空间 URI 不匹配。</exception>
+或 
+无法将元素内容转换为<see cref="T:System.String" />对象。</exception>
+        <exception cref="T:System.ArgumentNullException">该方法调用与<see langword="null" />参数。</exception>
+        <exception cref="T:System.ArgumentException">指定的本地名称和命名空间 URI 与当前正在读取的元素不匹配。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsStringAsync">
@@ -6889,8 +6888,8 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>异步读取当前元素并将内容作为 <see cref="T:System.String" /> 对象返回。</summary>
-        <returns>作为 <see cref="T:System.String" /> 对象的元素内容。</returns>
+        <summary>异步读取当前元素并返回将内容作为<see cref="T:System.String" />对象。</summary>
+        <returns>元素内容作为<see cref="T:System.String" />对象。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -6912,7 +6911,7 @@ public class Sample
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <summary>读取只有简单文本的元素。 但是，建议改用 <see cref="Overload:System.Xml.XmlReader.ReadElementContentAsString" /> 方法，因为该方法可以更直接地处理此操作。</summary>
@@ -6971,7 +6970,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">下一个内容节点不是开始标记；或者找到的元素不包含简单文本值。</exception>
+        <exception cref="T:System.Xml.XmlException">下一个内容节点不是一个开始标记;或者找到的元素不包含简单的文本值。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -7013,7 +7012,7 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="name">要检查的名称。</param>
-        <summary>在读取纯文本元素之前，检查所找到元素的 <see cref="P:System.Xml.XmlReader.Name" /> 属性是否与给定的字符串匹配。 但是，建议改用 <see cref="M:System.Xml.XmlReader.ReadElementContentAsString" /> 方法，因为该方法可以更直接地处理此操作。</summary>
+        <summary>检查<see cref="P:System.Xml.XmlReader.Name" />找到的元素的属性与给定的字符串匹配读取纯文本元素之前。 但是，建议改用 <see cref="M:System.Xml.XmlReader.ReadElementContentAsString" /> 方法，因为该方法可以更直接地处理此操作。</summary>
         <returns>所读取的元素中包含的文本。 如果元素为空，则返回一个空字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7023,7 +7022,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">如果下一个内容节点不是一个开始标记；如果元素 <see langword="Name" /> 与给定的参数不匹配；或者如果找到的元素不包含简单的文本值。</exception>
+        <exception cref="T:System.Xml.XmlException">如果下一个内容节点不是一个开始标记;如果该元素<see langword="Name" />与给定的参数; 不匹配，或者如果找到该元素不包含简单的文本值。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -7067,7 +7066,7 @@ public class Sample
       <Docs>
         <param name="localname">要检查的本地名称。</param>
         <param name="ns">要检查的命名空间 URI。</param>
-        <summary>在读取纯文本元素之前，检查所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 属性是否与给定的字符串匹配。 但是，建议改用 <see cref="M:System.Xml.XmlReader.ReadElementContentAsString(System.String,System.String)" /> 方法，因为该方法可以更直接地处理此操作。</summary>
+        <summary>检查两个<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />找到与给定的字符串匹配读取纯文本元素之前的元素的属性。 但是，建议改用 <see cref="M:System.Xml.XmlReader.ReadElementContentAsString(System.String,System.String)" /> 方法，因为该方法可以更直接地处理此操作。</summary>
         <returns>所读取的元素中包含的文本。 如果元素为空，则返回一个空字符串。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7077,7 +7076,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">如果下一个内容节点不是一个开始标记；如果元素 <see langword="LocalName" /> 或 <see langword="NamespaceURI" /> 与给定的参数不匹配；或者如果找到的元素不包含简单的文本值。</exception>
+        <exception cref="T:System.Xml.XmlException">如果下一个内容节点不是一个开始标记;如果该元素<see langword="LocalName" />或<see langword="NamespaceURI" />不匹配给定的参数; 或者如果找到该元素不包含简单的文本值。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -7130,7 +7129,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">当前节点不是一个结束标记，或者如果在输入流中遇到不正确的 XML。</exception>
+        <exception cref="T:System.Xml.XmlException">当前节点不是结束标记或如果在输入流中遇到不正确的 XML。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadStartElement" />
       </Docs>
@@ -7215,7 +7214,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">XML 的格式不良，或分析 XML 时出错。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 不是格式正确，或分析 XML 时出错。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -7267,7 +7266,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -7343,7 +7342,7 @@ public class Sample
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Xml.XmlException">XML 的格式不良，或分析 XML 时出错。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 不是格式正确，或分析 XML 时出错。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
     </Member>
@@ -7493,7 +7492,7 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="name">元素的限定名。</param>
-        <summary>检查当前内容节点是否为具有给定 <see cref="P:System.Xml.XmlReader.Name" /> 的元素并将读取器推进到下一个节点。</summary>
+        <summary>检查当前内容节点是否具有的元素给定<see cref="P:System.Xml.XmlReader.Name" />并将读取器推进到下一个节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7516,8 +7515,8 @@ public class Sample
         </remarks>
         <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。  
   
-- 或 - 
-元素的 <see cref="P:System.Xml.XmlReader.Name" /> 不匹配给定的 <paramref name="name" />。</exception>
+或 
+<see cref="P:System.Xml.XmlReader.Name" />不匹配的元素的给定<paramref name="name" />。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadEndElement" />
       </Docs>
@@ -7560,7 +7559,7 @@ public class Sample
       <Docs>
         <param name="localname">元素的本地名称。</param>
         <param name="ns">元素的命名空间 URI。</param>
-        <summary>检查当前内容节点是否为具有给定 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 的元素并将读取器推进到下一个节点。</summary>
+        <summary>检查当前内容节点是否具有的元素给定<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />并将读取器推进到下一个节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7571,8 +7570,8 @@ public class Sample
         </remarks>
         <exception cref="T:System.Xml.XmlException">在输入流中遇到不正确的 XML。  
   
-- 或 - 
-所找到元素的 <see cref="P:System.Xml.XmlReader.LocalName" /> 和 <see cref="P:System.Xml.XmlReader.NamespaceURI" /> 属性与给定的参数不匹配。</exception>
+或 
+<see cref="P:System.Xml.XmlReader.LocalName" />和<see cref="P:System.Xml.XmlReader.NamespaceURI" />属性找到的元素与给定的参数不匹配。</exception>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="M:System.Xml.XmlReader.ReadEndElement" />
       </Docs>
@@ -7713,7 +7712,7 @@ public class Sample
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>返回新的 <see langword="XmlReader" /> 实例，此实例可用于读取当前节点及其所有子节点。</summary>
+        <summary>返回一个新<see langword="XmlReader" />可以用于读取当前节点及其所有子代的实例。</summary>
         <returns>设置为 <see cref="F:System.Xml.ReadState.Initial" /> 的新 XML 实例。 调用 <see cref="M:System.Xml.XmlReader.Read" /> 方法时，会将新的读取器定位在调用 <see cref="M:System.Xml.XmlReader.ReadSubtree" /> 方法之前的当前节点上。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -7765,7 +7764,7 @@ public class Sample
         </remarks>
         <exception cref="T:System.InvalidOperationException">调用此方法时 XML 读取器没有定位在某个元素上。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
       </Docs>
@@ -7780,7 +7779,7 @@ public class Sample
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>让 <see cref="T:System.Xml.XmlReader" /> 前进到下一个匹配的子代元素。</summary>
+        <summary>前移<see cref="T:System.Xml.XmlReader" />到下一个匹配的子代元素。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadToDescendant">
@@ -7818,10 +7817,10 @@ public class Sample
       </Parameters>
       <Docs>
         <param name="name">要移动到的元素的限定名。</param>
-        <summary>让 <see cref="T:System.Xml.XmlReader" /> 前进到下一个具有指定限定名的子代元素。</summary>
-        <returns>如果找到匹配的子代元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader" /> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。  
+        <summary>前移<see cref="T:System.Xml.XmlReader" />到下一个具有指定限定名的子代元素。</summary>
+        <returns><see langword="true" /> 如果找到匹配的子代元素;否则为<see langword="false" />。 如果找不到匹配的子元素，<see cref="T:System.Xml.XmlReader" />定位在结束标记上 (<see cref="P:System.Xml.XmlReader.NodeType" />是<see langword="XmlNodeType.EndElement" />) 的元素。  
   
-如果调用 <see cref="T:System.Xml.XmlReader" /> 时没有将 <see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String)" /> 定位在某个元素上，则此方法返回 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 的位置保持不变。</returns>
+如果<see cref="T:System.Xml.XmlReader" />未定位在元素上时<see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String)" />调用，此方法返回<see langword="false" />的位置和<see cref="T:System.Xml.XmlReader" />不会更改。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -7878,10 +7877,10 @@ public class Sample
       <Docs>
         <param name="localName">要移动到的元素的本地名称。</param>
         <param name="namespaceURI">要移动到的元素的命名空间 URI。</param>
-        <summary>让 <see cref="T:System.Xml.XmlReader" /> 前进到下一个具有指定的本地名称和命名空间 URI 的子代元素。</summary>
-        <returns>如果找到匹配的子代元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果未找到匹配的子元素，<see cref="T:System.Xml.XmlReader" /> 将定位在元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。  
+        <summary>前移<see cref="T:System.Xml.XmlReader" />到下一个具有指定的本地名称和命名空间 URI 的子代元素。</summary>
+        <returns><see langword="true" /> 如果找到匹配的子代元素;否则为<see langword="false" />。 如果找不到匹配的子元素，<see cref="T:System.Xml.XmlReader" />定位在结束标记上 (<see cref="P:System.Xml.XmlReader.NodeType" />是<see langword="XmlNodeType.EndElement" />) 的元素。  
   
-如果调用 <see cref="T:System.Xml.XmlReader" /> 时没有将 <see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String,System.String)" /> 定位在某个元素上，则此方法返回 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 的位置保持不变。</returns>
+如果<see cref="T:System.Xml.XmlReader" />未定位在元素上时<see cref="M:System.Xml.XmlReader.ReadToDescendant(System.String,System.String)" />调用，此方法返回<see langword="false" />的位置和<see cref="T:System.Xml.XmlReader" />不会更改。</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentNullException">两个参数值均为 <see langword="null" />。</exception>
@@ -7936,7 +7935,7 @@ public class Sample
       <Docs>
         <param name="name">元素的限定名。</param>
         <summary>一直读取，直到找到具有指定限定名的元素。</summary>
-        <returns>如果找到匹配的元素，则为 <see langword="true" />；否则为 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 位于文件的末尾。</returns>
+        <returns><see langword="true" /> 如果找到匹配的元素;否则为<see langword="false" />和<see cref="T:System.Xml.XmlReader" />处于末尾的状态。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8006,7 +8005,7 @@ reader.ReadToFollowing("item");
         <param name="localName">元素的本地名称。</param>
         <param name="namespaceURI">元素的命名空间 URI。</param>
         <summary>一直读取，直到找到具有指定的本地名称和命名空间 URI 的元素。</summary>
-        <returns>如果找到匹配的元素，则为 <see langword="true" />；否则为 <see langword="false" /> 且 <see cref="T:System.Xml.XmlReader" /> 位于文件的末尾。</returns>
+        <returns><see langword="true" /> 如果找到匹配的元素;否则为<see langword="false" />和<see cref="T:System.Xml.XmlReader" />处于末尾的状态。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8048,7 +8047,7 @@ reader.ReadToFollowing("item", "urn:1");
       </AssemblyInfo>
       <Docs>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
-        <summary>让 <see langword="XmlReader" /> 前进到下一个匹配的同级元素。</summary>
+        <summary>前移<see langword="XmlReader" />到下一个匹配的同级元素。</summary>
       </Docs>
     </MemberGroup>
     <Member MemberName="ReadToNextSibling">
@@ -8086,8 +8085,8 @@ reader.ReadToFollowing("item", "urn:1");
       </Parameters>
       <Docs>
         <param name="name">要移动到的同级元素的限定名。</param>
-        <summary>让 <see langword="XmlReader" /> 前进到下一个具有指定限定名的同级元素。</summary>
-        <returns>如果找到匹配的同级元素，则为 <see langword="true" />；否则为 <see langword="false" />。 如果没有找到匹配的同级元素，<see langword="XmlReader" /> 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。</returns>
+        <summary>前移<see langword="XmlReader" />具有指定限定名称的下一个同级元素。</summary>
+        <returns><see langword="true" /> 如果找到匹配的同级元素;否则为<see langword="false" />。 如果没有找到匹配的同级元素，<see langword="XmlReader" /> 会定位在父元素的结束标记（<see cref="P:System.Xml.XmlReader.NodeType" /> 为 <see langword="XmlNodeType.EndElement" />）上。</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8200,7 +8199,7 @@ reader.ReadToFollowing("item", "urn:1");
       </Parameters>
       <Docs>
         <param name="buffer">作为文本内容写入到的缓冲区的字符数组。 此值不能为 <see langword="null" />。</param>
-        <param name="index">缓冲区中的偏移量，<see cref="T:System.Xml.XmlReader" /> 可以从这个位置开始复制结果。</param>
+        <param name="index">缓冲区中的偏移量位置<see cref="T:System.Xml.XmlReader" />可以开始复制结果。</param>
         <param name="count">要复制到缓冲区中的最大字符数。 此方法返回复制的实际字符数。</param>
         <summary>读取嵌入在 XML 文档中的大量文本流。</summary>
         <returns>读取到缓冲区中的字符数。 如果不再有文本内容，则返回值零。</returns>
@@ -8224,14 +8223,14 @@ reader.ReadToFollowing("item", "urn:1");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">当前节点没有值（<see cref="P:System.Xml.XmlReader.HasValue" /> 为 <see langword="false" />）。
+        <exception cref="T:System.InvalidOperationException">当前节点不具有值 (<see cref="P:System.Xml.XmlReader.HasValue" />是<see langword="false" />)。
 
-- 或 - 
+或 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 值为 <see langword="null" />。</exception>
-        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区中的索引或者索引与计数之和大于分配的缓冲区大小。</exception>
-        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" /> 实现不支持此方法。</exception>
-        <exception cref="T:System.Xml.XmlException">XML 数据不是格式良好的。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">缓冲区索引或者索引与计数大于分配的缓冲区大小。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" />实现不支持此方法。</exception>
+        <exception cref="T:System.Xml.XmlException">XML 数据格式不正确。</exception>
       </Docs>
     </Member>
     <Member MemberName="ReadValueChunkAsync">
@@ -8270,7 +8269,7 @@ reader.ReadToFollowing("item", "urn:1");
       </Parameters>
       <Docs>
         <param name="buffer">作为文本内容写入到的缓冲区的字符数组。 此值不能为 <see langword="null" />。</param>
-        <param name="index">缓冲区中的偏移量，<see cref="T:System.Xml.XmlReader" /> 可以从这个位置开始复制结果。</param>
+        <param name="index">缓冲区中的偏移量位置<see cref="T:System.Xml.XmlReader" />可以开始复制结果。</param>
         <param name="count">要复制到缓冲区中的最大字符数。 此方法返回复制的实际字符数。</param>
         <summary>异步读取嵌入在 XML 文档中的大量文本流。</summary>
         <returns>读取到缓冲区中的字符数。 如果不再有文本内容，则返回值零。</returns>
@@ -8283,7 +8282,7 @@ reader.ReadToFollowing("item", "urn:1");
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -8322,7 +8321,7 @@ reader.ReadToFollowing("item", "urn:1");
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>当在派生类中被重写时，解析 <see langword="EntityReference" /> 节点的实体引用。</summary>
+        <summary>当在派生类中重写时解析的实体引用<see langword="EntityReference" />节点。</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8334,9 +8333,9 @@ reader.ReadToFollowing("item", "urn:1");
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">读取器未定位在 <see langword="EntityReference" /> 节点上；该读取器的实现不能解析实体（<see cref="P:System.Xml.XmlReader.CanResolveEntity" /> 返回 <see langword="false" />）。
+        <exception cref="T:System.InvalidOperationException">读取器未定位在上<see langword="EntityReference" />节点; 此读取器的实现不能解析实体 (<see cref="P:System.Xml.XmlReader.CanResolveEntity" />返回<see langword="false" />)。
 
-- 或 -
+或
 
 在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”</exception>
         <altmember cref="T:System.Xml.EntityHandling" />
@@ -8372,14 +8371,14 @@ reader.ReadToFollowing("item", "urn:1");
       </ReturnValue>
       <Docs>
         <summary>获取作为架构验证结果分配给当前节点的架构信息。</summary>
-        <value>一个包含当前节点的架构信息的 <see cref="T:System.Xml.Schema.IXmlSchemaInfo" /> 对象。 架构信息可以在元素、特性或具有非空 <see cref="P:System.Xml.XmlReader.ValueType" />（类型化值）的文本节点上设置。  
+        <value><see cref="T:System.Xml.Schema.IXmlSchemaInfo" />对象，其中包含当前节点的架构信息。 架构信息可以元素、 特性或具有非 null 文本节点上设置<see cref="P:System.Xml.XmlReader.ValueType" />（类型化值）。  
   
-如果当前节点不属于上述节点类型，或者如果 <see langword="XmlReader" /> 实例未报告架构信息，则此属性返回 <see langword="null" />。  
+如果当前节点不属于上述节点类型，或者如果<see langword="XmlReader" />实例未报告架构信息，此属性返回<see langword="null" />。  
   
-如果从 <see cref="T:System.Xml.XmlTextReader" /> 或 <see cref="T:System.Xml.XmlValidatingReader" /> 对象调用此属性，则此属性总是返回 <see langword="null" />。 这些 <see langword="XmlReader" /> 实现不会通过 <see langword="SchemaInfo" /> 属性公开架构信息。  
+如果此属性从调用<see cref="T:System.Xml.XmlTextReader" />或<see cref="T:System.Xml.XmlValidatingReader" />对象，则此属性始终返回<see langword="null" />。 这些<see langword="XmlReader" />实现不公开架构信息通过<see langword="SchemaInfo" />属性。  
   
  <block subset="none" type="note"><para>  
- 如果必须为某个元素获取架构验证后信息集 (PSVI)，请在此元素的结束标记处（而不是在开始标记处）放置读取器。 您可以通过读取器的 <see langword="SchemaInfo" /> 属性获取 PSVI。 通过 <see cref="Overload:System.Xml.XmlReader.Create" /> 并使用设置为 <see cref="P:System.Xml.XmlReaderSettings.ValidationType" /> 的 <see cref="F:System.Xml.ValidationType.Schema" /> 属性创建的验证读取器具有完整的 PSVI，仅在将读取器放置在元素的结束标记处时，此 PSVI 才对元素可用。  
+ 如果必须为某个元素获取架构验证后信息集 (PSVI)，请在此元素的结束标记处（而不是在开始标记处）放置读取器。 获取 PSVI<see langword="SchemaInfo" />读取器的属性。 通过创建的验证读取器<see cref="Overload:System.Xml.XmlReader.Create" />与<see cref="P:System.Xml.XmlReaderSettings.ValidationType" />属性设置为<see cref="F:System.Xml.ValidationType.Schema" />具有完整的 PSVI 的元素仅当读取器定位在元素的结束标记上时。  
   
 </para></block></value>
         <remarks>
@@ -8425,7 +8424,7 @@ reader.ReadToFollowing("item", "urn:1");
       </ReturnValue>
       <Docs>
         <summary>获取用于创建此 <see cref="T:System.Xml.XmlReader" /> 实例的 <see cref="T:System.Xml.XmlReaderSettings" /> 对象。</summary>
-        <value>用于创建此读取器实例的 <see cref="T:System.Xml.XmlReaderSettings" /> 对象。 如果此读取器不是使用 <see cref="Overload:System.Xml.XmlReader.Create" /> 方法创建的，则此属性返回 <see langword="null" />。</value>
+        <value><see cref="T:System.Xml.XmlReaderSettings" />对象，用于创建此读取器实例。 如果此读取器不使用创建<see cref="Overload:System.Xml.XmlReader.Create" />方法，此属性返回<see langword="null" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -8571,7 +8570,7 @@ reader.ReadToFollowing("item", "urn:1");
         </remarks>
         <exception cref="T:System.InvalidOperationException">在上一次异步操作完成之前调用了 <see cref="T:System.Xml.XmlReader" /> 方法。 在此情况下，会引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“异步操作已在进行中。”
 
-- 或 -
+或
 
 调用了 <see cref="T:System.Xml.XmlReader" /> 异步方法，但未将 <see cref="P:System.Xml.XmlReaderSettings.Async" /> 标志设置为 <see langword="true" />。 在此情况下，将引发 <see cref="T:System.InvalidOperationException" /> 并显示消息“若要使用 Async 方法，请将 XmlReaderSettings.Async 设置为 True。”</exception>
         <related type="Article" href="https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7">使用 Async 和 Await 的异步编程（C# 和 Visual Basic）</related>
@@ -8614,7 +8613,7 @@ reader.ReadToFollowing("item", "urn:1");
   
 ## Remarks  
 
-此成员是显式的接口成员实现。 它只能在 <xref:System.Xml.XmlReader> 实例强制转换为 <xref:System.IDisposable> 接口时使用。
+此成员是显式接口成员的实现。 它只能在 <xref:System.Xml.XmlReader> 实例被强制转换为 <xref:System.IDisposable> 接口时使用。
 
 此成员的行为可能以不同的方式中使用时[可移植类库](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)项目。 有关详细信息，请参阅[可移植类库中的 API 差异](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/gg597392(v=vs.100))。
 
@@ -8669,7 +8668,7 @@ reader.ReadToFollowing("item", "urn:1");
   
  </description></item><item><term><see langword="ProcessingInstruction" /></term><description> 全部内容（不包括指令目标）。  
   
- </description></item><item><term><see langword="SignificantWhitespace" /></term><description> 混合内容模型中标记之间的空白。  
+ </description></item><item><term><see langword="SignificantWhitespace" /></term><description> 混合内容模型中标记之间的空白区域。  
   
  </description></item><item><term><see langword="Text" /></term><description> 文本节点的内容。  
   
@@ -8787,7 +8786,7 @@ reader.ReadToFollowing("item", "urn:1");
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取当前的 <see langword="xml:lang" /> 范围。</summary>
+        <summary>当在派生类中重写时获取当前<see langword="xml:lang" />作用域。</summary>
         <value>当前 <see langword="xml:lang" /> 范围。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -8846,7 +8845,7 @@ reader.ReadToFollowing("item", "urn:1");
         <ReturnType>System.Xml.XmlSpace</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>当在派生类中被重写时，获取当前的 <see langword="xml:space" /> 范围。</summary>
+        <summary>当在派生类中重写时获取当前<see langword="xml:space" />作用域。</summary>
         <value><see cref="T:System.Xml.XmlSpace" /> 值之一。 如果不存在任何 <see langword="xml:space" /> 范围，则该属性默认值为 <see langword="XmlSpace.None" />。</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
